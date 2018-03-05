@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
 		F9093A73204992CB00CB041A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A72204992CB00CB041A /* ViewController.swift */; };
 		F9093A76204992CB00CB041A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A74204992CB00CB041A /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
+		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.debug.xcconfig"; sourceTree = "<group>"; };
 		F9093A6D204992CB00CB041A /* Rozenamah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozenamah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9093A70204992CB00CB041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9093A72204992CB00CB041A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F43CA1628D611B968D46E2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */,
+				12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		874F15E483C601219057571A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F9093A64204992CB00CB041A = {
 			isa = PBXGroup;
 			children = (
 				F9093A6F204992CB00CB041A /* Rozenamah */,
 				F9093A6E204992CB00CB041A /* Products */,
+				2F43CA1628D611B968D46E2E /* Pods */,
+				874F15E483C601219057571A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9093A7F204992CB00CB041A /* Build configuration list for PBXNativeTarget "Rozenamah" */;
 			buildPhases = (
+				595586B31B5CC6DE378765AA /* [CP] Check Pods Manifest.lock */,
 				F9093A69204992CB00CB041A /* Sources */,
 				F9093A6A204992CB00CB041A /* Frameworks */,
 				F9093A6B204992CB00CB041A /* Resources */,
+				87CC8A2E5D54EE3735BA8D9D /* [CP] Embed Pods Frameworks */,
+				85ECF47341E4347EB6C1F628 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +123,7 @@
 				TargetAttributes = {
 					F9093A6C204992CB00CB041A = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -130,6 +157,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		595586B31B5CC6DE378765AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rozenamah-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85ECF47341E4347EB6C1F628 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87CC8A2E5D54EE3735BA8D9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCake/SwiftCake.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCake.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F9093A69204992CB00CB041A /* Sources */ = {
@@ -272,14 +357,18 @@
 		};
 		F9093A80204992CB00CB041A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J5AJCLAX66;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0919dc8-16c1-411d-8311-545878472280";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Development Provisioning";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,14 +376,18 @@
 		};
 		F9093A81204992CB00CB041A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J5AJCLAX66;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0919dc8-16c1-411d-8311-545878472280";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Development Provisioning";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

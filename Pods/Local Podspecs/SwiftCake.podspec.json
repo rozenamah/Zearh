@@ -1,0 +1,19 @@
+{
+  "name": "SwiftCake",
+  "version": "0.3",
+  "summary": "Complex library of various views, components and utils I use across apps",
+  "homepage": "https://github.com/Rovalx/SwiftCake",
+  "license": "MIT",
+  "authors": {
+    "Dominik Majda": "ddmajda@gmail.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/Rovalx/SwiftCake.git",
+    "tag": "0.3"
+  },
+  "source_files": "SwiftCake/**/*.{h,m,swift}",
+  "frameworks": "UIKit"
+}

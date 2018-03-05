@@ -1,0 +1,6 @@
+framework module SwiftCake {
+  umbrella header "SwiftCake-umbrella.h"
+
+  export *
+  module * { export * }
+}
