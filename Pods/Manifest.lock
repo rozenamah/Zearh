@@ -1,15 +1,32 @@
 PODS:
+  - Alamofire (4.7.0)
+  - AlamofireNetworkActivityIndicator (2.2.0):
+    - Alamofire (~> 4.5)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.5)
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
+    - GoogleMaps/Base
+  - IQKeyboardManager (5.0.8)
+  - KeychainAccess (3.1.0)
   - Kingfisher (4.6.2)
-  - SwiftCake (0.3)
+  - SlideMenuControllerSwift (4.0.0)
+  - SwiftCake (0.3.1)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - Crashlytics (~> 3.9.3)
-  - Fabric (~> 1.7.2)
+  - Alamofire
+  - AlamofireNetworkActivityIndicator
+  - Crashlytics
+  - Fabric
+  - GoogleMaps
+  - IQKeyboardManager
+  - KeychainAccess
   - Kingfisher
+  - SlideMenuControllerSwift
   - SwiftCake (from `https://github.com/Rovalx/SwiftCake.git`, branch `master`)
   - SwiftyJSON
 
@@ -20,16 +37,22 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftCake:
-    :commit: 6e356eb9461449e5b5843906d454d6e73a0d9162
+    :commit: 97ee67e5f69fdae27c7eed711168b8e14b4ab42c
     :git: https://github.com/Rovalx/SwiftCake.git
 
 SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
+  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
-  SwiftCake: 033d696fd1c3a5771cb19e34f67e1df4456e79e8
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
+  SwiftCake: c3ecf5fe2d943bf6fe86197cb3ecab4ec9c4dc5b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 869e4280f7b334381ba08f10d38f85377001eff2
+PODFILE CHECKSUM: 40521c1ace546885ce6bdf12f54c6d3cba7eff19
 
 COCOAPODS: 1.3.1

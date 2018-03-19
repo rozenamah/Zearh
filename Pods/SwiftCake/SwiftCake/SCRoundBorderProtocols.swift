@@ -14,7 +14,6 @@ public protocol SCRoundedBorderedView: SCRoundedView, SCBorderedView {
 
 public protocol SCRoundedView {
     var cornerRadius: CGFloat { set get }
-    var masksToBounds: Bool { set get }
 }
 
 public protocol SCBorderedView {
@@ -37,13 +36,9 @@ extension SCBorderedView where Self: UIView {
 
 extension SCRoundedView where Self: UIView {
     
-    func updateMasksToBounds(with value: Bool) {
-        self.layer.masksToBounds = value
-    }
-    
     func updateCornerRadius(with value: CGFloat) {
         self.layer.cornerRadius = value
-        if value>0 {
+        if value > 0 {
             self.layer.masksToBounds = true
         }
     }

@@ -22,12 +22,6 @@ open class SCImageView: UIImageView, SCRoundedBorderedView {
             updateBorderWidth(with: borderWidth)
         }
     }
-    
-    @IBInspectable open var masksToBounds: Bool = false {
-        didSet {
-            updateMasksToBounds(with: masksToBounds)
-        }
-    }
 
     @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {

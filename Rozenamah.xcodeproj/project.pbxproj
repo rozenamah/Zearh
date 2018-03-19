@@ -9,10 +9,84 @@
 /* Begin PBXBuildFile section */
 		7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
-		F9093A73204992CB00CB041A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A72204992CB00CB041A /* ViewController.swift */; };
-		F9093A76204992CB00CB041A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A74204992CB00CB041A /* Main.storyboard */; };
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
 		F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen.storyboard */; };
+		F940EA472057E8F700266753 /* Session.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F940EA462057E8F700266753 /* Session.storyboard */; };
+		F940EA502058147000266753 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA492058147000266753 /* WelcomePresenter.swift */; };
+		F940EA512058147000266753 /* WelcomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4A2058147000266753 /* WelcomeWorker.swift */; };
+		F940EA522058147000266753 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4B2058147000266753 /* WelcomeRouter.swift */; };
+		F940EA532058147000266753 /* WelcomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4C2058147000266753 /* WelcomeModels.swift */; };
+		F940EA542058147000266753 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4D2058147000266753 /* WelcomeViewController.swift */; };
+		F940EA552058147000266753 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4E2058147000266753 /* WelcomeInteractor.swift */; };
+		F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4F2058147000266753 /* WelcomeConfigurator.swift */; };
+		F940EA5E2058148300266753 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA572058148300266753 /* LoginPresenter.swift */; };
+		F940EA5F2058148300266753 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA582058148300266753 /* LoginWorker.swift */; };
+		F940EA602058148300266753 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA592058148300266753 /* LoginRouter.swift */; };
+		F940EA612058148300266753 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA5A2058148300266753 /* LoginModels.swift */; };
+		F940EA622058148300266753 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA5B2058148300266753 /* LoginViewController.swift */; };
+		F940EA632058148300266753 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA5C2058148300266753 /* LoginInteractor.swift */; };
+		F940EA642058148300266753 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA5D2058148300266753 /* LoginConfigurator.swift */; };
+		F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA65205817DF00266753 /* RMNavigationBar.swift */; };
+		F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA68205820DF00266753 /* RMTextFieldWithError.swift */; };
+		F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA6B2058239100266753 /* UIColorExtension.swift */; };
+		F940EA70205827AD00266753 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA6F205827AD00266753 /* EmailValidation.swift */; };
+		F940EA72205828ED00266753 /* AlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA71205828ED00266753 /* AlertRouter.swift */; };
+		F940EC212059335E00266753 /* RegisterPatientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC1A2059335E00266753 /* RegisterPatientPresenter.swift */; };
+		F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC1B2059335E00266753 /* RegisterPatientWorker.swift */; };
+		F940EC232059335E00266753 /* RegisterPatientRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC1C2059335E00266753 /* RegisterPatientRouter.swift */; };
+		F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC1D2059335E00266753 /* RegisterPatientModels.swift */; };
+		F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC1E2059335E00266753 /* RegisterPatientViewController.swift */; };
+		F940EC262059335E00266753 /* RegisterPatientInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC1F2059335E00266753 /* RegisterPatientInteractor.swift */; };
+		F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC202059335E00266753 /* RegisterPatientConfigurator.swift */; };
+		F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC28205937CD00266753 /* PhotoTakeRouter.swift */; };
+		F940EC2B20595A1100266753 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC2A20595A1100266753 /* API.swift */; };
+		F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC2C205963ED00266753 /* AlamofireExtension.swift */; };
+		F940EC2F20596CAE00266753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F940EC2E20596CAE00266753 /* Main.storyboard */; };
+		F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC30205A5BC200266753 /* ForgotPasswordPresenter.swift */; };
+		F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC31205A5BC200266753 /* ForgotPasswordWorker.swift */; };
+		F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC32205A5BC200266753 /* ForgotPasswordRouter.swift */; };
+		F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC33205A5BC200266753 /* ForgotPasswordModels.swift */; };
+		F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC34205A5BC200266753 /* ForgotPasswordViewController.swift */; };
+		F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC35205A5BC200266753 /* ForgotPasswordInteractor.swift */; };
+		F940EC3D205A5BC200266753 /* ForgotPasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC36205A5BC200266753 /* ForgotPasswordConfigurator.swift */; };
+		F940EC48205A9BFF00266753 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC41205A9BFF00266753 /* MainScreenPresenter.swift */; };
+		F940EC49205A9BFF00266753 /* MainScreenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC42205A9BFF00266753 /* MainScreenWorker.swift */; };
+		F940EC4A205A9BFF00266753 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC43205A9BFF00266753 /* MainScreenRouter.swift */; };
+		F940EC4B205A9BFF00266753 /* MainScreenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC44205A9BFF00266753 /* MainScreenModels.swift */; };
+		F940EC4C205A9BFF00266753 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC45205A9BFF00266753 /* MainScreenViewController.swift */; };
+		F940EC4D205A9BFF00266753 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC46205A9BFF00266753 /* MainScreenInteractor.swift */; };
+		F940EC4E205A9BFF00266753 /* MainScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC47205A9BFF00266753 /* MainScreenConfigurator.swift */; };
+		F940EC52205A9D8E00266753 /* AppStartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC51205A9D8E00266753 /* AppStartRouter.swift */; };
+		F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC53205AB9EC00266753 /* SplashPresenter.swift */; };
+		F940EC5B205AB9EC00266753 /* SplashWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC54205AB9EC00266753 /* SplashWorker.swift */; };
+		F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC55205AB9EC00266753 /* SplashRouter.swift */; };
+		F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC56205AB9EC00266753 /* SplashModels.swift */; };
+		F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC57205AB9EC00266753 /* SplashViewController.swift */; };
+		F940EC5F205AB9EC00266753 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC58205AB9EC00266753 /* SplashInteractor.swift */; };
+		F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC59205AB9EC00266753 /* SplashConfigurator.swift */; };
+		F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC64205AC04700266753 /* KeychainExtension.swift */; };
+		F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC67205AEDD600266753 /* DrawerPresenter.swift */; };
+		F940EC6F205AEDD600266753 /* DrawerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC68205AEDD600266753 /* DrawerWorker.swift */; };
+		F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC69205AEDD600266753 /* DrawerRouter.swift */; };
+		F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC6A205AEDD600266753 /* DrawerModels.swift */; };
+		F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC6B205AEDD600266753 /* DrawerViewController.swift */; };
+		F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC6C205AEDD600266753 /* DrawerInteractor.swift */; };
+		F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */; };
+		F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC75205BBBD600266753 /* RMGradientView.swift */; };
+		F940EC78205BEA4A00266753 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC77205BEA4A00266753 /* User.swift */; };
+		F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9753760205FCFAA003DC80E /* Settings.storyboard */; };
+		F9753764205FD509003DC80E /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753763205FD509003DC80E /* TermsViewController.swift */; };
+		F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */; };
+		F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753766205FDADE003DC80E /* RegisterDoctorWorker.swift */; };
+		F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753767205FDADE003DC80E /* RegisterDoctorRouter.swift */; };
+		F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753768205FDADE003DC80E /* RegisterDoctorModels.swift */; };
+		F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753769205FDADE003DC80E /* RegisterDoctorViewController.swift */; };
+		F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975376A205FDADE003DC80E /* RegisterDoctorInteractor.swift */; };
+		F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975376B205FDADE003DC80E /* RegisterDoctorConfigurator.swift */; };
+		F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753776205FEA70003DC80E /* UIWindowExtension.swift */; };
+		F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753778205FF24B003DC80E /* UIButtonExtension.swift */; };
+		F9A9F2A4204D5897006E8999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2A3204D5897006E8999 /* Router.swift */; };
+		F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA96AB205FCA5200CB4B68 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +95,85 @@
 		5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.debug.xcconfig"; sourceTree = "<group>"; };
 		F9093A6D204992CB00CB041A /* Rozenamah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozenamah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9093A70204992CB00CB041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9093A72204992CB00CB041A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F9093A75204992CB00CB041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9093A77204992CB00CB041A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9093A7A204992CB00CB041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9093A7C204992CB00CB041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F940EA462057E8F700266753 /* Session.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Session.storyboard; sourceTree = "<group>"; };
+		F940EA492058147000266753 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		F940EA4A2058147000266753 /* WelcomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorker.swift; sourceTree = "<group>"; };
+		F940EA4B2058147000266753 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		F940EA4C2058147000266753 /* WelcomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModels.swift; sourceTree = "<group>"; };
+		F940EA4D2058147000266753 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F940EA4E2058147000266753 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		F940EA4F2058147000266753 /* WelcomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeConfigurator.swift; sourceTree = "<group>"; };
+		F940EA572058148300266753 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		F940EA582058148300266753 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		F940EA592058148300266753 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		F940EA5A2058148300266753 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		F940EA5B2058148300266753 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F940EA5C2058148300266753 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		F940EA5D2058148300266753 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
+		F940EA65205817DF00266753 /* RMNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMNavigationBar.swift; sourceTree = "<group>"; };
+		F940EA68205820DF00266753 /* RMTextFieldWithError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMTextFieldWithError.swift; sourceTree = "<group>"; };
+		F940EA6B2058239100266753 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F940EA6F205827AD00266753 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		F940EA71205828ED00266753 /* AlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRouter.swift; sourceTree = "<group>"; };
+		F940EC1A2059335E00266753 /* RegisterPatientPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientPresenter.swift; sourceTree = "<group>"; };
+		F940EC1B2059335E00266753 /* RegisterPatientWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientWorker.swift; sourceTree = "<group>"; };
+		F940EC1C2059335E00266753 /* RegisterPatientRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientRouter.swift; sourceTree = "<group>"; };
+		F940EC1D2059335E00266753 /* RegisterPatientModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientModels.swift; sourceTree = "<group>"; };
+		F940EC1E2059335E00266753 /* RegisterPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientViewController.swift; sourceTree = "<group>"; };
+		F940EC1F2059335E00266753 /* RegisterPatientInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientInteractor.swift; sourceTree = "<group>"; };
+		F940EC202059335E00266753 /* RegisterPatientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPatientConfigurator.swift; sourceTree = "<group>"; };
+		F940EC28205937CD00266753 /* PhotoTakeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTakeRouter.swift; sourceTree = "<group>"; };
+		F940EC2A20595A1100266753 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F940EC2C205963ED00266753 /* AlamofireExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireExtension.swift; sourceTree = "<group>"; };
+		F940EC2E20596CAE00266753 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F940EC30205A5BC200266753 /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
+		F940EC31205A5BC200266753 /* ForgotPasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWorker.swift; sourceTree = "<group>"; };
+		F940EC32205A5BC200266753 /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
+		F940EC33205A5BC200266753 /* ForgotPasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModels.swift; sourceTree = "<group>"; };
+		F940EC34205A5BC200266753 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		F940EC35205A5BC200266753 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		F940EC36205A5BC200266753 /* ForgotPasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfigurator.swift; sourceTree = "<group>"; };
+		F940EC41205A9BFF00266753 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		F940EC42205A9BFF00266753 /* MainScreenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWorker.swift; sourceTree = "<group>"; };
+		F940EC43205A9BFF00266753 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		F940EC44205A9BFF00266753 /* MainScreenModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModels.swift; sourceTree = "<group>"; };
+		F940EC45205A9BFF00266753 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		F940EC46205A9BFF00266753 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		F940EC47205A9BFF00266753 /* MainScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenConfigurator.swift; sourceTree = "<group>"; };
+		F940EC51205A9D8E00266753 /* AppStartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartRouter.swift; sourceTree = "<group>"; };
+		F940EC53205AB9EC00266753 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		F940EC54205AB9EC00266753 /* SplashWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWorker.swift; sourceTree = "<group>"; };
+		F940EC55205AB9EC00266753 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		F940EC56205AB9EC00266753 /* SplashModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModels.swift; sourceTree = "<group>"; };
+		F940EC57205AB9EC00266753 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F940EC58205AB9EC00266753 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		F940EC59205AB9EC00266753 /* SplashConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConfigurator.swift; sourceTree = "<group>"; };
+		F940EC64205AC04700266753 /* KeychainExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainExtension.swift; sourceTree = "<group>"; };
+		F940EC67205AEDD600266753 /* DrawerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerPresenter.swift; sourceTree = "<group>"; };
+		F940EC68205AEDD600266753 /* DrawerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerWorker.swift; sourceTree = "<group>"; };
+		F940EC69205AEDD600266753 /* DrawerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerRouter.swift; sourceTree = "<group>"; };
+		F940EC6A205AEDD600266753 /* DrawerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerModels.swift; sourceTree = "<group>"; };
+		F940EC6B205AEDD600266753 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		F940EC6C205AEDD600266753 /* DrawerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerInteractor.swift; sourceTree = "<group>"; };
+		F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigurator.swift; sourceTree = "<group>"; };
+		F940EC75205BBBD600266753 /* RMGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGradientView.swift; sourceTree = "<group>"; };
+		F940EC77205BEA4A00266753 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F9753760205FCFAA003DC80E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		F9753763205FD509003DC80E /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorPresenter.swift; sourceTree = "<group>"; };
+		F9753766205FDADE003DC80E /* RegisterDoctorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorWorker.swift; sourceTree = "<group>"; };
+		F9753767205FDADE003DC80E /* RegisterDoctorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorRouter.swift; sourceTree = "<group>"; };
+		F9753768205FDADE003DC80E /* RegisterDoctorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorModels.swift; sourceTree = "<group>"; };
+		F9753769205FDADE003DC80E /* RegisterDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorViewController.swift; sourceTree = "<group>"; };
+		F975376A205FDADE003DC80E /* RegisterDoctorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorInteractor.swift; sourceTree = "<group>"; };
+		F975376B205FDADE003DC80E /* RegisterDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorConfigurator.swift; sourceTree = "<group>"; };
+		F9753776205FEA70003DC80E /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
+		F9753778205FF24B003DC80E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		F9A9F2A3204D5897006E8999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F9CA96AB205FCA5200CB4B68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,14 +226,272 @@
 		F9093A6F204992CB00CB041A /* Rozenamah */ = {
 			isa = PBXGroup;
 			children = (
+				F9A9F2A0204D5881006E8999 /* Common */,
+				F9A9F297204D57FA006E8999 /* Scenes */,
 				F9093A70204992CB00CB041A /* AppDelegate.swift */,
-				F9093A72204992CB00CB041A /* ViewController.swift */,
-				F9093A74204992CB00CB041A /* Main.storyboard */,
+				F940EC2A20595A1100266753 /* API.swift */,
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
 				F9093A79204992CB00CB041A /* LaunchScreen.storyboard */,
 				F9093A7C204992CB00CB041A /* Info.plist */,
 			);
 			path = Rozenamah;
+			sourceTree = "<group>";
+		};
+		F940EA482057EE9300266753 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA492058147000266753 /* WelcomePresenter.swift */,
+				F940EA4A2058147000266753 /* WelcomeWorker.swift */,
+				F940EA4B2058147000266753 /* WelcomeRouter.swift */,
+				F940EA4C2058147000266753 /* WelcomeModels.swift */,
+				F940EA4D2058147000266753 /* WelcomeViewController.swift */,
+				F940EA4E2058147000266753 /* WelcomeInteractor.swift */,
+				F940EA4F2058147000266753 /* WelcomeConfigurator.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		F940EA67205820CF00266753 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA6E2058278E00266753 /* Validators */,
+				F940EA6D2058278800266753 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F940EA6A2058237A00266753 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA6B2058239100266753 /* UIColorExtension.swift */,
+				F940EC2C205963ED00266753 /* AlamofireExtension.swift */,
+				F940EC64205AC04700266753 /* KeychainExtension.swift */,
+				F9753776205FEA70003DC80E /* UIWindowExtension.swift */,
+				F9753778205FF24B003DC80E /* UIButtonExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F940EA6D2058278800266753 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA68205820DF00266753 /* RMTextFieldWithError.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F940EA6E2058278E00266753 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA6F205827AD00266753 /* EmailValidation.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		F940EC192059334100266753 /* RegisterPatient */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC1A2059335E00266753 /* RegisterPatientPresenter.swift */,
+				F940EC1B2059335E00266753 /* RegisterPatientWorker.swift */,
+				F940EC1C2059335E00266753 /* RegisterPatientRouter.swift */,
+				F940EC1D2059335E00266753 /* RegisterPatientModels.swift */,
+				F940EC1E2059335E00266753 /* RegisterPatientViewController.swift */,
+				F940EC1F2059335E00266753 /* RegisterPatientInteractor.swift */,
+				F940EC202059335E00266753 /* RegisterPatientConfigurator.swift */,
+			);
+			path = RegisterPatient;
+			sourceTree = "<group>";
+		};
+		F940EC3F205A9BDB00266753 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC41205A9BFF00266753 /* MainScreenPresenter.swift */,
+				F940EC42205A9BFF00266753 /* MainScreenWorker.swift */,
+				F940EC43205A9BFF00266753 /* MainScreenRouter.swift */,
+				F940EC44205A9BFF00266753 /* MainScreenModels.swift */,
+				F940EC45205A9BFF00266753 /* MainScreenViewController.swift */,
+				F940EC46205A9BFF00266753 /* MainScreenInteractor.swift */,
+				F940EC47205A9BFF00266753 /* MainScreenConfigurator.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		F940EC66205AEDC600266753 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC67205AEDD600266753 /* DrawerPresenter.swift */,
+				F940EC68205AEDD600266753 /* DrawerWorker.swift */,
+				F940EC69205AEDD600266753 /* DrawerRouter.swift */,
+				F940EC6A205AEDD600266753 /* DrawerModels.swift */,
+				F940EC6B205AEDD600266753 /* DrawerViewController.swift */,
+				F940EC6C205AEDD600266753 /* DrawerInteractor.swift */,
+				F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		F975375E205FCE63003DC80E /* RegisterDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */,
+				F9753766205FDADE003DC80E /* RegisterDoctorWorker.swift */,
+				F9753767205FDADE003DC80E /* RegisterDoctorRouter.swift */,
+				F9753768205FDADE003DC80E /* RegisterDoctorModels.swift */,
+				F9753769205FDADE003DC80E /* RegisterDoctorViewController.swift */,
+				F975376A205FDADE003DC80E /* RegisterDoctorInteractor.swift */,
+				F975376B205FDADE003DC80E /* RegisterDoctorConfigurator.swift */,
+			);
+			path = RegisterDoctor;
+			sourceTree = "<group>";
+		};
+		F975375F205FCF9E003DC80E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F9753762205FD4EC003DC80E /* Terms */,
+				F9753760205FCFAA003DC80E /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F9753762205FD4EC003DC80E /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				F9753763205FD509003DC80E /* TermsViewController.swift */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		F9A9F296204D57F3006E8999 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA65205817DF00266753 /* RMNavigationBar.swift */,
+				F940EC75205BBBD600266753 /* RMGradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F9A9F297204D57FA006E8999 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F975375F205FCF9E003DC80E /* Settings */,
+				F9A9F299204D5810006E8999 /* Main */,
+				F9A9F298204D57FF006E8999 /* Session */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F9A9F298204D57FF006E8999 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA462057E8F700266753 /* Session.storyboard */,
+				F940EA67205820CF00266753 /* Common */,
+				F940EA482057EE9300266753 /* Welcome */,
+				F9A9F29D204D584E006E8999 /* Splash */,
+				F9A9F29C204D5843006E8999 /* ForgotPassword */,
+				F9A9F29B204D583F006E8999 /* Register */,
+				F9A9F29A204D5815006E8999 /* Login */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		F9A9F299204D5810006E8999 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC66205AEDC600266753 /* Drawer */,
+				F940EC3F205A9BDB00266753 /* MainScreen */,
+				F940EC2E20596CAE00266753 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F9A9F29A204D5815006E8999 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F940EA572058148300266753 /* LoginPresenter.swift */,
+				F940EA582058148300266753 /* LoginWorker.swift */,
+				F940EA592058148300266753 /* LoginRouter.swift */,
+				F940EA5A2058148300266753 /* LoginModels.swift */,
+				F940EA5B2058148300266753 /* LoginViewController.swift */,
+				F940EA5C2058148300266753 /* LoginInteractor.swift */,
+				F940EA5D2058148300266753 /* LoginConfigurator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F9A9F29B204D583F006E8999 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F975375E205FCE63003DC80E /* RegisterDoctor */,
+				F940EC192059334100266753 /* RegisterPatient */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F9A9F29C204D5843006E8999 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC30205A5BC200266753 /* ForgotPasswordPresenter.swift */,
+				F940EC31205A5BC200266753 /* ForgotPasswordWorker.swift */,
+				F940EC32205A5BC200266753 /* ForgotPasswordRouter.swift */,
+				F940EC33205A5BC200266753 /* ForgotPasswordModels.swift */,
+				F940EC34205A5BC200266753 /* ForgotPasswordViewController.swift */,
+				F940EC35205A5BC200266753 /* ForgotPasswordInteractor.swift */,
+				F940EC36205A5BC200266753 /* ForgotPasswordConfigurator.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		F9A9F29D204D584E006E8999 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC53205AB9EC00266753 /* SplashPresenter.swift */,
+				F940EC54205AB9EC00266753 /* SplashWorker.swift */,
+				F940EC55205AB9EC00266753 /* SplashRouter.swift */,
+				F940EC56205AB9EC00266753 /* SplashModels.swift */,
+				F940EC57205AB9EC00266753 /* SplashViewController.swift */,
+				F940EC58205AB9EC00266753 /* SplashInteractor.swift */,
+				F940EC59205AB9EC00266753 /* SplashConfigurator.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		F9A9F2A0204D5881006E8999 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F9CA96AA205FCA4800CB4B68 /* Storage */,
+				F940EA6A2058237A00266753 /* Extension */,
+				F9A9F2A2204D588C006E8999 /* Models */,
+				F9A9F2A1204D5887006E8999 /* Routers */,
+				F9A9F296204D57F3006E8999 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F9A9F2A1204D5887006E8999 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				F9A9F2A3204D5897006E8999 /* Router.swift */,
+				F940EA71205828ED00266753 /* AlertRouter.swift */,
+				F940EC28205937CD00266753 /* PhotoTakeRouter.swift */,
+				F940EC51205A9D8E00266753 /* AppStartRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		F9A9F2A2204D588C006E8999 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F940EC77205BEA4A00266753 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F9CA96AA205FCA4800CB4B68 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F9CA96AB205FCA5200CB4B68 /* Settings.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +507,7 @@
 				F9093A6B204992CB00CB041A /* Resources */,
 				87CC8A2E5D54EE3735BA8D9D /* [CP] Embed Pods Frameworks */,
 				85ECF47341E4347EB6C1F628 /* [CP] Copy Pods Resources */,
+				F940EC3E205A872700266753 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -152,7 +559,9 @@
 			files = (
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
-				F9093A76204992CB00CB041A /* Main.storyboard in Resources */,
+				F940EA472057E8F700266753 /* Session.storyboard in Resources */,
+				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
+				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +592,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -199,13 +611,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCake/SwiftCake.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCake.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -214,6 +636,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F940EC3E205A872700266753 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3bad39c7450316381cb752e8697bfd31879096e1 69c933c66f36599e4a3956ec99891a9b65fe89efccf3e57454ae257e846bb3c0";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -221,22 +656,86 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9093A73204992CB00CB041A /* ViewController.swift in Sources */,
+				F940EA542058147000266753 /* WelcomeViewController.swift in Sources */,
+				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
+				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
+				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
+				F940EC6F205AEDD600266753 /* DrawerWorker.swift in Sources */,
+				F940EC5B205AB9EC00266753 /* SplashWorker.swift in Sources */,
+				F940EC232059335E00266753 /* RegisterPatientRouter.swift in Sources */,
+				F940EA532058147000266753 /* WelcomeModels.swift in Sources */,
+				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
+				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
+				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
+				F940EA72205828ED00266753 /* AlertRouter.swift in Sources */,
+				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
+				F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */,
+				F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */,
+				F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */,
+				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
+				F940EA502058147000266753 /* WelcomePresenter.swift in Sources */,
+				F940EC48205A9BFF00266753 /* MainScreenPresenter.swift in Sources */,
+				F940EA5E2058148300266753 /* LoginPresenter.swift in Sources */,
+				F9A9F2A4204D5897006E8999 /* Router.swift in Sources */,
+				F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */,
+				F940EC4E205A9BFF00266753 /* MainScreenConfigurator.swift in Sources */,
+				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
+				F940EA522058147000266753 /* WelcomeRouter.swift in Sources */,
+				F940EC4B205A9BFF00266753 /* MainScreenModels.swift in Sources */,
+				F940EC49205A9BFF00266753 /* MainScreenWorker.swift in Sources */,
+				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
+				F940EC212059335E00266753 /* RegisterPatientPresenter.swift in Sources */,
+				F940EA552058147000266753 /* WelcomeInteractor.swift in Sources */,
+				F9753764205FD509003DC80E /* TermsViewController.swift in Sources */,
+				F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */,
+				F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */,
+				F940EC3D205A5BC200266753 /* ForgotPasswordConfigurator.swift in Sources */,
 				F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */,
+				F940EA612058148300266753 /* LoginModels.swift in Sources */,
+				F940EC4C205A9BFF00266753 /* MainScreenViewController.swift in Sources */,
+				F940EC4D205A9BFF00266753 /* MainScreenInteractor.swift in Sources */,
+				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
+				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
+				F940EC5F205AB9EC00266753 /* SplashInteractor.swift in Sources */,
+				F940EA512058147000266753 /* WelcomeWorker.swift in Sources */,
+				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
+				F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */,
+				F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */,
+				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
+				F940EC78205BEA4A00266753 /* User.swift in Sources */,
+				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
+				F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */,
+				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
+				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
+				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
+				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
+				F940EC4A205A9BFF00266753 /* MainScreenRouter.swift in Sources */,
+				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
+				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,
+				F940EC2B20595A1100266753 /* API.swift in Sources */,
+				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
+				F940EA642058148300266753 /* LoginConfigurator.swift in Sources */,
+				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
+				F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */,
+				F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */,
+				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
+				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
+				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,
+				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
+				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
+				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,
+				F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */,
+				F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */,
+				F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */,
+				F940EC52205A9D8E00266753 /* AppStartRouter.swift in Sources */,
+				F940EA5F2058148300266753 /* LoginWorker.swift in Sources */,
+				F940EC262059335E00266753 /* RegisterPatientInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F9093A74204992CB00CB041A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9093A75204992CB00CB041A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F9093A79204992CB00CB041A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,7 +862,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J5AJCLAX66;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -382,7 +881,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J5AJCLAX66;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah;
 				PRODUCT_NAME = "$(TARGET_NAME)";

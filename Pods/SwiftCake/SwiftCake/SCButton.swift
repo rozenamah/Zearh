@@ -33,12 +33,6 @@ open class SCButton: UIButton, SCRoundedBorderedView {
         }
     }
     
-    @IBInspectable open var masksToBounds: Bool = false {
-        didSet {
-            updateMasksToBounds(with: masksToBounds)
-        }
-    }
-    
     @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
             updateBorderColor(with: borderColor)

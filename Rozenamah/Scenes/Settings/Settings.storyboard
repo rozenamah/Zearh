@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Terms & Conditions-->
+        <scene sceneID="UwG-oL-81Q">
+            <objects>
+                <viewController id="Bhe-py-QR1" customClass="TermsViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Tc-w1-I9K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-TC-vAk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aJ7-Y6-Tfu" firstAttribute="trailing" secondItem="VKy-TC-vAk" secondAttribute="trailing" id="2ar-dW-nOq"/>
+                            <constraint firstAttribute="bottom" secondItem="VKy-TC-vAk" secondAttribute="bottom" id="FqZ-Cv-MIF"/>
+                            <constraint firstItem="VKy-TC-vAk" firstAttribute="leading" secondItem="5Tc-w1-I9K" secondAttribute="leading" id="H1a-TV-fYq"/>
+                            <constraint firstItem="VKy-TC-vAk" firstAttribute="top" secondItem="5Tc-w1-I9K" secondAttribute="top" id="Te2-jV-wZM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aJ7-Y6-Tfu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms &amp; Conditions" id="Mtn-UG-8nR">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="I5l-ob-4Xl">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dismissAction" destination="Bhe-py-QR1" id="87p-Up-zFb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="VKy-TC-vAk" id="ODJ-bp-5Ck"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dZ-0o-NBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357.60000000000002" y="142.57871064467767"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Mq-NH-wQq">
+            <objects>
+                <navigationController storyboardIdentifier="terms_vc" id="O4b-1S-awH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="8l2-DS-rAq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Bhe-py-QR1" kind="relationship" relationship="rootViewController" id="2pG-pD-905"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0o4-UY-gHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-357" y="144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="19" height="19"/>
+    </resources>
+</document>
