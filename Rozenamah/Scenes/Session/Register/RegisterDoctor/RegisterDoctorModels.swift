@@ -1,12 +1,21 @@
 import UIKit
 
-enum Gender {
-    case male
-    case female
+enum Profession: String {
+    case doctor = "Doctor"
+    case nurse = "Nurse"
+    
+    static var all: [Profession] {
+        return [.doctor, .nurse, ]
+    }
+}
+
+enum Gender: String {
+    case male = "male"
+    case female = "female"
 }
 
 final class RegisterDoctorForm: RegisterForm {
-    var profession: String?
+    var profession: Profession?
     var specialization: String?
     var price: Int?
     var gender: Gender?

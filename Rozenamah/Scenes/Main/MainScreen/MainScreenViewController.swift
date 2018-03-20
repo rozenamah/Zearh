@@ -2,7 +2,8 @@ import UIKit
 import GoogleMaps
 
 protocol MainScreenDisplayLogic: class {
-    func moveToPosition(_ cameraUpdate: GMSCameraPosition)
+    func moveToPosition(_ cameraUpdate: GMSCameraUpdate)
+    func animateToPosition(_ cameraUpdate: GMSCameraPosition)
 }
 
 class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
@@ -31,6 +32,8 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        interactor?.registerForNotifications()
     }
 
     // MARK: View customization
@@ -68,7 +71,13 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     
     // MARK: Presenter methods
     
-    func moveToPosition(_ cameraUpdate: GMSCameraPosition) {
+    /// Move map without animation
+    func moveToPosition(_ cameraUpdate: GMSCameraUpdate) {
+        mapView.moveCamera(cameraUpdate)
+    }
+    
+    /// Move map with animation
+    func animateToPosition(_ cameraUpdate: GMSCameraPosition) {
         mapView.animate(to: cameraUpdate)
     }
 }

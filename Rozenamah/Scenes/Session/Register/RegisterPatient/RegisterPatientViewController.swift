@@ -85,7 +85,11 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     }
     
     @objc func nextStepAction(_ sender: Any) {
-        router?.navigateToDoctorStep2()
+        if termsAndConditionsCheckbox.isSelected {
+            router?.navigateToDoctorStep2()
+        } else {
+            router?.showAlert(message: "You need to accept Terms & Conditions")
+        }
     }
     
     @IBAction func createAccountAction(_ sender: Any) {

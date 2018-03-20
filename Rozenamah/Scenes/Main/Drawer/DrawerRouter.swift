@@ -7,10 +7,35 @@ class DrawerRouter: Router, AppStartRouter {
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+        case "terms_segue":
+            let navVC = segue.destination as? UINavigationController
+            let termsVC = navVC?.visibleViewController as? TermsViewController
+            termsVC?.source = .terms
+        case "privacy_segue":
+            let navVC = segue.destination as? UINavigationController
+            let termsVC = navVC?.visibleViewController as? TermsViewController
+            termsVC?.source = .privacyPolicy
+        default:
+            break
+        }
     }
 
     // MARK: Navigation
+    
+    func navigateToPrivacyPolicy() {
+        viewController?.toggleLeft()
+        viewController?.performSegue(withIdentifier: "privacy_segue", sender: nil)
+    }
+    
+    func navigateToTermsAndConditions() {
+        viewController?.toggleLeft()
+        viewController?.performSegue(withIdentifier: "terms_segue", sender: nil)
+    }
     
     func showLogoutAlert() {
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to log out a user?", preferredStyle: .alert)

@@ -1,9 +1,11 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import UserNotifications
 
 protocol MainScreenBusinessLogic {
     func returnToUserLocation()
+    func registerForNotifications()
 }
 
 class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
@@ -24,9 +26,31 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
         locationManager.requestAlwaysAuthorization()
     }
     
+    func registerForNotifications() {
+        // Ask user about push notifications permission
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            guard granted else {
+                return
+            }
+            self.getNotificationSettings()
+        }
+    }
+    
+    private func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else {
+                return
+            }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+    
     func returnToUserLocation() {
         if let myLocation = locationManager.location {
-            presenter?.moveCameraToPosition(location: myLocation)
+            presenter?.moveCameraToPosition(location: myLocation, withAnimation: true)
         }
     }
     
@@ -60,7 +84,7 @@ extension MainScreenInteractor: CLLocationManagerDelegate {
     
         if let firstLocation = locations.first, !firstLocationDisplayed {
             firstLocationDisplayed = true
-            presenter?.moveCameraToPosition(location: firstLocation)
+            presenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
         }
     }
     

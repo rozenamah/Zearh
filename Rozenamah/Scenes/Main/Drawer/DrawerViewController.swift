@@ -10,6 +10,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
     
     // MARK: Properties
     var interactor: DrawerBusinessLogic?
@@ -45,10 +46,22 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
             
         }
         
+        if iPhoneDetection.deviceType() == .iphone5 {
+            stackView.spacing = 8
+        }
+        
     }
 
     // MARK: Event handling
 
+    @IBAction func privacyPolicyAction(_ sender: Any) {
+        router?.navigateToPrivacyPolicy()
+    }
+    
+    @IBAction func termsAction(_ sender: Any) {
+        router?.navigateToTermsAndConditions()
+    }
+    
     @IBAction func logoutAction(_ sender: Any) {
         router?.showLogoutAlert()
     }

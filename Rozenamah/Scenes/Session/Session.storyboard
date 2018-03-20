@@ -983,10 +983,14 @@
                                                             <constraint firstAttribute="width" constant="231" id="7ff-12-iCc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
                                                         <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="18" maxY="0.0"/>
                                                         <state key="normal" title="Select one...">
                                                             <color key="titleColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1038,10 +1042,14 @@
                                                             <constraint firstAttribute="width" constant="231" id="tWQ-7y-WVs"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
                                                         <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="18" maxY="0.0"/>
                                                         <state key="normal" title="Select one...">
                                                             <color key="titleColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1147,10 +1155,14 @@
                                                             <constraint firstAttribute="width" constant="231" id="yPI-Mu-0Od"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
                                                         <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="18" maxY="0.0"/>
                                                         <state key="normal" title="Select one...">
                                                             <color key="titleColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1243,8 +1255,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="genderButton" destination="a1d-9M-7HN" id="mzb-GX-7vs"/>
                         <outlet property="pdfImageView" destination="qJm-3f-RKc" id="g6O-Hf-9xA"/>
                         <outlet property="pdfUploadButton" destination="9UC-0P-zFR" id="eci-JI-V7S"/>
+                        <outlet property="priceTextField" destination="cGy-q6-6Nb" id="dAr-cN-LCj"/>
+                        <outlet property="professionButton" destination="eSR-TQ-g1z" id="etv-L4-SqI"/>
+                        <outlet property="specializationButton" destination="nYv-Wp-F0E" id="oHq-lP-9Cx"/>
+                        <outlet property="uploadTitleLabel" destination="C1j-OZ-PSm" id="ylH-Zn-w9z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qE-To-WAh" userLabel="First Responder" sceneMemberID="firstResponder"/>

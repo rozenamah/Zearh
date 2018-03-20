@@ -3,7 +3,7 @@ import CoreLocation
 import GoogleMaps
 
 protocol MainScreenPresentationLogic {
-    func moveCameraToPosition(location: CLLocation)
+    func moveCameraToPosition(location: CLLocation, withAnimation animation: Bool)
 }
 
 class MainScreenPresenter: MainScreenPresentationLogic {
@@ -11,9 +11,15 @@ class MainScreenPresenter: MainScreenPresentationLogic {
 
 	// MARK: Presentation logic
     
-    func moveCameraToPosition(location: CLLocation) {
-        let cameraUpdate = GMSCameraPosition(target: location.coordinate, zoom: 15.0, bearing: 0, viewingAngle: 0)
-        viewController?.moveToPosition(cameraUpdate)
+    func moveCameraToPosition(location: CLLocation, withAnimation animation: Bool) {
+        let position = GMSCameraPosition(target: location.coordinate, zoom: 15.0, bearing: 0, viewingAngle: 0)
+        
+        if animation {
+            viewController?.animateToPosition(position)
+        } else {
+            let update = GMSCameraUpdate.setCamera(position)
+            viewController?.moveToPosition(update)
+        }
     }
 	
 }

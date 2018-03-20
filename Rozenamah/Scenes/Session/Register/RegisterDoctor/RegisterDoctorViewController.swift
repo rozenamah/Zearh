@@ -8,6 +8,11 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     // MARK: Outlets
     @IBOutlet weak var pdfImageView: UIImageView!
     @IBOutlet weak var pdfUploadButton: UIButton!
+    @IBOutlet weak var professionButton: UIButton!
+    @IBOutlet weak var specializationButton: UIButton!
+    @IBOutlet weak var genderButton: UIButton!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var uploadTitleLabel: UILabel!
     
     // MARK: Properties
     var interactor: RegisterDoctorBusinessLogic?
@@ -55,15 +60,23 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     }
     
     @IBAction func professionAction(_ sender: Any) {
+        router?.showProfessionSelection()
     }
     
     @IBAction func specializatioAction(_ sender: Any) {
+        router?.showSpecializationSelection()
     }
     
     @IBAction func genderAction(_ sender: Any) {
+        router?.showGenderSelection()
     }
     
     @IBAction func priceChanged(_ sender: UITextField) {
+        if let text = sender.text, let price = Int(text) {
+            registerForm.price = price
+        } else {
+            registerForm.price = nil
+        }
     }
     
     @IBAction func createAccountAction(_ sender: Any) {
@@ -74,14 +87,46 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     // MARK: Presenter methods
     
+    func professionSelected(_ profession: Profession) {
+        registerForm.profession = profession
+        
+        professionButton.setTitle(profession.rawValue, for: .selected)
+        professionButton.isSelected = true
+    }
+    
+    func genderSelected(_ gender: Gender) {
+        registerForm.gender = gender
+        
+        genderButton.setTitle(gender.rawValue, for: .selected)
+        genderButton.isSelected = true
+    }
+    
+    func specializationSelected(_ specialization: String) {
+        registerForm.specialization = specialization
+        
+        specializationButton.setTitle(specialization, for: .selected)
+        specializationButton.isSelected = true
+    }
+    
     func pdfFileSelected(inData data: Data) {
         pdfImageView.isHidden = false
         pdfUploadButton.isSelected = true
+        uploadTitleLabel.text = "Change your document"
         
         registerForm.pdf = data
     }
 }
 
 extension RegisterDoctorViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // Allow only backspace and numbers
+        if string.isEmpty || Int(string) != nil {
+            return true
+        }
+        return false
+        
+    }
     
 }
