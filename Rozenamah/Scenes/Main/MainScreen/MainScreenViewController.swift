@@ -10,6 +10,9 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
 
     // MARK: Outlets
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var bottomContainerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
     // MARK: Properties
     var interactor: MainScreenBusinessLogic?
@@ -35,6 +38,8 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
         
         interactor?.registerForNotifications()
     }
+    
+    
 
     // MARK: View customization
 
@@ -48,12 +53,16 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
             let statusBarHeight = UIApplication.shared.statusBarFrame.height
             frame.origin.x = screenFrame.width - 16 - frame.width
             frame.origin.y = statusBarHeight + 26
-            if #available(iOS 11, *) {
-                 frame.origin.y -= view.safeAreaInsets.top
+            if iPhoneDetection.deviceType() == .iphoneX {
+                frame.origin.y = -42
             }
             
             logoButton.frame = frame
         }
+        
+        // Hide container view
+        containerView.isHidden = true
+        bottomContainerConstraint.constant = 0
     }
 
     // MARK: Event handling
@@ -63,6 +72,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     }
     
     @IBAction func callDoctorAction(_ sender: Any) {
+        router?.navigateToCallDoctor()
     }
     
     @IBAction func locateMeAction(_ sender: Any) {

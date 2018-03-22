@@ -19,7 +19,16 @@ class RegisterPatientRouter: NSObject, Router, AlertRouter, PhotoTakeRouter, App
             termsVC?.source = .terms
         case "doctor_step_segue":
             let registerStep2 = segue.destination as? RegisterDoctorViewController
-            registerStep2?.registerForm = viewController?.registerForm as? RegisterDoctorForm
+            let doctorForm = viewController?.registerForm as? RegisterDoctorForm
+            
+            // Reset doctor form if we for example, returned and access next step again
+            doctorForm?.price = nil
+            doctorForm?.profession = nil
+            doctorForm?.specialization = nil
+            doctorForm?.pdf = nil
+            doctorForm?.gender = nil
+            
+            registerStep2?.registerForm = doctorForm
         default:
             break
         }

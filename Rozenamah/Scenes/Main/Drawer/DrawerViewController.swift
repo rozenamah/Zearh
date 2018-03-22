@@ -40,10 +40,9 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     fileprivate func setupView() {
         
         if let user = User.current {
-            
             nameLabel.text = user.fullname
             emailLabel.text = user.email
-            
+            avatarImageView.setAvatar(for: user)
         }
         
         if iPhoneDetection.deviceType() == .iphone5 {

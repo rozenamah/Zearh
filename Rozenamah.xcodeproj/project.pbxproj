@@ -86,8 +86,23 @@
 		F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975376B205FDADE003DC80E /* RegisterDoctorConfigurator.swift */; };
 		F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753776205FEA70003DC80E /* UIWindowExtension.swift */; };
 		F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753778205FF24B003DC80E /* UIButtonExtension.swift */; };
+		F97B71F52062B5960073A968 /* CallDoctorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71EE2062B5960073A968 /* CallDoctorPresenter.swift */; };
+		F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71EF2062B5960073A968 /* CallDoctorWorker.swift */; };
+		F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F02062B5960073A968 /* CallDoctorRouter.swift */; };
+		F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F12062B5960073A968 /* CallDoctorModels.swift */; };
+		F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F22062B5960073A968 /* CallDoctorViewController.swift */; };
+		F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F32062B5960073A968 /* CallDoctorInteractor.swift */; };
+		F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F42062B5960073A968 /* CallDoctorConfigurator.swift */; };
+		F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B73A22063A9040073A968 /* KingfisherExtension.swift */; };
 		F9A9F2A4204D5897006E8999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2A3204D5897006E8999 /* Router.swift */; };
 		F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA96AB205FCA5200CB4B68 /* Settings.swift */; };
+		F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */; };
+		F9CEDE532063F139004ED0C7 /* ReportWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4C2063F139004ED0C7 /* ReportWorker.swift */; };
+		F9CEDE542063F139004ED0C7 /* ReportRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4D2063F139004ED0C7 /* ReportRouter.swift */; };
+		F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4E2063F139004ED0C7 /* ReportModels.swift */; };
+		F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4F2063F139004ED0C7 /* ReportViewController.swift */; };
+		F9CEDE572063F139004ED0C7 /* ReportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE502063F139004ED0C7 /* ReportInteractor.swift */; };
+		F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE512063F139004ED0C7 /* ReportConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,8 +190,23 @@
 		F975376B205FDADE003DC80E /* RegisterDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorConfigurator.swift; sourceTree = "<group>"; };
 		F9753776205FEA70003DC80E /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		F9753778205FF24B003DC80E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		F97B71EE2062B5960073A968 /* CallDoctorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorPresenter.swift; sourceTree = "<group>"; };
+		F97B71EF2062B5960073A968 /* CallDoctorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorWorker.swift; sourceTree = "<group>"; };
+		F97B71F02062B5960073A968 /* CallDoctorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorRouter.swift; sourceTree = "<group>"; };
+		F97B71F12062B5960073A968 /* CallDoctorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorModels.swift; sourceTree = "<group>"; };
+		F97B71F22062B5960073A968 /* CallDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorViewController.swift; sourceTree = "<group>"; };
+		F97B71F32062B5960073A968 /* CallDoctorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorInteractor.swift; sourceTree = "<group>"; };
+		F97B71F42062B5960073A968 /* CallDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorConfigurator.swift; sourceTree = "<group>"; };
+		F97B73A22063A9040073A968 /* KingfisherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherExtension.swift; sourceTree = "<group>"; };
 		F9A9F2A3204D5897006E8999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F9CA96AB205FCA5200CB4B68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
+		F9CEDE4C2063F139004ED0C7 /* ReportWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportWorker.swift; sourceTree = "<group>"; };
+		F9CEDE4D2063F139004ED0C7 /* ReportRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRouter.swift; sourceTree = "<group>"; };
+		F9CEDE4E2063F139004ED0C7 /* ReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModels.swift; sourceTree = "<group>"; };
+		F9CEDE4F2063F139004ED0C7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		F9CEDE502063F139004ED0C7 /* ReportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportInteractor.swift; sourceTree = "<group>"; };
+		F9CEDE512063F139004ED0C7 /* ReportConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +302,7 @@
 				F940EC64205AC04700266753 /* KeychainExtension.swift */,
 				F9753776205FEA70003DC80E /* UIWindowExtension.swift */,
 				F9753778205FF24B003DC80E /* UIButtonExtension.swift */,
+				F97B73A22063A9040073A968 /* KingfisherExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -309,6 +340,7 @@
 		F940EC3F205A9BDB00266753 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F95F140C2061543600CDC2E5 /* Patient */,
 				F940EC41205A9BFF00266753 /* MainScreenPresenter.swift */,
 				F940EC42205A9BFF00266753 /* MainScreenWorker.swift */,
 				F940EC43205A9BFF00266753 /* MainScreenRouter.swift */,
@@ -343,6 +375,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		F95F140C2061543600CDC2E5 /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				F97B71ED2062B5840073A968 /* CallDoctor */,
+			);
+			path = Patient;
+			sourceTree = "<group>";
+		};
 		F975375E205FCE63003DC80E /* RegisterDoctor */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +400,7 @@
 		F975375F205FCF9E003DC80E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				F9CEDE4A2063F12D004ED0C7 /* Report */,
 				F9753762205FD4EC003DC80E /* Terms */,
 				F9753760205FCFAA003DC80E /* Settings.storyboard */,
 			);
@@ -372,6 +413,20 @@
 				F9753763205FD509003DC80E /* TermsViewController.swift */,
 			);
 			path = Terms;
+			sourceTree = "<group>";
+		};
+		F97B71ED2062B5840073A968 /* CallDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				F97B71EE2062B5960073A968 /* CallDoctorPresenter.swift */,
+				F97B71EF2062B5960073A968 /* CallDoctorWorker.swift */,
+				F97B71F02062B5960073A968 /* CallDoctorRouter.swift */,
+				F97B71F12062B5960073A968 /* CallDoctorModels.swift */,
+				F97B71F22062B5960073A968 /* CallDoctorViewController.swift */,
+				F97B71F32062B5960073A968 /* CallDoctorInteractor.swift */,
+				F97B71F42062B5960073A968 /* CallDoctorConfigurator.swift */,
+			);
+			path = CallDoctor;
 			sourceTree = "<group>";
 		};
 		F9A9F296204D57F3006E8999 /* Views */ = {
@@ -505,6 +560,20 @@
 				F9CA96AB205FCA5200CB4B68 /* Settings.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F9CEDE4A2063F12D004ED0C7 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */,
+				F9CEDE4C2063F139004ED0C7 /* ReportWorker.swift */,
+				F9CEDE4D2063F139004ED0C7 /* ReportRouter.swift */,
+				F9CEDE4E2063F139004ED0C7 /* ReportModels.swift */,
+				F9CEDE4F2063F139004ED0C7 /* ReportViewController.swift */,
+				F9CEDE502063F139004ED0C7 /* ReportInteractor.swift */,
+				F9CEDE512063F139004ED0C7 /* ReportConfigurator.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,17 +746,23 @@
 				F940EA542058147000266753 /* WelcomeViewController.swift in Sources */,
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
 				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
+				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
 				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
+				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
+				F9CEDE542063F139004ED0C7 /* ReportRouter.swift in Sources */,
 				F940EC6F205AEDD600266753 /* DrawerWorker.swift in Sources */,
 				F940EC5B205AB9EC00266753 /* SplashWorker.swift in Sources */,
 				F940EC232059335E00266753 /* RegisterPatientRouter.swift in Sources */,
 				F940EA532058147000266753 /* WelcomeModels.swift in Sources */,
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
+				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
 				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				F940EA72205828ED00266753 /* AlertRouter.swift in Sources */,
 				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
+				F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */,
 				F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */,
+				F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */,
 				F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */,
 				F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */,
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
@@ -699,6 +774,7 @@
 				F940EC4E205A9BFF00266753 /* MainScreenConfigurator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
 				F940EA522058147000266753 /* WelcomeRouter.swift in Sources */,
+				F9CEDE532063F139004ED0C7 /* ReportWorker.swift in Sources */,
 				F940EC4B205A9BFF00266753 /* MainScreenModels.swift in Sources */,
 				F940EC49205A9BFF00266753 /* MainScreenWorker.swift in Sources */,
 				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
@@ -707,19 +783,24 @@
 				F9753764205FD509003DC80E /* TermsViewController.swift in Sources */,
 				F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */,
 				F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */,
+				F9CEDE572063F139004ED0C7 /* ReportInteractor.swift in Sources */,
 				F940EC3D205A5BC200266753 /* ForgotPasswordConfigurator.swift in Sources */,
 				F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */,
+				F97B71F52062B5960073A968 /* CallDoctorPresenter.swift in Sources */,
 				F940EA612058148300266753 /* LoginModels.swift in Sources */,
 				F940EC4C205A9BFF00266753 /* MainScreenViewController.swift in Sources */,
 				F940EC4D205A9BFF00266753 /* MainScreenInteractor.swift in Sources */,
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
 				F940EC5F205AB9EC00266753 /* SplashInteractor.swift in Sources */,
+				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
+				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
 				F940EA512058147000266753 /* WelcomeWorker.swift in Sources */,
 				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
 				F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */,
 				F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */,
 				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
+				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
 				F940EC78205BEA4A00266753 /* User.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
 				F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */,
@@ -733,6 +814,8 @@
 				F940EC2B20595A1100266753 /* API.swift in Sources */,
 				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
 				F940EA642058148300266753 /* LoginConfigurator.swift in Sources */,
+				F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */,
+				F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
 				F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */,
 				F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */,
@@ -746,6 +829,7 @@
 				F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */,
 				F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */,
 				F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */,
+				F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */,
 				F940EC52205A9D8E00266753 /* AppStartRouter.swift in Sources */,
 				F940EA5F2058148300266753 /* LoginWorker.swift in Sources */,
 				F940EC262059335E00266753 /* RegisterPatientInteractor.swift in Sources */,

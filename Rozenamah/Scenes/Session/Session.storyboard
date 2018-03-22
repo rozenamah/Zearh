@@ -809,13 +809,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email address to receive a link to reset your password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvx-vP-4ux">
-                                <rect key="frame" x="16" y="76" width="343" height="42.5"/>
+                                <rect key="frame" x="16" y="76" width="343" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kST-Tf-nPd" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
-                                <rect key="frame" x="16" y="148.5" width="343" height="47"/>
+                                <rect key="frame" x="16" y="147" width="343" height="47"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuv-VO-2Qw" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
@@ -866,7 +866,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dg-PU-bFy" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="221.5" width="343" height="39"/>
+                                <rect key="frame" x="16" y="220" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -924,19 +924,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="710"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register as doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj5-uN-A3M">
-                                                <rect key="frame" x="16" y="3" width="343" height="41"/>
+                                                <rect key="frame" x="15.5" y="3" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your licence in .pdf format" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1j-OZ-PSm">
-                                                <rect key="frame" x="101" y="83.5" width="258" height="42.5"/>
+                                                <rect key="frame" x="100.5" y="94.5" width="258" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ut-JB-uoc" customClass="SCButton" customModule="SwiftCake">
-                                                <rect key="frame" x="16" y="639" width="343" height="39"/>
+                                                <rect key="frame" x="15.5" y="639" width="343" height="39"/>
                                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -954,7 +954,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UC-0P-zFR">
-                                                <rect key="frame" x="16" y="76" width="57" height="57"/>
+                                                <rect key="frame" x="15.5" y="76" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="57" id="0PJ-Yk-pWd"/>
                                                     <constraint firstAttribute="width" constant="57" id="3Be-9F-q83"/>
@@ -966,7 +966,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUE-hc-jVe" userLabel="profession">
-                                                <rect key="frame" x="16" y="165" width="343" height="88"/>
+                                                <rect key="frame" x="15.5" y="165" width="343" height="88"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your profession " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-I3-NJo">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
@@ -975,13 +975,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="21r-uy-BhU">
-                                                        <rect key="frame" x="214" y="63" width="10" height="7"/>
+                                                        <rect key="frame" x="326" y="63" width="10" height="7"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSR-TQ-g1z" customClass="SCButton" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="45" width="231" height="43"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="231" id="7ff-12-iCc"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="45" width="343" height="43"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
@@ -1021,11 +1018,12 @@
                                                     <constraint firstItem="eSR-TQ-g1z" firstAttribute="top" secondItem="LIW-I3-NJo" secondAttribute="bottom" constant="24" id="ahb-Km-MMN"/>
                                                     <constraint firstItem="21r-uy-BhU" firstAttribute="centerY" secondItem="eSR-TQ-g1z" secondAttribute="centerY" id="atZ-e7-YRD"/>
                                                     <constraint firstAttribute="trailing" secondItem="LIW-I3-NJo" secondAttribute="trailing" id="dz6-J9-dmz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eSR-TQ-g1z" secondAttribute="trailing" id="gij-x2-g09"/>
                                                     <constraint firstItem="LIW-I3-NJo" firstAttribute="leading" secondItem="MUE-hc-jVe" secondAttribute="leading" id="qhh-4e-mUR"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvc-qH-LBI" userLabel="specialization">
-                                                <rect key="frame" x="16" y="283" width="343" height="88"/>
+                                                <rect key="frame" x="15.5" y="283" width="343" height="88"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your specialization " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E4-wm-IGA">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
@@ -1034,13 +1032,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ark-6c-XpG">
-                                                        <rect key="frame" x="214" y="63" width="10" height="7"/>
+                                                        <rect key="frame" x="326" y="63" width="10" height="7"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYv-Wp-F0E" customClass="SCButton" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="45" width="231" height="43"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="231" id="tWQ-7y-WVs"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="45" width="343" height="43"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
@@ -1073,6 +1068,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="nYv-Wp-F0E" secondAttribute="trailing" id="GJa-R7-5jw"/>
                                                     <constraint firstItem="ark-6c-XpG" firstAttribute="trailing" secondItem="nYv-Wp-F0E" secondAttribute="trailing" constant="-7" id="JBP-aO-aGK"/>
                                                     <constraint firstItem="ark-6c-XpG" firstAttribute="centerY" secondItem="nYv-Wp-F0E" secondAttribute="centerY" id="XJH-Ds-sGJ"/>
                                                     <constraint firstAttribute="bottom" secondItem="nYv-Wp-F0E" secondAttribute="bottom" id="Zow-XI-blT"/>
@@ -1084,7 +1080,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLh-AM-HLR" userLabel="price">
-                                                <rect key="frame" x="16" y="401" width="343" height="88"/>
+                                                <rect key="frame" x="15.5" y="401" width="343" height="88"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your desired pay in SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUQ-Fb-U0A">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
@@ -1093,10 +1089,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8l7-2U-THT" customClass="SCView" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="45" width="114" height="43"/>
+                                                        <rect key="frame" x="0.0" y="45" width="343" height="43"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-q6-6Nb">
-                                                                <rect key="frame" x="18" y="11" width="78" height="21"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-q6-6Nb" customClass="SCTextField" customModule="SwiftCake">
+                                                                <rect key="frame" x="18" y="11" width="307" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -1110,7 +1106,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="cGy-q6-6Nb" secondAttribute="trailing" constant="18" id="GIC-gS-neh"/>
                                                             <constraint firstItem="cGy-q6-6Nb" firstAttribute="leading" secondItem="8l7-2U-THT" secondAttribute="leading" constant="18" id="NGW-Kq-4PW"/>
-                                                            <constraint firstAttribute="width" constant="114" id="YfW-gE-HQS"/>
                                                             <constraint firstItem="cGy-q6-6Nb" firstAttribute="top" secondItem="8l7-2U-THT" secondAttribute="top" constant="11" id="xdr-pi-G6V"/>
                                                             <constraint firstAttribute="bottom" secondItem="cGy-q6-6Nb" secondAttribute="bottom" constant="11" id="ziQ-do-Msb"/>
                                                         </constraints>
@@ -1129,6 +1124,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="8l7-2U-THT" secondAttribute="trailing" id="Aoa-kE-BQR"/>
                                                     <constraint firstItem="zUQ-Fb-U0A" firstAttribute="leading" secondItem="kLh-AM-HLR" secondAttribute="leading" id="CL0-fQ-DGo"/>
                                                     <constraint firstItem="8l7-2U-THT" firstAttribute="top" secondItem="zUQ-Fb-U0A" secondAttribute="bottom" constant="24" id="NpU-Tz-mbg"/>
                                                     <constraint firstAttribute="trailing" secondItem="zUQ-Fb-U0A" secondAttribute="trailing" id="SFT-fZ-Aex"/>
@@ -1138,7 +1134,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWB-t4-Pc9" userLabel="gender">
-                                                <rect key="frame" x="16" y="519" width="343" height="88"/>
+                                                <rect key="frame" x="15.5" y="519" width="343" height="88"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your gender " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQe-ka-s2x">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
@@ -1147,13 +1143,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="lMN-9a-9vn">
-                                                        <rect key="frame" x="214" y="63" width="10" height="7"/>
+                                                        <rect key="frame" x="326" y="63" width="10" height="7"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1d-9M-7HN" customClass="SCButton" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="45" width="231" height="43"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="231" id="yPI-Mu-0Od"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="45" width="343" height="43"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="11" maxX="0.0" maxY="11"/>
@@ -1192,12 +1185,13 @@
                                                     <constraint firstItem="a1d-9M-7HN" firstAttribute="top" secondItem="AQe-ka-s2x" secondAttribute="bottom" constant="24" id="eex-Xm-3jV"/>
                                                     <constraint firstItem="lMN-9a-9vn" firstAttribute="trailing" secondItem="a1d-9M-7HN" secondAttribute="trailing" constant="-7" id="pBK-oa-z6Z"/>
                                                     <constraint firstAttribute="bottom" secondItem="a1d-9M-7HN" secondAttribute="bottom" id="prf-7Z-lxv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a1d-9M-7HN" secondAttribute="trailing" id="szq-92-5UI"/>
                                                     <constraint firstItem="a1d-9M-7HN" firstAttribute="leading" secondItem="bWB-t4-Pc9" secondAttribute="leading" id="tPA-2Y-Jvu"/>
                                                     <constraint firstAttribute="trailing" secondItem="AQe-ka-s2x" secondAttribute="trailing" id="ugQ-J6-2pZ"/>
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdf_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qJm-3f-RKc">
-                                                <rect key="frame" x="57" y="110" width="22" height="25"/>
+                                                <rect key="frame" x="56.5" y="110" width="22" height="25"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1259,8 +1253,11 @@
                         <outlet property="pdfImageView" destination="qJm-3f-RKc" id="g6O-Hf-9xA"/>
                         <outlet property="pdfUploadButton" destination="9UC-0P-zFR" id="eci-JI-V7S"/>
                         <outlet property="priceTextField" destination="cGy-q6-6Nb" id="dAr-cN-LCj"/>
+                        <outlet property="priceTextView" destination="8l7-2U-THT" id="tP6-ag-hmq"/>
+                        <outlet property="priceView" destination="kLh-AM-HLR" id="jlY-UA-W1k"/>
                         <outlet property="professionButton" destination="eSR-TQ-g1z" id="etv-L4-SqI"/>
                         <outlet property="specializationButton" destination="nYv-Wp-F0E" id="oHq-lP-9Cx"/>
+                        <outlet property="specializationView" destination="Gvc-qH-LBI" id="5cT-cf-MSr"/>
                         <outlet property="uploadTitleLabel" destination="C1j-OZ-PSm" id="ylH-Zn-w9z"/>
                     </connections>
                 </viewController>

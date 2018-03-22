@@ -37,7 +37,6 @@ extension Alamofire.DataRequest {
     
     @discardableResult
     func responseEmpty(completion: @escaping ErrorCompletion) -> DataRequest {
-        let decoder = JSONDecoder()
         let req = responseData { (response) in
             switch response.result {
             case .success(let value):
@@ -58,7 +57,7 @@ extension Alamofire.DataRequest {
             }
         }
         #if DEBUG
-            print(req)
+            debugPrint(req)
         #endif
         return req
     }
@@ -90,7 +89,7 @@ extension Alamofire.DataRequest {
             }
         }
         #if DEBUG
-            print(req)
+            debugPrint(req)
         #endif
         return req
     }

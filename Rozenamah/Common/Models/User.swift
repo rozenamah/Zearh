@@ -14,6 +14,14 @@ class User: Decodable {
     let name: String
     let surname: String
     let email: String
+    let avatar: String?
+    
+    var avatarURL: URL? {
+        if let avatar = avatar {
+            return URL(string: avatar)
+        }
+        return nil
+    }
     
     var fullname: String {
         return "\(name) \(surname)"

@@ -15,12 +15,22 @@ class RegisterForm {
     var avatar: UIImage?
     
     var toParams: [String: Any] {
-        return [
+        
+        
+        var params = [
+            "type": "patient",
             "email": email!,
             "password": password!,
             "name": name!,
             "surname": surname!
         ]
+        
+        if let avatar = avatar {
+            let imageData: Data = UIImageJPEGRepresentation(avatar, 0.9)!
+            params["avatar"] = imageData.base64EncodedString(options: .lineLength64Characters)
+        }
+        
+        return params
     }
     
 }

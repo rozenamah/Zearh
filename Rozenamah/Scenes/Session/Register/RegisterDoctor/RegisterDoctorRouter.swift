@@ -1,7 +1,7 @@
 import UIKit
 import MobileCoreServices
 
-class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UIDocumentPickerDelegate {
+class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UIDocumentPickerDelegate, AlertRouter, AppStartRouter {
     typealias RoutingViewController = RegisterDoctorViewController
     weak var viewController: RegisterDoctorViewController?
 
@@ -17,7 +17,7 @@ class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UI
         
         let alert = UIAlertController(title: "Profession", message: "Please choose your profession", preferredStyle: .actionSheet)
         Profession.all.forEach { (profession) in
-            alert.addAction(UIAlertAction(title: profession.rawValue, style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: profession.title, style: .default, handler: { (action) in
                 self.viewController?.professionSelected(profession)
             }))
         }
@@ -26,21 +26,10 @@ class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UI
     }
 
     func showSpecializationSelection() {
-        let specializations = [
-            "Cardiology",
-            "Geriatrics",
-            "Infectious Diseases",
-            "Neonatology",
-            "Onclogy",
-            "Opthalmology",
-            "Orthopedics",
-            "Respiratory",
-            "Urology",
-        ]
         
         let alert = UIAlertController(title: "Specialization", message: "Please choose your specialization", preferredStyle: .actionSheet)
-        specializations.forEach { (specialization) in
-            alert.addAction(UIAlertAction(title: specialization, style: .default, handler: { (action) in
+        DoctorSpecialization.all.forEach { (specialization) in
+            alert.addAction(UIAlertAction(title: specialization.title, style: .default, handler: { (action) in
                 self.viewController?.specializationSelected(specialization)
             }))
         }
@@ -63,7 +52,7 @@ class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UI
     func navigateToImportFile() {
     
         var types: [String] = [String]()
-        types.append(contentsOf: [String(kUTTypePDF)])
+        types.append(String(kUTTypePDF))
         
         let documentPickerController = UIDocumentPickerViewController(documentTypes: types, in: .import)
         documentPickerController.delegate = self

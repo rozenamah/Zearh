@@ -66,13 +66,10 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         if registrationMode == .doctor {
             titleLabel.text = "Register as doctor"
             createAccountButton.setTitle("Next", for: .normal)
-            createAccountButton.removeTarget(nil, action: nil, for: .allEvents)
             
             // Update form to more advanced, doctor form
             registerForm = RegisterDoctorForm()
             
-            // Add new action
-            createAccountButton.addTarget(self, action: #selector(nextStepAction(_:)), for: .touchUpInside)
         }
     }
 
@@ -84,19 +81,16 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         view.endEditing(true)
     }
     
-    @objc func nextStepAction(_ sender: Any) {
-        if termsAndConditionsCheckbox.isSelected {
-            router?.navigateToDoctorStep2()
-        } else {
-            router?.showAlert(message: "You need to accept Terms & Conditions")
-        }
-    }
-    
     @IBAction func createAccountAction(_ sender: Any) {
         // Check if register form is valid and T&C accepted - if so, proceed
         if interactor?.validate(registerForm: registerForm) == true {
              if termsAndConditionsCheckbox.isSelected {
-                interactor?.register(withForm: registerForm)
+                
+                if registrationMode == .doctor {
+                    router?.navigateToDoctorStep2()
+                } else {
+                    interactor?.register(withForm: registerForm)
+                }
              } else {
                 router?.showAlert(message: "You need to accept Terms & Conditions")
             }
