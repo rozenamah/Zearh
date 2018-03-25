@@ -27,6 +27,11 @@ class DrawerRouter: Router, AppStartRouter {
 
     // MARK: Navigation
     
+    func naviagateToEdit() {
+        viewController?.toggleLeft()
+        viewController?.performSegue(withIdentifier: "edit_profile_segue", sender: nil)
+    }
+    
     func navigateToPrivacyPolicy() {
         viewController?.toggleLeft()
         viewController?.performSegue(withIdentifier: "privacy_segue", sender: nil)

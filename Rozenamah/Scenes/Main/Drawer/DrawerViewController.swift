@@ -53,6 +53,10 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
 
     // MARK: Event handling
 
+    @IBAction func editProfileAction(_ sender: Any) {
+        router?.naviagateToEdit()
+    }
+    
     @IBAction func privacyPolicyAction(_ sender: Any) {
         router?.navigateToPrivacyPolicy()
     }

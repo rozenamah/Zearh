@@ -1,7 +1,7 @@
 import UIKit
 import MobileCoreServices
 
-class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UIDocumentPickerDelegate, AlertRouter, AppStartRouter {
+class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationControllerDelegate, UIDocumentPickerDelegate, AlertRouter {
     typealias RoutingViewController = RegisterDoctorViewController
     weak var viewController: RegisterDoctorViewController?
 
@@ -12,6 +12,13 @@ class RegisterDoctorRouter: NSObject, Router, UINavigationControllerDelegate, UI
     }
 
     // MARK: Navigation
+    
+    func showDoctorCreatedAlert() {
+        let alert = UIAlertController(title: "Account created", message: "Please, wait until you account will be verified. It shouldn't take more than 24 hours. Until then, you can user application as patient.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            self.navigateToApp()
+        }))
+    }
     
     func showProfessionSelection() {
         

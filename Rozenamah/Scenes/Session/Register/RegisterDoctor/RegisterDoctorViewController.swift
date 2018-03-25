@@ -106,7 +106,9 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         if interactor?.validate(registerForm: registerForm) == true {
             if registerForm.pdf == nil {
                 router?.showAlert(message: "You need to upload your doctor license")
+                return
             }
+            router?.showDoctorCreatedAlert()
         }
     }
     

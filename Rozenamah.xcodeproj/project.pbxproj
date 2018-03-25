@@ -103,6 +103,13 @@
 		F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4F2063F139004ED0C7 /* ReportViewController.swift */; };
 		F9CEDE572063F139004ED0C7 /* ReportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE502063F139004ED0C7 /* ReportInteractor.swift */; };
 		F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE512063F139004ED0C7 /* ReportConfigurator.swift */; };
+		F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5A206521DA004ED0C7 /* EditProfilePresenter.swift */; };
+		F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5B206521DA004ED0C7 /* EditProfileWorker.swift */; };
+		F9CEDE63206521DA004ED0C7 /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5C206521DA004ED0C7 /* EditProfileRouter.swift */; };
+		F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5D206521DA004ED0C7 /* EditProfileModels.swift */; };
+		F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */; };
+		F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */; };
+		F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +214,13 @@
 		F9CEDE4F2063F139004ED0C7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		F9CEDE502063F139004ED0C7 /* ReportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportInteractor.swift; sourceTree = "<group>"; };
 		F9CEDE512063F139004ED0C7 /* ReportConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportConfigurator.swift; sourceTree = "<group>"; };
+		F9CEDE5A206521DA004ED0C7 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		F9CEDE5B206521DA004ED0C7 /* EditProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileWorker.swift; sourceTree = "<group>"; };
+		F9CEDE5C206521DA004ED0C7 /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
+		F9CEDE5D206521DA004ED0C7 /* EditProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileModels.swift; sourceTree = "<group>"; };
+		F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
+		F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +414,7 @@
 		F975375F205FCF9E003DC80E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				F9CEDE59206521CB004ED0C7 /* EditProfile */,
 				F9CEDE4A2063F12D004ED0C7 /* Report */,
 				F9753762205FD4EC003DC80E /* Terms */,
 				F9753760205FCFAA003DC80E /* Settings.storyboard */,
@@ -576,6 +591,20 @@
 			path = Report;
 			sourceTree = "<group>";
 		};
+		F9CEDE59206521CB004ED0C7 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F9CEDE5A206521DA004ED0C7 /* EditProfilePresenter.swift */,
+				F9CEDE5B206521DA004ED0C7 /* EditProfileWorker.swift */,
+				F9CEDE5C206521DA004ED0C7 /* EditProfileRouter.swift */,
+				F9CEDE5D206521DA004ED0C7 /* EditProfileModels.swift */,
+				F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */,
+				F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */,
+				F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -746,9 +775,11 @@
 				F940EA542058147000266753 /* WelcomeViewController.swift in Sources */,
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
 				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
+				F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */,
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
 				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
 				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
+				F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */,
 				F9CEDE542063F139004ED0C7 /* ReportRouter.swift in Sources */,
 				F940EC6F205AEDD600266753 /* DrawerWorker.swift in Sources */,
 				F940EC5B205AB9EC00266753 /* SplashWorker.swift in Sources */,
@@ -757,6 +788,7 @@
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
 				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
 				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
+				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				F940EA72205828ED00266753 /* AlertRouter.swift in Sources */,
 				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
@@ -781,6 +813,7 @@
 				F940EC212059335E00266753 /* RegisterPatientPresenter.swift in Sources */,
 				F940EA552058147000266753 /* WelcomeInteractor.swift in Sources */,
 				F9753764205FD509003DC80E /* TermsViewController.swift in Sources */,
+				F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */,
 				F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */,
 				F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */,
 				F9CEDE572063F139004ED0C7 /* ReportInteractor.swift in Sources */,
@@ -789,6 +822,7 @@
 				F97B71F52062B5960073A968 /* CallDoctorPresenter.swift in Sources */,
 				F940EA612058148300266753 /* LoginModels.swift in Sources */,
 				F940EC4C205A9BFF00266753 /* MainScreenViewController.swift in Sources */,
+				F9CEDE63206521DA004ED0C7 /* EditProfileRouter.swift in Sources */,
 				F940EC4D205A9BFF00266753 /* MainScreenInteractor.swift in Sources */,
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
@@ -807,6 +841,7 @@
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
 				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
+				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
 				F940EC4A205A9BFF00266753 /* MainScreenRouter.swift in Sources */,
 				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
@@ -822,6 +857,7 @@
 				F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */,
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
+				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
 				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
 				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
