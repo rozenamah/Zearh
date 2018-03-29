@@ -17,7 +17,7 @@ class SplashWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.me.path, method: .get, headers: headers)
+        Alamofire.request(API.User.me.path, method: .get, headers: headers)
             .validate()
             .responseCodable(type: User.self, completion: completion)
     }

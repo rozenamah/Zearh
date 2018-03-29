@@ -25,8 +25,15 @@ class ForgotPasswordInteractor: ForgotPasswordBusinessLogic {
     }
     
     func resetPassword(withForm form: ResetPasswordForm) {
-        // TODO!
-        presenter?.presentResetSuccess()
+        worker.restoreAccount(withEmail: form.email!) { (error) in
+            
+            if let error = error {
+                self.presenter?.handleError(error)
+                return
+            }
+            
+            self.presenter?.presentResetSuccess()
+        }
     }
     
 }

@@ -21,7 +21,7 @@ class RegisterDoctorPresenter: RegisterDoctorPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .professionMissing:
-                return "You need to choose your profession"
+                return "You need to choose your classification"
             case .specializationMissing:
                 return "You need to choose your specialization"
             case .priceMissing:
@@ -52,7 +52,7 @@ class RegisterDoctorPresenter: RegisterDoctorPresentationLogic {
         
         switch error {
         case .professionMissing:
-            viewController?.handle(error: error, inField: .profession)
+            viewController?.handle(error: error, inField: .classification)
         case .specializationMissing:
             viewController?.handle(error: error, inField: .specialization)
         case .priceMissing:

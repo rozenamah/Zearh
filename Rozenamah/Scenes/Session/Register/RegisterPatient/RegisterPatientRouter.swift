@@ -5,6 +5,9 @@ class RegisterPatientRouter: NSObject, Router, AlertRouter, PhotoTakeRouter, App
     typealias RoutingViewController = RegisterPatientViewController
     weak var viewController: RegisterPatientViewController?
 
+    /// Alert view, displayed when registering user
+    private var alertLoading: UIAlertController?
+    
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
@@ -23,7 +26,7 @@ class RegisterPatientRouter: NSObject, Router, AlertRouter, PhotoTakeRouter, App
             
             // Reset doctor form if we for example, returned and access next step again
             doctorForm?.price = nil
-            doctorForm?.profession = nil
+            doctorForm?.classification = nil
             doctorForm?.specialization = nil
             doctorForm?.pdf = nil
             doctorForm?.gender = nil
@@ -38,6 +41,14 @@ class RegisterPatientRouter: NSObject, Router, AlertRouter, PhotoTakeRouter, App
     
     func navigateToDoctorStep2() {
         viewController?.performSegue(withIdentifier: "doctor_step_segue", sender: nil)
+    }
+    
+    func showWaitAlert() {
+        alertLoading = showLoadingAlert()
+    }
+    
+    func hideWaitAlert(completion: (() -> Void)? = nil) {
+        alertLoading?.dismiss(animated: true, completion: completion)
     }
 
     // MARK: Passing data

@@ -27,7 +27,7 @@ class RegisterForm {
         
         if let avatar = avatar {
             let imageData: Data = UIImageJPEGRepresentation(avatar, 0.9)!
-            params["avatar"] = imageData.base64EncodedString(options: .lineLength64Characters)
+            params["avatar"] = "data:image/jpeg;base64,\(imageData.base64EncodedString())"
         }
         
         return params

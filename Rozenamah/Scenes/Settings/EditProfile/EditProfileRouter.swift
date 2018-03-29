@@ -1,6 +1,6 @@
 import UIKit
 
-class EditProfileRouter: NSObject, Router, PhotoTakeRouter {
+class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter {
     typealias RoutingViewController = EditProfileViewController
     weak var viewController: EditProfileViewController?
 
@@ -14,6 +14,15 @@ class EditProfileRouter: NSObject, Router, PhotoTakeRouter {
     
     func dismiss() {
         viewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func showDeleteAlert() {
+        let alert = UIAlertController(title: "Delete account", message: "Are you sure you want to remove user's account?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            self.viewController?.deleteConfirm()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        viewController?.present(alert, animated: true, completion: nil)
     }
 
     // MARK: Passing data

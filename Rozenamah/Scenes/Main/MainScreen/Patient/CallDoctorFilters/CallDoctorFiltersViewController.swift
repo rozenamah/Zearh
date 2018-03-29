@@ -1,19 +1,22 @@
 import UIKit
-import SwiftCake
 
-protocol CallDoctorDisplayLogic: ClassificationDelegate {
+protocol CallDoctorFiltersDisplayLogic: ClassificationDelegate {
 }
 
-class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
+class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDisplayLogic {
 
     // MARK: Outlets
     @IBOutlet weak var specializationView: UIView!
-    @IBOutlet weak var professionButton: SCButton!
-    @IBOutlet weak var specializationButton: SCButton!
+    @IBOutlet weak var allButton: UIButton!
+    @IBOutlet weak var femaleButton: UIButton!
+    @IBOutlet weak var maleButton: UIButton!
+    @IBOutlet var genderButtons: [UIButton]!
+    @IBOutlet weak var classificationButton: UIButton!
+    @IBOutlet weak var specializationButton: UIButton!
     
     // MARK: Properties
-    var interactor: CallDoctorBusinessLogic?
-    var router: CallDoctorRouter?
+    var interactor: CallDoctorFiltersBusinessLogic?
+    var router: CallDoctorFiltersRouter?
 
     // MARK: Object lifecycle
 
@@ -43,8 +46,16 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
 
     // MARK: Event handling
 
-    @IBAction func cancelAction(_ sender: Any) {
+    @IBAction func closeAction(_ sender: Any) {
         router?.dismiss()
+    }
+    
+    @IBAction func clearAction(_ sender: Any) {
+    }
+    
+    @IBAction func changeGenderAction(_ sender: UIButton) {
+        genderButtons.forEach { $0.isSelected = false }
+        sender.isSelected = true
     }
     
     @IBAction func professionChooseAction(_ sender: Any) {
@@ -55,16 +66,12 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         router?.navigateToSelectingSpecialization()
     }
     
-    @IBAction func moreOptions(_ sender: Any) {
-        router?.navigateToExtendedFilters()
-    }
-    
     // MARK: Presenter methods
     
     func classificationSelected(_ classification: Classification) {
         
-        professionButton.setTitle(classification.title, for: .selected)
-        professionButton.isSelected = true
+        classificationButton.setTitle(classification.title, for: .selected)
+        classificationButton.isSelected = true
         
         // Reset specialization
         specializationButton.isSelected = false
@@ -81,7 +88,6 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         specializationButton.setTitle(specialization.title, for: .selected)
         specializationButton.isSelected = true
     }
-    
     
     func disableSpecialization() {
         specializationView.isUserInteractionEnabled = false

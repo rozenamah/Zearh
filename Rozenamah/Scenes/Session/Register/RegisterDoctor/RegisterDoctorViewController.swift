@@ -1,7 +1,7 @@
 import UIKit
 import SwiftCake
 
-protocol RegisterDoctorDisplayLogic: class {
+protocol RegisterDoctorDisplayLogic: ClassificationDelegate {
     func registerSuccess()
     func handle(error: Error)
     func handle(error: Error, inField field: RegisterDoctorViewController.Field)
@@ -10,7 +10,7 @@ protocol RegisterDoctorDisplayLogic: class {
 class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic {
 
     enum Field {
-        case profession
+        case classification
         case specialization
         case price
         case gender
@@ -77,12 +77,12 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     @IBAction func professionAction(_ sender: Any) {
         hideErrorIn(button: professionButton)
-        router?.showProfessionSelection()
+        router?.navigateToSelectingClassification()
     }
     
     @IBAction func specializatioAction(_ sender: Any) {
         hideErrorIn(button: specializationButton)
-        router?.showSpecializationSelection()
+        router?.navigateToSelectingSpecialization()
     }
     
     @IBAction func genderAction(_ sender: Any) {
@@ -114,10 +114,11 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     // MARK: Presenter methods
     
-    func professionSelected(_ profession: Profession) {
-        registerForm.profession = profession
+    func classificationSelected(_ classification: Classification) {
         
-        professionButton.setTitle(profession.title, for: .selected)
+        registerForm.classification = classification
+        
+        professionButton.setTitle(classification.title, for: .selected)
         professionButton.isSelected = true
         
         // Reset specialization
@@ -125,17 +126,17 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         specializationButton.isSelected = false
         
         // Enable specialization and price if needed
-        if profession == .specialist || profession == .consultants {
+        if classification == .specialist || classification == .consultants {
             priceTextField.text = nil
             registerForm.price = nil
             enableSpecialization()
         } else {
             
             // Set default rice
-            if profession == .nurse {
+            if classification == .nurse {
                 priceTextField.text = "150"
                 registerForm.price = 150
-            } else if profession == .doctor {
+            } else if classification == .doctor {
                 priceTextField.text = "250"
                 registerForm.price = 250
             }
@@ -175,7 +176,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         case .price:
             priceTextView.borderColor = .rmRed
             priceTextField.placeholderColor = .rmRed
-        case .profession:
+        case .classification:
             displayErrorIn(button: professionButton)
         case .specialization:
             displayErrorIn(button: specializationButton)
@@ -198,7 +199,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         button.setTitleColor(.rmGray, for: .normal)
     }
     
-    /// Some professions can't insert custom amount of money or specialization
+    /// Some classifications can't insert custom amount of money or specialization
     func disableSpecialization() {
         priceView.isUserInteractionEnabled = false
         priceView.alpha = 0.4
@@ -213,6 +214,8 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         specializationView.alpha = 1
     }
 }
+
+// MARK: TextField methods
 
 extension RegisterDoctorViewController: UITextFieldDelegate {
     

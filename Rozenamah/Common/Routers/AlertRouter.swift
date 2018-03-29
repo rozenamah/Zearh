@@ -26,6 +26,18 @@ extension AlertRouter where Self: Router {
                                                message: "Please wait",
                                                preferredStyle: .alert)
         
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        alertMessage.view.addSubview(indicator)
+        
+        let views = ["pending" : alertMessage.view!, "indicator" : indicator]
+        var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[indicator]-(-50)-|", options: [], metrics: nil, views: views)
+        constraints += NSLayoutConstraint.constraints(withVisualFormat:"H:|[indicator]|", options: [], metrics: nil, views: views)
+        alertMessage.view.addConstraints(constraints)
+        
+        indicator.isUserInteractionEnabled = false
+        indicator.startAnimating()
+        
         vc?.present(alertMessage, animated: true, completion: nil)
         return alertMessage
     }

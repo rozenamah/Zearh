@@ -5,6 +5,7 @@ protocol RegisterPatientDisplayLogic: class {
     func handle(error: Error)
     func handle(error: Error, inField field: RegisterPatientViewController.Field)
     func registerSuccess()
+    func continueToNextStep()
 }
 
 class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLogic {
@@ -32,7 +33,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     var interactor: RegisterPatientBusinessLogic?
     var router: RegisterPatientRouter?
 
-    // Form used to perform register of patient
+    /// Form used to perform register of patient
     var registerForm = RegisterForm()
     
     /// Depending on this value we change behaviour of this view to register patient
@@ -86,8 +87,9 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         if interactor?.validate(registerForm: registerForm) == true {
              if termsAndConditionsCheckbox.isSelected {
                 
+                router?.showWaitAlert()
                 if registrationMode == .doctor {
-                    router?.navigateToDoctorStep2()
+                    interactor?.checkIfEmailTaken(registerForm.email!)
                 } else {
                     interactor?.register(withForm: registerForm)
                 }
@@ -109,10 +111,13 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     }
     
     func handle(error: Error) {
-        router?.showError(error)
+        router?.hideWaitAlert {
+            self.router?.showError(error)
+        }
     }
     
     func handle(error: Error, inField field: RegisterPatientViewController.Field) {
+        router?.hideWaitAlert()
         switch field {
         case .email:
             emailView.adjustToState(.error(msg: error))
@@ -127,8 +132,16 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         }
     }
     
+    func continueToNextStep() {
+        router?.hideWaitAlert(completion: {
+            self.router?.navigateToDoctorStep2()
+        })
+    }
+    
     func registerSuccess() {
-        router?.navigateToApp()
+        router?.hideWaitAlert(completion: {
+            self.router?.navigateToApp()
+        })
     }
 }
 

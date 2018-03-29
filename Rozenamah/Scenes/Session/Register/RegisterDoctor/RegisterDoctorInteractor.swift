@@ -15,14 +15,14 @@ class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
         var allFieldsValid = true
     
         // Profession verification
-        if registerForm.profession == nil {
+        if registerForm.classification == nil {
             allFieldsValid = false
             presenter?.presentError(.professionMissing)
         }
         
         // Specialization verification
-        if (registerForm.profession == .consultants ||
-            registerForm.profession == .specialist),
+        if (registerForm.classification == .consultants ||
+            registerForm.classification == .specialist),
             registerForm.specialization == nil  {
             
             allFieldsValid = false

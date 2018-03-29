@@ -18,7 +18,12 @@ class LoginForm {
 
 class LoginResponse: Decodable {
     
+    private enum CodingKeys : String, CodingKey {
+        case token, refreshToken = "refresh_token", user
+    }
+    
     let token: String
+    let refreshToken: String
     let user: User
     
 }

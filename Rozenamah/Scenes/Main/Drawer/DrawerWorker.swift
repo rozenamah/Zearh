@@ -8,6 +8,11 @@ class DrawerWorker {
 	
     func logout(completion: @escaping ErrorCompletion) {
         
+        var params: [String: Any] = [:]
+        if let deviceToken = Settings.shared.deviceToken {
+            params["device_token"] = deviceToken
+        }
+        
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
             return
@@ -17,7 +22,7 @@ class DrawerWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.logout.path, method: .post, headers: headers)
+        Alamofire.request(API.User.logout.path, method: .post, parameters: params, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
         

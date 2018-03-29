@@ -30,4 +30,8 @@ extension UIColor {
     static var rmBlue: UIColor {
         return UIColor(r: 91, g: 192, b: 208)
     }
+    
+    static var rmPale: UIColor {
+        return UIColor(r: 224, g: 231, b: 238)
+    }
 }

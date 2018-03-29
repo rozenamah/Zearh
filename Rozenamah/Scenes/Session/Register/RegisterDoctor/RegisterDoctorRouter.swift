@@ -1,7 +1,8 @@
 import UIKit
 import MobileCoreServices
 
-class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationControllerDelegate, UIDocumentPickerDelegate, AlertRouter {
+class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationControllerDelegate, UIDocumentPickerDelegate, AlertRouter, ClassificationRouter {
+    
     typealias RoutingViewController = RegisterDoctorViewController
     weak var viewController: RegisterDoctorViewController?
 
@@ -18,30 +19,6 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
             self.navigateToApp()
         }))
-    }
-    
-    func showProfessionSelection() {
-        
-        let alert = UIAlertController(title: "Profession", message: "Please choose your profession", preferredStyle: .actionSheet)
-        Profession.all.forEach { (profession) in
-            alert.addAction(UIAlertAction(title: profession.title, style: .default, handler: { (action) in
-                self.viewController?.professionSelected(profession)
-            }))
-        }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        viewController?.present(alert, animated: true, completion: nil)
-    }
-
-    func showSpecializationSelection() {
-        
-        let alert = UIAlertController(title: "Specialization", message: "Please choose your specialization", preferredStyle: .actionSheet)
-        DoctorSpecialization.all.forEach { (specialization) in
-            alert.addAction(UIAlertAction(title: specialization.title, style: .default, handler: { (action) in
-                self.viewController?.specializationSelected(specialization)
-            }))
-        }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        viewController?.present(alert, animated: true, completion: nil)
     }
     
     func showGenderSelection() {

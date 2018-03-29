@@ -4,6 +4,7 @@ import Alamofire
 
 protocol RegisterPatientBusinessLogic {
     func validate(registerForm: RegisterForm) -> Bool
+    func checkIfEmailTaken(_ email: String)
     func register(withForm form: RegisterForm)
 }
 
@@ -13,6 +14,17 @@ class RegisterPatientInteractor: RegisterPatientBusinessLogic {
 
 	// MARK: Business logic
 	
+    func checkIfEmailTaken(_ email: String) {
+        worker.verifyIfEmailTaken(email) { (error) in
+            if let error = error {
+                self.presenter?.handleError(error)
+                return
+            }
+            
+            self.presenter?.presentEmailIsUnique()
+        }
+    }
+    
     func register(withForm form: RegisterForm) {
         
         worker.register(withForm: form) { (response, error) in
@@ -56,6 +68,11 @@ class RegisterPatientInteractor: RegisterPatientBusinessLogic {
             
             allFieldsValid = false
             presenter?.presentError(.passwordToLong)
+        }  else if registerForm.password == nil ||
+            !PasswordValidation.validate(password: registerForm.password!) {
+            
+            allFieldsValid = false
+            presenter?.presentError(.incorrectPassword)
         } else if registerForm.password != registerForm.repeatPassword {
             // Check if passwords are the same
             
@@ -64,31 +81,39 @@ class RegisterPatientInteractor: RegisterPatientBusinessLogic {
         }
         
         // Name verification
-        if registerForm.name == nil ||
-            registerForm.name!.count < 3  {
-            
+        if let name = registerForm.name {
+            if name.count < 3 {
+                allFieldsValid = false
+                presenter?.presentError(.nameToShort)
+            } else if name.count > 30 {
+                allFieldsValid = false
+                presenter?.presentError(.nameToLong)
+            } else if !NameValidation.validate(name: name) {
+                allFieldsValid = false
+                presenter?.presentError(.incorrectName)
+            }
+        } else {
             allFieldsValid = false
             presenter?.presentError(.nameToShort)
-        } else if registerForm.name == nil ||
-            registerForm.name!.count > 30 {
-            
-            allFieldsValid = false
-            presenter?.presentError(.nameToLong)
         }
         
         // Surname verification
-        if registerForm.surname == nil ||
-            registerForm.surname!.count < 3  {
-            
+        if let surname = registerForm.surname {
+            if surname.count < 3 {
+                allFieldsValid = false
+                presenter?.presentError(.surnameToShort)
+            } else if surname.count > 30 {
+                allFieldsValid = false
+                presenter?.presentError(.surnameToLong)
+            } else if !NameValidation.validate(name: surname) {
+                allFieldsValid = false
+                presenter?.presentError(.incorrectSurname)
+            }
+        } else {
             allFieldsValid = false
             presenter?.presentError(.surnameToShort)
-        } else if registerForm.surname == nil ||
-            registerForm.surname!.count > 30 {
-            
-            allFieldsValid = false
-            presenter?.presentError(.surnameToLong)
         }
-        
+    
         return allFieldsValid
     }
 }

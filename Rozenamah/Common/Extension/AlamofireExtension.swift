@@ -15,6 +15,8 @@ enum RMError: LocalizedError {
         case unauthorized = 401
         case badRequest = 400
         case notFound = 404
+        case duplicate = 409
+        case serverError = 500
     }
     
     case unknown(error: Error)
@@ -25,6 +27,8 @@ enum RMError: LocalizedError {
         switch self {
         case .unknown(let error):
             return error.localizedDescription
+        case .status(let code, _) where code == .serverError:
+            return "Something is wrong with our server :("
         case .status(_, let msg):
             return msg
         case .tokenDoesntExist:
@@ -42,7 +46,7 @@ extension Alamofire.DataRequest {
             case .success(let value):
                 #if DEBUG
                     if let json = String(data: value, encoding: .utf8) {
-                        print(json)
+                        print("Response empty\n\(json)")
                     }
                 #endif
                 completion(nil) // No error
@@ -70,7 +74,7 @@ extension Alamofire.DataRequest {
                 do {
                     #if DEBUG
                         if let json = String(data: value, encoding: .utf8) {
-                            print(json)
+                            print("Response\n:\(json)")
                         }
                     #endif
                     let decoder = JSONDecoder()
@@ -96,12 +100,21 @@ extension Alamofire.DataRequest {
     
     private func errorFrom(response: DataResponse<Data>) -> RMError? {
         let decoder = JSONDecoder()
-        if let responseData = response.data,
-            let error = try? decoder.decode(ErrorResponse.self, from: responseData),
-            let status = response.response?.statusCode,
-            let code = RMError.StatusCode(rawValue: status) {
-            return RMError.status(code: code,
-                                           msg: error.reason)
+        if let responseData = response.data {
+            
+            #if DEBUG
+                if let json = String(data: responseData, encoding: .utf8) {
+                    print(json)
+                }
+            #endif
+            
+            if let error = try? decoder.decode(ErrorResponse.self, from: responseData),
+                let status = response.response?.statusCode,
+                let code = RMError.StatusCode(rawValue: status) {
+                
+                return RMError.status(code: code,
+                                               msg: error.message)
+            }
         }
         return nil
     }

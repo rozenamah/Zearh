@@ -48,12 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        let tokenParts = deviceToken.map { data -> String in
-            return String(format: "%02.2hhx", data)
+        // Save device token to currently logged user
+        NotificationWorker().saveDeviceToken(inData: deviceToken) { (error) in
+            // Do nothing
         }
-        
-        let token = tokenParts.joined()
-        print("Device Token: \(token)")
     }
     
 }

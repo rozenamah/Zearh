@@ -141,7 +141,7 @@
         <!--Call a doctor-->
         <scene sceneID="f7r-ST-B0e">
             <objects>
-                <viewController id="oT4-45-pP6" sceneMemberID="viewController">
+                <viewController id="oT4-45-pP6" customClass="CallDoctorFiltersViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAb-9F-yWJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,15 +184,16 @@
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColorSelected">
-                                                                <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="professionChooseAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="3Bk-iv-NeE"/>
+                                                            <action selector="professionChooseAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="YBF-uE-vkj"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -241,15 +242,16 @@
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColorSelected">
-                                                                <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="specializationChooseAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="CNq-aD-uDC"/>
+                                                            <action selector="specializationChooseAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="G8g-yD-Q4O"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -286,9 +288,13 @@
                                                                 <state key="normal" title="All" image="radio_empty_btn">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <state key="selected" image="radio_full_btn"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="vyT-OP-yaN"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C5-5u-qdV">
                                                                 <rect key="frame" x="117.5" y="0.0" width="71" height="41"/>
@@ -298,9 +304,13 @@
                                                                 <state key="normal" title="Male" image="radio_empty_btn">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <state key="selected" image="radio_full_btn"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="VaR-zN-Nus"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDl-Dj-TmL">
                                                                 <rect key="frame" x="253" y="0.0" width="90" height="41"/>
@@ -310,9 +320,13 @@
                                                                 <state key="normal" title="Female" image="radio_empty_btn">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <state key="selected" image="radio_full_btn"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="ft8-fz-Mws"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -389,11 +403,28 @@
                     <navigationItem key="navigationItem" title="Call a doctor" id="9Vs-qp-ZrV">
                         <barButtonItem key="leftBarButtonItem" image="close" id="BPS-UJ-cDZ">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="closeAction:" destination="oT4-45-pP6" id="VBp-HM-Lo7"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="Uvq-ZN-jbM">
                             <color key="tintColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="clearAction:" destination="oT4-45-pP6" id="Z37-OF-u47"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="allButton" destination="Mt1-fQ-MFV" id="A0J-BS-a2A"/>
+                        <outlet property="classificationButton" destination="vXU-UM-1Bf" id="MKG-2j-ldy"/>
+                        <outlet property="femaleButton" destination="TDl-Dj-TmL" id="Ddm-ra-sA3"/>
+                        <outlet property="maleButton" destination="9C5-5u-qdV" id="K4E-Pv-qwP"/>
+                        <outlet property="specializationButton" destination="zGY-Gb-9ru" id="XqY-rH-dL7"/>
+                        <outlet property="specializationView" destination="ITf-NW-vaq" id="8iY-ey-bAo"/>
+                        <outletCollection property="genderButtons" destination="Mt1-fQ-MFV" collectionClass="NSMutableArray" id="QU3-VF-mH4"/>
+                        <outletCollection property="genderButtons" destination="9C5-5u-qdV" collectionClass="NSMutableArray" id="1i9-GP-t0Y"/>
+                        <outletCollection property="genderButtons" destination="TDl-Dj-TmL" collectionClass="NSMutableArray" id="3Lw-Al-Hxs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zw5-l5-iNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,10 +479,10 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColorSelected">
-                                                        <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
@@ -505,10 +536,10 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColorSelected">
-                                                        <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
@@ -539,6 +570,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="moreOptions:" destination="jYS-vC-x7G" eventType="touchUpInside" id="0Pa-fm-MUY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sts-Cc-ma6" customClass="SCButton" customModule="SwiftCake">
                                         <rect key="frame" x="16" y="370" width="163.5" height="39"/>
@@ -717,7 +751,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="54"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="40" maxY="8"/>
-                                                        <state key="normal" title="Switch to doctor’s account">
+                                                        <state key="normal" title="Doctor account">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -1013,6 +1047,7 @@
         <image name="menu" width="24" height="17"/>
         <image name="placeholder_big" width="99" height="100"/>
         <image name="radio_empty_btn" width="18" height="18"/>
+        <image name="radio_full_btn" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ApP-20-oVH"/>

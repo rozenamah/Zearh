@@ -6,16 +6,21 @@
 //  Copyright © 2018 Dominik Majda. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum UserType: String, Decodable {
+    case doctor, patient
+}
 
 class User: Decodable {
     
-    let id: Int
+    let id: String
     let name: String
     let surname: String
     let email: String
-    let avatar: String?
-    
+    var avatar: String?
+    let type: UserType
+
     var avatarURL: URL? {
         if let avatar = avatar {
             return URL(string: avatar)

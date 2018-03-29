@@ -5,5 +5,6 @@ class ResetPasswordForm {
 }
 
 class ErrorResponse: Decodable {
-    let reason: String
+    let code: Int
+    let message: String
 }

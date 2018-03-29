@@ -4,6 +4,7 @@ protocol RegisterPatientPresentationLogic {
     func presentError(_ error: RegisterPatientPresenter.RegisterPatientError)
     func handleError(_ error: RMError) 
     func presentRegisterSuccess()
+    func presentEmailIsUnique()
 }
 
 class RegisterPatientPresenter: RegisterPatientPresentationLogic {
@@ -14,10 +15,13 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         case emailAlreadyExists
         case passwordToShort
         case passwordToLong
+        case incorrectPassword
         case passwordsDifferent
         case surnameToLong
         case nameToLong
         case nameToShort
+        case incorrectName
+        case incorrectSurname
         case surnameToShort
         case unknown(Error?)
         
@@ -27,6 +31,12 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
                 return "Email is already taken"
             case .incorrectEmail:
                 return "Email is incorrect"
+            case .incorrectPassword:
+                return "Password is incorrect"
+            case .incorrectName:
+                return "Name is incorrect"
+            case .incorrectSurname:
+                return "Surname is incorrect"
             case .passwordToShort:
                 return "Password must have at least 4 characters"
             case .passwordToLong:
@@ -56,6 +66,8 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
     // messages
     func handleError(_ error: RMError) {
         switch error {
+        case .status(let code, _) where code == .duplicate:
+            presentError(.emailAlreadyExists)
         default:
             presentError(.unknown(error))
         }
@@ -66,17 +78,11 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         switch error {
         case .incorrectEmail, .emailAlreadyExists:
             viewController?.handle(error: error, inField: .email)
-        case .passwordToShort:
+        case .passwordToShort, .passwordToLong, .incorrectPassword:
             viewController?.handle(error: error, inField: .password)
-        case .passwordToLong:
-            viewController?.handle(error: error, inField: .password)
-        case .nameToLong:
+        case .nameToLong, .nameToShort, .incorrectName:
             viewController?.handle(error: error, inField: .name)
-        case .surnameToLong:
-            viewController?.handle(error: error, inField: .surname)
-        case .nameToShort:
-            viewController?.handle(error: error, inField: .name)
-        case .surnameToShort:
+        case .surnameToLong, .surnameToShort, .incorrectSurname:
             viewController?.handle(error: error, inField: .surname)
         case .passwordsDifferent:
             viewController?.handle(error: error, inField: .confirmPassword)
@@ -84,6 +90,10 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
             viewController?.handle(error: error)
         }
         
+    }
+    
+    func presentEmailIsUnique() {
+        viewController?.continueToNextStep()
     }
 	
     func presentRegisterSuccess() {

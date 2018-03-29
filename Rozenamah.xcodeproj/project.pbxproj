@@ -11,6 +11,7 @@
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
 		F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen.storyboard */; };
+		F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */; };
 		F940EA472057E8F700266753 /* Session.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F940EA462057E8F700266753 /* Session.storyboard */; };
 		F940EA502058147000266753 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA492058147000266753 /* WelcomePresenter.swift */; };
 		F940EA512058147000266753 /* WelcomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4A2058147000266753 /* WelcomeWorker.swift */; };
@@ -74,6 +75,15 @@
 		F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */; };
 		F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC75205BBBD600266753 /* RMGradientView.swift */; };
 		F940EC78205BEA4A00266753 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC77205BEA4A00266753 /* User.swift */; };
+		F95AFBEA206A3DA6007CCFB1 /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */; };
+		F95AFBEC206A4DBE007CCFB1 /* NameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */; };
+		F95AFBF8206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF1206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift */; };
+		F95AFBF9206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF2206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift */; };
+		F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF3206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift */; };
+		F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF4206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift */; };
+		F95AFBFC206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF5206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift */; };
+		F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF6206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift */; };
+		F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF7206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift */; };
 		F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */; };
 		F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9753760205FCFAA003DC80E /* Settings.storyboard */; };
 		F9753764205FD509003DC80E /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753763205FD509003DC80E /* TermsViewController.swift */; };
@@ -94,6 +104,7 @@
 		F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F32062B5960073A968 /* CallDoctorInteractor.swift */; };
 		F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B71F42062B5960073A968 /* CallDoctorConfigurator.swift */; };
 		F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B73A22063A9040073A968 /* KingfisherExtension.swift */; };
+		F992D313206D20F000DF0604 /* NotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992D312206D20F000DF0604 /* NotificationWorker.swift */; };
 		F9A9F2A4204D5897006E8999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2A3204D5897006E8999 /* Router.swift */; };
 		F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA96AB205FCA5200CB4B68 /* Settings.swift */; };
 		F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */; };
@@ -121,6 +132,7 @@
 		F9093A77204992CB00CB041A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9093A7A204992CB00CB041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9093A7C204992CB00CB041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationsRouter.swift; sourceTree = "<group>"; };
 		F940EA462057E8F700266753 /* Session.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Session.storyboard; sourceTree = "<group>"; };
 		F940EA492058147000266753 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		F940EA4A2058147000266753 /* WelcomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorker.swift; sourceTree = "<group>"; };
@@ -184,6 +196,15 @@
 		F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigurator.swift; sourceTree = "<group>"; };
 		F940EC75205BBBD600266753 /* RMGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGradientView.swift; sourceTree = "<group>"; };
 		F940EC77205BEA4A00266753 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
+		F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidation.swift; sourceTree = "<group>"; };
+		F95AFBF1206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersPresenter.swift; sourceTree = "<group>"; };
+		F95AFBF2206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersWorker.swift; sourceTree = "<group>"; };
+		F95AFBF3206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersRouter.swift; sourceTree = "<group>"; };
+		F95AFBF4206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersModels.swift; sourceTree = "<group>"; };
+		F95AFBF5206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersViewController.swift; sourceTree = "<group>"; };
+		F95AFBF6206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersInteractor.swift; sourceTree = "<group>"; };
+		F95AFBF7206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersConfigurator.swift; sourceTree = "<group>"; };
 		F95F140520612F3E00CDC2E5 /* Rozenamah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rozenamah.entitlements; sourceTree = "<group>"; };
 		F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneDeviceDetection.swift; sourceTree = "<group>"; };
 		F9753760205FCFAA003DC80E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -205,6 +226,7 @@
 		F97B71F32062B5960073A968 /* CallDoctorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorInteractor.swift; sourceTree = "<group>"; };
 		F97B71F42062B5960073A968 /* CallDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorConfigurator.swift; sourceTree = "<group>"; };
 		F97B73A22063A9040073A968 /* KingfisherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherExtension.swift; sourceTree = "<group>"; };
+		F992D312206D20F000DF0604 /* NotificationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWorker.swift; sourceTree = "<group>"; };
 		F9A9F2A3204D5897006E8999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F9CA96AB205FCA5200CB4B68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
@@ -333,6 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				F940EA6F205827AD00266753 /* EmailValidation.swift */,
+				F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */,
+				F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -381,6 +405,27 @@
 			path = Drawer;
 			sourceTree = "<group>";
 		};
+		F95AFBED206A59B5007CCFB1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F95AFBF0206A6CAD007CCFB1 /* CallDoctorFilters */ = {
+			isa = PBXGroup;
+			children = (
+				F95AFBF1206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift */,
+				F95AFBF2206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift */,
+				F95AFBF3206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift */,
+				F95AFBF4206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift */,
+				F95AFBF5206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift */,
+				F95AFBF6206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift */,
+				F95AFBF7206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift */,
+			);
+			path = CallDoctorFilters;
+			sourceTree = "<group>";
+		};
 		F95F140620614A5C00CDC2E5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +437,7 @@
 		F95F140C2061543600CDC2E5 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				F95AFBF0206A6CAD007CCFB1 /* CallDoctorFilters */,
 				F97B71ED2062B5840073A968 /* CallDoctor */,
 			);
 			path = Patient;
@@ -442,6 +488,14 @@
 				F97B71F42062B5960073A968 /* CallDoctorConfigurator.swift */,
 			);
 			path = CallDoctor;
+			sourceTree = "<group>";
+		};
+		F992D311206D20E700DF0604 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				F992D312206D20F000DF0604 /* NotificationWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		F9A9F296204D57F3006E8999 /* Views */ = {
@@ -541,6 +595,8 @@
 		F9A9F2A0204D5881006E8999 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F992D311206D20E700DF0604 /* Workers */,
+				F95AFBED206A59B5007CCFB1 /* Controllers */,
 				F9CA96AA205FCA4800CB4B68 /* Storage */,
 				F940EA6A2058237A00266753 /* Extension */,
 				F9A9F2A2204D588C006E8999 /* Models */,
@@ -557,6 +613,7 @@
 				F940EA71205828ED00266753 /* AlertRouter.swift */,
 				F940EC28205937CD00266753 /* PhotoTakeRouter.swift */,
 				F940EC51205A9D8E00266753 /* AppStartRouter.swift */,
+				F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -644,6 +701,9 @@
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -776,6 +836,7 @@
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
 				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
 				F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */,
+				F992D313206D20F000DF0604 /* NotificationWorker.swift in Sources */,
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
 				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
 				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
@@ -788,6 +849,7 @@
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
 				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
 				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
+				F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				F940EA72205828ED00266753 /* AlertRouter.swift in Sources */,
@@ -795,6 +857,7 @@
 				F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */,
 				F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */,
 				F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */,
+				F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */,
 				F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */,
 				F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */,
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
@@ -802,6 +865,7 @@
 				F940EC48205A9BFF00266753 /* MainScreenPresenter.swift in Sources */,
 				F940EA5E2058148300266753 /* LoginPresenter.swift in Sources */,
 				F9A9F2A4204D5897006E8999 /* Router.swift in Sources */,
+				F95AFBFC206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift in Sources */,
 				F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */,
 				F940EC4E205A9BFF00266753 /* MainScreenConfigurator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
@@ -810,6 +874,8 @@
 				F940EC4B205A9BFF00266753 /* MainScreenModels.swift in Sources */,
 				F940EC49205A9BFF00266753 /* MainScreenWorker.swift in Sources */,
 				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
+				F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */,
+				F95AFBF8206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift in Sources */,
 				F940EC212059335E00266753 /* RegisterPatientPresenter.swift in Sources */,
 				F940EA552058147000266753 /* WelcomeInteractor.swift in Sources */,
 				F9753764205FD509003DC80E /* TermsViewController.swift in Sources */,
@@ -819,6 +885,7 @@
 				F9CEDE572063F139004ED0C7 /* ReportInteractor.swift in Sources */,
 				F940EC3D205A5BC200266753 /* ForgotPasswordConfigurator.swift in Sources */,
 				F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */,
+				F95AFBEC206A4DBE007CCFB1 /* NameValidation.swift in Sources */,
 				F97B71F52062B5960073A968 /* CallDoctorPresenter.swift in Sources */,
 				F940EA612058148300266753 /* LoginModels.swift in Sources */,
 				F940EC4C205A9BFF00266753 /* MainScreenViewController.swift in Sources */,
@@ -833,10 +900,12 @@
 				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
 				F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */,
 				F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */,
+				F95AFBEA206A3DA6007CCFB1 /* PasswordValidation.swift in Sources */,
 				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
 				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
 				F940EC78205BEA4A00266753 /* User.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
+				F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */,
 				F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */,
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
@@ -850,6 +919,7 @@
 				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
 				F940EA642058148300266753 /* LoginConfigurator.swift in Sources */,
 				F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */,
+				F95AFBF9206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift in Sources */,
 				F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
 				F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */,
@@ -857,6 +927,7 @@
 				F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */,
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
+				F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */,
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
 				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,

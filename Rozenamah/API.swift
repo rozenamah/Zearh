@@ -8,23 +8,33 @@
 
 import Foundation
 
+fileprivate let baseURL = "https://rozenamah.r4s.ovh/api/"
+
 enum API {
-    case login
-    case register
-    case me
-    case logout
+    
+    enum User {
+        case login
+        case register
+        case me
+        case verifyEmail
+        case resetPassword
+        case logout
+        case devices
+        
+        var resource: String { return baseURL + "user/" }
+    }
 }
 
-extension API {
-    
+extension API.User {
     var path: String {
-        let baseURL = "https://rozenamah.herokuapp.com/"
         switch self {
-        case .login: return baseURL + "login/"
-        case .register: return baseURL + "register/"
-        case .me: return baseURL + "me/"
-        case .logout: return baseURL + "logout/"
+        case .login: return resource + "login"
+        case .register: return resource + "register"
+        case .resetPassword: return resource + "password/restore"
+        case .verifyEmail: return resource + "email/check"
+        case .me: return resource + "me"
+        case .logout: return resource + "logout"
+        case .devices: return resource + "devices"
         }
     }
-    
 }

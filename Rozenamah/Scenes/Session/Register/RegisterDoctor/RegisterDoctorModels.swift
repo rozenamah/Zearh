@@ -67,14 +67,14 @@ enum DoctorSpecialization: String {
     }
 }
 
-enum Profession: String {
+enum Classification: String {
     case doctor = "doctor"
     case nurse = "nurse"
     case specialist = "specialist"
     case consultants = "consultants"
     
-    static var all: [Profession] {
-        return [.doctor, .nurse, .specialist, .consultants]
+    static var all: [Classification] {
+        return [.nurse, .doctor, .consultants, .specialist, ]
     }
     
     var title: String {
@@ -100,7 +100,7 @@ enum Gender: String {
 }
 
 final class RegisterDoctorForm: RegisterForm {
-    var profession: Profession?
+    var classification: Classification?
     var specialization: DoctorSpecialization?
     var price: Int?
     var gender: Gender?
@@ -108,6 +108,13 @@ final class RegisterDoctorForm: RegisterForm {
     
     override var toParams: [String: Any] {
         var params = super.toParams
+        
+        params["classification"] = classification!.rawValue
+        params["specialization"] = specialization?.rawValue ?? NSNull()
+        params["gender"] = gender!.rawValue
+        params["price"] = price!
+        params["pdf"] = "data:application/pdf;base64,\(pdf!.base64EncodedString())"
+        
         return params
     }
     

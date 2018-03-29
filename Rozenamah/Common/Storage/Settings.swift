@@ -28,4 +28,16 @@ class Settings {
         }
     }
     
+    
+    /// Holds latest device token for this user
+    /// We use it when log out/log in user
+    var deviceToken: String? {
+        get {
+            return defaults.string(forKey: "deviceToken")
+        }
+        set {
+            defaults.set(newValue, forKey: "deviceToken")
+        }
+    }
+    
 }
