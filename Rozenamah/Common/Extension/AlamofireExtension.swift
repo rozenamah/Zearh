@@ -14,6 +14,7 @@ enum RMError: LocalizedError {
     enum StatusCode: Int {
         case unauthorized = 401
         case badRequest = 400
+        case forbidden = 403
         case notFound = 404
         case duplicate = 409
         case serverError = 500

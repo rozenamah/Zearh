@@ -11,7 +11,6 @@ class SplashPresenter: SplashPresentationLogic {
 	// MARK: Presentation logic
 	
     func present(user: User) {
-        // TODO: BLOCKED USER
         viewController?.userCorrect()
     }
     
@@ -19,6 +18,8 @@ class SplashPresenter: SplashPresentationLogic {
         switch error {
         case .status(let code, _) where code == .unauthorized:
             viewController?.tokenInvalid()
+        case .status(let code, _) where code == .forbidden:
+            viewController?.blockedUser()
         default:
             viewController?.handle(error: error)
         }

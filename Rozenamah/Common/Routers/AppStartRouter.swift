@@ -10,7 +10,9 @@ import UIKit
 import SlideMenuControllerSwift
 
 protocol AppStartRouter {
-    func navigateToApp()
+    func navigateToSignUp()
+    func navigateToDefaultApp()
+    func navigateToApp(inModule module: UserType)
 }
 
 extension AppStartRouter where Self: Router {
@@ -22,15 +24,33 @@ extension AppStartRouter where Self: Router {
         }
     }
     
-    func navigateToApp() {
+    func navigateToDefaultApp() {
+        guard let user = User.current else {
+            return
+        }
         
-        guard let homeVC = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateInitialViewController(),
-            let sideBarVC = UIStoryboard(name: "Main", bundle: nil)
+        if user.type == .doctor {
+            if user.doctor?.isVerified == true {
+                // Only if doctor and verified
+                navigateToApp(inModule: .doctor)
+            } else {
+                navigateToApp(inModule: .patient)
+            }
+        } else {
+            navigateToApp(inModule: .patient)
+        }
+    }
+    
+    func navigateToApp(inModule module: UserType) {
+        
+        guard let sideBarVC = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "side_vc") as? DrawerViewController else {
                 return
         }
         
+        let homeVC = module == .doctor ?
+            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "map_doctor_vc") :
+            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "map_patient_vc")
         
         let slideMenuController = SlideMenuController(mainViewController: homeVC,
                                                       leftMenuViewController: sideBarVC)

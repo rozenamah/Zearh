@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 
-class RegisterDoctorWorker {
+class RegisterDoctorWorker: RegisterPatientWorker {
 	
     
 }

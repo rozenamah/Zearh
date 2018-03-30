@@ -93,7 +93,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     
     @IBAction func priceChanged(_ sender: Any) {
         // Restore regular colors
-        priceTextView.borderColor = .rmGray
+        priceTextView.borderColor = .rmPale
         priceTextField.placeholderColor = .rmGray
         
 //        if let text = sender.text, let price = Int(text) {
@@ -119,7 +119,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
     
     func hideErrorIn(button: SCButton) {
-        button.borderColor = .rmGray
+        button.borderColor = .rmPale
         button.setTitleColor(.rmGray, for: .normal)
     }
     

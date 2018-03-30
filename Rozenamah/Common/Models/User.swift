@@ -12,6 +12,19 @@ enum UserType: String, Decodable {
     case doctor, patient
 }
 
+class Doctor: Decodable {
+    
+    private enum CodingKeys : String, CodingKey {
+        case gender, isVerified = "verified", classification, specialization, price
+    }
+    
+    let gender: Gender
+    let classification: Classification
+    let specialization: DoctorSpecialization?
+    let price: Int
+    var isVerified: Bool
+}
+
 class User: Decodable {
     
     let id: String
@@ -20,6 +33,7 @@ class User: Decodable {
     let email: String
     var avatar: String?
     let type: UserType
+    let doctor: Doctor?
 
     var avatarURL: URL? {
         if let avatar = avatar {

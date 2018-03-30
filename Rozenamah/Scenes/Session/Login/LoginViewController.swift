@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     }
     
     func loginSuccess() {
-        router?.navigateToApp()
+        router?.navigateToDefaultApp()
     }
 }
 

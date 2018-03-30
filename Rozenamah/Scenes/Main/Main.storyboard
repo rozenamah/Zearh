@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="IzZ-je-ptm">
             <objects>
-                <navigationController storyboardIdentifier="map_vc" navigationBarHidden="YES" id="8s8-ou-0ef" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="map_patient_vc" navigationBarHidden="YES" id="8s8-ou-0ef" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yI7-Lq-4wE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -25,10 +25,25 @@
             </objects>
             <point key="canvasLocation" x="-495" y="72"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="65F-9a-Ade">
+            <objects>
+                <navigationController storyboardIdentifier="map_doctor_vc" navigationBarHidden="YES" id="jau-U4-PTz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7y-M9-6m4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nfi-fJ-kA6" kind="relationship" relationship="rootViewController" id="5e1-bK-IfR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGB-1H-Dp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-495" y="787"/>
+        </scene>
         <!--Main screen-->
         <scene sceneID="CIy-4S-3d3">
             <objects>
-                <viewController id="KxT-QR-OiG" userLabel="Main screen" customClass="MainScreenViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KxT-QR-OiG" userLabel="Main screen" customClass="MainPatientViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="94O-ho-8Bt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,6 +135,111 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZQ-P2-29E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="309.60000000000002" y="71.514242878560722"/>
+        </scene>
+        <!--Main screen-->
+        <scene sceneID="ieu-Nr-YWn">
+            <objects>
+                <viewController id="nfi-fJ-kA6" userLabel="Main screen" customClass="MainDoctorViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UZo-sR-lu5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-df-05R">
+                                <rect key="frame" x="0.0" y="234" width="375" height="433"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="433" id="oRA-ck-4Jk"/>
+                                </constraints>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfl-zU-M5F" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.86875000000000002" green="0.98630022319999999" blue="0.6857295632" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nfi-fJ-kA6" id="pJJ-TN-nVl"/>
+                                </connections>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="bYm-ug-Og0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-zd-jer" customClass="SCButton" customModule="SwiftCake">
+                                <rect key="frame" x="16" y="596" width="343" height="39"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
+                                <state key="normal" title="Start receiving visit requests">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" title="Stop receiving visit requests">
+                                    <color key="titleColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColorSelected">
+                                        <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="receiveRequestAction:" destination="nfi-fJ-kA6" eventType="touchUpInside" id="H3v-qe-4am"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAB-jg-Uai">
+                                <rect key="frame" x="316" y="529" width="43" height="43"/>
+                                <state key="normal" image="locate_me"/>
+                                <connections>
+                                    <action selector="locateMeAction:" destination="nfi-fJ-kA6" eventType="touchUpInside" id="dLt-Sr-gmm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9q-GS-Dsf">
+                                <rect key="frame" x="0.0" y="28" width="56" height="54"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" image="menu"/>
+                                <connections>
+                                    <action selector="slideMenuAction:" destination="nfi-fJ-kA6" eventType="touchUpInside" id="QnM-zf-OLd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z0H-df-05R" firstAttribute="trailing" secondItem="eiD-yX-dcp" secondAttribute="trailing" id="34X-Hp-Xvj"/>
+                            <constraint firstItem="Z0H-df-05R" firstAttribute="bottom" secondItem="eiD-yX-dcp" secondAttribute="bottom" id="AXl-E7-mXV"/>
+                            <constraint firstItem="bYm-ug-Og0" firstAttribute="top" secondItem="UZo-sR-lu5" secondAttribute="top" id="Clj-cd-noi"/>
+                            <constraint firstItem="eiD-yX-dcp" firstAttribute="trailing" secondItem="cfl-zU-M5F" secondAttribute="trailing" id="E34-wm-gUB"/>
+                            <constraint firstItem="cfl-zU-M5F" firstAttribute="top" secondItem="UZo-sR-lu5" secondAttribute="top" id="GJS-hh-UkI"/>
+                            <constraint firstItem="Z0H-df-05R" firstAttribute="leading" secondItem="eiD-yX-dcp" secondAttribute="leading" id="GaV-PQ-ZAy"/>
+                            <constraint firstItem="n9q-GS-Dsf" firstAttribute="top" secondItem="eiD-yX-dcp" secondAttribute="top" constant="8" id="MZZ-Sq-rKp"/>
+                            <constraint firstItem="eiD-yX-dcp" firstAttribute="bottom" secondItem="0Sf-zd-jer" secondAttribute="bottom" constant="32" id="U5h-QP-rdO"/>
+                            <constraint firstItem="eiD-yX-dcp" firstAttribute="trailing" secondItem="xAB-jg-Uai" secondAttribute="trailing" constant="16" id="YOe-qO-Qat"/>
+                            <constraint firstItem="eiD-yX-dcp" firstAttribute="trailing" secondItem="0Sf-zd-jer" secondAttribute="trailing" constant="16" id="Zdt-0p-Ohu"/>
+                            <constraint firstItem="0Sf-zd-jer" firstAttribute="top" secondItem="xAB-jg-Uai" secondAttribute="bottom" constant="24" id="g4i-8B-zrV"/>
+                            <constraint firstItem="bYm-ug-Og0" firstAttribute="leading" secondItem="eiD-yX-dcp" secondAttribute="leading" id="hMl-lk-uHR"/>
+                            <constraint firstAttribute="bottom" secondItem="cfl-zU-M5F" secondAttribute="bottom" id="km0-BO-Tna"/>
+                            <constraint firstItem="cfl-zU-M5F" firstAttribute="leading" secondItem="eiD-yX-dcp" secondAttribute="leading" id="mv9-0w-c8Z"/>
+                            <constraint firstItem="eiD-yX-dcp" firstAttribute="trailing" secondItem="bYm-ug-Og0" secondAttribute="trailing" id="nKX-AZ-qhU"/>
+                            <constraint firstItem="0Sf-zd-jer" firstAttribute="leading" secondItem="UZo-sR-lu5" secondAttribute="leading" constant="16" id="wPY-oc-F6i"/>
+                            <constraint firstItem="n9q-GS-Dsf" firstAttribute="leading" secondItem="eiD-yX-dcp" secondAttribute="leading" id="wX5-hj-iMC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eiD-yX-dcp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GKJ-HK-WiL"/>
+                    <connections>
+                        <outlet property="bottomContainerConstraint" destination="AXl-E7-mXV" id="7Qk-rK-DJF"/>
+                        <outlet property="containerHeightConstraint" destination="oRA-ck-4Jk" id="TbI-YK-x6N"/>
+                        <outlet property="containerView" destination="Z0H-df-05R" id="v3T-S9-ntw"/>
+                        <outlet property="mapView" destination="cfl-zU-M5F" id="8Pf-AO-HBG"/>
+                        <outlet property="requestsReceiveButton" destination="0Sf-zd-jer" id="CDz-f5-FFE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2w-ql-q35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3nm-sN-2O6">
@@ -1019,7 +1139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFA-FV-3dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="799.2503748125938"/>
+            <point key="canvasLocation" x="258" y="1520"/>
         </scene>
         <!--terms_vc-->
         <scene sceneID="OFZ-9S-TeD">
@@ -1027,7 +1147,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="terms_vc" id="qia-dz-6e0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHM-QF-Z7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="688"/>
+            <point key="canvasLocation" x="920" y="1434"/>
         </scene>
         <!--edit_profile_vc-->
         <scene sceneID="IeB-gB-d0s">
@@ -1035,7 +1155,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="edit_profile_vc" id="2nn-Z7-JdC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iE4-gS-wRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="799"/>
+            <point key="canvasLocation" x="946" y="1519"/>
         </scene>
     </scenes>
     <resources>
@@ -1050,6 +1170,6 @@
         <image name="radio_full_btn" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ApP-20-oVH"/>
+        <segue reference="CEi-hk-pLN"/>
     </inferredMetricsTieBreakers>
 </document>

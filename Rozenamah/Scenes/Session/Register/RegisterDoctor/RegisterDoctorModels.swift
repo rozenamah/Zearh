@@ -1,6 +1,6 @@
 import UIKit
 
-enum DoctorSpecialization: String {
+enum DoctorSpecialization: String, Decodable {
     case cardiologists = "cardiologists"
     case dentist = "dentist"
     case dermatology = "dermatology"
@@ -67,7 +67,7 @@ enum DoctorSpecialization: String {
     }
 }
 
-enum Classification: String {
+enum Classification: String, Decodable {
     case doctor = "doctor"
     case nurse = "nurse"
     case specialist = "specialist"
@@ -87,7 +87,7 @@ enum Classification: String {
     }
 }
 
-enum Gender: String {
+enum Gender: String, Decodable {
     case male = "male"
     case female = "female"
     
@@ -113,6 +113,7 @@ final class RegisterDoctorForm: RegisterForm {
         params["specialization"] = specialization?.rawValue ?? NSNull()
         params["gender"] = gender!.rawValue
         params["price"] = price!
+        params["type"] = "doctor"
         params["pdf"] = "data:application/pdf;base64,\(pdf!.base64EncodedString())"
         
         return params

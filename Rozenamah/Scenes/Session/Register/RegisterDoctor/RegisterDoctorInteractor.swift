@@ -1,6 +1,8 @@
 import UIKit
+import KeychainAccess
 
 protocol RegisterDoctorBusinessLogic {
+    func register(withForm form: RegisterDoctorForm) 
     func validate(registerForm: RegisterDoctorForm) -> Bool
 }
 
@@ -10,6 +12,27 @@ class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
 
 	// MARK: Business logic
 	
+    func register(withForm form: RegisterDoctorForm) {
+        
+        worker.register(withForm: form) { (response, error) in
+            // Error handling
+            if let error = error {
+                self.presenter?.handleError(error)
+            }
+            
+            if let response = response {
+                // Save token in keychain
+                Keychain.shared.token = response.token
+                
+                // Save user in current
+                User.current = response.user
+                
+                self.presenter?.presentRegisterSuccess()
+            }
+            
+        }
+    }
+    
     func validate(registerForm: RegisterDoctorForm) -> Bool {
         
         var allFieldsValid = true

@@ -1,4 +1,12 @@
-import UIKit
+//
+//  MainScreenInteractor.swift
+//  Rozenamah
+//
+//  Created by Dominik Majda on 30.03.2018.
+//  Copyright © 2018 Dominik Majda. All rights reserved.
+//
+
+import Foundation
 import CoreLocation
 import GoogleMaps
 import UserNotifications
@@ -9,16 +17,14 @@ protocol MainScreenBusinessLogic {
 }
 
 class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
-	var presenter: MainScreenPresentationLogic?
-	var worker = MainScreenWorker()
-
+    
     private var locationManager = CLLocationManager()
-
+    
     /// Whenever first location is found move camera to this position
     fileprivate var firstLocationDisplayed: Bool = false
     
-	// MARK: Business logic
-	
+    // MARK: Business logic
+    
     override init() {
         super.init()
         
@@ -50,7 +56,7 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
     
     func returnToUserLocation() {
         if let myLocation = locationManager.location {
-            presenter?.moveCameraToPosition(location: myLocation, withAnimation: true)
+//            presenter?.moveCameraToPosition(location: myLocation, withAnimation: true)
         }
     }
     
@@ -81,10 +87,10 @@ extension MainScreenInteractor: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    
+        
         if let firstLocation = locations.first, !firstLocationDisplayed {
             firstLocationDisplayed = true
-            presenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
+//            presenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
         }
     }
     

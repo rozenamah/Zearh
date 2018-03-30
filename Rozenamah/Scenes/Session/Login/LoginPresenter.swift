@@ -14,6 +14,7 @@ class LoginPresenter: LoginPresentationLogic {
         case loginOrPasswordInvalid
         case passwordToShort
         case passwordToLong
+        case blockedUser
         case unknown(Error?)
         
         var errorDescription: String? {
@@ -22,6 +23,8 @@ class LoginPresenter: LoginPresentationLogic {
                 return "Email is incorrect"
             case .passwordToShort:
                 return "Password must have at least 4 characters"
+            case .blockedUser:
+                return "This user is blocked"
             case .passwordToLong:
                 return "Password can have maximum 30 characters"
             case .loginOrPasswordInvalid:
@@ -43,6 +46,8 @@ class LoginPresenter: LoginPresentationLogic {
         switch error {
         case .status(let code, _) where code == .unauthorized :
             presentError(.loginOrPasswordInvalid)
+        case .status(let code, _) where code == .forbidden :
+            presentError(.blockedUser)
         default:
             presentError(.unknown(error))
         }

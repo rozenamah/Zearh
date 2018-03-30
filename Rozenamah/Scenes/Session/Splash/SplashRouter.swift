@@ -18,9 +18,18 @@ class SplashRouter: Router, AppStartRouter, AlertRouter {
 
     // MARK: Navigation
     
+    func showUserBlocked() {
+        let alert = UIAlertController(title: "Ups", message: "This user is blocked", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            self.navigateToSignUp()
+        }))
+        
+        viewController?.present(alert, animated: true, completion: nil)
+    }
+    
     func navigateToAppWithDelay() {
         delayWithSeconds(1.5) {
-            self.navigateToApp()
+            self.navigateToDefaultApp()
         }
     }
     

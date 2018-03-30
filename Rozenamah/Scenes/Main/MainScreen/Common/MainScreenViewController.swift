@@ -1,3 +1,11 @@
+//
+//  File.swift
+//  Rozenamah
+//
+//  Created by Dominik Majda on 30.03.2018.
+//  Copyright © 2018 Dominik Majda. All rights reserved.
+//
+
 import UIKit
 import GoogleMaps
 
@@ -7,43 +15,23 @@ protocol MainScreenDisplayLogic: class {
 }
 
 class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
-
+    
     // MARK: Outlets
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bottomContainerConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
-    // MARK: Properties
-    var interactor: MainScreenBusinessLogic?
-    var router: MainScreenRouter?
-
-    // MARK: Object lifecycle
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
     // MARK: View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        interactor?.registerForNotifications()
     }
     
-    
-
     // MARK: View customization
-
-    fileprivate func setupView() {
+    
+    func setupView() {
         mapView.isMyLocationEnabled = true
         
         // Adjust position of Google Map Logo - it is private API and might not be safe to use
@@ -64,20 +52,13 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
         containerView.isHidden = true
         bottomContainerConstraint.constant = 0
     }
-
+    
     // MARK: Event handling
-
+    
     @IBAction func slideMenuAction(_ sender: Any) {
         slideMenuController()?.toggleLeft()
     }
     
-    @IBAction func callDoctorAction(_ sender: Any) {
-        router?.navigateToCallDoctor()
-    }
-    
-    @IBAction func locateMeAction(_ sender: Any) {
-        interactor?.returnToUserLocation()
-    }
     
     // MARK: Presenter methods
     

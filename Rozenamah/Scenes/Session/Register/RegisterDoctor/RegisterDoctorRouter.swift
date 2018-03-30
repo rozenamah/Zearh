@@ -6,6 +6,9 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
     typealias RoutingViewController = RegisterDoctorViewController
     weak var viewController: RegisterDoctorViewController?
 
+    /// Alert view, displayed when registering doctor
+    private var alertLoading: UIAlertController?
+    
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
@@ -17,7 +20,7 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
     func showDoctorCreatedAlert() {
         let alert = UIAlertController(title: "Account created", message: "Please, wait until you account will be verified. It shouldn't take more than 24 hours. Until then, you can user application as patient.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
-            self.navigateToApp()
+            self.navigateToApp(inModule: .patient)
         }))
     }
     
@@ -41,6 +44,14 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
         let documentPickerController = UIDocumentPickerViewController(documentTypes: types, in: .import)
         documentPickerController.delegate = self
         viewController?.present(documentPickerController, animated: true, completion: nil)
+    }
+    
+    func showWaitAlert() {
+        alertLoading = showLoadingAlert()
+    }
+    
+    func hideWaitAlert(completion: (() -> Void)? = nil) {
+        alertLoading?.dismiss(animated: true, completion: completion)
     }
     
     // MARK: Passing data

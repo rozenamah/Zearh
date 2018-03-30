@@ -140,7 +140,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     
     func registerSuccess() {
         router?.hideWaitAlert(completion: {
-            self.router?.navigateToApp()
+            self.router?.navigateToApp(inModule: .patient)
         })
     }
 }

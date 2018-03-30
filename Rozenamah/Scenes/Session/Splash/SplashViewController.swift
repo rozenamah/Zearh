@@ -4,6 +4,7 @@ import KeychainAccess
 protocol SplashDisplayLogic: class {
     func userCorrect()
     func tokenInvalid()
+    func blockedUser()
     func handle(error: Error)
 }
 
@@ -51,6 +52,10 @@ class SplashViewController: UIViewController, SplashDisplayLogic {
     
     func tokenInvalid() {
         router?.navigateToSignUp()
+    }
+    
+    func blockedUser() {
+        router?.showUserBlocked()
     }
     
     func userCorrect() {

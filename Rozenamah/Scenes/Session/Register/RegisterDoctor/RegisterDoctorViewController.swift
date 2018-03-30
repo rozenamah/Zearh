@@ -92,7 +92,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     @IBAction func priceChanged(_ sender: UITextField) {
         // Restore regular colors
-        priceTextView.borderColor = .rmGray
+        priceTextView.borderColor = .rmPale
         priceTextField.placeholderColor = .rmGray
         
         if let text = sender.text, let price = Int(text) {
@@ -108,7 +108,8 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
                 router?.showAlert(message: "You need to upload your doctor license")
                 return
             }
-            router?.showDoctorCreatedAlert()
+            router?.showWaitAlert()
+            interactor?.register(withForm: registerForm)
         }
     }
     
@@ -168,10 +169,13 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     }
     
     func handle(error: Error) {
-        router?.showError(error)
+        router?.hideWaitAlert(completion: {
+            self.router?.showError(error)
+        })
     }
     
     func handle(error: Error, inField field: RegisterDoctorViewController.Field) {
+        router?.hideWaitAlert()
         switch field {
         case .price:
             priceTextView.borderColor = .rmRed
@@ -186,7 +190,9 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     }
     
     func registerSuccess() {
-        router?.navigateToApp()
+        router?.hideWaitAlert(completion: {
+            self.router?.showDoctorCreatedAlert()
+        })
     }
     
     func displayErrorIn(button: SCButton) {
@@ -195,7 +201,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     }
     
     func hideErrorIn(button: SCButton) {
-        button.borderColor = .rmGray
+        button.borderColor = .rmPale
         button.setTitleColor(.rmGray, for: .normal)
     }
     

@@ -1,8 +1,8 @@
 import UIKit
 
-class MainScreenRouter: NSObject, Router {
-    typealias RoutingViewController = MainScreenViewController
-    weak var viewController: MainScreenViewController?
+class MainPatientRouter: NSObject, Router {
+    typealias RoutingViewController = MainPatientViewController
+    weak var viewController: MainPatientViewController?
 
     // MARK: Routing
 
