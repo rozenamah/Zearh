@@ -14,6 +14,7 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
         case newPasswordToShort
         case newPasswordToLong
         case passwordsDontMatch
+        case incorrectPassword
         
         var errorDescription: String? {
             switch self {
@@ -25,6 +26,8 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
                 return "Passwords are not the same"
             case .currentPasswordToShort:
                 return "Password must have at least 4 characters"
+            case .incorrectPassword:
+                return "Password is incorrect"
             }
         }
     }
@@ -33,7 +36,7 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
         switch error {
         case .currentPasswordToShort:
             viewController?.handle(error: error, inField: .currentPassword)
-        case .newPasswordToLong:
+        case .newPasswordToLong, .incorrectPassword:
             viewController?.handle(error: error, inField: .newPassword)
         case .newPasswordToShort:
             viewController?.handle(error: error, inField: .newPassword)
