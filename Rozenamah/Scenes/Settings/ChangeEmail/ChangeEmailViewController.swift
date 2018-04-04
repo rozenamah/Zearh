@@ -2,7 +2,6 @@ import UIKit
 
 protocol ChangeEmailDisplayLogic: class {
     func displayError(_ error: Error)
-    func displayEmailIsUnique()
     func emailChangedSuccessful()
 }
 
@@ -52,7 +51,7 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     
     @IBAction func changeEmailAction(_ sender: Any) {
         if let email = emailView.textField.text, interactor?.validate(email) == true {
-            interactor?.checkIfEmailTaken(email)
+            interactor?.changeEmail(email)
         }
     }
     
@@ -60,10 +59,6 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     
     func displayError(_ error: Error) {
         emailView.adjustToState(.error(msg: error))
-    }
-    
-    func displayEmailIsUnique() {
-        interactor?.changeEmail(emailView.textField.text!)
     }
     
     func emailChangedSuccessful() {

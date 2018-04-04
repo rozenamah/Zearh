@@ -1,7 +1,6 @@
 import UIKit
 
 protocol ChangeEmailBusinessLogic {
-    func checkIfEmailTaken(_ email: String)
     func changeEmail(_ email: String)
     func validate(_ email :String) -> Bool
 }
@@ -9,22 +8,17 @@ protocol ChangeEmailBusinessLogic {
 class ChangeEmailInteractor: ChangeEmailBusinessLogic {
 	var presenter: ChangeEmailPresentationLogic?
 	var worker = ChangeEmailWorker()
-    var registerWorker = RegisterPatientWorker()
 
 	// MARK: Business logic
-	
-    func checkIfEmailTaken(_ email: String) {
-        registerWorker.verifyIfEmailTaken(email) { (error) in
-            if let error = error {
-                self.presenter?.handleError(error)
-                return
-            }
-        }
-        presenter?.emailIsUnique()
-    }
     
     func changeEmail(_ email: String) {
-        
+        worker.changeEmail(email) { (error) in
+            if let error = error {
+                self.presenter?.handleError(error)
+            } else {
+                self.presenter?.emailChangedSuccessful()
+            }
+        }
     }
     
     func validate(_ email: String) -> Bool {

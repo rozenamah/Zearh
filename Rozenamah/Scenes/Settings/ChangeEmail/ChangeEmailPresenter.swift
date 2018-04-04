@@ -2,7 +2,7 @@ import UIKit
 
 protocol ChangeEmailPresentationLogic {
     func handleError(_ error: RMError)
-    func emailIsUnique()
+    func emailChangedSuccessful()
     func presentError(_ error: ChangeEmailPresenter.ChangeEmailError)
 }
 
@@ -28,6 +28,10 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
         }
     }
     
+    func emailChangedSuccessful() {
+        viewController?.emailChangedSuccessful()
+    }
+    
     func handleError(_ error: RMError) {
         switch error {
         case .status(let code, _) where code == .duplicate:
@@ -44,9 +48,5 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
         case .unknownError:
             viewController?.displayError(error)
         }
-    }
-    
-    func emailIsUnique() {
-        viewController?.displayEmailIsUnique()
     }
 }

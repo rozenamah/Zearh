@@ -67,7 +67,7 @@ class ChangePasswordViewController: UIViewController, ChangePasswordDisplayLogic
         changePasswordForm.confirmPassword = confirmPasswordView.textField.text
         
         if interactor?.validate(changePasswordForm) == true {
-            
+            interactor?.changePassword(changePasswordForm)
         }
     }
 

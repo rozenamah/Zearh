@@ -2,6 +2,8 @@ import UIKit
 
 protocol ChangePasswordPresentationLogic {
     func presentError(_ error: ChangePasswordPresenter.ChangePasswordError)
+    func passwordChangedSuccessful()
+    func handleError(_ error: RMError)
 }
 
 class ChangePasswordPresenter: ChangePasswordPresentationLogic {
@@ -29,6 +31,19 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
             case .incorrectPassword:
                 return "Password is incorrect"
             }
+        }
+    }
+    
+    func passwordChangedSuccessful() {
+        viewController?.passwordChangedSuccessful()
+    }
+    
+    func handleError(_ error: RMError) {
+        switch error {
+        case .status(let code, _) where code == .duplicate:
+            presentError(.incorrectPassword)
+        default:
+            presentError(.incorrectPassword)
         }
     }
     
