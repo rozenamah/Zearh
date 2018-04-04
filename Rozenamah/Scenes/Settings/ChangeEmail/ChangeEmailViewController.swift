@@ -50,8 +50,10 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     }
     
     @IBAction func changeEmailAction(_ sender: Any) {
-        if let email = emailView.textField.text, interactor?.validate(email) == true {
-            interactor?.changeEmail(email)
+        let emailForm = EmailForm()
+        emailForm.email = emailView.textField.text
+        if interactor?.validate(emailForm) == true {
+            interactor?.changeEmail(emailForm)
         }
     }
     
@@ -62,7 +64,7 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     }
     
     func emailChangedSuccessful() {
-        router?.dismiss()
+        router?.dismissAfterChangedEmail()
     }
 }
 

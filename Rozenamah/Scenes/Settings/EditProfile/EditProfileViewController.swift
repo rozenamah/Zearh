@@ -2,6 +2,8 @@ import UIKit
 import SwiftCake
 
 protocol EditProfileDisplayLogic: ClassificationDelegate {
+    func profileUpdatedSuccessful()
+    func displayError()
 }
 
 class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
@@ -68,7 +70,12 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     // MARK: Event handling
 
     @IBAction func saveChanges(_ sender: Any) {
+        editForm?.name = nameView.textField.text!
+        editForm?.surname = surnameView.textField.text!
         
+        if let editForm = editForm {
+            interactor?.updateUserInfo(editForm)
+        }
     }
     
     @IBAction func dismissAction(_ sender: Any) {
@@ -108,6 +115,21 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
     
     // MARK: Presenter methods
+    
+    func profileUpdatedSuccessful() {
+        guard let user = User.current else {
+            return
+        }
+        
+        nameView.textField.text = user.name
+        surnameView.textField.text = user.surname
+        
+        router?.showSuccessChangeAlert()
+    }
+    
+    func displayError() {
+        router?.showErrorAlert()
+    }
     
     func displaySelectedAvatar(image: UIImage) {
         avatarImageView.image = image

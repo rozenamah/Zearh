@@ -17,6 +17,8 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
         case newPasswordToLong
         case passwordsDontMatch
         case incorrectPassword
+        case oldPasswordIncorrect
+        case unknownError
         
         var errorDescription: String? {
             switch self {
@@ -30,6 +32,10 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
                 return "Password must have at least 4 characters"
             case .incorrectPassword:
                 return "Password is incorrect"
+            case .oldPasswordIncorrect:
+                return "Password is incorrect"
+            case .unknownError:
+                return "Unknown error"
             }
         }
     }
@@ -40,16 +46,16 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
     
     func handleError(_ error: RMError) {
         switch error {
-        case .status(let code, _) where code == .duplicate:
-            presentError(.incorrectPassword)
+        case .status(let code, _) where code == .unauthorized:
+            presentError(.oldPasswordIncorrect)
         default:
-            presentError(.incorrectPassword)
+            presentError(.unknownError)
         }
     }
     
     func presentError(_ error: ChangePasswordPresenter.ChangePasswordError) {
         switch error {
-        case .currentPasswordToShort:
+        case .currentPasswordToShort, .oldPasswordIncorrect, .unknownError:
             viewController?.handle(error: error, inField: .currentPassword)
         case .newPasswordToLong, .incorrectPassword:
             viewController?.handle(error: error, inField: .newPassword)

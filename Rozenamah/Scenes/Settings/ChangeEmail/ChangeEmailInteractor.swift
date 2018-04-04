@@ -1,8 +1,8 @@
 import UIKit
 
 protocol ChangeEmailBusinessLogic {
-    func changeEmail(_ email: String)
-    func validate(_ email :String) -> Bool
+    func changeEmail(_ email: EmailForm)
+    func validate(_ emailForm: EmailForm) -> Bool
 }
 
 class ChangeEmailInteractor: ChangeEmailBusinessLogic {
@@ -11,7 +11,7 @@ class ChangeEmailInteractor: ChangeEmailBusinessLogic {
 
 	// MARK: Business logic
     
-    func changeEmail(_ email: String) {
+    func changeEmail(_ email: EmailForm) {
         worker.changeEmail(email) { (error) in
             if let error = error {
                 self.presenter?.handleError(error)
@@ -21,11 +21,11 @@ class ChangeEmailInteractor: ChangeEmailBusinessLogic {
         }
     }
     
-    func validate(_ email: String) -> Bool {
+    func validate(_ emailForm: EmailForm) -> Bool {
         var isEmailValid = true
         
         // Email verification
-        if !EmailValidation.validate(email: email) {
+        if emailForm.email == nil || !EmailValidation.validate(email: emailForm.email!) {
             isEmailValid = false
             presenter?.presentError(.incorrectEmail)
         }

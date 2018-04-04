@@ -20,6 +20,8 @@ enum API {
         case resetPassword
         case logout
         case devices
+        case changePassword
+        case updateProfile
         
         var resource: String { return baseURL + "user/" }
     }
@@ -35,6 +37,8 @@ extension API.User {
         case .me: return resource + "me"
         case .logout: return resource + "logout"
         case .devices: return resource + "devices"
+        case .changePassword: return resource + "password/change"
+        case .updateProfile: return resource + "update"
         }
     }
 }

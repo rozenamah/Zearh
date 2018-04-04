@@ -85,7 +85,7 @@ class ChangePasswordViewController: UIViewController, ChangePasswordDisplayLogic
     }
     
     func passwordChangedSuccessful() {
-        router?.dismiss()
+        router?.dismissAfterChangedPassword()
     }
 }
 
