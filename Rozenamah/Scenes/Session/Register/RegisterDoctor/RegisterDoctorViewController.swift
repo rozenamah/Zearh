@@ -40,7 +40,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     var router: RegisterDoctorRouter?
 
     /// Form used to perform register of doctor, passed from step 1
-    var registerForm: RegisterDoctorForm!
+    var registerForm: CreateDoctorForm!
     
     /// By this value we know if this screen was called in register flow or from drawer menu
     /// in order to change patient to doctor
@@ -79,6 +79,9 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
             // Title label and button should be different on update
             titleLabel.text = "Update to doctor"
             createButton.setTitle("Update", for: .normal)
+    
+            // Create update form, it contains only doctor info
+            registerForm = UpdateDoctorForm()
         }
         
         // Specialization and price will be enabled if General Doctor - otherwise it is hardcoded
@@ -134,7 +137,11 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
                 return
             }
             router?.showWaitAlert()
-            interactor?.register(withForm: registerForm)
+            if registerType == .register {
+                interactor?.register(withForm: registerForm)
+            } else {
+                // TODO: Update
+            }
         }
     }
     

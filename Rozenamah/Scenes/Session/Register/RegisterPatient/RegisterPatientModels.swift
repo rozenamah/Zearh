@@ -6,7 +6,7 @@ enum RegisterMode {
     case doctor
 }
 
-class RegisterForm {
+class RegisterForm: ParamForm {
     var password: String?
     var email: String?
     var repeatPassword: String?

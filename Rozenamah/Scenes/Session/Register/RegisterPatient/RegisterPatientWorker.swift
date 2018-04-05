@@ -14,7 +14,7 @@ class RegisterPatientWorker {
             .responseEmpty(completion: completion)
     }
     
-    func register(withForm form: RegisterForm, completion: @escaping LoginCompletion) {
+    func register(withForm form: ParamForm, completion: @escaping LoginCompletion) {
         
         let params = form.toParams
         

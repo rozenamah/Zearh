@@ -27,6 +27,7 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
             self.navigateToApp(inModule: .patient)
         }))
+        viewController?.present(alert, animated: true, completion: nil)
     }
     
     func showGenderSelection() {

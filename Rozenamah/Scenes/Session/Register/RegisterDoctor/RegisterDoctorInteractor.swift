@@ -2,8 +2,8 @@ import UIKit
 import KeychainAccess
 
 protocol RegisterDoctorBusinessLogic {
-    func register(withForm form: RegisterDoctorForm) 
-    func validate(registerForm: RegisterDoctorForm) -> Bool
+    func register(withForm form: CreateDoctorForm)
+    func validate(registerForm: CreateDoctorForm) -> Bool
 }
 
 class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
@@ -12,7 +12,7 @@ class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
 
 	// MARK: Business logic
 	
-    func register(withForm form: RegisterDoctorForm) {
+    func register(withForm form: CreateDoctorForm) {
         
         worker.register(withForm: form) { (response, error) in
             // Error handling
@@ -33,7 +33,7 @@ class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
         }
     }
     
-    func validate(registerForm: RegisterDoctorForm) -> Bool {
+    func validate(registerForm: CreateDoctorForm) -> Bool {
         
         var allFieldsValid = true
     
