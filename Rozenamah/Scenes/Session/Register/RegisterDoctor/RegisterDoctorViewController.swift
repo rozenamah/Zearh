@@ -9,6 +9,11 @@ protocol RegisterDoctorDisplayLogic: ClassificationDelegate {
 
 class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic {
 
+    enum RegisterType {
+        case register // This screen is called in register
+        case update // This screen is called when updating from patient
+    }
+    
     enum Field {
         case classification
         case specialization
@@ -27,13 +32,19 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     @IBOutlet weak var specializationView: UIView!
     @IBOutlet weak var priceView: UIView!
     @IBOutlet weak var priceTextView: SCView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var createButton: UIButton!
     
     // MARK: Properties
     var interactor: RegisterDoctorBusinessLogic?
     var router: RegisterDoctorRouter?
 
-    // Form used to perform register of doctor, passed from step 1
+    /// Form used to perform register of doctor, passed from step 1
     var registerForm: RegisterDoctorForm!
+    
+    /// By this value we know if this screen was called in register flow or from drawer menu
+    /// in order to change patient to doctor
+    var registerType: RegisterType = .register
     
     // MARK: Object lifecycle
 
@@ -60,12 +71,26 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         // This icon is visible after user choose PDF file
         pdfImageView.isHidden = true
         
+        // If type is update - add cancel button to navigation bar
+        if registerType == .update {
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction(_:)))
+            navigationItem.leftBarButtonItem = cancelButton
+            
+            // Title label and button should be different on update
+            titleLabel.text = "Update to doctor"
+            createButton.setTitle("Update", for: .normal)
+        }
+        
         // Specialization and price will be enabled if General Doctor - otherwise it is hardcoded
         disableSpecialization()
     }
 
     // MARK: Event handling
 
+    @IBAction func cancelAction(_ sender: Any) {
+        router?.dismiss()
+    }
+    
     @IBAction func tapAction(_ sender: Any) {
         // Called when scroll view clicked
         view.endEditing(true)

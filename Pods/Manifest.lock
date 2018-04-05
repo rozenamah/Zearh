@@ -13,9 +13,9 @@ PODS:
   - IQKeyboardManager (5.0.8)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.6.2)
+  - RangeSeekSlider (1.8.0)
   - SlideMenuControllerSwift (4.0.0)
   - SwiftCake (0.3.1)
-  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -26,16 +26,22 @@ DEPENDENCIES:
   - IQKeyboardManager
   - KeychainAccess
   - Kingfisher
+  - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider`, branch `swift_4`)
   - SlideMenuControllerSwift
   - SwiftCake (from `https://github.com/Rovalx/SwiftCake.git`, branch `master`)
-  - SwiftyJSON
 
 EXTERNAL SOURCES:
+  RangeSeekSlider:
+    :branch: swift_4
+    :git: https://github.com/WorldDownTown/RangeSeekSlider
   SwiftCake:
     :branch: master
     :git: https://github.com/Rovalx/SwiftCake.git
 
 CHECKOUT OPTIONS:
+  RangeSeekSlider:
+    :commit: 77c29321a97c7f029e878e1479ab5ed5e4b2edb2
+    :git: https://github.com/WorldDownTown/RangeSeekSlider
   SwiftCake:
     :commit: 97ee67e5f69fdae27c7eed711168b8e14b4ab42c
     :git: https://github.com/Rovalx/SwiftCake.git
@@ -49,10 +55,10 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftCake: c3ecf5fe2d943bf6fe86197cb3ecab4ec9c4dc5b
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 40521c1ace546885ce6bdf12f54c6d3cba7eff19
+PODFILE CHECKSUM: 533df5bc4577be197a8c19748b54d083f5805b60
 
 COCOAPODS: 1.3.1

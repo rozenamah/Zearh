@@ -110,7 +110,9 @@ final class RegisterDoctorForm: RegisterForm {
         var params = super.toParams
         
         params["classification"] = classification!.rawValue
-        params["specialization"] = specialization?.rawValue ?? NSNull()
+        if let specialization = specialization?.rawValue {
+            params["specialization"] = specialization
+        }
         params["gender"] = gender!.rawValue
         params["price"] = price!
         params["type"] = "doctor"

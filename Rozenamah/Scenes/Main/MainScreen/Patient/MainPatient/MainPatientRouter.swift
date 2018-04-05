@@ -7,16 +7,6 @@ class MainPatientRouter: NSObject, Router {
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifer = segue.identifier else {
-            return
-        }
-        
-        switch identifer {
-        case "call_doctor_segue":
-            break
-        default:
-            break
-        }
     }
 
     // MARK: Navigation

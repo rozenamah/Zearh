@@ -11,6 +11,8 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var createAccountView: UIView!
+    @IBOutlet weak var switchAccountView: UIView!
     
     // MARK: Properties
     var interactor: DrawerBusinessLogic?
@@ -43,16 +45,25 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
             nameLabel.text = user.fullname
             emailLabel.text = user.email
             avatarImageView.setAvatar(for: user)
+            
+            // If user is patient - hide switch account view and show update to doctor view
+            
+            createAccountView.isHidden = user.type == .doctor
+            switchAccountView.isHidden = user.type != .doctor
+            
         }
         
         if iPhoneDetection.deviceType() == .iphone5 {
             stackView.spacing = 8
         }
-        
     }
 
     // MARK: Event handling
-
+    
+    @IBAction func createDoctorAccount(_ sender: Any) {
+        router?.navigateToCreateDoctorAccount()
+    }
+    
     @IBAction func editProfileAction(_ sender: Any) {
         router?.naviagateToEdit()
     }

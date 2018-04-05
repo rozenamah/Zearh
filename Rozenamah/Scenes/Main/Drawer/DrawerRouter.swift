@@ -20,12 +20,21 @@ class DrawerRouter: Router, AppStartRouter {
             let navVC = segue.destination as? UINavigationController
             let termsVC = navVC?.visibleViewController as? TermsViewController
             termsVC?.source = .privacyPolicy
+        case "update_to_doctor_segue":
+            let navVC = segue.destination as? UINavigationController
+            let updateVC = navVC?.visibleViewController as? RegisterDoctorViewController
+            updateVC?.registerType = .update
         default:
             break
         }
     }
 
     // MARK: Navigation
+    
+    func navigateToCreateDoctorAccount() {
+        viewController?.toggleLeft()
+        viewController?.performSegue(withIdentifier: "update_to_doctor_segue", sender: nil)
+    }
     
     func naviagateToEdit() {
         viewController?.toggleLeft()

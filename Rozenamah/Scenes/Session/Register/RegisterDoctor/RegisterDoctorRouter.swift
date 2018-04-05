@@ -17,6 +17,11 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
 
     // MARK: Navigation
     
+    /// Called when this view is presented in modal, during updating account
+    func dismiss() {
+        viewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func showDoctorCreatedAlert() {
         let alert = UIAlertController(title: "Account created", message: "Please, wait until you account will be verified. It shouldn't take more than 24 hours. Until then, you can user application as patient.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in

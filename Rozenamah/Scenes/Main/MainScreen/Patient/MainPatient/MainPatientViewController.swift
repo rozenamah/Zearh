@@ -32,6 +32,18 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
         interactor?.registerForNotifications()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        // Add shadow to container
+        containerView.layer.masksToBounds = false
+        containerView.layer.shadowColor = UIColor.rmShadow.cgColor
+        containerView.layer.shadowOpacity = 0.5
+        containerView.layer.shadowRadius = 10
+        containerView.layer.shadowOffset = CGSize(width: 0, height: -1)
+        containerView.layer.shadowPath = UIBezierPath(rect: containerView.bounds).cgPath
+    }
+    
     // MARK: View customization
 
     override func setupView() {
