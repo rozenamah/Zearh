@@ -18,6 +18,11 @@ protocol MainScreenBusinessLogic {
 
 class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
     
+    /// Subclass will override this to provide presenter on whichwe  can perform general actions
+    var basePresenter: MainScreenPresenter? {
+        return nil
+    }
+    
     private var locationManager = CLLocationManager()
     
     /// Whenever first location is found move camera to this position
@@ -56,7 +61,7 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
     
     func returnToUserLocation() {
         if let myLocation = locationManager.location {
-//            presenter?.moveCameraToPosition(location: myLocation, withAnimation: true)
+            basePresenter?.moveCameraToPosition(location: myLocation, withAnimation: true)
         }
     }
     
@@ -90,7 +95,7 @@ extension MainScreenInteractor: CLLocationManagerDelegate {
         
         if let firstLocation = locations.first, !firstLocationDisplayed {
             firstLocationDisplayed = true
-//            presenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
+            basePresenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
         }
     }
     

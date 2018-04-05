@@ -27,6 +27,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
     }
     
     // MARK: View customization

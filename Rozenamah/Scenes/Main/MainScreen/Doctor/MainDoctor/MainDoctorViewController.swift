@@ -30,11 +30,14 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        interactor?.registerForNotifications()
     }
 
     // MARK: View customization
 
     override func setupView() {
+        super.setupView()
     }
 
     // MARK: Event handling
@@ -46,6 +49,10 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         sender.backgroundColor = !sender.isSelected ? .rmBlue : .white
         
         // TODO: API
+    }
+    
+    @IBAction func locateMeAction(_ sender: Any) {
+        interactor?.returnToUserLocation()
     }
     
     // MARK: Presenter methods

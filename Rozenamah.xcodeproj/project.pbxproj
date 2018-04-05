@@ -99,6 +99,7 @@
 		F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF6206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift */; };
 		F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF7206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift */; };
 		F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */; };
+		F967D3312076380200F2EB75 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967D3302076380200F2EB75 /* Doctor.swift */; };
 		F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9753760205FCFAA003DC80E /* Settings.storyboard */; };
 		F9753764205FD509003DC80E /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753763205FD509003DC80E /* TermsViewController.swift */; };
 		F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */; };
@@ -245,6 +246,7 @@
 		F95AFBF7206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersConfigurator.swift; sourceTree = "<group>"; };
 		F95F140520612F3E00CDC2E5 /* Rozenamah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rozenamah.entitlements; sourceTree = "<group>"; };
 		F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneDeviceDetection.swift; sourceTree = "<group>"; };
+		F967D3302076380200F2EB75 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		F9753760205FCFAA003DC80E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9753763205FD509003DC80E /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorPresenter.swift; sourceTree = "<group>"; };
@@ -742,6 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				F940EC77205BEA4A00266753 /* User.swift */,
+				F967D3302076380200F2EB75 /* Doctor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1045,6 +1048,7 @@
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
 				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
+				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
 				F940EC4A205A9BFF00266753 /* MainPatientRouter.swift in Sources */,
