@@ -58,15 +58,26 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
             if user.type == .doctor {
                 doctorView.isHidden = false
                 editForm = EditProfileForm(user: user)
-                editForm?.doctor = EditProfileForm.DoctorEditProfileForm(user: user)
-                
+                filCurrentFilters(for: editForm)
             } else {
                 doctorView.isHidden = true
                 // Create edit form
                 editForm = EditProfileForm(user: user)
             }
-            
-        
+        }
+    }
+    
+    fileprivate func filCurrentFilters(for editForm: EditProfileForm?) {
+        if let doctor = editForm?.doctor {
+            professionButton.setTitle(doctor.classification.title, for: .selected)
+            professionButton.isSelected = true
+            if let specialization = doctor.specialization {
+                specializationSelected(specialization)
+            }
+
+            if let price = doctor.price {
+                priceTextField.text = "\(price)"
+            }
         }
     }
 
@@ -133,6 +144,11 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     
     func displaySelectedAvatar(image: UIImage) {
         avatarImageView.image = image
+        editForm?.avatar = image
+        if let editForm = editForm {
+            interactor?.updateUserAvatar(editForm)
+        }
+        
     }
     
     func displayErrorIn(button: SCButton) {

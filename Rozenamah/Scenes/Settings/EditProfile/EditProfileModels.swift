@@ -8,8 +8,9 @@ class EditProfileForm {
         var price: Int?
         
         init(user: User) {
-            classification = .consultants
-            price = 100
+            classification = user.doctor?.classification ?? .consultants
+            specialization = user.doctor?.specialization
+            price = user.doctor?.price
         }
     }
     
@@ -23,7 +24,9 @@ class EditProfileForm {
         self.name = user.name
         self.surname = user.surname
         self.type = user.type.rawValue
+        
         // TODO: Init doctor data
+        self.doctor = DoctorEditProfileForm(user: user)
     }
     
     var toParams: [String: Any] {
@@ -47,7 +50,7 @@ class EditProfileForm {
     }
     
     var toAvatarParams: [String: Any] {
-        var avatarParams: [String: Any] = [:]
+        var avatarParams: [String: Any] = toParams
         if let avatar = avatar {
             let imageData: Data = UIImageJPEGRepresentation(avatar, 0.9)!
             avatarParams["avatar"] = "data:image/jpeg;base64,\(imageData.base64EncodedString())"
