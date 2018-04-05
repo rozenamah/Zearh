@@ -57,13 +57,16 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
             // If user is patient - hide doctor edit
             if user.type == .doctor {
                 doctorView.isHidden = false
+                editForm = EditProfileForm(user: user)
+                editForm?.doctor = EditProfileForm.DoctorEditProfileForm(user: user)
                 
             } else {
                 doctorView.isHidden = true
+                // Create edit form
+                editForm = EditProfileForm(user: user)
             }
             
-            // Create edit form
-            editForm = EditProfileForm(user: user)
+        
         }
     }
 
@@ -72,7 +75,6 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     @IBAction func saveChanges(_ sender: Any) {
         editForm?.name = nameView.textField.text!
         editForm?.surname = surnameView.textField.text!
-        
         if let editForm = editForm {
             interactor?.updateUserInfo(editForm)
         }
@@ -102,6 +104,10 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         // Restore regular colors
         priceTextView.borderColor = .rmPale
         priceTextField.placeholderColor = .rmGray
+        
+//        if let text = sender.text, let price = Int(text) {
+//            editForm?.doctor?.price = price
+//        }
         
 //        if let text = sender.text, let price = Int(text) {
 //            registerForm.price = price

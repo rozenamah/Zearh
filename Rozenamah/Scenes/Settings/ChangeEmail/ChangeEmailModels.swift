@@ -11,8 +11,7 @@ class EmailForm {
         }
         
         let params = [
-            "email": email!,
-            "type": user.type.rawValue
+            "email": email!
         ]
         return params
     }

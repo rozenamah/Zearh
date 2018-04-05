@@ -27,12 +27,22 @@ class EditProfileForm {
     }
     
     var toParams: [String: Any] {
-        let params = [
-            "type": type,
+        var params: [String: Any] = [
             "name": name,
             "surname": surname
         ]
-        
+        if let doctor = doctor {
+            params["classification"] = doctor.classification.rawValue
+           
+            if let specialization = doctor.specialization {
+                 params["specialization"] = specialization.rawValue
+            }
+            
+            if let price = doctor.price {
+                params["price"] = price
+            }
+        }
+       
         return params
     }
     
