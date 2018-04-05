@@ -2,21 +2,24 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
-class EditProfileWorker {
-    func editUserProfile(profileForm: EditProfileForm, completion: @escaping LoginCompletion) {
+class ChangeEmailWorker {
+    
+    func changeEmail(_ email: EmailForm, completion: @escaping ErrorCompletion) {
+        
+        let params = email.toParams
         
         guard let token = Keychain.shared.token else {
-            completion(nil, RMError.tokenDoesntExist)
+            completion(RMError.tokenDoesntExist)
             return
         }
         
-        let params = profileForm.toParams
         let headers = [
             "Authorization": "Bearer \(token)"
         ]
-        
+
         Alamofire.request(API.User.updateProfile.path, method: .post, parameters: params, headers: headers)
             .validate()
-            .responseCodable(type: LoginResponse.self , completion: completion)
+            .responseEmpty(completion: completion)
     }
 }
+

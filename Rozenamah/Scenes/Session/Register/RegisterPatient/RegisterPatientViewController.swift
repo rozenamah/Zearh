@@ -219,8 +219,4 @@ extension RegisterPatientViewController: UITextFieldDelegate {
             return true
         }
     }
-    
-    
-    
-    
 }

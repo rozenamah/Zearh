@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */; };
+		57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */; };
+		57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */; };
+		57E659C620739EBC004E3926 /* ChangePasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BF20739EBC004E3926 /* ChangePasswordModels.swift */; };
+		57E659C720739EBC004E3926 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659C020739EBC004E3926 /* ChangePasswordViewController.swift */; };
+		57E659C820739EBC004E3926 /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659C120739EBC004E3926 /* ChangePasswordInteractor.swift */; };
+		57E659C920739EBC004E3926 /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659C220739EBC004E3926 /* ChangePasswordConfigurator.swift */; };
+		57E659D22073AE60004E3926 /* ChangeEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659CB2073AE60004E3926 /* ChangeEmailPresenter.swift */; };
+		57E659D32073AE60004E3926 /* ChangeEmailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659CC2073AE60004E3926 /* ChangeEmailWorker.swift */; };
+		57E659D42073AE60004E3926 /* ChangeEmailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659CD2073AE60004E3926 /* ChangeEmailRouter.swift */; };
+		57E659D52073AE60004E3926 /* ChangeEmailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659CE2073AE60004E3926 /* ChangeEmailModels.swift */; };
+		57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659CF2073AE60004E3926 /* ChangeEmailViewController.swift */; };
+		57E659D72073AE60004E3926 /* ChangeEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */; };
+		57E659D82073AE60004E3926 /* ChangeEmailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */; };
 		7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
@@ -136,6 +150,20 @@
 /* Begin PBXFileReference section */
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWorker.swift; sourceTree = "<group>"; };
+		57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		57E659BF20739EBC004E3926 /* ChangePasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModels.swift; sourceTree = "<group>"; };
+		57E659C020739EBC004E3926 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		57E659C120739EBC004E3926 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		57E659C220739EBC004E3926 /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
+		57E659CB2073AE60004E3926 /* ChangeEmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailPresenter.swift; sourceTree = "<group>"; };
+		57E659CC2073AE60004E3926 /* ChangeEmailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailWorker.swift; sourceTree = "<group>"; };
+		57E659CD2073AE60004E3926 /* ChangeEmailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailRouter.swift; sourceTree = "<group>"; };
+		57E659CE2073AE60004E3926 /* ChangeEmailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailModels.swift; sourceTree = "<group>"; };
+		57E659CF2073AE60004E3926 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+		57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailInteractor.swift; sourceTree = "<group>"; };
+		57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailConfigurator.swift; sourceTree = "<group>"; };
 		5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.debug.xcconfig"; sourceTree = "<group>"; };
 		F9093A6D204992CB00CB041A /* Rozenamah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozenamah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9093A70204992CB00CB041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +312,34 @@
 				12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		57E659BB20739EA3004E3926 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */,
+				57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */,
+				57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */,
+				57E659BF20739EBC004E3926 /* ChangePasswordModels.swift */,
+				57E659C020739EBC004E3926 /* ChangePasswordViewController.swift */,
+				57E659C120739EBC004E3926 /* ChangePasswordInteractor.swift */,
+				57E659C220739EBC004E3926 /* ChangePasswordConfigurator.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		57E659CA2073AE49004E3926 /* ChangeEmail */ = {
+			isa = PBXGroup;
+			children = (
+				57E659CB2073AE60004E3926 /* ChangeEmailPresenter.swift */,
+				57E659CC2073AE60004E3926 /* ChangeEmailWorker.swift */,
+				57E659CD2073AE60004E3926 /* ChangeEmailRouter.swift */,
+				57E659CE2073AE60004E3926 /* ChangeEmailModels.swift */,
+				57E659CF2073AE60004E3926 /* ChangeEmailViewController.swift */,
+				57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */,
+				57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */,
+			);
+			path = ChangeEmail;
 			sourceTree = "<group>";
 		};
 		874F15E483C601219057571A /* Frameworks */ = {
@@ -476,6 +532,8 @@
 		F975375F205FCF9E003DC80E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				57E659CA2073AE49004E3926 /* ChangeEmail */,
+				57E659BB20739EA3004E3926 /* ChangePassword */,
 				F9CEDE59206521CB004ED0C7 /* EditProfile */,
 				F9CEDE4A2063F12D004ED0C7 /* Report */,
 				F9753762205FD4EC003DC80E /* Terms */,
@@ -900,6 +958,7 @@
 				F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */,
 				F992D313206D20F000DF0604 /* NotificationWorker.swift in Sources */,
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
+				57E659C620739EBC004E3926 /* ChangePasswordModels.swift in Sources */,
 				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
 				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
 				F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */,
@@ -916,6 +975,7 @@
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
+				57E659D22073AE60004E3926 /* ChangeEmailPresenter.swift in Sources */,
 				F940EA72205828ED00266753 /* AlertRouter.swift in Sources */,
 				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
 				F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */,
@@ -925,10 +985,13 @@
 				F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */,
 				F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */,
 				F992D33E206E3D6D00DF0604 /* MainDoctorWorker.swift in Sources */,
+				57E659D72073AE60004E3926 /* ChangeEmailInteractor.swift in Sources */,
+				57E659D42073AE60004E3926 /* ChangeEmailRouter.swift in Sources */,
 				F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */,
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
 				F940EA502058147000266753 /* WelcomePresenter.swift in Sources */,
 				F940EC48205A9BFF00266753 /* MainPatientPresenter.swift in Sources */,
+				57E659D52073AE60004E3926 /* ChangeEmailModels.swift in Sources */,
 				F940EA5E2058148300266753 /* LoginPresenter.swift in Sources */,
 				F9A9F2A4204D5897006E8999 /* Router.swift in Sources */,
 				F95AFBFC206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift in Sources */,
@@ -965,10 +1028,12 @@
 				F940EC5F205AB9EC00266753 /* SplashInteractor.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
+				57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */,
 				F940EA512058147000266753 /* WelcomeWorker.swift in Sources */,
 				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
 				F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */,
 				F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */,
+				57E659D82073AE60004E3926 /* ChangeEmailConfigurator.swift in Sources */,
 				F992D341206E3D6D00DF0604 /* MainDoctorViewController.swift in Sources */,
 				F95AFBEA206A3DA6007CCFB1 /* PasswordValidation.swift in Sources */,
 				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
@@ -984,6 +1049,7 @@
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
 				F940EC4A205A9BFF00266753 /* MainPatientRouter.swift in Sources */,
 				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
+				57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */,
 				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,
 				F940EC2B20595A1100266753 /* API.swift in Sources */,
 				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
@@ -995,13 +1061,19 @@
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
 				F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */,
 				F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */,
+				57E659D32073AE60004E3926 /* ChangeEmailWorker.swift in Sources */,
 				F992D335206E3C0800DF0604 /* MainScreenViewController.swift in Sources */,
+				57E659C920739EBC004E3926 /* ChangePasswordConfigurator.swift in Sources */,
 				F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */,
+				57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */,
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
+				57E659C720739EBC004E3926 /* ChangePasswordViewController.swift in Sources */,
+				57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */,
 				F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */,
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
 				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,
+				57E659C820739EBC004E3926 /* ChangePasswordInteractor.swift in Sources */,
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
 				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
 				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,
