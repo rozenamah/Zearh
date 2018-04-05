@@ -100,20 +100,14 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         router?.navigateToSelectingSpecialization()
     }
     
-    @IBAction func priceChanged(_ sender: Any) {
+    @IBAction func priceChanged(_ sender: SCTextField) {
         // Restore regular colors
         priceTextView.borderColor = .rmPale
         priceTextField.placeholderColor = .rmGray
         
-//        if let text = sender.text, let price = Int(text) {
-//            editForm?.doctor?.price = price
-//        }
-        
-//        if let text = sender.text, let price = Int(text) {
-//            registerForm.price = price
-//        } else {
-//            registerForm.price = nil
-//        }
+        if let text = sender.text, let price = Int(text) {
+            editForm?.doctor?.price = price
+        }
     }
     
     func deleteConfirm() {
