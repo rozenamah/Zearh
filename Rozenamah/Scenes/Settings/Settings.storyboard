@@ -543,6 +543,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="7IC-Cb-kYV" firstAttribute="width" secondItem="tRH-ay-T0t" secondAttribute="width" id="7yT-1S-9eI"/>
                             <constraint firstItem="Q0B-NJ-6oN" firstAttribute="trailing" secondItem="maW-Rh-eDx" secondAttribute="trailing" id="NW9-xG-kqj"/>
@@ -551,6 +552,9 @@
                             <constraint firstItem="maW-Rh-eDx" firstAttribute="top" secondItem="Q0B-NJ-6oN" secondAttribute="top" id="sWO-2I-xV2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q0B-NJ-6oN"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Kol-9P-bo0" appends="YES" id="e5S-Ai-Jsq"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Edit profile" id="7bl-cV-cjg">
                         <barButtonItem key="leftBarButtonItem" image="close" id="ADc-mL-gp5">
@@ -575,6 +579,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VY-Q0-Oed" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Kol-9P-bo0">
+                    <connections>
+                        <action selector="scrollViewTapped:" destination="nyP-id-tOB" id="OPA-tr-bHA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="358" y="1018"/>
         </scene>
@@ -610,7 +619,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>

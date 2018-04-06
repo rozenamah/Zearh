@@ -14,6 +14,9 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     var interactor: ChangeEmailBusinessLogic?
     var router: ChangeEmailRouter?
 
+    /// Form for which we send change email request
+    private let emailForm = EmailForm()
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -50,7 +53,6 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     }
     
     @IBAction func changeEmailAction(_ sender: Any) {
-        let emailForm = EmailForm()
         emailForm.email = emailView.textField.text
         if interactor?.validate(emailForm) == true {
             interactor?.changeEmail(emailForm)
@@ -69,6 +71,7 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
 }
 
 extension ChangeEmailViewController: UITextFieldDelegate {
+    
     @IBAction func emailTextChanged(_ sender: UITextField) {
         textFieldDidBeginEditing(sender)
     }

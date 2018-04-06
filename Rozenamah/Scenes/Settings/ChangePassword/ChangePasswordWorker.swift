@@ -4,12 +4,12 @@ import KeychainAccess
 
 class ChangePasswordWorker {
     
-    func changePassword(_ changePasswordForm: ChangePasswordForm, completion: @escaping ErrorCompletion) {
+    func changePassword(_ changePasswordForm: ChangePasswordForm, completion: @escaping LoginCompletion) {
 
         let params = changePasswordForm.toParams
         
         guard let token = Keychain.shared.token else {
-            completion(RMError.tokenDoesntExist)
+            completion(nil, RMError.tokenDoesntExist)
             return
         }
         
@@ -19,6 +19,7 @@ class ChangePasswordWorker {
   
         Alamofire.request(API.User.changePassword.path, method: .post, parameters: params, headers: headers)
             .validate()
-            .responseEmpty(completion: completion)
+            .responseCodable(type: LoginResponse.self , completion: completion)
+    
     }
 }

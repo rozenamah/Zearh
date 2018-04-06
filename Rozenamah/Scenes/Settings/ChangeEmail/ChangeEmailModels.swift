@@ -1,12 +1,12 @@
 import UIKit
 
-class EmailForm {
+class EmailForm: ParamForm {
     
     var email: String?
     
     var toParams: [String: Any] {
         
-        guard let user = User.current else {
+        guard let _ = User.current else {
             return [:]
         }
         
