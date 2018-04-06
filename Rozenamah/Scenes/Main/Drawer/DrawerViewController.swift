@@ -36,10 +36,24 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         super.viewDidLoad()
         setupView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Refresh drawer whenever we enter it
+        fillUserData()
+    }
 
     // MARK: View customization
 
     fileprivate func setupView() {
+        
+        if iPhoneDetection.deviceType() == .iphone5 {
+            stackView.spacing = 8
+        }
+    }
+    
+    private func fillUserData() {
         
         if let user = User.current {
             nameLabel.text = user.fullname
@@ -51,10 +65,6 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
             createAccountView.isHidden = user.type == .doctor
             switchAccountView.isHidden = user.type != .doctor
             
-        }
-        
-        if iPhoneDetection.deviceType() == .iphone5 {
-            stackView.spacing = 8
         }
     }
 

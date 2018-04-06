@@ -4,6 +4,7 @@ protocol RegisterDoctorPresentationLogic {
     func presentError(_ error: RegisterDoctorPresenter.RegisterDoctorError)
     func handleError(_ error: RMError)
     func presentRegisterSuccess()
+    func presentUpdateSuccess()
 }
 
 class RegisterDoctorPresenter: RegisterDoctorPresentationLogic {
@@ -67,5 +68,9 @@ class RegisterDoctorPresenter: RegisterDoctorPresentationLogic {
     
     func presentRegisterSuccess() {
         viewController?.registerSuccess()
+    }
+    
+    func presentUpdateSuccess() {
+        viewController?.updateSuccess()
     }
 }

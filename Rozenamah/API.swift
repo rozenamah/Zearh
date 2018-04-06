@@ -26,6 +26,34 @@ enum API {
         
         var resource: String { return baseURL + "user/" }
     }
+    
+    enum Patient {
+        case upgrade
+        
+        var resource: String { return baseURL + "patient/" }
+    }
+    
+    enum Doctor {
+        case availability
+        
+        var resource: String { return baseURL + "doctor/" }
+    }
+}
+
+extension API.Doctor {
+    var path: String {
+        switch self {
+        case .availability: return resource + "availability"
+        }
+    }
+}
+
+extension API.Patient {
+    var path: String {
+        switch self {
+        case .upgrade: return resource + "upgrade"
+        }
+    }
 }
 
 extension API.User {
