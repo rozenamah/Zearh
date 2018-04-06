@@ -51,8 +51,8 @@ class EditProfileInteractor: EditProfileBusinessLogic {
         
         let name = editProfile.name
         let surname = editProfile.surname
+        
         // Name verification
-  
         if name.count < 3 {
             allFieldsValid = false
             presenter?.presentError(.nameToShort)
@@ -65,7 +65,6 @@ class EditProfileInteractor: EditProfileBusinessLogic {
         }
         
         // Surname verification
-        
         if surname.count < 3 {
             allFieldsValid = false
             presenter?.presentError(.surnameToShort)
@@ -76,6 +75,8 @@ class EditProfileInteractor: EditProfileBusinessLogic {
             allFieldsValid = false
             presenter?.presentError(.incorrectSurname)
         }
+        
+        // Doctor verification
         if let doctor = editProfile.doctor {
             allFieldsValid = validateDoctor(doctor)
         }
