@@ -54,15 +54,14 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
             surnameView.textField.text = user.surname
             avatarImageView.setAvatar(for: user)
             
+            editForm = EditProfileForm(user: user)
+            
             // If user is patient - hide doctor edit
             if user.type == .doctor {
                 doctorView.isHidden = false
-                editForm = EditProfileForm(user: user)
                 filCurrentFilters(for: editForm)
             } else {
                 doctorView.isHidden = true
-                // Create edit form
-                editForm = EditProfileForm(user: user)
             }
         }
     }
@@ -82,7 +81,12 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
 
     // MARK: Event handling
-
+    
+    @IBAction func scrollViewTapped(_ sender: Any) {
+        // Hide keyboard when view clicked
+        view.endEditing(true)
+    }
+    
     @IBAction func saveChanges(_ sender: Any) {
         editForm?.name = nameView.textField.text!
         editForm?.surname = surnameView.textField.text!

@@ -1,4 +1,5 @@
 import UIKit
+import KeychainAccess
 
 protocol ChangePasswordBusinessLogic {
     func validate(_ changePasswordForm: ChangePasswordForm) -> Bool
@@ -13,10 +14,19 @@ class ChangePasswordInteractor: ChangePasswordBusinessLogic {
 	// MARK: Business logic
     
     func changePassword(_ changePasswordForm: ChangePasswordForm) {
-        worker.changePassword(changePasswordForm) { (error) in
+        worker.changePassword(changePasswordForm) { (response, error) in
             if let error = error {
                 self.presenter?.handleError(error)
-            } else {
+                return
+            }
+            
+            if let response = response {
+                // Save token in keychain
+                Keychain.shared.token = response.token
+                
+                // Save user in current
+                User.current = response.user
+                
                 self.presenter?.passwordChangedSuccessful()
             }
         }

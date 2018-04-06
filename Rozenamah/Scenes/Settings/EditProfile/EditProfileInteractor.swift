@@ -20,11 +20,8 @@ class EditProfileInteractor: EditProfileBusinessLogic {
             }
             
             if let response = response {
-                // Save token in keychain
-                Keychain.shared.token = response.token
-                
                 // Save user in current
-                User.current = response.user
+                User.current = response
                 
                 self.presenter?.profileUpdated()
             }
@@ -40,11 +37,8 @@ class EditProfileInteractor: EditProfileBusinessLogic {
             }
             
             if let response = response {
-                // Save token in keychain
-                Keychain.shared.token = response.token
-                
                 // Save user in current
-                User.current = response.user
+                User.current = response
                 
                 self.presenter?.profileUpdated()
             }

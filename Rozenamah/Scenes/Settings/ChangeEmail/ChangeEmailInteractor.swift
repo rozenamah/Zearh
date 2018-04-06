@@ -12,10 +12,15 @@ class ChangeEmailInteractor: ChangeEmailBusinessLogic {
 	// MARK: Business logic
     
     func changeEmail(_ email: EmailForm) {
-        worker.changeEmail(email) { (error) in
+        worker.editUserProfile(profileForm: email) { (response, error) in
             if let error = error {
                 self.presenter?.handleError(error)
-            } else {
+                return
+            }
+            if let response = response {
+                // Save user in current
+                User.current = response
+                
                 self.presenter?.emailChangedSuccessful()
             }
         }
@@ -25,7 +30,9 @@ class ChangeEmailInteractor: ChangeEmailBusinessLogic {
         var isEmailValid = true
         
         // Email verification
-        if emailForm.email == nil || !EmailValidation.validate(email: emailForm.email!) {
+        if emailForm.email == nil ||
+            !EmailValidation.validate(email: emailForm.email!) {
+            
             isEmailValid = false
             presenter?.presentError(.incorrectEmail)
         }
