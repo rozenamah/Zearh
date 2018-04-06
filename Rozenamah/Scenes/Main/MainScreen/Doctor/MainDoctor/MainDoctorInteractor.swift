@@ -1,6 +1,8 @@
 import UIKit
 
 protocol MainDoctorBusinessLogic: MainScreenBusinessLogic {
+    func stopReceivingRequests()
+    func startReceivingRequests()
 }
 
 class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
@@ -12,4 +14,25 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
 
 	// MARK: Business logic
 	
+    func startReceivingRequests() {
+        worker.updateAvabilityTo(true) { (error) in
+            if let error = error {
+                self.presenter?.handleError(error)
+                return
+            }
+            
+            self.presenter?.avabilityUpdatedTo(true)
+        }
+    }
+    
+    func stopReceivingRequests() {
+        worker.updateAvabilityTo(false) { (error) in
+            if let error = error {
+                self.presenter?.handleError(error)
+                return
+            }
+            
+            self.presenter?.avabilityUpdatedTo(false)
+        }
+    }
 }

@@ -13,10 +13,14 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var createAccountView: UIView!
     @IBOutlet weak var switchAccountView: UIView!
+    @IBOutlet weak var switchAccountButton: UIButton!
     
     // MARK: Properties
     var interactor: DrawerBusinessLogic?
     var router: DrawerRouter?
+    
+    /// By this value we know if current app is in doctor or patient mode
+    var currentMode: UserType!
 
     // MARK: Object lifecycle
 
@@ -51,6 +55,11 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         if iPhoneDetection.deviceType() == .iphone5 {
             stackView.spacing = 8
         }
+        
+        // If doctor account active, display ability to switch to doctor account
+        if currentMode == .doctor {
+            switchAccountButton.setTitle("Patient account", for: .normal)
+        }
     }
     
     private func fillUserData() {
@@ -69,6 +78,10 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     }
 
     // MARK: Event handling
+    
+    @IBAction func switchAccountType(_ sender: Any) {
+        router?.navigateToApp(inModule: currentMode == .doctor ? .patient : .doctor)
+    }
     
     @IBAction func createDoctorAccount(_ sender: Any) {
         router?.navigateToCreateDoctorAccount()

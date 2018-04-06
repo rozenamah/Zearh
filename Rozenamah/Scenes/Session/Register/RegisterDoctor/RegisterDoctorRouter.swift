@@ -28,7 +28,7 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
             if dismiss {
                 self.dismiss()
             } else {
-                self.navigateToApp(inModule: .patient)
+                self.navigateToDefaultApp()
             }
         }))
         viewController?.present(alert, animated: true, completion: nil)

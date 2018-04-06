@@ -956,6 +956,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="switchAccountType:" destination="ERD-lc-8SX" eventType="touchUpInside" id="66Y-Nb-Cxi"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moy-cA-7X3">
                                                         <rect key="frame" x="0.0" y="53" width="273" height="1"/>
@@ -1253,6 +1256,7 @@
                         <outlet property="emailLabel" destination="TJM-YF-JyY" id="G8A-hX-cnr"/>
                         <outlet property="nameLabel" destination="z2R-h8-uf7" id="5Xc-Kn-YRk"/>
                         <outlet property="stackView" destination="dxS-fh-sTN" id="qWO-7P-t4U"/>
+                        <outlet property="switchAccountButton" destination="U6S-Vg-pwE" id="e7h-b5-C8P"/>
                         <outlet property="switchAccountView" destination="96E-A5-eUN" id="r8s-0X-bc1"/>
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="terms_segue" id="CEi-hk-pLN"/>
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="privacy_segue" id="ApP-20-oVH"/>
