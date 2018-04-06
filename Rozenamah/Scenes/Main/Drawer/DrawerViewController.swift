@@ -103,6 +103,9 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         router?.showLogoutAlert()
     }
     
+    @IBAction func reportAction(_ sender: Any) {
+        router?.navigateToReport()
+    }
     /// Called from confirmation alert
     func loginCofirmed() {
         interactor?.logout()

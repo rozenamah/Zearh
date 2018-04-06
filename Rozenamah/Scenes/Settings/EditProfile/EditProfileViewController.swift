@@ -3,10 +3,19 @@ import SwiftCake
 
 protocol EditProfileDisplayLogic: ClassificationDelegate {
     func profileUpdatedSuccessful()
+    func handle(error: Error, inField field: EditProfileViewController.Field)
     func displayError()
 }
 
 class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
+    
+    enum Field {
+        case name
+        case surname
+        case classification
+        case specialization
+        case price
+    }
 
     // MARK: Outlets
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -19,6 +28,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     @IBOutlet weak var priceTextView: SCView!
     @IBOutlet weak var priceTextField: SCTextField!
     @IBOutlet weak var doctorView: UIView!
+    @IBOutlet weak var professionView: UIView!
     
     // MARK: Properties
     var interactor: EditProfileBusinessLogic?
@@ -90,7 +100,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     @IBAction func saveChanges(_ sender: Any) {
         editForm?.name = nameView.textField.text!
         editForm?.surname = surnameView.textField.text!
-        if let editForm = editForm {
+        if let editForm = editForm, interactor?.validate(editForm) == true {
             interactor?.updateUserInfo(editForm)
         }
     }
@@ -107,6 +117,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
     
     @IBAction func professionAction(_ sender: Any) {
+        hideErrorIn(button: professionButton)
         router?.navigateToSelectingClassification()
     }
     
@@ -122,6 +133,8 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         
         if let text = sender.text, let price = Int(text) {
             editForm?.doctor?.price = price
+        } else {
+            editForm?.doctor?.price = nil
         }
     }
     
@@ -146,13 +159,20 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         router?.showErrorAlert()
     }
     
-    func displaySelectedAvatar(image: UIImage) {
-        avatarImageView.image = image
-        editForm?.avatar = image
-        if let editForm = editForm {
-            interactor?.updateUserAvatar(editForm)
+    func handle(error: Error, inField field: EditProfileViewController.Field) {
+        switch field {
+        case .name:
+            nameView.adjustToState(.error(msg: error))
+        case .surname:
+            surnameView.adjustToState(.error(msg: error))
+        case .classification:
+            displayErrorIn(button: professionButton)
+        case .specialization:
+            displayErrorIn(button: specializationButton)
+        case .price:
+            priceTextView.borderColor = .rmRed
+            priceTextField.placeholderColor = .rmRed
         }
-        
     }
     
     func displayErrorIn(button: SCButton) {
@@ -165,6 +185,13 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         button.setTitleColor(.rmGray, for: .normal)
     }
     
+    func displaySelectedAvatar(image: UIImage) {
+        avatarImageView.image = image
+        editForm?.avatar = image
+        if let editForm = editForm {
+            interactor?.updateUserAvatar(editForm)
+        }
+    }
     
     func classificationSelected(_ classification: Classification) {
         
@@ -219,6 +246,8 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         specializationView.isUserInteractionEnabled = true
         specializationView.alpha = 1
     }
+    
+
 }
 
 // MARK: TextField methods
@@ -234,6 +263,42 @@ extension EditProfileViewController: UITextFieldDelegate {
         return false
         
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case nameView.textField:
+            nameView.adjustToState(.active)
+        case surnameView.textField:
+            surnameView.adjustToState(.active)
+        default:
+            break
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case nameView.textField:
+            nameView.adjustToState(.inactive)
+        case surnameView.textField:
+            surnameView.adjustToState(.inactive)
+        default:
+            break
+        }
+    }
+    
+    @IBAction func textChanged(_ sender: UITextField) {
+        switch sender {
+        case nameView.textField:
+            editForm?.name = sender.text!
+        case surnameView.textField:
+            editForm?.surname = sender.text!
+        default:
+            break
+        }
+        textFieldDidBeginEditing(sender)
+    }
+    
+    
     
 }
 

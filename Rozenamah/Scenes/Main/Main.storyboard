@@ -1076,6 +1076,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="reportAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="1Sa-uv-SZC"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHa-Z4-s16">
                                                         <rect key="frame" x="0.0" y="53" width="273" height="1"/>
@@ -1262,6 +1265,7 @@
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="privacy_segue" id="ApP-20-oVH"/>
                         <segue destination="2nn-Z7-JdC" kind="presentation" identifier="edit_profile_segue" id="gHm-Yt-bkJ"/>
                         <segue destination="cUm-cX-F0w" kind="presentation" identifier="update_to_doctor_segue" id="dmO-Oa-Bin"/>
+                        <segue destination="49b-8L-cUP" kind="presentation" identifier="report_segue" id="mp1-2D-zZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFA-FV-3dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1291,6 +1295,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55m-x4-2Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="975" y="1643"/>
+        </scene>
+        <!--report_vc-->
+        <scene sceneID="x7r-PS-r9t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="report_vc" id="49b-8L-cUP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAA-Uw-xhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="1731"/>
         </scene>
     </scenes>
     <resources>
