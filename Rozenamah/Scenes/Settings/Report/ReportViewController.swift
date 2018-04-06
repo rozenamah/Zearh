@@ -36,6 +36,17 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     }
 
     // MARK: Event handling
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func scrollViewTapped(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func dismissAction(_ sender: Any) {
+        router?.dismiss()
+    }
     // MARK: Presenter methods
 }

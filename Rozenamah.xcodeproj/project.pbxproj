@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		577B7A222077614B00741DD6 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577B7A212077614B00741DD6 /* Report.storyboard */; };
 		57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */; };
 		57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */; };
 		57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */; };
@@ -152,7 +151,6 @@
 /* Begin PBXFileReference section */
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		577B7A212077614B00741DD6 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWorker.swift; sourceTree = "<group>"; };
 		57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
@@ -651,7 +649,6 @@
 				F9A9F29C204D5843006E8999 /* ForgotPassword */,
 				F9A9F29B204D583F006E8999 /* Register */,
 				F9A9F29A204D5815006E8999 /* Login */,
-				577B7A212077614B00741DD6 /* Report.storyboard */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -861,7 +858,6 @@
 			files = (
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
-				577B7A222077614B00741DD6 /* Report.storyboard in Resources */,
 				F940EA472057E8F700266753 /* Session.storyboard in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,

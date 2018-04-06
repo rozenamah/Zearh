@@ -51,6 +51,11 @@ class DrawerRouter: Router, AppStartRouter {
         viewController?.performSegue(withIdentifier: "terms_segue", sender: nil)
     }
     
+    func navigateToReport() {
+        viewController?.toggleLeft()
+        viewController?.performSegue(withIdentifier: "report_segue", sender: nil)
+    }
+    
     func showLogoutAlert() {
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to log out a user?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
