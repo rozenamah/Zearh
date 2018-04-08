@@ -22,7 +22,7 @@ enum ReportSubject: String, Decodable {
     
     var title: String {
         switch self {
-        case .death: return "test"
+        case .test: return "test"
         }
     }
 }

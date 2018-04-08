@@ -246,8 +246,6 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         specializationView.isUserInteractionEnabled = true
         specializationView.alpha = 1
     }
-    
-
 }
 
 // MARK: TextField methods

@@ -21,10 +21,10 @@ class EditProfilePresenter: EditProfilePresentationLogic {
         case incorrectName
         case incorrectSurname
         case surnameToShort
-        case unknown(Error?)
         case professionMissing
         case specializationMissing
         case priceMissing
+        case unknown(Error?)
         
         var errorDescription: String? {
             switch self {
