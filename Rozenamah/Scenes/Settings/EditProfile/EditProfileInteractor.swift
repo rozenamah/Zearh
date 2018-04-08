@@ -77,10 +77,11 @@ class EditProfileInteractor: EditProfileBusinessLogic {
         }
         
         // Doctor verification
+        var doctorValid = true
         if let doctor = editProfile.doctor {
-            allFieldsValid = validateDoctor(doctor)
+            doctorValid = validateDoctor(doctor)
         }
-        return allFieldsValid
+        return allFieldsValid && doctorValid
     }
     
     private func validateDoctor(_ doctor: EditProfileForm.DoctorEditProfileForm) -> Bool {

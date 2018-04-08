@@ -159,6 +159,11 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         registerForm.specialization = nil
         specializationButton.isSelected = false
         
+        // Hide error in specialization/pric if any
+        hideErrorIn(button: specializationButton)
+        priceTextView.borderColor = .rmPale
+        priceTextField.placeholderColor = .rmGray
+        
         // Enable specialization and price if needed
         if classification == .specialist || classification == .consultants {
             priceTextField.text = nil

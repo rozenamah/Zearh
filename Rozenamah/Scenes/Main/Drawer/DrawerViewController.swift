@@ -1,4 +1,5 @@
 import UIKit
+import SwiftCake
 
 protocol DrawerDisplayLogic: class {
     func logoutSuccess()
@@ -7,13 +8,15 @@ protocol DrawerDisplayLogic: class {
 class DrawerViewController: UIViewController, DrawerDisplayLogic {
 
     // MARK: Outlets
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: SCImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var createAccountView: UIView!
     @IBOutlet weak var switchAccountView: UIView!
     @IBOutlet weak var switchAccountButton: UIButton!
+    @IBOutlet var drawerButtons: [UIButton]!
+    @IBOutlet weak var avatarHeightConstraint: NSLayoutConstraint!
     
     // MARK: Properties
     var interactor: DrawerBusinessLogic?
@@ -52,8 +55,16 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
 
     fileprivate func setupView() {
         
-        if iPhoneDetection.deviceType() == .iphone5 {
+        if iPhoneDetection.deviceType() == .iphone5 ||
+            iPhoneDetection.deviceType() == .iphone4 {
             stackView.spacing = 8
+            drawerButtons.forEach {
+                $0.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+            }
+            nameLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+            emailLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+            avatarHeightConstraint.constant = 70
+            avatarImageView.cornerRadius = 35
         }
         
         // If doctor account active, display ability to switch to doctor account
@@ -104,7 +115,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     }
     
     @IBAction func reportAction(_ sender: Any) {
-        router?.navigateToReport()
+        //router?.navigateToReport()
     }
     /// Called from confirmation alert
     func loginCofirmed() {
