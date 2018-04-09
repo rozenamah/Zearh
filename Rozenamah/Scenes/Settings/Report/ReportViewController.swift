@@ -3,6 +3,7 @@ import SwiftCake
 
 protocol ReportDisplayLogic: class {
     func handle(error: Error, inField field: ReportViewController.Field)
+    func displayReportSentSuccessful()
 }
 
 class ReportViewController: UIViewController, ReportDisplayLogic {
@@ -10,6 +11,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     enum Field {
         case subject
         case field
+        case unknown
     }
 
     // MARK: Outlets
@@ -85,6 +87,8 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
             messageView.adjustToState(.error(msg: error))
         case .subject:
             displayErrorIn(button: subjectButton)
+        case .unknown:
+            router?.showError(error)
         }
     }
     
@@ -96,6 +100,10 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     func hideErrorIn(button: SCButton) {
         button.borderColor = .rmPale
         button.setTitleColor(.rmGray, for: .normal)
+    }
+    
+    func displayReportSentSuccessful() {
+        router?.showAlert(message: "Report was sent", with: true)
     }
 }
 
@@ -110,5 +118,9 @@ extension ReportViewController: UITextViewDelegate {
             self.textView.placeholder = "Your message"
         }
         messageView.adjustToState(.inactive)
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        reportForm?.text = textView.text
     }
 }

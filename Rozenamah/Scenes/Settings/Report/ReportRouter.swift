@@ -1,6 +1,6 @@
 import UIKit
 
-class ReportRouter: Router {
+class ReportRouter: Router, AlertRouter {
     typealias RoutingViewController = ReportViewController
     weak var viewController: ReportViewController?
 

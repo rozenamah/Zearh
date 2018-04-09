@@ -12,7 +12,7 @@ class ReportInteractor: ReportBusinessLogic {
 	// MARK: Business logic
     
     func reportSubject(_ reportForm: ReportForm) {
-        
+        worker.reportDoctor(reportForm)
     }
 	
     func validate(_ reportForm: ReportForm?) -> Bool {
