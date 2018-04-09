@@ -916,6 +916,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="editProfileAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="wRf-nM-Dsa"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQn-SC-s2j">
                                                         <rect key="frame" x="0.0" y="53" width="273" height="1"/>
