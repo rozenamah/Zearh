@@ -12,7 +12,13 @@ class ReportInteractor: ReportBusinessLogic {
 	// MARK: Business logic
     
     func reportSubject(_ reportForm: ReportForm) {
-        worker.reportDoctor(reportForm)
+        worker.reportDoctor(reportForm) { (error) in
+            if let _ = error {
+                self.presenter?.presentError(.unknown)
+            } else {
+                self.presenter?.reportSent()
+            }
+        }
     }
 	
     func validate(_ reportForm: ReportForm?) -> Bool {
