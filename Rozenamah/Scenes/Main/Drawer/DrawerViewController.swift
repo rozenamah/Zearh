@@ -79,6 +79,9 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBAction func logoutAction(_ sender: Any) {
         router?.showLogoutAlert()
     }
+    @IBAction func transactionsAction(_ sender: Any) {
+        router?.navigateToTransactions()
+    }
     
     @IBAction func reportAction(_ sender: Any) {
         router?.navigateToReport()
