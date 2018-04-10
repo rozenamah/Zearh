@@ -115,7 +115,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     }
     
     @IBAction func reportAction(_ sender: Any) {
-        //router?.navigateToReport()
+        router?.navigateToReport()
     }
     /// Called from confirmation alert
     func loginCofirmed() {
