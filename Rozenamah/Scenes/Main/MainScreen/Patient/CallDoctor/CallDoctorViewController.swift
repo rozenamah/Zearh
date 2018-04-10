@@ -2,10 +2,17 @@ import UIKit
 import SwiftCake
 
 protocol CallDoctorDisplayLogic: ClassificationDelegate, CallDoctorFiltersDelegate {
+    func handle(error: Error)
+    func handle(error: Error, inField field: CallDoctorViewController.Field)
 }
 
 class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
 
+    enum Field {
+        case classification
+        case specialization
+    }
+    
     // MARK: Outlets
     @IBOutlet weak var specializationView: UIView!
     @IBOutlet weak var professionButton: SCButton!
@@ -50,7 +57,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         fillCurrentFilters()
     }
     
-    fileprivate func fillCurrentFilters() {
+    private func fillCurrentFilters() {
         
         // Setup current filters
         if let classification = callForm.classification {
@@ -68,14 +75,19 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
                 disableSpecialization()
             }
         }
-
+        
+        fillGenderAndPriceFilters()
+    }
+    
+    private func fillGenderAndPriceFilters() {
+    
         var shouldDisplayFilters = false
         if let minPrice = callForm.minPrice, let maxPrice = callForm.maxPrice {
             // Both prices set, show fitlers
             shouldDisplayFilters = true
             priceButton.setTitle("\(minPrice) - \(maxPrice) SAR", for: .normal)
             priceButton.isHidden = false
-
+            
         } else if let minPrice = callForm.minPrice {
             // Only min price
             shouldDisplayFilters = true
@@ -130,7 +142,9 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .waitSearch)
+        if interactor?.validate(form: callForm) == true {
+            flowDelegate?.changeStateTo(flowPoint: .waitSearch)
+        }
     }
     
     // MARK: Presenter methods
@@ -144,12 +158,16 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         // Reset specialization
         specializationButton.isSelected = false
         
+        // Hide error in specialization if any
+        hideErrorIn(button: specializationButton)
+        
         // Enable specialization if needed
         if classification == .specialist || classification == .consultants {
             enableSpecialization()
         } else {
             callForm.specialization = nil
             disableSpecialization()
+            fillGenderAndPriceFilters()
         }
     }
     
@@ -169,5 +187,28 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     func enableSpecialization() {
         specializationView.isUserInteractionEnabled = true
         specializationView.alpha = 1
+    }
+    
+    func handle(error: Error) {
+        router?.showError(error)
+    }
+    
+    func handle(error: Error, inField field: CallDoctorViewController.Field) {
+        switch field {
+        case .classification:
+            displayErrorIn(button: professionButton)
+        case .specialization:
+            displayErrorIn(button: specializationButton)
+        }
+    }
+    
+    func displayErrorIn(button: SCButton) {
+        button.borderColor = .rmRed
+        button.setTitleColor(.rmRed, for: .normal)
+    }
+    
+    func hideErrorIn(button: SCButton) {
+        button.borderColor = .rmPale
+        button.setTitleColor(.rmGray, for: .normal)
     }
 }

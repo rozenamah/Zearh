@@ -1,6 +1,6 @@
 import UIKit
 
-class CallDoctorRouter: Router, ClassificationRouter {
+class CallDoctorRouter: Router, ClassificationRouter, AlertRouter {
     typealias RoutingViewController = CallDoctorViewController
     weak var viewController: CallDoctorViewController?
 

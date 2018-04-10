@@ -1,11 +1,34 @@
 import UIKit
 
+let kMaxPriceToFilter = 501
+
 class CallDoctorForm {
     
-    var classification: Classification?
+    var classification: Classification? {
+        didSet {
+            // Reset specialization and price
+            if classification == .nurse || classification == .doctor {
+                specialization = nil
+                minPrice = nil
+                maxPrice = nil
+            }
+        }
+    }
     var specialization: DoctorSpecialization?
-    var minPrice: Int?
-    var maxPrice: Int?
+    var minPrice: Int? {
+        didSet {
+            if minPrice == 0 {
+                minPrice = nil
+            }
+        }
+    }
+    var maxPrice: Int? {
+        didSet {
+            if minPrice == kMaxPriceToFilter {
+                maxPrice = nil
+            }
+        }
+    }
     var gender: Gender?
     
     init() {
