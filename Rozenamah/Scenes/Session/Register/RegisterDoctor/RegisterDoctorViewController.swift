@@ -3,6 +3,7 @@ import SwiftCake
 
 protocol RegisterDoctorDisplayLogic: ClassificationDelegate {
     func registerSuccess()
+    func updateSuccess()
     func handle(error: Error)
     func handle(error: Error, inField field: RegisterDoctorViewController.Field)
 }
@@ -140,7 +141,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
             if registerType == .register {
                 interactor?.register(withForm: registerForm)
             } else {
-                // TODO: Update
+                interactor?.update(withForm: registerForm)
             }
         }
     }
@@ -157,6 +158,11 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         // Reset specialization
         registerForm.specialization = nil
         specializationButton.isSelected = false
+        
+        // Hide error in specialization/pric if any
+        hideErrorIn(button: specializationButton)
+        priceTextView.borderColor = .rmPale
+        priceTextField.placeholderColor = .rmGray
         
         // Enable specialization and price if needed
         if classification == .specialist || classification == .consultants {
@@ -223,7 +229,13 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     func registerSuccess() {
         router?.hideWaitAlert(completion: {
-            self.router?.showDoctorCreatedAlert()
+            self.router?.showDoctorCreatedAlert(withDismiss: false)
+        })
+    }
+    
+    func updateSuccess() {
+        router?.hideWaitAlert(completion: {
+            self.router?.showDoctorCreatedAlert(withDismiss: true)
         })
     }
     

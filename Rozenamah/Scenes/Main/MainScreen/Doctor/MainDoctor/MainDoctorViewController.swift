@@ -2,6 +2,9 @@ import UIKit
 import SwiftCake
 
 protocol MainDoctorDisplayLogic: MainScreenDisplayLogic {
+    func handle(error: Error)
+    func markAsWaitingForRequests()
+    func markAsRejectingRequests()
 }
 
 class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic {
@@ -43,12 +46,12 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     // MARK: Event handling
 
     @IBAction func receiveRequestAction(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        // Change background depending on state
-        sender.backgroundColor = !sender.isSelected ? .rmBlue : .white
-        
-        // TODO: API
+        if sender.isSelected {
+            interactor?.stopReceivingRequests()
+        } else {
+            interactor?.startReceivingRequests()
+        }
+        sender.isUserInteractionEnabled = false
     }
     
     @IBAction func locateMeAction(_ sender: Any) {
@@ -56,4 +59,25 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     }
     
     // MARK: Presenter methods
+    
+    func markAsRejectingRequests() {
+        requestsReceiveButton.isUserInteractionEnabled = true
+        requestsReceiveButton.isSelected = false
+        
+        // Change background depending on state
+        requestsReceiveButton.backgroundColor = !requestsReceiveButton.isSelected ? .rmBlue : .white
+    }
+    
+    func markAsWaitingForRequests() {
+        requestsReceiveButton.isUserInteractionEnabled = true
+        requestsReceiveButton.isSelected = true
+        
+        // Change background depending on state
+        requestsReceiveButton.backgroundColor = !requestsReceiveButton.isSelected ? .rmBlue : .white
+    }
+    
+    func handle(error: Error) {
+        requestsReceiveButton.isUserInteractionEnabled = true
+        router?.showError(error)
+    }
 }

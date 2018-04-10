@@ -23,7 +23,9 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     var interactor: ReportBusinessLogic?
     var router: ReportRouter?
 
-    var reportForm: ReportForm?
+    /// Report data which will be sent to API
+    var reportForm = ReportForm()
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -40,7 +42,6 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        reportForm = ReportForm()
         setupView()
     }
 
@@ -55,7 +56,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     
     @IBAction func reportAction(_ sender: Any) {
         if interactor?.validate(reportForm) == true {
-            interactor?.reportSubject(reportForm!)
+            interactor?.reportSubject(reportForm)
         }
     }
     
@@ -69,7 +70,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     }
     
     func subjectSelected(_ subject: ReportSubject) {
-        reportForm?.subject = subject
+        reportForm.subject = subject
         
         subjectButton.setTitle(subject.title, for: .selected)
         subjectButton.isSelected = true
@@ -121,6 +122,6 @@ extension ReportViewController: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        reportForm?.text = textView.text
+        reportForm.text = textView.text
     }
 }

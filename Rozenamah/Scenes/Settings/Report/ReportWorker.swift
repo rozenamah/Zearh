@@ -8,9 +8,9 @@ class ReportWorker {
         
         let params = reportForm.toParams
         
-        Alamofire.request(API.User.changePassword.path, method: .post, parameters: params)
-            .validate()
-            .responseEmpty(completion: completion)
-        
+//        Alamofire.request(API.User.changePassword.path, method: .post, parameters: params)
+//            .validate()
+//            .responseEmpty(completion: completion)
+//        
     }
 }

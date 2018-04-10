@@ -3,6 +3,7 @@ import KeychainAccess
 
 protocol RegisterDoctorBusinessLogic {
     func register(withForm form: CreateDoctorForm)
+    func update(withForm form: CreateDoctorForm)
     func validate(registerForm: CreateDoctorForm) -> Bool
 }
 
@@ -11,6 +12,22 @@ class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
 	var worker = RegisterDoctorWorker()
 
 	// MARK: Business logic
+    
+    func update(withForm form: CreateDoctorForm) {
+        worker.updateUser(withForm: form) { (response, error) in
+            // Error handling
+            if let error = error {
+                self.presenter?.handleError(error)
+            }
+            
+            if let response = response {
+                // Save user in current
+                User.current = response
+                
+                self.presenter?.presentUpdateSuccess()
+            }
+        }
+    }
 	
     func register(withForm form: CreateDoctorForm) {
         

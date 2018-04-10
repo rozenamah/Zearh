@@ -22,10 +22,14 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
         viewController?.dismiss(animated: true, completion: nil)
     }
     
-    func showDoctorCreatedAlert() {
+    func showDoctorCreatedAlert(withDismiss dismiss: Bool) {
         let alert = UIAlertController(title: "Account created", message: "Please, wait until you account will be verified. It shouldn't take more than 24 hours. Until then, you can user application as patient.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
-            self.navigateToApp(inModule: .patient)
+            if dismiss {
+                self.dismiss()
+            } else {
+                self.navigateToDefaultApp()
+            }
         }))
         viewController?.present(alert, animated: true, completion: nil)
     }
@@ -69,7 +73,7 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
         print("Selected URL: \(url)")
         
         // Dismiss this view
-        viewController?.dismiss(animated: true, completion: nil)
+//        viewController?.dismiss(animated: true, completion: nil)
         
         if let fileData = try? Data(contentsOf: url) {
             viewController?.pdfFileSelected(inData: fileData)

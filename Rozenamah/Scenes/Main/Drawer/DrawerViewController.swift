@@ -1,4 +1,5 @@
 import UIKit
+import SwiftCake
 
 protocol DrawerDisplayLogic: class {
     func logoutSuccess()
@@ -7,16 +8,22 @@ protocol DrawerDisplayLogic: class {
 class DrawerViewController: UIViewController, DrawerDisplayLogic {
 
     // MARK: Outlets
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: SCImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var createAccountView: UIView!
     @IBOutlet weak var switchAccountView: UIView!
+    @IBOutlet weak var switchAccountButton: UIButton!
+    @IBOutlet var drawerButtons: [UIButton]!
+    @IBOutlet weak var avatarHeightConstraint: NSLayoutConstraint!
     
     // MARK: Properties
     var interactor: DrawerBusinessLogic?
     var router: DrawerRouter?
+    
+    /// By this value we know if current app is in doctor or patient mode
+    var currentMode: UserType!
 
     // MARK: Object lifecycle
 
@@ -36,10 +43,37 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         super.viewDidLoad()
         setupView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Refresh drawer whenever we enter it
+        fillUserData()
+    }
 
     // MARK: View customization
 
     fileprivate func setupView() {
+        
+        if iPhoneDetection.deviceType() == .iphone5 ||
+            iPhoneDetection.deviceType() == .iphone4 {
+            stackView.spacing = 8
+            drawerButtons.forEach {
+                $0.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+            }
+            nameLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+            emailLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+            avatarHeightConstraint.constant = 70
+            avatarImageView.cornerRadius = 35
+        }
+        
+        // If doctor account active, display ability to switch to doctor account
+        if currentMode == .doctor {
+            switchAccountButton.setTitle("Patient account", for: .normal)
+        }
+    }
+    
+    private func fillUserData() {
         
         if let user = User.current {
             nameLabel.text = user.fullname
@@ -52,13 +86,13 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
             switchAccountView.isHidden = user.type != .doctor
             
         }
-        
-        if iPhoneDetection.deviceType() == .iphone5 {
-            stackView.spacing = 8
-        }
     }
 
     // MARK: Event handling
+    
+    @IBAction func switchAccountType(_ sender: Any) {
+        router?.navigateToApp(inModule: currentMode == .doctor ? .patient : .doctor)
+    }
     
     @IBAction func createDoctorAccount(_ sender: Any) {
         router?.navigateToCreateDoctorAccount()

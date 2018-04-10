@@ -47,6 +47,7 @@ extension AppStartRouter where Self: Router {
                 .instantiateViewController(withIdentifier: "side_vc") as? DrawerViewController else {
                 return
         }
+        sideBarVC.currentMode = module
         
         let homeVC = module == .doctor ?
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "map_doctor_vc") :
