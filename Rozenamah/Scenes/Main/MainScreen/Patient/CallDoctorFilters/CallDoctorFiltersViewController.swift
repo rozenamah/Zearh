@@ -134,6 +134,14 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
     }
     
     @IBAction func saveAction(_ sender: Any) {
+        // If max price is 501/0 - set it to nil
+        if callFormToChange.maxPrice == 501 {
+            callFormToChange.maxPrice = nil
+        }
+        if callFormToChange.minPrice == 0 {
+            callFormToChange.minPrice = nil
+        }
+        
         delegate?.newFilters(inForm: callFormToChange)
         router?.dismiss()
     }
@@ -174,10 +182,22 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
         
         // Enable specialization if needed
         if classification == .specialist || classification == .consultants {
+            priceSlider.disableRange = false
+            priceSlider.isUserInteractionEnabled = true
             enableSpecialization()
         } else {
             callFormToChange.specialization = nil
             disableSpecialization()
+            
+            priceSlider.disableRange = true
+            priceSlider.isUserInteractionEnabled = false
+            if classification == .nurse {
+                priceSlider.selectedMaxValue = 150
+            } else {
+                priceSlider.selectedMaxValue = 250
+            }
+            // Refresh price slider
+            priceSlider.maxValue = 501
         }
     }
     

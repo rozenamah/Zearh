@@ -10,6 +10,10 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     @IBOutlet weak var specializationView: UIView!
     @IBOutlet weak var professionButton: SCButton!
     @IBOutlet weak var specializationButton: SCButton!
+    @IBOutlet weak var filterStackView: UIStackView!
+    @IBOutlet weak var genderButton: SCButton!
+    @IBOutlet weak var priceButton: SCButton!
+    @IBOutlet weak var moreOptionsButton: UIButton!
     
     // MARK: Properties
     var interactor: CallDoctorBusinessLogic?
@@ -64,29 +68,39 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
                 disableSpecialization()
             }
         }
-//
-//        if let minPrice = callFormToChange.minPrice {
-//            priceSlider.selectedMinValue = CGFloat(minPrice)
-//        } else {
-//            priceSlider.selectedMinValue = 0
-//        }
-//        if let maxPrice = callFormToChange.maxPrice {
-//            priceSlider.selectedMaxValue = CGFloat(maxPrice)
-//        } else {
-//            priceSlider.selectedMaxValue = 501
-//        }
-//        if let gender = callFormToChange.gender {
-//            genderButtons.forEach { $0.isSelected = false }
-//            switch gender {
-//            case .female:
-//                femaleButton.isSelected = true
-//            case .male:
-//                maleButton.isSelected = true
-//            }
-//        } else {
-//            genderButtons.forEach { $0.isSelected = false }
-//            allButton.isSelected = true
-//        }
+
+        var shouldDisplayFilters = false
+        if let minPrice = callForm.minPrice, let maxPrice = callForm.maxPrice {
+            // Both prices set, show fitlers
+            shouldDisplayFilters = true
+            priceButton.setTitle("\(minPrice) - \(maxPrice) SAR", for: .normal)
+            priceButton.isHidden = false
+
+        } else if let minPrice = callForm.minPrice {
+            // Only min price
+            shouldDisplayFilters = true
+            priceButton.setTitle("\(minPrice) - +∞ SAR", for: .normal)
+            priceButton.isHidden = false
+        } else if let maxPrice = callForm.maxPrice {
+            // Only max price
+            shouldDisplayFilters = true
+            priceButton.setTitle("FREE - \(maxPrice) SAR", for: .normal)
+            priceButton.isHidden = false
+        } else {
+            priceButton.isHidden = true
+        }
+        
+        // Set gender
+        if let gender = callForm.gender {
+            shouldDisplayFilters = true
+            genderButton.isHidden = false
+            genderButton.setTitle(gender.title, for: .normal)
+        } else {
+            genderButton.isHidden = true
+        }
+        
+        moreOptionsButton.isHidden = shouldDisplayFilters
+        filterStackView.isHidden = !shouldDisplayFilters
     }
 
     // MARK: Event handling
