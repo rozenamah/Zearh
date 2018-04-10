@@ -1200,7 +1200,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntg-nb-jnI" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="38"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Daily">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1212,7 +1212,7 @@
                                                         </connections>
                                                     </button>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXz-DD-g6Y">
-                                                        <rect key="frame" x="0.0" y="38" width="80" height="2"/>
+                                                        <rect key="frame" x="10" y="38" width="60" height="2"/>
                                                         <color key="backgroundColor" red="0.35686274509803922" green="0.75294117647058822" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="6Pa-7M-Kdw"/>
@@ -1225,9 +1225,9 @@
                                                     <constraint firstItem="ntg-nb-jnI" firstAttribute="top" secondItem="UOA-xd-nAr" secondAttribute="top" id="AY7-7Z-7me"/>
                                                     <constraint firstItem="ntg-nb-jnI" firstAttribute="leading" secondItem="UOA-xd-nAr" secondAttribute="leading" id="HPe-yM-Q6y"/>
                                                     <constraint firstItem="qXz-DD-g6Y" firstAttribute="top" secondItem="ntg-nb-jnI" secondAttribute="bottom" id="T3A-Mp-vgI"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qXz-DD-g6Y" secondAttribute="trailing" id="ZMi-jw-yNb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qXz-DD-g6Y" secondAttribute="trailing" constant="10" id="ZMi-jw-yNb"/>
                                                     <constraint firstAttribute="trailing" secondItem="ntg-nb-jnI" secondAttribute="trailing" id="dKe-mm-tpX"/>
-                                                    <constraint firstItem="qXz-DD-g6Y" firstAttribute="leading" secondItem="UOA-xd-nAr" secondAttribute="leading" id="dvb-Ye-9tY"/>
+                                                    <constraint firstItem="qXz-DD-g6Y" firstAttribute="leading" secondItem="UOA-xd-nAr" secondAttribute="leading" constant="10" id="dvb-Ye-9tY"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="button" destination="ntg-nb-jnI" id="jWL-ev-Ksl"/>
@@ -1239,7 +1239,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEC-nA-Jsg" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="38"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Weekly">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1251,7 +1251,7 @@
                                                         </connections>
                                                     </button>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp1-Tc-WFt">
-                                                        <rect key="frame" x="0.0" y="38" width="80" height="2"/>
+                                                        <rect key="frame" x="10" y="38" width="60" height="2"/>
                                                         <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="0dF-jp-nOb"/>
@@ -1260,8 +1260,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Tp1-Tc-WFt" firstAttribute="leading" secondItem="T89-uG-ZJb" secondAttribute="leading" id="FIY-51-EyU"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Tp1-Tc-WFt" secondAttribute="trailing" id="Zj4-1F-Nod"/>
+                                                    <constraint firstItem="Tp1-Tc-WFt" firstAttribute="leading" secondItem="T89-uG-ZJb" secondAttribute="leading" constant="10" id="FIY-51-EyU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Tp1-Tc-WFt" secondAttribute="trailing" constant="10" id="Zj4-1F-Nod"/>
                                                     <constraint firstItem="PEC-nA-Jsg" firstAttribute="leading" secondItem="T89-uG-ZJb" secondAttribute="leading" id="clm-yG-mGD"/>
                                                     <constraint firstAttribute="trailing" secondItem="PEC-nA-Jsg" secondAttribute="trailing" id="h6o-0q-fBU"/>
                                                     <constraint firstItem="PEC-nA-Jsg" firstAttribute="top" secondItem="T89-uG-ZJb" secondAttribute="top" id="nCG-GW-yLi"/>
@@ -1278,7 +1278,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmL-oI-Gor" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="38"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Monthly">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1290,7 +1290,7 @@
                                                         </connections>
                                                     </button>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iN-7l-kvP">
-                                                        <rect key="frame" x="0.0" y="38" width="80" height="2"/>
+                                                        <rect key="frame" x="10" y="38" width="60" height="2"/>
                                                         <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="v9C-qS-EV3"/>
@@ -1299,11 +1299,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="1iN-7l-kvP" secondAttribute="trailing" id="A3o-eO-qnL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1iN-7l-kvP" secondAttribute="trailing" constant="10" id="A3o-eO-qnL"/>
                                                     <constraint firstItem="zmL-oI-Gor" firstAttribute="top" secondItem="UwP-Ec-jwf" secondAttribute="top" id="KQs-xk-zYL"/>
                                                     <constraint firstItem="1iN-7l-kvP" firstAttribute="top" secondItem="zmL-oI-Gor" secondAttribute="bottom" id="Tuk-ba-S4R"/>
                                                     <constraint firstAttribute="trailing" secondItem="zmL-oI-Gor" secondAttribute="trailing" id="X3j-4V-Jpo"/>
-                                                    <constraint firstItem="1iN-7l-kvP" firstAttribute="leading" secondItem="UwP-Ec-jwf" secondAttribute="leading" id="oww-FN-kvl"/>
+                                                    <constraint firstItem="1iN-7l-kvP" firstAttribute="leading" secondItem="UwP-Ec-jwf" secondAttribute="leading" constant="10" id="oww-FN-kvl"/>
                                                     <constraint firstAttribute="bottom" secondItem="1iN-7l-kvP" secondAttribute="bottom" id="puJ-X3-SSm"/>
                                                     <constraint firstItem="zmL-oI-Gor" firstAttribute="leading" secondItem="UwP-Ec-jwf" secondAttribute="leading" id="r9E-tF-mle"/>
                                                 </constraints>
@@ -1317,7 +1317,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwu-K8-0uN" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="38"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Total">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1329,7 +1329,7 @@
                                                         </connections>
                                                     </button>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-J8-6oa">
-                                                        <rect key="frame" x="0.0" y="38" width="80" height="2"/>
+                                                        <rect key="frame" x="10" y="38" width="60" height="2"/>
                                                         <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="SH8-o4-o8q"/>
@@ -1340,8 +1340,8 @@
                                                 <constraints>
                                                     <constraint firstItem="qdI-J8-6oa" firstAttribute="top" secondItem="zwu-K8-0uN" secondAttribute="bottom" id="3n3-AF-y2W"/>
                                                     <constraint firstItem="zwu-K8-0uN" firstAttribute="leading" secondItem="VZh-cW-xX9" secondAttribute="leading" id="7ty-2Y-mbj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qdI-J8-6oa" secondAttribute="trailing" id="8t3-fA-leI"/>
-                                                    <constraint firstItem="qdI-J8-6oa" firstAttribute="leading" secondItem="VZh-cW-xX9" secondAttribute="leading" id="ggV-Rf-NXx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qdI-J8-6oa" secondAttribute="trailing" constant="10" id="8t3-fA-leI"/>
+                                                    <constraint firstItem="qdI-J8-6oa" firstAttribute="leading" secondItem="VZh-cW-xX9" secondAttribute="leading" constant="10" id="ggV-Rf-NXx"/>
                                                     <constraint firstAttribute="trailing" secondItem="zwu-K8-0uN" secondAttribute="trailing" id="jtj-nL-vfH"/>
                                                     <constraint firstAttribute="bottom" secondItem="qdI-J8-6oa" secondAttribute="bottom" id="usR-O9-Zue"/>
                                                     <constraint firstItem="zwu-K8-0uN" firstAttribute="top" secondItem="VZh-cW-xX9" secondAttribute="top" id="wX8-uG-gfw"/>
