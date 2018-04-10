@@ -9,6 +9,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var buttonViewsCollection: [RMButtonWithSeparator]!
+    @IBOutlet weak var dailyView: RMButtonWithSeparator!
     
     // MARK: Properties
     var interactor: TransactionHistoryBusinessLogic?
@@ -37,7 +38,13 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     // MARK: View customization
 
     fileprivate func setupView() {
-        
+        customizeDateButtons()
+    }
+    
+    private func customizeDateButtons() {
+        if User.current?.type == .patient {
+            dailyView.isHidden = true
+        }
     }
 
     // MARK: Event handling
@@ -76,6 +83,10 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     fileprivate func registerCells() {
         tableView.registerNib(cell: SummaryTableViewCell.self)
         tableView.registerNib(cell: ProfileTableViewCell.self)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.navigateToTransactionDetail()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

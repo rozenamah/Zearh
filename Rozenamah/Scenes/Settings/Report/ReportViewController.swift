@@ -1,5 +1,6 @@
 import UIKit
 import SwiftCake
+import IQKeyboardManager
 
 protocol ReportDisplayLogic: class {
     func handle(error: Error, inField field: ReportViewController.Field)
@@ -15,7 +16,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     }
 
     // MARK: Outlets
-    @IBOutlet weak var textView: SCGrowingTextView!
+    @IBOutlet weak var textView: SCTextViewWithPlaceholder!
     @IBOutlet weak var subjectButton: SCButton!
     @IBOutlet weak var messageView: RMTextFieldWithError!
     
@@ -43,6 +44,16 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        IQKeyboardManager.shared().isEnabled = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.shared().isEnabled = true
     }
 
     // MARK: View customization

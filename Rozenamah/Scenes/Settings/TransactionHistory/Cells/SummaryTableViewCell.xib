@@ -93,6 +93,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="paymentAmountLabel" destination="Pxm-LU-Iv9" id="JUY-Lw-3sR"/>
+                <outlet property="visitsNumberLabel" destination="XdG-sr-dq2" id="8pl-Yr-re4"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

@@ -12,6 +12,10 @@ class TransactionHistoryRouter: Router {
 
     // MARK: Navigation
     
+    func navigateToTransactionDetail() {
+        viewController?.performSegue(withIdentifier: "transaction_detail_segue", sender: nil)
+    }
+    
     func dissmis() {
         viewController?.dismiss(animated: true, completion: nil)
     }
