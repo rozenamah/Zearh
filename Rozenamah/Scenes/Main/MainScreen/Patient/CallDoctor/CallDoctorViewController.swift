@@ -17,6 +17,9 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     
     /// Currently selected filters
     var callForm = CallDoctorForm()
+    
+    /// We use it to communicate flow to main screen
+    var flowDelegate: PatientFlowDelegate?
 
     // MARK: Object lifecycle
 
@@ -89,7 +92,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     // MARK: Event handling
 
     @IBAction func cancelAction(_ sender: Any) {
-        router?.dismiss()
+        flowDelegate?.changeStateTo(flowPoint: .pending)
     }
     
     @IBAction func professionChooseAction(_ sender: Any) {
@@ -110,6 +113,10 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         
         // Refresh view
         fillCurrentFilters()
+    }
+    
+    @IBAction func searchAction(_ sender: Any) {
+        flowDelegate?.changeStateTo(flowPoint: .waitSearch)
     }
     
     // MARK: Presenter methods

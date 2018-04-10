@@ -19,7 +19,6 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     // MARK: Outlets
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var bottomContainerConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
     // MARK: View lifecycle
@@ -51,7 +50,6 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
         
         // Hide container view
         containerView.isHidden = true
-        bottomContainerConstraint.constant = 0
     }
     
     // MARK: Event handling
