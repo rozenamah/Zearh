@@ -1,16 +1,29 @@
 import UIKit
+import SwiftCake
 
 protocol ReportDisplayLogic: class {
+    func handle(error: Error, inField field: ReportViewController.Field)
+    func displayReportSentSuccessful()
 }
 
 class ReportViewController: UIViewController, ReportDisplayLogic {
+    
+    enum Field {
+        case subject
+        case field
+        case unknown
+    }
 
     // MARK: Outlets
-
+    @IBOutlet weak var textView: SCGrowingTextView!
+    @IBOutlet weak var subjectButton: SCButton!
+    @IBOutlet weak var messageView: RMTextFieldWithError!
+    
     // MARK: Properties
     var interactor: ReportBusinessLogic?
     var router: ReportRouter?
 
+    var reportForm: ReportForm?
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -27,26 +40,87 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        reportForm = ReportForm()
         setupView()
     }
 
     // MARK: View customization
 
     fileprivate func setupView() {
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: 13, bottom: 0, right: 0)
+        textView.placeholder = "Your message"
     }
 
     // MARK: Event handling
+    
+    @IBAction func reportAction(_ sender: Any) {
+        if interactor?.validate(reportForm) == true {
+            interactor?.reportSubject(reportForm!)
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    @IBAction func scrollViewTapped(_ sender: Any) {
-        self.view.endEditing(true)
+    @IBAction func subjectAction(_ sender: Any) {
+        hideErrorIn(button: subjectButton)
+        router?.navigateToSelectingSubject()
+    }
+    
+    func subjectSelected(_ subject: ReportSubject) {
+        reportForm?.subject = subject
+        
+        subjectButton.setTitle(subject.title, for: .selected)
+        subjectButton.isSelected = true
     }
     
     @IBAction func dismissAction(_ sender: Any) {
         router?.dismiss()
     }
+    
     // MARK: Presenter methods
+    
+    func handle(error: Error, inField field: ReportViewController.Field) {
+        switch field {
+        case .field:
+            messageView.adjustToState(.error(msg: error))
+        case .subject:
+            displayErrorIn(button: subjectButton)
+        case .unknown:
+            router?.showError(error)
+        }
+    }
+    
+    func displayErrorIn(button: SCButton) {
+        button.borderColor = .rmRed
+        button.setTitleColor(.rmRed, for: .normal)
+    }
+    
+    func hideErrorIn(button: SCButton) {
+        button.borderColor = .rmPale
+        button.setTitleColor(.rmGray, for: .normal)
+    }
+    
+    func displayReportSentSuccessful() {
+        router?.showAlert(message: "Report was sent", with: true)
+    }
+}
+
+extension ReportViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.textView.placeholder = ""
+        messageView.adjustToState(.active)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if self.textView.text == "" {
+            self.textView.placeholder = "Your message"
+        }
+        messageView.adjustToState(.inactive)
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        reportForm?.text = textView.text
+    }
 }

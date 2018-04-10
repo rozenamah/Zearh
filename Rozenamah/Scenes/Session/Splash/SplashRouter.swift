@@ -7,6 +7,7 @@ func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
 }
 
 class SplashRouter: Router, AppStartRouter, AlertRouter {
+    
     typealias RoutingViewController = SplashViewController
     weak var viewController: SplashViewController?
 
