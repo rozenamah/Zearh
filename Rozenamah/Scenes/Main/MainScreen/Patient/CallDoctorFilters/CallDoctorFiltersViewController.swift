@@ -87,23 +87,11 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
             // Also - disable specialization if not a conultant or specialist
             if callFormToChange.classification != .consultants, callFormToChange.classification != .specialist {
                 disableSpecialization()
+                
             }
         }
         
-        if let minPrice = callFormToChange.minPrice {
-            priceSlider.selectedMinValue = CGFloat(minPrice)
-        } else {
-            priceSlider.selectedMinValue = 0
-        }
-        if let maxPrice = callFormToChange.maxPrice {
-            priceSlider.selectedMaxValue = CGFloat(maxPrice)
-        } else {
-            priceSlider.selectedMaxValue = 501
-        }
-        
-        // Price slider dosen't refresh automaticlly here,
-        // we set new max value to perform forced refresh
-        priceSlider.maxValue = 501
+        fillPriceRangeSlider()
         
         if let gender = callFormToChange.gender {
             genderButtons.forEach { $0.isSelected = false }
@@ -117,6 +105,38 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
             genderButtons.forEach { $0.isSelected = false }
             allButton.isSelected = true
         }
+    }
+    
+    private func fillPriceRangeSlider() {
+        
+        if callFormToChange.classification == .nurse ||
+            callFormToChange.classification == .doctor {
+            priceSlider.disableRange = true
+            priceSlider.isUserInteractionEnabled = false
+            if callFormToChange.classification == .nurse {
+                priceSlider.selectedMinValue = 150
+                priceSlider.selectedMaxValue = 150
+            } else {
+                priceSlider.selectedMinValue = 250
+                priceSlider.selectedMaxValue = 250
+            }
+        } else {
+            priceSlider.disableRange = false
+            priceSlider.isUserInteractionEnabled = true
+            if let minPrice = callFormToChange.minPrice {
+                priceSlider.selectedMinValue = CGFloat(minPrice)
+            } else {
+                priceSlider.selectedMinValue = 0
+            }
+            if let maxPrice = callFormToChange.maxPrice {
+                priceSlider.selectedMaxValue = CGFloat(maxPrice)
+            } else {
+                priceSlider.selectedMaxValue = 501
+            }
+        }
+        // Price slider dosen't refresh automaticlly here,
+        // we set new max value to perform forced refresh
+        priceSlider.maxValue = 501
     }
 
     // MARK: Event handling
@@ -169,14 +189,14 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
         classificationButton.setTitle(classification.title, for: .selected)
         classificationButton.isSelected = true
         
-        // Reset specialization
+        // Reset specialization and price
         specializationButton.isSelected = false
+        fillPriceRangeSlider()
         
         // Enable specialization if needed
         if classification == .specialist || classification == .consultants {
             enableSpecialization()
         } else {
-            callFormToChange.specialization = nil
             disableSpecialization()
         }
     }

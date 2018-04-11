@@ -149,6 +149,14 @@
 		F992D343206E3D6D00DF0604 /* MainDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992D33C206E3D6D00DF0604 /* MainDoctorConfigurator.swift */; };
 		F992D346206E40E700DF0604 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992D345206E40E700DF0604 /* MainScreenInteractor.swift */; };
 		F992D348206E418100DF0604 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992D347206E418100DF0604 /* MainScreenPresenter.swift */; };
+		F99A2EC5207CBCC1009505EB /* WaitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EBE207CBCC1009505EB /* WaitPresenter.swift */; };
+		F99A2EC6207CBCC1009505EB /* WaitWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EBF207CBCC1009505EB /* WaitWorker.swift */; };
+		F99A2EC7207CBCC1009505EB /* WaitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC0207CBCC1009505EB /* WaitRouter.swift */; };
+		F99A2EC8207CBCC1009505EB /* WaitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC1207CBCC1009505EB /* WaitModels.swift */; };
+		F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC2207CBCC1009505EB /* WaitViewController.swift */; };
+		F99A2ECA207CBCC1009505EB /* WaitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC3207CBCC1009505EB /* WaitInteractor.swift */; };
+		F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC4207CBCC1009505EB /* WaitConfigurator.swift */; };
+		F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2ECC207E06D3009505EB /* PhoneValidation.swift */; };
 		F9A9F2A4204D5897006E8999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2A3204D5897006E8999 /* Router.swift */; };
 		F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA96AB205FCA5200CB4B68 /* Settings.swift */; };
 		F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */; };
@@ -315,6 +323,14 @@
 		F992D33C206E3D6D00DF0604 /* MainDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDoctorConfigurator.swift; sourceTree = "<group>"; };
 		F992D345206E40E700DF0604 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		F992D347206E418100DF0604 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		F99A2EBE207CBCC1009505EB /* WaitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitPresenter.swift; sourceTree = "<group>"; };
+		F99A2EBF207CBCC1009505EB /* WaitWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitWorker.swift; sourceTree = "<group>"; };
+		F99A2EC0207CBCC1009505EB /* WaitRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitRouter.swift; sourceTree = "<group>"; };
+		F99A2EC1207CBCC1009505EB /* WaitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitModels.swift; sourceTree = "<group>"; };
+		F99A2EC2207CBCC1009505EB /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		F99A2EC3207CBCC1009505EB /* WaitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitInteractor.swift; sourceTree = "<group>"; };
+		F99A2EC4207CBCC1009505EB /* WaitConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitConfigurator.swift; sourceTree = "<group>"; };
+		F99A2ECC207E06D3009505EB /* PhoneValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidation.swift; sourceTree = "<group>"; };
 		F9A9F2A3204D5897006E8999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F9CA96AB205FCA5200CB4B68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
@@ -513,6 +529,7 @@
 				F940EA6F205827AD00266753 /* EmailValidation.swift */,
 				F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */,
 				F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */,
+				F99A2ECC207E06D3009505EB /* PhoneValidation.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -588,6 +605,7 @@
 		F95F140C2061543600CDC2E5 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				F99A2EBD207CBCAB009505EB /* Wait */,
 				F992D344206E3F8F00DF0604 /* MainPatient */,
 				F95AFBF0206A6CAD007CCFB1 /* CallDoctorFilters */,
 				F97B71ED2062B5840073A968 /* CallDoctor */,
@@ -698,6 +716,20 @@
 				F940EC47205A9BFF00266753 /* MainPatientConfigurator.swift */,
 			);
 			path = MainPatient;
+			sourceTree = "<group>";
+		};
+		F99A2EBD207CBCAB009505EB /* Wait */ = {
+			isa = PBXGroup;
+			children = (
+				F99A2EBE207CBCC1009505EB /* WaitPresenter.swift */,
+				F99A2EBF207CBCC1009505EB /* WaitWorker.swift */,
+				F99A2EC0207CBCC1009505EB /* WaitRouter.swift */,
+				F99A2EC1207CBCC1009505EB /* WaitModels.swift */,
+				F99A2EC2207CBCC1009505EB /* WaitViewController.swift */,
+				F99A2EC3207CBCC1009505EB /* WaitInteractor.swift */,
+				F99A2EC4207CBCC1009505EB /* WaitConfigurator.swift */,
+			);
+			path = Wait;
 			sourceTree = "<group>";
 		};
 		F9A9F296204D57F3006E8999 /* Views */ = {
@@ -1057,10 +1089,12 @@
 				578100F9207CBFE600F4A78B /* TransactionDetailViewController.swift in Sources */,
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
 				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
+				F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */,
 				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
 				F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */,
 				F992D33F206E3D6D00DF0604 /* MainDoctorRouter.swift in Sources */,
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
+				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
 				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
 				573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */,
@@ -1082,6 +1116,7 @@
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
 				F940EA502058147000266753 /* WelcomePresenter.swift in Sources */,
 				F940EC48205A9BFF00266753 /* MainPatientPresenter.swift in Sources */,
+				F99A2EC8207CBCC1009505EB /* WaitModels.swift in Sources */,
 				57E659D52073AE60004E3926 /* ChangeEmailModels.swift in Sources */,
 				F940EA5E2058148300266753 /* LoginPresenter.swift in Sources */,
 				F9A9F2A4204D5897006E8999 /* Router.swift in Sources */,
@@ -1143,6 +1178,7 @@
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
 				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
+				F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */,
 				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
@@ -1158,9 +1194,11 @@
 				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
 				F992D342206E3D6D00DF0604 /* MainDoctorInteractor.swift in Sources */,
 				F940EA642058148300266753 /* LoginConfigurator.swift in Sources */,
+				F99A2EC7207CBCC1009505EB /* WaitRouter.swift in Sources */,
 				F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */,
 				F95AFBF9206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift in Sources */,
 				F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */,
+				F99A2EC5207CBCC1009505EB /* WaitPresenter.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
 				F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */,
 				F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */,

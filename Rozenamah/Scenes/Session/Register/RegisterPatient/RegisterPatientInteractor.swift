@@ -58,6 +58,14 @@ class RegisterPatientInteractor: RegisterPatientBusinessLogic {
             presenter?.presentError(.incorrectEmail)
         }
         
+        // Phone verification
+        if registerForm.phone == nil ||
+            !PhoneValidation.validate(phone: registerForm.phone!) {
+            
+            allFieldsValid = false
+            presenter?.presentError(.incorrectPhone)
+        }
+        
         // Password verification
         if registerForm.password == nil ||
             registerForm.password!.count < 4 {

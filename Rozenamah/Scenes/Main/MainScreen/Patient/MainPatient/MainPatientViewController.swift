@@ -1,12 +1,17 @@
 import UIKit
 import GoogleMaps
 
-protocol MainPatientDisplayLogic: MainScreenDisplayLogic {
+protocol PatientFlowDelegate: class {
+    func changeStateTo(flowPoint: PatientFlow)
+}
+
+protocol MainPatientDisplayLogic: MainScreenDisplayLogic, PatientFlowDelegate {
 }
 
 class MainPatientViewController: MainScreenViewController, MainPatientDisplayLogic {
 
     // MARK: Outlets
+    @IBOutlet var viewToHideWhenFormVisible: [UIButton]!
     
     // MARK: Properties
     var interactor: MainPatientBusinessLogic?
@@ -29,6 +34,7 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     override func viewDidLoad() {
         super.viewDidLoad() // Setup view is called in not called in subclass
         
+        router?.configureFirstScreen() // Show call form at start
         interactor?.registerForNotifications()
     }
     
@@ -53,11 +59,27 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     // MARK: Event handling
     
     @IBAction func callDoctorAction(_ sender: Any) {
-        router?.navigateToCallDoctor()
+        router?.openContainer(completion: {
+            // Hide all buttons when call doctor visible
+            self.viewToHideWhenFormVisible.forEach { $0.isHidden = true }
+        })
     }
     
     @IBAction func locateMeAction(_ sender: Any) {
         interactor?.returnToUserLocation()
+    }
+    
+    func changeStateTo(flowPoint: PatientFlow) {
+        switch flowPoint {
+        case .callDoctor:
+            router?.navigateToCallForm()
+        case .waitSearch:
+            router?.navigateToWaitScreen()
+        case .pending:
+            // Show all buttons when no form visible
+            self.viewToHideWhenFormVisible.forEach { $0.isHidden = false }
+            router?.closeContainer()
+        }
     }
     
     // MARK: Presenter methods

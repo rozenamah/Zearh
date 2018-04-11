@@ -2,14 +2,25 @@ import UIKit
 import SwiftCake
 
 protocol CallDoctorDisplayLogic: ClassificationDelegate, CallDoctorFiltersDelegate {
+    func handle(error: Error)
+    func handle(error: Error, inField field: CallDoctorViewController.Field)
 }
 
 class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
 
+    enum Field {
+        case classification
+        case specialization
+    }
+    
     // MARK: Outlets
     @IBOutlet weak var specializationView: UIView!
     @IBOutlet weak var professionButton: SCButton!
     @IBOutlet weak var specializationButton: SCButton!
+    @IBOutlet weak var filterStackView: UIStackView!
+    @IBOutlet weak var genderButton: SCButton!
+    @IBOutlet weak var priceButton: SCButton!
+    @IBOutlet weak var moreOptionsButton: UIButton!
     
     // MARK: Properties
     var interactor: CallDoctorBusinessLogic?
@@ -17,6 +28,9 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     
     /// Currently selected filters
     var callForm = CallDoctorForm()
+    
+    /// We use it to communicate flow to main screen
+    var flowDelegate: PatientFlowDelegate?
 
     // MARK: Object lifecycle
 
@@ -43,7 +57,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         fillCurrentFilters()
     }
     
-    fileprivate func fillCurrentFilters() {
+    private func fillCurrentFilters() {
         
         // Setup current filters
         if let classification = callForm.classification {
@@ -61,35 +75,50 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
                 disableSpecialization()
             }
         }
-//
-//        if let minPrice = callFormToChange.minPrice {
-//            priceSlider.selectedMinValue = CGFloat(minPrice)
-//        } else {
-//            priceSlider.selectedMinValue = 0
-//        }
-//        if let maxPrice = callFormToChange.maxPrice {
-//            priceSlider.selectedMaxValue = CGFloat(maxPrice)
-//        } else {
-//            priceSlider.selectedMaxValue = 501
-//        }
-//        if let gender = callFormToChange.gender {
-//            genderButtons.forEach { $0.isSelected = false }
-//            switch gender {
-//            case .female:
-//                femaleButton.isSelected = true
-//            case .male:
-//                maleButton.isSelected = true
-//            }
-//        } else {
-//            genderButtons.forEach { $0.isSelected = false }
-//            allButton.isSelected = true
-//        }
+        
+        fillGenderAndPriceFilters()
+    }
+    
+    private func fillGenderAndPriceFilters() {
+    
+        var shouldDisplayFilters = false
+        if let minPrice = callForm.minPrice, let maxPrice = callForm.maxPrice {
+            // Both prices set, show fitlers
+            shouldDisplayFilters = true
+            priceButton.setTitle("\(minPrice) - \(maxPrice) SAR", for: .normal)
+            priceButton.isHidden = false
+            
+        } else if let minPrice = callForm.minPrice {
+            // Only min price
+            shouldDisplayFilters = true
+            priceButton.setTitle("\(minPrice) - +∞ SAR", for: .normal)
+            priceButton.isHidden = false
+        } else if let maxPrice = callForm.maxPrice {
+            // Only max price
+            shouldDisplayFilters = true
+            priceButton.setTitle("FREE - \(maxPrice) SAR", for: .normal)
+            priceButton.isHidden = false
+        } else {
+            priceButton.isHidden = true
+        }
+        
+        // Set gender
+        if let gender = callForm.gender {
+            shouldDisplayFilters = true
+            genderButton.isHidden = false
+            genderButton.setTitle(gender.title, for: .normal)
+        } else {
+            genderButton.isHidden = true
+        }
+        
+        moreOptionsButton.isHidden = shouldDisplayFilters
+        filterStackView.isHidden = !shouldDisplayFilters
     }
 
     // MARK: Event handling
 
     @IBAction func cancelAction(_ sender: Any) {
-        router?.dismiss()
+        flowDelegate?.changeStateTo(flowPoint: .pending)
     }
     
     @IBAction func professionChooseAction(_ sender: Any) {
@@ -112,6 +141,12 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         fillCurrentFilters()
     }
     
+    @IBAction func searchAction(_ sender: Any) {
+        if interactor?.validate(form: callForm) == true {
+            flowDelegate?.changeStateTo(flowPoint: .waitSearch)
+        }
+    }
+    
     // MARK: Presenter methods
     
     func classificationSelected(_ classification: Classification) {
@@ -123,12 +158,16 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         // Reset specialization
         specializationButton.isSelected = false
         
+        // Hide error in specialization if any
+        hideErrorIn(button: specializationButton)
+        
         // Enable specialization if needed
         if classification == .specialist || classification == .consultants {
             enableSpecialization()
         } else {
             callForm.specialization = nil
             disableSpecialization()
+            fillGenderAndPriceFilters()
         }
     }
     
@@ -148,5 +187,28 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     func enableSpecialization() {
         specializationView.isUserInteractionEnabled = true
         specializationView.alpha = 1
+    }
+    
+    func handle(error: Error) {
+        router?.showError(error)
+    }
+    
+    func handle(error: Error, inField field: CallDoctorViewController.Field) {
+        switch field {
+        case .classification:
+            displayErrorIn(button: professionButton)
+        case .specialization:
+            displayErrorIn(button: specializationButton)
+        }
+    }
+    
+    func displayErrorIn(button: SCButton) {
+        button.borderColor = .rmRed
+        button.setTitleColor(.rmRed, for: .normal)
+    }
+    
+    func hideErrorIn(button: SCButton) {
+        button.borderColor = .rmPale
+        button.setTitleColor(.rmGray, for: .normal)
     }
 }

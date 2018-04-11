@@ -16,6 +16,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         case surname
         case name
         case confirmPassword
+        case phone
     }
     
     // MARK: Outlets
@@ -28,6 +29,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     @IBOutlet weak var emailView: RMTextFieldWithError!
     @IBOutlet weak var createAccountButton: SCButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var phoneView: RMTextFieldWithError!
     
     // MARK: Properties
     var interactor: RegisterPatientBusinessLogic?
@@ -129,6 +131,8 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
             surnameView.adjustToState(.error(msg: error))
         case .confirmPassword:
             confirmPasswordView.adjustToState(.error(msg: error))
+        case .phone:
+            phoneView.adjustToState(.error(msg: error))
         }
     }
     
@@ -159,6 +163,8 @@ extension RegisterPatientViewController: UITextFieldDelegate {
             registerForm.surname = textField.text
         case confirmPasswordView.textField:
             registerForm.repeatPassword = textField.text
+        case phoneView.textField:
+            registerForm.phone = textField.text
         default:
             break
         }
@@ -177,6 +183,8 @@ extension RegisterPatientViewController: UITextFieldDelegate {
             surnameView.adjustToState(.active)
         case confirmPasswordView.textField:
             confirmPasswordView.adjustToState(.active)
+        case phoneView.textField:
+            phoneView.adjustToState(.active)
         default:
             break
         }
@@ -194,6 +202,8 @@ extension RegisterPatientViewController: UITextFieldDelegate {
             surnameView.adjustToState(.inactive)
         case confirmPasswordView.textField:
             confirmPasswordView.adjustToState(.inactive)
+        case phoneView.textField:
+            phoneView.adjustToState(.active)
         default:
             break
         }
@@ -203,6 +213,9 @@ extension RegisterPatientViewController: UITextFieldDelegate {
         
         switch textField {
         case emailView.textField:
+            phoneView.textField.becomeFirstResponder()
+            return false
+        case phoneView.textField:
             passwordView.textField.becomeFirstResponder()
             return false
         case passwordView.textField:
