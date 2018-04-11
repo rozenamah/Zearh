@@ -137,6 +137,7 @@
 		F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC2207CBCC1009505EB /* WaitViewController.swift */; };
 		F99A2ECA207CBCC1009505EB /* WaitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC3207CBCC1009505EB /* WaitInteractor.swift */; };
 		F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EC4207CBCC1009505EB /* WaitConfigurator.swift */; };
+		F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2ECC207E06D3009505EB /* PhoneValidation.swift */; };
 		F9A9F2A4204D5897006E8999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2A3204D5897006E8999 /* Router.swift */; };
 		F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA96AB205FCA5200CB4B68 /* Settings.swift */; };
 		F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */; };
@@ -291,6 +292,7 @@
 		F99A2EC2207CBCC1009505EB /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		F99A2EC3207CBCC1009505EB /* WaitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitInteractor.swift; sourceTree = "<group>"; };
 		F99A2EC4207CBCC1009505EB /* WaitConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitConfigurator.swift; sourceTree = "<group>"; };
+		F99A2ECC207E06D3009505EB /* PhoneValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidation.swift; sourceTree = "<group>"; };
 		F9A9F2A3204D5897006E8999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F9CA96AB205FCA5200CB4B68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				F940EA6F205827AD00266753 /* EmailValidation.swift */,
 				F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */,
 				F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */,
+				F99A2ECC207E06D3009505EB /* PhoneValidation.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -1006,6 +1009,7 @@
 				F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */,
 				F992D33F206E3D6D00DF0604 /* MainDoctorRouter.swift in Sources */,
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
+				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				57E659D22073AE60004E3926 /* ChangeEmailPresenter.swift in Sources */,

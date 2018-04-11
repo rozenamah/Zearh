@@ -12,6 +12,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
 
     enum RegisterPatientError: LocalizedError {
         case incorrectEmail
+        case incorrectPhone
         case emailAlreadyExists
         case passwordToShort
         case passwordToLong
@@ -31,6 +32,8 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
                 return "Email is already taken"
             case .incorrectEmail:
                 return "Email is incorrect"
+            case .incorrectPhone:
+                return "Phone number is incorrect"
             case .incorrectPassword:
                 return "Password is incorrect"
             case .incorrectName:
@@ -78,6 +81,8 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         switch error {
         case .incorrectEmail, .emailAlreadyExists:
             viewController?.handle(error: error, inField: .email)
+        case .incorrectPhone:
+            viewController?.handle(error: error, inField: .phone)
         case .passwordToShort, .passwordToLong, .incorrectPassword:
             viewController?.handle(error: error, inField: .password)
         case .nameToLong, .nameToShort, .incorrectName:
