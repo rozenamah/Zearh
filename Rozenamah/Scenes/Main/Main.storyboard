@@ -228,7 +228,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="GKJ-HK-WiL"/>
                     <connections>
-                        <outlet property="bottomContainerConstraint" destination="AXl-E7-mXV" id="7Qk-rK-DJF"/>
                         <outlet property="containerHeightConstraint" destination="oRA-ck-4Jk" id="TbI-YK-x6N"/>
                         <outlet property="containerView" destination="Z0H-df-05R" id="v3T-S9-ntw"/>
                         <outlet property="mapView" destination="cfl-zU-M5F" id="8Pf-AO-HBG"/>

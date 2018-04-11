@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
+		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
+		57369F22207E0CDE001666EB /* ChangePhoneNumberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */; };
+		57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1C207E0CDE001666EB /* ChangePhoneNumberModels.swift */; };
+		57369F24207E0CDE001666EB /* ChangePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1D207E0CDE001666EB /* ChangePhoneNumberViewController.swift */; };
+		57369F25207E0CDE001666EB /* ChangePhoneNumberInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1E207E0CDE001666EB /* ChangePhoneNumberInteractor.swift */; };
+		57369F26207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1F207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift */; };
 		573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304B207B65AA0040B438 /* TransactionHistoryPresenter.swift */; };
 		573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304C207B65AA0040B438 /* TransactionHistoryWorker.swift */; };
 		573A3054207B65AA0040B438 /* TransactionHistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304D207B65AA0040B438 /* TransactionHistoryRouter.swift */; };
@@ -178,6 +185,13 @@
 /* Begin PBXFileReference section */
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
+		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
+		57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberRouter.swift; sourceTree = "<group>"; };
+		57369F1C207E0CDE001666EB /* ChangePhoneNumberModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberModels.swift; sourceTree = "<group>"; };
+		57369F1D207E0CDE001666EB /* ChangePhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberViewController.swift; sourceTree = "<group>"; };
+		57369F1E207E0CDE001666EB /* ChangePhoneNumberInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberInteractor.swift; sourceTree = "<group>"; };
+		57369F1F207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberConfigurator.swift; sourceTree = "<group>"; };
 		573A304B207B65AA0040B438 /* TransactionHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryPresenter.swift; sourceTree = "<group>"; };
 		573A304C207B65AA0040B438 /* TransactionHistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryWorker.swift; sourceTree = "<group>"; };
 		573A304D207B65AA0040B438 /* TransactionHistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryRouter.swift; sourceTree = "<group>"; };
@@ -368,6 +382,20 @@
 				12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		57369F18207E0CBD001666EB /* ChangePhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */,
+				57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */,
+				57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */,
+				57369F1C207E0CDE001666EB /* ChangePhoneNumberModels.swift */,
+				57369F1D207E0CDE001666EB /* ChangePhoneNumberViewController.swift */,
+				57369F1E207E0CDE001666EB /* ChangePhoneNumberInteractor.swift */,
+				57369F1F207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift */,
+			);
+			path = ChangePhoneNumber;
 			sourceTree = "<group>";
 		};
 		573A304A207B656D0040B438 /* TransactionHistory */ = {
@@ -630,6 +658,7 @@
 		F975375F205FCF9E003DC80E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				57369F18207E0CBD001666EB /* ChangePhoneNumber */,
 				578100ED207CBFCA00F4A78B /* TransactionDetail */,
 				573A304A207B656D0040B438 /* TransactionHistory */,
 				57E659CA2073AE49004E3926 /* ChangeEmail */,
@@ -1074,6 +1103,7 @@
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
 				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
 				F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */,
+				57369F25207E0CDE001666EB /* ChangePhoneNumberInteractor.swift in Sources */,
 				F992D313206D20F000DF0604 /* NotificationWorker.swift in Sources */,
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
 				57E659C620739EBC004E3926 /* ChangePasswordModels.swift in Sources */,
@@ -1123,12 +1153,15 @@
 				F95AFBFC206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift in Sources */,
 				F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */,
 				F940EC4E205A9BFF00266753 /* MainPatientConfigurator.swift in Sources */,
+				57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */,
 				573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
 				F940EA522058147000266753 /* WelcomeRouter.swift in Sources */,
 				F9CEDE532063F139004ED0C7 /* ReportWorker.swift in Sources */,
+				57369F24207E0CDE001666EB /* ChangePhoneNumberViewController.swift in Sources */,
 				F940EC4B205A9BFF00266753 /* MainPatientModels.swift in Sources */,
 				573A3054207B65AA0040B438 /* TransactionHistoryRouter.swift in Sources */,
+				57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */,
 				F940EC49205A9BFF00266753 /* MainPatientWorker.swift in Sources */,
 				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
 				F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */,
@@ -1156,12 +1189,14 @@
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
 				F940EC5F205AB9EC00266753 /* SplashInteractor.swift in Sources */,
 				578100F8207CBFE600F4A78B /* TransactionDetailModels.swift in Sources */,
+				F99A2EC6207CBCC1009505EB /* WaitWorker.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
 				573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */,
 				57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */,
 				F940EA512058147000266753 /* WelcomeWorker.swift in Sources */,
 				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
+				57369F26207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift in Sources */,
 				F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */,
 				F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */,
 				57E659D82073AE60004E3926 /* ChangeEmailConfigurator.swift in Sources */,
@@ -1175,6 +1210,7 @@
 				F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */,
 				F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */,
 				573A3057207B65AA0040B438 /* TransactionHistoryInteractor.swift in Sources */,
+				F99A2ECA207CBCC1009505EB /* WaitInteractor.swift in Sources */,
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
 				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
@@ -1187,6 +1223,7 @@
 				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
 				57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */,
 				578100FB207CBFE600F4A78B /* TransactionDetailConfigurator.swift in Sources */,
+				57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */,
 				573A3060207B66E00040B438 /* ProfileTableViewCell.swift in Sources */,
 				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,
 				F940EC2B20595A1100266753 /* API.swift in Sources */,
@@ -1210,6 +1247,7 @@
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
 				57E659C720739EBC004E3926 /* ChangePasswordViewController.swift in Sources */,
+				57369F22207E0CDE001666EB /* ChangePhoneNumberRouter.swift in Sources */,
 				57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */,
 				F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */,
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,

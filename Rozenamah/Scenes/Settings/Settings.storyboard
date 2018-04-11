@@ -77,7 +77,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-Cb-kYV">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="972"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1025"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="mvr-zi-Tkw" customClass="SCImageView" customModule="SwiftCake">
                                                 <rect key="frame" x="137" y="24" width="100" height="100"/>
@@ -452,7 +452,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VS-1E-PLb" userLabel="Edit profile">
-                                                <rect key="frame" x="16" y="783.5" width="343" height="37"/>
+                                                <rect key="frame" x="16" y="836.5" width="343" height="37"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-wp-a3a">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
@@ -493,7 +493,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZQ-71-IgA" customClass="SCButton" customModule="SwiftCake">
-                                                <rect key="frame" x="108" y="900.5" width="158" height="39.5"/>
+                                                <rect key="frame" x="108" y="953.5" width="158" height="39.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <inset key="contentEdgeInsets" minX="20" minY="9.5" maxX="20" maxY="9"/>
                                                 <state key="normal" title="Delete Account">
@@ -514,15 +514,57 @@
                                                     <action selector="deleteAccountAction:" destination="nyP-id-tOB" eventType="touchUpInside" id="Y8R-LZ-GGX"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-Go-Cm6" userLabel="Edit profile">
+                                                <rect key="frame" x="16" y="783.5" width="343" height="37"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOx-yK-pUE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="40" maxY="8"/>
+                                                        <state key="normal" title="Change phone number">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="0CT-hP-OgB" kind="presentation" id="vJO-Z6-Wh1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-aZ-E66">
+                                                        <rect key="frame" x="0.0" y="36" width="343" height="1"/>
+                                                        <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="mh1-wA-iyZ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Qsa-fn-pce">
+                                                        <rect key="frame" x="319" y="12" width="8" height="13"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="YOx-yK-pUE" firstAttribute="top" secondItem="DG0-Go-Cm6" secondAttribute="top" id="B6X-9q-yOf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YOx-yK-pUE" secondAttribute="trailing" id="D2e-lX-UMN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OgE-aZ-E66" secondAttribute="bottom" id="G8d-ia-qSL"/>
+                                                    <constraint firstItem="YOx-yK-pUE" firstAttribute="leading" secondItem="DG0-Go-Cm6" secondAttribute="leading" id="HBr-xK-KvE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OgE-aZ-E66" secondAttribute="trailing" id="aBB-mQ-Kx7"/>
+                                                    <constraint firstItem="Qsa-fn-pce" firstAttribute="centerY" secondItem="YOx-yK-pUE" secondAttribute="centerY" id="jZU-qE-ldY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Qsa-fn-pce" secondAttribute="trailing" constant="16" id="kr1-vh-poi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YOx-yK-pUE" secondAttribute="bottom" id="qhq-nN-wcB"/>
+                                                    <constraint firstItem="OgE-aZ-E66" firstAttribute="leading" secondItem="DG0-Go-Cm6" secondAttribute="leading" id="wl2-MA-dKL"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Pr2-d9-b4x" secondAttribute="trailing" constant="16" id="2YH-ap-G3K"/>
                                             <constraint firstItem="Pr2-d9-b4x" firstAttribute="leading" secondItem="7IC-Cb-kYV" secondAttribute="leading" constant="16" id="2pv-vt-r2G"/>
-                                            <constraint firstItem="3VS-1E-PLb" firstAttribute="top" secondItem="Pr2-d9-b4x" secondAttribute="bottom" constant="16" id="62p-Az-H2j"/>
                                             <constraint firstItem="9ZQ-71-IgA" firstAttribute="top" secondItem="3VS-1E-PLb" secondAttribute="bottom" constant="80" id="6Kj-z9-3a6"/>
+                                            <constraint firstItem="DG0-Go-Cm6" firstAttribute="top" secondItem="Pr2-d9-b4x" secondAttribute="bottom" constant="16" id="72B-aK-ITg"/>
                                             <constraint firstItem="9ZQ-71-IgA" firstAttribute="centerX" secondItem="7IC-Cb-kYV" secondAttribute="centerX" id="8Qv-D6-NpL"/>
                                             <constraint firstAttribute="bottom" secondItem="9ZQ-71-IgA" secondAttribute="bottom" constant="32" id="Az5-ha-a7m"/>
+                                            <constraint firstItem="DG0-Go-Cm6" firstAttribute="leading" secondItem="7IC-Cb-kYV" secondAttribute="leading" constant="16" id="C0x-lI-DMd"/>
                                             <constraint firstAttribute="trailing" secondItem="RSB-nt-F7n" secondAttribute="trailing" constant="16" id="H7L-dq-V1T"/>
                                             <constraint firstItem="CHs-yR-jAH" firstAttribute="top" secondItem="RSB-nt-F7n" secondAttribute="bottom" constant="16" id="Ohh-cY-BMa"/>
                                             <constraint firstItem="RSB-nt-F7n" firstAttribute="top" secondItem="mvr-zi-Tkw" secondAttribute="bottom" constant="16" id="Oua-Zu-b0H"/>
@@ -530,6 +572,7 @@
                                             <constraint firstItem="8oD-9V-gus" firstAttribute="top" secondItem="CHs-yR-jAH" secondAttribute="bottom" constant="24" id="SyP-h5-K1E"/>
                                             <constraint firstAttribute="trailing" secondItem="8oD-9V-gus" secondAttribute="trailing" constant="16" id="XJF-OC-fEL"/>
                                             <constraint firstItem="3VS-1E-PLb" firstAttribute="leading" secondItem="7IC-Cb-kYV" secondAttribute="leading" constant="16" id="awV-xR-ZkK"/>
+                                            <constraint firstAttribute="trailing" secondItem="DG0-Go-Cm6" secondAttribute="trailing" constant="16" id="bY5-cX-fvp"/>
                                             <constraint firstItem="mvr-zi-Tkw" firstAttribute="centerX" secondItem="7IC-Cb-kYV" secondAttribute="centerX" id="clm-43-IPU"/>
                                             <constraint firstItem="RSB-nt-F7n" firstAttribute="leading" secondItem="7IC-Cb-kYV" secondAttribute="leading" constant="16" id="hAO-hT-i4i"/>
                                             <constraint firstItem="Pr2-d9-b4x" firstAttribute="top" secondItem="8oD-9V-gus" secondAttribute="bottom" constant="24" id="hV9-8A-CaB"/>
@@ -537,6 +580,7 @@
                                             <constraint firstItem="mvr-zi-Tkw" firstAttribute="top" secondItem="7IC-Cb-kYV" secondAttribute="top" constant="24" id="lUn-hV-SFP"/>
                                             <constraint firstAttribute="trailing" secondItem="3VS-1E-PLb" secondAttribute="trailing" constant="16" id="y2a-w4-6Zl"/>
                                             <constraint firstItem="CHs-yR-jAH" firstAttribute="leading" secondItem="7IC-Cb-kYV" secondAttribute="leading" constant="16" id="ziC-dH-Djf"/>
+                                            <constraint firstItem="3VS-1E-PLb" firstAttribute="top" secondItem="DG0-Go-Cm6" secondAttribute="bottom" constant="16" id="zlw-oR-Ev5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1695,6 +1739,130 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wls-m8-8fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5008" y="155"/>
+        </scene>
+        <!--Change phone number-->
+        <scene sceneID="Rc9-mJ-kGZ">
+            <objects>
+                <viewController id="gCD-fg-2bu" customClass="ChangePhoneNumberViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q6w-NC-frb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDY-8U-Neh" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
+                                <rect key="frame" x="16" y="70" width="343" height="47"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter phone number" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MvW-pZ-hmz" customClass="SCTextField" customModule="SwiftCake">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="tel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberChanged:" destination="gCD-fg-2bu" eventType="editingChanged" id="yTq-SB-RY4"/>
+                                            <outlet property="delegate" destination="gCD-fg-2bu" id="xL5-wV-1dB"/>
+                                        </connections>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8C-Le-y5h">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="1"/>
+                                        <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="iNc-1X-Vso"/>
+                                        </constraints>
+                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error about phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCC-p1-cpj">
+                                        <rect key="frame" x="0.0" y="31" width="343" height="16"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="MvW-pZ-hmz" firstAttribute="leading" secondItem="JDY-8U-Neh" secondAttribute="leading" id="18T-Ez-6hM"/>
+                                    <constraint firstAttribute="trailing" secondItem="L8C-Le-y5h" secondAttribute="trailing" id="2wo-4e-O2C"/>
+                                    <constraint firstItem="gCC-p1-cpj" firstAttribute="leading" secondItem="JDY-8U-Neh" secondAttribute="leading" id="HZj-51-V7z"/>
+                                    <constraint firstItem="MvW-pZ-hmz" firstAttribute="top" secondItem="JDY-8U-Neh" secondAttribute="top" id="O5e-Fn-ETj"/>
+                                    <constraint firstAttribute="trailing" secondItem="MvW-pZ-hmz" secondAttribute="trailing" id="OhN-S6-yeX"/>
+                                    <constraint firstItem="L8C-Le-y5h" firstAttribute="top" secondItem="MvW-pZ-hmz" secondAttribute="bottom" constant="7" id="PdY-Bx-N7d"/>
+                                    <constraint firstAttribute="bottom" secondItem="gCC-p1-cpj" secondAttribute="bottom" id="XeC-BL-jad"/>
+                                    <constraint firstAttribute="trailing" secondItem="gCC-p1-cpj" secondAttribute="trailing" id="dKt-cv-bug"/>
+                                    <constraint firstItem="L8C-Le-y5h" firstAttribute="leading" secondItem="JDY-8U-Neh" secondAttribute="leading" id="fHu-HY-6P6"/>
+                                    <constraint firstItem="gCC-p1-cpj" firstAttribute="top" secondItem="L8C-Le-y5h" secondAttribute="bottom" constant="2" id="fx4-Uq-6PY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="errorLabel" destination="gCC-p1-cpj" id="jh0-4K-c1g"/>
+                                    <outlet property="separatorView" destination="L8C-Le-y5h" id="nYM-Sh-aVZ"/>
+                                    <outlet property="textField" destination="MvW-pZ-hmz" id="ZgQ-mX-9FG"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9y-Cd-7RY" customClass="SCButton" customModule="SwiftCake">
+                                <rect key="frame" x="16" y="152" width="343" height="39"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
+                                <state key="normal" title="Change phone number">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changePhoneNumberAction:" destination="gCD-fg-2bu" eventType="touchUpInside" id="TEQ-Z1-1oM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JDY-8U-Neh" firstAttribute="leading" secondItem="q6w-NC-frb" secondAttribute="leading" constant="16" id="8MB-kT-C6o"/>
+                            <constraint firstAttribute="trailing" secondItem="JDY-8U-Neh" secondAttribute="trailing" constant="16" id="BpV-S0-aqR"/>
+                            <constraint firstItem="H9y-Cd-7RY" firstAttribute="top" secondItem="JDY-8U-Neh" secondAttribute="bottom" constant="35" id="KUM-AQ-oHN"/>
+                            <constraint firstItem="JDY-8U-Neh" firstAttribute="top" secondItem="7yB-wy-VyA" secondAttribute="top" constant="70" id="Oef-es-0aK"/>
+                            <constraint firstItem="H9y-Cd-7RY" firstAttribute="leading" secondItem="7yB-wy-VyA" secondAttribute="leading" constant="16" id="Z14-tw-4EM"/>
+                            <constraint firstItem="7yB-wy-VyA" firstAttribute="trailing" secondItem="H9y-Cd-7RY" secondAttribute="trailing" constant="16" id="q0h-MH-Y0J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7yB-wy-VyA"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Change phone number" id="oeN-p3-cWg">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="hEU-GA-5Lx">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dismissAction:" destination="gCD-fg-2bu" id="Ene-fU-YZZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="phoneNumberView" destination="JDY-8U-Neh" id="gcy-oX-qke"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcS-4j-lbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="2024"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fcT-fc-0Gn">
+            <objects>
+                <navigationController id="0CT-hP-OgB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Iw5-QI-44h">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gCD-fg-2bu" kind="relationship" relationship="rootViewController" id="Y2x-iZ-qZt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abi-3W-jDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-530" y="2024"/>
         </scene>
     </scenes>
     <resources>
