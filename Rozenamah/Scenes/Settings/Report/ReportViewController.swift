@@ -118,7 +118,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     }
     
     func displayReportSentSuccessful() {
-        router?.showAlert(message: "Report was sent", with: true)
+        router?.showReportSent()
     }
 }
 

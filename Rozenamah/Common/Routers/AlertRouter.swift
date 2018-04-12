@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AlertRouter {
-    func showAlert(message: String, with dissmis: Bool?)
+    func showAlert(message: String)
     func showError(_ error: Error)
 }
 
@@ -42,7 +42,7 @@ extension AlertRouter where Self: Router {
         return alertMessage
     }
     
-    func showAlert(message: String, with dissmis: Bool? = false) {
+    func showAlert(message: String) {
         
         guard let viewController = viewController as? UIViewController else {
             return
@@ -52,11 +52,7 @@ extension AlertRouter where Self: Router {
                                                              message: message,
                                                              preferredStyle: .alert)
        
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (alert) in
-            if let dissmis = dissmis, dissmis {
-                viewController.dismiss(animated: true, completion: nil)
-            }
-        }))
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
 

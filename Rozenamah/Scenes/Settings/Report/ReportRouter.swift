@@ -12,6 +12,14 @@ class ReportRouter: Router, AlertRouter {
 
     // MARK: Navigation
     
+    func showReportSent() {
+        let alert = UIAlertController(title: nil, message: "Report was sent", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            self.dismiss()
+        }))
+        viewController?.present(alert, animated: true, completion: nil)
+    }
+    
     func navigateToSelectingSubject() {
         let alert = UIAlertController(title: "Subject", message: "Please choose your subject", preferredStyle: .actionSheet)
         ReportSubject.all.forEach { (subject) in
