@@ -10,7 +10,7 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     @IBOutlet weak var specialistLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var SARLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
     
     // MARK: Properties

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftCake
 
-class ProfileTableViewCell: UITableViewCell, SCReusableCell {
+class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
     
     // MARK: Outlets
     
@@ -17,7 +17,7 @@ class ProfileTableViewCell: UITableViewCell, SCReusableCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var specialistLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var SARLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
     
     // MARK: Properties

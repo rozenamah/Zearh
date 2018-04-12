@@ -48,6 +48,9 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // We disable IQKeyboard for this screen, because textView is is too big
+        // and it causes that some views are out of the screen
+        // when IQKeyboard scrolls it up
         IQKeyboardManager.shared().isEnabled = false
     }
     

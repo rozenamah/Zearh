@@ -1203,6 +1203,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NER-O8-gAd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="coq-oQ-0bg" kind="relationship" relationship="rootViewController" id="dBI-FP-Qnk"/>
@@ -1212,7 +1216,7 @@
             </objects>
             <point key="canvasLocation" x="3171" y="144"/>
         </scene>
-        <!--Transactions-->
+        <!-- -->
         <scene sceneID="Mnl-zn-Ydl">
             <objects>
                 <viewController id="coq-oQ-0bg" customClass="TransactionHistoryViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
@@ -1426,7 +1430,8 @@
                         <viewLayoutGuide key="safeArea" id="bop-hI-yqL"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Transactions" id="NSl-NF-lvF">
+                    <navigationItem key="navigationItem" title=" " id="NSl-NF-lvF">
+                        <barButtonItem key="backBarButtonItem" title=" " id="8lM-XU-Ton"/>
                         <barButtonItem key="leftBarButtonItem" image="close" id="vcq-Tb-TR9">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -1720,20 +1725,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Transaction details" id="Bpx-6O-6X6">
-                        <barButtonItem key="leftBarButtonItem" image="chevron" id="UcU-HI-WaQ">
-                            <connections>
-                                <action selector="backAction:" destination="4MC-Eh-edH" id="ReY-FA-7I3"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title=" " id="Zzc-c5-Pcb"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
-                        <outlet property="SARLabel" destination="tLr-pd-eg3" id="aYT-c6-6Qi"/>
                         <outlet property="addressLabel" destination="MAr-B2-Dj5" id="7JS-lI-Dzc"/>
                         <outlet property="dateLabel" destination="b9F-dD-nM1" id="IbW-rm-QwM"/>
                         <outlet property="feeLabel" destination="Fhp-or-mBQ" id="C9w-Ty-y5z"/>
                         <outlet property="nameLabel" destination="WED-5k-9pm" id="ctJ-m7-ayx"/>
+                        <outlet property="priceLabel" destination="tLr-pd-eg3" id="dbm-Ek-Mlr"/>
                         <outlet property="specialistLabel" destination="2zq-wA-DzE" id="IFQ-DZ-p3d"/>
                     </connections>
                 </viewController>

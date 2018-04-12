@@ -5,7 +5,7 @@ class PhoneNumberForm: ParamForm {
     
     var toParams: [String : Any] {
         let params = [
-            "email": phoneNumber!
+            "phone": phoneNumber!
         ]
         return params
     }
