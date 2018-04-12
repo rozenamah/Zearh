@@ -202,7 +202,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R2-zU-wlJ" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="76" width="288" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NBt-1S-1bI" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email/Phone number" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NBt-1S-1bI" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>

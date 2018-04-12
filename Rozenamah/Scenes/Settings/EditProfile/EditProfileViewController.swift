@@ -4,7 +4,7 @@ import SwiftCake
 protocol EditProfileDisplayLogic: ClassificationDelegate {
     func profileUpdatedSuccessful()
     func handle(error: Error, inField field: EditProfileViewController.Field)
-    func displayError()
+    func handle(error: Error)
 }
 
 class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
@@ -29,6 +29,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     @IBOutlet weak var priceTextField: SCTextField!
     @IBOutlet weak var doctorView: UIView!
     @IBOutlet weak var professionView: UIView!
+    @IBOutlet weak var saveButton: UIButton!
     
     // MARK: Properties
     var interactor: EditProfileBusinessLogic?
@@ -102,6 +103,9 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         editForm?.surname = surnameView.textField.text!
         if let editForm = editForm, interactor?.validate(editForm) == true {
             interactor?.updateUserInfo(editForm)
+            
+            // Block button until success/failure
+            saveButton.isUserInteractionEnabled = false
         }
     }
     
@@ -148,6 +152,8 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         guard let user = User.current else {
             return
         }
+        // Unblock button
+        saveButton.isUserInteractionEnabled = true
         
         nameView.textField.text = user.name
         surnameView.textField.text = user.surname
@@ -155,11 +161,17 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         router?.showSuccessChangeAlert()
     }
     
-    func displayError() {
-        router?.showErrorAlert()
+    func handle(error: Error) {
+        // Unblock button
+        saveButton.isUserInteractionEnabled = true
+        
+        router?.showError(error)
     }
     
     func handle(error: Error, inField field: EditProfileViewController.Field) {
+        // Unblock button
+        saveButton.isUserInteractionEnabled = true
+        
         switch field {
         case .name:
             nameView.adjustToState(.error(msg: error))

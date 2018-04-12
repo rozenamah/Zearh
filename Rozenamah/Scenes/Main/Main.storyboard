@@ -228,7 +228,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="GKJ-HK-WiL"/>
                     <connections>
-                        <outlet property="bottomContainerConstraint" destination="AXl-E7-mXV" id="7Qk-rK-DJF"/>
                         <outlet property="containerHeightConstraint" destination="oRA-ck-4Jk" id="TbI-YK-x6N"/>
                         <outlet property="containerView" destination="Z0H-df-05R" id="v3T-S9-ntw"/>
                         <outlet property="mapView" destination="cfl-zU-M5F" id="8Pf-AO-HBG"/>
@@ -978,6 +977,94 @@
             </objects>
             <point key="canvasLocation" x="2079" y="304"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WD9-ev-5lp">
+            <objects>
+                <viewController id="9V9-2Z-O3X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="taa-n4-b05">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="6Wm-Q5-VIn" customClass="SCImageView" customModule="SwiftCake">
+                                <rect key="frame" x="16" y="16" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="7C6-zp-snh"/>
+                                    <constraint firstAttribute="height" constant="90" id="Bsc-Nd-big"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exK-XS-i8x">
+                                <rect key="frame" x="138" y="32" width="221" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nH-gN-nyI">
+                                <rect key="frame" x="138" y="63" width="221" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-Cf-lW0" customClass="SCView" customModule="SwiftCake">
+                                <rect key="frame" x="138" y="100" width="73" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-e3-ggL">
+                                        <rect key="frame" x="13" y="4" width="47" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5fn-e3-ggL" firstAttribute="top" secondItem="3CT-Cf-lW0" secondAttribute="top" constant="4" id="Pow-k4-IMl"/>
+                                    <constraint firstItem="5fn-e3-ggL" firstAttribute="leading" secondItem="3CT-Cf-lW0" secondAttribute="leading" constant="13" id="TMW-Dl-TZ8"/>
+                                    <constraint firstAttribute="trailing" secondItem="5fn-e3-ggL" secondAttribute="trailing" constant="13" id="Zz3-EW-G9J"/>
+                                    <constraint firstAttribute="bottom" secondItem="5fn-e3-ggL" secondAttribute="bottom" constant="5" id="meb-dy-1OP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k33-Cc-znk">
+                                <rect key="frame" x="138" y="146" width="100" height="19"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="00000000" image="phone_icon">
+                                    <color key="titleColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7nH-gN-nyI" firstAttribute="leading" secondItem="exK-XS-i8x" secondAttribute="leading" id="4BO-1X-5Sr"/>
+                            <constraint firstItem="L8j-3l-aeK" firstAttribute="trailing" secondItem="7nH-gN-nyI" secondAttribute="trailing" constant="16" id="7xf-gL-PVh"/>
+                            <constraint firstItem="k33-Cc-znk" firstAttribute="top" secondItem="3CT-Cf-lW0" secondAttribute="bottom" constant="16" id="UnR-lT-S75"/>
+                            <constraint firstItem="L8j-3l-aeK" firstAttribute="trailing" secondItem="exK-XS-i8x" secondAttribute="trailing" constant="16" id="d4i-I6-WKS"/>
+                            <constraint firstItem="6Wm-Q5-VIn" firstAttribute="leading" secondItem="L8j-3l-aeK" secondAttribute="leading" constant="16" id="dMt-9j-UKE"/>
+                            <constraint firstItem="7nH-gN-nyI" firstAttribute="top" secondItem="exK-XS-i8x" secondAttribute="bottom" constant="7" id="fiS-Ot-2hU"/>
+                            <constraint firstItem="3CT-Cf-lW0" firstAttribute="top" secondItem="7nH-gN-nyI" secondAttribute="bottom" constant="16" id="g4d-5z-ahO"/>
+                            <constraint firstItem="exK-XS-i8x" firstAttribute="top" secondItem="L8j-3l-aeK" secondAttribute="top" constant="32" id="hpx-Vl-fnk"/>
+                            <constraint firstItem="exK-XS-i8x" firstAttribute="leading" secondItem="6Wm-Q5-VIn" secondAttribute="trailing" constant="32" id="mkm-tO-12I"/>
+                            <constraint firstItem="3CT-Cf-lW0" firstAttribute="leading" secondItem="7nH-gN-nyI" secondAttribute="leading" id="myp-fZ-o0F"/>
+                            <constraint firstItem="k33-Cc-znk" firstAttribute="leading" secondItem="3CT-Cf-lW0" secondAttribute="leading" id="oOc-ad-tOG"/>
+                            <constraint firstItem="6Wm-Q5-VIn" firstAttribute="top" secondItem="L8j-3l-aeK" secondAttribute="top" constant="16" id="xUN-2l-uEE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L8j-3l-aeK"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="286"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5S9-f8-mll" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="264.46776611694156"/>
+        </scene>
         <!--Drawer View Controller-->
         <scene sceneID="e7q-gx-RCV">
             <objects>
@@ -1435,6 +1522,7 @@
         <image name="gradient" width="375" height="111"/>
         <image name="locate_me" width="43" height="43"/>
         <image name="menu" width="24" height="17"/>
+        <image name="phone_icon" width="19" height="19"/>
         <image name="placeholder_big" width="99" height="100"/>
         <image name="radio_empty_btn" width="18" height="18"/>
         <image name="radio_full_btn" width="18" height="18"/>

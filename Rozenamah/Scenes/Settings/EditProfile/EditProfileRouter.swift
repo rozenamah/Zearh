@@ -1,6 +1,6 @@
 import UIKit
 
-class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter {
+class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter, AlertRouter {
     typealias RoutingViewController = EditProfileViewController
     weak var viewController: EditProfileViewController?
 

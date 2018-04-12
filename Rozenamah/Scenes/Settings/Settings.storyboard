@@ -580,6 +580,7 @@
                         <outlet property="priceView" destination="1Hq-qt-Olb" id="i1e-NE-E8r"/>
                         <outlet property="professionButton" destination="6Cy-Ot-mRE" id="nc0-Ez-qgX"/>
                         <outlet property="professionView" destination="AZm-Jt-q38" id="BPd-Sj-Euv"/>
+                        <outlet property="saveButton" destination="8oD-9V-gus" id="1mY-er-RIi"/>
                         <outlet property="specializationButton" destination="dhk-xB-80v" id="p5R-1M-ZXK"/>
                         <outlet property="specializationView" destination="SrX-XK-HPJ" id="Yi6-Rf-lpG"/>
                         <outlet property="surnameView" destination="Wxp-tU-zPX" id="WRn-y1-Ayk"/>

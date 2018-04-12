@@ -58,7 +58,7 @@ class EditProfilePresenter: EditProfilePresentationLogic {
     func handleError(_ error: RMError) {
         switch error {
         default:
-            viewController?.displayError()
+            presentError(.unknown(error))
         }
     }
     
@@ -75,7 +75,7 @@ class EditProfilePresenter: EditProfilePresentationLogic {
         case .priceMissing:
              viewController?.handle(error: error, inField: .price)
         default:
-            viewController?.displayError()
+            viewController?.handle(error: error)
         }
     }
     
