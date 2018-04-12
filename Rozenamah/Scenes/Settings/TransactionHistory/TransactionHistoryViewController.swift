@@ -82,7 +82,11 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     
     fileprivate func registerCells() {
         tableView.registerNib(cell: SummaryTableViewCell.self)
-        tableView.registerNib(cell: ProfileTableViewCell.self)
+        tableView.registerNib(cell: PastVisitTableViewCell.self)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -91,16 +95,17 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             let cell = tableView.dequeueCell(withReusable: SummaryTableViewCell.self, for: indexPath)
             return cell
         } else {
-            let cell = tableView.dequeueCell(withReusable: ProfileTableViewCell.self, for: indexPath)
+            let cell = tableView.dequeueCell(withReusable: PastVisitTableViewCell.self, for: indexPath)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        // Change later with array count
+        return section == 0 ? 1 : 5
     }
 }

@@ -23,8 +23,8 @@
 		573A3058207B65AA0040B438 /* TransactionHistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A3051207B65AA0040B438 /* TransactionHistoryConfigurator.swift */; };
 		573A305C207B66D20040B438 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A305A207B66D20040B438 /* SummaryTableViewCell.swift */; };
 		573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573A305B207B66D20040B438 /* SummaryTableViewCell.xib */; };
-		573A3060207B66E00040B438 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A305E207B66E00040B438 /* ProfileTableViewCell.swift */; };
-		573A3061207B66E00040B438 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573A305F207B66E00040B438 /* ProfileTableViewCell.xib */; };
+		573A3060207B66E00040B438 /* PastVisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A305E207B66E00040B438 /* PastVisitTableViewCell.swift */; };
+		573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573A305F207B66E00040B438 /* PastVisitTableViewCell.xib */; };
 		573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */; };
 		578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */; };
 		578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */; };
@@ -201,8 +201,8 @@
 		573A3051207B65AA0040B438 /* TransactionHistoryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryConfigurator.swift; sourceTree = "<group>"; };
 		573A305A207B66D20040B438 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		573A305B207B66D20040B438 /* SummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableViewCell.xib; sourceTree = "<group>"; };
-		573A305E207B66E00040B438 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		573A305F207B66E00040B438 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		573A305E207B66E00040B438 /* PastVisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastVisitTableViewCell.swift; sourceTree = "<group>"; };
+		573A305F207B66E00040B438 /* PastVisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastVisitTableViewCell.xib; sourceTree = "<group>"; };
 		573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMButtonWithSeparator.swift; sourceTree = "<group>"; };
 		578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailPresenter.swift; sourceTree = "<group>"; };
 		578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailWorker.swift; sourceTree = "<group>"; };
@@ -418,8 +418,8 @@
 			children = (
 				573A305A207B66D20040B438 /* SummaryTableViewCell.swift */,
 				573A305B207B66D20040B438 /* SummaryTableViewCell.xib */,
-				573A305E207B66E00040B438 /* ProfileTableViewCell.swift */,
-				573A305F207B66E00040B438 /* ProfileTableViewCell.xib */,
+				573A305E207B66E00040B438 /* PastVisitTableViewCell.swift */,
+				573A305F207B66E00040B438 /* PastVisitTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1001,7 +1001,7 @@
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
 				F940EA472057E8F700266753 /* Session.storyboard in Resources */,
-				573A3061207B66E00040B438 /* ProfileTableViewCell.xib in Resources */,
+				573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
@@ -1224,7 +1224,7 @@
 				57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */,
 				578100FB207CBFE600F4A78B /* TransactionDetailConfigurator.swift in Sources */,
 				57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */,
-				573A3060207B66E00040B438 /* ProfileTableViewCell.swift in Sources */,
+				573A3060207B66E00040B438 /* PastVisitTableViewCell.swift in Sources */,
 				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,
 				F940EC2B20595A1100266753 /* API.swift in Sources */,
 				578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */,
