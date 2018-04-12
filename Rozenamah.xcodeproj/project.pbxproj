@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
+		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
+		57369F22207E0CDE001666EB /* ChangePhoneNumberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */; };
+		57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1C207E0CDE001666EB /* ChangePhoneNumberModels.swift */; };
+		57369F24207E0CDE001666EB /* ChangePhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1D207E0CDE001666EB /* ChangePhoneNumberViewController.swift */; };
+		57369F25207E0CDE001666EB /* ChangePhoneNumberInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1E207E0CDE001666EB /* ChangePhoneNumberInteractor.swift */; };
+		57369F26207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1F207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift */; };
+		573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304B207B65AA0040B438 /* TransactionHistoryPresenter.swift */; };
+		573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304C207B65AA0040B438 /* TransactionHistoryWorker.swift */; };
+		573A3054207B65AA0040B438 /* TransactionHistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304D207B65AA0040B438 /* TransactionHistoryRouter.swift */; };
+		573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304E207B65AA0040B438 /* TransactionHistoryModels.swift */; };
+		573A3056207B65AA0040B438 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A304F207B65AA0040B438 /* TransactionHistoryViewController.swift */; };
+		573A3057207B65AA0040B438 /* TransactionHistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A3050207B65AA0040B438 /* TransactionHistoryInteractor.swift */; };
+		573A3058207B65AA0040B438 /* TransactionHistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A3051207B65AA0040B438 /* TransactionHistoryConfigurator.swift */; };
+		573A305C207B66D20040B438 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A305A207B66D20040B438 /* SummaryTableViewCell.swift */; };
+		573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573A305B207B66D20040B438 /* SummaryTableViewCell.xib */; };
+		573A3060207B66E00040B438 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A305E207B66E00040B438 /* ProfileTableViewCell.swift */; };
+		573A3061207B66E00040B438 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573A305F207B66E00040B438 /* ProfileTableViewCell.xib */; };
+		573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */; };
+		578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */; };
+		578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */; };
+		578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */; };
+		578100F8207CBFE600F4A78B /* TransactionDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F1207CBFE600F4A78B /* TransactionDetailModels.swift */; };
+		578100F9207CBFE600F4A78B /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F2207CBFE600F4A78B /* TransactionDetailViewController.swift */; };
+		578100FA207CBFE600F4A78B /* TransactionDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F3207CBFE600F4A78B /* TransactionDetailInteractor.swift */; };
+		578100FB207CBFE600F4A78B /* TransactionDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F4207CBFE600F4A78B /* TransactionDetailConfigurator.swift */; };
 		57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */; };
 		57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */; };
 		57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */; };
@@ -166,6 +192,32 @@
 /* Begin PBXFileReference section */
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
+		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
+		57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberRouter.swift; sourceTree = "<group>"; };
+		57369F1C207E0CDE001666EB /* ChangePhoneNumberModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberModels.swift; sourceTree = "<group>"; };
+		57369F1D207E0CDE001666EB /* ChangePhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberViewController.swift; sourceTree = "<group>"; };
+		57369F1E207E0CDE001666EB /* ChangePhoneNumberInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberInteractor.swift; sourceTree = "<group>"; };
+		57369F1F207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberConfigurator.swift; sourceTree = "<group>"; };
+		573A304B207B65AA0040B438 /* TransactionHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryPresenter.swift; sourceTree = "<group>"; };
+		573A304C207B65AA0040B438 /* TransactionHistoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryWorker.swift; sourceTree = "<group>"; };
+		573A304D207B65AA0040B438 /* TransactionHistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryRouter.swift; sourceTree = "<group>"; };
+		573A304E207B65AA0040B438 /* TransactionHistoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryModels.swift; sourceTree = "<group>"; };
+		573A304F207B65AA0040B438 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
+		573A3050207B65AA0040B438 /* TransactionHistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryInteractor.swift; sourceTree = "<group>"; };
+		573A3051207B65AA0040B438 /* TransactionHistoryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryConfigurator.swift; sourceTree = "<group>"; };
+		573A305A207B66D20040B438 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		573A305B207B66D20040B438 /* SummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableViewCell.xib; sourceTree = "<group>"; };
+		573A305E207B66E00040B438 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		573A305F207B66E00040B438 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMButtonWithSeparator.swift; sourceTree = "<group>"; };
+		578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailPresenter.swift; sourceTree = "<group>"; };
+		578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailWorker.swift; sourceTree = "<group>"; };
+		578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRouter.swift; sourceTree = "<group>"; };
+		578100F1207CBFE600F4A78B /* TransactionDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailModels.swift; sourceTree = "<group>"; };
+		578100F2207CBFE600F4A78B /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		578100F3207CBFE600F4A78B /* TransactionDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailInteractor.swift; sourceTree = "<group>"; };
+		578100F4207CBFE600F4A78B /* TransactionDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailConfigurator.swift; sourceTree = "<group>"; };
 		57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWorker.swift; sourceTree = "<group>"; };
 		57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
@@ -344,6 +396,60 @@
 				12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		57369F18207E0CBD001666EB /* ChangePhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */,
+				57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */,
+				57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */,
+				57369F1C207E0CDE001666EB /* ChangePhoneNumberModels.swift */,
+				57369F1D207E0CDE001666EB /* ChangePhoneNumberViewController.swift */,
+				57369F1E207E0CDE001666EB /* ChangePhoneNumberInteractor.swift */,
+				57369F1F207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift */,
+			);
+			path = ChangePhoneNumber;
+			sourceTree = "<group>";
+		};
+		573A304A207B656D0040B438 /* TransactionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				573A3059207B66950040B438 /* Cells */,
+				573A304B207B65AA0040B438 /* TransactionHistoryPresenter.swift */,
+				573A304C207B65AA0040B438 /* TransactionHistoryWorker.swift */,
+				573A304D207B65AA0040B438 /* TransactionHistoryRouter.swift */,
+				573A304E207B65AA0040B438 /* TransactionHistoryModels.swift */,
+				573A304F207B65AA0040B438 /* TransactionHistoryViewController.swift */,
+				573A3050207B65AA0040B438 /* TransactionHistoryInteractor.swift */,
+				573A3051207B65AA0040B438 /* TransactionHistoryConfigurator.swift */,
+			);
+			path = TransactionHistory;
+			sourceTree = "<group>";
+		};
+		573A3059207B66950040B438 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				573A305A207B66D20040B438 /* SummaryTableViewCell.swift */,
+				573A305B207B66D20040B438 /* SummaryTableViewCell.xib */,
+				573A305E207B66E00040B438 /* ProfileTableViewCell.swift */,
+				573A305F207B66E00040B438 /* ProfileTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		578100ED207CBFCA00F4A78B /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */,
+				578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */,
+				578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */,
+				578100F1207CBFE600F4A78B /* TransactionDetailModels.swift */,
+				578100F2207CBFE600F4A78B /* TransactionDetailViewController.swift */,
+				578100F3207CBFE600F4A78B /* TransactionDetailInteractor.swift */,
+				578100F4207CBFE600F4A78B /* TransactionDetailConfigurator.swift */,
+			);
+			path = TransactionDetail;
 			sourceTree = "<group>";
 		};
 		57E659BB20739EA3004E3926 /* ChangePassword */ = {
@@ -567,6 +673,9 @@
 		F975375F205FCF9E003DC80E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				57369F18207E0CBD001666EB /* ChangePhoneNumber */,
+				578100ED207CBFCA00F4A78B /* TransactionDetail */,
+				573A304A207B656D0040B438 /* TransactionHistory */,
 				57E659CA2073AE49004E3926 /* ChangeEmail */,
 				57E659BB20739EA3004E3926 /* ChangePassword */,
 				F9CEDE59206521CB004ED0C7 /* EditProfile */,
@@ -686,6 +795,7 @@
 			children = (
 				F940EA65205817DF00266753 /* RMNavigationBar.swift */,
 				F940EC75205BBBD600266753 /* RMGradientView.swift */,
+				573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -920,7 +1030,9 @@
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
 				F940EA472057E8F700266753 /* Session.storyboard in Resources */,
+				573A3061207B66E00040B438 /* ProfileTableViewCell.xib in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
+				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1028,11 +1140,13 @@
 				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
 				F99A2ED6207F37D2009505EB /* AcceptDoctorPresenter.swift in Sources */,
 				F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */,
+				573A305C207B66D20040B438 /* SummaryTableViewCell.swift in Sources */,
 				F9CEDE542063F139004ED0C7 /* ReportRouter.swift in Sources */,
 				F940EC6F205AEDD600266753 /* DrawerWorker.swift in Sources */,
 				F940EC5B205AB9EC00266753 /* SplashWorker.swift in Sources */,
 				F940EC232059335E00266753 /* RegisterPatientRouter.swift in Sources */,
 				F940EA532058147000266753 /* WelcomeModels.swift in Sources */,
+				578100F9207CBFE600F4A78B /* TransactionDetailViewController.swift in Sources */,
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
 				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
 				F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */,
@@ -1042,9 +1156,12 @@
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
 				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
+				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
+				573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				57E659D22073AE60004E3926 /* ChangeEmailPresenter.swift in Sources */,
 				F940EA72205828ED00266753 /* AlertRouter.swift in Sources */,
+				573A3058207B65AA0040B438 /* TransactionHistoryConfigurator.swift in Sources */,
 				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
 				F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */,
 				F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */,
@@ -1066,10 +1183,15 @@
 				F95AFBFC206A6CBC007CCFB1 /* CallDoctorFiltersViewController.swift in Sources */,
 				F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */,
 				F940EC4E205A9BFF00266753 /* MainPatientConfigurator.swift in Sources */,
+				57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */,
+				573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
 				F940EA522058147000266753 /* WelcomeRouter.swift in Sources */,
 				F9CEDE532063F139004ED0C7 /* ReportWorker.swift in Sources */,
+				57369F24207E0CDE001666EB /* ChangePhoneNumberViewController.swift in Sources */,
 				F940EC4B205A9BFF00266753 /* MainPatientModels.swift in Sources */,
+				573A3054207B65AA0040B438 /* TransactionHistoryRouter.swift in Sources */,
+				57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */,
 				F940EC49205A9BFF00266753 /* MainPatientWorker.swift in Sources */,
 				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
 				F99A2EDA207F37D2009505EB /* AcceptDoctorViewController.swift in Sources */,
@@ -1087,6 +1209,7 @@
 				F9CEDE572063F139004ED0C7 /* ReportInteractor.swift in Sources */,
 				F940EC3D205A5BC200266753 /* ForgotPasswordConfigurator.swift in Sources */,
 				F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */,
+				578100FA207CBFE600F4A78B /* TransactionDetailInteractor.swift in Sources */,
 				F95AFBEC206A4DBE007CCFB1 /* NameValidation.swift in Sources */,
 				F99A2ED7207F37D2009505EB /* AcceptDoctorWorker.swift in Sources */,
 				F97B71F52062B5960073A968 /* CallDoctorPresenter.swift in Sources */,
@@ -1101,9 +1224,11 @@
 				F99A2EC6207CBCC1009505EB /* WaitWorker.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
+				573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */,
 				57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */,
 				F940EA512058147000266753 /* WelcomeWorker.swift in Sources */,
 				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
+				57369F26207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift in Sources */,
 				F940EC72205AEDD600266753 /* DrawerViewController.swift in Sources */,
 				F940EA562058147000266753 /* WelcomeConfigurator.swift in Sources */,
 				57E659D82073AE60004E3926 /* ChangeEmailConfigurator.swift in Sources */,
@@ -1113,9 +1238,11 @@
 				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
 				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
 				F940EC78205BEA4A00266753 /* User.swift in Sources */,
+				573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
 				F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */,
 				F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */,
+				573A3057207B65AA0040B438 /* TransactionHistoryInteractor.swift in Sources */,
 				F99A2ECA207CBCC1009505EB /* WaitInteractor.swift in Sources */,
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
@@ -1124,11 +1251,16 @@
 				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
+				573A3056207B65AA0040B438 /* TransactionHistoryViewController.swift in Sources */,
 				F940EC4A205A9BFF00266753 /* MainPatientRouter.swift in Sources */,
 				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
 				57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */,
+				578100FB207CBFE600F4A78B /* TransactionDetailConfigurator.swift in Sources */,
+				57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */,
+				573A3060207B66E00040B438 /* ProfileTableViewCell.swift in Sources */,
 				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,
 				F940EC2B20595A1100266753 /* API.swift in Sources */,
+				578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */,
 				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
 				F992D342206E3D6D00DF0604 /* MainDoctorInteractor.swift in Sources */,
 				F940EA642058148300266753 /* LoginConfigurator.swift in Sources */,
@@ -1149,6 +1281,7 @@
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
 				57E659C720739EBC004E3926 /* ChangePasswordViewController.swift in Sources */,
+				57369F22207E0CDE001666EB /* ChangePhoneNumberRouter.swift in Sources */,
 				57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */,
 				F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */,
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
@@ -1157,6 +1290,7 @@
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
 				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
 				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,
+				578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */,
 				F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */,
 				F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */,
 				F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */,
