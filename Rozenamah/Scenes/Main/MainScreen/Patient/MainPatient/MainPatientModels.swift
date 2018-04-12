@@ -4,4 +4,5 @@ enum PatientFlow {
     case pending
     case callDoctor
     case waitSearch
+    case acceptDoctor
 }

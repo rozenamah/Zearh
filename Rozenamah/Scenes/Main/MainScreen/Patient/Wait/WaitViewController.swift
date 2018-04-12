@@ -44,5 +44,11 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         flowDelegate?.changeStateTo(flowPoint: .callDoctor)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // To Test
+        flowDelegate?.changeStateTo(flowPoint: .acceptDoctor)
+    }
+    
     // MARK: Presenter methods
 }

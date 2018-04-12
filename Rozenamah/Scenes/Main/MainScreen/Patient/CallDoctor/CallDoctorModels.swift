@@ -24,7 +24,7 @@ class CallDoctorForm {
     }
     var maxPrice: Int? {
         didSet {
-            if minPrice == kMaxPriceToFilter {
+            if maxPrice == kMaxPriceToFilter {
                 maxPrice = nil
             }
         }

@@ -977,10 +977,10 @@
             </objects>
             <point key="canvasLocation" x="2079" y="304"/>
         </scene>
-        <!--View Controller-->
+        <!--Accept Doctor View Controller-->
         <scene sceneID="WD9-ev-5lp">
             <objects>
-                <viewController id="9V9-2Z-O3X" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accept_vc" id="9V9-2Z-O3X" customClass="AcceptDoctorViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="taa-n4-b05">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1040,18 +1040,82 @@
                                 <state key="normal" title="00000000" image="phone_icon">
                                     <color key="titleColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="callAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="Sfz-Nb-Pe9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBd-d3-2pW">
+                                <rect key="frame" x="138" y="181" width="123" height="19"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="0 km from you" image="map">
+                                    <color key="titleColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36V-L3-B7A" customClass="SCButton" customModule="SwiftCake">
+                                <rect key="frame" x="16" y="226" width="163.5" height="39"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="acceptAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="M1L-WX-wUW"/>
+                                    <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="6Rd-sF-XO5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZU-7n-6Yq" customClass="SCButton" customModule="SwiftCake">
+                                <rect key="frame" x="196" y="226" width="163" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="FZr-al-fht"/>
+                                    <action selector="cancelAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="MQR-oA-K1T"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7nH-gN-nyI" firstAttribute="leading" secondItem="exK-XS-i8x" secondAttribute="leading" id="4BO-1X-5Sr"/>
                             <constraint firstItem="L8j-3l-aeK" firstAttribute="trailing" secondItem="7nH-gN-nyI" secondAttribute="trailing" constant="16" id="7xf-gL-PVh"/>
+                            <constraint firstItem="PZU-7n-6Yq" firstAttribute="top" secondItem="36V-L3-B7A" secondAttribute="top" id="AC8-zO-urv"/>
+                            <constraint firstItem="36V-L3-B7A" firstAttribute="top" secondItem="BBd-d3-2pW" secondAttribute="bottom" constant="26" id="C62-iB-R5U"/>
+                            <constraint firstItem="PZU-7n-6Yq" firstAttribute="width" secondItem="36V-L3-B7A" secondAttribute="width" id="Eok-vt-GQs"/>
+                            <constraint firstItem="BBd-d3-2pW" firstAttribute="leading" secondItem="k33-Cc-znk" secondAttribute="leading" id="KH4-qk-3vT"/>
                             <constraint firstItem="k33-Cc-znk" firstAttribute="top" secondItem="3CT-Cf-lW0" secondAttribute="bottom" constant="16" id="UnR-lT-S75"/>
+                            <constraint firstItem="PZU-7n-6Yq" firstAttribute="leading" secondItem="36V-L3-B7A" secondAttribute="trailing" constant="16" id="XIg-0d-JHC"/>
                             <constraint firstItem="L8j-3l-aeK" firstAttribute="trailing" secondItem="exK-XS-i8x" secondAttribute="trailing" constant="16" id="d4i-I6-WKS"/>
                             <constraint firstItem="6Wm-Q5-VIn" firstAttribute="leading" secondItem="L8j-3l-aeK" secondAttribute="leading" constant="16" id="dMt-9j-UKE"/>
                             <constraint firstItem="7nH-gN-nyI" firstAttribute="top" secondItem="exK-XS-i8x" secondAttribute="bottom" constant="7" id="fiS-Ot-2hU"/>
                             <constraint firstItem="3CT-Cf-lW0" firstAttribute="top" secondItem="7nH-gN-nyI" secondAttribute="bottom" constant="16" id="g4d-5z-ahO"/>
+                            <constraint firstItem="L8j-3l-aeK" firstAttribute="trailing" secondItem="PZU-7n-6Yq" secondAttribute="trailing" constant="16" id="ghT-ob-K8T"/>
+                            <constraint firstItem="BBd-d3-2pW" firstAttribute="top" secondItem="k33-Cc-znk" secondAttribute="bottom" constant="16" id="hoi-7r-RKd"/>
                             <constraint firstItem="exK-XS-i8x" firstAttribute="top" secondItem="L8j-3l-aeK" secondAttribute="top" constant="32" id="hpx-Vl-fnk"/>
+                            <constraint firstItem="36V-L3-B7A" firstAttribute="leading" secondItem="taa-n4-b05" secondAttribute="leading" constant="16" id="it8-mO-eTN"/>
                             <constraint firstItem="exK-XS-i8x" firstAttribute="leading" secondItem="6Wm-Q5-VIn" secondAttribute="trailing" constant="32" id="mkm-tO-12I"/>
                             <constraint firstItem="3CT-Cf-lW0" firstAttribute="leading" secondItem="7nH-gN-nyI" secondAttribute="leading" id="myp-fZ-o0F"/>
                             <constraint firstItem="k33-Cc-znk" firstAttribute="leading" secondItem="3CT-Cf-lW0" secondAttribute="leading" id="oOc-ad-tOG"/>
@@ -1060,6 +1124,14 @@
                         <viewLayoutGuide key="safeArea" id="L8j-3l-aeK"/>
                     </view>
                     <size key="freeformSize" width="375" height="286"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="6Wm-Q5-VIn" id="MMc-kp-yZi"/>
+                        <outlet property="classificationLabel" destination="7nH-gN-nyI" id="Tl5-bb-K65"/>
+                        <outlet property="doctorNameLabel" destination="exK-XS-i8x" id="QLF-Z1-2Bc"/>
+                        <outlet property="locationButton" destination="BBd-d3-2pW" id="FBi-DR-4PE"/>
+                        <outlet property="phoneButton" destination="k33-Cc-znk" id="p2f-2M-aB6"/>
+                        <outlet property="priceLabel" destination="5fn-e3-ggL" id="Hbp-We-UKS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5S9-f8-mll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1533,6 +1605,7 @@
         <image name="close" width="19" height="19"/>
         <image name="gradient" width="375" height="111"/>
         <image name="locate_me" width="43" height="43"/>
+        <image name="map" width="19" height="19"/>
         <image name="menu" width="24" height="17"/>
         <image name="phone_icon" width="19" height="19"/>
         <image name="placeholder_big" width="99" height="100"/>

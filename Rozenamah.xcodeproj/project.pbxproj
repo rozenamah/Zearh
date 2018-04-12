@@ -171,6 +171,7 @@
 		F99A2EDA207F37D2009505EB /* AcceptDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2ED3207F37D2009505EB /* AcceptDoctorViewController.swift */; };
 		F99A2EDB207F37D2009505EB /* AcceptDoctorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2ED4207F37D2009505EB /* AcceptDoctorInteractor.swift */; };
 		F99A2EDC207F37D2009505EB /* AcceptDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2ED5207F37D2009505EB /* AcceptDoctorConfigurator.swift */; };
+		F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A2EDE207F4614009505EB /* MainScreenRouter.swift */; };
 		F9A9F2A4204D5897006E8999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2A3204D5897006E8999 /* Router.swift */; };
 		F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA96AB205FCA5200CB4B68 /* Settings.swift */; };
 		F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */; };
@@ -359,6 +360,7 @@
 		F99A2ED3207F37D2009505EB /* AcceptDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDoctorViewController.swift; sourceTree = "<group>"; };
 		F99A2ED4207F37D2009505EB /* AcceptDoctorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDoctorInteractor.swift; sourceTree = "<group>"; };
 		F99A2ED5207F37D2009505EB /* AcceptDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDoctorConfigurator.swift; sourceTree = "<group>"; };
+		F99A2EDE207F4614009505EB /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		F9A9F2A3204D5897006E8999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F9CA96AB205FCA5200CB4B68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F9CEDE4B2063F139004ED0C7 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 				F992D334206E3C0800DF0604 /* MainScreenViewController.swift */,
 				F992D345206E40E700DF0604 /* MainScreenInteractor.swift */,
 				F992D347206E418100DF0604 /* MainScreenPresenter.swift */,
+				F99A2EDE207F4614009505EB /* MainScreenRouter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1132,6 +1135,7 @@
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
 				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
 				F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */,
+				57369F25207E0CDE001666EB /* ChangePhoneNumberInteractor.swift in Sources */,
 				F99A2ED9207F37D2009505EB /* AcceptDoctorModels.swift in Sources */,
 				F992D313206D20F000DF0604 /* NotificationWorker.swift in Sources */,
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
@@ -1220,6 +1224,7 @@
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
 				F940EC5F205AB9EC00266753 /* SplashInteractor.swift in Sources */,
+				578100F8207CBFE600F4A78B /* TransactionDetailModels.swift in Sources */,
 				F99A2ED8207F37D2009505EB /* AcceptDoctorRouter.swift in Sources */,
 				F99A2EC6207CBCC1009505EB /* WaitWorker.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
@@ -1248,6 +1253,7 @@
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
 				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
 				F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */,
+				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
 				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,

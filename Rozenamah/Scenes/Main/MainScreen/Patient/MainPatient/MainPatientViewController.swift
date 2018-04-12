@@ -75,6 +75,8 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             router?.navigateToCallForm()
         case .waitSearch:
             router?.navigateToWaitScreen()
+        case .acceptDoctor:
+            router?.navigateToAcceptDoctor()
         case .pending:
             // Show all buttons when no form visible
             self.viewToHideWhenFormVisible.forEach { $0.isHidden = false }

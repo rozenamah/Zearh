@@ -1,9 +1,13 @@
 import UIKit
 
-class MainDoctorRouter: Router, AlertRouter {
+class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     typealias RoutingViewController = MainDoctorViewController
     weak var viewController: MainDoctorViewController?
 
+    override var baseViewController: MainScreenViewController? {
+        return viewController
+    }
+    
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
