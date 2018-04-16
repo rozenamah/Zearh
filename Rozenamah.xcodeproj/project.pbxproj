@@ -33,6 +33,20 @@
 		574FC579208493A4001E4059 /* PatientDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC572208493A4001E4059 /* PatientDetailsViewController.swift */; };
 		574FC57A208493A4001E4059 /* PatientDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC573208493A4001E4059 /* PatientDetailsInteractor.swift */; };
 		574FC57B208493A4001E4059 /* PatientDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC574208493A4001E4059 /* PatientDetailsConfigurator.swift */; };
+		574FC58420849E1F001E4059 /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC57D20849E1F001E4059 /* PaymentPresenter.swift */; };
+		574FC58520849E1F001E4059 /* PaymentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC57E20849E1F001E4059 /* PaymentWorker.swift */; };
+		574FC58620849E1F001E4059 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC57F20849E1F001E4059 /* PaymentRouter.swift */; };
+		574FC58720849E1F001E4059 /* PaymentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58020849E1F001E4059 /* PaymentModels.swift */; };
+		574FC58820849E1F001E4059 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58120849E1F001E4059 /* PaymentViewController.swift */; };
+		574FC58920849E1F001E4059 /* PaymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58220849E1F001E4059 /* PaymentInteractor.swift */; };
+		574FC58A20849E1F001E4059 /* PaymentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58320849E1F001E4059 /* PaymentConfigurator.swift */; };
+		574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58C2084A89A001E4059 /* PaymentMethodPresenter.swift */; };
+		574FC5942084A89A001E4059 /* PaymentMethodWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58D2084A89A001E4059 /* PaymentMethodWorker.swift */; };
+		574FC5952084A89A001E4059 /* PaymentMethodRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58E2084A89A001E4059 /* PaymentMethodRouter.swift */; };
+		574FC5962084A89A001E4059 /* PaymentMethodModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC58F2084A89A001E4059 /* PaymentMethodModels.swift */; };
+		574FC5972084A89A001E4059 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5902084A89A001E4059 /* PaymentMethodViewController.swift */; };
+		574FC5982084A89A001E4059 /* PaymentMethodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5912084A89A001E4059 /* PaymentMethodInteractor.swift */; };
+		574FC5992084A89A001E4059 /* PaymentMethodConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5922084A89A001E4059 /* PaymentMethodConfigurator.swift */; };
 		578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */; };
 		578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */; };
 		578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */; };
@@ -240,6 +254,20 @@
 		574FC572208493A4001E4059 /* PatientDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsViewController.swift; sourceTree = "<group>"; };
 		574FC573208493A4001E4059 /* PatientDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsInteractor.swift; sourceTree = "<group>"; };
 		574FC574208493A4001E4059 /* PatientDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsConfigurator.swift; sourceTree = "<group>"; };
+		574FC57D20849E1F001E4059 /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
+		574FC57E20849E1F001E4059 /* PaymentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWorker.swift; sourceTree = "<group>"; };
+		574FC57F20849E1F001E4059 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
+		574FC58020849E1F001E4059 /* PaymentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModels.swift; sourceTree = "<group>"; };
+		574FC58120849E1F001E4059 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		574FC58220849E1F001E4059 /* PaymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInteractor.swift; sourceTree = "<group>"; };
+		574FC58320849E1F001E4059 /* PaymentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfigurator.swift; sourceTree = "<group>"; };
+		574FC58C2084A89A001E4059 /* PaymentMethodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodPresenter.swift; sourceTree = "<group>"; };
+		574FC58D2084A89A001E4059 /* PaymentMethodWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodWorker.swift; sourceTree = "<group>"; };
+		574FC58E2084A89A001E4059 /* PaymentMethodRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodRouter.swift; sourceTree = "<group>"; };
+		574FC58F2084A89A001E4059 /* PaymentMethodModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodModels.swift; sourceTree = "<group>"; };
+		574FC5902084A89A001E4059 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
+		574FC5912084A89A001E4059 /* PaymentMethodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodInteractor.swift; sourceTree = "<group>"; };
+		574FC5922084A89A001E4059 /* PaymentMethodConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodConfigurator.swift; sourceTree = "<group>"; };
 		578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailPresenter.swift; sourceTree = "<group>"; };
 		578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailWorker.swift; sourceTree = "<group>"; };
 		578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRouter.swift; sourceTree = "<group>"; };
@@ -496,6 +524,34 @@
 			path = PatientDetails;
 			sourceTree = "<group>";
 		};
+		574FC57C20849DFB001E4059 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				574FC57D20849E1F001E4059 /* PaymentPresenter.swift */,
+				574FC57E20849E1F001E4059 /* PaymentWorker.swift */,
+				574FC57F20849E1F001E4059 /* PaymentRouter.swift */,
+				574FC58020849E1F001E4059 /* PaymentModels.swift */,
+				574FC58120849E1F001E4059 /* PaymentViewController.swift */,
+				574FC58220849E1F001E4059 /* PaymentInteractor.swift */,
+				574FC58320849E1F001E4059 /* PaymentConfigurator.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		574FC58B2084A888001E4059 /* PaymentMethod */ = {
+			isa = PBXGroup;
+			children = (
+				574FC58C2084A89A001E4059 /* PaymentMethodPresenter.swift */,
+				574FC58D2084A89A001E4059 /* PaymentMethodWorker.swift */,
+				574FC58E2084A89A001E4059 /* PaymentMethodRouter.swift */,
+				574FC58F2084A89A001E4059 /* PaymentMethodModels.swift */,
+				574FC5902084A89A001E4059 /* PaymentMethodViewController.swift */,
+				574FC5912084A89A001E4059 /* PaymentMethodInteractor.swift */,
+				574FC5922084A89A001E4059 /* PaymentMethodConfigurator.swift */,
+			);
+			path = PaymentMethod;
+			sourceTree = "<group>";
+		};
 		578100ED207CBFCA00F4A78B /* TransactionDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,6 +789,8 @@
 		F95F140C2061543600CDC2E5 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				574FC58B2084A888001E4059 /* PaymentMethod */,
+				574FC57C20849DFB001E4059 /* Payment */,
 				F99A2ECE207F37C2009505EB /* AcceptDoctor */,
 				F99A2EBD207CBCAB009505EB /* Wait */,
 				F992D344206E3F8F00DF0604 /* MainPatient */,
@@ -1227,9 +1285,11 @@
 				F99A2ED9207F37D2009505EB /* AcceptDoctorModels.swift in Sources */,
 				F992D313206D20F000DF0604 /* NotificationWorker.swift in Sources */,
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
+				574FC5962084A89A001E4059 /* PaymentMethodModels.swift in Sources */,
 				57E659C620739EBC004E3926 /* ChangePasswordModels.swift in Sources */,
 				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
 				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
+				574FC58720849E1F001E4059 /* PaymentModels.swift in Sources */,
 				F99A2ED6207F37D2009505EB /* AcceptDoctorPresenter.swift in Sources */,
 				F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */,
 				573A305C207B66D20040B438 /* SummaryTableViewCell.swift in Sources */,
@@ -1244,6 +1304,7 @@
 				F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */,
 				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
 				F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */,
+				574FC58920849E1F001E4059 /* PaymentInteractor.swift in Sources */,
 				F992D33F206E3D6D00DF0604 /* MainDoctorRouter.swift in Sources */,
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
 				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
@@ -1291,11 +1352,14 @@
 				573A3054207B65AA0040B438 /* TransactionHistoryRouter.swift in Sources */,
 				57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */,
 				F940EC49205A9BFF00266753 /* MainPatientWorker.swift in Sources */,
+				574FC5992084A89A001E4059 /* PaymentMethodConfigurator.swift in Sources */,
 				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
 				578A6E7C207F659D00CB4E79 /* AcceptPatientModels.swift in Sources */,
 				F99A2EDA207F37D2009505EB /* AcceptDoctorViewController.swift in Sources */,
 				F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */,
+				574FC5972084A89A001E4059 /* PaymentMethodViewController.swift in Sources */,
 				F992D343206E3D6D00DF0604 /* MainDoctorConfigurator.swift in Sources */,
+				574FC5952084A89A001E4059 /* PaymentMethodRouter.swift in Sources */,
 				F95AFBF8206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift in Sources */,
 				F940EC212059335E00266753 /* RegisterPatientPresenter.swift in Sources */,
 				F940EA552058147000266753 /* WelcomeInteractor.swift in Sources */,
@@ -1316,6 +1380,8 @@
 				F940EA612058148300266753 /* LoginModels.swift in Sources */,
 				F940EC4C205A9BFF00266753 /* MainPatientViewController.swift in Sources */,
 				F9CEDE63206521DA004ED0C7 /* EditProfileRouter.swift in Sources */,
+				574FC5982084A89A001E4059 /* PaymentMethodInteractor.swift in Sources */,
+				574FC58A20849E1F001E4059 /* PaymentConfigurator.swift in Sources */,
 				F940EC4D205A9BFF00266753 /* MainPatientInteractor.swift in Sources */,
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
@@ -1354,10 +1420,12 @@
 				578A6E8D2080BD7800CB4E79 /* EndVisitInteractor.swift in Sources */,
 				F940EC37205A5BC200266753 /* ForgotPasswordPresenter.swift in Sources */,
 				F9753779205FF24B003DC80E /* UIButtonExtension.swift in Sources */,
+				574FC58620849E1F001E4059 /* PaymentRouter.swift in Sources */,
 				F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */,
 				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
 				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
+				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
 				573A3056207B65AA0040B438 /* TransactionHistoryViewController.swift in Sources */,
 				F940EC4A205A9BFF00266753 /* MainPatientRouter.swift in Sources */,
@@ -1384,17 +1452,21 @@
 				F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */,
 				57E659D32073AE60004E3926 /* ChangeEmailWorker.swift in Sources */,
 				F992D335206E3C0800DF0604 /* MainScreenViewController.swift in Sources */,
+				574FC58420849E1F001E4059 /* PaymentPresenter.swift in Sources */,
 				57E659C920739EBC004E3926 /* ChangePasswordConfigurator.swift in Sources */,
+				574FC5942084A89A001E4059 /* PaymentMethodWorker.swift in Sources */,
 				F99A2EDC207F37D2009505EB /* AcceptDoctorConfigurator.swift in Sources */,
 				578A6E8A2080BD7800CB4E79 /* EndVisitRouter.swift in Sources */,
 				578A6E8B2080BD7800CB4E79 /* EndVisitModels.swift in Sources */,
 				F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */,
 				57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */,
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
+				574FC58520849E1F001E4059 /* PaymentWorker.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
 				57E659C720739EBC004E3926 /* ChangePasswordViewController.swift in Sources */,
 				57369F22207E0CDE001666EB /* ChangePhoneNumberRouter.swift in Sources */,
 				57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */,
+				574FC58820849E1F001E4059 /* PaymentViewController.swift in Sources */,
 				F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */,
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
 				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,

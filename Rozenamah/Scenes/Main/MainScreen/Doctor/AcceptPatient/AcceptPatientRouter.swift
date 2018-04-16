@@ -11,6 +11,10 @@ class AcceptPatientRouter: Router {
     }
 
     // MARK: Navigation
+    
+    func navigateToPatientsDetails() {
+        viewController?.performSegue(withIdentifier: "patient_details_segue", sender: nil)
+    }
 
     // MARK: Passing data
 

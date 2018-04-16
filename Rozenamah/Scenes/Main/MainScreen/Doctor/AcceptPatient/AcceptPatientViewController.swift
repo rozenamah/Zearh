@@ -57,8 +57,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     
     @IBAction func patientDetailsAction(_ sender: Any) {
-        //TODO: Temporary segue
-        performSegue(withIdentifier: "patient_details_segue", sender: nil)
+        router?.navigateToPatientsDetails()
     }
     
     @IBAction func phoneAction(_ sender: Any) {

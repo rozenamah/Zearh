@@ -11,6 +11,10 @@ class AcceptDoctorRouter: Router {
     }
 
     // MARK: Navigation
+    
+    func navigateToPaymentMethod() {
+        viewController?.performSegue(withIdentifier: "payment_method_segue", sender: nil)
+    }
 
     // MARK: Passing data
 
