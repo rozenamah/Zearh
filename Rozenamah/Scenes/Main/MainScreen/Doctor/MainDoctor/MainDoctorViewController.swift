@@ -7,7 +7,11 @@ protocol MainDoctorDisplayLogic: MainScreenDisplayLogic {
     func markAsRejectingRequests()
 }
 
-class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic {
+protocol DoctortFlowDelegate: class {
+    func changeStateTo(flowPoint: DoctorFlow)
+}
+
+class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic, DoctortFlowDelegate {
 
     // MARK: Outlets
     @IBOutlet weak var requestsReceiveButton: SCButton!
@@ -41,6 +45,8 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
 
     override func setupView() {
         super.setupView()
+        router?.configureFirstScreen()
+        router?.openContainer(completion: nil)
     }
 
     // MARK: Event handling
@@ -56,6 +62,17 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     
     @IBAction func locateMeAction(_ sender: Any) {
         interactor?.returnToUserLocation()
+    }
+    
+    func changeStateTo(flowPoint: DoctorFlow) {
+        switch flowPoint {
+        case .accept:
+            router?.navigateToAcceptPatient()
+        case .cancel:
+            router?.navigateToCancel()
+        case .details:
+            router?.navigateToCancel()
+        }
     }
     
     // MARK: Presenter methods
@@ -74,6 +91,8 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         
         // Change background depending on state
         requestsReceiveButton.backgroundColor = !requestsReceiveButton.isSelected ? .rmBlue : .white
+        
+        router?.openContainer(completion: nil)
     }
     
     func handle(error: Error) {
