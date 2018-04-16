@@ -4,7 +4,7 @@ import Alamofire
 
 protocol RegisterPatientBusinessLogic {
     func validate(registerForm: RegisterForm) -> Bool
-    func checkIfEmailTaken(_ email: String)
+    func checkIfEmailOrPhoneTaken(_ form: RegisterForm) 
     func register(withForm form: RegisterForm)
 }
 
@@ -14,14 +14,23 @@ class RegisterPatientInteractor: RegisterPatientBusinessLogic {
 
 	// MARK: Business logic
 	
-    func checkIfEmailTaken(_ email: String) {
-        worker.verifyIfEmailTaken(email) { (error) in
+    func checkIfEmailOrPhoneTaken(_ form: RegisterForm) {
+        worker.verifyIfEmailTaken(form.email!) { (error) in
             if let error = error {
                 self.presenter?.handleError(error)
                 return
             }
             
-            self.presenter?.presentEmailIsUnique()
+            // Now - verify phone
+            self.worker.verifyIfPhoneTaken(form.phone!, completion: { (error) in
+                if let error = error {
+                    self.presenter?.handleError(error)
+                    return
+                }
+                
+                self.presenter?.presentEmailIsUnique()
+            })
+            
         }
     }
     

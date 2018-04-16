@@ -20,7 +20,7 @@ class LoginPresenter: LoginPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .incorrectEmail:
-                return "Email is incorrect"
+                return "Email/Number is incorrect"
             case .passwordToShort:
                 return "Password must have at least 4 characters"
             case .blockedUser:
@@ -28,7 +28,7 @@ class LoginPresenter: LoginPresentationLogic {
             case .passwordToLong:
                 return "Password can have maximum 30 characters"
             case .loginOrPasswordInvalid:
-                return "Email or password invalid"
+                return "Email/Number or password invalid"
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription

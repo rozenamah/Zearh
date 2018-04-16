@@ -91,7 +91,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
                 
                 router?.showWaitAlert()
                 if registrationMode == .doctor {
-                    interactor?.checkIfEmailTaken(registerForm.email!)
+                    interactor?.checkIfEmailOrPhoneTaken(registerForm) 
                 } else {
                     interactor?.register(withForm: registerForm)
                 }

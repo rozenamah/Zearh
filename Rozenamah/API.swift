@@ -17,6 +17,7 @@ enum API {
         case register
         case me
         case verifyEmail
+        case verifyPhone
         case resetPassword
         case logout
         case devices
@@ -63,6 +64,7 @@ extension API.User {
         case .register: return resource + "register"
         case .resetPassword: return resource + "password/restore"
         case .verifyEmail: return resource + "email/check"
+        case .verifyPhone: return resource + "phone/check"
         case .me: return resource + "me"
         case .logout: return resource + "logout"
         case .devices: return resource + "devices"

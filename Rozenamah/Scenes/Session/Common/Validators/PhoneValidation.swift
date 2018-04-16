@@ -11,7 +11,7 @@ import Foundation
 class PhoneValidation {
     
     class func validate(phone testString: String) -> Bool {
-        let phoneRegexEx = "^((\\+)|(00))[0-9]{6,14}$"
+        let phoneRegexEx = "^((\\+)|(00))?[0-9]{6,14}$"
         let phoneTest = NSPredicate(format:"SELF MATCHES %@", phoneRegexEx)
         return phoneTest.evaluate(with: testString)
     }

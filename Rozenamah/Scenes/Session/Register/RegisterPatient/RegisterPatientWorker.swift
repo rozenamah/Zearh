@@ -14,6 +14,18 @@ class RegisterPatientWorker {
             .responseEmpty(completion: completion)
     }
     
+    func verifyIfPhoneTaken(_ phone: String, completion: @escaping ErrorCompletion) {
+        
+        let params = [
+            "phone": phone
+        ]
+        
+        Alamofire.request(API.User.verifyPhone.path, method: .post, parameters: params)
+            .validate()
+            .responseEmpty(completion: completion)
+    }
+    
+    
     func register(withForm form: ParamForm, completion: @escaping LoginCompletion) {
         
         let params = form.toParams

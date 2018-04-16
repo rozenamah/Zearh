@@ -39,7 +39,8 @@ class LoginInteractor: LoginBusinessLogic {
         var allFieldsValid = true
         
         if loginForm.email == nil ||
-            !EmailValidation.validate(email: loginForm.email!) {
+            !(EmailValidation.validate(email: loginForm.email!)
+                || PhoneValidation.validate(phone: loginForm.email!)) {
             allFieldsValid = false
             presenter?.presentError(.incorrectEmail)
         }
