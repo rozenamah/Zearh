@@ -58,9 +58,16 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     
     @IBAction func patientDetailsAction(_ sender: Any) {
         //TODO: Temporary segue
-        performSegue(withIdentifier: "end_visit_segue", sender: nil)
+        performSegue(withIdentifier: "patient_details_segue", sender: nil)
     }
     
+    @IBAction func phoneAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func mapAction(_ sender: Any) {
+        
+    }
     
     // MARK: Presenter methods
 }

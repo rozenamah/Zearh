@@ -26,6 +26,13 @@
 		573A3060207B66E00040B438 /* PastVisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A305E207B66E00040B438 /* PastVisitTableViewCell.swift */; };
 		573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573A305F207B66E00040B438 /* PastVisitTableViewCell.xib */; };
 		573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */; };
+		574FC575208493A4001E4059 /* PatientDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC56E208493A4001E4059 /* PatientDetailsPresenter.swift */; };
+		574FC576208493A4001E4059 /* PatientDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC56F208493A4001E4059 /* PatientDetailsWorker.swift */; };
+		574FC577208493A4001E4059 /* PatientDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC570208493A4001E4059 /* PatientDetailsRouter.swift */; };
+		574FC578208493A4001E4059 /* PatientDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC571208493A4001E4059 /* PatientDetailsModels.swift */; };
+		574FC579208493A4001E4059 /* PatientDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC572208493A4001E4059 /* PatientDetailsViewController.swift */; };
+		574FC57A208493A4001E4059 /* PatientDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC573208493A4001E4059 /* PatientDetailsInteractor.swift */; };
+		574FC57B208493A4001E4059 /* PatientDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC574208493A4001E4059 /* PatientDetailsConfigurator.swift */; };
 		578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */; };
 		578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */; };
 		578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */; };
@@ -226,6 +233,13 @@
 		573A305E207B66E00040B438 /* PastVisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastVisitTableViewCell.swift; sourceTree = "<group>"; };
 		573A305F207B66E00040B438 /* PastVisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastVisitTableViewCell.xib; sourceTree = "<group>"; };
 		573A3062207B8A920040B438 /* RMButtonWithSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMButtonWithSeparator.swift; sourceTree = "<group>"; };
+		574FC56E208493A4001E4059 /* PatientDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsPresenter.swift; sourceTree = "<group>"; };
+		574FC56F208493A4001E4059 /* PatientDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsWorker.swift; sourceTree = "<group>"; };
+		574FC570208493A4001E4059 /* PatientDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsRouter.swift; sourceTree = "<group>"; };
+		574FC571208493A4001E4059 /* PatientDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsModels.swift; sourceTree = "<group>"; };
+		574FC572208493A4001E4059 /* PatientDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsViewController.swift; sourceTree = "<group>"; };
+		574FC573208493A4001E4059 /* PatientDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsInteractor.swift; sourceTree = "<group>"; };
+		574FC574208493A4001E4059 /* PatientDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsConfigurator.swift; sourceTree = "<group>"; };
 		578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailPresenter.swift; sourceTree = "<group>"; };
 		578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailWorker.swift; sourceTree = "<group>"; };
 		578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRouter.swift; sourceTree = "<group>"; };
@@ -466,6 +480,20 @@
 				573A305F207B66E00040B438 /* PastVisitTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		574FC56D20849382001E4059 /* PatientDetails */ = {
+			isa = PBXGroup;
+			children = (
+				574FC56E208493A4001E4059 /* PatientDetailsPresenter.swift */,
+				574FC56F208493A4001E4059 /* PatientDetailsWorker.swift */,
+				574FC570208493A4001E4059 /* PatientDetailsRouter.swift */,
+				574FC571208493A4001E4059 /* PatientDetailsModels.swift */,
+				574FC572208493A4001E4059 /* PatientDetailsViewController.swift */,
+				574FC573208493A4001E4059 /* PatientDetailsInteractor.swift */,
+				574FC574208493A4001E4059 /* PatientDetailsConfigurator.swift */,
+			);
+			path = PatientDetails;
 			sourceTree = "<group>";
 		};
 		578100ED207CBFCA00F4A78B /* TransactionDetail */ = {
@@ -777,6 +805,7 @@
 		F992D315206E393800DF0604 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
+				574FC56D20849382001E4059 /* PatientDetails */,
 				578A6E802080BD6300CB4E79 /* EndVisit */,
 				578A6E71207F658500CB4E79 /* AcceptPatient */,
 				F992D316206E394200DF0604 /* MainDoctor */,
@@ -1220,6 +1249,7 @@
 				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
 				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
+				574FC577208493A4001E4059 /* PatientDetailsRouter.swift in Sources */,
 				573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				578A6E892080BD7800CB4E79 /* EndVisitWorker.swift in Sources */,
@@ -1232,9 +1262,11 @@
 				F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */,
 				F992D348206E418100DF0604 /* MainScreenPresenter.swift in Sources */,
 				F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */,
+				574FC575208493A4001E4059 /* PatientDetailsPresenter.swift in Sources */,
 				F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */,
 				F992D33E206E3D6D00DF0604 /* MainDoctorWorker.swift in Sources */,
 				57E659D72073AE60004E3926 /* ChangeEmailInteractor.swift in Sources */,
+				574FC57A208493A4001E4059 /* PatientDetailsInteractor.swift in Sources */,
 				57E659D42073AE60004E3926 /* ChangeEmailRouter.swift in Sources */,
 				F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */,
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
@@ -1292,6 +1324,7 @@
 				F99A2ED8207F37D2009505EB /* AcceptDoctorRouter.swift in Sources */,
 				578A6E7D207F659D00CB4E79 /* AcceptPatientViewController.swift in Sources */,
 				F99A2EC6207CBCC1009505EB /* WaitWorker.swift in Sources */,
+				574FC57B208493A4001E4059 /* PatientDetailsConfigurator.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
 				573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */,
@@ -1343,6 +1376,7 @@
 				F99A2EC7207CBCC1009505EB /* WaitRouter.swift in Sources */,
 				F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */,
 				F95AFBF9206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift in Sources */,
+				574FC578208493A4001E4059 /* PatientDetailsModels.swift in Sources */,
 				F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */,
 				F99A2EC5207CBCC1009505EB /* WaitPresenter.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
@@ -1365,6 +1399,7 @@
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
 				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,
 				57E659C820739EBC004E3926 /* ChangePasswordInteractor.swift in Sources */,
+				574FC579208493A4001E4059 /* PatientDetailsViewController.swift in Sources */,
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
 				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
 				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,
@@ -1372,6 +1407,7 @@
 				F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */,
 				F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */,
 				F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */,
+				574FC576208493A4001E4059 /* PatientDetailsWorker.swift in Sources */,
 				F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */,
 				F940EC52205A9D8E00266753 /* AppStartRouter.swift in Sources */,
 				F940EA5F2058148300266753 /* LoginWorker.swift in Sources */,

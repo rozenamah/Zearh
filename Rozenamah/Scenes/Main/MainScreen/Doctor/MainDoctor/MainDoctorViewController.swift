@@ -46,7 +46,6 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     override func setupView() {
         super.setupView()
         router?.configureFirstScreen()
-        router?.openContainer(completion: nil)
     }
 
     // MARK: Event handling
