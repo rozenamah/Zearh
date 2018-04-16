@@ -156,6 +156,13 @@
                                     <segue destination="HvE-3R-tYC" kind="show" id="0yv-7n-f7C"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DUPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-IC-hmk">
+                                <rect key="frame" x="109" y="242" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -202,7 +209,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R2-zU-wlJ" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="76" width="288" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email/Phone number" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NBt-1S-1bI" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email/Phone number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NBt-1S-1bI" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -253,7 +260,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dY7-av-C6n" userLabel="Password" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="141" width="288" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-EE-9H1" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-EE-9H1" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="238" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -431,7 +438,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68t-so-Lmw" userLabel="Name" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="164" width="343" height="47"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yYD-zM-Hr8" customClass="SCTextField" customModule="SwiftCake">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yYD-zM-Hr8" customClass="SCTextField" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -482,7 +489,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEh-Th-XVL" userLabel="Surname" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="234" width="343" height="47"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qp-qF-JAL" customClass="SCTextField" customModule="SwiftCake">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qp-qF-JAL" customClass="SCTextField" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -533,7 +540,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0v-Ii-MjP" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="304" width="343" height="47"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cW1-kM-jRs" customClass="SCTextField" customModule="SwiftCake">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cW1-kM-jRs" customClass="SCTextField" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -584,7 +591,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2k-05-1NK" userLabel="Phone" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="374" width="343" height="47"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-Xa-TmQ" customClass="SCTextField" customModule="SwiftCake">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-Xa-TmQ" customClass="SCTextField" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -635,7 +642,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69i-pr-35i" userLabel="Password" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="444" width="343" height="47"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1O-sZ-Jai" customClass="SCTextField" customModule="SwiftCake">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1O-sZ-Jai" customClass="SCTextField" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -686,7 +693,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQU-os-JgN" userLabel="RepeatPassword" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="514" width="343" height="47"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYE-Ht-6fP" customClass="SCTextField" customModule="SwiftCake">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYE-Ht-6fP" customClass="SCTextField" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -893,7 +900,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kST-Tf-nPd" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="148.5" width="288" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuv-VO-2Qw" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuv-VO-2Qw" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
