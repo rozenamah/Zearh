@@ -31,6 +31,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     func openContainer(completion: (() -> Void)? = nil) {
         animateOpenContainer(completion: completion)
     }
+    
     func navigatePatientForm() {
        
     }
