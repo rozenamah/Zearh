@@ -3,6 +3,10 @@ import UIKit
 protocol PaymentMethodDisplayLogic: class {
 }
 
+protocol PaymentMethodDelegate: class {
+    func patientPayWith(_ type: PaymentMethod)
+}
+
 class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
 
     // MARK: Outlets
@@ -18,6 +22,9 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
     var interactor: PaymentMethodBusinessLogic?
     var router: PaymentMethodRouter?
 
+    weak var delegate: PaymentMethodDelegate?
+    var paymentMethod: PaymentMethod?
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -49,13 +56,17 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
         paymentMethodsButtons.forEach({ $0.isSelected = false })
         if sender == byCardButton {
             byCardButton.isSelected = true
+            paymentMethod = .card
         } else {
             byCashButton.isSelected = true
+            paymentMethod = .cash
         }
     }
     
     @IBAction func confirmAction(_ sender: Any) {
-        
+        if let paymentMethod = paymentMethod {
+            delegate?.patientPayWith(paymentMethod)
+        }
     }
     
     @IBAction func closeAction(_ sender: Any) {

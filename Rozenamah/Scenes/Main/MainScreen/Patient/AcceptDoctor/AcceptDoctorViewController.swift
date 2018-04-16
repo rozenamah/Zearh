@@ -3,7 +3,7 @@ import UIKit
 protocol AcceptDoctorDisplayLogic: class {
 }
 
-class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
+class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, PaymentMethodDelegate {
 
     // MARK: Outlets
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -18,7 +18,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
     var router: AcceptDoctorRouter?
     
     /// We use it to communicate flow to main screen
-    var flowDelegate: PatientFlowDelegate?
+    weak var flowDelegate: PatientFlowDelegate?
 
     // MARK: Object lifecycle
 
@@ -47,6 +47,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
     // MARK: Event handling
     
     @IBAction func callAction(_ sender: Any) {
+        router?.makeACall("123456778")
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -55,6 +56,10 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
 
     @IBAction func acceptAction(_ sender: Any) {
         router?.navigateToPaymentMethod()
+    }
+    
+    func patientPayWith(_ type: PaymentMethod) {
+        // TODO: Add logic
     }
     
     // MARK: Presenter methods

@@ -47,6 +47,7 @@
 		574FC5972084A89A001E4059 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5902084A89A001E4059 /* PaymentMethodViewController.swift */; };
 		574FC5982084A89A001E4059 /* PaymentMethodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5912084A89A001E4059 /* PaymentMethodInteractor.swift */; };
 		574FC5992084A89A001E4059 /* PaymentMethodConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5922084A89A001E4059 /* PaymentMethodConfigurator.swift */; };
+		574FC5A52084E5C7001E4059 /* PhoneCallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574FC5A42084E5C7001E4059 /* PhoneCallRouter.swift */; };
 		578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */; };
 		578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */; };
 		578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */; };
@@ -268,6 +269,7 @@
 		574FC5902084A89A001E4059 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		574FC5912084A89A001E4059 /* PaymentMethodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodInteractor.swift; sourceTree = "<group>"; };
 		574FC5922084A89A001E4059 /* PaymentMethodConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodConfigurator.swift; sourceTree = "<group>"; };
+		574FC5A42084E5C7001E4059 /* PhoneCallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallRouter.swift; sourceTree = "<group>"; };
 		578100EE207CBFE600F4A78B /* TransactionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailPresenter.swift; sourceTree = "<group>"; };
 		578100EF207CBFE600F4A78B /* TransactionDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailWorker.swift; sourceTree = "<group>"; };
 		578100F0207CBFE600F4A78B /* TransactionDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRouter.swift; sourceTree = "<group>"; };
@@ -1055,6 +1057,7 @@
 				F940EC28205937CD00266753 /* PhotoTakeRouter.swift */,
 				F940EC51205A9D8E00266753 /* AppStartRouter.swift */,
 				F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */,
+				574FC5A42084E5C7001E4059 /* PhoneCallRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -1392,6 +1395,7 @@
 				F99A2EC6207CBCC1009505EB /* WaitWorker.swift in Sources */,
 				574FC57B208493A4001E4059 /* PatientDetailsConfigurator.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
+				574FC5A52084E5C7001E4059 /* PhoneCallRouter.swift in Sources */,
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
 				573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */,
 				57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */,

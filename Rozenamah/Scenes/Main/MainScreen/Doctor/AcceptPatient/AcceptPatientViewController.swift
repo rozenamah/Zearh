@@ -20,7 +20,8 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     var interactor: AcceptPatientBusinessLogic?
     var router: AcceptPatientRouter?
     
-    var flowDelegate: DoctortFlowDelegate?
+    // Delegate responsible for doctors action, whether accept or cancel patient
+    weak var flowDelegate: DoctortFlowDelegate?
 
     // MARK: Object lifecycle
 
@@ -50,6 +51,9 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
 
     @IBAction func acceptAction(_ sender: Any) {
         flowDelegate?.changeStateTo(flowPoint: .accept)
+        
+        // TODO: remove segue
+        performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -61,7 +65,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     
     @IBAction func phoneAction(_ sender: Any) {
-        
+        router?.makeACall("123456778")
     }
     
     @IBAction func mapAction(_ sender: Any) {

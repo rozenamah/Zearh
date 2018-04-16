@@ -1,12 +1,15 @@
 import UIKit
 
-class AcceptDoctorRouter: Router {
+class AcceptDoctorRouter: Router, PhoneCallRouter {
     typealias RoutingViewController = AcceptDoctorViewController
     weak var viewController: AcceptDoctorViewController?
 
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "payment_method_segue" {
+            assignDelegate(segue.destination)
+        }
 
     }
 
@@ -17,5 +20,11 @@ class AcceptDoctorRouter: Router {
     }
 
     // MARK: Passing data
+    
+    func assignDelegate(_ vc: UIViewController) {
+        let navVC = vc as? UINavigationController
+        let vc = navVC?.viewControllers.first as? PaymentMethodViewController
+        vc?.delegate = viewController
+    }
 
 }

@@ -1,6 +1,6 @@
 import UIKit
 
 enum PaymentMethod {
-    case byCard
-    case byCash
+    case card
+    case cash
 }
