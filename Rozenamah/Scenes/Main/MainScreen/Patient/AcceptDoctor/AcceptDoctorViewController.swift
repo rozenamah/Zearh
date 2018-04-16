@@ -54,7 +54,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
     }
 
     @IBAction func acceptAction(_ sender: Any) {
-        // TODO
+        router?.navigateToPaymentMethod()
     }
     
     // MARK: Presenter methods
