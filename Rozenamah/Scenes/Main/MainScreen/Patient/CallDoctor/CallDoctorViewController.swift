@@ -30,7 +30,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     var callForm = CallDoctorForm()
     
     /// We use it to communicate flow to main screen
-    var flowDelegate: PatientFlowDelegate?
+    weak var flowDelegate: PatientFlowDelegate?
 
     // MARK: Object lifecycle
 

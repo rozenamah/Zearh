@@ -65,7 +65,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     
     @IBAction func phoneAction(_ sender: Any) {
-        router?.makeACall("123456778")
+        router?.makeCall(to: "123456778")
     }
     
     @IBAction func mapAction(_ sender: Any) {

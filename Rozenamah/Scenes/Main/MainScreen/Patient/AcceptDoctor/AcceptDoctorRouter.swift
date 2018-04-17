@@ -21,7 +21,7 @@ class AcceptDoctorRouter: Router, PhoneCallRouter {
 
     // MARK: Passing data
     
-    func assignDelegate(_ vc: UIViewController) {
+    private func assignDelegate(_ vc: UIViewController) {
         let navVC = vc as? UINavigationController
         let vc = navVC?.viewControllers.first as? PaymentMethodViewController
         vc?.delegate = viewController

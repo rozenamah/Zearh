@@ -9,12 +9,12 @@
 import UIKit
 
 protocol PhoneCallRouter {
-    func makeACall(_ phoneNumber: String)
+    func makeCall(to phoneNumber: String)
 }
 
 extension PhoneCallRouter where Self: Router {
     
-    func makeACall(_ phoneNumber: String) {
+    func makeCall(to phoneNumber: String) {
         guard let number = URL(string: "tel://" + phoneNumber) else { return }
         UIApplication.shared.open(number)
     }

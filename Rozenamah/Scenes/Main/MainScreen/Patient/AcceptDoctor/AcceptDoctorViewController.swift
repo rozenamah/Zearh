@@ -50,7 +50,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     // MARK: Event handling
     
     @IBAction func callAction(_ sender: Any) {
-        router?.makeACall("123456778")
+        router?.makeCall(to: "123456778")
     }
     
     @IBAction func cancelAction(_ sender: Any) {
