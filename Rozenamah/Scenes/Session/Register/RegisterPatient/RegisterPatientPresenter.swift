@@ -14,6 +14,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         case incorrectEmail
         case incorrectPhone
         case emailAlreadyExists
+        case phoneAlreadyExists
         case passwordToShort
         case passwordToLong
         case incorrectPassword
@@ -30,6 +31,8 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
             switch self {
             case .emailAlreadyExists:
                 return "Email is already taken"
+            case .phoneAlreadyExists:
+                return "Phone is already taken"
             case .incorrectEmail:
                 return "Email is incorrect"
             case .incorrectPhone:
@@ -69,8 +72,12 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
     // messages
     func handleError(_ error: RMError) {
         switch error {
-        case .status(let code, _) where code == .duplicate:
-            presentError(.emailAlreadyExists)
+        case .status(let code, let error) where code == .duplicate:
+            if error.cause == "email" {
+                presentError(.emailAlreadyExists)
+            } else {
+                presentError(.phoneAlreadyExists)
+            }
         default:
             presentError(.unknown(error))
         }
@@ -81,7 +88,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         switch error {
         case .incorrectEmail, .emailAlreadyExists:
             viewController?.handle(error: error, inField: .email)
-        case .incorrectPhone:
+        case .incorrectPhone, .phoneAlreadyExists:
             viewController?.handle(error: error, inField: .phone)
         case .passwordToShort, .passwordToLong, .incorrectPassword:
             viewController?.handle(error: error, inField: .password)

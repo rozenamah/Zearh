@@ -2,7 +2,7 @@ import UIKit
 
 protocol CallDoctorPresentationLogic {
     func presentError(_ error: CallDoctorPresenter.CallDoctorError)
-    func handleError(_ error: RMError) 
+    func handleError(_ error: RMError)
 }
 
 class CallDoctorPresenter: CallDoctorPresentationLogic {
@@ -53,4 +53,5 @@ class CallDoctorPresenter: CallDoctorPresentationLogic {
         }
         
     }
+
 }

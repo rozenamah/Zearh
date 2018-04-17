@@ -24,7 +24,7 @@ class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter
     }
     
     func showErrorAlert() {
-        let alert = UIAlertController(title: "Error", message: "Ups something went wrong", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Ups, something went wrong", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
         

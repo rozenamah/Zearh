@@ -23,7 +23,7 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
         return nil
     }
     
-    private var locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     
     /// Whenever first location is found move camera to this position
     fileprivate var firstLocationDisplayed: Bool = false

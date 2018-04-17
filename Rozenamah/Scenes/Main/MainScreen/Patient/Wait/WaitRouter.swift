@@ -1,6 +1,6 @@
 import UIKit
 
-class WaitRouter: Router {
+class WaitRouter: Router, AlertRouter {
     typealias RoutingViewController = WaitViewController
     weak var viewController: WaitViewController?
 

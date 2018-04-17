@@ -73,10 +73,16 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
         switch flowPoint {
         case .callDoctor:
             router?.navigateToCallForm()
-        case .waitSearch:
-            router?.navigateToWaitScreen()
-        case .acceptDoctor:
-            router?.navigateToAcceptDoctor()
+        case .searchWith(let filters):
+            // Attach location to filters - if no filters, display error
+            if let location = interactor?.currentLocation {
+                filters.location = location
+                router?.navigateToSearchScreen(withFilters: filters)
+            } else {
+                // TODO: No location! display error
+            }
+        case .accept(let doctor):
+            router?.navigateToAcceptDoctor(withDoctor: doctor)
         case .pending:
             // Show all buttons when no form visible
             self.viewToHideWhenFormVisible.forEach { $0.isHidden = false }

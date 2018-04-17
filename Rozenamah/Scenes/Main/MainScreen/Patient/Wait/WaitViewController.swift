@@ -1,6 +1,8 @@
 import UIKit
 
 protocol WaitDisplayLogic: class {
+    func handle(error: Error)
+    func found(doctor user: User)
 }
 
 class WaitViewController: UIViewController, WaitDisplayLogic {
@@ -12,7 +14,10 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     var router: WaitRouter?
 
     /// We use it to communicate flow to main screen
-    var flowDelegate: PatientFlowDelegate?
+    weak var flowDelegate: PatientFlowDelegate?
+    
+    /// Filters for which we search doctors
+    var filters: CallDoctorForm!
     
     // MARK: Object lifecycle
 
@@ -31,6 +36,9 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        // Start calling search immidatly after we reach this screen
+        interactor?.searchForDoctor(withFilters: filters)
     }
 
     // MARK: View customization
@@ -41,14 +49,17 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     // MARK: Event handling
     
     @IBAction func cancelAction(_ sender: Any) {
+        interactor?.cancelCurrentRequest()
         flowDelegate?.changeStateTo(flowPoint: .callDoctor)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        // To Test
-        flowDelegate?.changeStateTo(flowPoint: .acceptDoctor)
+    // MARK: Presenter methods
+    
+    func handle(error: Error) {
+        router?.showError(error)
     }
     
-    // MARK: Presenter methods
+    func found(doctor user: User) {
+        flowDelegate?.changeStateTo(flowPoint: .accept(doctor: user))
+    }
 }

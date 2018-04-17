@@ -18,7 +18,10 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
     var router: AcceptDoctorRouter?
     
     /// We use it to communicate flow to main screen
-    var flowDelegate: PatientFlowDelegate?
+    weak var flowDelegate: PatientFlowDelegate?
+    
+    /// Doctor which is presented to user in order to accept
+    var doctor: User!
 
     // MARK: Object lifecycle
 

@@ -3,6 +3,6 @@ import UIKit
 enum PatientFlow {
     case pending
     case callDoctor
-    case waitSearch
-    case acceptDoctor
+    case searchWith(filters: CallDoctorForm)
+    case accept(doctor: User)
 }

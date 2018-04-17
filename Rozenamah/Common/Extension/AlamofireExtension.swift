@@ -22,7 +22,7 @@ enum RMError: LocalizedError {
     
     case unknown(error: Error)
     case tokenDoesntExist
-    case status(code: StatusCode, msg: String)
+    case status(code: StatusCode, response: ErrorResponse)
     
     var errorDescription: String? {
         switch self {
@@ -30,8 +30,8 @@ enum RMError: LocalizedError {
             return error.localizedDescription
         case .status(let code, _) where code == .serverError:
             return "Something is wrong with our server :("
-        case .status(_, let msg):
-            return msg
+        case .status(_, let error):
+            return error.message ?? "Ups, something went wrong"
         case .tokenDoesntExist:
             return "You need to sign in again"
         }
@@ -114,7 +114,7 @@ extension Alamofire.DataRequest {
                 let code = RMError.StatusCode(rawValue: status) {
                 
                 return RMError.status(code: code,
-                                               msg: error.message)
+                                      response: error)
             }
         }
         return nil

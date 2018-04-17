@@ -62,24 +62,26 @@ class MainPatientRouter: MainScreenRouter, Router {
         }
     }
     
-    func navigateToAcceptDoctor() {
+    func navigateToAcceptDoctor(withDoctor user: User) {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return
             }
             
+            self.acceptDoctorVC.doctor = user // Pass found doctor
             self.add(asChildViewController: self.acceptDoctorVC)
             self.viewController?.containerHeightConstraint.constant = 286
             self.openContainer()
         }
     }
     
-    func navigateToWaitScreen() {
+    func navigateToSearchScreen(withFilters form: CallDoctorForm) {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return
             }
             
+            self.waitVC.filters = form // Pass current filters
             self.add(asChildViewController: self.waitVC)
             self.viewController?.containerHeightConstraint.constant = 202
             self.openContainer()

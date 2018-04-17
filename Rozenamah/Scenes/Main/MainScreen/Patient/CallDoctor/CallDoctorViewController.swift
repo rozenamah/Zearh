@@ -114,7 +114,27 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         moreOptionsButton.isHidden = shouldDisplayFilters
         filterStackView.isHidden = !shouldDisplayFilters
     }
-
+    
+    func disableSpecialization() {
+        specializationView.isUserInteractionEnabled = false
+        specializationView.alpha = 0.4
+    }
+    
+    func enableSpecialization() {
+        specializationView.isUserInteractionEnabled = true
+        specializationView.alpha = 1
+    }
+    
+    func displayErrorIn(button: SCButton) {
+        button.borderColor = .rmRed
+        button.setTitleColor(.rmRed, for: .normal)
+    }
+    
+    func hideErrorIn(button: SCButton) {
+        button.borderColor = .rmPale
+        button.setTitleColor(.rmGray, for: .normal)
+    }
+    
     // MARK: Event handling
 
     @IBAction func cancelAction(_ sender: Any) {
@@ -143,7 +163,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     
     @IBAction func searchAction(_ sender: Any) {
         if interactor?.validate(form: callForm) == true {
-            flowDelegate?.changeStateTo(flowPoint: .waitSearch)
+            flowDelegate?.changeStateTo(flowPoint: .searchWith(filters: callForm))
         }
     }
     
@@ -178,17 +198,6 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         specializationButton.isSelected = true
     }
     
-    
-    func disableSpecialization() {
-        specializationView.isUserInteractionEnabled = false
-        specializationView.alpha = 0.4
-    }
-    
-    func enableSpecialization() {
-        specializationView.isUserInteractionEnabled = true
-        specializationView.alpha = 1
-    }
-    
     func handle(error: Error) {
         router?.showError(error)
     }
@@ -202,13 +211,4 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         }
     }
     
-    func displayErrorIn(button: SCButton) {
-        button.borderColor = .rmRed
-        button.setTitleColor(.rmRed, for: .normal)
-    }
-    
-    func hideErrorIn(button: SCButton) {
-        button.borderColor = .rmPale
-        button.setTitleColor(.rmGray, for: .normal)
-    }
 }
