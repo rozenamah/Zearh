@@ -1,6 +1,6 @@
 import UIKit
 
-class AcceptPatientRouter: Router {
+class AcceptPatientRouter: Router, PhoneCallRouter {
     typealias RoutingViewController = AcceptPatientViewController
     weak var viewController: AcceptPatientViewController?
 
