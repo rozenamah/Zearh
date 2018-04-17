@@ -7,7 +7,7 @@ protocol LoginPresentationLogic {
 }
 
 class LoginPresenter: LoginPresentationLogic {
-	weak var viewController: LoginDisplayLogic?
+    weak var viewController: LoginDisplayLogic?
 
     enum LoginError: LocalizedError {
         case incorrectEmail
@@ -20,7 +20,7 @@ class LoginPresenter: LoginPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .incorrectEmail:
-                return "Email/Number is incorrect"
+                return "session.login.error.incorrectEmail".localized
             case .passwordToShort:
                 return "session.login.error.passwordTooShort".localized
             case .blockedUser:
@@ -28,7 +28,7 @@ class LoginPresenter: LoginPresentationLogic {
             case .passwordToLong:
                 return "session.login.error.passwordTooLong".localized
             case .loginOrPasswordInvalid:
-                return "Email/Number or password invalid"
+                return "session.login.error.invalidEmailPassword".localized
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
@@ -38,7 +38,7 @@ class LoginPresenter: LoginPresentationLogic {
         }
     }
     
-	// MARK: Presentation logic
+    // MARK: Presentation logic
     
     // Called with API calls, depending on response error we can preset different
     // messages
@@ -52,7 +52,7 @@ class LoginPresenter: LoginPresentationLogic {
             presentError(.unknown(error))
         }
     }
-	
+    
     func presentError(_ error: LoginPresenter.LoginError) {
         switch error {
         case .incorrectEmail, .loginOrPasswordInvalid:

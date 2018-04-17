@@ -161,6 +161,9 @@
 		F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF7206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift */; };
 		F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */; };
 		F967D3312076380200F2EB75 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967D3302076380200F2EB75 /* Doctor.swift */; };
+		F969920F20863907007E6C42 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = F969920B20863907007E6C42 /* lang-en.json */; };
+		F969921020863907007E6C42 /* lang-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = F969920E20863907007E6C42 /* lang-ar.json */; };
+		F9699212208639A4007E6C42 /* Session.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9699211208639A3007E6C42 /* Session.storyboard */; };
 		F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9753760205FCFAA003DC80E /* Settings.storyboard */; };
 		F9753764205FD509003DC80E /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753763205FD509003DC80E /* TermsViewController.swift */; };
 		F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */; };
@@ -385,6 +388,9 @@
 		F95F140520612F3E00CDC2E5 /* Rozenamah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rozenamah.entitlements; sourceTree = "<group>"; };
 		F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneDeviceDetection.swift; sourceTree = "<group>"; };
 		F967D3302076380200F2EB75 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		F969920D20863907007E6C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = "Base.lproj/lang-en.json"; sourceTree = "<group>"; };
+		F969920E20863907007E6C42 /* lang-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ar.json"; sourceTree = "<group>"; };
+		F9699211208639A3007E6C42 /* Session.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Session.storyboard; sourceTree = "<group>"; };
 		F9753760205FCFAA003DC80E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9753763205FD509003DC80E /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		F9753765205FDADE003DC80E /* RegisterDoctorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDoctorPresenter.swift; sourceTree = "<group>"; };
@@ -793,6 +799,15 @@
 			path = Patient;
 			sourceTree = "<group>";
 		};
+		F969920A20863907007E6C42 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F969920B20863907007E6C42 /* lang-en.json */,
+				F969920E20863907007E6C42 /* lang-ar.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F975375E205FCE63003DC80E /* RegisterDoctor */ = {
 			isa = PBXGroup;
 			children = (
@@ -954,7 +969,7 @@
 		F9A9F298204D57FF006E8999 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				574FC59D2084DAF9001E4059 /* Session.storyboard */,
+				F9699211208639A3007E6C42 /* Session.storyboard */,
 				F940EA67205820CF00266753 /* Common */,
 				F940EA482057EE9300266753 /* Welcome */,
 				F9A9F29D204D584E006E8999 /* Splash */,
@@ -1029,7 +1044,7 @@
 		F9A9F2A0204D5881006E8999 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				573D89222085E24F00CAF50B /* Resources */,
+				F969920A20863907007E6C42 /* Resources */,
 				F992D311206D20E700DF0604 /* Workers */,
 				F9CA96AA205FCA4800CB4B68 /* Storage */,
 				F940EA6A2058237A00266753 /* Extension */,
@@ -1153,6 +1168,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"ar-SA",
 			);
 			mainGroup = F9093A64204992CB00CB041A;
 			productRefGroup = F9093A6E204992CB00CB041A /* Products */;
@@ -1171,13 +1187,13 @@
 			files = (
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
-				574FC59B2084DAF9001E4059 /* Session.storyboard in Resources */,
 				573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
-				573D89362085F36300CAF50B /* lang-ar.json in Resources */,
-				573D892D2085F27A00CAF50B /* lang-en.json in Resources */,
+				F969920F20863907007E6C42 /* lang-en.json in Resources */,
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
+				F969921020863907007E6C42 /* lang-ar.json in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
+				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1489,29 +1505,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		573D892F2085F27A00CAF50B /* lang-en.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				573D89302085F28C00CAF50B /* Base */,
-			);
-			name = "lang-en.json";
-			sourceTree = "<group>";
-		};
-		574FC59D2084DAF9001E4059 /* Session.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				574FC5A02084DB65001E4059 /* Base */,
-			);
-			name = Session.storyboard;
-			sourceTree = "<group>";
-		};
 		F9093A79204992CB00CB041A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F9093A7A204992CB00CB041A /* Base */,
-				573D89342085F31200CAF50B /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F969920B20863907007E6C42 /* lang-en.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F969920D20863907007E6C42 /* Base */,
+			);
+			name = "lang-en.json";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

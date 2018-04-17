@@ -8,7 +8,7 @@ protocol RegisterPatientPresentationLogic {
 }
 
 class RegisterPatientPresenter: RegisterPatientPresentationLogic {
-	weak var viewController: RegisterPatientDisplayLogic?
+    weak var viewController: RegisterPatientDisplayLogic?
 
     enum RegisterPatientError: LocalizedError {
         case incorrectEmail
@@ -30,7 +30,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .emailAlreadyExists:
-                return "Email is already taken"
+                return "session.patient.error.emailTaken".localized
             case .phoneAlreadyExists:
                 return "Phone is already taken"
             case .incorrectEmail:
@@ -66,7 +66,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         }
     }
     
-	// MARK: Presentation logic
+    // MARK: Presentation logic
     
     // Called with API calls, depending on response error we can preset different
     // messages
@@ -107,7 +107,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
     func presentEmailIsUnique() {
         viewController?.continueToNextStep()
     }
-	
+    
     func presentRegisterSuccess() {
         viewController?.registerSuccess()
     }
