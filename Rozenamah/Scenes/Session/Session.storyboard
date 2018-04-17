@@ -386,6 +386,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailView" destination="8R2-zU-wlJ" id="bTg-nL-33n"/>
+                        <outlet property="hidePasswordButton" destination="wFn-lF-Vgk" id="ALs-xS-R8o"/>
                         <outlet property="passwordView" destination="dY7-av-C6n" id="FNa-rg-hAn"/>
                     </connections>
                 </viewController>
@@ -883,6 +884,7 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="avatarImageView" destination="ABm-H2-6Cl" id="yk6-XV-6iN"/>
+                        <outlet property="checkboxButton" destination="Cuj-dk-2a7" id="IgK-b1-OHv"/>
                         <outlet property="confirmPasswordView" destination="fQU-os-JgN" id="gvB-du-udd"/>
                         <outlet property="createAccountButton" destination="ZsF-G5-Gey" id="aA9-ku-yeh"/>
                         <outlet property="emailView" destination="J0v-Ii-MjP" id="lBV-MQ-TMl"/>
@@ -891,6 +893,7 @@
                         <outlet property="phoneView" destination="d2k-05-1NK" id="OXV-dh-pre"/>
                         <outlet property="surnameView" destination="wEh-Th-XVL" id="KT2-iq-jrn"/>
                         <outlet property="termsAndConditionsCheckbox" destination="Cuj-dk-2a7" id="oT2-iV-B69"/>
+                        <outlet property="termsButton" destination="efU-It-qnc" id="oUU-KR-f0f"/>
                         <outlet property="titleLabel" destination="pG3-OS-z7e" id="6Th-wJ-BlX"/>
                         <segue destination="fZT-KZ-HLl" kind="show" identifier="doctor_step_segue" id="D9H-Nv-3Fh"/>
                     </connections>

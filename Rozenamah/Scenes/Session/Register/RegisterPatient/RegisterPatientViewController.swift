@@ -30,6 +30,8 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     @IBOutlet weak var createAccountButton: SCButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var phoneView: RMTextFieldWithError!
+    @IBOutlet weak var checkboxButton: SCCheckbox!
+    @IBOutlet weak var termsButton: UIButton!
     
     // MARK: Properties
     var interactor: RegisterPatientBusinessLogic?
@@ -73,6 +75,13 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
             // Update form to more advanced, doctor form
             registerForm = RegisterDoctorForm()
             
+        }
+        
+        if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
+            checkboxButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
+            checkboxButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            checkboxButton.contentHorizontalAlignment = .right
+            termsButton.contentHorizontalAlignment = .right
         }
     }
 
