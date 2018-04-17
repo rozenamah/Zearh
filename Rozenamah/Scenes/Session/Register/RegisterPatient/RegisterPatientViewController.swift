@@ -67,8 +67,8 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     
     fileprivate func setupView() {
         if registrationMode == .doctor {
-            titleLabel.text = "Register as doctor"
-            createAccountButton.setTitle("Next", for: .normal)
+            titleLabel.text = "session.doctor.title".localized
+            createAccountButton.setTitle("session.doctor.next".localized, for: .normal)
             
             // Update form to more advanced, doctor form
             registerForm = RegisterDoctorForm()
@@ -96,7 +96,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
                     interactor?.register(withForm: registerForm)
                 }
              } else {
-                router?.showAlert(message: "You need to accept Terms & Conditions")
+                router?.showAlert(message: "session.patient.terms".localized)
             }
         }
     }

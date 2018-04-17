@@ -88,7 +88,6 @@
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
 		F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen.storyboard */; };
 		F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */; };
-		F940EA472057E8F700266753 /* Session.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F940EA462057E8F700266753 /* Session.storyboard */; };
 		F940EA502058147000266753 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA492058147000266753 /* WelcomePresenter.swift */; };
 		F940EA512058147000266753 /* WelcomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4A2058147000266753 /* WelcomeWorker.swift */; };
 		F940EA522058147000266753 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4B2058147000266753 /* WelcomeRouter.swift */; };
@@ -312,7 +311,6 @@
 		F9093A7A204992CB00CB041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9093A7C204992CB00CB041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationsRouter.swift; sourceTree = "<group>"; };
-		F940EA462057E8F700266753 /* Session.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Session.storyboard; sourceTree = "<group>"; };
 		F940EA492058147000266753 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		F940EA4A2058147000266753 /* WelcomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorker.swift; sourceTree = "<group>"; };
 		F940EA4B2058147000266753 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
@@ -759,13 +757,6 @@
 			path = Drawer;
 			sourceTree = "<group>";
 		};
-		F95AFBED206A59B5007CCFB1 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		F95AFBF0206A6CAD007CCFB1 /* CallDoctorFilters */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,7 +954,7 @@
 		F9A9F298204D57FF006E8999 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				F940EA462057E8F700266753 /* Session.storyboard */,
+				574FC59D2084DAF9001E4059 /* Session.storyboard */,
 				F940EA67205820CF00266753 /* Common */,
 				F940EA482057EE9300266753 /* Welcome */,
 				F9A9F29D204D584E006E8999 /* Splash */,
@@ -1038,8 +1029,8 @@
 		F9A9F2A0204D5881006E8999 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				573D89222085E24F00CAF50B /* Resources */,
 				F992D311206D20E700DF0604 /* Workers */,
-				F95AFBED206A59B5007CCFB1 /* Controllers */,
 				F9CA96AA205FCA4800CB4B68 /* Storage */,
 				F940EA6A2058237A00266753 /* Extension */,
 				F9A9F2A2204D588C006E8999 /* Models */,
@@ -1180,9 +1171,11 @@
 			files = (
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
-				F940EA472057E8F700266753 /* Session.storyboard in Resources */,
+				574FC59B2084DAF9001E4059 /* Session.storyboard in Resources */,
 				573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
+				573D89362085F36300CAF50B /* lang-ar.json in Resources */,
+				573D892D2085F27A00CAF50B /* lang-en.json in Resources */,
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 			);
@@ -1239,6 +1232,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize/Localize.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCake/SwiftCake.framework",
@@ -1250,6 +1244,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCake.framework",
@@ -1494,10 +1489,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		573D892F2085F27A00CAF50B /* lang-en.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				573D89302085F28C00CAF50B /* Base */,
+			);
+			name = "lang-en.json";
+			sourceTree = "<group>";
+		};
+		574FC59D2084DAF9001E4059 /* Session.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				574FC5A02084DB65001E4059 /* Base */,
+			);
+			name = Session.storyboard;
+			sourceTree = "<group>";
+		};
 		F9093A79204992CB00CB041A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F9093A7A204992CB00CB041A /* Base */,
+				573D89342085F31200CAF50B /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1509,6 +1521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1566,6 +1579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

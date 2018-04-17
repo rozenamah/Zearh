@@ -13,8 +13,8 @@ class ForgotPasswordRouter: Router, AlertRouter {
     // MARK: Navigation
     
     func dismissAfterReset() {
-        let alert = UIAlertController(title: "Success", message: "You should receive reset link on your email", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] (action) in
+        let alert = UIAlertController(title: "generic.success".localized, message: "session.forgotPassword.resetLink".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { [weak self] (action) in
             self?.viewController?.navigationController?.popViewController(animated: true)
         }))
         viewController?.present(alert, animated: true, completion: nil)

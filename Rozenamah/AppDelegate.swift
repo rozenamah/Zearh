@@ -14,6 +14,7 @@ import Crashlytics
 import GoogleMaps
 import SlideMenuControllerSwift
 import KeychainAccess
+import Localize
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureGlobalApperance()
         configureApp()
         configureAlamofire()
-        
+        configureLanguage()
+    
         return true
     }
 
@@ -60,6 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
+    fileprivate func configureLanguage() {
+        let localize = Localize.shared
+        // Set your localize provider.
+        localize.update(provider: .json)
+        // Set your file name
+        localize.update(fileName: "lang")
+        // If you want remove storaged languaje use
+        localize.resetLanguage()
+    }
     
     fileprivate func configureApp() {
         

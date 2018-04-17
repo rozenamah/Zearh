@@ -20,8 +20,8 @@ class SplashRouter: Router, AppStartRouter, AlertRouter {
     // MARK: Navigation
     
     func showUserBlocked() {
-        let alert = UIAlertController(title: "Ups", message: "This user is blocked", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+        let alert = UIAlertController(title: "generic.error.ups".localized, message: "session.splash.userBlocked".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.confirm.ok".localized, style: .default, handler: { (_) in
             self.navigateToSignUp()
         }))
         

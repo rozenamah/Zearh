@@ -13,6 +13,7 @@ PODS:
   - IQKeyboardManager (5.0.8)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.6.2)
+  - Localize (2.0.1)
   - RangeSeekSlider (1.8.0)
   - SlideMenuControllerSwift (4.0.0)
   - SwiftCake (0.3.1)
@@ -26,11 +27,15 @@ DEPENDENCIES:
   - IQKeyboardManager
   - KeychainAccess
   - Kingfisher
+  - Localize (from `https://github.com/andresilvagomez/Localize.git`, branch `master`)
   - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider`, branch `swift_4`)
   - SlideMenuControllerSwift
   - SwiftCake (from `https://github.com/Rovalx/SwiftCake.git`, branch `master`)
 
 EXTERNAL SOURCES:
+  Localize:
+    :branch: master
+    :git: https://github.com/andresilvagomez/Localize.git
   RangeSeekSlider:
     :branch: swift_4
     :git: https://github.com/WorldDownTown/RangeSeekSlider
@@ -39,6 +44,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/Rovalx/SwiftCake.git
 
 CHECKOUT OPTIONS:
+  Localize:
+    :commit: 152da0a1af1a7c699501d9a40d016f8d74a62b0f
+    :git: https://github.com/andresilvagomez/Localize.git
   RangeSeekSlider:
     :commit: 77c29321a97c7f029e878e1479ab5ed5e4b2edb2
     :git: https://github.com/WorldDownTown/RangeSeekSlider
@@ -55,10 +63,11 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  Localize: 5e278d8627b40d7f1da40e2b4ca7f027655ff18e
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftCake: c3ecf5fe2d943bf6fe86197cb3ecab4ec9c4dc5b
 
-PODFILE CHECKSUM: 533df5bc4577be197a8c19748b54d083f5805b60
+PODFILE CHECKSUM: 571811f29769bfde7547dce27023f961434cd314
 
 COCOAPODS: 1.3.1

@@ -22,18 +22,18 @@ class LoginPresenter: LoginPresentationLogic {
             case .incorrectEmail:
                 return "Email/Number is incorrect"
             case .passwordToShort:
-                return "Password must have at least 4 characters"
+                return "session.login.error.passwordTooShort".localized
             case .blockedUser:
-                return "This user is blocked"
+                return "session.login.error.blockedUser".localized
             case .passwordToLong:
-                return "Password can have maximum 30 characters"
+                return "session.login.error.passwordTooLong".localized
             case .loginOrPasswordInvalid:
                 return "Email/Number or password invalid"
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

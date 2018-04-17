@@ -18,22 +18,22 @@ class RegisterDoctorPresenter: RegisterDoctorPresentationLogic {
         case priceMissing
         case genderMissing
         case unknown(Error?)
-        
+    
         var errorDescription: String? {
             switch self {
             case .professionMissing:
-                return "You need to choose your classification"
+                return "session.doctor.error.professionMissing".localized
             case .specializationMissing:
-                return "You need to choose your specialization"
+                return "session.doctor.error.specializationMissing".localized
             case .priceMissing:
-                return "You need to specify your price"
+                return "session.doctor.error.priceMissing".localized
             case .genderMissing:
-                return "You need to specify your gender"
+                return "session.doctor.error.genderMissing".localized
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }
