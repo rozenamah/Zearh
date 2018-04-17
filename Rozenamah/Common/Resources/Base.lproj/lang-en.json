@@ -1,0 +1,99 @@
+{
+    "session" : {
+        "welcome": {
+            "title": "Please log in to continue",
+            "create": "Create an account",
+            "createDoctor": "Create an account as a doctor",
+            "welcome": "Welcome"
+        },
+        "login" : {
+            "title": "Login",
+            "email": "Email/Phone number arab",
+            "password": "Password",
+            "forgotPassword": "Forgot password?",
+            "loginButton": "Login",
+            "error": {
+                "incorrectEmail": "Email is incorrect1",
+                "passwordTooShort": "Password must have at least 4 characters",
+                "passwordTooLong": "Password can have maximum 30 characters",
+                "invalidEmailPassword": "Email or password is invalid",
+                "blockedUser": "This user is blocked"
+            }
+        },
+        "patient": {
+            "title": "Register as patient",
+            "photo": "Upload a profile picture",
+            "name": "Name",
+            "surname": "Surname",
+            "email": "Email",
+            "phoneNumber": "Phone number",
+            "password": "Password",
+            "confirmPassword": "Confirm Password",
+            "acceptButton": "I accept",
+            "termsButton": "Terms & Conditions",
+            "previous": "Previous",
+            "terms": "You need to accept Terms & Conditions",
+            "error": {
+                "emailTaken": "Email is already taken",
+                "incorrectPhone": "Phone number is incorrect",
+                "incorrectPassword": "Password is incorrect",
+                "incorrectName": "Name is incorrect",
+                "incorrectSurname": "Surname is incorrect",
+                "nameTooLong": "Name can have maximum 30 characters",
+                "surnameTooLong": "Surname can have maximum 30 characters",
+                "nameTooShort": "Name must have at least 3 characters",
+                "surnameTooShort": "Surname must have at least 3 characters",
+                "diffrentPasswords": "Passwords are not the same"
+            }
+        },
+        "doctor": {
+            "title": "Register as doctor",
+            "pdfUpload": "Upload your licence in .pdf format",
+            "classification": "Please choose you clasification",
+            "specialization": "Please choose you specialization",
+            "pay": "Enter your desired pay in SAR",
+            "gender": "Please choose your gender",
+            "accCreated": "Account created",
+            "message": "Please, wait until you account will be verified. It shouldn't take more than 24 hours. Until then, you can user application as patient.",
+            "genderInfo": "Gender",
+            "male": "Male",
+            "female": "Female",
+            "next": "Next",
+            "updateTo": "Update to doctor",
+            "update": "Update",
+            "license": "You need to upload your doctor license",
+            "document": "Change your document",
+            "error": {
+                "professionMissing": "You need to choose your classification",
+                "specializationMissing": "You need to choose your specialization",
+                "priceMissing": "You need to specify your price",
+                "genderMissing": "You need to specify your gender"
+            }
+        },
+        "forgotPassword": {
+            "title": "Forgot password?",
+            "description": "Enter your email address to receive a link to reset your password",
+            "email": "Email",
+            "resetButton": "Reset button",
+            "resetLink": "You should receive reset link on your email"
+        },
+        "resetPassword": {
+            "emailNotConnected": "Email is not connected to any user"
+        },
+        "splash": {
+            "userBlocked": "This user is blocked"
+        }
+    },
+    "generic": {
+        "error": {
+            "unknown": "Unknown error",
+            "ups": "Ups"
+        },
+        "ok": "Ok",
+        "success": "Success",
+        "cancel": "Cancel"
+        
+    }
+}
+
+

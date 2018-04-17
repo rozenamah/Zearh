@@ -74,12 +74,12 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         
         // If type is update - add cancel button to navigation bar
         if registerType == .update {
-            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction(_:)))
+            let cancelButton = UIBarButtonItem(title: "session.generic.cancel".localized, style: .plain, target: self, action: #selector(cancelAction(_:)))
             navigationItem.leftBarButtonItem = cancelButton
             
             // Title label and button should be different on update
-            titleLabel.text = "Update to doctor"
-            createButton.setTitle("Update", for: .normal)
+            titleLabel.text = "session.doctor.updateTo".localized
+            createButton.setTitle("session.doctor.update".localized, for: .normal)
     
             // Create update form, it contains only doctor info
             registerForm = UpdateDoctorForm()
@@ -134,7 +134,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     @IBAction func createAccountAction(_ sender: Any) {
         if interactor?.validate(registerForm: registerForm) == true {
             if registerForm.pdf == nil {
-                router?.showAlert(message: "You need to upload your doctor license")
+                router?.showAlert(message: "session.doctor.license".localized)
                 return
             }
             router?.showWaitAlert()
@@ -201,7 +201,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     func pdfFileSelected(inData data: Data) {
         pdfImageView.isHidden = false
         pdfUploadButton.isSelected = true
-        uploadTitleLabel.text = "Change your document"
+        uploadTitleLabel.text = "session.doctor.document".localized
         
         registerForm.pdf = data
     }

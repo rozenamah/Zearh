@@ -29,36 +29,36 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .emailAlreadyExists:
-                return "Email is already taken"
+                return "session.patient.error.emailTaken".localized
             case .incorrectEmail:
-                return "Email is incorrect"
+                return "session.login.error.incorrectEmail".localized
             case .incorrectPhone:
-                return "Phone number is incorrect"
+                return "session.patient.error.incorrectPhone".localized
             case .incorrectPassword:
-                return "Password is incorrect"
+                return "session.patient.error.incorrectPassword".localized
             case .incorrectName:
-                return "Name is incorrect"
+                return "session.patient.error.incorrectName".localized
             case .incorrectSurname:
-                return "Surname is incorrect"
+                return "session.patient.error.incorrectSurname".localized
             case .passwordToShort:
-                return "Password must have at least 4 characters"
+                return "session.login.error.passwordTooShort".localized
             case .passwordToLong:
-                return "Password can have maximum 30 characters"
+                return "session.login.error.passwordTooLong".localized
             case .nameToLong:
-                return "Name can have maximum 30 characters"
+                return "session.patient.error.nameTooLong".localized
             case .surnameToLong:
-                return "Surname can have maximum 30 characters"
+                return "session.patient.error.surnameTooLong".localized
             case .nameToShort:
-                return "Name must have at least 3 characters"
+                return "session.patient.error.nameTooShort".localized
             case .surnameToShort:
-                return "Surname must have at least 3 characters"
+                return "session.patient.error.surnameTooShort".localized
             case .passwordsDifferent:
-                return "Passwords are not the same"
+                return "session.patient.error.diffrentPasswords".localized
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

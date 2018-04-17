@@ -23,8 +23,8 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
     }
     
     func showDoctorCreatedAlert(withDismiss dismiss: Bool) {
-        let alert = UIAlertController(title: "Account created", message: "Please, wait until you account will be verified. It shouldn't take more than 24 hours. Until then, you can user application as patient.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+        let alert = UIAlertController(title: "session.doctor.accCreated".localized, message: "session.doctor.message".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in
             if dismiss {
                 self.dismiss()
             } else {
@@ -35,14 +35,14 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
     }
     
     func showGenderSelection() {
-        let alert = UIAlertController(title: "Gender", message: "Please choose your gender", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Male", style: .default, handler: { (action) in
+        let alert = UIAlertController(title: "session.doctor.genderInfo".localized, message: "session.doctor.gender".localized, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "session.doctor.male".localized, style: .default, handler: { (action) in
             self.viewController?.genderSelected(.male)
         }))
-        alert.addAction(UIAlertAction(title: "Female", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "session.doctor.female".localized, style: .default, handler: { (action) in
             self.viewController?.genderSelected(.female)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
     }
     

@@ -20,20 +20,20 @@ class LoginPresenter: LoginPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .incorrectEmail:
-                return "Email is incorrect"
+                return "session.login.error.incorrectEmail".localized
             case .passwordToShort:
-                return "Password must have at least 4 characters"
+                return "session.login.error.passwordTooShort".localized
             case .blockedUser:
-                return "This user is blocked"
+                return "session.login.error.blockedUser".localized
             case .passwordToLong:
-                return "Password can have maximum 30 characters"
+                return "session.login.error.passwordTooLong".localized
             case .loginOrPasswordInvalid:
-                return "Email or password invalid"
+                return "session.login.error.invalidEmailPassword".localized
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

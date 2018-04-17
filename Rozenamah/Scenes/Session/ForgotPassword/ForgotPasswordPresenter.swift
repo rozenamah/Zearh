@@ -17,14 +17,14 @@ class ForgotPasswordPresenter: ForgotPasswordPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .incorrectEmail:
-                return "Email is incorrect"
+                return "session.login.error.incorrectEmail".localized
             case .emailIsNotConnected:
-                return "Email is not connected to any user"
+                return "session.resetPassword.emailNotConnected".localized
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }
