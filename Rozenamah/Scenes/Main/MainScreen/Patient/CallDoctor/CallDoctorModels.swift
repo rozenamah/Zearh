@@ -54,8 +54,8 @@ class CallDoctorForm: ParamForm {
         
         var params: [String: Any] = [
             "classification": classification!.rawValue,
-            "latitiude": location.coordinate.latitude,
-            "longitiude": location.coordinate.longitude
+            "latitude": location.coordinate.latitude,
+            "longitude": location.coordinate.longitude
         ]
         if let specialization = specialization {
             params["specialization"] = specialization.rawValue

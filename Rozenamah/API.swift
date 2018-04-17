@@ -15,6 +15,7 @@ enum API {
     enum User {
         case login
         case register
+        case refresh
         case me
         case verifyEmail
         case verifyPhone
@@ -66,6 +67,7 @@ extension API.User {
         switch self {
         case .login: return resource + "login"
         case .register: return resource + "register"
+        case .refresh: return resource + "token/refresh"
         case .resetPassword: return resource + "password/restore"
         case .verifyEmail: return resource + "email/check"
         case .verifyPhone: return resource + "phone/check"

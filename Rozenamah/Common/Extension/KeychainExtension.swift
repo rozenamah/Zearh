@@ -15,6 +15,15 @@ extension Keychain {
         return Keychain(service: "com.Rozenamah.token")
     }
     
+    var refreshToken: String? {
+        get {
+            return self["refresh_token"]
+        }
+        set {
+            self["refresh_token"] = newValue
+        }
+    }
+    
     var token: String? {
         get {
             return self["token"]

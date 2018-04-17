@@ -21,7 +21,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     weak var flowDelegate: PatientFlowDelegate?
     
     /// Doctor which is presented to user in order to accept
-    var doctor: User!
+    var user: User!
 
     // MARK: Object lifecycle
 
@@ -45,6 +45,12 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     // MARK: View customization
 
     fileprivate func setupView() {
+        // Fill doctor data
+        doctorNameLabel.text = user.fullname
+        classificationLabel.text = user.doctor?.classification.title
+        priceLabel.text = user.doctor?.price != nil ? String(user.doctor!.price) : nil
+        avatarImageView.setAvatar(for: user)
+        
     }
 
     // MARK: Event handling

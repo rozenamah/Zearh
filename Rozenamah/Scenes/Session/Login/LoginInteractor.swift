@@ -24,6 +24,7 @@ class LoginInteractor: LoginBusinessLogic {
             if let response = response {
                 // Save token in keychain
                 Keychain.shared.token = response.token
+                Keychain.shared.refreshToken = response.refreshToken
                 
                 // Save user in current
                 User.current = response.user
