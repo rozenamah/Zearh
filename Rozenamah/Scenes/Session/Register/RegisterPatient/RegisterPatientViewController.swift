@@ -76,10 +76,10 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
             registerForm = RegisterDoctorForm()
             
         }
-        
+        // Customize button insets depedning on layout direction
         if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
             checkboxButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
-            checkboxButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            checkboxButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: -16)
             checkboxButton.contentHorizontalAlignment = .right
             termsButton.contentHorizontalAlignment = .right
         }
