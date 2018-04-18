@@ -10,7 +10,6 @@ protocol PaymentMethodDelegate: class {
 class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
 
     // MARK: Outlets
-
     @IBOutlet weak var visitPriceLabel: UILabel!
     @IBOutlet weak var feePriceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -23,7 +22,12 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
     var router: PaymentMethodRouter?
 
     weak var delegate: PaymentMethodDelegate?
-    var paymentMethod: PaymentMethod?
+    
+    /// Contains info about visit which user will take part if accept
+    var doctor: DoctorResult!
+    
+    /// Selected payment method, passed to API when we select
+    private var paymentMethod: PaymentMethod?
     
     // MARK: Object lifecycle
 
@@ -48,6 +52,13 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
 
     fileprivate func setupView() {
         paymentMethodsButtons.forEach({ $0.isSelected = false })
+        
+        let user = doctor.user
+        let visit = doctor.visit
+        
+        visitPriceLabel.text = "\(user.doctor!.price) SAR"
+        totalPriceLabel.text = "\(visit.price) SAR"
+        feePriceLabel.text = "\(visit.fee) SAR"
     }
 
     // MARK: Event handling
