@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
 		57369F22207E0CDE001666EB /* ChangePhoneNumberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */; };
@@ -232,6 +233,7 @@
 /* Begin PBXFileReference section */
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
 		57369F1B207E0CDE001666EB /* ChangePhoneNumberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberRouter.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 				F9753776205FEA70003DC80E /* UIWindowExtension.swift */,
 				F9753778205FF24B003DC80E /* UIButtonExtension.swift */,
 				F97B73A22063A9040073A968 /* KingfisherExtension.swift */,
+				57133DF32087744500BB69A5 /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1444,6 +1447,7 @@
 				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
 				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
+				57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */,
 				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
 				573A3056207B65AA0040B438 /* TransactionHistoryViewController.swift in Sources */,

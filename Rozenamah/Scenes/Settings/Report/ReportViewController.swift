@@ -63,7 +63,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
 
     fileprivate func setupView() {
         textView.textContainerInset = UIEdgeInsets(top: 0, left: 13, bottom: 0, right: 0)
-        textView.placeholder = "Your message"
+        textView.placeholder = "settings.report.placeholder".localized
     }
 
     // MARK: Event handling

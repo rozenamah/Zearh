@@ -97,6 +97,9 @@
                                                 <state key="normal" title="Change profile picture">
                                                     <color key="titleColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.changeProfilePicture"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="profileChangeAction:" destination="nyP-id-tOB" eventType="touchUpInside" id="n0S-vt-JLc"/>
                                                 </connections>
@@ -107,7 +110,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKx-I5-8EV" userLabel="Name" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80a-j5-TiP" customClass="SCTextField" customModule="SwiftCake">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80a-j5-TiP" customClass="SCTextField" customModule="SwiftCake">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -116,6 +119,7 @@
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                         <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.patient.name"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="textChanged:" destination="nyP-id-tOB" eventType="editingChanged" id="2I7-Wv-iKT"/>
@@ -157,7 +161,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxp-tU-zPX" userLabel="Surname" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="66" width="343" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1u-JS-nTC" customClass="SCTextField" customModule="SwiftCake">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1u-JS-nTC" customClass="SCTextField" customModule="SwiftCake">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -166,6 +170,7 @@
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                         <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.patient.surname"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="textChanged:" destination="nyP-id-tOB" eventType="editingDidEnd" id="Tgp-xH-9L3"/>
@@ -215,11 +220,14 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.doctor.pay"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDo-B4-FNx" customClass="SCView" customModule="SwiftCake">
                                                                         <rect key="frame" x="0.0" y="44.5" width="343" height="43"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-zM-MLI" customClass="SCTextField" customModule="SwiftCake">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-zM-MLI" customClass="SCTextField" customModule="SwiftCake">
                                                                                 <rect key="frame" x="18" y="11" width="307" height="21"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -269,6 +277,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.doctor.classification"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="UPo-C0-0A3">
                                                                         <rect key="frame" x="326" y="63" width="10" height="7"/>
@@ -299,6 +310,7 @@
                                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="professionAction:" destination="nyP-id-tOB" eventType="touchUpInside" id="XlD-pg-JA6"/>
@@ -326,6 +338,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.doctor.specialization"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-Q1-qjd">
                                                                         <rect key="frame" x="326" y="63" width="10" height="7"/>
@@ -356,6 +371,7 @@
                                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="specializatioAction:" destination="nyP-id-tOB" eventType="touchUpInside" id="A2Z-RI-ZtI"/>
@@ -405,6 +421,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.saveChanges"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="saveChanges:" destination="nyP-id-tOB" eventType="touchUpInside" id="AGo-iE-YVN"/>
@@ -422,6 +439,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.changeEmail"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <segue destination="7oc-As-9Df" kind="presentation" id="Sy9-mP-hXh"/>
@@ -463,6 +481,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.changePassword"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <segue destination="clz-2u-wQ5" kind="presentation" id="RxT-9I-JSZ"/>
@@ -509,6 +528,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.deleteAccount"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="deleteAccountAction:" destination="nyP-id-tOB" eventType="touchUpInside" id="Y8R-LZ-GGX"/>
@@ -526,6 +546,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.changeNumber"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <segue destination="0CT-hP-OgB" kind="presentation" id="vJO-Z6-Wh1"/>
@@ -613,6 +634,9 @@
                                 <action selector="dismissAction:" destination="nyP-id-tOB" id="g5q-cI-HUn"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.editProfile.editProfile"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
@@ -667,7 +691,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcU-O0-EVj" userLabel="CurrentPassword" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="343" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-gD-445" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-gD-445" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -676,6 +700,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="settings.changePassword.currentPassword"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="currentPasswordTextChanged:" destination="guc-vr-OfO" eventType="editingChanged" id="D95-qD-Hii"/>
@@ -718,7 +743,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="849-Zp-uEm" userLabel="NewPassword" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="137" width="343" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWa-6E-s5A" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWa-6E-s5A" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="293" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -727,6 +752,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="settings.changePassword.newPassword"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="newPasswordTextChanged:" destination="guc-vr-OfO" eventType="editingChanged" id="uzf-dB-zhV"/>
@@ -769,7 +795,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35D-Mj-Mem" userLabel="ConfirmPassword" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="202" width="343" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ8-lZ-BJi" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ8-lZ-BJi" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="293" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -778,6 +804,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="settings.changePassword.confirmPassword"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="confirmPasswordTextChanged:" destination="guc-vr-OfO" eventType="editingChanged" id="NRB-mM-Y6M"/>
@@ -830,6 +857,7 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.changePassword"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changePasswordAction:" destination="guc-vr-OfO" eventType="touchUpInside" id="dHy-ug-r11"/>
@@ -861,6 +889,9 @@
                                 <action selector="dismissAction:" destination="guc-vr-OfO" id="5HV-os-PAk"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.editProfile.changePassword"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -901,7 +932,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuT-qr-Pwg" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="70" width="343" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRL-Qd-GGd" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRL-Qd-GGd" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -910,6 +941,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="settings.changeEmail.enterEmail"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="emailTextChanged:" destination="0ul-Bp-E4L" eventType="editingChanged" id="a79-gq-1Jl"/>
@@ -962,6 +994,7 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.editProfile.changeEmail"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeEmailAction:" destination="0ul-Bp-E4L" eventType="touchUpInside" id="M7M-vu-bG2"/>
@@ -987,6 +1020,9 @@
                                 <action selector="dismissAction:" destination="0ul-Bp-E4L" id="YVz-Xc-n5y"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.editProfile.changeEmail"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1027,6 +1063,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.report.description"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nvd-XY-Izg" userLabel="specialization">
                                 <rect key="frame" x="16" y="76.5" width="343" height="43"/>
@@ -1060,6 +1099,7 @@
                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.report.subject"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="subjectAction:" destination="FmV-8O-9kv" eventType="touchUpInside" id="S4e-9q-4ic"/>
@@ -1092,7 +1132,7 @@
                                         <color key="textColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MR0-4x-coq" customClass="SCTextViewWithPlaceholder" customModule="SwiftCake">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MR0-4x-coq" customClass="SCTextViewWithPlaceholder" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="249.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1135,6 +1175,7 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.report.send"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="reportAction:" destination="FmV-8O-9kv" eventType="touchUpInside" id="JBo-nq-O2u"/>
@@ -1167,6 +1208,9 @@
                                 <action selector="dismissAction:" destination="FmV-8O-9kv" id="g8U-fj-yJJ"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.report.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1753,7 +1797,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDY-8U-Neh" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                 <rect key="frame" x="16" y="70" width="343" height="47"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter phone number" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MvW-pZ-hmz" customClass="SCTextField" customModule="SwiftCake">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter phone number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MvW-pZ-hmz" customClass="SCTextField" customModule="SwiftCake">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1762,6 +1806,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="settings.changeNumber.enterNumber"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="numberChanged:" destination="gCD-fg-2bu" eventType="editingChanged" id="yTq-SB-RY4"/>
@@ -1814,6 +1859,7 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.changeNumber.title"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changePhoneNumberAction:" destination="gCD-fg-2bu" eventType="touchUpInside" id="TEQ-Z1-1oM"/>
@@ -1839,6 +1885,9 @@
                                 <action selector="dismissAction:" destination="gCD-fg-2bu" id="Ene-fU-YZZ"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.changeNumber.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

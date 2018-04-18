@@ -43,7 +43,8 @@
                 "surnameTooLong": "اللقب يمكن أن يكون بحد أقصى 30 حرفًا",
                 "nameTooShort": "يجب أن يحتوي الاسم على 3 أحرف على الأقل",
                 "surnameTooShort": "يجب أن تحتوي الاسم على 3 أحرف على الأقل",
-                "diffrentPasswords": "كلمة السر غير متطابقة"
+                "diffrentPasswords": "كلمة السر غير متطابقة",
+                "phoneNumberExists": "الهاتف مأخوذ بالفعل"
             }
         },
         "doctor": {
@@ -83,6 +84,42 @@
             "userBlocked": "هذا المستخدم محظور"
         }
     },
+    "settings": {
+        "editProfile": {
+            "changeEmail": "تغيير الايميل",
+            "changeNumber": "تغيير رقم",
+            "changePassword": "تغيير كلمة السر",
+            "changeProfilePicture": "تغيير صورة الملف الشخصي",
+            "saveChanges": "حفظ التغييرات",
+            "deleteAccount": "حذف الحساب",
+            "editProfile": "تعديل الملف الشخصي"
+        },
+        "changePassword": {
+            "currentPassword": "كلمة السر الحالية",
+            "newPassword": "كلمة السر الجديدة",
+            "confirmPassword": "تأكيد كلمة المرور"
+        },
+        "changeEmail": {
+            "enterEmail": "أدخل البريد الإلكتروني"
+            
+        },
+        "changeNumber": {
+            "title": "غير رقم الهاتف",
+            "enterNumber": "أدخل رقم الهاتف"
+        },
+        "report": {
+            "title": "أبلغ عن",
+            "send": "إرسال",
+            "subject": "اختر الموضوع",
+            "description": "ستتم مراجعة تقريرك خلال 24 ساعة",
+            "placeholder": "رسالتك",
+            "error": {
+                "subjectMissing": "أنت في حاجة لاختيار الموضوع الخاص بك",
+                "messageMissing": "تحتاج إلى كتابة الوصف الخاص بك",
+                "unknown": "لم يتم إرسال التقرير بسبب خطأ"
+            }
+        }
+    },
     "generic": {
         "error": {
             "unknown": "خطأ غير معروف",
@@ -90,7 +127,10 @@
         },
         "ok": "حسنا",
         "success": "نجاح",
-        "cancel": "إلغاء"
+        "cancel": "إلغاء",
+        "specialization": "تخصص",
+        "classification": "تصنيف",
+        "selectOne": "اختر واحدة ..."
         
     }
 }

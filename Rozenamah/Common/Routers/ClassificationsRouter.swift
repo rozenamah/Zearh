@@ -26,14 +26,14 @@ extension ClassificationRouter where Self: Router {
             return
         }
         
-        let alert = UIAlertController(title: "Specialization", message: "Please choose your specialization", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "generic.specialization".localized, message: "session.doctor.specialization".localized, preferredStyle: .actionSheet)
         DoctorSpecialization.all.forEach { (specialization) in
             alert.addAction(UIAlertAction(title: specialization.title, style: .default, handler: { (action) in
                 // Cast view controller as delegate to get appropriate specialization
                 (viewController as? ClassificationDelegate)?.specializationSelected(specialization)
             }))
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
     
@@ -43,14 +43,14 @@ extension ClassificationRouter where Self: Router {
             return
         }
         
-        let alert = UIAlertController(title: "Classification", message: "Please choose your classification", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "generic.classification".localized, message: "session.doctor.classification".localized, preferredStyle: .actionSheet)
         Classification.all.forEach { (classification) in
             alert.addAction(UIAlertAction(title: classification.title, style: .default, handler: { (action) in
                 // Cast view controller as delegate to get appropriate classification
                 (viewController as? ClassificationDelegate)?.classificationSelected(classification)
             }))
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
         
     }
