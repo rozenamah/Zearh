@@ -30,6 +30,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     @IBOutlet weak var doctorView: UIView!
     @IBOutlet weak var professionView: UIView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet var buttonCollection: [SCButton]!
     
     // MARK: Properties
     var interactor: EditProfileBusinessLogic?
@@ -73,6 +74,11 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
                 filCurrentFilters(for: editForm)
             } else {
                 doctorView.isHidden = true
+            }
+            
+            if self.view.isRTL() {
+                // Set aligment to right if RTL language
+                buttonCollection.forEach({ $0.contentHorizontalAlignment = .right })
             }
         }
     }

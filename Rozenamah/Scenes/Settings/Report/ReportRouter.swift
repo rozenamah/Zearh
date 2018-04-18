@@ -13,21 +13,21 @@ class ReportRouter: Router, AlertRouter {
     // MARK: Navigation
     
     func showReportSent() {
-        let alert = UIAlertController(title: nil, message: "Report was sent", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+        let alert = UIAlertController(title: nil, message: "settings.report.reportSent".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in
             self.dismiss()
         }))
         viewController?.present(alert, animated: true, completion: nil)
     }
     
     func navigateToSelectingSubject() {
-        let alert = UIAlertController(title: "Subject", message: "Please choose your subject", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "settings.report.alertTitle".localized, message: "settings.report.selectSubject".localized, preferredStyle: .actionSheet)
         ReportSubject.all.forEach { (subject) in
             alert.addAction(UIAlertAction(title: subject.title, style: .default, handler: { (action) in
                 self.viewController?.subjectSelected(subject)
             }))
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
         
     }

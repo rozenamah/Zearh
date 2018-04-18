@@ -97,15 +97,17 @@
         "changePassword": {
             "currentPassword": "كلمة السر الحالية",
             "newPassword": "كلمة السر الجديدة",
-            "confirmPassword": "تأكيد كلمة المرور"
+            "confirmPassword": "تأكيد كلمة المرور",
+            "passwordChanged": "تم تغيير كلمة السر الخاصة بك"
         },
         "changeEmail": {
-            "enterEmail": "أدخل البريد الإلكتروني"
-            
+            "enterEmail": "أدخل البريد الإلكتروني",
+            "emailChanged": "تم تغيير بريدك الإلكتروني"
         },
         "changeNumber": {
             "title": "غير رقم الهاتف",
-            "enterNumber": "أدخل رقم الهاتف"
+            "enterNumber": "أدخل رقم الهاتف",
+            "numberChanged": "تم تغيير رقم هاتفك"
         },
         "report": {
             "title": "أبلغ عن",
@@ -113,6 +115,9 @@
             "subject": "اختر الموضوع",
             "description": "ستتم مراجعة تقريرك خلال 24 ساعة",
             "placeholder": "رسالتك",
+            "reportSent": "تم إرسال تقريرك",
+            "selectSubject": "يرجى اختيار الموضوع الخاص بك",
+            "alertTitle": "موضوع",
             "error": {
                 "subjectMissing": "أنت في حاجة لاختيار الموضوع الخاص بك",
                 "messageMissing": "تحتاج إلى كتابة الوصف الخاص بك",

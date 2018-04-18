@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
-    func isRTL -> Bool {
+    func isRTL() -> Bool {
         return effectiveUserInterfaceLayoutDirection == .rightToLeft
+    }
 }

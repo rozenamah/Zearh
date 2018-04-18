@@ -62,8 +62,13 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        if self.view.isRTL() {
+            subjectButton.contentHorizontalAlignment = .right
+            textView.textAlignment = .right
+        }
         textView.textContainerInset = UIEdgeInsets(top: 0, left: 13, bottom: 0, right: 0)
         textView.placeholder = "settings.report.placeholder".localized
+        
     }
 
     // MARK: Event handling

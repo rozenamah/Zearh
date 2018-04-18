@@ -98,15 +98,18 @@
         "changePassword": {
             "currentPassword": "Current password",
             "newPassword": "New password",
-            "confirmPassword": "Confirm password"
+            "confirmPassword": "Confirm password",
+            "passwordChanged": "Your password has been changed"
         },
         "changeEmail": {
-            "enterEmail": "Enter email"
+            "enterEmail": "Enter email",
+            "emailChanged": "Your email has been changed"
             
         },
         "changeNumber": {
             "title": "Change phone number",
-            "enterNumber": "Enter phone number"
+            "enterNumber": "Enter phone number",
+            "numberChanged": "Your phone number has been changed"
         },
         "report": {
             "title": "Report",
@@ -114,6 +117,9 @@
             "subject": "Select subject",
             "description": "Your report will be reviewed within 24 hours",
             "placeholder": "Your message",
+            "reportSent": "Your report was sent",
+            "selectSubject": "Please choose your subject",
+            "alertTitle": "Subject",
             "error": {
                 "subjectMissing": "You need to choose your subject",
                 "messageMissing": "You need to write your description",

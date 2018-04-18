@@ -427,10 +427,10 @@
                                                     <action selector="saveChanges:" destination="nyP-id-tOB" eventType="touchUpInside" id="AGo-iE-YVN"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pr2-d9-b4x" userLabel="Edit profile">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pr2-d9-b4x" userLabel="Change email">
                                                 <rect key="frame" x="16" y="730.5" width="343" height="37"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5n-7l-ray">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5n-7l-ray" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="40" maxY="8"/>
@@ -445,7 +445,7 @@
                                                             <segue destination="7oc-As-9Df" kind="presentation" id="Sy9-mP-hXh"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-Jo-5cL">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhf-Jo-5cL" userLabel="Separator">
                                                         <rect key="frame" x="0.0" y="36" width="343" height="1"/>
                                                         <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -462,17 +462,17 @@
                                                     <constraint firstAttribute="bottom" secondItem="hhf-Jo-5cL" secondAttribute="bottom" id="65h-NW-8Zs"/>
                                                     <constraint firstItem="z5n-7l-ray" firstAttribute="top" secondItem="Pr2-d9-b4x" secondAttribute="top" id="9H7-4h-NPd"/>
                                                     <constraint firstItem="hhf-Jo-5cL" firstAttribute="leading" secondItem="Pr2-d9-b4x" secondAttribute="leading" id="E05-kU-n8l"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iMJ-fG-QeF" secondAttribute="trailing" constant="16" id="M12-YK-onz"/>
+                                                    <constraint firstAttribute="right" secondItem="iMJ-fG-QeF" secondAttribute="right" constant="16" id="M12-YK-onz"/>
                                                     <constraint firstAttribute="trailing" secondItem="z5n-7l-ray" secondAttribute="trailing" id="STC-cc-QQh"/>
                                                     <constraint firstItem="z5n-7l-ray" firstAttribute="leading" secondItem="Pr2-d9-b4x" secondAttribute="leading" id="X0F-uO-cKi"/>
                                                     <constraint firstItem="iMJ-fG-QeF" firstAttribute="centerY" secondItem="z5n-7l-ray" secondAttribute="centerY" id="Z6C-lk-YKX"/>
                                                     <constraint firstAttribute="trailing" secondItem="hhf-Jo-5cL" secondAttribute="trailing" id="emu-xW-N7B"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VS-1E-PLb" userLabel="Edit profile">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VS-1E-PLb" userLabel="Change password">
                                                 <rect key="frame" x="16" y="836.5" width="343" height="37"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-wp-a3a">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-wp-a3a" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="40" maxY="8"/>
@@ -487,7 +487,7 @@
                                                             <segue destination="clz-2u-wQ5" kind="presentation" id="RxT-9I-JSZ"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-Ee-pna">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-Ee-pna" userLabel="Separator">
                                                         <rect key="frame" x="0.0" y="36" width="343" height="1"/>
                                                         <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -501,7 +501,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="HeT-wp-a3a" secondAttribute="trailing" id="M8n-Kp-w2B"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ep3-5n-Tpm" secondAttribute="trailing" constant="16" id="Reo-23-0IX"/>
+                                                    <constraint firstAttribute="right" secondItem="Ep3-5n-Tpm" secondAttribute="right" constant="16" id="Reo-23-0IX"/>
                                                     <constraint firstAttribute="bottom" secondItem="Kfc-Ee-pna" secondAttribute="bottom" id="XZF-w0-0Ib"/>
                                                     <constraint firstItem="HeT-wp-a3a" firstAttribute="top" secondItem="3VS-1E-PLb" secondAttribute="top" id="drn-8x-Knl"/>
                                                     <constraint firstItem="HeT-wp-a3a" firstAttribute="leading" secondItem="3VS-1E-PLb" secondAttribute="leading" id="k6N-69-1QA"/>
@@ -534,10 +534,10 @@
                                                     <action selector="deleteAccountAction:" destination="nyP-id-tOB" eventType="touchUpInside" id="Y8R-LZ-GGX"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-Go-Cm6" userLabel="Edit profile">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-Go-Cm6" userLabel="Change phone number">
                                                 <rect key="frame" x="16" y="783.5" width="343" height="37"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOx-yK-pUE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOx-yK-pUE" customClass="SCButton" customModule="SwiftCake">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="40" maxY="8"/>
@@ -552,7 +552,7 @@
                                                             <segue destination="0CT-hP-OgB" kind="presentation" id="vJO-Z6-Wh1"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-aZ-E66">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-aZ-E66" userLabel="Separator">
                                                         <rect key="frame" x="0.0" y="36" width="343" height="1"/>
                                                         <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -571,7 +571,7 @@
                                                     <constraint firstItem="YOx-yK-pUE" firstAttribute="leading" secondItem="DG0-Go-Cm6" secondAttribute="leading" id="HBr-xK-KvE"/>
                                                     <constraint firstAttribute="trailing" secondItem="OgE-aZ-E66" secondAttribute="trailing" id="aBB-mQ-Kx7"/>
                                                     <constraint firstItem="Qsa-fn-pce" firstAttribute="centerY" secondItem="YOx-yK-pUE" secondAttribute="centerY" id="jZU-qE-ldY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Qsa-fn-pce" secondAttribute="trailing" constant="16" id="kr1-vh-poi"/>
+                                                    <constraint firstAttribute="right" secondItem="Qsa-fn-pce" secondAttribute="right" constant="16" id="kr1-vh-poi"/>
                                                     <constraint firstAttribute="bottom" secondItem="YOx-yK-pUE" secondAttribute="bottom" id="qhq-nN-wcB"/>
                                                     <constraint firstItem="OgE-aZ-E66" firstAttribute="leading" secondItem="DG0-Go-Cm6" secondAttribute="leading" id="wl2-MA-dKL"/>
                                                 </constraints>
@@ -652,6 +652,11 @@
                         <outlet property="specializationButton" destination="dhk-xB-80v" id="p5R-1M-ZXK"/>
                         <outlet property="specializationView" destination="SrX-XK-HPJ" id="Yi6-Rf-lpG"/>
                         <outlet property="surnameView" destination="Wxp-tU-zPX" id="WRn-y1-Ayk"/>
+                        <outletCollection property="buttonCollection" destination="6Cy-Ot-mRE" collectionClass="NSMutableArray" id="dH6-gu-IPF"/>
+                        <outletCollection property="buttonCollection" destination="dhk-xB-80v" collectionClass="NSMutableArray" id="iB3-yg-q7Y"/>
+                        <outletCollection property="buttonCollection" destination="z5n-7l-ray" collectionClass="NSMutableArray" id="nod-cg-ly1"/>
+                        <outletCollection property="buttonCollection" destination="HeT-wp-a3a" collectionClass="NSMutableArray" id="dfA-mO-Axg"/>
+                        <outletCollection property="buttonCollection" destination="YOx-yK-pUE" collectionClass="NSMutableArray" id="v1j-5c-5yO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VY-Q0-Oed" userLabel="First Responder" sceneMemberID="firstResponder"/>
