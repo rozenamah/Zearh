@@ -50,6 +50,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         // When app detects that is used with layout direction RTL, we change insets to adjust to current view
         if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
             hidePasswordButton.contentEdgeInsets = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 30)
+            emailView.textField.textAlignment = .right
         }
     }
 

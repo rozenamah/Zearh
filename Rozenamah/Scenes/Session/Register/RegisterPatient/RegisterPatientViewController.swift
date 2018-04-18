@@ -32,6 +32,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     @IBOutlet weak var phoneView: RMTextFieldWithError!
     @IBOutlet weak var checkboxButton: SCCheckbox!
     @IBOutlet weak var termsButton: UIButton!
+    @IBOutlet var textfieldCollection: [SCTextField]!
     
     // MARK: Properties
     var interactor: RegisterPatientBusinessLogic?
@@ -80,8 +81,11 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
             checkboxButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
             checkboxButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: -16)
+            termsButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
             checkboxButton.contentHorizontalAlignment = .right
             termsButton.contentHorizontalAlignment = .right
+            // Set text input from right if arabic language
+            textfieldCollection.forEach({ $0.textAlignment = .right })
         }
     }
 
