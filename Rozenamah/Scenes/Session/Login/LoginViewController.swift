@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     // MARK: Outlets
     @IBOutlet weak var emailView: RMTextFieldWithError!
     @IBOutlet weak var passwordView: RMTextFieldWithError!
+    @IBOutlet weak var hidePasswordButton: UIButton!
     
     // MARK: Properties
     var interactor: LoginBusinessLogic?
@@ -46,6 +47,11 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        // When app detects that is used with layout direction RTL, we change insets to adjust to current view
+        if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
+            hidePasswordButton.contentEdgeInsets = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 30)
+            emailView.textField.textAlignment = .right
+        }
     }
 
     // MARK: Event handling

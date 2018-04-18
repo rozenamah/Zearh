@@ -102,7 +102,6 @@ extension AppDelegate {
     
         UITextView.appearance().tintColor = UIColor.rmBlue
         UITextField.appearance().tintColor = UIColor.rmBlue
-        
     }
     
     private func configureAlamofire() {
