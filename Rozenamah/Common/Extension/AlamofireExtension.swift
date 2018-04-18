@@ -56,6 +56,10 @@ extension Alamofire.DataRequest {
                 #endif
                 completion(nil) // No error
             case .failure(let error):
+                if error.localizedDescription == "cancelled" {
+                    return
+                }
+                
                 // Try to unwrap message from server
                 if let rmError = self.errorFrom(response: response) {
                     if retryOnRefresh {
@@ -101,6 +105,10 @@ extension Alamofire.DataRequest {
                     completion(nil, RMError.unknown(error: e))
                 }
             case .failure(let error):
+                if error.localizedDescription == "cancelled" {
+                    return
+                }
+                
                 // Try to unwrap message from server
                 if let rmError = self.errorFrom(response: response) {
                     

@@ -21,7 +21,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     weak var flowDelegate: PatientFlowDelegate?
     
     /// Doctor which is presented to user in order to accept
-    var user: User!
+    var doctor: DoctorResult!
 
     // MARK: Object lifecycle
 
@@ -46,17 +46,26 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
 
     fileprivate func setupView() {
         // Fill doctor data
+        let user = doctor.user
+        let visit = doctor.visit
+        
         doctorNameLabel.text = user.fullname
         classificationLabel.text = user.doctor?.classification.title
-        priceLabel.text = user.doctor?.price != nil ? String(user.doctor!.price) : nil
+        priceLabel.text = "\(visit.price) SAR"
+        phoneButton.setTitle(visit.phone, for: .normal)
+        locationButton.setTitle(visit.distance, for: .normal)
         avatarImageView.setAvatar(for: user)
+        
+        // Without this phone number will rever title to previous one (it is a bug but source is uknown)
+        phoneButton.setTitle(visit.phone, for: .highlighted)
+        locationButton.setTitle(visit.distance, for: .highlighted)
         
     }
 
     // MARK: Event handling
     
     @IBAction func callAction(_ sender: Any) {
-        router?.makeCall(to: "123456778")
+        router?.makeCall(to: doctor.visit.phone)
     }
     
     @IBAction func cancelAction(_ sender: Any) {

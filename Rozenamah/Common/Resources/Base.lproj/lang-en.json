@@ -8,7 +8,7 @@
         },
         "login" : {
             "title": "Login",
-            "email": "Email/Phone number arab",
+            "email": "Email/Phone number",
             "password": "Password",
             "forgotPassword": "Forgot password?",
             "loginButton": "Login",

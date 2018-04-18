@@ -16,14 +16,14 @@ class WaitInteractor: WaitBusinessLogic {
 	// MARK: Business logic
 	
     func searchForDoctor(withFilters form: CallDoctorForm) {
-        worker.searchForDoctos(withFilters: form) { (doctor, error) in
+        request = worker.searchForDoctos(withFilters: form) { (doctor, error) in
             if let error = error {
                 self.presenter?.handleError(error)
                 return
             }
             
-            if let user = doctor {
-                self.presenter?.presentDoctor(user)
+            if let doctor = doctor {
+                self.presenter?.presentDoctor(doctor)
             }
         }
     }

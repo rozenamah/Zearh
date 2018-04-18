@@ -2,7 +2,7 @@ import UIKit
 
 protocol WaitPresentationLogic {
     func handleError(_ error: RMError)
-    func presentDoctor(_ user: User)
+    func presentDoctor(_ doctor: DoctorResult)
 }
 
 class WaitPresenter: WaitPresentationLogic {
@@ -19,7 +19,7 @@ class WaitPresenter: WaitPresentationLogic {
         }
     }
     
-    func presentDoctor(_ user: User) {
-        viewController?.found(doctor: user)
+    func presentDoctor(_ doctor: DoctorResult) {
+        viewController?.found(doctor: doctor)
     }
 }

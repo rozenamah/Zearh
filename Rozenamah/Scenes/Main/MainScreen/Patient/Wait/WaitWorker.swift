@@ -2,11 +2,12 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
+typealias DoctorVisitCompletion = (DoctorResult?, RMError?) -> Void
 
 class WaitWorker {
 	
     @discardableResult
-    func searchForDoctos(withFilters form: CallDoctorForm, completion: @escaping UserCompletion) -> DataRequest? {
+    func searchForDoctos(withFilters form: CallDoctorForm, completion: @escaping DoctorVisitCompletion) -> DataRequest? {
         
         guard let token = Keychain.shared.token else {
             completion(nil, RMError.tokenDoesntExist)
@@ -20,7 +21,7 @@ class WaitWorker {
         
         let request = Alamofire.request(API.Doctor.search.path, method: .get, parameters: params, headers: headers)
             .validate()
-            .responseCodable(type: User.self , completion: completion)
+            .responseCodable(type: DoctorResult.self , completion: completion)
         return request
     }
 }

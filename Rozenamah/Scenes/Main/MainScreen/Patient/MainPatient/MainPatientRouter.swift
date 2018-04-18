@@ -62,13 +62,13 @@ class MainPatientRouter: MainScreenRouter, Router {
         }
     }
     
-    func navigateToAcceptDoctor(withDoctor user: User) {
+    func navigateToAcceptDoctor(withDoctor doctor: DoctorResult) {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return
             }
             
-            self.acceptDoctorVC.user = user // Pass found doctor
+            self.acceptDoctorVC.doctor = doctor // Pass found doctor
             self.add(asChildViewController: self.acceptDoctorVC)
             self.viewController?.containerHeightConstraint.constant = 286
             self.openContainer()
