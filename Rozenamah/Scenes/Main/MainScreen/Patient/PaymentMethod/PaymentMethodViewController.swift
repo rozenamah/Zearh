@@ -1,6 +1,7 @@
 import UIKit
 
 protocol PaymentMethodDisplayLogic: class {
+    func handle(error: Error)
 }
 
 protocol PaymentMethodDelegate: class {
@@ -76,7 +77,8 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
     
     @IBAction func confirmAction(_ sender: Any) {
         if let paymentMethod = paymentMethod {
-            delegate?.patientPayWith(paymentMethod)
+            router?.showWaitAlert()
+            interactor?.accept(doctor: doctor.user, withPaymentMethod: paymentMethod)
         }
     }
     
@@ -85,4 +87,11 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
     }
     
     // MARK: Presenter methods
+    
+    func handle(error: Error) {
+        router?.hideWaitAlert(completion: {
+            self.router?.showError(error)
+        })
+    }
+    
 }

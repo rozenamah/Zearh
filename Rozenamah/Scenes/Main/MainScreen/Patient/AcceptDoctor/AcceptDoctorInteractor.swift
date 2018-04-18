@@ -9,4 +9,5 @@ class AcceptDoctorInteractor: AcceptDoctorBusinessLogic {
 
 	// MARK: Business logic
 	
+    
 }

@@ -61,10 +61,10 @@ class CallDoctorForm: ParamForm {
             params["specialization"] = specialization.rawValue
         }
         if let minPrice = minPrice {
-            params["minPrice"] = minPrice
+            params["min_price"] = minPrice
         }
         if let maxPrice = maxPrice {
-            params["maxPrice"] = maxPrice
+            params["max_price"] = maxPrice
         }
         if let gender = gender {
             params["gender"] = gender.rawValue
