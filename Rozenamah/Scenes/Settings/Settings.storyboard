@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -462,7 +462,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="hhf-Jo-5cL" secondAttribute="bottom" id="65h-NW-8Zs"/>
                                                     <constraint firstItem="z5n-7l-ray" firstAttribute="top" secondItem="Pr2-d9-b4x" secondAttribute="top" id="9H7-4h-NPd"/>
                                                     <constraint firstItem="hhf-Jo-5cL" firstAttribute="leading" secondItem="Pr2-d9-b4x" secondAttribute="leading" id="E05-kU-n8l"/>
-                                                    <constraint firstAttribute="right" secondItem="iMJ-fG-QeF" secondAttribute="right" constant="16" id="M12-YK-onz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iMJ-fG-QeF" secondAttribute="trailing" constant="16" id="M12-YK-onz"/>
                                                     <constraint firstAttribute="trailing" secondItem="z5n-7l-ray" secondAttribute="trailing" id="STC-cc-QQh"/>
                                                     <constraint firstItem="z5n-7l-ray" firstAttribute="leading" secondItem="Pr2-d9-b4x" secondAttribute="leading" id="X0F-uO-cKi"/>
                                                     <constraint firstItem="iMJ-fG-QeF" firstAttribute="centerY" secondItem="z5n-7l-ray" secondAttribute="centerY" id="Z6C-lk-YKX"/>
@@ -501,7 +501,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="HeT-wp-a3a" secondAttribute="trailing" id="M8n-Kp-w2B"/>
-                                                    <constraint firstAttribute="right" secondItem="Ep3-5n-Tpm" secondAttribute="right" constant="16" id="Reo-23-0IX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ep3-5n-Tpm" secondAttribute="trailing" constant="16" id="Reo-23-0IX"/>
                                                     <constraint firstAttribute="bottom" secondItem="Kfc-Ee-pna" secondAttribute="bottom" id="XZF-w0-0Ib"/>
                                                     <constraint firstItem="HeT-wp-a3a" firstAttribute="top" secondItem="3VS-1E-PLb" secondAttribute="top" id="drn-8x-Knl"/>
                                                     <constraint firstItem="HeT-wp-a3a" firstAttribute="leading" secondItem="3VS-1E-PLb" secondAttribute="leading" id="k6N-69-1QA"/>
@@ -571,7 +571,7 @@
                                                     <constraint firstItem="YOx-yK-pUE" firstAttribute="leading" secondItem="DG0-Go-Cm6" secondAttribute="leading" id="HBr-xK-KvE"/>
                                                     <constraint firstAttribute="trailing" secondItem="OgE-aZ-E66" secondAttribute="trailing" id="aBB-mQ-Kx7"/>
                                                     <constraint firstItem="Qsa-fn-pce" firstAttribute="centerY" secondItem="YOx-yK-pUE" secondAttribute="centerY" id="jZU-qE-ldY"/>
-                                                    <constraint firstAttribute="right" secondItem="Qsa-fn-pce" secondAttribute="right" constant="16" id="kr1-vh-poi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Qsa-fn-pce" secondAttribute="trailing" constant="16" id="kr1-vh-poi"/>
                                                     <constraint firstAttribute="bottom" secondItem="YOx-yK-pUE" secondAttribute="bottom" id="qhq-nN-wcB"/>
                                                     <constraint firstItem="OgE-aZ-E66" firstAttribute="leading" secondItem="DG0-Go-Cm6" secondAttribute="leading" id="wl2-MA-dKL"/>
                                                 </constraints>
@@ -657,6 +657,9 @@
                         <outletCollection property="buttonCollection" destination="z5n-7l-ray" collectionClass="NSMutableArray" id="nod-cg-ly1"/>
                         <outletCollection property="buttonCollection" destination="HeT-wp-a3a" collectionClass="NSMutableArray" id="dfA-mO-Axg"/>
                         <outletCollection property="buttonCollection" destination="YOx-yK-pUE" collectionClass="NSMutableArray" id="v1j-5c-5yO"/>
+                        <outletCollection property="arrowImageCollection" destination="iMJ-fG-QeF" collectionClass="NSMutableArray" id="gFk-Hv-BFG"/>
+                        <outletCollection property="arrowImageCollection" destination="Ep3-5n-Tpm" collectionClass="NSMutableArray" id="Mzh-UZ-6XW"/>
+                        <outletCollection property="arrowImageCollection" destination="Qsa-fn-pce" collectionClass="NSMutableArray" id="KgC-zI-X3h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VY-Q0-Oed" userLabel="First Responder" sceneMemberID="firstResponder"/>

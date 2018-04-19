@@ -41,7 +41,7 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     fileprivate func setupView() {
         // If arabic language change aligment
         if self.view.isRTL() {
-            emailView.textField.contentHorizontalAlignment = .right
+            emailView.textField.textAlignment = .right
         }
     }
 

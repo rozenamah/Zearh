@@ -31,6 +31,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     @IBOutlet weak var professionView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet var buttonCollection: [SCButton]!
+    @IBOutlet var arrowImageCollection: [UIImageView]!
     
     // MARK: Properties
     var interactor: EditProfileBusinessLogic?
@@ -79,6 +80,10 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
             if self.view.isRTL() {
                 // Set aligment to right if RTL language
                 buttonCollection.forEach({ $0.contentHorizontalAlignment = .right })
+                buttonCollection.forEach({ $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) })
+                // In arabic we need to change direction of arrows 
+                arrowImageCollection.forEach({ $0.image = UIImage(named: "reversed_chevron") })
+                
             }
         }
     }
