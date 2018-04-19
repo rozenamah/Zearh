@@ -22,6 +22,9 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     
     /// Doctor which is presented to user in order to accept
     var doctor: DoctorResult!
+    
+    /// Filters by which doctor was found
+    var filters: CallDoctorForm!
 
     // MARK: Object lifecycle
 
@@ -69,6 +72,8 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     }
     
     @IBAction func cancelAction(_ sender: Any) {
+        /// Add user to disabled doctors - it won't be displayed again
+        filters.disabledDoctors.append(doctor.user)
         flowDelegate?.changeStateTo(flowPoint: .callDoctor)
     }
 

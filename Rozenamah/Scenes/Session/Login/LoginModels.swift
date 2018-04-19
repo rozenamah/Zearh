@@ -2,10 +2,10 @@ import UIKit
 
 class LoginForm {
     var password: String?
-    var email: String?
+    var login: String?
     
     var base64credentials: String {
-        guard let password = password, let email = email else {
+        guard let password = password, let email = login else {
             return ""
         }
         

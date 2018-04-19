@@ -81,8 +81,8 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             } else {
                 // TODO: No location! display error
             }
-        case .accept(let doctor):
-            router?.navigateToAcceptDoctor(withDoctor: doctor)
+        case .accept(let doctor, let filters):
+            router?.navigateToAcceptDoctor(withDoctor: doctor, byFilters: filters)
         case .pending:
             // Show all buttons when no form visible
             self.viewToHideWhenFormVisible.forEach { $0.isHidden = false }
