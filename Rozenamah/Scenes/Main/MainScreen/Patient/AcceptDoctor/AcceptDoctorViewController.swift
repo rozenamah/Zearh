@@ -77,7 +77,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     }
     
     func patientPayWith(_ type: PaymentMethod) {
-        // TODO: Add logic
+        
     }
     
     // MARK: Presenter methods

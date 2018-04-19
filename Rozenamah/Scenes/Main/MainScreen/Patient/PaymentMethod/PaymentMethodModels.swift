@@ -1,6 +1,6 @@
 import UIKit
 
-enum PaymentMethod {
-    case card
-    case cash
+enum PaymentMethod: String {
+    case card = "card"
+    case cash = "cash"
 }

@@ -8,7 +8,7 @@ class AcceptDoctorRouter: Router, PhoneCallRouter {
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "payment_method_segue" {
-            assignDelegate(segue.destination)
+            passToPaymentMethod(segue.destination)
         }
 
     }
@@ -21,10 +21,11 @@ class AcceptDoctorRouter: Router, PhoneCallRouter {
 
     // MARK: Passing data
     
-    private func assignDelegate(_ vc: UIViewController) {
+    private func passToPaymentMethod(_ vc: UIViewController) {
         let navVC = vc as? UINavigationController
-        let vc = navVC?.viewControllers.first as? PaymentMethodViewController
+        let vc = navVC?.visibleViewController as? PaymentMethodViewController
         vc?.delegate = viewController
+        vc?.doctor = viewController?.doctor
     }
 
 }

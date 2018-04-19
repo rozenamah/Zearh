@@ -1296,6 +1296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F940EC78205BEA4A00266753 /* User.swift in Sources */,
+				F9B9579E208728DE008329F2 /* Visit.swift in Sources */,
+				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				578A6E7E207F659D00CB4E79 /* AcceptPatientInteractor.swift in Sources */,
 				F940EA542058147000266753 /* WelcomeViewController.swift in Sources */,
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
@@ -1379,7 +1382,6 @@
 				F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */,
 				574FC5972084A89A001E4059 /* PaymentMethodViewController.swift in Sources */,
 				F992D343206E3D6D00DF0604 /* MainDoctorConfigurator.swift in Sources */,
-				F9B9579E208728DE008329F2 /* Visit.swift in Sources */,
 				574FC5952084A89A001E4059 /* PaymentMethodRouter.swift in Sources */,
 				F95AFBF8206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift in Sources */,
 				F940EC212059335E00266753 /* RegisterPatientPresenter.swift in Sources */,
@@ -1428,7 +1430,6 @@
 				F95AFBEA206A3DA6007CCFB1 /* PasswordValidation.swift in Sources */,
 				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
 				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
-				F940EC78205BEA4A00266753 /* User.swift in Sources */,
 				573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
 				578A6E882080BD7800CB4E79 /* EndVisitPresenter.swift in Sources */,
@@ -1445,7 +1446,6 @@
 				574FC58620849E1F001E4059 /* PaymentRouter.swift in Sources */,
 				F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */,
 				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
-				F967D3312076380200F2EB75 /* Doctor.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */,
 				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
@@ -1656,6 +1656,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e623c32f-3fb4-4211-a8a4-6ecd12c7dc4e";
 				PROVISIONING_PROFILE_SPECIFIER = "Rozemanah dev";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
