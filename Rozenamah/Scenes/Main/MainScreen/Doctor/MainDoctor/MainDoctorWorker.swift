@@ -22,10 +22,16 @@ class MainDoctorWorker {
         
         Alamofire.request(API.Doctor.availability.path, method: .post, parameters: params, headers: headers)
             .validate()
-            .responseEmpty(completion: completion)
+            .responseEmpty(completion: { (error) in
+                User.current?.doctor?.isAvailable = availbility
+                completion(error)
+            })
+                
+        
     }
     
-    func updateLocation(to location: CLLocation, completion: @escaping ErrorCompletion) {
+    @discardableResult
+    func updateLocation(to location: CLLocation, completion: @escaping ErrorCompletion) -> DataRequest? {
         
         let params: [String: Any] = [
             "latitude": location.coordinate.latitude,
@@ -34,14 +40,14 @@ class MainDoctorWorker {
         
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
-            return
+            return nil
         }
         
         let headers = [
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Doctor.position.path, method: .post, parameters: params, headers: headers)
+        return Alamofire.request(API.Doctor.position.path, method: .post, parameters: params, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

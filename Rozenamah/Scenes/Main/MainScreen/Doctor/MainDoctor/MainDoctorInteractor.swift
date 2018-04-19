@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import Alamofire
 
 protocol MainDoctorBusinessLogic: MainScreenBusinessLogic {
     func stopReceivingRequests()
@@ -20,27 +21,33 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
     /// Timeinterval between next request updating user location
     private let kTimeIntervalBetweenNextRequest: Double = 3 * 60
     
-    /// Last saved location of doctor
-    private var lastSavedLocation: CLLocation?
+    /// Last sent location of doctor
+    private var lastSentLocation: CLLocation?
     
     /// Timestamp when we last sent user location, we use it in order to send user location every 3 minutes
     private var lastSavedDate: Double?
+    
+    /// Currently running query to save position
+    private var lastRequest: DataRequest?
 
 	// MARK: Business logic
 	
     func startReceivingRequests() {
+        
+        guard let location = locationManager.location else {
+            // TODO: No location, show error
+            return
+        }
+        
         worker.updateAvabilityTo(true) { [weak self] (error) in
             if let error = error {
                 self?.presenter?.handleError(error)
                 return
             }
-            
             self?.presenter?.avabilityUpdatedTo(true)
             
             // Send doctor location immidiatly
-            if let location = self?.lastSavedLocation {
-                self?.updateUserLocation(location)
-            }
+            self?.updateUserLocation(location)
         }
     }
     
@@ -50,7 +57,6 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
                 self?.presenter?.handleError(error)
                 return
             }
-            
             self?.presenter?.avabilityUpdatedTo(false)
         }
     }
@@ -58,15 +64,21 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
     /// Update user location, if valudateTime = true, we check if time passed more then 5 mintues between last call, otherwise we skip
     private func updateUserLocation(_ location: CLLocation, validateTime: Bool = false) {
         
+        if lastRequest != nil {
+            return
+        }
+        
         if validateTime,
             let lastTimestamp = lastSavedDate,
             Date().timeIntervalSince1970 - lastTimestamp  > kTimeIntervalBetweenNextRequest {
             return
         }
         
-        worker.updateLocation(to: location, completion: { (error) in
+        lastRequest = worker.updateLocation(to: location, completion: { (error) in
             // Save last call time
             self.lastSavedDate = Date().timeIntervalSince1970
+            self.lastSentLocation = location
+            self.lastRequest = nil
         })
     }
     
@@ -80,11 +92,10 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
         }
         
         // Check if doctor changed distance within 100 meters
-        if lastSavedLocation == nil ||
-            lastSavedLocation!.distance(from: newLocation) >= kDistanceBetweenNextRequest {
+        if lastSentLocation == nil ||
+            lastSentLocation!.distance(from: newLocation) >= kDistanceBetweenNextRequest {
             
-            updateUserLocation(newLocation, validateTime: true)
+            updateUserLocation(newLocation, validateTime: false)
         }
-        lastSavedLocation = locations.first
     }
 }

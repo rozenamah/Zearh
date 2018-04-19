@@ -60,10 +60,12 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         router?.configureFirstScreen()
         
         // If doctor available at start - mark button as available
+        requestsReceiveButton.setTitle("Stop receiving visit requests", for: .selected)
+        requestsReceiveButton.setTitle("Start receiving visit requests", for: .normal)
         if User.current?.doctor?.isAvailable ?? false {
-            markAsRejectingRequests()
-        } else {
             markAsWaitingForRequests()
+        } else {
+            markAsRejectingRequests()
         }
     }
     
