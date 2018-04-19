@@ -138,7 +138,8 @@
             "byCard": "By card",
             "byCash": "By cash",
             "arrivalTime": "Arrival time",
-            "leaveTime": "Leave time"
+            "leaveTime": "Leave time",
+            "title": "Transactions"
         }
     },
     "generic": {

@@ -129,14 +129,15 @@
             "weekly": "أسبوعيا",
             "monthly": "شهريا",
             "total": "مجموع",
-            "visits": "مرة",
+            "visits": "يزور",
             "payment": "دفع",
             "feeInfo": "رسوم للإلغاء",
             "paymentMethod": "طريقة الدفع او السداد",
             "byCard": "عن طريق البطاقة",
             "byCash": "نقدا",
             "arrivalTime": "وقت الوصول",
-            "leaveTime": "اترك الوقت"
+            "leaveTime": "اترك الوقت",
+            "title": "المعاملات"
         }
     },
     "generic": {

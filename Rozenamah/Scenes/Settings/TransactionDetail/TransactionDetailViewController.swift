@@ -12,7 +12,11 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
+    @IBOutlet weak var rightAddressConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var rightDateConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mapImage: UIImageView!
+    @IBOutlet weak var calendarImage: UIImageView!
     // MARK: Properties
     var interactor: TransactionDetailBusinessLogic?
     var router: TransactionDetailRouter?
@@ -40,6 +44,12 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
 
     fileprivate func setupView() {
         customizeUserDetails()
+        // Adjust view for arabic language
+        if self.view.isRTL() {
+            // 
+            rightAddressConstraint.constant = 16 + mapImage.bounds.width
+            rightDateConstraint.constant = 16 + calendarImage.bounds.width
+        }
     }
     
     private func customizeUserDetails() {

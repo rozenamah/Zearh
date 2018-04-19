@@ -59,11 +59,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="y0N-y1-N3O" firstAttribute="left" secondItem="Ojd-iY-bk2" secondAttribute="left" id="Paz-F3-C6h"/>
                                     <constraint firstItem="SAf-4Z-WWJ" firstAttribute="centerY" secondItem="y0N-y1-N3O" secondAttribute="centerY" id="S8a-dQ-4yC"/>
                                     <constraint firstAttribute="bottom" secondItem="y0N-y1-N3O" secondAttribute="bottom" id="TKt-ae-8CO"/>
                                     <constraint firstItem="SAf-4Z-WWJ" firstAttribute="left" secondItem="y0N-y1-N3O" secondAttribute="right" constant="16" id="mcl-x3-5Xw"/>
                                     <constraint firstItem="y0N-y1-N3O" firstAttribute="top" secondItem="Ojd-iY-bk2" secondAttribute="top" id="pos-sz-9eb"/>
+                                    <constraint firstItem="y0N-y1-N3O" firstAttribute="leading" secondItem="Ojd-iY-bk2" secondAttribute="leading" id="zrY-WU-tn4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uO-96-8Yy">
@@ -76,7 +76,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bushwick 12, Brooklyn" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-kg-Mxd">
-                                        <rect key="frame" x="35" y="2" width="135" height="16"/>
+                                        <rect key="frame" x="35" y="1.5" width="135" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="P2U-rX-UMp" firstAttribute="left" secondItem="0uO-96-8Yy" secondAttribute="left" id="21s-if-YW1"/>
+                                    <constraint firstItem="P2U-rX-UMp" firstAttribute="leading" secondItem="0uO-96-8Yy" secondAttribute="leading" id="21s-if-YW1"/>
                                     <constraint firstItem="P2U-rX-UMp" firstAttribute="top" secondItem="0uO-96-8Yy" secondAttribute="top" id="2SF-JC-TtX"/>
                                     <constraint firstItem="gSn-kg-Mxd" firstAttribute="centerY" secondItem="P2U-rX-UMp" secondAttribute="centerY" id="8S7-mL-v09"/>
                                     <constraint firstAttribute="bottom" secondItem="P2U-rX-UMp" secondAttribute="bottom" id="9Tp-Bs-bEW"/>

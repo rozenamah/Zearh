@@ -75,7 +75,6 @@
                                     <constraint firstAttribute="bottom" secondItem="Pxm-LU-Iv9" secondAttribute="bottom" constant="25.5" id="CLG-oH-ucp"/>
                                     <constraint firstItem="Pxm-LU-Iv9" firstAttribute="centerX" secondItem="QAc-qd-Zvw" secondAttribute="centerX" id="gjZ-Sd-DGu"/>
                                     <constraint firstItem="QAc-qd-Zvw" firstAttribute="top" secondItem="261-Tk-a9C" secondAttribute="top" constant="24" id="rEU-Nl-KNh"/>
-                                    <constraint firstAttribute="right" secondItem="QAc-qd-Zvw" secondAttribute="right" constant="22" id="sCy-pM-Fkd"/>
                                     <constraint firstItem="QAc-qd-Zvw" firstAttribute="centerX" secondItem="261-Tk-a9C" secondAttribute="centerX" id="tIb-9A-eDe"/>
                                 </constraints>
                             </view>
