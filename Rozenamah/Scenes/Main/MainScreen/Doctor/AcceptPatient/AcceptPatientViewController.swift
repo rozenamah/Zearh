@@ -22,6 +22,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     
     // Delegate responsible for doctors action, whether accept or cancel patient
     weak var flowDelegate: DoctortFlowDelegate?
+    var patientInfo: DoctorResult?
 
     // MARK: Object lifecycle
 
@@ -45,6 +46,16 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        
+    }
+    
+    private func customizePatientInfo() {
+        avatarImageView.setAvatar(for: patientInfo?.user)
+        nameLabel.text = patientInfo?.user.fullname
+        priceLabel.text = "\(patientInfo?.visit.price)"
+        feeLabel.text = "\(patientInfo?.visit.fee)"
+        phoneNumber.setTitle("\(patientInfo?.visit.phone)", for: .normal)
+        distanceLabel.setTitle("\(patientInfo?.visit.distance)", for: .normal)
     }
 
     // MARK: Event handling
@@ -65,7 +76,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     
     @IBAction func phoneAction(_ sender: Any) {
-        router?.makeCall(to: "123456778")
+        router?.makeCall(to: "\(patientInfo?.visit.phone)")
     }
     
     @IBAction func mapAction(_ sender: Any) {

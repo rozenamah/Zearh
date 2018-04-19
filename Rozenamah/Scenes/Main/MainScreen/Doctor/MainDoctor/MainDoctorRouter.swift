@@ -8,6 +8,13 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return viewController
     }
     
+    private static let kVisitRequestNotification = Notification.Name("kVisitRequestNotification")
+    
+    override init() {
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainDoctorRouter.kVisitRequestNotification, object: nil)
+    }
+    
     lazy var patientFormVC: AcceptPatientViewController = {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "accept_patient_vc") as! AcceptPatientViewController
         vc.flowDelegate = viewController
@@ -15,12 +22,23 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }()
     
     // MARK: Routing
+    
+    static func resolve(visit: DoctorResult) {
+        NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["visit" : visit])
+    }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
 
     }
 
     // MARK: Navigation
+    
+    @objc func handleNotification(for notification: NSNotification) {
+        if let visit = notification.userInfo?["visit"] as? DoctorResult {
+            patientFormVC.patientInfo = visit
+            openContainer()
+        }
+    }
     
     /// Adds patient form at app start
     func configureFirstScreen() {

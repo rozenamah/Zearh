@@ -135,7 +135,7 @@ extension ReportViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if self.textView.text == "" {
-            self.textView.placeholder = "Your message"
+            self.textView.placeholder = "settings.report.placeholder".localized
         }
         messageView.adjustToState(.inactive)
     }

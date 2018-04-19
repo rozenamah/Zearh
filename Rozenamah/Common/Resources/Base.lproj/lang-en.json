@@ -13,7 +13,7 @@
             "forgotPassword": "Forgot password?",
             "loginButton": "Login",
             "error": {
-                "incorrectEmail": "Email is incorrect",
+                "incorrectEmail": "Login is incorrect",
                 "passwordTooShort": "Password must have at least 4 characters",
                 "passwordTooLong": "Password can have maximum 30 characters",
                 "invalidEmailPassword": "Email or password is invalid",

@@ -14,15 +14,22 @@ class ReportForm {
 }
 
 enum ReportSubject: String, Decodable {
-    case test = "test"
+    
+    case notArrived = "notArrived"
+    case late = "late"
+    case misbehave = "misbehaved"
+    case other = "other"
     
     static var all: [ReportSubject] {
-        return [.test, ]
+        return [.notArrived, .late, .misbehave, .other ]
     }
     
     var title: String {
         switch self {
-        case .test: return "test"
+        case .notArrived: return "Doctor did not arrive"
+        case .late: return "Doctor was late"
+        case .misbehave: return "Doctor was behaving badly"
+        case .other: return "Other"
         }
     }
 }

@@ -13,7 +13,7 @@
             "forgotPassword": "هل نسيت كلمة المرور؟",
             "loginButton": "تسجيل الدخول",
             "error": {
-                "incorrectEmail": "البريد الإلكتروني غير صحيح",
+                "incorrectEmail": "تسجيل الدخول غير صحيح",
                 "passwordTooShort": "يجب أن تحتوي كلمة المرور على 4 أحرف على الأقل",
                 "passwordTooLong": "يمكن أن تحتوي كلمة المرور على 30 حرفًا كحد أقصى",
                 "invalidEmailPassword": "البريد الإلكتروني أو كلمة المرور غير صالحة",
