@@ -55,7 +55,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
         priceLabel.text = "\(patientInfo?.visit.price)"
         feeLabel.text = "\(patientInfo?.visit.fee)"
         phoneNumber.setTitle("\(patientInfo?.visit.phone)", for: .normal)
-        distanceLabel.setTitle("\(patientInfo?.visit.distance)", for: .normal)
+       // distanceLabel.setTitle("\(patientInfo?.visit.distance)", for: .normal)
     }
 
     // MARK: Event handling

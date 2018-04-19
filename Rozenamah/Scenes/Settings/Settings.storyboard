@@ -1295,6 +1295,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.daily"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="dailyAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="gsN-Tm-doi"/>
@@ -1334,6 +1335,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.weekly"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="weeklyAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="lEW-Dc-E6k"/>
@@ -1373,6 +1375,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.monthly"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="monthlyAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="rC6-zK-y9f"/>
@@ -1412,6 +1415,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.total"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="totalAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="SZc-zg-hH3"/>

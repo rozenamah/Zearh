@@ -125,6 +125,20 @@
                 "messageMissing": "You need to write your description",
                 "unknown": "Report was not sent due to an error"
             }
+        },
+        "transactionHistory": {
+            "daily": "Daily",
+            "weekly": "Weekly",
+            "monthly": "Monthly",
+            "total": "Total",
+            "visits": "Visits",
+            "payment": "Payment",
+            "feeInfo": "fee for cancellation",
+            "paymentMethod": "Payment method",
+            "byCard": "By card",
+            "byCash": "By cash",
+            "arrivalTime": "Arrival time",
+            "leaveTime": "Leave time"
         }
     },
     "generic": {

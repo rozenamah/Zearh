@@ -123,6 +123,20 @@
                 "messageMissing": "تحتاج إلى كتابة الوصف الخاص بك",
                 "unknown": "لم يتم إرسال التقرير بسبب خطأ"
             }
+        },
+        "transactionHistory": {
+            "daily": "يوميا",
+            "weekly": "أسبوعيا",
+            "monthly": "شهريا",
+            "total": "مجموع",
+            "visits": "مرة",
+            "payment": "دفع",
+            "feeInfo": "رسوم للإلغاء",
+            "paymentMethod": "طريقة الدفع او السداد",
+            "byCard": "عن طريق البطاقة",
+            "byCash": "نقدا",
+            "arrivalTime": "وقت الوصول",
+            "leaveTime": "اترك الوقت"
         }
     },
     "generic": {
