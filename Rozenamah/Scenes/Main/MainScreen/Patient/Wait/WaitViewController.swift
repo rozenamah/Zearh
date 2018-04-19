@@ -3,6 +3,7 @@ import UIKit
 protocol WaitDisplayLogic: class {
     func handle(error: Error)
     func found(doctor: DoctorResult)
+    func noDoctorFoundMatchingCriteria()
 }
 
 class WaitViewController: UIViewController, WaitDisplayLogic {
@@ -62,6 +63,10 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     }
     
     func found(doctor: DoctorResult) {
-        flowDelegate?.changeStateTo(flowPoint: .accept(doctor: doctor))
+        flowDelegate?.changeStateTo(flowPoint: .accept(doctor: doctor, foundByFilters: filters))
+    }
+    
+    func noDoctorFoundMatchingCriteria() {
+        router?.showNoDoctorFound()
     }
 }

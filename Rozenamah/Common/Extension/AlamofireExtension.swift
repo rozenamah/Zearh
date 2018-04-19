@@ -24,6 +24,7 @@ enum RMError: LocalizedError {
     
     case unknown(error: Error)
     case tokenDoesntExist
+    case noData
     case status(code: StatusCode, response: ErrorResponse)
     
     var errorDescription: String? {
@@ -36,6 +37,8 @@ enum RMError: LocalizedError {
             return error.message
         case .tokenDoesntExist:
             return "You need to sign in again"
+        case .noData:
+            return "Data not found"
         }
     }
 }
@@ -94,6 +97,11 @@ extension Alamofire.DataRequest {
             switch response.result {
             case .success(let value):
                 do {
+                    if value.isEmpty {
+                        completion(nil, RMError.noData) // Status might be "not found" and data will be empty
+                        return
+                    }
+                    
                     #if DEBUG
                         if let json = String(data: value, encoding: .utf8) {
                             print("Response\n:\(json)")

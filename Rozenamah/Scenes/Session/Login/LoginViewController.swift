@@ -105,7 +105,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     @IBAction func emailTextChanged(_ sender: UITextField) {
-        loginForm.email = sender.text
+        loginForm.login = sender.text
         textFieldDidBeginEditing(sender) // To mark as active
     }
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8s8-ou-0ef">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8s8-ou-0ef">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -879,7 +879,7 @@
                                     <constraint firstItem="AqE-sW-kth" firstAttribute="top" secondItem="TiW-Q0-P5K" secondAttribute="bottom" constant="24" id="yQF-Ow-P4n"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARq-wI-KiE">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARq-wI-KiE" userLabel="bottomSpace">
                                 <rect key="frame" x="0.0" y="450" width="375" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1317,13 +1317,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor accepted your visit request - you need to pay for visit within 10 minutes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pws-ay-RFk">
-                                <rect key="frame" x="16" y="88" width="343" height="21"/>
+                                <rect key="frame" x="16" y="88" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-VA-GzN">
-                                <rect key="frame" x="16" y="141" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="161" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-og-p7r">
                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="20.5"/>
@@ -1359,7 +1359,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrQ-z8-zBI">
-                                <rect key="frame" x="16" y="193.5" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="213.5" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Payment method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH5-uC-tm4">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -1395,7 +1395,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR3-4x-FKZ" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="262" width="343" height="39"/>
+                                <rect key="frame" x="16" y="282" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -1413,7 +1413,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEE-7i-epF" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="325" width="343" height="39"/>
+                                <rect key="frame" x="16" y="345" width="343" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -2128,7 +2128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="skg-ND-2mD" customClass="SCImageView" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="77" width="90" height="90"/>
+                                <rect key="frame" x="16" y="76.5" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="20o-vH-lFl"/>
                                     <constraint firstAttribute="width" constant="90" id="70F-XR-z4M"/>
@@ -2140,7 +2140,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BSN-Gh-9os" customClass="SCView" customModule="SwiftCake">
-                                <rect key="frame" x="138" y="117" width="73" height="30"/>
+                                <rect key="frame" x="138" y="116.5" width="73" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1j-zc-1qW">
                                         <rect key="frame" x="13" y="4" width="47" height="21"/>
@@ -2162,8 +2162,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3A-LW-c4Y" userLabel="bottomSpace">
+                                <rect key="frame" x="0.0" y="331.5" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="5F4-hP-fjs"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amB-Pr-AMI">
-                                <rect key="frame" x="138" y="163" width="100" height="19"/>
+                                <rect key="frame" x="138" y="162.5" width="100" height="19"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2175,7 +2182,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yV-Wy-dHF">
-                                <rect key="frame" x="138" y="198" width="123" height="19"/>
+                                <rect key="frame" x="138" y="197.5" width="123" height="19"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2187,7 +2194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hou-xf-5FC" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="293" width="163.5" height="39"/>
+                                <rect key="frame" x="16" y="292.5" width="163.5" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -2206,7 +2213,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-70-dcW" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="196" y="293" width="163" height="39"/>
+                                <rect key="frame" x="196" y="292.5" width="163" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -2231,25 +2238,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm in 15 minutes to accept visit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73F-KM-JXt">
-                                <rect key="frame" x="41" y="24" width="293" height="21"/>
+                                <rect key="frame" x="41" y="24" width="293" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fP-sL-Rzm">
-                                <rect key="frame" x="138" y="77" width="221" height="24"/>
+                                <rect key="frame" x="138" y="76.5" width="221" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-Tk-7k2">
-                                <rect key="frame" x="227" y="116.5" width="101" height="31.5"/>
+                                <rect key="frame" x="227" y="116" width="101" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5p-By-Cry">
-                                <rect key="frame" x="127" y="241" width="121" height="20"/>
+                                <rect key="frame" x="127" y="240.5" width="121" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="8pB-dS-L3Q"/>
                                 </constraints>
@@ -2264,7 +2271,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="E3A-LW-c4Y" firstAttribute="leading" secondItem="WZ5-yC-dWO" secondAttribute="leading" id="5bh-ph-Q1g"/>
                             <constraint firstItem="ibZ-Tk-7k2" firstAttribute="centerY" secondItem="BSN-Gh-9os" secondAttribute="centerY" id="6P9-BH-o0d"/>
+                            <constraint firstAttribute="trailing" secondItem="E3A-LW-c4Y" secondAttribute="trailing" id="7RN-Tl-bzU"/>
                             <constraint firstItem="BSN-Gh-9os" firstAttribute="leading" secondItem="8fP-sL-Rzm" secondAttribute="leading" id="BGk-xh-KXh"/>
                             <constraint firstItem="azs-ow-7c0" firstAttribute="trailing" secondItem="8fP-sL-Rzm" secondAttribute="trailing" constant="16" id="J8L-Fi-bRr"/>
                             <constraint firstItem="8fP-sL-Rzm" firstAttribute="top" secondItem="73F-KM-JXt" secondAttribute="bottom" constant="32" id="MdA-B4-OAb"/>
@@ -2287,6 +2296,7 @@
                             <constraint firstItem="v4P-70-dcW" firstAttribute="leading" secondItem="hou-xf-5FC" secondAttribute="trailing" constant="16" id="oen-xO-ekH"/>
                             <constraint firstItem="v4P-70-dcW" firstAttribute="width" secondItem="hou-xf-5FC" secondAttribute="width" id="rXv-ma-ZgK"/>
                             <constraint firstItem="1yV-Wy-dHF" firstAttribute="leading" secondItem="amB-Pr-AMI" secondAttribute="leading" id="v7F-oE-znV"/>
+                            <constraint firstItem="E3A-LW-c4Y" firstAttribute="top" secondItem="hou-xf-5FC" secondAttribute="bottom" id="x6b-CP-8Te"/>
                             <constraint firstItem="skg-ND-2mD" firstAttribute="top" secondItem="73F-KM-JXt" secondAttribute="bottom" constant="32" id="xKR-fM-Cqc"/>
                             <constraint firstItem="azs-ow-7c0" firstAttribute="trailing" secondItem="73F-KM-JXt" secondAttribute="trailing" constant="41" id="zkE-80-zV0"/>
                         </constraints>
@@ -2732,7 +2742,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajy-uB-Khx" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="437" width="343" height="39"/>
+                                <rect key="frame" x="16" y="436.5" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -2750,13 +2760,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your payment method" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-gb-bXj">
-                                <rect key="frame" x="16" y="341" width="343" height="21"/>
+                                <rect key="frame" x="16" y="341" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-xu-nmC">
-                                <rect key="frame" x="16" y="380" width="93" height="33"/>
+                                <rect key="frame" x="16" y="379.5" width="93" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2773,7 +2783,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-vf-dDF">
-                                <rect key="frame" x="134" y="380" width="95" height="33"/>
+                                <rect key="frame" x="134" y="379.5" width="95" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>

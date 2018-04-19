@@ -14,6 +14,8 @@ class WaitPresenter: WaitPresentationLogic {
     // messages
     func handleError(_ error: RMError) {
         switch error {
+        case .noData:
+            viewController?.noDoctorFoundMatchingCriteria()
         default:
             viewController?.handle(error: error)
         }
@@ -22,4 +24,5 @@ class WaitPresenter: WaitPresentationLogic {
     func presentDoctor(_ doctor: DoctorResult) {
         viewController?.found(doctor: doctor)
     }
+    
 }

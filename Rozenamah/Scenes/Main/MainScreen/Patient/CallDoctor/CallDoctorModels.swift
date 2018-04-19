@@ -33,6 +33,7 @@ class CallDoctorForm: ParamForm {
     var gender: Gender?
     /// Location will be attached on patient main module, when passing between screens
     var location: CLLocation?
+    var disabledDoctors = [User]()
     
     init() {
         // Do nothing, everything will be nil
@@ -68,6 +69,10 @@ class CallDoctorForm: ParamForm {
         }
         if let gender = gender {
             params["gender"] = gender.rawValue
+        }
+        let disabledDoctorsId = disabledDoctors.map { $0.id }
+        if !disabledDoctorsId.isEmpty {
+            params["disabled_doctors"] = disabledDoctorsId
         }
         return params
     }
