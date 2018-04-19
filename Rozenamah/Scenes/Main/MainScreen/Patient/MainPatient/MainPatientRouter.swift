@@ -67,11 +67,11 @@ class MainPatientRouter: MainScreenRouter, Router {
             guard let `self` = self else {
                 return
             }
-            
-            self.acceptDoctorVC.doctor = doctor // Pass found doctor
-            self.acceptDoctorVC.filters = filters
             self.add(asChildViewController: self.acceptDoctorVC)
             self.viewController?.containerHeightConstraint.constant = 286
+            self.acceptDoctorVC.doctor = doctor // Pass found doctor
+            self.acceptDoctorVC.filters = filters
+            
             self.openContainer()
         }
     }
@@ -82,9 +82,10 @@ class MainPatientRouter: MainScreenRouter, Router {
                 return
             }
             
-            self.waitVC.filters = form // Pass current filters
             self.add(asChildViewController: self.waitVC)
             self.viewController?.containerHeightConstraint.constant = 202
+            self.waitVC.filters = form // Pass current filters
+            
             self.openContainer()
         }
     }

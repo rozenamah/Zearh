@@ -123,6 +123,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="textChanged:" destination="nyP-id-tOB" eventType="editingChanged" id="2I7-Wv-iKT"/>
+                                                                    <outlet property="delegate" destination="nyP-id-tOB" id="fbW-Xb-b6x"/>
                                                                 </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5A-e8-3Cv">
@@ -174,6 +175,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="textChanged:" destination="nyP-id-tOB" eventType="editingDidEnd" id="Tgp-xH-9L3"/>
+                                                                    <outlet property="delegate" destination="nyP-id-tOB" id="oAI-A4-hyJ"/>
                                                                 </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxQ-ID-D9J">

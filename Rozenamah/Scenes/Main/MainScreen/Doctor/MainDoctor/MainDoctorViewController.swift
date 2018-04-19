@@ -40,13 +40,6 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         
         interactor?.registerForNotifications()
     }
-
-    // MARK: View customization
-
-    override func setupView() {
-        super.setupView()
-        router?.configureFirstScreen()
-    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -60,6 +53,22 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         containerView.layer.shadowPath = UIBezierPath(rect: containerView.bounds).cgPath
     }
 
+    // MARK: View customization
+
+    override func setupView() {
+        super.setupView()
+        router?.configureFirstScreen()
+        
+        // If doctor available at start - mark button as available
+        requestsReceiveButton.setTitle("Stop receiving visit requests", for: .selected)
+        requestsReceiveButton.setTitle("Start receiving visit requests", for: .normal)
+        if User.current?.doctor?.isAvailable ?? false {
+            markAsWaitingForRequests()
+        } else {
+            markAsRejectingRequests()
+        }
+    }
+    
     // MARK: Event handling
 
     @IBAction func receiveRequestAction(_ sender: UIButton) {

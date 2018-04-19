@@ -2,6 +2,7 @@ import UIKit
 import KeychainAccess
 
 protocol DrawerBusinessLogic {
+    func stopReceivingRequests() 
     func logout()
 }
 
@@ -20,4 +21,9 @@ class DrawerInteractor: DrawerBusinessLogic {
         }
     }
 	
+    func stopReceivingRequests() {
+        MainDoctorWorker().updateAvabilityTo(false) { [weak self] (error) in
+            // Do nothing
+        }
+    }
 }

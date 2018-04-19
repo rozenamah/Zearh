@@ -312,6 +312,17 @@ extension EditProfileViewController: UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameView.textField:
+            surnameView.textField.becomeFirstResponder()
+            return false
+        default:
+            textField.resignFirstResponder()
+            return true
+        }
+    }
+    
     @IBAction func textChanged(_ sender: UITextField) {
         switch sender {
         case nameView.textField:
