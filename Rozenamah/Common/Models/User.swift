@@ -15,7 +15,7 @@ enum UserType: String, Decodable {
 class Doctor: Decodable {
     
     private enum CodingKeys : String, CodingKey {
-        case gender, isVerified = "verified", classification, specialization, price
+        case gender, isAvailable = "available", isVerified = "verified", classification, specialization, price
     }
     
     let gender: Gender
@@ -23,6 +23,7 @@ class Doctor: Decodable {
     let specialization: DoctorSpecialization?
     let price: Int
     var isVerified: Bool
+    var isAvailable: Bool
 }
 
 class User: Decodable {

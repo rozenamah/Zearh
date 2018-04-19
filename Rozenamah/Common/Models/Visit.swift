@@ -10,20 +10,20 @@ import Foundation
 import CoreLocation
 
 class Visit: Decodable {
-    let phone: String
+    let phone: String?
     let price: Int
     let fee: Int
-    let address: String
+    let address: String?
     var latitude: Double
     var longitude: Double
     
-    var distance: String {
+    var distanceInKM: Int {
         let coordinates = CLLocation(latitude: latitude, longitude: longitude)
         var meters: Int = 0
         if let currentUserLocation = CLLocationManager().location {
             meters = Int(currentUserLocation.distance(from: coordinates))
         }
-        return "\(meters/1000) km from you"
+        return (meters/1000)
     }
 }
 

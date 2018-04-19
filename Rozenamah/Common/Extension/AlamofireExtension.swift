@@ -110,6 +110,10 @@ extension Alamofire.DataRequest {
                     let decoder = JSONDecoder()
                     completion(try decoder.decode(type, from: value), nil)
                 } catch let e {
+                    #if DEBUG
+                        print((e as NSError).debugDescription)
+                    #endif
+                    
                     completion(nil, RMError.unknown(error: e))
                 }
             case .failure(let error):

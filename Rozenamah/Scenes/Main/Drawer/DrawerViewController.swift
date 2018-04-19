@@ -91,6 +91,10 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     // MARK: Event handling
     
     @IBAction func switchAccountType(_ sender: Any) {
+        if currentMode == .doctor {
+            // Doctor may be available, stop his avability
+            interactor?.stopReceivingRequests()
+        }
         router?.navigateToApp(inModule: currentMode == .doctor ? .patient : .doctor)
     }
     

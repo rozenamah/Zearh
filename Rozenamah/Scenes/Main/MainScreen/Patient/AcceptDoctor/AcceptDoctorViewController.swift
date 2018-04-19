@@ -12,6 +12,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var feeLabel: UILabel!
     
     // MARK: Properties
     var interactor: AcceptDoctorBusinessLogic?
@@ -21,7 +22,11 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     weak var flowDelegate: PatientFlowDelegate?
     
     /// Doctor which is presented to user in order to accept
-    var doctor: DoctorResult!
+    var doctor: DoctorResult! {
+        didSet {
+            fillUserData()
+        }
+    }
     
     /// Filters by which doctor was found
     var filters: CallDoctorForm!
@@ -48,6 +53,10 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     // MARK: View customization
 
     fileprivate func setupView() {
+        
+    }
+    
+    private func fillUserData() {
         // Fill doctor data
         let user = doctor.user
         let visit = doctor.visit
@@ -55,20 +64,28 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
         doctorNameLabel.text = user.fullname
         classificationLabel.text = user.doctor?.classification.title
         priceLabel.text = "\(visit.price) SAR"
-        phoneButton.setTitle(visit.phone, for: .normal)
-        locationButton.setTitle(visit.distance, for: .normal)
+        phoneButton.setTitle(visit.phone ?? "No phone number", for: .normal)
+        locationButton.setTitle("\(visit.distanceInKM) km from you", for: .normal)
         avatarImageView.setAvatar(for: user)
         
         // Without this phone number will rever title to previous one (it is a bug but source is uknown)
-        phoneButton.setTitle(visit.phone, for: .highlighted)
-        locationButton.setTitle(visit.distance, for: .highlighted)
+        phoneButton.setTitle(visit.phone ?? "No phone number", for: .highlighted)
+        locationButton.setTitle("\(visit.distanceInKM) km from you", for: .highlighted)
         
+        // If more then 10 kilometers, highlight distance to red
+        locationButton.tintColor = visit.distanceInKM > 10 ? .rmRed : .rmGray
+        
+        // If fee > 0, show fee label
+        feeLabel.isHidden = visit.fee <= 0
+        feeLabel.text = "+ \(visit.fee) SAR for cancellation"
     }
 
     // MARK: Event handling
     
     @IBAction func callAction(_ sender: Any) {
-        router?.makeCall(to: doctor.visit.phone)
+        if let phone = doctor.visit.phone {
+            router?.makeCall(to: phone)
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
