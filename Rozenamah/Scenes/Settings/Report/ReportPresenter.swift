@@ -39,7 +39,7 @@ class ReportPresenter: ReportPresentationLogic {
     }
     
     func reportSent() {
-        
+        viewController?.displayReportSentSuccessful()
     }
     
 }

@@ -1270,7 +1270,7 @@
             </objects>
             <point key="canvasLocation" x="3171" y="144"/>
         </scene>
-        <!-- -->
+        <!--Transactions-->
         <scene sceneID="Mnl-zn-Ydl">
             <objects>
                 <viewController id="coq-oQ-0bg" customClass="TransactionHistoryViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
@@ -1295,6 +1295,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.daily"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="dailyAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="gsN-Tm-doi"/>
@@ -1334,6 +1335,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.weekly"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="weeklyAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="lEW-Dc-E6k"/>
@@ -1373,6 +1375,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.monthly"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="monthlyAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="rC6-zK-y9f"/>
@@ -1412,6 +1415,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.total"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="totalAction:" destination="coq-oQ-0bg" eventType="touchUpInside" id="SZc-zg-hH3"/>
@@ -1484,7 +1488,7 @@
                         <viewLayoutGuide key="safeArea" id="bop-hI-yqL"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title=" " id="NSl-NF-lvF">
+                    <navigationItem key="navigationItem" title="Transactions" id="NSl-NF-lvF">
                         <barButtonItem key="backBarButtonItem" title=" " id="8lM-XU-Ton"/>
                         <barButtonItem key="leftBarButtonItem" image="close" id="vcq-Tb-TR9">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1492,6 +1496,9 @@
                                 <action selector="dissmisAction:" destination="coq-oQ-0bg" id="1Hg-G7-fmR"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.transactionHistory.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1520,7 +1527,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEU-Eg-dfB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="608.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-gJ-VTa" customClass="SCImageView" customModule="SwiftCake">
                                                 <rect key="frame" x="16" y="24" width="91" height="91"/>
@@ -1564,7 +1571,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="cOh-ud-hnT" secondAttribute="bottom" id="Cbe-XV-laM"/>
                                                             <constraint firstItem="b9F-dD-nM1" firstAttribute="leading" secondItem="cOh-ud-hnT" secondAttribute="trailing" constant="16" id="JSt-GN-P0D"/>
-                                                            <constraint firstAttribute="trailing" secondItem="b9F-dD-nM1" secondAttribute="trailing" id="Ks9-eB-3ck"/>
+                                                            <constraint firstAttribute="right" secondItem="b9F-dD-nM1" secondAttribute="right" id="Ks9-eB-3ck"/>
                                                             <constraint firstItem="cOh-ud-hnT" firstAttribute="top" secondItem="1Kt-L2-lEA" secondAttribute="top" id="OMU-WJ-jhv"/>
                                                             <constraint firstItem="cOh-ud-hnT" firstAttribute="leading" secondItem="1Kt-L2-lEA" secondAttribute="leading" id="YUO-iR-xFb"/>
                                                             <constraint firstItem="b9F-dD-nM1" firstAttribute="centerY" secondItem="cOh-ud-hnT" secondAttribute="centerY" id="lma-V9-Z9d"/>
@@ -1575,9 +1582,6 @@
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-bp-fwC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="19" height="19"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="19" id="1dA-Db-MJe"/>
-                                                                </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bushwick 12, Brooklyn" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-B2-Dj5">
                                                                 <rect key="frame" x="35" y="2" width="171" height="16"/>
@@ -1593,7 +1597,7 @@
                                                             <constraint firstItem="Ecb-bp-fwC" firstAttribute="leading" secondItem="amH-Xw-RTz" secondAttribute="leading" id="Q97-MR-0YV"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ecb-bp-fwC" secondAttribute="bottom" id="UfZ-22-9kw"/>
                                                             <constraint firstItem="Ecb-bp-fwC" firstAttribute="top" secondItem="amH-Xw-RTz" secondAttribute="top" id="Ykj-z4-bx6"/>
-                                                            <constraint firstAttribute="trailing" secondItem="MAr-B2-Dj5" secondAttribute="trailing" id="l1r-r3-QUG"/>
+                                                            <constraint firstAttribute="right" secondItem="MAr-B2-Dj5" secondAttribute="right" id="l1r-r3-QUG"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -1621,21 +1625,24 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-or-mBQ">
-                                                <rect key="frame" x="225" y="171.5" width="134" height="31.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5 SAR fee for cancellation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-or-mBQ">
+                                                <rect key="frame" x="241" y="172" width="118" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.feeInfo"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQP-F1-U9G" customClass="GMSMapView">
-                                                <rect key="frame" x="0.0" y="233" width="375" height="222"/>
+                                                <rect key="frame" x="0.0" y="233.5" width="375" height="222"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="222" id="nCj-l3-WXP"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PjQ-3P-s0c">
-                                                <rect key="frame" x="0.0" y="455" width="375" height="153"/>
+                                                <rect key="frame" x="0.0" y="455.5" width="375" height="153"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lh-ne-FTn">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
@@ -1652,12 +1659,18 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.paymentMethod"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erO-n7-XqV">
                                                                 <rect key="frame" x="300.5" y="23" width="58.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCard"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1687,6 +1700,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.arrivalTime"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:55" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-W6-68u">
                                                                 <rect key="frame" x="316" y="23" width="43" height="20.5"/>
@@ -1715,6 +1731,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.leaveTime"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxF-Go-Obr">
                                                                 <rect key="frame" x="315.5" y="23" width="43.5" height="20.5"/>
@@ -1739,19 +1758,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="G1A-Vh-owM" secondAttribute="trailing" constant="30" id="0Zv-D0-2ZK"/>
-                                            <constraint firstItem="Fhp-or-mBQ" firstAttribute="leading" secondItem="7YN-Sl-YlW" secondAttribute="trailing" id="1xD-Ra-bcE"/>
+                                            <constraint firstAttribute="right" secondItem="G1A-Vh-owM" secondAttribute="right" constant="30" id="0Zv-D0-2ZK"/>
+                                            <constraint firstItem="Fhp-or-mBQ" firstAttribute="leading" secondItem="7YN-Sl-YlW" secondAttribute="trailing" constant="16" id="1xD-Ra-bcE"/>
                                             <constraint firstItem="7YN-Sl-YlW" firstAttribute="top" secondItem="G1A-Vh-owM" secondAttribute="bottom" constant="24" id="6U3-Di-xHd"/>
                                             <constraint firstItem="5Hs-gJ-VTa" firstAttribute="top" secondItem="LEU-Eg-dfB" secondAttribute="top" constant="24" id="8wk-i0-zVf"/>
                                             <constraint firstItem="7YN-Sl-YlW" firstAttribute="leading" secondItem="G1A-Vh-owM" secondAttribute="leading" id="AaU-bF-2YY"/>
                                             <constraint firstItem="PjQ-3P-s0c" firstAttribute="top" secondItem="eQP-F1-U9G" secondAttribute="bottom" id="Bsg-Us-7pT"/>
-                                            <constraint firstAttribute="trailing" secondItem="Fhp-or-mBQ" secondAttribute="trailing" constant="16" id="CPy-gU-PRZ"/>
                                             <constraint firstAttribute="trailing" secondItem="PjQ-3P-s0c" secondAttribute="trailing" id="I0q-o3-Xvf"/>
-                                            <constraint firstItem="5Hs-gJ-VTa" firstAttribute="leading" secondItem="LEU-Eg-dfB" secondAttribute="leading" constant="16" id="Isw-oh-GhV"/>
+                                            <constraint firstItem="5Hs-gJ-VTa" firstAttribute="left" secondItem="LEU-Eg-dfB" secondAttribute="left" constant="16" id="Isw-oh-GhV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fhp-or-mBQ" secondAttribute="trailing" constant="16" id="JWn-7p-VYe"/>
                                             <constraint firstAttribute="trailing" secondItem="eQP-F1-U9G" secondAttribute="trailing" id="Mtq-2e-D80"/>
                                             <constraint firstItem="G1A-Vh-owM" firstAttribute="top" secondItem="LEU-Eg-dfB" secondAttribute="top" constant="24" id="RDY-Mk-J3k"/>
                                             <constraint firstItem="eQP-F1-U9G" firstAttribute="top" secondItem="Fhp-or-mBQ" secondAttribute="bottom" constant="30" id="Svg-ud-5KS"/>
-                                            <constraint firstItem="G1A-Vh-owM" firstAttribute="leading" secondItem="5Hs-gJ-VTa" secondAttribute="trailing" constant="32" id="Zgd-3S-jF1"/>
+                                            <constraint firstItem="G1A-Vh-owM" firstAttribute="left" secondItem="5Hs-gJ-VTa" secondAttribute="right" constant="32" id="Zgd-3S-jF1"/>
                                             <constraint firstItem="PjQ-3P-s0c" firstAttribute="leading" secondItem="LEU-Eg-dfB" secondAttribute="leading" id="oEe-aO-73Q"/>
                                             <constraint firstAttribute="bottom" secondItem="PjQ-3P-s0c" secondAttribute="bottom" id="ta1-jP-kHP"/>
                                             <constraint firstItem="Fhp-or-mBQ" firstAttribute="centerY" secondItem="7YN-Sl-YlW" secondAttribute="centerY" id="wGv-7X-WJ7"/>
@@ -1780,15 +1799,22 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Transaction details" id="Bpx-6O-6X6">
                         <barButtonItem key="backBarButtonItem" title=" " id="Zzc-c5-Pcb"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.transactionHistory.detailTitle"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="addressLabel" destination="MAr-B2-Dj5" id="7JS-lI-Dzc"/>
+                        <outlet property="calendarImage" destination="cOh-ud-hnT" id="qub-Vx-vAR"/>
                         <outlet property="dateLabel" destination="b9F-dD-nM1" id="IbW-rm-QwM"/>
                         <outlet property="feeLabel" destination="Fhp-or-mBQ" id="C9w-Ty-y5z"/>
+                        <outlet property="mapImage" destination="Ecb-bp-fwC" id="a0f-IR-xlT"/>
                         <outlet property="nameLabel" destination="WED-5k-9pm" id="ctJ-m7-ayx"/>
                         <outlet property="priceLabel" destination="tLr-pd-eg3" id="dbm-Ek-Mlr"/>
+                        <outlet property="rightAddressConstraint" destination="l1r-r3-QUG" id="PES-rY-9SU"/>
+                        <outlet property="rightDateConstraint" destination="Ks9-eB-3ck" id="4IC-v3-vf9"/>
                         <outlet property="specialistLabel" destination="2zq-wA-DzE" id="IFQ-DZ-p3d"/>
                     </connections>
                 </viewController>

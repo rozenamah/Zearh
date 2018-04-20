@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
-typealias DoctorVisitCompletion = (DoctorResult?, RMError?) -> Void
+typealias DoctorVisitCompletion = (VisitDetails?, RMError?) -> Void
 
 class WaitWorker {
 	
@@ -21,7 +21,7 @@ class WaitWorker {
         
         let request = Alamofire.request(API.Doctor.search.path, method: .get, parameters: params, headers: headers)
             .validate()
-            .responseCodable(type: DoctorResult.self , completion: completion)
+            .responseCodable(type: VisitDetails.self , completion: completion)
         return request
     }
 }

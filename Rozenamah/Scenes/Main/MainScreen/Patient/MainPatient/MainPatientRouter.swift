@@ -62,7 +62,7 @@ class MainPatientRouter: MainScreenRouter, Router {
         }
     }
     
-    func navigateToAcceptDoctor(withDoctor doctor: DoctorResult, byFilters filters: CallDoctorForm) {
+    func navigateToAcceptDoctor(withDoctor doctor: VisitDetails, byFilters filters: CallDoctorForm) {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return

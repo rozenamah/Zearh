@@ -18,4 +18,11 @@ class SummaryTableViewCell: UITableViewCell, SCReusableCell {
     
     // MARK: Properties
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if self.isRTL() {
+            paymentAmountLabel.textAlignment = .left
+        }
+    }
 }

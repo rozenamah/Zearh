@@ -27,7 +27,7 @@ class Visit: Decodable {
     }
 }
 
-class DoctorResult: Decodable {
+class VisitDetails: Decodable {
     let visit: Visit
     let user: User
 }

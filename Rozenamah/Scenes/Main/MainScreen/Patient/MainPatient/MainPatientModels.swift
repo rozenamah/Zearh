@@ -4,5 +4,5 @@ enum PatientFlow {
     case pending
     case callDoctor
     case searchWith(filters: CallDoctorForm)
-    case accept(doctor: DoctorResult, foundByFilters: CallDoctorForm)
+    case accept(doctor: VisitDetails, foundByFilters: CallDoctorForm)
 }

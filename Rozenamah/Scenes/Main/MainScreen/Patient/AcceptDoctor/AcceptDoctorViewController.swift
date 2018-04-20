@@ -22,7 +22,7 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
     weak var flowDelegate: PatientFlowDelegate?
     
     /// Doctor which is presented to user in order to accept
-    var doctor: DoctorResult! {
+    var doctor: VisitDetails! {
         didSet {
             fillUserData()
         }

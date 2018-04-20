@@ -13,7 +13,7 @@
             "forgotPassword": "Forgot password?",
             "loginButton": "Login",
             "error": {
-                "incorrectEmail": "Email is incorrect",
+                "incorrectEmail": "Login is incorrect",
                 "passwordTooShort": "Password must have at least 4 characters",
                 "passwordTooLong": "Password can have maximum 30 characters",
                 "invalidEmailPassword": "Email or password is invalid",
@@ -120,11 +120,34 @@
             "reportSent": "Your report was sent",
             "selectSubject": "Please choose your subject",
             "alertTitle": "Subject",
+            "reportTopic": {
+                "notArrived": "Doctor did not arrive",
+                "late": "Doctor was late",
+                "misbehave": "Doctor was behaving badly",
+                "wrongDiagnose": "Doctor's diagnosis was wrong",
+                "other": "Other"
+            },
             "error": {
                 "subjectMissing": "You need to choose your subject",
                 "messageMissing": "You need to write your description",
                 "unknown": "Report was not sent due to an error"
             }
+        },
+        "transactionHistory": {
+            "daily": "Daily",
+            "weekly": "Weekly",
+            "monthly": "Monthly",
+            "total": "Total",
+            "visits": "Visits",
+            "payment": "Payment",
+            "feeInfo": "fee for cancellation",
+            "paymentMethod": "Payment method",
+            "byCard": "By card",
+            "byCash": "By cash",
+            "arrivalTime": "Arrival time",
+            "leaveTime": "Leave time",
+            "title": "Transactions",
+            "detailTitle": "Trasaction details"
         }
     },
     "generic": {

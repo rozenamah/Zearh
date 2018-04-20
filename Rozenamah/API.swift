@@ -25,6 +25,7 @@ enum API {
         case changePassword
         case updateProfile
         case updateAvatar
+        case report
         
         var resource: String { return baseURL + "user/" }
     }
@@ -99,6 +100,7 @@ extension API.User {
         case .changePassword: return resource + "password/change"
         case .updateProfile: return resource + "update"
         case .updateAvatar: return resource + "avatar"
+        case .report: return resource + "report"
         }
     }
 }
