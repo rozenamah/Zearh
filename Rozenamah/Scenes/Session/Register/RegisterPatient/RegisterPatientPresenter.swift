@@ -32,7 +32,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
             case .emailAlreadyExists:
                 return "session.patient.error.emailTaken".localized
             case .phoneAlreadyExists:
-                return "Phone is already taken"
+                return "session.patient.error.phoneNumberExists".localized
             case .incorrectEmail:
                 return "session.login.error.incorrectEmail".localized
             case .incorrectPhone:

@@ -17,8 +17,8 @@ class ChangePasswordRouter: Router {
     }
     
     func dismissAfterChangedPassword() {
-        let alert = UIAlertController(title: "Success", message: "Your password has beed changed", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] (action) in
+        let alert = UIAlertController(title: "generic.success".localized, message: "settings.changePassword.passwordChanged".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { [weak self] (action) in
             self?.viewController?.dismiss(animated: true, completion: nil)
         }))
         viewController?.present(alert, animated: true, completion: nil)

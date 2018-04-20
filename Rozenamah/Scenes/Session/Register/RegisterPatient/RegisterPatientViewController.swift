@@ -77,8 +77,8 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
             registerForm = RegisterDoctorForm()
             
         }
-        // Customize button insets depedning on layout direction
-        if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
+         // Customize button insets depedning on layout direction
+        if self.view.isRTL() {
             checkboxButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
             checkboxButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: -16)
             termsButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
@@ -90,7 +90,6 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     }
 
     // MARK: Event handling
-
     
     @IBAction func tapAction(_ sender: Any) {
         // Called when scroll view clicked

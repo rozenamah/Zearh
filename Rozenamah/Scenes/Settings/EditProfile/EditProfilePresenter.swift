@@ -29,28 +29,28 @@ class EditProfilePresenter: EditProfilePresentationLogic {
         var errorDescription: String? {
             switch self {
             case .incorrectName:
-                return "Name is incorrect"
+                return "session.patient.incorrectName".localized
             case .surnameToLong:
-                return "Surname can have maximum 30 characters"
+                return "session.patient.error.surnameTooLong".localized
             case .surnameToShort:
-                return "Surname must have at least 3 characters"
+                return "session.patient.error.surnameTooShort".localized
             case .incorrectSurname:
-                return "Surname is incorrect"
+                return "session.patient.error.incorrectSurname".localized
             case .nameToLong:
-                return "Name can have maximum 30 characters"
+                return "session.patient.error.nameTooLong".localized
             case .nameToShort:
-                return "Name must have at least 3 characters"
+                return "session.patient.error.nameTooShort".localized
             case .professionMissing:
-                return "You need to choose your classification"
+                return "session.doctor.error.professionMissing".localized
             case .specializationMissing:
-                return "You need to choose your specialization"
+                return "session.doctor.error.specializationMissing".localized
             case .priceMissing:
-                return "You need to specify your price"
+                return "session.doctor.error.priceMissing".localized
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

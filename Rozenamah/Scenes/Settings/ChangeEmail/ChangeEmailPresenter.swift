@@ -19,11 +19,11 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .emailAlreadyTaken:
-                return "Email is already taken"
+                return "session.patient.error.emailTaken".localized
             case .incorrectEmail:
-                return "Email is incorrect"
+                return "session.login.error.incorrectEmail".localized
             case .unknownError:
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

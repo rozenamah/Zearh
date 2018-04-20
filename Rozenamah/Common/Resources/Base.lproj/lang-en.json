@@ -43,7 +43,8 @@
                 "surnameTooLong": "Surname can have maximum 30 characters",
                 "nameTooShort": "Name must have at least 3 characters",
                 "surnameTooShort": "Surname must have at least 3 characters",
-                "diffrentPasswords": "Passwords are not the same"
+                "diffrentPasswords": "Passwords are not the same",
+                "phoneNumberExists": "Phone is already taken"
             }
         },
         "doctor": {
@@ -84,6 +85,48 @@
             "userBlocked": "This user is blocked"
         }
     },
+    "settings": {
+        "editProfile": {
+            "changeEmail": "Change email",
+            "changeNumber": "Change number",
+            "changePassword": "Change password",
+            "changeProfilePicture": "Change profile picture",
+            "saveChanges": "Save changes",
+            "deleteAccount": "Delete Account",
+            "editProfile": "Edit profile"
+        },
+        "changePassword": {
+            "currentPassword": "Current password",
+            "newPassword": "New password",
+            "confirmPassword": "Confirm password",
+            "passwordChanged": "Your password has been changed"
+        },
+        "changeEmail": {
+            "enterEmail": "Enter email",
+            "emailChanged": "Your email has been changed"
+            
+        },
+        "changeNumber": {
+            "title": "Change phone number",
+            "enterNumber": "Enter phone number",
+            "numberChanged": "Your phone number has been changed"
+        },
+        "report": {
+            "title": "Report",
+            "send": "Send",
+            "subject": "Select subject",
+            "description": "Your report will be reviewed within 24 hours",
+            "placeholder": "Your message",
+            "reportSent": "Your report was sent",
+            "selectSubject": "Please choose your subject",
+            "alertTitle": "Subject",
+            "error": {
+                "subjectMissing": "You need to choose your subject",
+                "messageMissing": "You need to write your description",
+                "unknown": "Report was not sent due to an error"
+            }
+        }
+    },
     "generic": {
         "error": {
             "unknown": "Unknown error",
@@ -91,8 +134,10 @@
         },
         "ok": "Ok",
         "success": "Success",
-        "cancel": "Cancel"
-        
+        "cancel": "Cancel",
+        "specialization": "Specialization",
+        "classification": "Classification",
+        "selectOne": "Select one..."
     }
 }
 

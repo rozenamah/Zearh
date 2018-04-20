@@ -23,19 +23,19 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .newPasswordToShort:
-                return "Password must have at least 4 characters"
+                return "session.login.error.passwordTooShort".localized
             case .newPasswordToLong:
-                return "Password can have maximum 30 characters"
+                return "session.login.error.passwordTooLong".localized
             case .passwordsDontMatch:
-                return "Passwords are not the same"
+                return "session.patient.error.diffrentPasswords".localized
             case .currentPasswordToShort:
-                return "Password must have at least 4 characters"
+                return "session.login.error.passwordTooShort".localized
             case .incorrectPassword:
-                return "Password is incorrect"
+                return "session.patient.error.incorrectPassword".localized
             case .oldPasswordIncorrect:
-                return "Password is incorrect"
+                return "session.patient.error.incorrectPassword".localized
             case .unknownError:
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

@@ -18,11 +18,11 @@ class ReportPresenter: ReportPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .subjectMissing:
-                return "You need to choose your subject"
+                return "settings.report.error.subjectMissing".localized
             case .messageMissing:
-                return "You need to write your description"
+                return "settings.report.error.messageMissing".localized
             case .unknown:
-                return "Report was not sent due to an error"
+                return "settings.report.error.unknown".localized
             }
         }
     }
