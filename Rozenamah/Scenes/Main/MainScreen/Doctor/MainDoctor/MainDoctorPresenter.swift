@@ -3,6 +3,8 @@ import UIKit
 protocol MainDoctorPresentationLogic: MainScreenPresentationLogic {
     func handleError(_ error: RMError)
     func avabilityUpdatedTo(_ newAvaibility: Bool)
+    func patientAccepted()
+    func patienRejected()
 }
 
 class MainDoctorPresenter: MainScreenPresenter, MainDoctorPresentationLogic {
@@ -12,6 +14,14 @@ class MainDoctorPresenter: MainScreenPresenter, MainDoctorPresentationLogic {
     }
 
 	// MARK: Presentation logic
+    
+    func patientAccepted() {
+        viewController?.patientAccepted()
+    }
+    
+    func patienRejected() {
+        viewController?.patientRejected()
+    }
 	
     func handleError(_ error: RMError) {
         viewController?.handle(error: error)

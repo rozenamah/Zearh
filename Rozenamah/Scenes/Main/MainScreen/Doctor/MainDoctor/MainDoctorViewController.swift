@@ -5,6 +5,8 @@ protocol MainDoctorDisplayLogic: MainScreenDisplayLogic {
     func handle(error: Error)
     func markAsWaitingForRequests()
     func markAsRejectingRequests()
+    func patientAccepted()
+    func patientRejected()
 }
 
 protocol DoctortFlowDelegate: class {
@@ -87,15 +89,21 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     func changeStateTo(flowPoint: DoctorFlow) {
         switch flowPoint {
         case .accept:
-            router?.navigateToAcceptPatient()
+            interactor?.acceptPatient(for: "123213")
         case .cancel:
-            router?.navigateToCancel()
-        case .details:
-            router?.navigateToCancel()
+            interactor?.rejectPatient(for: "1231231")
         }
     }
     
     // MARK: Presenter methods
+    
+    func patientAccepted() {
+        
+    }
+    
+    func patientRejected() {
+        
+    }
     
     func markAsRejectingRequests() {
         requestsReceiveButton.isUserInteractionEnabled = true

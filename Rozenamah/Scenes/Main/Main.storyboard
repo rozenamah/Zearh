@@ -1617,7 +1617,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v48-hU-V0o">
-                                <rect key="frame" x="227" y="100" width="116" height="16"/>
+                                <rect key="frame" x="227" y="99.5" width="116" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2265,7 +2265,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-Tk-7k2">
-                                <rect key="frame" x="227" y="116" width="116" height="31.5"/>
+                                <rect key="frame" x="227" y="116.5" width="116" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2324,7 +2324,7 @@
                     <connections>
                         <outlet property="avatarImageView" destination="skg-ND-2mD" id="mLo-rI-AUa"/>
                         <outlet property="confirmationLabel" destination="73F-KM-JXt" id="mrc-I9-wTx"/>
-                        <outlet property="distanceLabel" destination="1yV-Wy-dHF" id="6NT-k0-imA"/>
+                        <outlet property="distanceButton" destination="1yV-Wy-dHF" id="JLH-4r-Kco"/>
                         <outlet property="feeLabel" destination="ibZ-Tk-7k2" id="BoT-ZL-ob8"/>
                         <outlet property="nameLabel" destination="8fP-sL-Rzm" id="y6u-2o-Prg"/>
                         <outlet property="phoneNumber" destination="amB-Pr-AMI" id="JM4-Ru-sa7"/>
@@ -2584,6 +2584,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ageLabel" destination="xMU-Ux-jv1" id="ZOq-dH-8NU"/>
+                        <outlet property="avatarImage" destination="hPj-gW-O0R" id="mMY-z3-XXf"/>
+                        <outlet property="feeAmountLabel" destination="DFN-ZX-ErT" id="9PC-Gl-z82"/>
+                        <outlet property="nameLabel" destination="Fub-Hb-fmV" id="ixG-Al-On7"/>
+                        <outlet property="priceAmountLabel" destination="CfD-Sm-DQF" id="Kdt-UB-hQC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1i6-gk-Vns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

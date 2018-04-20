@@ -21,6 +21,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return vc
     }()
     
+    
     // MARK: Routing
     
     static func resolve(visit: VisitDetails) {
@@ -28,14 +29,13 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-
     }
 
     // MARK: Navigation
     
     @objc func handleNotification(for notification: NSNotification) {
         if let visit = notification.userInfo?["visit"] as? VisitDetails {
-            patientFormVC.patientInfo = visit
+            patientFormVC.visitInfo = visit
             openContainer()
         }
     }
@@ -57,6 +57,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     func navigateToAcceptPatient() {
         
     }
+
     
     func navigateToCancel() {
         animateCloseContainer {
@@ -65,5 +66,4 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }
 
     // MARK: Passing data
-
 }
