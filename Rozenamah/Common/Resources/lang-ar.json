@@ -137,7 +137,8 @@
             "byCash": "نقدا",
             "arrivalTime": "وقت الوصول",
             "leaveTime": "اترك الوقت",
-            "title": "المعاملات"
+            "title": "المعاملات",
+            "detailTitle": "تفاصيل الصفقه"
         }
     },
     "generic": {

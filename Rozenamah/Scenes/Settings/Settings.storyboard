@@ -1527,7 +1527,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEU-Eg-dfB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="608.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-gJ-VTa" customClass="SCImageView" customModule="SwiftCake">
                                                 <rect key="frame" x="16" y="24" width="91" height="91"/>
@@ -1582,9 +1582,6 @@
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-bp-fwC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="19" height="19"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="19" id="1dA-Db-MJe"/>
-                                                                </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bushwick 12, Brooklyn" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-B2-Dj5">
                                                                 <rect key="frame" x="35" y="2" width="171" height="16"/>
@@ -1628,8 +1625,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-or-mBQ">
-                                                <rect key="frame" x="225" y="171.5" width="134" height="31.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5 SAR fee for cancellation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-or-mBQ">
+                                                <rect key="frame" x="241" y="172" width="118" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1638,14 +1635,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQP-F1-U9G" customClass="GMSMapView">
-                                                <rect key="frame" x="0.0" y="233" width="375" height="222"/>
+                                                <rect key="frame" x="0.0" y="233.5" width="375" height="222"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="222" id="nCj-l3-WXP"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PjQ-3P-s0c">
-                                                <rect key="frame" x="0.0" y="455" width="375" height="153"/>
+                                                <rect key="frame" x="0.0" y="455.5" width="375" height="153"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lh-ne-FTn">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
@@ -1761,19 +1758,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="G1A-Vh-owM" secondAttribute="trailing" constant="30" id="0Zv-D0-2ZK"/>
-                                            <constraint firstItem="Fhp-or-mBQ" firstAttribute="leading" secondItem="7YN-Sl-YlW" secondAttribute="trailing" id="1xD-Ra-bcE"/>
+                                            <constraint firstAttribute="right" secondItem="G1A-Vh-owM" secondAttribute="right" constant="30" id="0Zv-D0-2ZK"/>
+                                            <constraint firstItem="Fhp-or-mBQ" firstAttribute="leading" secondItem="7YN-Sl-YlW" secondAttribute="trailing" constant="16" id="1xD-Ra-bcE"/>
                                             <constraint firstItem="7YN-Sl-YlW" firstAttribute="top" secondItem="G1A-Vh-owM" secondAttribute="bottom" constant="24" id="6U3-Di-xHd"/>
                                             <constraint firstItem="5Hs-gJ-VTa" firstAttribute="top" secondItem="LEU-Eg-dfB" secondAttribute="top" constant="24" id="8wk-i0-zVf"/>
                                             <constraint firstItem="7YN-Sl-YlW" firstAttribute="leading" secondItem="G1A-Vh-owM" secondAttribute="leading" id="AaU-bF-2YY"/>
                                             <constraint firstItem="PjQ-3P-s0c" firstAttribute="top" secondItem="eQP-F1-U9G" secondAttribute="bottom" id="Bsg-Us-7pT"/>
-                                            <constraint firstAttribute="trailing" secondItem="Fhp-or-mBQ" secondAttribute="trailing" constant="16" id="CPy-gU-PRZ"/>
                                             <constraint firstAttribute="trailing" secondItem="PjQ-3P-s0c" secondAttribute="trailing" id="I0q-o3-Xvf"/>
-                                            <constraint firstItem="5Hs-gJ-VTa" firstAttribute="leading" secondItem="LEU-Eg-dfB" secondAttribute="leading" constant="16" id="Isw-oh-GhV"/>
+                                            <constraint firstItem="5Hs-gJ-VTa" firstAttribute="left" secondItem="LEU-Eg-dfB" secondAttribute="left" constant="16" id="Isw-oh-GhV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fhp-or-mBQ" secondAttribute="trailing" constant="16" id="JWn-7p-VYe"/>
                                             <constraint firstAttribute="trailing" secondItem="eQP-F1-U9G" secondAttribute="trailing" id="Mtq-2e-D80"/>
                                             <constraint firstItem="G1A-Vh-owM" firstAttribute="top" secondItem="LEU-Eg-dfB" secondAttribute="top" constant="24" id="RDY-Mk-J3k"/>
                                             <constraint firstItem="eQP-F1-U9G" firstAttribute="top" secondItem="Fhp-or-mBQ" secondAttribute="bottom" constant="30" id="Svg-ud-5KS"/>
-                                            <constraint firstItem="G1A-Vh-owM" firstAttribute="leading" secondItem="5Hs-gJ-VTa" secondAttribute="trailing" constant="32" id="Zgd-3S-jF1"/>
+                                            <constraint firstItem="G1A-Vh-owM" firstAttribute="left" secondItem="5Hs-gJ-VTa" secondAttribute="right" constant="32" id="Zgd-3S-jF1"/>
                                             <constraint firstItem="PjQ-3P-s0c" firstAttribute="leading" secondItem="LEU-Eg-dfB" secondAttribute="leading" id="oEe-aO-73Q"/>
                                             <constraint firstAttribute="bottom" secondItem="PjQ-3P-s0c" secondAttribute="bottom" id="ta1-jP-kHP"/>
                                             <constraint firstItem="Fhp-or-mBQ" firstAttribute="centerY" secondItem="7YN-Sl-YlW" secondAttribute="centerY" id="wGv-7X-WJ7"/>
@@ -1802,6 +1799,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Transaction details" id="Bpx-6O-6X6">
                         <barButtonItem key="backBarButtonItem" title=" " id="Zzc-c5-Pcb"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="settings.transactionHistory.detailTitle"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>

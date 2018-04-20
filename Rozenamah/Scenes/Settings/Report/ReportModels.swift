@@ -18,10 +18,11 @@ enum ReportSubject: String, Decodable {
     case notArrived = "notArrived"
     case late = "late"
     case misbehave = "misbehaved"
+    case wrongDiagnose = "wrongDiagnose"
     case other = "other"
     
     static var all: [ReportSubject] {
-        return [.notArrived, .late, .misbehave, .other ]
+        return [.notArrived, .late, .misbehave, .wrongDiagnose, .other ]
     }
     
     var title: String {
@@ -29,6 +30,7 @@ enum ReportSubject: String, Decodable {
         case .notArrived: return "Doctor did not arrive"
         case .late: return "Doctor was late"
         case .misbehave: return "Doctor was behaving badly"
+        case .wrongDiagnose: return "Doctor's diagnose was wrong"
         case .other: return "Other"
         }
     }

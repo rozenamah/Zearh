@@ -139,7 +139,8 @@
             "byCash": "By cash",
             "arrivalTime": "Arrival time",
             "leaveTime": "Leave time",
-            "title": "Transactions"
+            "title": "Transactions",
+            "detailTitle": "Trasaction details"
         }
     },
     "generic": {
