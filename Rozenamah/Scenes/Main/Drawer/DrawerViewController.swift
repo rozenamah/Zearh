@@ -70,6 +70,13 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         // If doctor account active, display ability to switch to doctor account
         if currentMode == .doctor {
             switchAccountButton.setTitle("Patient account", for: .normal)
+        } else {
+            // If account not verified - we gray out button a little
+            if User.current?.doctor?.isVerified == true {
+                switchAccountButton.alpha = 1
+            } else {
+                switchAccountButton.alpha = 0.3
+            }
         }
     }
     
@@ -94,6 +101,14 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         if currentMode == .doctor {
             // Doctor may be available, stop his avability
             interactor?.stopReceivingRequests()
+        }
+        
+        // If account not verified - show error message
+        if currentMode == .patient,
+            User.current?.doctor?.isVerified == false {
+            
+            router?.showAlert(message: "Your doctor account is waiting for validation")
+            return
         }
         router?.navigateToApp(inModule: currentMode == .doctor ? .patient : .doctor)
     }
