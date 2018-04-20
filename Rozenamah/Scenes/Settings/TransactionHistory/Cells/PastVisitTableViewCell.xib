@@ -161,8 +161,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLabel" destination="gSn-kg-Mxd" id="8p6-51-6lT"/>
+                <outlet property="arrowImage" destination="lSs-dq-b9Q" id="ccK-Ad-Io2"/>
                 <outlet property="dateLabel" destination="SAf-4Z-WWJ" id="VBR-kr-8Ku"/>
                 <outlet property="feeLabel" destination="3fX-eL-1Pf" id="paO-Cr-hgz"/>
+                <outlet property="imageViewLeftConstraint" destination="e9X-Ya-bFH" id="fKa-RM-eju"/>
                 <outlet property="nameLabel" destination="OKQ-VI-aLA" id="HTA-ct-gop"/>
                 <outlet property="priceLabel" destination="vUu-HG-zcM" id="6C4-h5-Xw8"/>
                 <outlet property="specialistLabel" destination="lh4-ek-prF" id="diG-li-M56"/>

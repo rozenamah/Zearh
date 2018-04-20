@@ -46,8 +46,9 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
         customizeUserDetails()
         // Adjust view for arabic language
         if self.view.isRTL() {
-            // Add needed space in between label and images
+            // Add needed space in between address label and map icon
             rightAddressConstraint.constant = 16 + mapImage.bounds.width
+            // Add needed space in between date label and map calendar icon
             rightDateConstraint.constant = 16 + calendarImage.bounds.width
             feeLabel.textAlignment = .right
         }

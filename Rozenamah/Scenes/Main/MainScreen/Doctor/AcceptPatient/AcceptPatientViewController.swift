@@ -22,7 +22,8 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     
     // Delegate responsible for doctors action, whether accept or cancel patient
     weak var flowDelegate: DoctortFlowDelegate?
-    var patientInfo: DoctorResult?
+    // Information about patient for doctor when he is about to accept or decline visit
+    var patientInfo: VisitDetails?
 
     // MARK: Object lifecycle
 

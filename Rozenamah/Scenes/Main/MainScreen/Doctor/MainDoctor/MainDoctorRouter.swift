@@ -23,7 +23,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     
     // MARK: Routing
     
-    static func resolve(visit: DoctorResult) {
+    static func resolve(visit: VisitDetails) {
         NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["visit" : visit])
     }
 
@@ -34,7 +34,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     // MARK: Navigation
     
     @objc func handleNotification(for notification: NSNotification) {
-        if let visit = notification.userInfo?["visit"] as? DoctorResult {
+        if let visit = notification.userInfo?["visit"] as? VisitDetails {
             patientFormVC.patientInfo = visit
             openContainer()
         }

@@ -58,25 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        if let aps = userInfo["aps"] as? [String: Any], let info = aps["info"] as? [String: Any] {
-            print(info)
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
-                // here "jsonData" is the dictionary encoded in JSON data
-                
-                let decoder = JSONDecoder()
-                let data = try decoder.decode(DoctorResult.self, from: jsonData)
-                print(data.user.name)
-                
-                MainDoctorRouter.resolve(visit: data)
-            } catch {
-                print(error.localizedDescription)
-            }
-        
-        }
-      
+        AppRouter.navigateToAcceptVisit(from: userInfo)
     }
-    
 }
 
 // MARK: Configuration

@@ -25,7 +25,7 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
     weak var delegate: PaymentMethodDelegate?
     
     /// Contains info about visit which user will take part if accept
-    var doctor: DoctorResult!
+    var doctor: VisitDetails!
     
     /// Selected payment method, passed to API when we select
     private var paymentMethod: PaymentMethod?

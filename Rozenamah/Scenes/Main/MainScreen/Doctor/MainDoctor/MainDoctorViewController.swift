@@ -111,8 +111,6 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         
         // Change background depending on state
         requestsReceiveButton.backgroundColor = !requestsReceiveButton.isSelected ? .rmBlue : .white
-        
-        //router?.openContainer(completion: nil)
     }
     
     func handle(error: Error) {

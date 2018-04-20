@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CEBE2089E7AE00245F7A /* AppRouter.swift */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
@@ -233,6 +234,7 @@
 /* Begin PBXFileReference section */
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5702CEBE2089E7AE00245F7A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
@@ -1069,6 +1071,7 @@
 				F940EC51205A9D8E00266753 /* AppStartRouter.swift */,
 				F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */,
 				574FC5A42084E5C7001E4059 /* PhoneCallRouter.swift */,
+				5702CEBE2089E7AE00245F7A /* AppRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -1500,6 +1503,7 @@
 				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,
 				578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */,
 				F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */,
+				5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */,
 				F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */,
 				F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */,
 				574FC576208493A4001E4059 /* PatientDetailsWorker.swift in Sources */,

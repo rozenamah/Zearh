@@ -19,7 +19,20 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
+    @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var imageViewLeftConstraint: NSLayoutConstraint!
     
     // MARK: Properties
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        if isRTL() {
+            // If arabic language use reversed arrow
+            arrowImage.image = UIImage(named: "reversed_chevron")
+            // Move image to the right, beacuse is to close to the arrow
+            imageViewLeftConstraint.constant = 24
+        }
+    }
 }

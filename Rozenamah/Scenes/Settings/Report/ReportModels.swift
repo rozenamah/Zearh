@@ -27,11 +27,11 @@ enum ReportSubject: String, Decodable {
     
     var title: String {
         switch self {
-        case .notArrived: return "Doctor did not arrive"
-        case .late: return "Doctor was late"
-        case .misbehave: return "Doctor was behaving badly"
-        case .wrongDiagnose: return "Doctor's diagnose was wrong"
-        case .other: return "Other"
+        case .notArrived: return "settings.report.reportTopic.notArrived".localized
+        case .late: return "settings.report.reportTopic.late".localized
+        case .misbehave: return "settings.report.reportTopic.misbehave".localized
+        case .wrongDiagnose: return "settings.report.reportTopic.wrongDiagnose".localized
+        case .other: return "settings.report.reportTopic.other".localized
         }
     }
 }

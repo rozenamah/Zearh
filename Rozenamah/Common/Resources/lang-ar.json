@@ -118,6 +118,13 @@
             "reportSent": "تم إرسال تقريرك",
             "selectSubject": "يرجى اختيار الموضوع الخاص بك",
             "alertTitle": "موضوع",
+            "reportTopic": {
+                "notArrived": "الطبيب لم يصل",
+                "late": "كان الطبيب في وقت متأخر",
+                "misbehave": "كان الطبيب يتصرف بشكل سيئ",
+                "wrongDiagnose": "كان تشخيص الطبيب خطأ",
+                "other": "آخر"
+            },
             "error": {
                 "subjectMissing": "أنت في حاجة لاختيار الموضوع الخاص بك",
                 "messageMissing": "تحتاج إلى كتابة الوصف الخاص بك",
