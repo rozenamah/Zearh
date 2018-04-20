@@ -1,6 +1,6 @@
 import UIKit
 
-class DrawerRouter: Router, AppStartRouter {
+class DrawerRouter: Router, AppStartRouter, AlertRouter {
     typealias RoutingViewController = DrawerViewController
     weak var viewController: DrawerViewController?
 

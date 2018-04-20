@@ -131,12 +131,12 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
             if let maxPrice = callFormToChange.maxPrice {
                 priceSlider.selectedMaxValue = CGFloat(maxPrice)
             } else {
-                priceSlider.selectedMaxValue = 501
+                priceSlider.selectedMaxValue = CGFloat(kMaxPriceToFilter)
             }
         }
         // Price slider dosen't refresh automaticlly here,
         // we set new max value to perform forced refresh
-        priceSlider.maxValue = 501
+        priceSlider.maxValue = CGFloat(kMaxPriceToFilter)
     }
 
     // MARK: Event handling
