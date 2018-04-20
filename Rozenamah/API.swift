@@ -43,6 +43,15 @@ enum API {
         
         var resource: String { return baseURL + "doctor/" }
     }
+    
+    enum Visit {
+        case request
+        case accept
+        case reject
+        case cancel
+        
+        var resource: String { return baseURL + "visit/" }
+    }
 }
 
 extension API.Doctor {
@@ -60,6 +69,17 @@ extension API.Patient {
     var path: String {
         switch self {
         case .upgrade: return resource + "upgrade"
+        }
+    }
+}
+
+extension API.Visit {
+    var path: String {
+        switch self {
+        case .request: return resource + "request"
+        case .accept: return resource + "accept"
+        case .reject: return resource + "reject"
+        case .cancel: return resource + "cancel"
         }
     }
 }
