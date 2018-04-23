@@ -1664,7 +1664,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erO-n7-XqV">
-                                                                <rect key="frame" x="300.5" y="23" width="58.5" height="20.5"/>
+                                                                <rect key="frame" x="300.5" y="23.5" width="58.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1807,10 +1807,13 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="addressLabel" destination="MAr-B2-Dj5" id="7JS-lI-Dzc"/>
+                        <outlet property="arrivalTimeLabel" destination="u3o-W6-68u" id="QiP-M2-C8I"/>
                         <outlet property="calendarImage" destination="cOh-ud-hnT" id="qub-Vx-vAR"/>
                         <outlet property="dateLabel" destination="b9F-dD-nM1" id="IbW-rm-QwM"/>
                         <outlet property="feeLabel" destination="Fhp-or-mBQ" id="C9w-Ty-y5z"/>
+                        <outlet property="leaveTimeLabel" destination="qxF-Go-Obr" id="S9w-tb-8nm"/>
                         <outlet property="mapImage" destination="Ecb-bp-fwC" id="a0f-IR-xlT"/>
+                        <outlet property="methodTypeLabel" destination="erO-n7-XqV" id="NMf-NC-f2Y"/>
                         <outlet property="nameLabel" destination="WED-5k-9pm" id="ctJ-m7-ayx"/>
                         <outlet property="priceLabel" destination="tLr-pd-eg3" id="dbm-Ek-Mlr"/>
                         <outlet property="rightAddressConstraint" destination="l1r-r3-QUG" id="PES-rY-9SU"/>
@@ -1820,7 +1823,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wls-m8-8fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5008" y="155"/>
+            <point key="canvasLocation" x="5007.1999999999998" y="154.72263868065968"/>
         </scene>
         <!--Change phone number-->
         <scene sceneID="Rc9-mJ-kGZ">

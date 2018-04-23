@@ -22,9 +22,7 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var imageViewLeftConstraint: NSLayoutConstraint!
     
-    // MARK: Properties
-    
-    
+    // MARK: View lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,6 +31,25 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
             arrowImage.image = UIImage(named: "reversed_chevron")
             // Move image to the right, beacuse is to close to the arrow
             imageViewLeftConstraint.constant = 24
+        }
+    }
+    
+    // MARK: Properties
+    
+    var transaction: Transaction? {
+        didSet {
+            if let transaction = transaction {
+                let user = transaction.user
+                let visit = transaction.visit
+                nameLabel.text = user.fullname
+                specialistLabel.isHidden = user.doctor == nil
+                specialistLabel.text = user.doctor?.specialization?.title
+                addressLabel.text = visit.address
+                priceLabel.text = "\(visit.price) SAR"
+                feeLabel.isHidden = visit.fee == 0
+                feeLabel.text = "+ \(visit.fee) SAR for cancellation"
+                dateLabel.text = transaction.dateTimestamp.dateToString(.date)
+            }
         }
     }
 }
