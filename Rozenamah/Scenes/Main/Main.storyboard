@@ -1231,8 +1231,8 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiK-CK-1wS">
-                                                <rect key="frame" x="16" y="526.5" width="241" height="22"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiK-CK-1wS">
+                                                <rect key="frame" x="16" y="526.5" width="256" height="22"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="I received payment in cash" image="checkbox">
@@ -1533,10 +1533,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-Cf-lW0" customClass="SCView" customModule="SwiftCake">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-Cf-lW0" customClass="SCView" customModule="SwiftCake">
                                 <rect key="frame" x="138" y="92" width="73" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-e3-ggL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-e3-ggL">
                                         <rect key="frame" x="13" y="4" width="47" height="21"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1627,8 +1627,8 @@
                                     <action selector="cancelAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="MQR-oA-K1T"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" ambiguous="YES" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v48-hU-V0o">
-                                <rect key="frame" x="227" y="99.5" width="116" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v48-hU-V0o">
+                                <rect key="frame" x="227" y="90.5" width="116" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2276,7 +2276,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-Tk-7k2">
-                                <rect key="frame" x="227" y="116.5" width="116" height="31.5"/>
+                                <rect key="frame" x="227" y="114.5" width="116" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

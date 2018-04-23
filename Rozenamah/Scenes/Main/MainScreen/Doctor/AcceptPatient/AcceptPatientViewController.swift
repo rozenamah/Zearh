@@ -19,7 +19,6 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     @IBOutlet weak var distanceButton: UIButton!
     @IBOutlet weak var confirmationLabel: UILabel!
     
-
     // MARK: Properties
     var interactor: AcceptPatientBusinessLogic?
     var router: AcceptPatientRouter?
@@ -98,7 +97,7 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
 
     @IBAction func acceptAction(_ sender: Any) {
         
-        
+        interactor?.acceptPatient(for: "visit_Id")
         // TODO: remove segue
         performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
