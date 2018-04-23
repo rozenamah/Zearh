@@ -1232,14 +1232,19 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiK-CK-1wS">
-                                                <rect key="frame" x="16" y="526.5" width="16" height="22"/>
-                                                <state key="normal" image="checkbox">
+                                                <rect key="frame" x="16" y="526.5" width="241" height="22"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="I received payment in cash" image="checkbox">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="selected" image="checkbox_s"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="checkBoxAction:" destination="2eK-9M-0bq" eventType="touchUpInside" id="viX-1e-QGN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu4-PM-MUj" customClass="SCButton" customModule="SwiftCake">
                                                 <rect key="frame" x="105" y="587.5" width="165" height="39"/>
@@ -1260,27 +1265,20 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="acceptAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="OuD-LW-OvE"/>
+                                                    <action selector="endVisitAction:" destination="2eK-9M-0bq" eventType="touchUpInside" id="UIX-KL-YZL"/>
                                                     <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="ech-ZO-N6O"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I received payment in cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITT-BY-28P">
-                                                <rect key="frame" x="48" y="528" width="203.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="iu4-PM-MUj" firstAttribute="centerX" secondItem="fVp-Bg-KPK" secondAttribute="centerX" id="4Kg-Pv-HlR"/>
                                             <constraint firstAttribute="trailing" secondItem="WrP-GN-lFb" secondAttribute="trailing" constant="16" id="9ri-dh-v9Q"/>
                                             <constraint firstItem="MmB-1d-Zue" firstAttribute="top" secondItem="fVp-Bg-KPK" secondAttribute="top" constant="24" id="Av7-lg-fmd"/>
+                                            <constraint firstItem="iu4-PM-MUj" firstAttribute="top" secondItem="UiK-CK-1wS" secondAttribute="bottom" constant="39" id="CMq-Nh-8m7"/>
                                             <constraint firstItem="UiK-CK-1wS" firstAttribute="leading" secondItem="WrP-GN-lFb" secondAttribute="leading" id="E6u-eb-uFF"/>
                                             <constraint firstItem="WrP-GN-lFb" firstAttribute="leading" secondItem="fVp-Bg-KPK" secondAttribute="leading" constant="16" id="Fg5-qi-Hph"/>
                                             <constraint firstItem="WrP-GN-lFb" firstAttribute="top" secondItem="sE7-rQ-kYT" secondAttribute="bottom" constant="24" id="Iab-rv-5Pc"/>
-                                            <constraint firstItem="iu4-PM-MUj" firstAttribute="top" secondItem="ITT-BY-28P" secondAttribute="bottom" constant="39" id="MXI-pb-LJK"/>
-                                            <constraint firstItem="ITT-BY-28P" firstAttribute="centerY" secondItem="UiK-CK-1wS" secondAttribute="centerY" id="gqC-3y-RlB"/>
-                                            <constraint firstItem="ITT-BY-28P" firstAttribute="leading" secondItem="UiK-CK-1wS" secondAttribute="trailing" constant="16" id="laW-df-uWd"/>
                                             <constraint firstItem="sE7-rQ-kYT" firstAttribute="centerX" secondItem="MmB-1d-Zue" secondAttribute="centerX" id="oNn-JL-veW"/>
                                             <constraint firstItem="UiK-CK-1wS" firstAttribute="top" secondItem="WrP-GN-lFb" secondAttribute="bottom" constant="24" id="ovU-mx-Lli"/>
                                             <constraint firstItem="sE7-rQ-kYT" firstAttribute="top" secondItem="MmB-1d-Zue" secondAttribute="bottom" constant="16" id="uST-OK-i5S"/>
@@ -2278,7 +2276,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-Tk-7k2">
-                                <rect key="frame" x="227" y="115" width="116" height="34"/>
+                                <rect key="frame" x="227" y="116.5" width="116" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
