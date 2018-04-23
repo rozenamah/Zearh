@@ -283,7 +283,7 @@ extension EditProfileViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         // Allow only backspace and numbers
-        if string.isEmpty || Int(string) != nil {
+        if textField != priceTextField || string.isEmpty || Int(string) != nil {
             return true
         }
         return false
