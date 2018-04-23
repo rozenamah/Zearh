@@ -12,18 +12,18 @@ class AppRouter {
     
     static func navigateToAcceptVisit(from userInfo: [AnyHashable: Any]) {
   
-        if let visitInfo = decodeObject(from: userInfo) {
+        if let visitInfo = decodeObject(toType: VisitDetails.self, from: userInfo, withKey: "info") {
             MainDoctorRouter.resolve(visit: visitInfo)
         }
     }
     
-     private static func decodeObject(from userInfo: [AnyHashable: Any]) -> VisitDetails? {
-        if let aps = userInfo["aps"] as? [String: Any], let info = aps["info"] as? [String: Any] {
+    private static func decodeObject<H: Decodable>(toType: H.Type, from userInfo: [AnyHashable: Any], withKey: String) -> H? {
+        if let aps = userInfo["aps"] as? [String: Any], let info = aps[withKey] as? [String: Any] {
             print(info)
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
                 let decoder = JSONDecoder()
-                let data = try decoder.decode(VisitDetails.self, from: jsonData)
+                let data = try decoder.decode(toType, from: jsonData)
                 return data
                 
             } catch {

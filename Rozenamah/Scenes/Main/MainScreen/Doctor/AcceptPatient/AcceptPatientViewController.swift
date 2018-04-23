@@ -2,20 +2,23 @@ import UIKit
 import SwiftCake
 
 protocol AcceptPatientDisplayLogic: class {
+    func patientAccepted(with visitId: String)
+    func patientRejected()
+    func handle(error: Error)
 }
 
 class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
 
     // MARK: Outlets
+    
     @IBOutlet weak var avatarImageView: SCImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var phoneNumber: UIButton!
-    @IBOutlet weak var distanceLabel: UIButton!
+    @IBOutlet weak var distanceButton: UIButton!
     @IBOutlet weak var confirmationLabel: UILabel!
     
-
     // MARK: Properties
     var interactor: AcceptPatientBusinessLogic?
     var router: AcceptPatientRouter?
@@ -23,7 +26,13 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     // Delegate responsible for doctors action, whether accept or cancel patient
     weak var flowDelegate: DoctortFlowDelegate?
     // Information about patient for doctor when he is about to accept or decline visit
-    var patientInfo: VisitDetails?
+    var visitInfo: VisitDetails! {
+        didSet {
+            customizePatientInfo()
+        }
+    }
+    // Variable used for calculation acceptance time
+    private  var minutes = 15
 
     // MARK: Object lifecycle
 
@@ -47,37 +56,65 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        setTimeLeftLabel()
+    }
+    private func setTimeLeftLabel() {
         
+        var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] (timer)   in
+            // Self is weak because we want to avoid retain cycle
+            self?.confirmationLabel.text = "Confirm in \((self?.minutes)! - 1) minutes to accept visit"
+            if self?.minutes == 0 {
+                timer.invalidate()
+                return
+            }
+            self?.minutes -= 1
+        }
     }
     
-    private func customizePatientInfo() {
-        avatarImageView.setAvatar(for: patientInfo?.user)
-        nameLabel.text = patientInfo?.user.fullname
-        priceLabel.text = "\(patientInfo?.visit.price)"
-        feeLabel.text = "\(patientInfo?.visit.fee)"
-        phoneNumber.setTitle("\(patientInfo?.visit.phone)", for: .normal)
-       // distanceLabel.setTitle("\(patientInfo?.visit.distance)", for: .normal)
+    func customizePatientInfo() {
+        let user = visitInfo.user
+        let visit = visitInfo.visit
+        avatarImageView.setAvatar(for: user)
+        nameLabel.text = user.fullname
+        priceLabel.text = "\(visit.price) SAR"
+        phoneNumber.setTitle(visit.phone ?? "No phone number", for: .normal)
+        distanceButton.setTitle("\(visit.distanceInKM) km from you", for: .normal)
+        
+        // Without this phone number will rever title to previous one (it is a bug but source is uknown)
+        phoneNumber.setTitle(visit.phone ?? "No phone number", for: .highlighted)
+        distanceButton.setTitle("\(visit.distanceInKM) km from you", for: .highlighted)
+        
+        // If more then 10 kilometers, highlight distance to red
+        distanceButton.tintColor = visit.distanceInKM > 10 ? .rmRed : .rmGray
+        
+        // If fee > 0, show fee label
+        feeLabel.isHidden = visit.fee <= 0
+        feeLabel.text = "+ \(visit.fee) SAR for cancellation"
+        
     }
 
     // MARK: Event handling
 
     @IBAction func acceptAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .accept)
         
+        interactor?.acceptPatient(for: "visit_Id")
         // TODO: remove segue
         performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .cancel)
+        flowDelegate?.changeStateTo(flowPoint: .reject)
     }
     
     @IBAction func patientDetailsAction(_ sender: Any) {
-        router?.navigateToPatientsDetails()
+        router?.navigateToPatientDetails()
+       
     }
     
     @IBAction func phoneAction(_ sender: Any) {
-        router?.makeCall(to: "\(patientInfo?.visit.phone)")
+        if visitInfo?.visit.phone != nil {
+            router?.makeCall(to: "\(visitInfo.visit.phone!)")
+        }
     }
     
     @IBAction func mapAction(_ sender: Any) {
@@ -85,4 +122,16 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     
     // MARK: Presenter methods
+    
+    func patientAccepted(with visitId: String) {
+        flowDelegate?.changeStateTo(flowPoint: .accept(visitId: visitId))
+    }
+    
+    func patientRejected() {
+        flowDelegate?.changeStateTo(flowPoint: .reject)
+    }
+    
+    func handle(error: Error) {
+        router?.showError(error)
+    }
 }

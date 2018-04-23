@@ -6,10 +6,18 @@ protocol PatientDetailsDisplayLogic: class {
 class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic {
 
     // MARK: Outlets
-
+    
+    @IBOutlet weak var priceAmountLabel: UILabel!
+    @IBOutlet weak var feeAmountLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var avatarImage: UIImageView!
+    
     // MARK: Properties
     var interactor: PatientDetailsBusinessLogic?
     var router: PatientDetailsRouter?
+    
+    var visitDetails: VisitDetails!
 
     // MARK: Object lifecycle
 
@@ -33,6 +41,11 @@ class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic
     // MARK: View customization
 
     fileprivate func setupView() {
+        // TODO: Fill missing labels with correct data
+        avatarImage.setAvatar(for: visitDetails.user)
+        nameLabel.text = visitDetails.user.fullname
+        priceAmountLabel.text = "\(visitDetails.visit.price) SAR"
+        feeAmountLabel.text = "\(visitDetails.visit.fee) SAR"
     }
 
     // MARK: Event handling

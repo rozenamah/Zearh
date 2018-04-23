@@ -24,6 +24,6 @@ class LoginResponse: Decodable {
     
     let token: String
     let refreshToken: String
-    let user: User
+    let user: User 
     
 }

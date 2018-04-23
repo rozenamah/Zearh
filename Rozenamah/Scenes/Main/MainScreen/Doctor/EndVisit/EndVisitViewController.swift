@@ -36,7 +36,14 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     }
 
     // MARK: Event handling
-
+    @IBAction func checkBoxAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func endVisitAction(_ sender: Any) {
+        
+    }
+    
     @IBAction func closeAction(_ sender: Any) {
         router?.dismiss()
     }
