@@ -229,6 +229,7 @@
 		F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */; };
 		F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */; };
 		F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */; };
+		F9FADAFF208E0735002450FD /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FADAFE208E0735002450FD /* Booking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -459,6 +460,7 @@
 		F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
 		F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileConfigurator.swift; sourceTree = "<group>"; };
+		F9FADAFE208E0735002450FD /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1082,6 +1084,7 @@
 				F940EC77205BEA4A00266753 /* User.swift */,
 				F967D3302076380200F2EB75 /* Doctor.swift */,
 				F9B9579D208728DE008329F2 /* Visit.swift */,
+				F9FADAFE208E0735002450FD /* Booking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1471,6 +1474,7 @@
 				F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */,
 				F95AFBF9206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift in Sources */,
 				574FC578208493A4001E4059 /* PatientDetailsModels.swift in Sources */,
+				F9FADAFF208E0735002450FD /* Booking.swift in Sources */,
 				F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */,
 				F99A2EC5207CBCC1009505EB /* WaitPresenter.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,

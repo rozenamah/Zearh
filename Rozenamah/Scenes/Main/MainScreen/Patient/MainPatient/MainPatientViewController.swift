@@ -83,9 +83,11 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             }
         case .accept(let doctor, let filters):
             router?.navigateToAcceptDoctor(withDoctor: doctor, byFilters: filters)
+        case .waitForAccept(booking: let booking):
+            router?.navigateToWaitForAccept(withBooking: booking)
         case .pending:
             // Show all buttons when no form visible
-            self.viewToHideWhenFormVisible.forEach { $0.isHidden = false }
+            viewToHideWhenFormVisible.forEach { $0.isHidden = false }
             router?.closeContainer()
         }
     }

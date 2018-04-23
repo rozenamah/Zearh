@@ -2,9 +2,11 @@ import UIKit
 import KeychainAccess
 import Alamofire
 
+typealias BookingCompletion = (Booking?, RMError?) -> Void
+
 class PaymentMethodWorker {
 	
-    func accept(doctor: User, withPaymentMethod paymentMethod: PaymentMethod, completion: @escaping ErrorCompletion) {
+    func accept(doctor: User, withPaymentMethod paymentMethod: PaymentMethod, completion: @escaping BookingCompletion) {
         
         let params: [String: Any] = [
             "doctor": doctor.id,
@@ -12,7 +14,7 @@ class PaymentMethodWorker {
         ]
         
         guard let token = Keychain.shared.token else {
-            completion(RMError.tokenDoesntExist)
+            completion(nil, RMError.tokenDoesntExist)
             return
         }
         
@@ -22,7 +24,7 @@ class PaymentMethodWorker {
         
         Alamofire.request(API.Visit.request.path, method: .post, parameters: params, headers: headers)
             .validate()
-            .responseEmpty(completion: completion)
+            .responseCodable(type: Booking.self, completion: completion)
     }
     
 }

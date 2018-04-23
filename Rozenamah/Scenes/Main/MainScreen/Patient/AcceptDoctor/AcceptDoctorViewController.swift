@@ -1,9 +1,9 @@
 import UIKit
 
-protocol AcceptDoctorDisplayLogic: class {
+protocol AcceptDoctorDisplayLogic: PaymentMethodDelegate {
 }
 
-class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, PaymentMethodDelegate {
+class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic {
 
     // MARK: Outlets
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -98,9 +98,11 @@ class AcceptDoctorViewController: UIViewController, AcceptDoctorDisplayLogic, Pa
         router?.navigateToPaymentMethod()
     }
     
-    func patientPayWith(_ type: PaymentMethod) {
-        
-    }
     
     // MARK: Presenter methods
+    
+    /// Called when new booking created from "payment method" screen
+    func new(booking: Booking) {
+        flowDelegate?.changeStateTo(flowPoint: .waitForAccept(booking: booking))
+    }
 }

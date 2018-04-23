@@ -84,11 +84,24 @@ class MainPatientRouter: MainScreenRouter, Router {
             
             self.add(asChildViewController: self.waitVC)
             self.viewController?.containerHeightConstraint.constant = 202
-            self.waitVC.filters = form // Pass current filters
+            self.waitVC.state = .waitSearch(filters: form) // Pass current filters
             
             self.openContainer()
         }
     }
     
+    func navigateToWaitForAccept(withBooking booking: Booking) {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            
+            self.add(asChildViewController: self.waitVC)
+            self.viewController?.containerHeightConstraint.constant = 202
+            self.waitVC.state = .waitAccept(booking: booking) // Pass current booking
+            
+            self.openContainer()
+        }
+    }
 
 }
