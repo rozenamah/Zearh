@@ -29,7 +29,7 @@
             "phoneNumber": "Phone number",
             "password": "Password",
             "confirmPassword": "Confirm Password",
-            "acceptButton": "I accept",
+            "acceptButton": "I accept ",
             "termsButton": "Terms & Conditions",
             "previous": "Previous",
             "terms": "You need to accept Terms & Conditions",
@@ -75,7 +75,7 @@
             "title": "Forgot password?",
             "description": "Enter your email address to receive a link to reset your password",
             "email": "Email",
-            "resetButton": "Reset button",
+            "resetButton": "Reset password",
             "resetLink": "You should receive reset link on your email"
         },
         "resetPassword": {

@@ -7,7 +7,7 @@ class PaymentMethodWorker {
     func accept(doctor: User, withPaymentMethod paymentMethod: PaymentMethod, completion: @escaping ErrorCompletion) {
         
         let params: [String: Any] = [
-            "uid": doctor.id,
+            "doctor": doctor.id,
             "payment": paymentMethod.rawValue
         ]
         
@@ -20,7 +20,7 @@ class PaymentMethodWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Doctor.accept.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Visit.request.path, method: .post, parameters: params, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

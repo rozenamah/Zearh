@@ -5,8 +5,6 @@ import Alamofire
 protocol MainDoctorBusinessLogic: MainScreenBusinessLogic {
     func stopReceivingRequests()
     func startReceivingRequests()
-    func acceptPatient(for visitId: String)
-    func rejectPatient(for visitId: String)
 }
 
 class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
@@ -34,26 +32,6 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
     private var lastRequest: DataRequest?
 
 	// MARK: Business logic
-    
-    func rejectPatient(for visitId: String) {
-        worker.rejectPatient(for: visitId) { (error) in
-            if let error = error {
-                self.presenter?.handleError(error)
-                return
-            }
-            self.presenter?.patienRejected()
-        }
-    }
-    
-    func acceptPatient(for visitId: String) {
-        worker.acceptPatient(for: visitId) { (error) in
-            if let error = error {
-                self.presenter?.handleError(error)
-                return
-            }
-            self.presenter?.patientAccepted()
-        }
-    }
 	
     func startReceivingRequests() {
         

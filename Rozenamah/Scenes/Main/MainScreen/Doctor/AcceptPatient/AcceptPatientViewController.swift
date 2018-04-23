@@ -2,6 +2,9 @@ import UIKit
 import SwiftCake
 
 protocol AcceptPatientDisplayLogic: class {
+    func patientAccepted(with visitId: String)
+    func patientRejected()
+    func handle(error: Error)
 }
 
 class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
@@ -58,9 +61,14 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     private func setTimeLeftLabel() {
         
-        var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { (_) in
-            self.confirmationLabel.text = "Confirm in \(self.minutes - 1) minutes to accept visit"
-            self.minutes -= 1
+        var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] (timer)   in
+            // Self is weak because we want to avoid retain cycle
+            self?.confirmationLabel.text = "Confirm in \((self?.minutes)! - 1) minutes to accept visit"
+            if self?.minutes == 0 {
+                timer.invalidate()
+                return
+            }
+            self?.minutes -= 1
         }
     }
     
@@ -73,9 +81,12 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
         phoneNumber.setTitle(visit.phone ?? "No phone number", for: .normal)
         distanceButton.setTitle("\(visit.distanceInKM) km from you", for: .normal)
         
+        // Without this phone number will rever title to previous one (it is a bug but source is uknown)
+        phoneNumber.setTitle(visit.phone ?? "No phone number", for: .highlighted)
+        distanceButton.setTitle("\(visit.distanceInKM) km from you", for: .highlighted)
+        
         // If more then 10 kilometers, highlight distance to red
         distanceButton.tintColor = visit.distanceInKM > 10 ? .rmRed : .rmGray
-        distanceButton.setTitleColor(.rmRed, for: .normal)
         
         // If fee > 0, show fee label
         feeLabel.isHidden = visit.fee <= 0
@@ -86,18 +97,18 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     // MARK: Event handling
 
     @IBAction func acceptAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .accept)
+        
         
         // TODO: remove segue
         performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .cancel)
+        flowDelegate?.changeStateTo(flowPoint: .reject)
     }
     
     @IBAction func patientDetailsAction(_ sender: Any) {
-        router?.navigateToPatientDetails(visitInfo)
+        router?.navigateToPatientDetails()
        
     }
     
@@ -112,4 +123,16 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     }
     
     // MARK: Presenter methods
+    
+    func patientAccepted(with visitId: String) {
+        flowDelegate?.changeStateTo(flowPoint: .accept(visitId: visitId))
+    }
+    
+    func patientRejected() {
+        flowDelegate?.changeStateTo(flowPoint: .reject)
+    }
+    
+    func handle(error: Error) {
+        router?.showError(error)
+    }
 }

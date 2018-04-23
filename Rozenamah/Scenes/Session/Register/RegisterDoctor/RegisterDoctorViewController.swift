@@ -74,7 +74,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
         
         // If type is update - add cancel button to navigation bar
         if registerType == .update {
-            let cancelButton = UIBarButtonItem(title: "session.generic.cancel".localized, style: .plain, target: self, action: #selector(cancelAction(_:)))
+            let cancelButton = UIBarButtonItem(title: "generic.cancel".localized, style: .plain, target: self, action: #selector(cancelAction(_:)))
             navigationItem.leftBarButtonItem = cancelButton
             
             // Title label and button should be different on update
