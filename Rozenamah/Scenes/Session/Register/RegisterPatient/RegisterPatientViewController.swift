@@ -215,7 +215,7 @@ extension RegisterPatientViewController: UITextFieldDelegate {
         case confirmPasswordView.textField:
             confirmPasswordView.adjustToState(.inactive)
         case phoneView.textField:
-            phoneView.adjustToState(.active)
+            phoneView.adjustToState(.inactive)
         default:
             break
         }
