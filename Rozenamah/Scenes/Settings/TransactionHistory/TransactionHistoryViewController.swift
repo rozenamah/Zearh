@@ -85,9 +85,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     }
     
     func presentTransactions(_ transactions: [Transaction]) {
-        
         self.transactions = transactions
-        
+        //self.tableView.reloadData()
     }
     
     func handleError(error: Error) {
@@ -108,7 +107,9 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router?.navigateToTransactionDetail(for: transactions[indexPath.row])
+        if indexPath.section == 1 {
+            router?.navigateToTransactionDetail(for: transactions[indexPath.row])
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
