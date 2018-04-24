@@ -7,7 +7,7 @@ class AcceptPatientRouter: Router, PhoneCallRouter, AlertRouter {
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "patient_details_segue", let _ = sender as? VisitDetails {
+        if segue.identifier == "patient_details_segue" {
             passVisitDetials(segue.destination)
         }
     }
@@ -15,7 +15,7 @@ class AcceptPatientRouter: Router, PhoneCallRouter, AlertRouter {
     // MARK: Navigation
     
     func navigateToPatientDetails() {
-        viewController?.performSegue(withIdentifier: "patient_details_segue", sender: viewController?.visitInfo)
+        viewController?.performSegue(withIdentifier: "patient_details_segue", sender: nil)
     }
 
     // MARK: Passing data

@@ -96,14 +96,13 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     // MARK: Event handling
 
     @IBAction func acceptAction(_ sender: Any) {
-        
-        interactor?.acceptPatient(for: "visit_Id")
-        // TODO: remove segue
-        performSegue(withIdentifier: "end_visit_segue", sender: nil)
+        //interactor?.acceptPatient(for: "visit_Id")
+        //TODO: Delete this line, uncomment previous
+        flowDelegate?.changeStateTo(flowPoint: .accept(visitId: "adsa"))
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .reject)
+        interactor?.rejectPatient(for: "asdasd")
     }
     
     @IBAction func patientDetailsAction(_ sender: Any) {

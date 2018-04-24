@@ -177,6 +177,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         
         // Reset specialization
         specializationButton.isSelected = false
+        callForm.specialization = nil
         
         // Hide error in specialization if any
         hideErrorIn(button: specializationButton)

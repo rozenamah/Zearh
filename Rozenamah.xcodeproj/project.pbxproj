@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CEBE2089E7AE00245F7A /* AppRouter.swift */; };
 		570DC857208E1E7A0034B264 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570DC856208E1E7A0034B264 /* DoubleExtension.swift */; };
+		57101097208F6315008B4384 /* BusyDoctorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101090208F6315008B4384 /* BusyDoctorPresenter.swift */; };
+		57101098208F6315008B4384 /* BusyDoctorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101091208F6315008B4384 /* BusyDoctorWorker.swift */; };
+		57101099208F6315008B4384 /* BusyDoctorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101092208F6315008B4384 /* BusyDoctorRouter.swift */; };
+		5710109A208F6315008B4384 /* BusyDoctorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101093208F6315008B4384 /* BusyDoctorModels.swift */; };
+		5710109B208F6315008B4384 /* BusyDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101094208F6315008B4384 /* BusyDoctorViewController.swift */; };
+		5710109C208F6315008B4384 /* BusyDoctorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101095208F6315008B4384 /* BusyDoctorInteractor.swift */; };
+		5710109D208F6315008B4384 /* BusyDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101096208F6315008B4384 /* BusyDoctorConfigurator.swift */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
@@ -230,6 +237,7 @@
 		F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */; };
 		F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */; };
 		F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */; };
+		F9FADAFF208E0735002450FD /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FADAFE208E0735002450FD /* Booking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +245,13 @@
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5702CEBE2089E7AE00245F7A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		570DC856208E1E7A0034B264 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		57101090208F6315008B4384 /* BusyDoctorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorPresenter.swift; sourceTree = "<group>"; };
+		57101091208F6315008B4384 /* BusyDoctorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorWorker.swift; sourceTree = "<group>"; };
+		57101092208F6315008B4384 /* BusyDoctorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorRouter.swift; sourceTree = "<group>"; };
+		57101093208F6315008B4384 /* BusyDoctorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorModels.swift; sourceTree = "<group>"; };
+		57101094208F6315008B4384 /* BusyDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorViewController.swift; sourceTree = "<group>"; };
+		57101095208F6315008B4384 /* BusyDoctorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorInteractor.swift; sourceTree = "<group>"; };
+		57101096208F6315008B4384 /* BusyDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorConfigurator.swift; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
@@ -461,6 +476,7 @@
 		F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
 		F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileConfigurator.swift; sourceTree = "<group>"; };
+		F9FADAFE208E0735002450FD /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +498,20 @@
 				12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5710108F208F62A5008B4384 /* BusyDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				57101090208F6315008B4384 /* BusyDoctorPresenter.swift */,
+				57101091208F6315008B4384 /* BusyDoctorWorker.swift */,
+				57101092208F6315008B4384 /* BusyDoctorRouter.swift */,
+				57101093208F6315008B4384 /* BusyDoctorModels.swift */,
+				57101094208F6315008B4384 /* BusyDoctorViewController.swift */,
+				57101095208F6315008B4384 /* BusyDoctorInteractor.swift */,
+				57101096208F6315008B4384 /* BusyDoctorConfigurator.swift */,
+			);
+			path = BusyDoctor;
 			sourceTree = "<group>";
 		};
 		57369F18207E0CBD001666EB /* ChangePhoneNumber */ = {
@@ -881,6 +911,7 @@
 		F992D315206E393800DF0604 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
+				5710108F208F62A5008B4384 /* BusyDoctor */,
 				574FC56D20849382001E4059 /* PatientDetails */,
 				578A6E802080BD6300CB4E79 /* EndVisit */,
 				578A6E71207F658500CB4E79 /* AcceptPatient */,
@@ -1085,6 +1116,7 @@
 				F940EC77205BEA4A00266753 /* User.swift */,
 				F967D3302076380200F2EB75 /* Doctor.swift */,
 				F9B9579D208728DE008329F2 /* Visit.swift */,
+				F9FADAFE208E0735002450FD /* Booking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1257,6 +1289,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -1264,11 +1297,14 @@
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCake/SwiftCake.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1276,6 +1312,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCake.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1338,6 +1376,7 @@
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
 				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
+				5710109D208F6315008B4384 /* BusyDoctorConfigurator.swift in Sources */,
 				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
 				574FC577208493A4001E4059 /* PatientDetailsRouter.swift in Sources */,
 				573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */,
@@ -1349,6 +1388,7 @@
 				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
 				F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */,
 				F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */,
+				5710109A208F6315008B4384 /* BusyDoctorModels.swift in Sources */,
 				F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */,
 				F992D348206E418100DF0604 /* MainScreenPresenter.swift in Sources */,
 				F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */,
@@ -1371,6 +1411,8 @@
 				F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */,
 				578A6E7A207F659D00CB4E79 /* AcceptPatientWorker.swift in Sources */,
 				F940EC4E205A9BFF00266753 /* MainPatientConfigurator.swift in Sources */,
+				5710109C208F6315008B4384 /* BusyDoctorInteractor.swift in Sources */,
+				57101099208F6315008B4384 /* BusyDoctorRouter.swift in Sources */,
 				57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */,
 				573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
@@ -1411,6 +1453,7 @@
 				F9CEDE63206521DA004ED0C7 /* EditProfileRouter.swift in Sources */,
 				574FC5982084A89A001E4059 /* PaymentMethodInteractor.swift in Sources */,
 				574FC58A20849E1F001E4059 /* PaymentConfigurator.swift in Sources */,
+				5710109B208F6315008B4384 /* BusyDoctorViewController.swift in Sources */,
 				F940EC4D205A9BFF00266753 /* MainPatientInteractor.swift in Sources */,
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
@@ -1452,6 +1495,7 @@
 				574FC58620849E1F001E4059 /* PaymentRouter.swift in Sources */,
 				F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */,
 				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
+				57101097208F6315008B4384 /* BusyDoctorPresenter.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */,
 				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
@@ -1475,6 +1519,7 @@
 				F97B71F72062B5960073A968 /* CallDoctorRouter.swift in Sources */,
 				F95AFBF9206A6CBC007CCFB1 /* CallDoctorFiltersWorker.swift in Sources */,
 				574FC578208493A4001E4059 /* PatientDetailsModels.swift in Sources */,
+				F9FADAFF208E0735002450FD /* Booking.swift in Sources */,
 				F97B71FB2062B5960073A968 /* CallDoctorConfigurator.swift in Sources */,
 				F99A2EC5207CBCC1009505EB /* WaitPresenter.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
@@ -1485,6 +1530,7 @@
 				574FC58420849E1F001E4059 /* PaymentPresenter.swift in Sources */,
 				57E659C920739EBC004E3926 /* ChangePasswordConfigurator.swift in Sources */,
 				574FC5942084A89A001E4059 /* PaymentMethodWorker.swift in Sources */,
+				57101098208F6315008B4384 /* BusyDoctorWorker.swift in Sources */,
 				F99A2EDC207F37D2009505EB /* AcceptDoctorConfigurator.swift in Sources */,
 				578A6E8A2080BD7800CB4E79 /* EndVisitRouter.swift in Sources */,
 				578A6E8B2080BD7800CB4E79 /* EndVisitModels.swift in Sources */,

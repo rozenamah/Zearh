@@ -58,7 +58,7 @@ class DrawerRouter: Router, AppStartRouter, AlertRouter {
     
     func navigateToTransactions() {
         viewController?.toggleLeft()
-        viewController?.performSegue(withIdentifier: "transaction_history_segue", sender: nil)
+        //viewController?.performSegue(withIdentifier: "transaction_history_segue", sender: nil)
     }
     
     func showLogoutAlert() {

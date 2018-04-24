@@ -94,6 +94,8 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
             professionButton.isSelected = true
             if let specialization = doctor.specialization {
                 specializationSelected(specialization)
+            } else {
+                disableSpecialization()
             }
 
             if let price = doctor.price {

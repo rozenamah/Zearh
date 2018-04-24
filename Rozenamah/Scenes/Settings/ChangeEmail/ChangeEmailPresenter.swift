@@ -21,7 +21,7 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
             case .emailAlreadyTaken:
                 return "session.patient.error.emailTaken".localized
             case .incorrectEmail:
-                return "session.login.error.incorrectEmail".localized
+                return "settings.changeEmail.incorrectEmail".localized 
             case .unknownError:
                 return "generic.error.unknown".localized
             }

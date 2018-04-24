@@ -21,6 +21,11 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return vc
     }()
     
+    lazy var doctorBusyVC: BusyDoctorViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busy_doctor_vc") as! BusyDoctorViewController
+        return vc
+    }()
+    
     
     // MARK: Routing
     
@@ -36,7 +41,20 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNotification(for notification: NSNotification) {
         if let visit = notification.userInfo?["visit"] as? VisitDetails {
             patientFormVC.visitInfo = visit
+            doctorBusyVC.visitDetails = visit
             openContainer()
+        }
+    }
+    
+    func navigateToDoctorBusy() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            self.add(asChildViewController: self.doctorBusyVC)
+            self.viewController?.containerHeightConstraint.constant = 309
+            
+            self.openContainer()
         }
     }
     
@@ -49,16 +67,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     func openContainer(completion: (() -> Void)? = nil) {
         animateOpenContainer(completion: completion)
     }
-    
-    func navigatePatientForm() {
-       
-    }
-    
-    func navigateToAcceptPatient() {
-        
-    }
 
-    
     func navigateToCancel() {
         animateCloseContainer {
             // Do nothing

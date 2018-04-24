@@ -9,21 +9,21 @@ protocol WaitDisplayLogic: class {
 class WaitViewController: UIViewController, WaitDisplayLogic {
 
     // MARK: Outlets
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     // MARK: Properties
     var interactor: WaitBusinessLogic?
     var router: WaitRouter?
 
-    /// We use it to communicate flow to main screen
-    weak var flowDelegate: PatientFlowDelegate?
-    
-    /// Filters for which we search doctors
-    var filters: CallDoctorForm! {
+    /// This screen can have different states depending on this case
+    var state: WaitType! {
         didSet {
-            // Start calling search immidatly after fitlers are changed
-            interactor?.searchForDoctor(withFilters: filters)
+            performWaitAction()
         }
     }
+    
+    /// We use it to communicate flow to main screen
+    weak var flowDelegate: PatientFlowDelegate?
     
     // MARK: Object lifecycle
 
@@ -51,6 +51,23 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
 
     // MARK: Event handling
     
+    /// Called when new state is inserted
+    /// App checks which action should be performed in screen
+    private func performWaitAction() {
+        guard let state = state else {
+            return
+        }
+        
+        switch state {
+        case .waitAccept(let booking):
+            titleLabel.text = "Doctor needs to accept your visit request"
+        case .waitSearch(let filters):
+            titleLabel.text = "Please wait"
+            // Start calling search immidatly after fitlers are changed
+            interactor?.searchForDoctor(withFilters: filters)
+        }
+    }
+    
     @IBAction func cancelAction(_ sender: Any) {
         interactor?.cancelCurrentRequest()
         flowDelegate?.changeStateTo(flowPoint: .callDoctor)
@@ -63,6 +80,10 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     }
     
     func found(doctor: VisitDetails) {
+        guard case let .waitSearch(filters) = state! else {
+            return
+        }
+        
         flowDelegate?.changeStateTo(flowPoint: .accept(doctor: doctor, foundByFilters: filters))
     }
     

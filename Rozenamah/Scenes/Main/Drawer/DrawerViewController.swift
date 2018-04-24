@@ -70,13 +70,6 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         // If doctor account active, display ability to switch to doctor account
         if currentMode == .doctor {
             switchAccountButton.setTitle("Patient account", for: .normal)
-        } else {
-            // If account not verified - we gray out button a little
-            if User.current?.doctor?.isVerified == true {
-                switchAccountButton.alpha = 1
-            } else {
-                switchAccountButton.alpha = 0.3
-            }
         }
     }
     
@@ -91,6 +84,13 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
             
             createAccountView.isHidden = user.type == .doctor
             switchAccountView.isHidden = user.type != .doctor
+            
+            // If account not verified - we gray out button a little
+            if User.current?.doctor?.isVerified == true {
+                switchAccountButton.alpha = 1
+            } else {
+                switchAccountButton.alpha = 0.3
+            }
             
         }
     }

@@ -2,10 +2,11 @@ import UIKit
 
 protocol PaymentMethodDisplayLogic: class {
     func handle(error: Error)
+    func bookingCreated(_ booking: Booking)
 }
 
 protocol PaymentMethodDelegate: class {
-    func patientPayWith(_ type: PaymentMethod)
+    func new(booking: Booking)
 }
 
 class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
@@ -94,4 +95,10 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
         })
     }
     
+    func bookingCreated(_ booking: Booking) {
+        router?.hideWaitAlert(completion: {
+            self.delegate?.new(booking: booking)
+            self.router?.dismiss()
+        })
+    }
 }

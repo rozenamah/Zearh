@@ -2,6 +2,7 @@ import UIKit
 
 protocol PaymentMethodPresentationLogic {
     func handleError(_ error: RMError)
+    func present(booking: Booking)
 }
 
 class PaymentMethodPresenter: PaymentMethodPresentationLogic {
@@ -16,5 +17,9 @@ class PaymentMethodPresenter: PaymentMethodPresentationLogic {
         default:
             viewController?.handle(error: error)
         }
+    }
+    
+    func present(booking: Booking) {
+        viewController?.bookingCreated(booking)
     }
 }

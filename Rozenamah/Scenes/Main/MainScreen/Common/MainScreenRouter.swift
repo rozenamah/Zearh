@@ -57,6 +57,10 @@ class MainScreenRouter: NSObject {
     
     
     func add(asChildViewController childViewController: UIViewController) {
+        
+        // Remove current view controller if possible
+        removeCurrentChildController()
+        
         guard let parentViewController = baseViewController else {
             return
         }
@@ -78,7 +82,11 @@ class MainScreenRouter: NSObject {
         childViewController.didMove(toParentViewController: parentViewController)
     }
     
-    func remove(asChildViewController childViewController: UIViewController) {
+    func removeCurrentChildController() {
+        
+        guard let childViewController = currentViewController else {
+            return
+        }
         
         // Notify Child View Controller
         childViewController.willMove(toParentViewController: nil)
