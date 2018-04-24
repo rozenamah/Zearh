@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 protocol BusyDoctorDisplayLogic: class {
 }
@@ -16,6 +17,7 @@ class BusyDoctorViewController: UIViewController, BusyDoctorDisplayLogic {
     var router: BusyDoctorRouter?
     
     var visitDetails: VisitDetails!
+    var locationManager = CLLocationManager()
 
     // MARK: Object lifecycle
 
@@ -39,7 +41,8 @@ class BusyDoctorViewController: UIViewController, BusyDoctorDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
-        
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
 
     // MARK: Event handling
@@ -47,4 +50,16 @@ class BusyDoctorViewController: UIViewController, BusyDoctorDisplayLogic {
     
 
     // MARK: Presenter methods
+}
+
+extension BusyDoctorViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        interactor?.updateDoctorsLocation(location)
+        
+    }
 }

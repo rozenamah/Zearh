@@ -16,6 +16,7 @@
 		5710109B208F6315008B4384 /* BusyDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101094208F6315008B4384 /* BusyDoctorViewController.swift */; };
 		5710109C208F6315008B4384 /* BusyDoctorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101095208F6315008B4384 /* BusyDoctorInteractor.swift */; };
 		5710109D208F6315008B4384 /* BusyDoctorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101096208F6315008B4384 /* BusyDoctorConfigurator.swift */; };
+		5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5710109E208F6FB2008B4384 /* GoogleService-Info.plist */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
@@ -252,6 +253,7 @@
 		57101094208F6315008B4384 /* BusyDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorViewController.swift; sourceTree = "<group>"; };
 		57101095208F6315008B4384 /* BusyDoctorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorInteractor.swift; sourceTree = "<group>"; };
 		57101096208F6315008B4384 /* BusyDoctorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyDoctorConfigurator.swift; sourceTree = "<group>"; };
+		5710109E208F6FB2008B4384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 				F95F140520612F3E00CDC2E5 /* Rozenamah.entitlements */,
 				F9A9F2A0204D5881006E8999 /* Common */,
 				F9A9F297204D57FA006E8999 /* Scenes */,
+				5710109E208F6FB2008B4384 /* GoogleService-Info.plist */,
 				F9093A70204992CB00CB041A /* AppDelegate.swift */,
 				F940EC2A20595A1100266753 /* API.swift */,
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
@@ -1236,6 +1239,7 @@
 				F969920F20863907007E6C42 /* lang-en.json in Resources */,
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F969921020863907007E6C42 /* lang-ar.json in Resources */,
+				5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
 			);

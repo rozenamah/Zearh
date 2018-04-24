@@ -15,6 +15,7 @@ import GoogleMaps
 import SlideMenuControllerSwift
 import KeychainAccess
 import Localize
+import Firebase
 
 
 @UIApplicationMain
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureApp()
         configureAlamofire()
         configureLanguage()
+        FirebaseApp.configure()
     
         return true
     }
