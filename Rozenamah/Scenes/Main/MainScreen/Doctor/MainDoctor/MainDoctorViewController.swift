@@ -87,15 +87,16 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     func changeStateTo(flowPoint: DoctorFlow) {
         switch flowPoint {
         case .accept(let visitId):
-            router?.animateCloseContainer {
-                self.router?.navigateToDoctorBusy()
-            }
+            router?.navigateToDoctorBusy()
         case .reject:
-            router?.animateCloseContainer {
-                // Do nothing
-            }
+            router?.navigateToCancel()
+        case .cancel:
+            router?.navigateToCancel()
+        case .arrived:
+            router?.navigateToCancel()
         }
     }
+
     
     // MARK: Presenter methods
     

@@ -7,6 +7,8 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     override var baseViewController: MainScreenViewController? {
         return viewController
     }
+    // Variable for passing data to doctorBusyVC
+    private var visitDetails: VisitDetails?
     
     private static let kVisitRequestNotification = Notification.Name("kVisitRequestNotification")
     
@@ -23,6 +25,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     
     lazy var doctorBusyVC: BusyDoctorViewController = {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busy_doctor_vc") as! BusyDoctorViewController
+        vc.flowDelegate = viewController
         return vc
     }()
     
@@ -41,7 +44,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNotification(for notification: NSNotification) {
         if let visit = notification.userInfo?["visit"] as? VisitDetails {
             patientFormVC.visitInfo = visit
-            doctorBusyVC.visitDetails = visit
+            visitDetails = visit
             openContainer()
         }
     }
@@ -53,7 +56,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             }
             self.add(asChildViewController: self.doctorBusyVC)
             self.viewController?.containerHeightConstraint.constant = 309
-            
+            self.doctorBusyVC.visitInfo = self.visitDetails
             self.openContainer()
         }
     }
