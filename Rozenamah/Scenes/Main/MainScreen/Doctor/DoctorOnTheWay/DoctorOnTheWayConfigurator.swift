@@ -10,8 +10,8 @@ extension DoctorOnTheWayViewController {
    func setup() {
         let viewController = self
         let interactor = DoctorOnTheWayInteractor()
-        let presenter = BusyDoctorPresenter()
-        let router = BusyDoctorRouter()
+        let presenter = DoctorOnTheWayPresenter()
+        let router = DoctorOnTheWayRouter()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter

@@ -2,13 +2,13 @@ import UIKit
 import CoreLocation
 import SwiftCake
 
-protocol BusyDoctorDisplayLogic: class {
+protocol DoctorOnTheWayDisplayLogic: class {
     func presentError(_ error: Error)
     func doctorArrived()
     func doctorCancelled()
 }
 
-class DoctorOnTheWayViewController: UIViewController, BusyDoctorDisplayLogic {
+class DoctorOnTheWayViewController: UIViewController, DoctorOnTheWayDisplayLogic {
 
     // MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,8 +19,8 @@ class DoctorOnTheWayViewController: UIViewController, BusyDoctorDisplayLogic {
     @IBOutlet weak var distanceButton: UIButton!
     
     // MARK: Properties
-    var interactor: BusyDoctorBusinessLogic?
-    var router: BusyDoctorRouter?
+    var interactor: DoctorOnTheWayBusinessLogic?
+    var router: DoctorOnTheWayRouter?
     
     var locationManager = CLLocationManager()
     // Delegate responsible for passing action to parent viewcontroller

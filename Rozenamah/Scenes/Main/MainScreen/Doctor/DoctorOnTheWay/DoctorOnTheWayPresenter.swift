@@ -1,14 +1,14 @@
 import UIKit
 
-protocol BusyDoctorPresentationLogic {
+protocol DoctorOnTheWayPresentationLogic {
     func handle(_ error: Error)
     func doctorArrived()
     func doctorCancelled()
     
 }
 
-class BusyDoctorPresenter: BusyDoctorPresentationLogic {
-	weak var viewController: BusyDoctorDisplayLogic?
+class DoctorOnTheWayPresenter: DoctorOnTheWayPresentationLogic {
+	weak var viewController: DoctorOnTheWayDisplayLogic?
 
 	// MARK: Presentation logic
 	

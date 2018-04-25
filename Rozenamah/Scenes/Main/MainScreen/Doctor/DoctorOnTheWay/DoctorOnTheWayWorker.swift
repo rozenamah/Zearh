@@ -4,7 +4,7 @@ import CoreLocation
 import KeychainAccess
 import Alamofire
 
-class BusyDoctorWorker: DoctorLocationWorker {
+class DoctorOnTheWayWorker: DoctorLocationWorker {
     
     func updateLocationInDataBase(_ location: CLLocation) {
         

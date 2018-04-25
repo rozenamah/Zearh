@@ -1,6 +1,6 @@
 import UIKit
 
-class BusyDoctorRouter: Router, AlertRouter {
+class DoctorOnTheWayRouter: Router, AlertRouter {
     typealias RoutingViewController = DoctorOnTheWayViewController
     weak var viewController: DoctorOnTheWayViewController?
 
