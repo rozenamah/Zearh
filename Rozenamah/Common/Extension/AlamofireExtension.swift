@@ -185,7 +185,9 @@ extension Alamofire.DataRequest {
                 "refresh_token": refreshToken
             ]
             
-            Alamofire.request(API.User.refresh.path, method: .post, parameters: params).validate()
+            Alamofire.request(API.User.refresh.path, method: .post, parameters: params,
+                              encoding: JSONEncoding.default)
+                .validate()
                 .responseData { (response) in
                     
                     switch response.result {

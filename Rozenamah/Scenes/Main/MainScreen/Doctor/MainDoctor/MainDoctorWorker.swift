@@ -20,7 +20,8 @@ class MainDoctorWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Doctor.availability.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Doctor.availability.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: { (error) in
                 User.current?.doctor?.isAvailable = availbility
@@ -55,7 +56,8 @@ class MainDoctorWorker {
         
         let method: HTTPMethod = location == nil ? .delete : .post
         
-        return Alamofire.request(API.Doctor.position.path, method: method, parameters: params, headers: headers)
+        return Alamofire.request(API.Doctor.position.path, method: method, parameters: params,
+                                 encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

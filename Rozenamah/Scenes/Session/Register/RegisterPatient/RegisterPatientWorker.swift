@@ -9,7 +9,8 @@ class RegisterPatientWorker {
             "email": email
         ]
         
-        Alamofire.request(API.User.verifyEmail.path, method: .post, parameters: params)
+        Alamofire.request(API.User.verifyEmail.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default)
             .validate()
             .responseEmpty(completion: completion)
     }
@@ -20,7 +21,8 @@ class RegisterPatientWorker {
             "phone": phone
         ]
         
-        Alamofire.request(API.User.verifyPhone.path, method: .post, parameters: params)
+        Alamofire.request(API.User.verifyPhone.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default)
             .validate()
             .responseEmpty(completion: completion)
     }
@@ -30,7 +32,8 @@ class RegisterPatientWorker {
         
         let params = form.toParams
         
-        Alamofire.request(API.User.register.path, method: .post, parameters: params)
+        Alamofire.request(API.User.register.path, method: .post, parameters: params,
+            encoding: JSONEncoding.default)
             .validate()
             .responseCodable(type: LoginResponse.self, completion: completion)
     }

@@ -22,7 +22,8 @@ class DrawerWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.User.logout.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.User.logout.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
         

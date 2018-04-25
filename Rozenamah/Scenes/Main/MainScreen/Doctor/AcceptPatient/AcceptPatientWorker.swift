@@ -19,7 +19,8 @@ class AcceptPatientWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Visit.accept.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Visit.accept.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }
@@ -39,7 +40,8 @@ class AcceptPatientWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Visit.reject.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Visit.reject.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

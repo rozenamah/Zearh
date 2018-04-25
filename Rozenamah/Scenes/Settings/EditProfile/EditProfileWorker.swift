@@ -16,7 +16,8 @@ class EditProfileWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.User.updateProfile.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.User.updateProfile.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseCodable(type: User.self , completion: completion)
     }
@@ -32,7 +33,8 @@ class EditProfileWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.User.updateAvatar.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.User.updateAvatar.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseCodable(type: User.self , completion: completion)
     }
