@@ -49,7 +49,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         }
     }
     
-    func navigateToDoctorBusy() {
+    func navigateToDoctorOnTheWay() {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return

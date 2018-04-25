@@ -6,7 +6,7 @@ import Alamofire
 
 class DoctorOnTheWayWorker: DoctorLocationWorker {
     
-    func updateLocationInDataBase(_ location: CLLocation) {
+    func updateLocationInDatabase(_ location: CLLocation) {
         
         guard let user = User.current else {
             return

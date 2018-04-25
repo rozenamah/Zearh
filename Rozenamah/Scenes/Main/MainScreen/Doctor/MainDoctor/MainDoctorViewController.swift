@@ -87,7 +87,9 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     func changeStateTo(flowPoint: DoctorFlow) {
         switch flowPoint {
         case .accept(let visitId):
-            router?.navigateToDoctorBusy()
+            router?.navigateToDoctorOnTheWay()
+            // TODO: Fill location to display patient on map
+           // presentUser(in: )
         case .reject:
             router?.navigateToCancel()
         case .cancel:
@@ -97,7 +99,6 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         }
     }
 
-    
     // MARK: Presenter methods
     
     func markAsRejectingRequests() {

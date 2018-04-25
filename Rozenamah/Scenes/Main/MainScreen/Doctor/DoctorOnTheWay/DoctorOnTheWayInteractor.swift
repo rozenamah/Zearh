@@ -11,6 +11,9 @@ protocol DoctorOnTheWayBusinessLogic {
 class DoctorOnTheWayInteractor: DoctorOnTheWayBusinessLogic {
 	var presenter: DoctorOnTheWayPresentationLogic?
 	var worker = DoctorOnTheWayWorker()
+    
+    // Holds first location that we compare distance with later locations after updates
+    private var baseLocation: CLLocation?
 
 	// MARK: Business logic
     
@@ -25,7 +28,13 @@ class DoctorOnTheWayInteractor: DoctorOnTheWayBusinessLogic {
     }
     
     func updateDoctorsLocation(_ location: CLLocation) {
-        worker.updateLocationInDataBase(location)
+        if baseLocation == nil {
+            baseLocation = location
+        }
+        
+        if userMovedRequiredDistance(location: location) {
+            worker.updateLocationInDatabase(location)
+        }
     }
     
     func doctorArrived(for visitId: String) {
@@ -46,6 +55,16 @@ class DoctorOnTheWayInteractor: DoctorOnTheWayBusinessLogic {
         let distance = Int(location.distance(from: patientLocation))
         
         return distance < 150
+    }
+    
+    private func userMovedRequiredDistance(location: CLLocation) -> Bool {
+        
+        if Int(baseLocation?.distance(from: location) ?? 0) > 100 {
+            // If distance is more than 100 meters, change base location to current
+            baseLocation = location
+            return true
+        }
+        return false
     }
 	
 }
