@@ -76,7 +76,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bushwick 12, Brooklyn" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-kg-Mxd">
-                                        <rect key="frame" x="35" y="1.5" width="135" height="16"/>
+                                        <rect key="frame" x="35" y="1.5" width="168" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -89,6 +89,7 @@
                                     <constraint firstItem="gSn-kg-Mxd" firstAttribute="centerY" secondItem="P2U-rX-UMp" secondAttribute="centerY" id="8S7-mL-v09"/>
                                     <constraint firstAttribute="bottom" secondItem="P2U-rX-UMp" secondAttribute="bottom" id="9Tp-Bs-bEW"/>
                                     <constraint firstItem="gSn-kg-Mxd" firstAttribute="leading" secondItem="P2U-rX-UMp" secondAttribute="trailing" constant="16" id="Bh5-lq-3i1"/>
+                                    <constraint firstAttribute="trailing" secondItem="gSn-kg-Mxd" secondAttribute="trailing" id="c0i-6p-mpZ"/>
                                 </constraints>
                             </view>
                         </subviews>

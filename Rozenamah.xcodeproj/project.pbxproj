@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CEBE2089E7AE00245F7A /* AppRouter.swift */; };
+		570DC857208E1E7A0034B264 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570DC856208E1E7A0034B264 /* DoubleExtension.swift */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
@@ -236,6 +237,7 @@
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5702CEBE2089E7AE00245F7A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		570DC856208E1E7A0034B264 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 				F9753778205FF24B003DC80E /* UIButtonExtension.swift */,
 				F97B73A22063A9040073A968 /* KingfisherExtension.swift */,
 				57133DF32087744500BB69A5 /* UIViewExtension.swift */,
+				570DC856208E1E7A0034B264 /* DoubleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1461,6 +1464,7 @@
 				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
 				57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */,
 				578100FB207CBFE600F4A78B /* TransactionDetailConfigurator.swift in Sources */,
+				570DC857208E1E7A0034B264 /* DoubleExtension.swift in Sources */,
 				57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */,
 				573A3060207B66E00040B438 /* PastVisitTableViewCell.swift in Sources */,
 				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,

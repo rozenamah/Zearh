@@ -2,6 +2,8 @@ import UIKit
 import SwiftCake
 
 protocol TransactionHistoryDisplayLogic: class {
+    func presentTransactions(_ transactions: [Transaction])
+    func handleError(error: Error)
 }
 
 class TransactionHistoryViewController: UIViewController, TransactionHistoryDisplayLogic {
@@ -14,6 +16,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     // MARK: Properties
     var interactor: TransactionHistoryBusinessLogic?
     var router: TransactionHistoryRouter?
+    
+    var transactions = [Transaction]()
 
     // MARK: Object lifecycle
 
@@ -33,6 +37,9 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         super.viewDidLoad()
         setupView()
         registerCells()
+        if let user = User.current {
+            interactor?.fetchTrasactionHistory(for: user)
+        }
     }
 
     // MARK: View customization
@@ -76,6 +83,16 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         let view = buttonViewsCollection.first(where: { $0.button == button })
         view?.separatorView.isHidden = false
     }
+    
+    func presentTransactions(_ transactions: [Transaction]) {
+        self.transactions = transactions
+        //self.tableView.reloadData()
+    }
+    
+    func handleError(error: Error) {
+        router?.showError(error)
+    }
+
 }
 
 extension TransactionHistoryViewController: UITableViewDelegate, UITableViewDataSource {
@@ -86,26 +103,36 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return transactions.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router?.navigateToTransactionDetail()
+        if indexPath.section == 1 {
+            router?.navigateToTransactionDetail(for: transactions[indexPath.row])
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let transaction = transactions[indexPath.row]
         if indexPath.section == 0 {
             let cell = tableView.dequeueCell(withReusable: SummaryTableViewCell.self, for: indexPath)
             return cell
         } else {
             let cell = tableView.dequeueCell(withReusable: PastVisitTableViewCell.self, for: indexPath)
+            cell.transaction = transaction
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let user = User.current {
+             interactor?.fetchTrasactionHistory(for: user)
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Change later with array count
-        return section == 0 ? 1 : 5
+        return section == 0 ? 1 : transactions.count
     }
 }

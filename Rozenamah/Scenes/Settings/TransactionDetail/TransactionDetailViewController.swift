@@ -13,13 +13,19 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var rightAddressConstraint: NSLayoutConstraint!
+    @IBOutlet weak var methodTypeLabel: UILabel!
+    @IBOutlet weak var arrivalTimeLabel: UILabel!
+    @IBOutlet weak var leaveTimeLabel: UILabel!
     
     @IBOutlet weak var rightDateConstraint: NSLayoutConstraint!
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var calendarImage: UIImageView!
+    
     // MARK: Properties
     var interactor: TransactionDetailBusinessLogic?
     var router: TransactionDetailRouter?
+    
+    var transactionDetail: Transaction!
 
     // MARK: Object lifecycle
 
@@ -55,9 +61,22 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     }
     
     private func customizeUserDetails() {
-        if User.current?.type == .doctor {
-            specialistLabel.isHidden = true
-        }
+        
+        let user = transactionDetail.user
+        let visit = transactionDetail.visit
+        nameLabel.text = user.fullname
+        specialistLabel.isHidden = user.doctor == nil
+        specialistLabel.text = user.doctor?.specialization?.title
+        addressLabel.text = visit.address
+        priceLabel.text = "\(visit.price) SAR"
+        feeLabel.isHidden = visit.fee == 0
+        feeLabel.text = "+ \(visit.fee) SAR for cancellation"
+        methodTypeLabel.text = transactionDetail.paymentMethod.title
+        arrivalTimeLabel.text = transactionDetail.arrivalTimestamp.dateToString(.hour)
+        leaveTimeLabel.text = transactionDetail.leaveTimestamp.dateToString(.hour)
+        dateLabel.text = transactionDetail.dateTimestamp.dateToString(.date)
+        
+        
     }
 
     // MARK: Event handling

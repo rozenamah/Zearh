@@ -52,6 +52,11 @@ enum API {
         
         var resource: String { return baseURL + "visit/" }
     }
+    
+    enum Transaction {
+        case history
+        var resource: String { return baseURL + "history/" }
+    }
 }
 
 extension API.Doctor {
@@ -99,6 +104,14 @@ extension API.User {
         case .updateProfile: return resource + "update"
         case .updateAvatar: return resource + "avatar"
         case .report: return resource + "report"
+        }
+    }
+}
+
+extension API.Transaction {
+    var path: String {
+        switch self {
+        case .history: return resource
         }
     }
 }

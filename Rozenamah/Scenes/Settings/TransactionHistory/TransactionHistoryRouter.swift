@@ -1,19 +1,21 @@
 import UIKit
 
-class TransactionHistoryRouter: Router {
+class TransactionHistoryRouter: Router, AlertRouter {
     typealias RoutingViewController = TransactionHistoryViewController
     weak var viewController: TransactionHistoryViewController?
 
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-
+        if segue.identifier == "transaction_detail_segue", let transaction = sender as? Transaction {
+            passTransactionInfo(vc: segue.destination, transaction)
+        }
     }
 
     // MARK: Navigation
     
-    func navigateToTransactionDetail() {
-        viewController?.performSegue(withIdentifier: "transaction_detail_segue", sender: nil)
+    func navigateToTransactionDetail(for transaction: Transaction) {
+        viewController?.performSegue(withIdentifier: "transaction_detail_segue", sender: transaction)
     }
     
     func dissmis() {
@@ -21,5 +23,10 @@ class TransactionHistoryRouter: Router {
     }
 
     // MARK: Passing data
+    
+    private func passTransactionInfo(vc: UIViewController, _ transaction: Transaction) {
+        let detailVC = vc as? TransactionDetailViewController
+        detailVC?.transactionDetail = transaction
+    }
 
 }
