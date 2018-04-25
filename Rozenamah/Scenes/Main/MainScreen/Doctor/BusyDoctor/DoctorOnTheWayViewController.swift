@@ -3,9 +3,12 @@ import CoreLocation
 import SwiftCake
 
 protocol BusyDoctorDisplayLogic: class {
+    func presentError(_ error: Error)
+    func doctorArrived()
+    func doctorCancelled()
 }
 
-class BusyDoctorViewController: UIViewController, BusyDoctorDisplayLogic {
+class DoctorOnTheWayViewController: UIViewController, BusyDoctorDisplayLogic {
 
     // MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -85,16 +88,29 @@ class BusyDoctorViewController: UIViewController, BusyDoctorDisplayLogic {
     }
     
     @IBAction func arrivedAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .arrived)
+        interactor?.doctorArrived(for: "visitID")
     }
+    
     @IBAction func patientInfoAction(_ sender: Any) {
         router?.navigateToPatientDetails()
     }
     
     // MARK: Presenter methods
+    
+    func presentError(_ error: Error) {
+        router?.showError(error)
+    }
+    
+    func doctorArrived() {
+        flowDelegate?.changeStateTo(flowPoint: .arrived)
+    }
+    
+    func doctorCancelled() {
+        flowDelegate?.changeStateTo(flowPoint: .cancel)
+    }
 }
 
-extension BusyDoctorViewController: CLLocationManagerDelegate {
+extension DoctorOnTheWayViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
@@ -102,6 +118,11 @@ extension BusyDoctorViewController: CLLocationManagerDelegate {
         }
         
         interactor?.updateDoctorsLocation(location)
+        let patientMock = CLLocation(latitude: 50.055246, longitude: 19.969307)
+        // If doctor is less than 150 meters, send information to server
+        if interactor?.checkIfDoctorCloseTo(patientMock) == true {
+            interactor?.doctorArrived(for: "VisitID")
+        }
         
     }
 }

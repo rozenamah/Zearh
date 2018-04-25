@@ -1,8 +1,8 @@
 import UIKit
 
-class BusyDoctorRouter: Router {
-    typealias RoutingViewController = BusyDoctorViewController
-    weak var viewController: BusyDoctorViewController?
+class BusyDoctorRouter: Router, AlertRouter {
+    typealias RoutingViewController = DoctorOnTheWayViewController
+    weak var viewController: DoctorOnTheWayViewController?
 
     // MARK: Routing
 
@@ -10,7 +10,6 @@ class BusyDoctorRouter: Router {
         if segue.identifier == "details_segue" {
             passVisitInfo(vc: segue.destination)
         }
-
     }
 
     // MARK: Navigation

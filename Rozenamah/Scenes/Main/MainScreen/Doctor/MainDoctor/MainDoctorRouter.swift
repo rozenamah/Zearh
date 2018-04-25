@@ -23,8 +23,8 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return vc
     }()
     
-    lazy var doctorBusyVC: BusyDoctorViewController = {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busy_doctor_vc") as! BusyDoctorViewController
+    lazy var doctorBusyVC: DoctorOnTheWayViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busy_doctor_vc") as! DoctorOnTheWayViewController
         vc.flowDelegate = viewController
         return vc
     }()

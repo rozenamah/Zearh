@@ -2,16 +2,16 @@ import UIKit
 
 // MARK: - Connect View, Interactor, and Presenter
 
-extension DoctorOnTheWayViewController {
+extension DoctorLocationViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router?.passDataToNextScene(segue: segue, sender: sender)
     }
 
    func setup() {
         let viewController = self
-        let interactor = DoctorOnTheWayInteractor()
-        let presenter = BusyDoctorPresenter()
-        let router = BusyDoctorRouter()
+        let interactor = DoctorLocationInteractor()
+        let presenter = DoctorLocationPresenter()
+        let router = DoctorLocationRouter()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter

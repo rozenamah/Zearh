@@ -9,7 +9,6 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
 	var worker = TransactionHistoryWorker()
 
     private var isMoreToDownload: Bool = true
-    private var page = 0
     
 	// MARK: Business logic
     
@@ -26,7 +25,6 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
             }
             
             if let transactions = transactions {
-                self.page += 1
                 self.isMoreToDownload = (transactions.count == TransactionHistoryWorker.kHistoryLimit)
                 self.presenter?.presentTransactions(transactions)
             }

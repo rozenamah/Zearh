@@ -40,7 +40,7 @@ enum API {
         case availability
         case position
         case search
-        
+        case arrived
         var resource: String { return baseURL + "doctor/" }
     }
     
@@ -65,6 +65,7 @@ extension API.Doctor {
         case .availability: return resource + "availability"
         case .position: return resource + "position"
         case .search: return resource + "search"
+        case .arrived: return resource + "arrived"
         }
     }
 }
