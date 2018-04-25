@@ -31,12 +31,18 @@ class MainDoctorWorker {
     }
     
     @discardableResult
-    func updateLocation(to location: CLLocation, completion: @escaping ErrorCompletion) -> DataRequest? {
+    func updateLocation(to location: CLLocation? = nil, completion: @escaping ErrorCompletion) -> DataRequest? {
         
-        let params: [String: Any] = [
-            "latitude": location.coordinate.latitude,
-            "longitude": location.coordinate.longitude,
-        ]
+        var params: [String: Any]
+        
+        if let location = location {
+            params = [
+                "latitude": location.coordinate.latitude,
+                "longitude": location.coordinate.longitude,
+            ]
+        } else {
+            params = [:]
+        }
         
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
@@ -47,7 +53,9 @@ class MainDoctorWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        return Alamofire.request(API.Doctor.position.path, method: .post, parameters: params, headers: headers)
+        let method: HTTPMethod = location == nil ? .delete : .post
+        
+        return Alamofire.request(API.Doctor.position.path, method: method, parameters: params, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

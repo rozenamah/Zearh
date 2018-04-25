@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-let kMaxPriceToFilter = 501
+let kMaxPriceToFilter: CGFloat = 5001
 
 class CallDoctorForm: ParamForm {
     
@@ -31,7 +31,7 @@ class CallDoctorForm: ParamForm {
     var maxPrice: Int? {
         didSet {
             disabledDoctors = []
-            if maxPrice == kMaxPriceToFilter {
+            if maxPrice == Int(kMaxPriceToFilter) {
                 maxPrice = nil
             }
         }

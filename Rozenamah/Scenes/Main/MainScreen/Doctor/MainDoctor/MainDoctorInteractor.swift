@@ -36,6 +36,8 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
     func startReceivingRequests() {
         
         guard let location = locationManager.location else {
+            clearUserLocation()
+            
             // TODO: No location, show error
             return
         }
@@ -83,12 +85,22 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
         })
     }
     
+    private func clearUserLocation() {
+        lastRequest = worker.updateLocation(to: nil, completion: { (error) in
+            // Save last call time
+            self.lastSavedDate = Date().timeIntervalSince1970
+            self.lastSentLocation = nil
+            self.lastRequest = nil
+        })
+    }
+    
     // MARK: Location manager
     
     override func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         super.locationManager(manager, didUpdateLocations: locations)
         
         guard let newLocation = locations.first else {
+            clearUserLocation()
             return
         }
         
