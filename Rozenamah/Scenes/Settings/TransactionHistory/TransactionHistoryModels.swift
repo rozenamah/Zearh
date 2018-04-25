@@ -9,8 +9,3 @@ class Transaction: Decodable {
     var paymentMethod: PaymentMethod
 }
 
-enum DateFormat: String {
-    case hour = "HH:mm"
-    case date = "yyyy-MM-dd"
-}
-

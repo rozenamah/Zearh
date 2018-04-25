@@ -16,7 +16,6 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     @IBOutlet weak var methodTypeLabel: UILabel!
     @IBOutlet weak var arrivalTimeLabel: UILabel!
     @IBOutlet weak var leaveTimeLabel: UILabel!
-    
     @IBOutlet weak var rightDateConstraint: NSLayoutConstraint!
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var calendarImage: UIImageView!
@@ -25,6 +24,7 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     var interactor: TransactionDetailBusinessLogic?
     var router: TransactionDetailRouter?
     
+    /// Visit which will be displayed in this screen
     var transactionDetail: Transaction!
 
     // MARK: Object lifecycle

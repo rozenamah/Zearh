@@ -17,6 +17,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     var interactor: TransactionHistoryBusinessLogic?
     var router: TransactionHistoryRouter?
     
+    /// List of all previous visits in selected range of time
     var transactions = [Transaction]()
 
     // MARK: Object lifecycle
@@ -49,6 +50,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     }
     
     private func customizeDateButtons() {
+        /// Patient won't see "Daily" transactions
         if User.current?.type == .patient {
             dailyView.isHidden = true
         }
