@@ -22,7 +22,8 @@ class PaymentMethodWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Visit.request.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Visit.request.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseCodable(type: Booking.self, completion: completion)
     }

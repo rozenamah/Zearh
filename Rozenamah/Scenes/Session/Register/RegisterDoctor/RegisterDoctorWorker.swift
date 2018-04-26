@@ -16,7 +16,8 @@ class RegisterDoctorWorker: RegisterPatientWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.Patient.upgrade.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Patient.upgrade.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseCodable(type: User.self, completion: completion)
     }

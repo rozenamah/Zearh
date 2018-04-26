@@ -12,14 +12,13 @@ class AppRouter {
     
     static func navigateToAcceptVisit(from userInfo: [AnyHashable: Any]) {
   
-        if let visitInfo = decodeObject(toType: VisitDetails.self, from: userInfo, withKey: "info") {
+        if let visitInfo = decodeObject(toType: VisitDetails.self, from: userInfo) {
             MainDoctorRouter.resolve(visit: visitInfo)
         }
     }
     
-    private static func decodeObject<H: Decodable>(toType: H.Type, from userInfo: [AnyHashable: Any], withKey: String) -> H? {
-        if let aps = userInfo["aps"] as? [String: Any], let info = aps[withKey] as? [String: Any] {
-            print(info)
+    private static func decodeObject<H: Decodable>(toType: H.Type, from userInfo: [AnyHashable: Any]) -> H? {
+        if let info = userInfo["info"] as? [String: Any] {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
                 let decoder = JSONDecoder()

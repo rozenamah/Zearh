@@ -11,7 +11,8 @@ class LoginWorker {
             "Authorization": "Basic \(form.base64credentials)"
         ]
         
-        Alamofire.request(API.User.login.path, method: .post, headers: headers)
+        Alamofire.request(API.User.login.path, method: .post,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseCodable(type: LoginResponse.self, completion: completion)
     }

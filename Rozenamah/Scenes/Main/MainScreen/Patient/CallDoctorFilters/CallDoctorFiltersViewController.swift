@@ -67,6 +67,8 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
         priceSlider.numberFormatter.positiveSuffix = " SAR"
         priceSlider.numberFormatter.zeroSymbol = "FREE"
         priceSlider.delegate = self
+        priceSlider.maxValue = kMaxPriceToFilter
+        priceSlider.selectedMaxValue = kMaxPriceToFilter
         
         fillCurrentFilters()
     }
@@ -131,12 +133,12 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
             if let maxPrice = callFormToChange.maxPrice {
                 priceSlider.selectedMaxValue = CGFloat(maxPrice)
             } else {
-                priceSlider.selectedMaxValue = CGFloat(kMaxPriceToFilter)
+                priceSlider.selectedMaxValue = kMaxPriceToFilter
             }
         }
         // Price slider dosen't refresh automaticlly here,
         // we set new max value to perform forced refresh
-        priceSlider.maxValue = CGFloat(kMaxPriceToFilter)
+        priceSlider.maxValue = kMaxPriceToFilter
     }
 
     // MARK: Event handling
@@ -221,7 +223,7 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
     // MARK: Price range
     
     func rangeSeekSlider(_ slider: RangeSeekSlider, stringForMaxValue maxValue: CGFloat) -> String? {
-        if slider.selectedMaxValue > 500 {
+        if slider.selectedMaxValue >= kMaxPriceToFilter {
             return "+∞"
         }
         return nil // Default will be applied

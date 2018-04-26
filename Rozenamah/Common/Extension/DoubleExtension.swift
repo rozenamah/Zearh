@@ -9,6 +9,12 @@
 import Foundation
 
 extension Double {
+    
+    enum DateFormat: String {
+        case hour = "HH:mm"
+        case date = "yyyy-MM-dd"
+    }
+
     func dateToString(_ type: DateFormat) -> String {
         let dateFormatter = DateFormatter()
         let date = Date(timeIntervalSince1970: self)

@@ -9,8 +9,10 @@ class Transaction: Decodable {
     var paymentMethod: PaymentMethod
 }
 
-enum DateFormat: String {
-    case hour = "HH:mm"
-    case date = "yyyy-MM-dd"
+enum TimeRange {
+    case daily
+    case weekly
+    case monthly
+    case total
 }
 

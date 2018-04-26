@@ -8,7 +8,8 @@ class ReportWorker {
         
         let params = reportForm.toParams
         
-        Alamofire.request(API.User.report.path, method: .post, parameters: params)
+        Alamofire.request(API.User.report.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default)
             .validate()
             .responseEmpty(completion: completion)
         

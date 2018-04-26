@@ -35,8 +35,8 @@ class NotificationWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.User.devices.path, method: .post,
-                          parameters: params, headers: headers)
+        Alamofire.request(API.User.devices.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
         
