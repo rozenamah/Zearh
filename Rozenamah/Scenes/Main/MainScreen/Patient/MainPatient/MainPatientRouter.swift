@@ -86,7 +86,7 @@ class MainPatientRouter: MainScreenRouter, Router {
             }
             self.add(asChildViewController: self.acceptDoctorVC)
             self.viewController?.containerHeightConstraint.constant = 286
-            self.acceptDoctorVC.doctor = doctor // Pass found doctor
+            self.acceptDoctorVC.visitInfo = doctor // Pass found doctor
             self.acceptDoctorVC.filters = filters
             
             self.openContainer()

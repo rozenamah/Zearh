@@ -596,7 +596,8 @@
                         <viewLayoutGuide key="safeArea" id="Ux3-dj-HaS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Call a doctor" id="9Vs-qp-ZrV">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="BPS-UJ-cDZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YLN-5C-42z"/>
+                        <barButtonItem key="leftBarButtonItem" title=" " image="close" id="BPS-UJ-cDZ">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="oT4-45-pP6" id="VBp-HM-Lo7"/>
@@ -1647,7 +1648,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O36-K5-5eB">
-                                                <rect key="frame" x="227" y="91" width="116" height="34"/>
+                                                <rect key="frame" x="227" y="91.5" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1712,13 +1713,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="286"/>
                     <connections>
-                        <outlet property="avatarImageView" destination="5uP-wO-6vS" id="EPd-pX-7MF"/>
-                        <outlet property="classificationLabel" destination="gau-7t-7Zf" id="i1f-nF-qlJ"/>
-                        <outlet property="doctorNameLabel" destination="aY7-nC-bhD" id="ySX-B8-GLs"/>
-                        <outlet property="feeLabel" destination="O36-K5-5eB" id="U6b-kS-TRY"/>
-                        <outlet property="locationButton" destination="sco-Hx-4p4" id="BwM-LY-x1f"/>
-                        <outlet property="phoneButton" destination="eb6-BC-znF" id="s4B-K7-tU5"/>
-                        <outlet property="priceLabel" destination="s5j-Gk-2fO" id="6Da-t1-XwU"/>
+                        <outlet property="avatarImage" destination="5uP-wO-6vS" id="QbH-dP-Lii"/>
+                        <outlet property="classificationLabel" destination="gau-7t-7Zf" id="vad-Mz-7bI"/>
+                        <outlet property="distanceButton" destination="sco-Hx-4p4" id="8D3-rt-8kS"/>
+                        <outlet property="feeLabel" destination="O36-K5-5eB" id="73T-4i-3Dz"/>
+                        <outlet property="nameLabel" destination="aY7-nC-bhD" id="Gvz-Ru-gap"/>
+                        <outlet property="phoneNumber" destination="eb6-BC-znF" id="jgZ-3K-KFr"/>
+                        <outlet property="priceLabel" destination="s5j-Gk-2fO" id="zx3-uv-fFP"/>
                         <segue destination="2SJ-UC-OWw" kind="presentation" identifier="payment_method_segue" id="D6P-Ln-ehS"/>
                     </connections>
                 </viewController>
@@ -2322,7 +2323,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-0S-fnf">
-                                                <rect key="frame" x="227" y="115" width="116" height="34"/>
+                                                <rect key="frame" x="227" y="116.5" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3074,7 +3075,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-yB-hNe">
-                                                <rect key="frame" x="227" y="63" width="116" height="34"/>
+                                                <rect key="frame" x="227" y="63.5" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3275,7 +3276,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNF-W7-afR">
-                                                <rect key="frame" x="227" y="90.5" width="116" height="34"/>
+                                                <rect key="frame" x="227" y="92" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

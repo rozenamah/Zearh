@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CEBE2089E7AE00245F7A /* AppRouter.swift */; };
+		570CC5292091CB51006B32AA /* ModalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570CC5282091CB51006B32AA /* ModalInformationViewController.swift */; };
 		570DC857208E1E7A0034B264 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570DC856208E1E7A0034B264 /* DoubleExtension.swift */; };
 		57101097208F6315008B4384 /* DoctorOnTheWayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101090208F6315008B4384 /* DoctorOnTheWayPresenter.swift */; };
 		57101098208F6315008B4384 /* DoctorOnTheWayWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101091208F6315008B4384 /* DoctorOnTheWayWorker.swift */; };
@@ -252,6 +253,7 @@
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5702CEBE2089E7AE00245F7A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		570CC5282091CB51006B32AA /* ModalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInformationViewController.swift; sourceTree = "<group>"; };
 		570DC856208E1E7A0034B264 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		57101090208F6315008B4384 /* DoctorOnTheWayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayPresenter.swift; sourceTree = "<group>"; };
 		57101091208F6315008B4384 /* DoctorOnTheWayWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayWorker.swift; sourceTree = "<group>"; };
@@ -973,6 +975,7 @@
 				F992D345206E40E700DF0604 /* MainScreenInteractor.swift */,
 				F992D347206E418100DF0604 /* MainScreenPresenter.swift */,
 				F99A2EDE207F4614009505EB /* MainScreenRouter.swift */,
+				570CC5282091CB51006B32AA /* ModalInformationViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1401,6 +1404,7 @@
 				F940EA532058147000266753 /* WelcomeModels.swift in Sources */,
 				578100F9207CBFE600F4A78B /* TransactionDetailViewController.swift in Sources */,
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
+				570CC5292091CB51006B32AA /* ModalInformationViewController.swift in Sources */,
 				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
 				F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */,
 				57BC874D20907B83002147F8 /* DoctorLocationWorker.swift in Sources */,

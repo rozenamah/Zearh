@@ -95,7 +95,7 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         case .cancel:
             router?.navigateToCancel()
         case .arrived:
-            router?.navigateToCancel()
+            router?.navigateToEndVisit()
         }
     }
 

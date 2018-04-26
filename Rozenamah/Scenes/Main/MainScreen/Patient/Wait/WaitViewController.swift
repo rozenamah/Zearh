@@ -21,9 +21,12 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             performWaitAction()
         }
     }
-    
+    // Maximum time for patien to confirm payment
+    var minutes = 10
     /// We use it to communicate flow to main screen
     weak var flowDelegate: PatientFlowDelegate?
+    // Use this delegate if in doctor modules
+    weak var doctorFlowDelegate: DoctortFlowDelegate?
     
     // MARK: Object lifecycle
 
@@ -65,12 +68,18 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             titleLabel.text = "Please wait"
             // Start calling search immidatly after fitlers are changed
             interactor?.searchForDoctor(withFilters: filters)
+        case .waitForPayDoctor:
+            setTimeLeftLabel()
         }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        interactor?.cancelCurrentRequest()
-        flowDelegate?.changeStateTo(flowPoint: .callDoctor)
+        if User.current?.type == .patient {
+            interactor?.cancelCurrentRequest()
+            flowDelegate?.changeStateTo(flowPoint: .callDoctor)
+        } else {
+            doctorFlowDelegate?.changeStateTo(flowPoint: .cancel)
+        }
     }
     
     // MARK: Presenter methods
@@ -89,5 +98,18 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     
     func noDoctorFoundMatchingCriteria() {
         router?.showNoDoctorFound()
+    }
+    
+    private func setTimeLeftLabel() {
+        
+        var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] (timer)   in
+            // Self is weak because we want to avoid retain cycle
+            self?.titleLabel.text = "Your patient needs to confirm payment within \((self?.minutes)! - 1) minutes"
+            if self?.minutes == 0 {
+                timer.invalidate()
+                return
+            }
+            self?.minutes -= 1
+        }
     }
 }

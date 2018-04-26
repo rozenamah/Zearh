@@ -29,6 +29,12 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return vc
     }()
     
+    lazy var waitVC: WaitViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "wait_vc") as! WaitViewController
+        vc.doctorFlowDelegate = viewController
+        return vc
+    }()
+    
     
     // MARK: Routing
     
@@ -37,6 +43,9 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "end_visit_segue" {
+            
+        }
     }
 
     // MARK: Navigation
@@ -59,6 +68,24 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             self.doctorBusyVC.visitInfo = self.visitDetails
             self.openContainer()
         }
+    }
+    
+    func navigateToWaitForPayment() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+        }
+        
+        self.add(asChildViewController: self.waitVC)
+        self.viewController?.containerHeightConstraint.constant = 202
+        self.waitVC.state = .waitForPayDoctor
+        
+        self.openContainer()
+    }
+    
+    func navigateToEndVisit() {
+        viewController?.performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
     
     /// Adds patient form at app start
