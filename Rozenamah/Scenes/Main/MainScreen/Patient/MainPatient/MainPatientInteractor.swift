@@ -20,4 +20,16 @@ class MainPatientInteractor: MainScreenInteractor, MainPatientBusinessLogic {
     }
 
 	// MARK: Business logic
+    
+    override func firstLocationFetched() {
+        // Location fetched, load nearby doctors on map
+        if let location = locationManager.location {
+            worker.fetchDoctors(nearby: location) { (users, error) in
+                if let _ = error {
+                    // If error - do nothing
+                    return
+                } 
+            }
+        }
+    }
 }

@@ -72,6 +72,10 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
     private func stopCurrentObservingLocation() {
         locationManager.stopUpdatingLocation()
     }
+    
+    func firstLocationFetched() {
+        
+    }
 }
 
 extension MainScreenInteractor: CLLocationManagerDelegate {
@@ -96,6 +100,9 @@ extension MainScreenInteractor: CLLocationManagerDelegate {
         if let firstLocation = locations.first, !firstLocationDisplayed {
             firstLocationDisplayed = true
             basePresenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
+            
+            // Call hook, subclass can override this in order to be notified when first location was loaded
+            firstLocationFetched()
         }
     }
     
