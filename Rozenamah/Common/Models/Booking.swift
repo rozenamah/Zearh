@@ -9,14 +9,21 @@
 import Foundation
 import CoreLocation
 
+enum BookingStatus: String, Decodable {
+    case new = "new"
+    case accepted = "accepted"
+    case rejected = "rejected"
+}
+
 class Booking: Decodable {
     private enum CodingKeys : String, CodingKey {
-        case id, visit = "doctor", patient = "user", latitude, longitude
+        case id, visit = "doctor", patient = "user", latitude, longitude, status
     }
     
     let id: String
     let visit: VisitDetails
     let patient: User
-    var latitude: Double
-    var longitude: Double
+    let latitude: Double
+    let longitude: Double
+    let status: BookingStatus
 }

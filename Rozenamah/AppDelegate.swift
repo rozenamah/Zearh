@@ -75,6 +75,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        
+        #if DEBUG
+        print(userInfo)
+        #endif
+        
         AppRouter.navigateToAcceptVisit(from: userInfo)
     }
 }

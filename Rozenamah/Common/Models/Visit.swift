@@ -22,8 +22,8 @@ class VisitDetails: Decodable {
     
     let cost: Cost
     let user: User
-    var latitude: Double
-    var longitude: Double
+    let latitude: Double
+    let longitude: Double
     
     var distanceInKM: Int {
         let coordinates = CLLocation(latitude: latitude, longitude: longitude)
