@@ -7,6 +7,8 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     override var baseViewController: MainScreenViewController? {
         return viewController
     }
+    // Variable for passing data to doctorBusyVC
+    private var visitDetails: VisitDetails?
     
     private static let kVisitRequestNotification = Notification.Name("kVisitRequestNotification")
     
@@ -21,6 +23,18 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return vc
     }()
     
+    lazy var doctorBusyVC: DoctorOnTheWayViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "busy_doctor_vc") as! DoctorOnTheWayViewController
+        vc.flowDelegate = viewController
+        return vc
+    }()
+    
+    lazy var waitVC: WaitViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "wait_vc") as! WaitViewController
+        vc.doctorFlowDelegate = viewController
+        return vc
+    }()
+    
     
     // MARK: Routing
     
@@ -29,6 +43,9 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "end_visit_segue" {
+            
+        }
     }
 
     // MARK: Navigation
@@ -36,8 +53,39 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNotification(for notification: NSNotification) {
         if let visit = notification.userInfo?["visit"] as? VisitDetails {
             patientFormVC.visitInfo = visit
+            visitDetails = visit
             openContainer()
         }
+    }
+    
+    func navigateToDoctorOnTheWay() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            self.add(asChildViewController: self.doctorBusyVC)
+            self.viewController?.containerHeightConstraint.constant = 309
+            self.doctorBusyVC.visitInfo = self.visitDetails
+            self.openContainer()
+        }
+    }
+    
+    func navigateToWaitForPayment() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+        }
+        
+        self.add(asChildViewController: self.waitVC)
+        self.viewController?.containerHeightConstraint.constant = 202
+        self.waitVC.state = .waitForPayDoctor
+        
+        self.openContainer()
+    }
+    
+    func navigateToEndVisit() {
+        viewController?.performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
     
     /// Adds patient form at app start
@@ -49,16 +97,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     func openContainer(completion: (() -> Void)? = nil) {
         animateOpenContainer(completion: completion)
     }
-    
-    func navigatePatientForm() {
-       
-    }
-    
-    func navigateToAcceptPatient() {
-        
-    }
 
-    
     func navigateToCancel() {
         animateCloseContainer {
             // Do nothing

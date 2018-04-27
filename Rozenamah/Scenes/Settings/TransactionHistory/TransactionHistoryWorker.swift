@@ -5,7 +5,7 @@ class TransactionHistoryWorker {
     typealias TransactionResponse = (([Transaction]?, RMError?)->())
     internal static let kHistoryLimit = 10
     
-    func fetchTransactionHistory(for user: User, completion: @escaping TransactionResponse) {
+    func fetchTransactionHistory(for user: User, with timeRange: TimeRange, completion: @escaping TransactionResponse) {
         
         var transactions = [Transaction]()
         // TODO: Delete

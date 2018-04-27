@@ -25,7 +25,7 @@ class AcceptDoctorRouter: Router, PhoneCallRouter {
         let navVC = vc as? UINavigationController
         let vc = navVC?.visibleViewController as? PaymentMethodViewController
         vc?.delegate = viewController
-        vc?.doctor = viewController?.doctor
+        vc?.doctor = viewController?.visitInfo
     }
 
 }

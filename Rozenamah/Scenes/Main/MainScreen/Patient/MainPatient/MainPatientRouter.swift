@@ -27,6 +27,12 @@ class MainPatientRouter: MainScreenRouter, Router {
         return vc
     }()
     
+    lazy var doctorLocationVC: DoctorLocationViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "doctor_location_vc") as! DoctorLocationViewController
+        vc.flowDelegate = viewController
+        return vc
+    }()
+    
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +56,17 @@ class MainPatientRouter: MainScreenRouter, Router {
         }
     }
     
+    func navigateToDoctorOnTheWay() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            self.add(asChildViewController: self.doctorLocationVC)
+            self.viewController?.containerHeightConstraint.constant = 307
+            self.openContainer()
+        }
+    }
+    
     func navigateToCallForm() {
         animateCloseContainer {[weak self] in
             guard let `self` = self else {
@@ -69,7 +86,7 @@ class MainPatientRouter: MainScreenRouter, Router {
             }
             self.add(asChildViewController: self.acceptDoctorVC)
             self.viewController?.containerHeightConstraint.constant = 286
-            self.acceptDoctorVC.doctor = doctor // Pass found doctor
+            self.acceptDoctorVC.visitInfo = doctor // Pass found doctor
             self.acceptDoctorVC.filters = filters
             
             self.openContainer()

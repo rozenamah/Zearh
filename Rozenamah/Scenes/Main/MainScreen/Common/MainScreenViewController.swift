@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
 protocol MainScreenDisplayLogic: class {
     func moveToPosition(_ cameraUpdate: GMSCameraUpdate)
@@ -79,5 +80,12 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     /// Move map with animation
     func animateToPosition(_ cameraUpdate: GMSCameraPosition) {
         mapView.animate(to: cameraUpdate)
+    }
+    
+    func presentUser(in location: CLLocation) {
+        let icon = User.current?.type == .patient ? UIImage(named: "doctor_icon") : UIImage(named: "placeholder")
+        let marker = GMSMarker(position: location.coordinate)
+        marker.icon = icon
+        marker.map = mapView
     }
 }

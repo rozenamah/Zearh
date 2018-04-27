@@ -19,6 +19,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     
     /// List of all previous visits in selected range of time
     var transactions = [Transaction]()
+    // Keeps information about time for which we download data
+    fileprivate var timeRange: TimeRange = .daily
 
     // MARK: Object lifecycle
 
@@ -38,9 +40,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         super.viewDidLoad()
         setupView()
         registerCells()
-        if let user = User.current {
-            interactor?.fetchTrasactionHistory(for: user)
-        }
+        interactor?.fetchTrasactionHistory(for: .daily)
     }
 
     // MARK: View customization
@@ -59,18 +59,26 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     // MARK: Event handling
 
     @IBAction func dailyAction(_ sender: SCButton) {
+        transactions.removeAll()
+        interactor?.fetchTrasactionHistory(for: .daily)
         customizeSeparatorView(for: sender)
     }
     
     @IBAction func weeklyAction(_ sender: SCButton) {
+        transactions.removeAll()
+        interactor?.fetchTrasactionHistory(for: .weekly)
         customizeSeparatorView(for: sender)
     }
     
     @IBAction func monthlyAction(_ sender: SCButton) {
+        transactions.removeAll()
+        interactor?.fetchTrasactionHistory(for: .monthly)
         customizeSeparatorView(for: sender)
     }
     
     @IBAction func totalAction(_ sender: SCButton) {
+        transactions.removeAll()
+        interactor?.fetchTrasactionHistory(for: .total)
         customizeSeparatorView(for: sender)
     }
     
@@ -128,9 +136,7 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let user = User.current {
-             interactor?.fetchTrasactionHistory(for: user)
-        }
+        interactor?.fetchTrasactionHistory(for: timeRange)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

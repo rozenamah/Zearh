@@ -15,5 +15,6 @@ target 'Rozenamah' do
   pod 'Kingfisher'
   pod 'SwiftCake', :git => 'https://github.com/Rovalx/SwiftCake.git', :branch => 'master'
   pod 'Localize' , :git => 'https://github.com/andresilvagomez/Localize.git', :branch => 'master'
+  pod 'Firebase/Database'
   
 end

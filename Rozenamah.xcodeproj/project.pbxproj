@@ -8,7 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CEBE2089E7AE00245F7A /* AppRouter.swift */; };
+		570CC5292091CB51006B32AA /* ModalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570CC5282091CB51006B32AA /* ModalInformationViewController.swift */; };
 		570DC857208E1E7A0034B264 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570DC856208E1E7A0034B264 /* DoubleExtension.swift */; };
+		57101097208F6315008B4384 /* DoctorOnTheWayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101090208F6315008B4384 /* DoctorOnTheWayPresenter.swift */; };
+		57101098208F6315008B4384 /* DoctorOnTheWayWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101091208F6315008B4384 /* DoctorOnTheWayWorker.swift */; };
+		57101099208F6315008B4384 /* DoctorOnTheWayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101092208F6315008B4384 /* DoctorOnTheWayRouter.swift */; };
+		5710109A208F6315008B4384 /* DoctorOnTheWayModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101093208F6315008B4384 /* DoctorOnTheWayModels.swift */; };
+		5710109B208F6315008B4384 /* DoctorOnTheWayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */; };
+		5710109D208F6315008B4384 /* DoctorOnTheWayConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */; };
+		5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5710109E208F6FB2008B4384 /* GoogleService-Info.plist */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
@@ -72,6 +80,14 @@
 		578A6E8C2080BD7800CB4E79 /* EndVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A6E852080BD7800CB4E79 /* EndVisitViewController.swift */; };
 		578A6E8D2080BD7800CB4E79 /* EndVisitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A6E862080BD7800CB4E79 /* EndVisitInteractor.swift */; };
 		578A6E8E2080BD7800CB4E79 /* EndVisitConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A6E872080BD7800CB4E79 /* EndVisitConfigurator.swift */; };
+		57BC874C20907B83002147F8 /* DoctorLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874520907B83002147F8 /* DoctorLocationPresenter.swift */; };
+		57BC874D20907B83002147F8 /* DoctorLocationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874620907B83002147F8 /* DoctorLocationWorker.swift */; };
+		57BC874E20907B83002147F8 /* DoctorLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874720907B83002147F8 /* DoctorLocationRouter.swift */; };
+		57BC874F20907B83002147F8 /* DoctorLocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874820907B83002147F8 /* DoctorLocationModels.swift */; };
+		57BC875020907B83002147F8 /* DoctorLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874920907B83002147F8 /* DoctorLocationViewController.swift */; };
+		57BC875120907B83002147F8 /* DoctorLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874A20907B83002147F8 /* DoctorLocationInteractor.swift */; };
+		57BC875220907B83002147F8 /* DoctorLocationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC874B20907B83002147F8 /* DoctorLocationConfigurator.swift */; };
+		57BC87542090ADEE002147F8 /* DoctorOnTheWayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC87532090ADEE002147F8 /* DoctorOnTheWayInteractor.swift */; };
 		57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */; };
 		57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */; };
 		57E659C520739EBC004E3926 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */; };
@@ -237,7 +253,15 @@
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5702CEBE2089E7AE00245F7A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		570CC5282091CB51006B32AA /* ModalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInformationViewController.swift; sourceTree = "<group>"; };
 		570DC856208E1E7A0034B264 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		57101090208F6315008B4384 /* DoctorOnTheWayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayPresenter.swift; sourceTree = "<group>"; };
+		57101091208F6315008B4384 /* DoctorOnTheWayWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayWorker.swift; sourceTree = "<group>"; };
+		57101092208F6315008B4384 /* DoctorOnTheWayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayRouter.swift; sourceTree = "<group>"; };
+		57101093208F6315008B4384 /* DoctorOnTheWayModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayModels.swift; sourceTree = "<group>"; };
+		57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayViewController.swift; sourceTree = "<group>"; };
+		57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayConfigurator.swift; sourceTree = "<group>"; };
+		5710109E208F6FB2008B4384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
@@ -301,6 +325,14 @@
 		578A6E852080BD7800CB4E79 /* EndVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndVisitViewController.swift; sourceTree = "<group>"; };
 		578A6E862080BD7800CB4E79 /* EndVisitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndVisitInteractor.swift; sourceTree = "<group>"; };
 		578A6E872080BD7800CB4E79 /* EndVisitConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndVisitConfigurator.swift; sourceTree = "<group>"; };
+		57BC874520907B83002147F8 /* DoctorLocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationPresenter.swift; sourceTree = "<group>"; };
+		57BC874620907B83002147F8 /* DoctorLocationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationWorker.swift; sourceTree = "<group>"; };
+		57BC874720907B83002147F8 /* DoctorLocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationRouter.swift; sourceTree = "<group>"; };
+		57BC874820907B83002147F8 /* DoctorLocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationModels.swift; sourceTree = "<group>"; };
+		57BC874920907B83002147F8 /* DoctorLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationViewController.swift; sourceTree = "<group>"; };
+		57BC874A20907B83002147F8 /* DoctorLocationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationInteractor.swift; sourceTree = "<group>"; };
+		57BC874B20907B83002147F8 /* DoctorLocationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLocationConfigurator.swift; sourceTree = "<group>"; };
+		57BC87532090ADEE002147F8 /* DoctorOnTheWayInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayInteractor.swift; sourceTree = "<group>"; };
 		57E659BC20739EBC004E3926 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		57E659BD20739EBC004E3926 /* ChangePasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWorker.swift; sourceTree = "<group>"; };
 		57E659BE20739EBC004E3926 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
@@ -486,6 +518,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5710108F208F62A5008B4384 /* DoctorOnTheWay */ = {
+			isa = PBXGroup;
+			children = (
+				57BC87532090ADEE002147F8 /* DoctorOnTheWayInteractor.swift */,
+				57101090208F6315008B4384 /* DoctorOnTheWayPresenter.swift */,
+				57101091208F6315008B4384 /* DoctorOnTheWayWorker.swift */,
+				57101092208F6315008B4384 /* DoctorOnTheWayRouter.swift */,
+				57101093208F6315008B4384 /* DoctorOnTheWayModels.swift */,
+				57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */,
+				57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */,
+			);
+			path = DoctorOnTheWay;
+			sourceTree = "<group>";
+		};
 		57369F18207E0CBD001666EB /* ChangePhoneNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +656,20 @@
 			path = EndVisit;
 			sourceTree = "<group>";
 		};
+		57BC874420907B51002147F8 /* DoctorLocation */ = {
+			isa = PBXGroup;
+			children = (
+				57BC874520907B83002147F8 /* DoctorLocationPresenter.swift */,
+				57BC874620907B83002147F8 /* DoctorLocationWorker.swift */,
+				57BC874720907B83002147F8 /* DoctorLocationRouter.swift */,
+				57BC874820907B83002147F8 /* DoctorLocationModels.swift */,
+				57BC874920907B83002147F8 /* DoctorLocationViewController.swift */,
+				57BC874A20907B83002147F8 /* DoctorLocationInteractor.swift */,
+				57BC874B20907B83002147F8 /* DoctorLocationConfigurator.swift */,
+			);
+			path = DoctorLocation;
+			sourceTree = "<group>";
+		};
 		57E659BB20739EA3004E3926 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +730,7 @@
 				F95F140520612F3E00CDC2E5 /* Rozenamah.entitlements */,
 				F9A9F2A0204D5881006E8999 /* Common */,
 				F9A9F297204D57FA006E8999 /* Scenes */,
+				5710109E208F6FB2008B4384 /* GoogleService-Info.plist */,
 				F9093A70204992CB00CB041A /* AppDelegate.swift */,
 				F940EC2A20595A1100266753 /* API.swift */,
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
@@ -800,6 +861,7 @@
 		F95F140C2061543600CDC2E5 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				57BC874420907B51002147F8 /* DoctorLocation */,
 				574FC58B2084A888001E4059 /* PaymentMethod */,
 				574FC57C20849DFB001E4059 /* Payment */,
 				F99A2ECE207F37C2009505EB /* AcceptDoctor */,
@@ -883,6 +945,7 @@
 		F992D315206E393800DF0604 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
+				5710108F208F62A5008B4384 /* DoctorOnTheWay */,
 				574FC56D20849382001E4059 /* PatientDetails */,
 				578A6E802080BD6300CB4E79 /* EndVisit */,
 				578A6E71207F658500CB4E79 /* AcceptPatient */,
@@ -912,6 +975,7 @@
 				F992D345206E40E700DF0604 /* MainScreenInteractor.swift */,
 				F992D347206E418100DF0604 /* MainScreenPresenter.swift */,
 				F99A2EDE207F4614009505EB /* MainScreenRouter.swift */,
+				570CC5282091CB51006B32AA /* ModalInformationViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1207,6 +1271,7 @@
 				F969920F20863907007E6C42 /* lang-en.json in Resources */,
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F969921020863907007E6C42 /* lang-ar.json in Resources */,
+				5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
 			);
@@ -1260,6 +1325,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -1267,11 +1333,14 @@
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCake/SwiftCake.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1279,6 +1348,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCake.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1324,6 +1395,7 @@
 				574FC58720849E1F001E4059 /* PaymentModels.swift in Sources */,
 				F99A2ED6207F37D2009505EB /* AcceptDoctorPresenter.swift in Sources */,
 				F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */,
+				57BC874F20907B83002147F8 /* DoctorLocationModels.swift in Sources */,
 				573A305C207B66D20040B438 /* SummaryTableViewCell.swift in Sources */,
 				F9CEDE542063F139004ED0C7 /* ReportRouter.swift in Sources */,
 				F940EC6F205AEDD600266753 /* DrawerWorker.swift in Sources */,
@@ -1332,8 +1404,10 @@
 				F940EA532058147000266753 /* WelcomeModels.swift in Sources */,
 				578100F9207CBFE600F4A78B /* TransactionDetailViewController.swift in Sources */,
 				F940EA622058148300266753 /* LoginViewController.swift in Sources */,
+				570CC5292091CB51006B32AA /* ModalInformationViewController.swift in Sources */,
 				F9CEDE582063F139004ED0C7 /* ReportConfigurator.swift in Sources */,
 				F99A2ECB207CBCC1009505EB /* WaitConfigurator.swift in Sources */,
+				57BC874D20907B83002147F8 /* DoctorLocationWorker.swift in Sources */,
 				F940EA632058148300266753 /* LoginInteractor.swift in Sources */,
 				F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */,
 				574FC58920849E1F001E4059 /* PaymentInteractor.swift in Sources */,
@@ -1341,6 +1415,7 @@
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
 				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
+				5710109D208F6315008B4384 /* DoctorOnTheWayConfigurator.swift in Sources */,
 				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
 				574FC577208493A4001E4059 /* PatientDetailsRouter.swift in Sources */,
 				573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */,
@@ -1352,6 +1427,8 @@
 				F940EC65205AC04700266753 /* KeychainExtension.swift in Sources */,
 				F97B71F62062B5960073A968 /* CallDoctorWorker.swift in Sources */,
 				F940EC272059335E00266753 /* RegisterPatientConfigurator.swift in Sources */,
+				57BC874C20907B83002147F8 /* DoctorLocationPresenter.swift in Sources */,
+				5710109A208F6315008B4384 /* DoctorOnTheWayModels.swift in Sources */,
 				F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */,
 				F992D348206E418100DF0604 /* MainScreenPresenter.swift in Sources */,
 				F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */,
@@ -1374,6 +1451,7 @@
 				F940EC252059335E00266753 /* RegisterPatientViewController.swift in Sources */,
 				578A6E7A207F659D00CB4E79 /* AcceptPatientWorker.swift in Sources */,
 				F940EC4E205A9BFF00266753 /* MainPatientConfigurator.swift in Sources */,
+				57101099208F6315008B4384 /* DoctorOnTheWayRouter.swift in Sources */,
 				57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */,
 				573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
@@ -1397,6 +1475,7 @@
 				F940EA552058147000266753 /* WelcomeInteractor.swift in Sources */,
 				F9753764205FD509003DC80E /* TermsViewController.swift in Sources */,
 				F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */,
+				57BC87542090ADEE002147F8 /* DoctorOnTheWayInteractor.swift in Sources */,
 				F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */,
 				F992D346206E40E700DF0604 /* MainScreenInteractor.swift in Sources */,
 				F992D340206E3D6D00DF0604 /* MainDoctorModels.swift in Sources */,
@@ -1414,6 +1493,7 @@
 				F9CEDE63206521DA004ED0C7 /* EditProfileRouter.swift in Sources */,
 				574FC5982084A89A001E4059 /* PaymentMethodInteractor.swift in Sources */,
 				574FC58A20849E1F001E4059 /* PaymentConfigurator.swift in Sources */,
+				5710109B208F6315008B4384 /* DoctorOnTheWayViewController.swift in Sources */,
 				F940EC4D205A9BFF00266753 /* MainPatientInteractor.swift in Sources */,
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
@@ -1425,6 +1505,7 @@
 				574FC57B208493A4001E4059 /* PatientDetailsConfigurator.swift in Sources */,
 				F9CEDE562063F139004ED0C7 /* ReportViewController.swift in Sources */,
 				574FC5A52084E5C7001E4059 /* PhoneCallRouter.swift in Sources */,
+				57BC875220907B83002147F8 /* DoctorLocationConfigurator.swift in Sources */,
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
 				573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */,
 				57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */,
@@ -1455,6 +1536,7 @@
 				574FC58620849E1F001E4059 /* PaymentRouter.swift in Sources */,
 				F99A2EC9207CBCC1009505EB /* WaitViewController.swift in Sources */,
 				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
+				57101097208F6315008B4384 /* DoctorOnTheWayPresenter.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
 				57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */,
 				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
@@ -1483,12 +1565,14 @@
 				F99A2EC5207CBCC1009505EB /* WaitPresenter.swift in Sources */,
 				F940EA6C2058239100266753 /* UIColorExtension.swift in Sources */,
 				F940EC73205AEDD600266753 /* DrawerInteractor.swift in Sources */,
+				57BC874E20907B83002147F8 /* DoctorLocationRouter.swift in Sources */,
 				F940EC5A205AB9EC00266753 /* SplashPresenter.swift in Sources */,
 				57E659D32073AE60004E3926 /* ChangeEmailWorker.swift in Sources */,
 				F992D335206E3C0800DF0604 /* MainScreenViewController.swift in Sources */,
 				574FC58420849E1F001E4059 /* PaymentPresenter.swift in Sources */,
 				57E659C920739EBC004E3926 /* ChangePasswordConfigurator.swift in Sources */,
 				574FC5942084A89A001E4059 /* PaymentMethodWorker.swift in Sources */,
+				57101098208F6315008B4384 /* DoctorOnTheWayWorker.swift in Sources */,
 				F99A2EDC207F37D2009505EB /* AcceptDoctorConfigurator.swift in Sources */,
 				578A6E8A2080BD7800CB4E79 /* EndVisitRouter.swift in Sources */,
 				578A6E8B2080BD7800CB4E79 /* EndVisitModels.swift in Sources */,
@@ -1508,6 +1592,7 @@
 				574FC579208493A4001E4059 /* PatientDetailsViewController.swift in Sources */,
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
 				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
+				57BC875020907B83002147F8 /* DoctorLocationViewController.swift in Sources */,
 				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,
 				578100F5207CBFE600F4A78B /* TransactionDetailPresenter.swift in Sources */,
 				F940EC60205AB9EC00266753 /* SplashConfigurator.swift in Sources */,
@@ -1518,6 +1603,7 @@
 				F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */,
 				F940EC52205A9D8E00266753 /* AppStartRouter.swift in Sources */,
 				F940EA5F2058148300266753 /* LoginWorker.swift in Sources */,
+				57BC875120907B83002147F8 /* DoctorLocationInteractor.swift in Sources */,
 				F940EC262059335E00266753 /* RegisterPatientInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

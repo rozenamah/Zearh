@@ -5,15 +5,43 @@ PODS:
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.5)
+  - Firebase/Core (4.11.0):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.18)
+  - Firebase/Database (4.11.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.5)
+  - FirebaseAnalytics (4.1.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.18):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.1.5):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.10):
+    - FirebaseCore (~> 4.0)
   - GoogleMaps (2.6.0):
     - GoogleMaps/Maps (= 2.6.0)
   - GoogleMaps/Base (2.6.0)
   - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - IQKeyboardManager (5.0.8)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.6.2)
+  - leveldb-library (1.20)
   - Localize (2.0.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - RangeSeekSlider (1.8.0)
   - SlideMenuControllerSwift (4.0.0)
   - SwiftCake (0.3.1)
@@ -23,6 +51,7 @@ DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - Crashlytics
   - Fabric
+  - Firebase/Database
   - GoogleMaps
   - IQKeyboardManager
   - KeychainAccess
@@ -59,15 +88,23 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
+  Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseCore: b981f47e5254cbcfdeb483355300d743f6fcab2c
+  FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Localize: 5e278d8627b40d7f1da40e2b4ca7f027655ff18e
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftCake: c3ecf5fe2d943bf6fe86197cb3ecab4ec9c4dc5b
 
-PODFILE CHECKSUM: 571811f29769bfde7547dce27023f961434cd314
+PODFILE CHECKSUM: 87a4e1a69bc9c8ea3e9012474799b74b8cec713f
 
 COCOAPODS: 1.3.1

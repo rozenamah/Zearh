@@ -9,3 +9,10 @@ class Transaction: Decodable {
     var paymentMethod: PaymentMethod
 }
 
+enum TimeRange {
+    case daily
+    case weekly
+    case monthly
+    case total
+}
+

@@ -1,5 +1,5 @@
 import UIKit
-import GoogleMaps
+import CoreLocation
 
 protocol PatientFlowDelegate: class {
     func changeStateTo(flowPoint: PatientFlow)
@@ -90,10 +90,16 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             // Show all buttons when no form visible
             viewToHideWhenFormVisible.forEach { $0.isHidden = false }
             router?.closeContainer()
+        case .cancel:
+            // TODO: Navigate somewhere
+            break
+        case .doctorLocation(location: let location):
+            presentUser(in: location)
         }
     }
     
     // MARK: Presenter methods
+    
 
     func displayMarkersWithNearbyDoctors(_ markers: [GMSMarker]) {
         // Attach markers to map

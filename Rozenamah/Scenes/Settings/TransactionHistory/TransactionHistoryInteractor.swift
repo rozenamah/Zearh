@@ -1,7 +1,7 @@
 import UIKit
 
 protocol TransactionHistoryBusinessLogic {
-    func fetchTrasactionHistory(for user: User)
+    func fetchTrasactionHistory(for timeRange: TimeRange)
 }
 
 class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
@@ -16,13 +16,17 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
     
 	// MARK: Business logic
     
-    func fetchTrasactionHistory(for user: User) {
+    func fetchTrasactionHistory(for timeRange: TimeRange) {
+        
+        guard let user = User.current else {
+            return
+        }
 
         if !isMoreToDownload {
             return
         }
         
-        worker.fetchTransactionHistory(for: user) { (transactions, error) in
+        worker.fetchTransactionHistory(for: user, with: timeRange) { (transactions, error) in
             if let error = error {
                 self.presenter?.handle(error)
                 return

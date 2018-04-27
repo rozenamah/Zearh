@@ -103,8 +103,8 @@
         },
         "changeEmail": {
             "enterEmail": "Enter email",
-            "emailChanged": "Your email has been changed"
-            
+            "emailChanged": "Your email has been changed",
+            "incorrectEmail": "Email is incorrect"
         },
         "changeNumber": {
             "title": "Change phone number",
