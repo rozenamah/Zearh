@@ -35,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureApp()
         configureAlamofire()
         configureLanguage()
-        FirebaseApp.configure()
     
         return true
     }
@@ -112,6 +111,9 @@ extension AppDelegate {
         SlideMenuOptions.contentViewScale = 1
         SlideMenuOptions.hideStatusBar = false
         SlideMenuOptions.panFromBezel = false
+        
+        // Firebase
+        FirebaseApp.configure()
         
         // If app first launch - remove token in keychain memory if available
         if !Settings.shared.isFirstAppRun {

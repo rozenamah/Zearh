@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import GoogleMaps
 
 protocol PatientFlowDelegate: class {
     func changeStateTo(flowPoint: PatientFlow)
@@ -93,7 +94,7 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
         case .cancel:
             // TODO: Navigate somewhere
             break
-        case .doctorLocation(location: let location):
+        case .doctorLocation(let location):
             presentUser(in: location)
         }
     }

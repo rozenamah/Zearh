@@ -58,8 +58,8 @@ class AcceptPatientViewController: UIViewController, AcceptPatientDisplayLogic {
     fileprivate func setupView() {
         setTimeLeftLabel()
     }
+    
     private func setTimeLeftLabel() {
-        
         var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] (timer)   in
             // Self is weak because we want to avoid retain cycle
             self?.confirmationLabel.text = "Confirm in \((self?.minutes)! - 1) minutes to accept visit"

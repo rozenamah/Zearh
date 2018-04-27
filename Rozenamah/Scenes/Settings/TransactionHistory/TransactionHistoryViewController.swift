@@ -19,6 +19,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     
     /// List of all previous visits in selected range of time
     var transactions = [Transaction]()
+    
     // Keeps information about time for which we download data
     fileprivate var timeRange: TimeRange = .daily
 
@@ -40,7 +41,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         super.viewDidLoad()
         setupView()
         registerCells()
-        interactor?.fetchTrasactionHistory(for: .daily)
+        interactor?.configureWith(timeRange: .daily)
+        interactor?.fetchTrasactionHistory()
     }
 
     // MARK: View customization
@@ -59,26 +61,22 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     // MARK: Event handling
 
     @IBAction func dailyAction(_ sender: SCButton) {
-        transactions.removeAll()
-        interactor?.fetchTrasactionHistory(for: .daily)
+        reloadContentWithin(timeRange: .daily)
         customizeSeparatorView(for: sender)
     }
     
     @IBAction func weeklyAction(_ sender: SCButton) {
-        transactions.removeAll()
-        interactor?.fetchTrasactionHistory(for: .weekly)
+        reloadContentWithin(timeRange: .weekly)
         customizeSeparatorView(for: sender)
     }
     
     @IBAction func monthlyAction(_ sender: SCButton) {
-        transactions.removeAll()
-        interactor?.fetchTrasactionHistory(for: .monthly)
+        reloadContentWithin(timeRange: .monthly)
         customizeSeparatorView(for: sender)
     }
     
     @IBAction func totalAction(_ sender: SCButton) {
-        transactions.removeAll()
-        interactor?.fetchTrasactionHistory(for: .total)
+        reloadContentWithin(timeRange: .total)
         customizeSeparatorView(for: sender)
     }
     
@@ -86,7 +84,16 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         router?.dissmis()
     }
     
+    private func reloadContentWithin(timeRange: TimeRange) {
+        self.timeRange = timeRange
+        
+        transactions.removeAll()
+        interactor?.configureWith(timeRange: timeRange)
+        interactor?.fetchTrasactionHistory()
+    }
+    
     // MARK: Presenter methods
+    
     
     private func customizeSeparatorView(for button: SCButton) {
         buttonViewsCollection.forEach({ $0.separatorView.isHidden = true })
@@ -136,7 +143,7 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        interactor?.fetchTrasactionHistory(for: timeRange)
+        interactor?.fetchTrasactionHistory()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

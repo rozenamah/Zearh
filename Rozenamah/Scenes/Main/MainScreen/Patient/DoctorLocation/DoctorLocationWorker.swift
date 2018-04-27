@@ -44,7 +44,7 @@ class DoctorLocationWorker {
         ]
         
         Alamofire.request(API.Visit.cancel.path, method: .post, parameters: params, headers: headers)
-        .validate()
-        .responseEmpty(completion: completion)
+            .validate()
+            .responseEmpty(completion: completion)
     }
 }

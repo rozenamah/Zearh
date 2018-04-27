@@ -13,7 +13,7 @@ class DoctorLocationRouter: Router, AlertRouter {
     // MARK: Navigation
     
     func showFeeAlert() {
-        let alert = UIAlertController(title: "Canecllation Alert", message: "Are you sure you want to cancel this visit? You will be charged 5% of this visit price next time you order a visit!", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Cancel visit", message: "Are you sure you want to cancel this visit? You will be charged 5% of this visit price next time you order a visit!", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             self.viewController?.cancelConfirmed()

@@ -69,7 +69,7 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             // Start calling search immidatly after fitlers are changed
             interactor?.searchForDoctor(withFilters: filters)
         case .waitForPayDoctor:
-            setTimeLeftLabel()
+            startCountingTimeLeft()
         }
     }
     
@@ -100,8 +100,10 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         router?.showNoDoctorFound()
     }
     
-    private func setTimeLeftLabel() {
-        
+    
+    /// When waiting for patient to accept payment we are counting
+    /// down so doctor know when user needs to confirm payment
+    private func startCountingTimeLeft() {
         var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] (timer)   in
             // Self is weak because we want to avoid retain cycle
             self?.titleLabel.text = "Your patient needs to confirm payment within \((self?.minutes)! - 1) minutes"

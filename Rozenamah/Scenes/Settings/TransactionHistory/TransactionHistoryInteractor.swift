@@ -1,7 +1,8 @@
 import UIKit
 
 protocol TransactionHistoryBusinessLogic {
-    func fetchTrasactionHistory(for timeRange: TimeRange)
+    func configureWith(timeRange: TimeRange) 
+    func fetchTrasactionHistory()
 }
 
 class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
@@ -14,9 +15,19 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
     /// Represents current page of previous visits, we increment this with each request
     private var page = 0
     
+    /// Current transaction time range
+    private var timeRange: TimeRange!
+    
 	// MARK: Business logic
     
-    func fetchTrasactionHistory(for timeRange: TimeRange) {
+    /// Caled when we change time range - we reset page and info if there is anything more to download
+    func configureWith(timeRange: TimeRange) {
+        self.page = 0
+        self.isMoreToDownload = false
+        self.timeRange = timeRange
+    }
+    
+    func fetchTrasactionHistory() {
         
         guard let user = User.current else {
             return

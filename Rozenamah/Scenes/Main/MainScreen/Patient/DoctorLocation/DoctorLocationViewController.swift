@@ -11,7 +11,6 @@ protocol DoctorLocationDisplayLogic: class {
 class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic {
 
     // MARK: Outlets
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: SCImageView!
     @IBOutlet weak var classificationLabel: UILabel!
@@ -23,6 +22,7 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     // MARK: Properties
     var interactor: DoctorLocationBusinessLogic?
     var router: DoctorLocationRouter?
+    
     // Delegate for updating location of doctor, and cancellation of ongoing visit
     weak var flowDelegate: PatientFlowDelegate?
     
