@@ -21,8 +21,14 @@ import Localize
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    /// Stored launch options from notification, we use it if app was opened from push notification
+    /// It is used Splash screen in order to redirect to correct module and state
+    var launchOptions: [AnyHashable: Any]?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        storeLaunchOptionsIfAny(launchOptions: launchOptions)
         
         configureGlobalApperance()
         configureApp()
@@ -48,6 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: Notifications
+    
+    private func storeLaunchOptionsIfAny(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+        
+        // We could open the app from notification
+        // We store it for later use after we are logged in with success
+        if let userInfo = launchOptions?[.remoteNotification] as? [AnyHashable: Any] {
+            self.launchOptions = userInfo
+        }
+        
+    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         

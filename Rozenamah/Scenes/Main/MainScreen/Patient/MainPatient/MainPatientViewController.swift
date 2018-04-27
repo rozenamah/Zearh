@@ -6,6 +6,7 @@ protocol PatientFlowDelegate: class {
 }
 
 protocol MainPatientDisplayLogic: MainScreenDisplayLogic, PatientFlowDelegate {
+    func displayMarkersWithNearbyDoctors(_ markers: [GMSMarker])
 }
 
 class MainPatientViewController: MainScreenViewController, MainPatientDisplayLogic {
@@ -94,4 +95,8 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     
     // MARK: Presenter methods
 
+    func displayMarkersWithNearbyDoctors(_ markers: [GMSMarker]) {
+        // Attach markers to map
+        markers.forEach { $0.map = mapView }
+    }
 }

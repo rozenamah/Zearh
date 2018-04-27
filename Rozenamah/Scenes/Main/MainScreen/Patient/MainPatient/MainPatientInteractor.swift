@@ -24,11 +24,14 @@ class MainPatientInteractor: MainScreenInteractor, MainPatientBusinessLogic {
     override func firstLocationFetched() {
         // Location fetched, load nearby doctors on map
         if let location = locationManager.location {
-            worker.fetchDoctors(nearby: location) { (users, error) in
+            worker.fetchDoctors(nearby: location) { (doctorsLocations, error) in
                 if let _ = error {
                     // If error - do nothing
                     return
-                } 
+                }
+                if let locations = doctorsLocations {
+                    self.presenter?.presentDoctorLocations(locations.map({ $0.toCLCoordinates }))
+                }
             }
         }
     }

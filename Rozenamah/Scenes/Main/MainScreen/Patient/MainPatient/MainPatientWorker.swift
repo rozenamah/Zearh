@@ -3,9 +3,11 @@ import KeychainAccess
 import Alamofire
 import CoreLocation
 
+typealias LocationsCompletion = ([Location]?, RMError?) -> Void
+
 class MainPatientWorker {
 	
-    func fetchDoctors(nearby location: CLLocation, completion: @escaping UserCompletion) {
+    func fetchDoctors(nearby location: CLLocation, completion: @escaping LocationsCompletion) {
         
         let params = [
             "latitude": location.coordinate.latitude,
@@ -23,6 +25,8 @@ class MainPatientWorker {
         
         Alamofire.request(API.Doctor.nearby.path, method: .get, parameters: params, headers: headers)
             .validate()
-            .responseCodable(type: User.self, completion: completion)
+            .responseCodable(type: [Location].self, completion: completion)
     }
+    
+
 }

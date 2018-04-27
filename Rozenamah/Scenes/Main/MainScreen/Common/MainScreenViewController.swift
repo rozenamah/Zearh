@@ -29,6 +29,16 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // If notificiation in AppDelegate exists it means app was started from push notification, resolve it here, in Main
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let lunchingNotification = appDelegate.launchOptions {
+            appDelegate.application(UIApplication.shared, didReceiveRemoteNotification: lunchingNotification)
+            appDelegate.launchOptions = nil
+        }
+    }
+    
     // MARK: View customization
     
     func setupView() {

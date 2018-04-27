@@ -3,6 +3,7 @@ import CoreLocation
 import GoogleMaps
 
 protocol MainPatientPresentationLogic: MainScreenPresentationLogic {
+    func presentDoctorLocations(_ locations: [CLLocationCoordinate2D])
 }
 
 class MainPatientPresenter: MainScreenPresenter, MainPatientPresentationLogic {
@@ -13,4 +14,15 @@ class MainPatientPresenter: MainScreenPresenter, MainPatientPresentationLogic {
 
 	// MARK: Presentation logic
 	
+    func presentDoctorLocations(_ locations: [CLLocationCoordinate2D]) {
+        
+        let markers = locations.map { (location) -> GMSMarker in
+            let marker = GMSMarker(position: location)
+            marker.icon = UIImage(named: "surgeon")
+            return marker
+        }
+        
+        viewController?.displayMarkersWithNearbyDoctors(markers)
+        
+    }
 }
