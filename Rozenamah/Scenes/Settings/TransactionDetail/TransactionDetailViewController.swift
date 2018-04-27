@@ -67,7 +67,7 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
         nameLabel.text = user.fullname
         specialistLabel.isHidden = user.doctor == nil
         specialistLabel.text = user.doctor?.specialization?.title
-        addressLabel.text = visit.address
+//        addressLabel.text = visit.address
         priceLabel.text = "\(visit.price) SAR"
         feeLabel.isHidden = visit.fee == 0
         feeLabel.text = "+ \(visit.fee) SAR for cancellation"

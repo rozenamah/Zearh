@@ -35,6 +35,7 @@ class User: Decodable {
     var avatar: String?
     let type: UserType
     let doctor: Doctor?
+    let phone: String?
 
     var avatarURL: URL? {
         if let avatar = avatar {

@@ -1,7 +1,7 @@
 import UIKit
 
 class Transaction: Decodable {
-    var visit: Visit
+    var visit: Cost
     var user: User
     var dateTimestamp: Double
     var arrivalTimestamp: Double

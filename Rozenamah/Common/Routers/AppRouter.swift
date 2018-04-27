@@ -12,8 +12,8 @@ class AppRouter {
     
     static func navigateToAcceptVisit(from userInfo: [AnyHashable: Any]) {
   
-        if let visitInfo = decodeObject(toType: VisitDetails.self, from: userInfo) {
-            MainDoctorRouter.resolve(visit: visitInfo)
+        if let booking = decodeObject(toType: Booking.self, from: userInfo) {
+            MainDoctorRouter.resolve(booking: booking)
         }
     }
     

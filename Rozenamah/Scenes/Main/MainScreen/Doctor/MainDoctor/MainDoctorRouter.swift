@@ -7,7 +7,9 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     override var baseViewController: MainScreenViewController? {
         return viewController
     }
+    
     // Variable for passing data to doctorBusyVC
+    // TODO: What is this
     private var visitDetails: VisitDetails?
     
     private static let kVisitRequestNotification = Notification.Name("kVisitRequestNotification")
@@ -38,8 +40,8 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     
     // MARK: Routing
     
-    static func resolve(visit: VisitDetails) {
-        NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["visit" : visit])
+    static func resolve(booking: Booking) {
+        NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["visit" : booking])
     }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
@@ -51,9 +53,9 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     // MARK: Navigation
     
     @objc func handleNotification(for notification: NSNotification) {
-        if let visit = notification.userInfo?["visit"] as? VisitDetails {
-            patientFormVC.visitInfo = visit
-            visitDetails = visit
+        if let booking = notification.userInfo?["visit"] as? Booking {
+            patientFormVC.booking = booking
+//            visitDetails = booking
             openContainer()
         }
     }

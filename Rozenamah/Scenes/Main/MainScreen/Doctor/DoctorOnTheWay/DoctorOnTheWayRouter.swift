@@ -23,6 +23,6 @@ class DoctorOnTheWayRouter: Router, AlertRouter {
     private func passVisitInfo(vc: UIViewController) {
         let navVC = vc as? UINavigationController
         let detailsVC = navVC?.visibleViewController as? PatientDetailsViewController
-        detailsVC?.visitDetails = viewController?.visitInfo
+//        detailsVC?.booking = viewController?.booking
     }
 }

@@ -23,7 +23,7 @@ class AcceptPatientRouter: Router, PhoneCallRouter, AlertRouter {
     private func passVisitDetials(_ vc: UIViewController) {
         let navVC = vc as? UINavigationController
         let patientDetailVC = navVC?.visibleViewController as! PatientDetailsViewController
-        patientDetailVC.visitDetails = viewController?.visitInfo
+        patientDetailVC.booking = viewController?.booking
     }
 
 

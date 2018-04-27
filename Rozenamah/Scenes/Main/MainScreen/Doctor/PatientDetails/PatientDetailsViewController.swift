@@ -17,7 +17,8 @@ class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic
     var interactor: PatientDetailsBusinessLogic?
     var router: PatientDetailsRouter?
     
-    var visitDetails: VisitDetails!
+    /// Information about patient and booking
+    var booking: Booking!
 
     // MARK: Object lifecycle
 
@@ -41,11 +42,14 @@ class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic
     // MARK: View customization
 
     fileprivate func setupView() {
+        let visit = booking.visit
+        let patient = booking.patient
+        
         // TODO: Fill missing labels with correct data
-        avatarImage.setAvatar(for: visitDetails.user)
-        nameLabel.text = visitDetails.user.fullname
-        priceAmountLabel.text = "\(visitDetails.visit.price) SAR"
-        feeAmountLabel.text = "\(visitDetails.visit.fee) SAR"
+        avatarImage.setAvatar(for: patient)
+        nameLabel.text = patient.fullname
+        priceAmountLabel.text = "\(visit.cost.price) SAR"
+        feeAmountLabel.text = "\(visit.cost.fee) SAR"
     }
 
     // MARK: Event handling

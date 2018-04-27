@@ -10,6 +10,13 @@ import Foundation
 import CoreLocation
 
 class Booking: Decodable {
+    private enum CodingKeys : String, CodingKey {
+        case id, visit = "doctor", patient = "user", latitude, longitude
+    }
+    
     let id: String
-    let visit: Visit
+    let visit: VisitDetails
+    let patient: User
+    var latitude: Double
+    var longitude: Double
 }

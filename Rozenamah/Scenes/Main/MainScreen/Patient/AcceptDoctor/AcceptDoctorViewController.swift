@@ -6,10 +6,17 @@ protocol AcceptDoctorDisplayLogic: PaymentMethodDelegate {
 class AcceptDoctorViewController: ModalInformationViewController, AcceptDoctorDisplayLogic {
 
     // MARK: Outlets
+    @IBOutlet weak var classificationLabel: UILabel!
     
     // MARK: Properties
     var interactor: AcceptDoctorBusinessLogic?
     var router: AcceptDoctorRouter?
+    
+    var visitInfo: VisitDetails! {
+        didSet {
+            fillInformation(with: visitInfo.user, andVisitInfo: visitInfo)
+        }
+    }
     
     /// We use it to communicate flow to main screen
     weak var flowDelegate: PatientFlowDelegate?
@@ -41,11 +48,16 @@ class AcceptDoctorViewController: ModalInformationViewController, AcceptDoctorDi
     fileprivate func setupView() {
         
     }
+    
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
+        super.fillInformation(with: user, andVisitInfo: visitInfo)
+        classificationLabel.text = visitInfo.user.doctor?.classification.title
+    }
 
     // MARK: Event handling
     
     @IBAction func callAction(_ sender: Any) {
-        if let phone = visitInfo.visit.phone {
+        if let phone = visitInfo.user.phone {
             router?.makeCall(to: phone)
         }
     }

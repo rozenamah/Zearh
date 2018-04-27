@@ -56,11 +56,11 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
         paymentMethodsButtons.forEach({ $0.isSelected = false })
         
         let user = doctor.user
-        let visit = doctor.visit
+        let cost = doctor.cost
         
         visitPriceLabel.text = "\(user.doctor!.price) SAR"
-        totalPriceLabel.text = "\(visit.price) SAR"
-        feePriceLabel.text = "\(visit.fee) SAR"
+        totalPriceLabel.text = "\(cost.price) SAR"
+        feePriceLabel.text = "\(cost.fee) SAR"
     }
 
     // MARK: Event handling

@@ -9,11 +9,19 @@
 import Foundation
 import CoreLocation
 
-class Visit: Decodable {
+class Cost: Decodable {
     let phone: String?
     let price: Int
     let fee: Int
-    let address: String?
+}
+
+class VisitDetails: Decodable {
+    private enum CodingKeys : String, CodingKey {
+        case cost, user = "doctor", latitude, longitude
+    }
+    
+    let cost: Cost
+    let user: User
     var latitude: Double
     var longitude: Double
     
@@ -25,9 +33,4 @@ class Visit: Decodable {
         }
         return (meters/1000)
     }
-}
-
-class VisitDetails: Decodable {
-    let visit: Visit
-    let user: User
 }
