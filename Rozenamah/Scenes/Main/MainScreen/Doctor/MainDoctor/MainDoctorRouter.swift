@@ -8,10 +8,6 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return viewController
     }
     
-    // Variable for passing data to doctorBusyVC
-    // TODO: What is this
-    private var visitDetails: VisitDetails?
-    
     private static let kVisitRequestNotification = Notification.Name("kVisitRequestNotification")
     
     override init() {
@@ -55,19 +51,18 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["visit"] as? Booking {
             patientFormVC.booking = booking
-//            visitDetails = booking
             openContainer()
         }
     }
     
-    func navigateToDoctorOnTheWay() {
+    func navigateToDoctorOnTheWay(onBooking booking: Booking) {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return
             }
             self.add(asChildViewController: self.doctorBusyVC)
             self.viewController?.containerHeightConstraint.constant = 309
-            self.doctorBusyVC.visitInfo = self.visitDetails
+            self.doctorBusyVC.booking = booking
             self.openContainer()
         }
     }

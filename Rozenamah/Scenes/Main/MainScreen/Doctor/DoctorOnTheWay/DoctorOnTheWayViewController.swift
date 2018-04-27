@@ -8,15 +8,9 @@ protocol DoctorOnTheWayDisplayLogic: class {
     func doctorCancelled()
 }
 
-class DoctorOnTheWayViewController: UIViewController, DoctorOnTheWayDisplayLogic {
+class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheWayDisplayLogic {
 
     // MARK: Outlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var feeLabel: UILabel!
-    @IBOutlet weak var avatarImageView: SCImageView!
-    @IBOutlet weak var phoneNumber: UIButton!
-    @IBOutlet weak var distanceButton: UIButton!
     
     // MARK: Properties
     var interactor: DoctorOnTheWayBusinessLogic?
@@ -25,8 +19,9 @@ class DoctorOnTheWayViewController: UIViewController, DoctorOnTheWayDisplayLogic
     var locationManager = CLLocationManager()
     // Delegate responsible for passing action to parent viewcontroller
     weak var flowDelegate: DoctortFlowDelegate?
-    // When variable is set, fulfil user information
-    var visitInfo: VisitDetails! {
+    
+    // Variable represents current booking for which doctor will serve services and where he will be driving
+    var booking: Booking! {
         didSet {
             customizePatientInfo()
         }
@@ -59,26 +54,7 @@ class DoctorOnTheWayViewController: UIViewController, DoctorOnTheWayDisplayLogic
     }
     
     func customizePatientInfo() {
-        let user = visitInfo.user
-        let cost = visitInfo.cost
-        
-        avatarImageView.setAvatar(for: user)
-        nameLabel.text = user.fullname
-        priceLabel.text = "\(cost.price) SAR"
-        phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
-        distanceButton.setTitle("\(visitInfo.distanceInKM) km from you", for: .normal)
-        
-        // Without this phone number will rever title to previous one (it is a bug but source is uknown)
-        phoneNumber.setTitle(user.phone ?? "No phone number", for: .highlighted)
-        distanceButton.setTitle("\(visitInfo.distanceInKM) km from you", for: .highlighted)
-        
-        // If more then 10 kilometers, highlight distance to red
-        distanceButton.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
-        
-        // If fee > 0, show fee label
-        feeLabel.isHidden = cost.fee <= 0
-        feeLabel.text = "+ \(cost.fee) SAR for cancellation"
-        
+        fillInformation(with: booking.patient, andVisitInfo: booking.visit)
     }
 
     // MARK: Event handling

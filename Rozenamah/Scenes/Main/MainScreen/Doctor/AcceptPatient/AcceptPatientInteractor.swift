@@ -1,8 +1,8 @@
 import UIKit
 
 protocol AcceptPatientBusinessLogic {
-    func rejectPatient(for visitId: String)
-    func acceptPatient(for visitId: String)
+    func rejectPatient(for booking: Booking)
+    func acceptPatient(for booking: Booking)
 }
 
 class AcceptPatientInteractor: AcceptPatientBusinessLogic {
@@ -11,9 +11,8 @@ class AcceptPatientInteractor: AcceptPatientBusinessLogic {
 
 	// MARK: Business logic
     
-    
-    func rejectPatient(for visitId: String) {
-        worker.rejectPatient(for: visitId) { (error) in
+    func rejectPatient(for booking: Booking) {
+        worker.rejectPatient(for: booking.id) { (error) in
             if let error = error {
                 self.presenter?.handleError(error)
                 return
@@ -22,8 +21,8 @@ class AcceptPatientInteractor: AcceptPatientBusinessLogic {
         }
     }
     
-    func acceptPatient(for visitId: String) {
-        worker.acceptPatient(for: visitId) { (error) in
+    func acceptPatient(for booking: Booking) {
+        worker.acceptPatient(for: booking.id) { (error) in
             if let error = error {
                 self.presenter?.handleError(error)
                 return

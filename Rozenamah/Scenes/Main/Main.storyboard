@@ -2407,6 +2407,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="370"/>
                     <connections>
+                        <outlet property="avatarImage" destination="OWa-HB-oDb" id="i2n-VH-Pzv"/>
+                        <outlet property="confirmationLabel" destination="9g5-Sk-jBd" id="lLE-9R-wmj"/>
+                        <outlet property="distanceButton" destination="Vba-1Z-kyj" id="EEB-jt-rWE"/>
+                        <outlet property="feeLabel" destination="mjM-0S-fnf" id="wgL-tK-mc1"/>
+                        <outlet property="nameLabel" destination="i9n-NQ-UJE" id="HXb-Db-6vA"/>
+                        <outlet property="phoneNumber" destination="YXT-o3-p3k" id="SMa-1B-jdT"/>
+                        <outlet property="priceLabel" destination="Jq3-2u-Xwp" id="aub-Mc-waf"/>
                         <segue destination="qwN-af-bPa" kind="presentation" identifier="end_visit_segue" id="KYb-hU-13Z"/>
                         <segue destination="FFh-y2-TY6" kind="presentation" identifier="patient_details_segue" id="Mdi-iB-z2d"/>
                     </connections>
@@ -2426,12 +2433,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldW-a3-WCB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="hPj-gW-O0R">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="hPj-gW-O0R" customClass="SCImageView" customModule="SwiftCake">
                                         <rect key="frame" x="137.5" y="25" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="4Qg-ey-CEw"/>
                                             <constraint firstAttribute="height" constant="100" id="GXs-Hh-hFh"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dan Louis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-Hb-fmV">
                                         <rect key="frame" x="149.5" y="148" width="75.5" height="20.5"/>
@@ -3155,12 +3167,18 @@
                     </view>
                     <size key="freeformSize" width="375" height="309"/>
                     <connections>
+                        <outlet property="avatarImage" destination="XsA-Xw-r0d" id="b08-HE-kbk"/>
+                        <outlet property="distanceButton" destination="3CH-uk-MLC" id="Qua-H3-AsF"/>
+                        <outlet property="feeLabel" destination="ncr-yB-hNe" id="KhW-M2-s0p"/>
+                        <outlet property="nameLabel" destination="F2M-sa-S6U" id="Vce-aU-0JS"/>
+                        <outlet property="phoneNumber" destination="qMe-Tj-oNF" id="U7E-yA-wEK"/>
+                        <outlet property="priceLabel" destination="FzC-tx-3Q6" id="7GV-bf-XD2"/>
                         <segue destination="FFh-y2-TY6" kind="presentation" identifier="details_segue" id="nHf-Jq-HWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgP-od-Nhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="1307"/>
+            <point key="canvasLocation" x="1206" y="1225"/>
         </scene>
         <!--Doctor Location View Controller-->
         <scene sceneID="VlB-Ob-TbI">
@@ -3367,7 +3385,7 @@
         <image name="radio_full_btn" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mdi-iB-z2d"/>
+        <segue reference="nHf-Jq-HWr"/>
         <segue reference="CEi-hk-pLN"/>
     </inferredMetricsTieBreakers>
 </document>

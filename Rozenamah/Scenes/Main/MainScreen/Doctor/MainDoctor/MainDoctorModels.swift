@@ -1,8 +1,8 @@
 import UIKit
 
 enum DoctorFlow {
-    case accept(visitId: String)
-    case reject
+    case accepted(booking: Booking)
+    case rejected
     case cancel
     case arrived
 }

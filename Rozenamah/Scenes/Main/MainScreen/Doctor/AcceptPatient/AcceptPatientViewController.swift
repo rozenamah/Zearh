@@ -72,13 +72,11 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     // MARK: Event handling
 
     @IBAction func acceptAction(_ sender: Any) {
-        //interactor?.acceptPatient(for: "visit_Id")
-        //TODO: Delete this line, uncomment previous
-        flowDelegate?.changeStateTo(flowPoint: .accept(visitId: "adsa"))
+        interactor?.acceptPatient(for: booking)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        interactor?.rejectPatient(for: "asdasd")
+        interactor?.rejectPatient(for: booking)
     }
     
     @IBAction func patientDetailsAction(_ sender: Any) {
@@ -99,11 +97,11 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     // MARK: Presenter methods
     
     func patientAccepted(with visitId: String) {
-        flowDelegate?.changeStateTo(flowPoint: .accept(visitId: visitId))
+        flowDelegate?.changeStateTo(flowPoint: .accepted(booking: booking))
     }
     
     func patientRejected() {
-        flowDelegate?.changeStateTo(flowPoint: .reject)
+        flowDelegate?.changeStateTo(flowPoint: .rejected)
     }
     
     func handle(error: Error) {

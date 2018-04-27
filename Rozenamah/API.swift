@@ -85,9 +85,9 @@ extension API.Visit {
     var path: String {
         switch self {
         case .request: return resource + "request"
-        case .accept: return resource + "accept"
-        case .reject: return resource + "reject"
-        case .cancel: return resource + "cancel"
+        case .accept: return resource + "request/accept"
+        case .reject: return resource + "request/reject"
+        case .cancel: return resource + "request/cancel"
         }
     }
 }

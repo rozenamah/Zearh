@@ -15,7 +15,7 @@ class DoctorOnTheWayRouter: Router, AlertRouter {
     // MARK: Navigation
     
     func navigateToPatientDetails() {
-        viewController?.performSegue(withIdentifier: "details_segue", sender: viewController?.visitInfo)
+        viewController?.performSegue(withIdentifier: "details_segue", sender: nil)
     }
 
     // MARK: Passing data
@@ -23,6 +23,6 @@ class DoctorOnTheWayRouter: Router, AlertRouter {
     private func passVisitInfo(vc: UIViewController) {
         let navVC = vc as? UINavigationController
         let detailsVC = navVC?.visibleViewController as? PatientDetailsViewController
-//        detailsVC?.booking = viewController?.booking
+        detailsVC?.booking = viewController?.booking
     }
 }
