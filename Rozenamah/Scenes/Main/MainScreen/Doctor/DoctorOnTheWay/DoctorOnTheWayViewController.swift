@@ -8,15 +8,14 @@ protocol DoctorOnTheWayDisplayLogic: class {
     func doctorCancelled()
 }
 
-class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheWayDisplayLogic {
+class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheWayDisplayLogic, VisitBooking {
 
     // MARK: Outlets
     
     // MARK: Properties
     var interactor: DoctorOnTheWayBusinessLogic?
     var router: DoctorOnTheWayRouter?
-    
-    var locationManager = CLLocationManager()
+
     // Delegate responsible for passing action to parent viewcontroller
     weak var flowDelegate: DoctortFlowDelegate?
     
@@ -49,8 +48,6 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     // MARK: View customization
 
     fileprivate func setupView() {
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
     }
     
     func customizePatientInfo() {
@@ -83,22 +80,5 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     
     func doctorCancelled() {
         flowDelegate?.changeStateTo(flowPoint: .cancel)
-    }
-}
-
-extension DoctorOnTheWayViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
-            return
-        }
-        
-        interactor?.updateDoctorsLocation(location)
-        let patientMock = CLLocation(latitude: 50.055246, longitude: 19.969307)
-        // If doctor is less than 150 meters, send information to server
-        if interactor?.checkIfDoctorCloseTo(patientMock) == true {
-            interactor?.doctorArrived(for: "VisitID")
-        }
-        
     }
 }

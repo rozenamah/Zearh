@@ -1,6 +1,6 @@
 import UIKit
 
-class DoctorOnTheWayRouter: Router, AlertRouter {
+class DoctorOnTheWayRouter: Router, AlertRouter, PatientsDetailsRouter {
     typealias RoutingViewController = DoctorOnTheWayViewController
     weak var viewController: DoctorOnTheWayViewController?
 
@@ -8,7 +8,7 @@ class DoctorOnTheWayRouter: Router, AlertRouter {
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "details_segue" {
-            passVisitInfo(vc: segue.destination)
+            passVisitDetails(vc: segue.destination)
         }
     }
 
@@ -19,10 +19,5 @@ class DoctorOnTheWayRouter: Router, AlertRouter {
     }
 
     // MARK: Passing data
-    
-    private func passVisitInfo(vc: UIViewController) {
-        let navVC = vc as? UINavigationController
-        let detailsVC = navVC?.visibleViewController as? PatientDetailsViewController
-        detailsVC?.booking = viewController?.booking
-    }
+
 }

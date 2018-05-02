@@ -8,12 +8,19 @@ protocol DoctorOnTheWayBusinessLogic {
     func cancelVisit(for visitID: String)
 }
 
-class DoctorOnTheWayInteractor: DoctorOnTheWayBusinessLogic {
+class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
 	var presenter: DoctorOnTheWayPresentationLogic?
 	var worker = DoctorOnTheWayWorker()
     
     // Holds first location that we compare distance with later locations after updates
     private var baseLocation: CLLocation?
+    fileprivate var locationManager = CLLocationManager()
+    
+    override init() {
+        super.init()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+    }
 
 	// MARK: Business logic
     
@@ -66,5 +73,39 @@ class DoctorOnTheWayInteractor: DoctorOnTheWayBusinessLogic {
         }
         return false
     }
+    
+    fileprivate func startObservingLocation() {
+        locationManager.startUpdatingLocation()
+    }
 	
+}
+
+extension DoctorOnTheWayInteractor: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            startObservingLocation()
+        case .denied, .restricted:
+            // TODO: User can't user this app now
+            break
+        default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        updateDoctorsLocation(location)
+        let patientMock = CLLocation(latitude: 50.055246, longitude: 19.969307)
+        // If doctor is less than 150 meters, send information to server
+        if checkIfDoctorCloseTo(patientMock) == true {
+            doctorArrived(for: "VisitID")
+        }
+        
+    }
 }

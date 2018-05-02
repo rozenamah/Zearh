@@ -3,6 +3,7 @@ import UIKit
 protocol DoctorLocationBusinessLogic {
     func cancelVisit(for visitId: String)
     func observeDoctorLocation(for visitId: String)
+    func stopObservingDoctorLocation()
 }
 
 class DoctorLocationInteractor: DoctorLocationBusinessLogic {
@@ -27,6 +28,11 @@ class DoctorLocationInteractor: DoctorLocationBusinessLogic {
                 self.presenter?.updateDoctorLocation(location)
             }
         }
+    }
+    
+    func stopObservingDoctorLocation() {
+        //TODO: Trigger this function when needed
+        worker.stopObservingDoctorLocation()
     }
 	
 }

@@ -6,26 +6,28 @@ import KeychainAccess
 
 class DoctorLocationWorker {
     typealias DoctorLocationCompletion = ((CLLocation?) -> ())
+    private var locationObserver: DatabaseObserver?
     
     func observeDoctorLocation(for visitId: String, completion: @escaping DoctorLocationCompletion) {
         let ref = Database.database().reference()
         let childRef = ref.child("location/visitId/\(visitId)")
         
-        childRef.observe(.value) { (snapshot) in
+        let locationHandle = childRef.observe(.value) { (snapshot) in
             if !snapshot.exists() {
                 completion(nil)
                 return
             }
             // Could be done by Codable protocol
-            guard let snapshotDict = snapshot.value as? [String: Double], let latitude = snapshotDict["latitude"], let longitude = snapshotDict["longitude"] else  {
-                completion(nil)
-                return
+            guard let snapshotDict = snapshot.value as? [String: Double],
+                let json =  try? JSONEncoder().encode(snapshotDict), let location = try? JSONDecoder().decode(Location.self, from: json) else  {
+                    completion(nil)
+                    return
             }
-            
-            let location = CLLocation(latitude: latitude, longitude: longitude)
-
-            completion(location)
+            completion(CLLocation(latitude: location.latitude,
+                                  longitude: location.longitude))
         }
+        
+        locationObserver = DatabaseObserver(ref: ref, handle: locationHandle)
     }
     
     func cancelVisit(with visitId: String, completion: @escaping ErrorCompletion) {
@@ -46,5 +48,9 @@ class DoctorLocationWorker {
         Alamofire.request(API.Visit.cancel.path, method: .post, parameters: params, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
+    }
+    
+    func stopObservingDoctorLocation() {
+        locationObserver?.remove()
     }
 }

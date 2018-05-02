@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     typealias RoutingViewController = MainDoctorViewController
@@ -51,6 +52,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["visit"] as? Booking {
             patientFormVC.booking = booking
+            viewController?.animateToPosition(GMSCameraPosition(target: CLLocationCoordinate2D(latitude: booking.latitude, longitude: booking.longitude), zoom: 15.0, bearing: 0.0, viewingAngle: 0.0))
             openContainer()
         }
     }

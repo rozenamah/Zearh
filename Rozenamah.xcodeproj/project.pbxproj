@@ -17,6 +17,8 @@
 		5710109B208F6315008B4384 /* DoctorOnTheWayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */; };
 		5710109D208F6315008B4384 /* DoctorOnTheWayConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */; };
 		5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5710109E208F6FB2008B4384 /* GoogleService-Info.plist */; };
+		57105E17209993D2007259A0 /* DatabseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57105E16209993D2007259A0 /* DatabseObserver.swift */; };
+		57105E192099A07C007259A0 /* PatientsDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57105E182099A07C007259A0 /* PatientsDetailsRouter.swift */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
 		57369F20207E0CDE001666EB /* ChangePhoneNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */; };
 		57369F21207E0CDE001666EB /* ChangePhoneNumberWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */; };
@@ -262,6 +264,8 @@
 		57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayViewController.swift; sourceTree = "<group>"; };
 		57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayConfigurator.swift; sourceTree = "<group>"; };
 		5710109E208F6FB2008B4384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57105E16209993D2007259A0 /* DatabseObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabseObserver.swift; sourceTree = "<group>"; };
+		57105E182099A07C007259A0 /* PatientsDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsDetailsRouter.swift; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57369F19207E0CDE001666EB /* ChangePhoneNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberPresenter.swift; sourceTree = "<group>"; };
 		57369F1A207E0CDE001666EB /* ChangePhoneNumberWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberWorker.swift; sourceTree = "<group>"; };
@@ -854,6 +858,7 @@
 			isa = PBXGroup;
 			children = (
 				F95F140720614A6E00CDC2E5 /* iPhoneDeviceDetection.swift */,
+				57105E16209993D2007259A0 /* DatabseObserver.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1141,6 +1146,7 @@
 				F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */,
 				574FC5A42084E5C7001E4059 /* PhoneCallRouter.swift */,
 				5702CEBE2089E7AE00245F7A /* AppRouter.swift */,
+				57105E182099A07C007259A0 /* PatientsDetailsRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -1488,6 +1494,7 @@
 				F95AFBEC206A4DBE007CCFB1 /* NameValidation.swift in Sources */,
 				F99A2ED7207F37D2009505EB /* AcceptDoctorWorker.swift in Sources */,
 				F97B71F52062B5960073A968 /* CallDoctorPresenter.swift in Sources */,
+				57105E17209993D2007259A0 /* DatabseObserver.swift in Sources */,
 				F940EA612058148300266753 /* LoginModels.swift in Sources */,
 				F940EC4C205A9BFF00266753 /* MainPatientViewController.swift in Sources */,
 				F9CEDE63206521DA004ED0C7 /* EditProfileRouter.swift in Sources */,
@@ -1509,6 +1516,7 @@
 				F9CEDE552063F139004ED0C7 /* ReportModels.swift in Sources */,
 				573A3055207B65AA0040B438 /* TransactionHistoryModels.swift in Sources */,
 				57E659D62073AE60004E3926 /* ChangeEmailViewController.swift in Sources */,
+				57105E192099A07C007259A0 /* PatientsDetailsRouter.swift in Sources */,
 				F940EA512058147000266753 /* WelcomeWorker.swift in Sources */,
 				F975376F205FDADE003DC80E /* RegisterDoctorModels.swift in Sources */,
 				57369F26207E0CDE001666EB /* ChangePhoneNumberConfigurator.swift in Sources */,

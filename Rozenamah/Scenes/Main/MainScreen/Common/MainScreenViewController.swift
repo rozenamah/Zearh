@@ -22,6 +22,10 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
+    //MARK: Properties
+    
+    private var locationMarker: GMSMarker?
+    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -83,9 +87,16 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     }
     
     func presentUser(in location: CLLocation) {
+        // If there is already marker on the map
+        // and comes update to location, swap old one with new
+        if locationMarker != nil {
+            locationMarker?.map = nil
+            locationMarker = nil
+        }
+        
         let icon = User.current?.type == .patient ? UIImage(named: "doctor_icon") : UIImage(named: "placeholder")
-        let marker = GMSMarker(position: location.coordinate)
-        marker.icon = icon
-        marker.map = mapView
+        locationMarker = GMSMarker(position: location.coordinate)
+        locationMarker?.icon = icon
+        locationMarker?.map = mapView
     }
 }
