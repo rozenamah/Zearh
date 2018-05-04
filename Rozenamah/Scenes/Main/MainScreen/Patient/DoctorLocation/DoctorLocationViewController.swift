@@ -26,7 +26,7 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     // Delegate for updating location of doctor, and cancellation of ongoing visit
     weak var flowDelegate: PatientFlowDelegate?
     
-    var visitInfo: VisitDetails! {
+    var visitInfo: Booking! {
         didSet {
             customizeDoctorInfo()
         }
@@ -54,24 +54,24 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     // MARK: View customization
 
     fileprivate func setupView() {
-        interactor?.observeDoctorLocation(for: "visitId")
+        interactor?.observeDoctorLocation(for: visitInfo)
     }
     
     func customizeDoctorInfo() {
-        let user = visitInfo.user
-        let cost = visitInfo.cost
+        let user = visitInfo.visit.user
+        let cost = visitInfo.visit.cost
         avatarImage.setAvatar(for: user)
         nameLabel.text = user.fullname
         priceLabel.text = "\(cost.price) SAR"
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
-        distanceButton.setTitle("\(visitInfo.distanceInKM) km from you", for: .normal)
+        distanceButton.setTitle("\(visitInfo.visit.distanceInKM) km from you", for: .normal)
         
         // Without this phone number will rever title to previous one (it is a bug but source is uknown)
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .highlighted)
-        distanceButton.setTitle("\(visitInfo.distanceInKM) km from you", for: .highlighted)
+        distanceButton.setTitle("\(visitInfo.visit.distanceInKM) km from you", for: .highlighted)
         
         // If more then 10 kilometers, highlight distance to red
-        distanceButton.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
+        distanceButton.tintColor = visitInfo.visit.distanceInKM > 10 ? .rmRed : .rmGray
         
         // If fee > 0, show fee label
         feeLabel.isHidden = cost.fee <= 0
@@ -86,7 +86,7 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     }
     
     func cancelConfirmed() {
-        interactor?.cancelVisit(for: "123123")
+        interactor?.cancelVisit(for: visitInfo)
     }
     
     // MARK: Presenter methods

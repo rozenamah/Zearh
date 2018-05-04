@@ -56,13 +56,14 @@ class MainPatientRouter: MainScreenRouter, Router {
         }
     }
     
-    func navigateToDoctorOnTheWay() {
+    func navigateToDoctorOnTheWay(for booking: Booking) {
         animateCloseContainer { [weak self] in
             guard let `self` = self else {
                 return
             }
             self.add(asChildViewController: self.doctorLocationVC)
             self.viewController?.containerHeightConstraint.constant = 307
+            self.doctorLocationVC.visitInfo = booking
             self.openContainer()
         }
     }

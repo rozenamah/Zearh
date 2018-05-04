@@ -1,7 +1,7 @@
 import UIKit
 
 protocol AcceptPatientPresentationLogic {
-    func patientAccepted()
+    func patientAccepted(with booking: Booking?)
     func patienRejected()
     func handleError(_ error: RMError)
 }
@@ -12,8 +12,8 @@ class AcceptPatientPresenter: AcceptPatientPresentationLogic {
 	// MARK: Presentation logic
     
     
-    func patientAccepted() {
-        viewController?.patientAccepted(with: "121321321")
+    func patientAccepted(with booking: Booking?) {
+        viewController?.patientAccepted(with: booking)
     }
     
     func patienRejected() {

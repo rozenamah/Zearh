@@ -96,6 +96,8 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             break
         case .doctorLocation(let location):
             presentUser(in: location)
+        case .visitConfirmed(booking: let booking):
+            router?.navigateToDoctorOnTheWay(for: booking)
         }
     }
     

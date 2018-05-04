@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
         #endif
         
-        AppRouter.navigateToAcceptVisit(from: userInfo)
+        AppRouter.navigateToProperScreen(from: userInfo)
     }
 }
 

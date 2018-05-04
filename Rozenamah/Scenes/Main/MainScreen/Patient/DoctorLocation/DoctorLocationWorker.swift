@@ -8,9 +8,9 @@ class DoctorLocationWorker {
     typealias DoctorLocationCompletion = ((CLLocation?) -> ())
     private var locationObserver: DatabaseObserver?
     
-    func observeDoctorLocation(for visitId: String, completion: @escaping DoctorLocationCompletion) {
+    func observeDoctorLocation(for booking: Booking, completion: @escaping DoctorLocationCompletion) {
         let ref = Database.database().reference()
-        let childRef = ref.child("location/visitId/\(visitId)")
+        let childRef = ref.child("location/visitId/\(booking.id)")
         
         let locationHandle = childRef.observe(.value) { (snapshot) in
             if !snapshot.exists() {
@@ -30,7 +30,7 @@ class DoctorLocationWorker {
         locationObserver = DatabaseObserver(ref: ref, handle: locationHandle)
     }
     
-    func cancelVisit(with visitId: String, completion: @escaping ErrorCompletion) {
+    func cancelVisit(with booking: Booking, completion: @escaping ErrorCompletion) {
         
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
@@ -42,7 +42,7 @@ class DoctorLocationWorker {
         ]
         
         let params = [
-            "visit": visitId
+            "visit": booking.id
         ]
         
         Alamofire.request(API.Visit.cancel.path, method: .post, parameters: params, headers: headers)

@@ -6,13 +6,9 @@ import Alamofire
 
 class DoctorOnTheWayWorker: DoctorLocationWorker {
     
-    func updateLocationInDatabase(_ location: CLLocation) {
-        
-        guard let user = User.current else {
-            return
-        }
-        
-        let ref = Database.database().reference().child("location/user/\(user.id)")
+    func updateLocationInDatabase(_ location: CLLocation, booking: Booking) {
+  
+        let ref = Database.database().reference().child("location/visitId/\(booking.id)")
         let locationUpdate: [String: Any] = [
             "latitude": location.coordinate.latitude,
             "longitude": location.coordinate.latitude
@@ -22,7 +18,7 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
         
     }
     
-    func doctorArrived(for visitId: String, completion: @escaping ErrorCompletion) {
+    func doctorArrived(for booking: Booking, completion: @escaping ErrorCompletion) {
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
             return
@@ -33,7 +29,7 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
         ]
         
         let params = [
-            "visit": visitId
+            "visit": booking.id
         ]
         
         Alamofire.request(API.Doctor.arrived.path, method: .post, parameters: params, headers: headers)

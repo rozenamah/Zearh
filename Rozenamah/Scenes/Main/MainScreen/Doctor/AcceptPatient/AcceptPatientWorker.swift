@@ -4,10 +4,10 @@ import Alamofire
 
 class AcceptPatientWorker {
     
-    func acceptPatient(for visitId: String, completion: @escaping ErrorCompletion) {
-        
+    func acceptPatient(for booking: Booking, completion: @escaping ErrorCompletion) {
+        //TODO: Change to booking completion when data is available from API
         let params: [String: Any] = [
-            "visit": visitId
+            "visit": booking.id
         ]
         
         guard let token = Keychain.shared.token else {
@@ -25,10 +25,10 @@ class AcceptPatientWorker {
             .responseEmpty(completion: completion)
     }
     
-    func rejectPatient(for visitId: String, completion: @escaping ErrorCompletion) {
+    func rejectPatient(for booking: Booking, completion: @escaping ErrorCompletion) {
         
         let params: [String: Any] = [
-            "visit": visitId
+            "visit": booking.id
         ]
         
         guard let token = Keychain.shared.token else {

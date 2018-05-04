@@ -4,8 +4,10 @@ import CoreLocation
 protocol DoctorOnTheWayBusinessLogic {
     func updateDoctorsLocation(_ location: CLLocation)
     func checkIfDoctorCloseTo(_ patientLocation: CLLocation) -> Bool
-    func doctorArrived(for visitId: String)
-    func cancelVisit(for visitID: String)
+    func doctorArrived(for booking: Booking)
+    func cancelVisit(for booking: Booking)
+    func setupBooking(_ booking: Booking)
+    func stopUpdatingLocation()
 }
 
 class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
@@ -15,21 +17,27 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
     // Holds first location that we compare distance with later locations after updates
     private var baseLocation: CLLocation?
     fileprivate var locationManager = CLLocationManager()
+    fileprivate var booking: Booking!
     
     override init() {
         super.init()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
+    
+    func setupBooking(_ booking: Booking) {
+        self.booking = booking
+    }
 
 	// MARK: Business logic
     
-    func cancelVisit(for visitID: String) {
-        worker.cancelVisit(with: visitID) { (error) in
+    func cancelVisit(for booking: Booking) {
+        worker.cancelVisit(with: booking) { (error) in
             if let error = error {
                 self.presenter?.handle(error)
                 return
             }
+            stopUpdatingLocation()
             self.presenter?.doctorCancelled()
         }
     }
@@ -38,18 +46,19 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
         if baseLocation == nil {
             baseLocation = location
         }
-        
+  
         if userMovedRequiredDistance(location: location) {
-            worker.updateLocationInDatabase(location)
+            worker.updateLocationInDatabase(location, booking: booking)
         }
     }
     
-    func doctorArrived(for visitId: String) {
-        worker.doctorArrived(for: visitId) { (error) in
+    func doctorArrived(for booking: Booking) {
+        worker.doctorArrived(for: booking) { (error) in
             if let error = error {
                 self.presenter?.handle(error)
                 return
             }
+            stopUpdatingLocation()
             self.presenter?.doctorArrived()
         }
     }
@@ -62,6 +71,11 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
         let distance = Int(location.distance(from: patientLocation))
         
         return distance < 150
+    }
+    
+   private func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
     }
     
     private func userMovedRequiredDistance(location: CLLocation) -> Bool {
@@ -77,7 +91,6 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
     fileprivate func startObservingLocation() {
         locationManager.startUpdatingLocation()
     }
-	
 }
 
 extension DoctorOnTheWayInteractor: CLLocationManagerDelegate {
@@ -101,10 +114,10 @@ extension DoctorOnTheWayInteractor: CLLocationManagerDelegate {
         }
         
         updateDoctorsLocation(location)
-        let patientMock = CLLocation(latitude: 50.055246, longitude: 19.969307)
+        let patientLocation = CLLocation(latitude: booking.latitude, longitude: booking.longitude)
         // If doctor is less than 150 meters, send information to server
-        if checkIfDoctorCloseTo(patientMock) == true {
-            doctorArrived(for: "VisitID")
+        if checkIfDoctorCloseTo(patientLocation) == true {
+            doctorArrived(for: booking)
         }
         
     }

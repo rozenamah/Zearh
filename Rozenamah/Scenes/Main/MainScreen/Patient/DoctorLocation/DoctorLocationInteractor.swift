@@ -1,8 +1,8 @@
 import UIKit
 
 protocol DoctorLocationBusinessLogic {
-    func cancelVisit(for visitId: String)
-    func observeDoctorLocation(for visitId: String)
+    func cancelVisit(for booking: Booking)
+    func observeDoctorLocation(for booking: Booking)
     func stopObservingDoctorLocation()
 }
 
@@ -12,8 +12,8 @@ class DoctorLocationInteractor: DoctorLocationBusinessLogic {
 
 	// MARK: Business logic
     
-    func cancelVisit(for visitId: String) {
-        worker.cancelVisit(with: visitId) { (error) in
+    func cancelVisit(for booking: Booking) {
+        worker.cancelVisit(with: booking) { (error) in
             if let error = error {
                 self.presenter?.handle(error)
                 return
@@ -22,8 +22,8 @@ class DoctorLocationInteractor: DoctorLocationBusinessLogic {
         }
     }
     
-    func observeDoctorLocation(for visitId: String) {
-        worker.observeDoctorLocation(for: visitId) { (location) in
+    func observeDoctorLocation(for booking: Booking) {
+        worker.observeDoctorLocation(for: booking) { (location) in
             if let location = location {
                 self.presenter?.updateDoctorLocation(location)
             }

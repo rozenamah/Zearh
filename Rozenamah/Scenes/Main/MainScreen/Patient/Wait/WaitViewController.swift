@@ -70,11 +70,13 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             interactor?.searchForDoctor(withFilters: filters)
         case .waitForPayDoctor:
             startCountingTimeLeft()
+        case .doctorOnTheWay(let booking):
+            flowDelegate?.changeStateTo(flowPoint: .visitConfirmed(booking: booking))
         }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        if User.current?.type == .patient {
+        if flowDelegate != nil {
             interactor?.cancelCurrentRequest()
             flowDelegate?.changeStateTo(flowPoint: .callDoctor)
         } else {

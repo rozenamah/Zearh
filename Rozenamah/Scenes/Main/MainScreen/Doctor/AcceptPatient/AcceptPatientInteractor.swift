@@ -12,7 +12,7 @@ class AcceptPatientInteractor: AcceptPatientBusinessLogic {
 	// MARK: Business logic
     
     func rejectPatient(for booking: Booking) {
-        worker.rejectPatient(for: booking.id) { (error) in
+        worker.rejectPatient(for: booking) { (error) in
             if let error = error {
                 self.presenter?.handleError(error)
                 return
@@ -22,12 +22,18 @@ class AcceptPatientInteractor: AcceptPatientBusinessLogic {
     }
     
     func acceptPatient(for booking: Booking) {
-        worker.acceptPatient(for: booking.id) { (error) in
+        worker.acceptPatient(for: booking) { (error) in
             if let error = error {
                 self.presenter?.handleError(error)
                 return
             }
-            self.presenter?.patientAccepted()
+            
+            self.presenter?.patientAccepted(with: nil)
+            // TODO: Change it when data will be available from API
+//            if let booking = booking {
+//                 self.presenter?.patientAccepted(with: booking)
+//            }
+           
         }
     }
 	

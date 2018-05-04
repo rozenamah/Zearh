@@ -1,18 +1,21 @@
 import UIKit
 import KeychainAccess
 import Alamofire
+import CoreLocation
 
 typealias BookingCompletion = (Booking?, RMError?) -> Void
 
 class PaymentMethodWorker {
 	
     func accept(doctor: User, withPaymentMethod paymentMethod: PaymentMethod, completion: @escaping BookingCompletion) {
-        //TODO: Provide proper information
+
+        let locationManager = CLLocationManager()
+        let location = locationManager.location?.coordinate
         let params: [String: Any] = [
             "doctor": doctor.id,
             "payment": paymentMethod.rawValue,
-            "latitude": 49.761845,
-            "longitude": 21.124417
+            "latitude": location?.latitude ?? 0,
+            "longitude": location?.longitude ?? 0
         ]
         
         guard let token = Keychain.shared.token else {

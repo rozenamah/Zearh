@@ -23,6 +23,8 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     var booking: Booking! {
         didSet {
             customizePatientInfo()
+            interactor?.setupBooking(booking)
+            
         }
     }
 
@@ -61,7 +63,7 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     }
     
     @IBAction func arrivedAction(_ sender: Any) {
-        interactor?.doctorArrived(for: "visitID")
+        interactor?.doctorArrived(for: booking)
     }
     
     @IBAction func patientInfoAction(_ sender: Any) {
