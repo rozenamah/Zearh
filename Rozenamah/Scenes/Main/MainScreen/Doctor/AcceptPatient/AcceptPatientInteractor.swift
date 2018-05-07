@@ -28,12 +28,10 @@ class AcceptPatientInteractor: AcceptPatientBusinessLogic {
                 return
             }
             
-            self.presenter?.patientAccepted(with: nil)
-            // TODO: Change it when data will be available from API
 //            if let booking = booking {
 //                 self.presenter?.patientAccepted(with: booking)
 //            }
-           
+//           
         }
     }
 	

@@ -2,7 +2,7 @@ import UIKit
 import SwiftCake
 
 protocol AcceptPatientDisplayLogic: class {
-    func patientAccepted(with booking: Booking?)
+    func patientAccepted(with booking: Booking)
     func patientRejected()
     func handle(error: Error)
 }
@@ -96,9 +96,9 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     
     // MARK: Presenter methods
     
-    func patientAccepted(with booking: Booking?) {
+    func patientAccepted(with booking: Booking) {
         // TODO: Api should return booking, change it later
-        flowDelegate?.changeStateTo(flowPoint: .accepted(booking: self.booking))
+        flowDelegate?.changeStateTo(flowPoint: .accepted(booking: booking))
     }
     
     func patientRejected() {
