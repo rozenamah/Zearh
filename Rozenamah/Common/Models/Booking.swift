@@ -26,4 +26,8 @@ class Booking: Decodable {
     let latitude: Double
     let longitude: Double
     let status: BookingStatus
+    
+    var patientLocation: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
 }

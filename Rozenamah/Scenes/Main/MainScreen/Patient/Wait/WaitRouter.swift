@@ -23,24 +23,23 @@ class WaitRouter: Router, AlertRouter {
 
     // MARK: Navigation
     
-    static func resolve(booking: Booking, with status: BookingStatus) {
-        if status == .accepted {
-            NotificationCenter.default.post(name: WaitRouter.kVisitAcceptedNotification, object: nil, userInfo: ["accepted": booking])
-        } else if status == .rejected {
-          NotificationCenter.default.post(name: WaitRouter.kVisitRejectedNotification, object: nil, userInfo: ["rejected": booking])
+    static func resolve(booking: Booking) {
+        if booking.status == .accepted {
+            NotificationCenter.default.post(name: WaitRouter.kVisitAcceptedNotification, object: nil, userInfo: ["booking": booking])
+        } else {
+            NotificationCenter.default.post(name: WaitRouter.kVisitRejectedNotification, object: nil, userInfo: ["booking": booking])
         }
-        
     }
     
     @objc func navigateToDoctorOnTheWay(with notification: Notification) {
-        if let booking = notification.userInfo?["accepted"] as? Booking {
+        if let booking = notification.userInfo?["booking"] as? Booking {
             viewController?.state = WaitType.doctorOnTheWay(booking: booking)
         }
        
     }
     
     @objc func navigateToCallDoctor(with notification: Notification) {
-        if let booking = notification.userInfo?["rejected"] as? Booking {
+        if let _ = notification.userInfo?["booking"] as? Booking {
             viewController?.flowDelegate?.changeStateTo(flowPoint: .cancel)
         }
     }

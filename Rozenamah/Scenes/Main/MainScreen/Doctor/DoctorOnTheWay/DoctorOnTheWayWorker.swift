@@ -8,7 +8,7 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
     
     func updateLocationInDatabase(_ location: CLLocation, booking: Booking) {
   
-        let ref = Database.database().reference().child("location/visitId/\(booking.id)")
+        let ref = Database.database().reference().child("location/booking/\(booking.id)")
         let locationUpdate: [String: Any] = [
             "latitude": location.coordinate.latitude,
             "longitude": location.coordinate.latitude
@@ -32,7 +32,8 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
             "visit": booking.id
         ]
         
-        Alamofire.request(API.Doctor.arrived.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Doctor.arrived.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

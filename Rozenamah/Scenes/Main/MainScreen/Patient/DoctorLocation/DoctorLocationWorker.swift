@@ -10,7 +10,7 @@ class DoctorLocationWorker {
     
     func observeDoctorLocation(for booking: Booking, completion: @escaping DoctorLocationCompletion) {
         let ref = Database.database().reference()
-        let childRef = ref.child("location/visitId/\(booking.id)")
+        let childRef = ref.child("location/booking/\(booking.id)")
         
         let locationHandle = childRef.observe(.value) { (snapshot) in
             if !snapshot.exists() {
@@ -45,7 +45,8 @@ class DoctorLocationWorker {
             "visit": booking.id
         ]
         
-        Alamofire.request(API.Visit.cancel.path, method: .post, parameters: params, headers: headers)
+        Alamofire.request(API.Visit.cancel.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
     }

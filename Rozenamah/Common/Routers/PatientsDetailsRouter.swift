@@ -9,20 +9,24 @@
 import UIKit
 
 protocol PatientsDetailsRouter {
-    func passVisitDetails(vc: UIViewController)
-}
-
-// Add protocol to ViewControllers that have booking, so later we can pass booking to next VC
-protocol VisitBooking {
-    var booking: Booking! { get set }
+    func navigateToPatient(inBooking booking: Booking)
 }
 
 extension PatientsDetailsRouter where Self: Router {
     
-    func passVisitDetails(vc: UIViewController) {
-        let routingVC = viewController as? VisitBooking
-        let navVC = vc as? UINavigationController
-        let detailsVC = navVC?.visibleViewController as? PatientDetailsViewController
-        detailsVC?.booking = routingVC?.booking
+    func navigateToPatient(inBooking booking: Booking) {
+        
+        
+        guard let viewcontroller = viewController as? UIViewController else {
+            return
+        }
+        
+        if let navVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "patient_details_vc") as? UINavigationController {
+            
+            let detailsVC = navVC.visibleViewController as? PatientDetailsViewController
+            detailsVC?.booking = booking
+            viewcontroller.present(navVC, animated: true, completion: nil)
+        }
+    
     }
 }

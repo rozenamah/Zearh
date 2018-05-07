@@ -10,18 +10,18 @@ import Foundation
 
 class AppRouter {
     
-    static func navigateToProperScreen(from userInfo: [AnyHashable: Any]) {
+    static func navigateToScreen(from userInfo: [AnyHashable: Any]) {
         
         guard let booking = decodeObject(toType: Booking.self, from: userInfo) else {
             return
         }
-  
+        // Status "new", doctor receive request from patient
         if booking.status == .new {
+            // Navigate to doctor router and show modal with patient info
             MainDoctorRouter.resolve(booking: booking)
-        } else if booking.status == .accepted {
-            WaitRouter.resolve(booking: booking, with: .accepted)
-        } else {
-            WaitRouter.resolve(booking: booking, with: .rejected)
+        }  else {
+            // User is waiting for doctor's answer
+            WaitRouter.resolve(booking: booking)
         }
     }
     

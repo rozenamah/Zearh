@@ -80,8 +80,7 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     }
     
     @IBAction func patientDetailsAction(_ sender: Any) {
-        router?.navigateToPatientDetails()
-       
+        router?.navigateToPatient(inBooking: booking)
     }
     
     @IBAction func phoneAction(_ sender: Any) {

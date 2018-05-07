@@ -63,7 +63,7 @@ class MainPatientRouter: MainScreenRouter, Router {
             }
             self.add(asChildViewController: self.doctorLocationVC)
             self.viewController?.containerHeightConstraint.constant = 307
-            self.doctorLocationVC.visitInfo = booking
+            self.doctorLocationVC.booking = booking
             self.openContainer()
         }
     }
