@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 protocol CallDoctorBusinessLogic {
     func validate(form: CallDoctorForm) -> Bool
@@ -26,6 +27,13 @@ class CallDoctorInteractor: CallDoctorBusinessLogic {
             
             allFieldsValid = false
             presenter?.presentError(.specializationMissing)
+        }
+        
+        // Verify if there is any user location
+        let locationManager = CLLocationManager()
+        if locationManager.location == nil {
+            allFieldsValid = false
+            presenter?.presentError(.noLocation)
         }
         
         return allFieldsValid
