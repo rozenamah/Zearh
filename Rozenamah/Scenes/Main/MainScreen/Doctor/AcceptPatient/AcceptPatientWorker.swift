@@ -4,14 +4,14 @@ import Alamofire
 
 class AcceptPatientWorker {
     
-    func acceptPatient(for booking: Booking, completion: @escaping ErrorCompletion) {
+    func acceptPatient(for booking: Booking, completion: @escaping BookingCompletion) {
         //TODO: Change to booking completion when data is available from API
         let params: [String: Any] = [
             "visit": booking.id
         ]
         
         guard let token = Keychain.shared.token else {
-            completion(RMError.tokenDoesntExist)
+            completion(nil, RMError.tokenDoesntExist)
             return
         }
         
@@ -22,17 +22,17 @@ class AcceptPatientWorker {
         Alamofire.request(API.Visit.accept.path, method: .post, parameters: params,
                           encoding: JSONEncoding.default, headers: headers)
             .validate()
-            .responseEmpty(completion: completion)
+            .responseCodable(type: Booking.self, completion: completion)
     }
     
-    func rejectPatient(for booking: Booking, completion: @escaping ErrorCompletion) {
+    func rejectPatient(for booking: Booking, completion: @escaping BookingCompletion) {
         
         let params: [String: Any] = [
             "visit": booking.id
         ]
         
         guard let token = Keychain.shared.token else {
-            completion(RMError.tokenDoesntExist)
+            completion(nil, RMError.tokenDoesntExist)
             return
         }
         
@@ -43,6 +43,6 @@ class AcceptPatientWorker {
         Alamofire.request(API.Visit.reject.path, method: .post, parameters: params,
                           encoding: JSONEncoding.default, headers: headers)
             .validate()
-            .responseEmpty(completion: completion)
+            .responseCodable(type: Booking.self, completion: completion)
     }
 }

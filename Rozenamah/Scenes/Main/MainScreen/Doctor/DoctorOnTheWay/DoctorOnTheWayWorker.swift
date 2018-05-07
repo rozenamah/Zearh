@@ -8,7 +8,7 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
     
     func updateLocationInDatabase(_ location: CLLocation, booking: Booking) {
   
-        let ref = Database.database().reference().child("location/booking/\(booking.id)")
+        let ref = Database.database().reference().child("booking/\(booking.id)")
         let locationUpdate: [String: Any] = [
             "latitude": location.coordinate.latitude,
             "longitude": location.coordinate.latitude

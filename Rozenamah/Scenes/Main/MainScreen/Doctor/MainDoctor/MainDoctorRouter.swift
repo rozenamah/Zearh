@@ -51,12 +51,24 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     
     @objc func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["visit"] as? Booking {
-            patientFormVC.booking = booking
             viewController?.presentUser(in: CLLocation(latitude: booking.latitude, longitude: booking.longitude))
             viewController?.animateToPosition(GMSCameraPosition(target: booking.patientLocation.coordinate, zoom: 15.0, bearing: 0.0, viewingAngle: 0.0))
-            openContainer()
+            navigateToPatientToAccept(inBooking: booking)
         }
     }
+    
+    func navigateToPatientToAccept(inBooking booking: Booking) {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            self.add(asChildViewController: self.patientFormVC)
+            self.patientFormVC.booking = booking
+            self.viewController?.containerHeightConstraint.constant = 370
+            self.openContainer()
+        }
+    }
+    
     
     func navigateToDoctorOnTheWay(onBooking booking: Booking) {
         animateCloseContainer { [weak self] in

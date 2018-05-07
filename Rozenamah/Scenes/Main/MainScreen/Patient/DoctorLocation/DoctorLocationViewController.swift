@@ -11,7 +11,7 @@ protocol DoctorLocationDisplayLogic: class {
 class DoctorLocationViewController: ModalInformationViewController, DoctorLocationDisplayLogic {
 
     // MARK: Outlets
-
+    @IBOutlet weak var classificationLabel: UILabel!
     
     // MARK: Properties
     var interactor: DoctorLocationBusinessLogic?
@@ -22,8 +22,9 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     
     var booking: Booking! {
         didSet {
-            fillInformation(with: booking.patient, andVisitInfo: booking.visit)
             interactor?.stopObservingDoctorLocation()
+            fillInformation(with: booking.visit.user, andVisitInfo: booking.visit)
+            interactor?.observeDoctorLocation(for: booking)
         }
     }
 
@@ -49,7 +50,11 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     // MARK: View customization
 
     fileprivate func setupView() {
-        interactor?.observeDoctorLocation(for: booking)
+    }
+    
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
+        super.fillInformation(with: booking.visit.user, andVisitInfo: booking.visit)
+        classificationLabel.text = visitInfo.user.doctor?.classification.title
     }
 
     // MARK: Event handling

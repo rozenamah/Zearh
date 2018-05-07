@@ -246,6 +246,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="xTM-EW-QOu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
@@ -1320,7 +1321,7 @@
                         <viewLayoutGuide key="safeArea" id="9EV-d0-1oO"/>
                     </view>
                     <navigationItem key="navigationItem" title="End visit" id="xUM-jv-OzO">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="bS7-kR-Xw8">
+                        <barButtonItem key="leftBarButtonItem" title=" " image="close" id="bS7-kR-Xw8">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="2eK-9M-0bq" id="A1c-pp-p3K"/>
@@ -1483,7 +1484,7 @@
                         <viewLayoutGuide key="safeArea" id="ypQ-fr-FWc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Payment" id="GP1-9b-ha4">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="Vrn-GT-MRv">
+                        <barButtonItem key="leftBarButtonItem" title=" " image="close" id="Vrn-GT-MRv">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="XWQ-UE-Hnz" id="OvZ-Zy-g2X"/>
@@ -1506,6 +1507,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xSQ-aq-wxX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2eK-9M-0bq" kind="relationship" relationship="rootViewController" id="DbX-sI-ca9"/>
@@ -2691,7 +2693,7 @@
                         <viewLayoutGuide key="safeArea" id="eXg-n5-6s0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Patient's details" id="fDc-2j-a3z">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="ajM-1r-vWG">
+                        <barButtonItem key="leftBarButtonItem" title=" " image="close" id="ajM-1r-vWG">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="DM2-yZ-tfA" id="hva-ge-MUf"/>
@@ -2717,6 +2719,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pqP-4H-cnt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="DM2-yZ-tfA" kind="relationship" relationship="rootViewController" id="Vlf-Ss-Ymv"/>
@@ -2733,6 +2736,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yaY-JR-D7h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="XWQ-UE-Hnz" kind="relationship" relationship="rootViewController" id="RM5-0s-dT0"/>
@@ -2749,6 +2753,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JmQ-27-Y8H">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ddk-Me-47t" kind="relationship" relationship="rootViewController" id="aGd-1X-ChW"/>
@@ -2767,13 +2772,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you choose to pay by card you will need to pay in 10 minutes after doctor accepts your visit request" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-Cb-Ayi">
-                                <rect key="frame" x="16" y="88" width="343" height="64.5"/>
+                                <rect key="frame" x="16" y="88" width="343" height="61"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-SJ-Oak" userLabel="price">
-                                <rect key="frame" x="16" y="183.5" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="180" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Price for visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y3-ip-0Pd">
                                         <rect key="frame" x="0.0" y="0.0" width="99.5" height="20.5"/>
@@ -2809,7 +2814,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOy-st-azY" userLabel="total">
-                                <rect key="frame" x="16" y="288.5" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="285" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0B-xv-Vz9">
                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="20.5"/>
@@ -2845,7 +2850,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-Rg-E2k" userLabel="fee">
-                                <rect key="frame" x="16" y="236" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="232.5" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-Za-kNT">
                                         <rect key="frame" x="0.0" y="0.0" width="28" height="20.5"/>
@@ -2881,7 +2886,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajy-uB-Khx" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="436.5" width="343" height="39"/>
+                                <rect key="frame" x="16" y="433" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -2899,13 +2904,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your payment method" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-gb-bXj">
-                                <rect key="frame" x="16" y="341" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="337.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-xu-nmC">
-                                <rect key="frame" x="16" y="379.5" width="93" height="33"/>
+                                <rect key="frame" x="16" y="376" width="93" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2922,7 +2927,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-vf-dDF">
-                                <rect key="frame" x="134" y="379.5" width="95" height="33"/>
+                                <rect key="frame" x="134" y="376" width="95" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2967,7 +2972,7 @@
                         <viewLayoutGuide key="safeArea" id="aKd-ru-18r"/>
                     </view>
                     <navigationItem key="navigationItem" title="Payment method" id="DwZ-M3-2bO">
-                        <barButtonItem key="leftBarButtonItem" image="close" id="UkR-Yn-kxf">
+                        <barButtonItem key="leftBarButtonItem" title=" " image="close" id="UkR-Yn-kxf">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="ddk-Me-47t" id="7GE-4F-59B"/>
@@ -3197,7 +3202,6 @@
                         <outlet property="nameLabel" destination="F2M-sa-S6U" id="Vce-aU-0JS"/>
                         <outlet property="phoneNumber" destination="qMe-Tj-oNF" id="U7E-yA-wEK"/>
                         <outlet property="priceLabel" destination="FzC-tx-3Q6" id="7GV-bf-XD2"/>
-                        <segue destination="FFh-y2-TY6" kind="presentation" identifier="details_segue" id="nHf-Jq-HWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgP-od-Nhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3380,6 +3384,7 @@
                     <size key="freeformSize" width="375" height="286"/>
                     <connections>
                         <outlet property="avatarImage" destination="J2U-Qj-tAL" id="lyl-Kp-pzV"/>
+                        <outlet property="classificationLabel" destination="ETY-9g-gAR" id="YXD-ln-Xzp"/>
                         <outlet property="distanceButton" destination="TbH-pi-69i" id="dy1-rA-6MS"/>
                         <outlet property="feeLabel" destination="QNF-W7-afR" id="aiO-vG-6rK"/>
                         <outlet property="nameLabel" destination="yw0-E0-pNC" id="LKF-QW-DcO"/>

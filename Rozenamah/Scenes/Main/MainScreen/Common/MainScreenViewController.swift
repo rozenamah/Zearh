@@ -84,7 +84,6 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     /// Move map with animation
     func animateToPosition(_ cameraUpdate: GMSCameraPosition) {
         mapView.animate(to: cameraUpdate)
-        mapView.moveCamera(GMSCameraUpdate.scrollBy(x: 0, y: 10))
     }
     
     func presentUser(in location: CLLocation) {
@@ -95,7 +94,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
             locationMarker = nil
         }
         
-        let icon = User.current?.type == .patient ? UIImage(named: "doctor_icon") : UIImage(named: "placeholder")
+        let icon = UIImage(named: "doctor_icon")
         locationMarker = GMSMarker(position: location.coordinate)
         locationMarker?.icon = icon
         locationMarker?.map = mapView

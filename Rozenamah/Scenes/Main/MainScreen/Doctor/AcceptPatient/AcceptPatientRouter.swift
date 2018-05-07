@@ -7,8 +7,6 @@ class AcceptPatientRouter: Router, PhoneCallRouter, AlertRouter, PatientsDetails
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "patient_details_segue" {
-        }
     }
 
     // MARK: Navigation

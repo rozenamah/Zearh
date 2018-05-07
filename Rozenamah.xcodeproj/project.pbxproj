@@ -248,6 +248,7 @@
 		F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */; };
 		F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */; };
 		F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */; };
+		F9F10FC120A0854C00E88987 /* Cracow.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F9F10FC020A0854C00E88987 /* Cracow.gpx */; };
 		F9FADAFF208E0735002450FD /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FADAFE208E0735002450FD /* Booking.swift */; };
 /* End PBXBuildFile section */
 
@@ -498,6 +499,7 @@
 		F9CEDE5E206521DA004ED0C7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		F9CEDE5F206521DA004ED0C7 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
 		F9CEDE60206521DA004ED0C7 /* EditProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileConfigurator.swift; sourceTree = "<group>"; };
+		F9F10FC020A0854C00E88987 /* Cracow.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cracow.gpx; sourceTree = "<group>"; };
 		F9FADAFE208E0735002450FD /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -732,6 +734,7 @@
 			isa = PBXGroup;
 			children = (
 				F95F140520612F3E00CDC2E5 /* Rozenamah.entitlements */,
+				F9F10FC020A0854C00E88987 /* Cracow.gpx */,
 				F9A9F2A0204D5881006E8999 /* Common */,
 				F9A9F297204D57FA006E8999 /* Scenes */,
 				5710109E208F6FB2008B4384 /* GoogleService-Info.plist */,
@@ -1278,6 +1281,7 @@
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F969921020863907007E6C42 /* lang-ar.json in Resources */,
 				5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */,
+				F9F10FC120A0854C00E88987 /* Cracow.gpx in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
 			);

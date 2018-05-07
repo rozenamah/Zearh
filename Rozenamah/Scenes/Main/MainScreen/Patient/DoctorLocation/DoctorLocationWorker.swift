@@ -10,7 +10,7 @@ class DoctorLocationWorker {
     
     func observeDoctorLocation(for booking: Booking, completion: @escaping DoctorLocationCompletion) {
         let ref = Database.database().reference()
-        let childRef = ref.child("location/booking/\(booking.id)")
+        let childRef = ref.child("booking/\(booking.id)")
         
         let locationHandle = childRef.observe(.value) { (snapshot) in
             if !snapshot.exists() {
