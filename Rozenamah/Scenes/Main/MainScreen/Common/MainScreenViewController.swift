@@ -23,7 +23,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
     //MARK: Properties
-    
+    // Marker with doctors location, needs to be updated when location is changed
     private var locationMarker: GMSMarker?
     
     // MARK: View lifecycle
@@ -84,6 +84,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     /// Move map with animation
     func animateToPosition(_ cameraUpdate: GMSCameraPosition) {
         mapView.animate(to: cameraUpdate)
+        mapView.moveCamera(GMSCameraUpdate.scrollBy(x: 0, y: 10))
     }
     
     func presentUser(in location: CLLocation) {

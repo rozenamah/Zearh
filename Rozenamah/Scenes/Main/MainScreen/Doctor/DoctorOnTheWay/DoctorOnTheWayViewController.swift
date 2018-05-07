@@ -8,7 +8,7 @@ protocol DoctorOnTheWayDisplayLogic: class {
     func doctorCancelled()
 }
 
-class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheWayDisplayLogic, VisitBooking {
+class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheWayDisplayLogic {
 
     // MARK: Outlets
     
@@ -24,7 +24,6 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
         didSet {
             customizePatientInfo()
             interactor?.setupBooking(booking)
-            
         }
     }
 
@@ -67,7 +66,7 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     }
     
     @IBAction func patientInfoAction(_ sender: Any) {
-        router?.navigateToPatientDetails()
+        router?.navigateToPatient(inBooking: booking)
     }
     
     // MARK: Presenter methods

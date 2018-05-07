@@ -53,7 +53,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         if let booking = notification.userInfo?["visit"] as? Booking {
             patientFormVC.booking = booking
             viewController?.presentUser(in: CLLocation(latitude: booking.latitude, longitude: booking.longitude))
-            viewController?.animateToPosition(GMSCameraPosition(target: CLLocationCoordinate2D(latitude: booking.latitude, longitude: booking.longitude), zoom: 25.0, bearing: 0.0, viewingAngle: 0.0))
+            viewController?.animateToPosition(GMSCameraPosition(target: booking.patientLocation.coordinate, zoom: 15.0, bearing: 0.0, viewingAngle: 0.0))
             openContainer()
         }
     }

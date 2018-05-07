@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
         #endif
         
-        AppRouter.navigateToProperScreen(from: userInfo)
+        AppRouter.navigateToScreen(from: userInfo)
     }
 }
 

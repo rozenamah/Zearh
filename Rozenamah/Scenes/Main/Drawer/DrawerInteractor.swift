@@ -16,7 +16,8 @@ class DrawerInteractor: DrawerBusinessLogic {
         worker.logout { (error) in
             // Logout anyway if errorm remove token
             Keychain.shared.token = nil
-            
+            // Remove all firebase observers
+            DatabaseObserver.removeAll()
             self.presenter?.presentLogoutSuccess()
         }
     }

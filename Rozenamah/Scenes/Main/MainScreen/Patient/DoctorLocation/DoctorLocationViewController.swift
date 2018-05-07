@@ -8,16 +8,10 @@ protocol DoctorLocationDisplayLogic: class {
     func presentError(_ error: Error)
 }
 
-class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic {
+class DoctorLocationViewController: ModalInformationViewController, DoctorLocationDisplayLogic {
 
     // MARK: Outlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var avatarImage: SCImageView!
-    @IBOutlet weak var classificationLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var feeLabel: UILabel!
-    @IBOutlet weak var phoneNumber: UIButton!
-    @IBOutlet weak var distanceButton: UIButton!
+
     
     // MARK: Properties
     var interactor: DoctorLocationBusinessLogic?
@@ -26,9 +20,10 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     // Delegate for updating location of doctor, and cancellation of ongoing visit
     weak var flowDelegate: PatientFlowDelegate?
     
-    var visitInfo: Booking! {
+    var booking: Booking! {
         didSet {
-            customizeDoctorInfo()
+            fillInformation(with: booking.patient, andVisitInfo: booking.visit)
+            interactor?.stopObservingDoctorLocation()
         }
     }
 
@@ -54,29 +49,7 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     // MARK: View customization
 
     fileprivate func setupView() {
-        interactor?.observeDoctorLocation(for: visitInfo)
-    }
-    
-    func customizeDoctorInfo() {
-        let user = visitInfo.visit.user
-        let cost = visitInfo.visit.cost
-        avatarImage.setAvatar(for: user)
-        nameLabel.text = user.fullname
-        priceLabel.text = "\(cost.price) SAR"
-        phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
-        distanceButton.setTitle("\(visitInfo.visit.distanceInKM) km from you", for: .normal)
-        
-        // Without this phone number will rever title to previous one (it is a bug but source is uknown)
-        phoneNumber.setTitle(user.phone ?? "No phone number", for: .highlighted)
-        distanceButton.setTitle("\(visitInfo.visit.distanceInKM) km from you", for: .highlighted)
-        
-        // If more then 10 kilometers, highlight distance to red
-        distanceButton.tintColor = visitInfo.visit.distanceInKM > 10 ? .rmRed : .rmGray
-        
-        // If fee > 0, show fee label
-        feeLabel.isHidden = cost.fee <= 0
-        feeLabel.text = "+ \(cost.fee) SAR for cancellation"
-        
+        interactor?.observeDoctorLocation(for: booking)
     }
 
     // MARK: Event handling
@@ -86,7 +59,7 @@ class DoctorLocationViewController: UIViewController, DoctorLocationDisplayLogic
     }
     
     func cancelConfirmed() {
-        interactor?.cancelVisit(for: visitInfo)
+        interactor?.cancelVisit(for: booking)
     }
     
     // MARK: Presenter methods

@@ -42,13 +42,7 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
     }
     
     func updateDoctorsLocation(_ location: CLLocation) {
-        if baseLocation == nil {
-            baseLocation = location
-        }
-        
-        if userMovedRequiredDistance(location: location) {
-            worker.updateLocationInDatabase(location, booking: booking)
-        }
+        worker.updateLocationInDatabase(location, booking: booking)
     }
     
     func cancelVisit(for booking: Booking) {
@@ -88,14 +82,18 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
     
     private func userMovedRequiredDistance(location: CLLocation) -> Bool {
         
-        if Int(baseLocation?.distance(from: location) ?? 0) > 100 {
-            // If distance is more than 100 meters, change base location to current
+        if baseLocation == nil {
             baseLocation = location
-            return true
         }
-        return false
+        
+        guard let baseLocation = baseLocation,
+            Int(baseLocation.distance(from: location)) > 100 else {
+            return false
+        }
+        // If distance is more than 100 meters, change base location to current
+        self.baseLocation = location
+        return true
     }
-    
 }
 
 extension DoctorOnTheWayInteractor: CLLocationManagerDelegate {
@@ -118,11 +116,12 @@ extension DoctorOnTheWayInteractor: CLLocationManagerDelegate {
             return
         }
         
-        updateDoctorsLocation(location)
-        let patientLocation = CLLocation(latitude: booking.latitude, longitude: booking.longitude)
+        if userMovedRequiredDistance(location: location) {
+            updateDoctorsLocation(location)
+        }
         
         // If doctor is less than 150 meters, send information to server
-        if checkIfDoctorCloseTo(patientLocation) == true {
+        if checkIfDoctorCloseTo(booking.patientLocation) == true {
             doctorArrived(for: booking)
         }
         
