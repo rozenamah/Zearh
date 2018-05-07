@@ -58,7 +58,7 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     // MARK: Event handling
     
     @IBAction func cancelAction(_ sender: Any) {
-        flowDelegate?.changeStateTo(flowPoint: .cancel)
+        interactor?.cancelVisit(for: booking)
     }
     
     @IBAction func arrivedAction(_ sender: Any) {
