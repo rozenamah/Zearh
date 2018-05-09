@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>338967116221-4d59s7gjpnsoscqvhtbrffm7revmvbne.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.338967116221-4d59s7gjpnsoscqvhtbrffm7revmvbne</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCEf9tfjbjrz9PNiFTzwzGyRsD-VRA_3gU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>338967116221</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Rozenamah.dev</string>
+	<key>PROJECT_ID</key>
+	<string>rozenamahdev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rozenamahdev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:338967116221:ios:d45a421f2d13912a</string>
+	<key>DATABASE_URL</key>
+	<string>https://rozenamahdev.firebaseio.com</string>
+</dict>
+</plist>
