@@ -7,7 +7,6 @@ enum PatientFlow {
     case searchWith(filters: CallDoctorForm)
     case accept(doctor: VisitDetails, foundByFilters: CallDoctorForm)
     case waitForAccept(booking: Booking)
-    case cancel
     case doctorLocation(location: CLLocation)
     case visitConfirmed(booking: Booking)
 }

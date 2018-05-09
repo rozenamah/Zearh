@@ -8,6 +8,7 @@ class MainPatientRouter: MainScreenRouter, Router {
         return viewController
     }
     
+    static let kVisitRequestNotification = Notification.Name("kPatientVisitRequestNotification")
 
     lazy var waitVC: WaitViewController = {
        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "wait_vc") as! WaitViewController
@@ -33,12 +34,46 @@ class MainPatientRouter: MainScreenRouter, Router {
         return vc
     }()
     
+    override init() {
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainPatientRouter.kVisitRequestNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: Routing
+    
+    static func resolve(booking: Booking) {
+        NotificationCenter.default.post(name: MainPatientRouter.kVisitRequestNotification, object: nil, userInfo: ["booking" : booking])
+    }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
     }
 
     // MARK: Navigation
+    
+    @objc func handleNotification(for notification: NSNotification) {
+        if let booking = notification.userInfo?["booking"] as? Booking {
+            
+            if booking.status == .canceled {
+                navigateToCallForm()
+            } else if booking.status == .accepted {
+                viewController?.moveToDoctorLocation(inBooking: booking)
+                
+                navigateToDoctorOnTheWay(for: booking)
+            } else if booking.status == .canceled {
+                navigateToCallForm()
+            } else if booking.status == .arrived {
+                navigateToWaitForVisitEnd(withBooking: booking)
+            } else if booking.status == .ended {
+                // TODO: Navigate to transactions?
+                navigateToCallForm()
+            }
+            
+        }
+    }
     
     /// Adds call doctor form at app start
     func configureFirstScreen() {
@@ -62,7 +97,7 @@ class MainPatientRouter: MainScreenRouter, Router {
                 return
             }
             self.add(asChildViewController: self.doctorLocationVC)
-            self.viewController?.containerHeightConstraint.constant = 307
+            self.viewController?.containerHeightConstraint.constant = 251
             self.doctorLocationVC.booking = booking
             self.openContainer()
         }
@@ -122,4 +157,17 @@ class MainPatientRouter: MainScreenRouter, Router {
         }
     }
 
+    func navigateToWaitForVisitEnd(withBooking booking: Booking) {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            
+            self.add(asChildViewController: self.waitVC)
+            self.viewController?.containerHeightConstraint.constant = 162
+            self.waitVC.state = .waitForVisitEnd(booking: booking) // Pass current booking
+            
+            self.openContainer()
+        }
+    }
 }

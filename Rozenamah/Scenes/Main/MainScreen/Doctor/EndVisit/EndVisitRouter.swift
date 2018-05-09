@@ -1,6 +1,6 @@
 import UIKit
 
-class EndVisitRouter: Router {
+class EndVisitRouter: Router, AlertRouter {
     typealias RoutingViewController = EndVisitViewController
     weak var viewController: EndVisitViewController?
 

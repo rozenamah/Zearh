@@ -19,17 +19,35 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
     fileprivate var locationManager = CLLocationManager()
     fileprivate var booking: Booking!
     
+    /// When calling method that doctor arrived we mark it true once so it is not called again
+    fileprivate var isArrivedMethodCalled = false
+    
     override init() {
         super.init()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainDoctorRouter.kVisitRequestNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func setupBooking(_ booking: Booking) {
         self.booking = booking
+        self.isArrivedMethodCalled = false
+        self.startObservingLocation()
     }
 
 	// MARK: Business logic
+    
+    @objc func handleNotification(for notification: NSNotification) {
+        if let booking = notification.userInfo?["booking"] as? Booking,
+            booking.status == .canceled {
+            
+            stopUpdatingLocation()
+        }
+    }
     
     
     func stopUpdatingLocation() {
@@ -64,13 +82,21 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
     }
     
     func doctorArrived(for booking: Booking) {
-        worker.doctorArrived(for: booking) { (error) in
+        if isArrivedMethodCalled {
+            return
+        }
+        isArrivedMethodCalled = true
+        
+        worker.doctorArrived(for: booking) { (booking, error) in
+            self.stopUpdatingLocation()
+            
             if let error = error {
                 self.presenter?.handle(error)
                 return
             }
-            self.stopUpdatingLocation()
-            self.presenter?.doctorArrived()
+            if let booking = booking {
+                self.presenter?.doctorArrived(withBooking: booking)
+            }
         }
     }
     
@@ -101,18 +127,6 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
 
 extension DoctorOnTheWayInteractor: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            startObservingLocation()
-        case .denied, .restricted:
-            // TODO: User can't use this app now
-            break
-        default:
-            break
-        }
-    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {

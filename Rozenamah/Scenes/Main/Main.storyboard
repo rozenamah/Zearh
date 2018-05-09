@@ -232,6 +232,7 @@
                         <outlet property="containerView" destination="Z0H-df-05R" id="v3T-S9-ntw"/>
                         <outlet property="mapView" destination="cfl-zU-M5F" id="8Pf-AO-HBG"/>
                         <outlet property="requestsReceiveButton" destination="0Sf-zd-jer" id="CDz-f5-FFE"/>
+                        <segue destination="qwN-af-bPa" kind="presentation" identifier="end_visit_segue" id="CuH-Gh-uZq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2w-ql-q35" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -985,12 +986,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="202"/>
                     <connections>
+                        <outlet property="cancelButton" destination="8So-a7-Cde" id="5jP-rM-tMG"/>
                         <outlet property="titleLabel" destination="Jor-TP-sj6" id="PyV-2y-i2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATA-I5-gdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="304"/>
+            <point key="canvasLocation" x="2156" y="268"/>
         </scene>
         <!--End visit-->
         <scene sceneID="dgv-Xc-VBF">
@@ -1004,23 +1006,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVp-Bg-KPK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="658.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="659.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="MmB-1d-Zue">
-                                                <rect key="frame" x="143" y="24" width="89" height="89"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="MmB-1d-Zue" customClass="SCImageView" customModule="SwiftCake">
+                                                <rect key="frame" x="142.5" y="24" width="90" height="90"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="89" id="Mvh-eT-eRt"/>
-                                                    <constraint firstAttribute="height" constant="89" id="d8A-hB-abM"/>
+                                                    <constraint firstAttribute="width" constant="90" id="Mvh-eT-eRt"/>
+                                                    <constraint firstAttribute="height" constant="90" id="d8A-hB-abM"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dan Louis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE7-rQ-kYT">
-                                                <rect key="frame" x="149.5" y="129" width="75.5" height="20.5"/>
+                                                <rect key="frame" x="149.5" y="130" width="75.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="WrP-GN-lFb">
-                                                <rect key="frame" x="16" y="173.5" width="343" height="329"/>
+                                                <rect key="frame" x="16" y="174.5" width="343" height="329"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7d-bK-kR2" userLabel="PriceForVisit">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="28.5"/>
@@ -1129,7 +1136,7 @@
                                                             <constraint firstItem="EtE-Qi-b92" firstAttribute="top" secondItem="Bhg-70-sMe" secondAttribute="top" id="rQk-2c-qgm"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOV-9A-J5s" userLabel="Age">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOV-9A-J5s" userLabel="Payment">
                                                         <rect key="frame" x="0.0" y="148.5" width="343" height="28.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Payment method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYh-K6-C1c">
@@ -1246,10 +1253,10 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiK-CK-1wS">
-                                                <rect key="frame" x="16" y="526.5" width="256" height="22"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiK-CK-1wS">
+                                                <rect key="frame" x="16" y="527.5" width="246" height="22"/>
+                                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="I received payment in cash" image="checkbox">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1262,7 +1269,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu4-PM-MUj" customClass="SCButton" customModule="SwiftCake">
-                                                <rect key="frame" x="105" y="587.5" width="165" height="39"/>
+                                                <rect key="frame" x="105" y="588.5" width="165" height="39"/>
                                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="165" id="Kbc-JM-cGE"/>
@@ -1320,15 +1327,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9EV-d0-1oO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="End visit" id="xUM-jv-OzO">
-                        <barButtonItem key="leftBarButtonItem" title=" " image="close" id="bS7-kR-Xw8">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="closeAction:" destination="2eK-9M-0bq" id="A1c-pp-p3K"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="End visit" id="xUM-jv-OzO"/>
                     <size key="freeformSize" width="375" height="750"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="Ei0-y9-wtn" id="pnn-8j-ybo"/>
+                        <outlet property="ageView" destination="Bhg-70-sMe" id="6Jj-8k-9LH"/>
+                        <outlet property="avatarImage" destination="MmB-1d-Zue" id="KsB-sp-h2b"/>
+                        <outlet property="feeAmountLabel" destination="nWo-CJ-SMI" id="ofP-RK-5u2"/>
+                        <outlet property="illnesView" destination="LEq-QI-2xX" id="9Cm-Y5-qH5"/>
+                        <outlet property="medicineView" destination="bnf-Mz-aJt" id="BM6-3G-GcM"/>
+                        <outlet property="nameLabel" destination="sE7-rQ-kYT" id="gDG-7A-ZHl"/>
+                        <outlet property="paymentMethodLabel" destination="khS-Il-hzn" id="dbC-ps-jDi"/>
+                        <outlet property="priceAmountLabel" destination="imb-so-EMl" id="SdL-kf-yYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNR-sB-Xp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1515,7 +1526,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omJ-PL-rEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2193" y="787"/>
+            <point key="canvasLocation" x="2156" y="787"/>
         </scene>
         <!--Accept Doctor View Controller-->
         <scene sceneID="WD9-ev-5lp">
@@ -1650,7 +1661,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O36-K5-5eB">
-                                                <rect key="frame" x="227" y="91.5" width="116" height="31.5"/>
+                                                <rect key="frame" x="227" y="92" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2325,7 +2336,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-0S-fnf">
-                                                <rect key="frame" x="227" y="116" width="116" height="31.5"/>
+                                                <rect key="frame" x="227" y="116.5" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2416,7 +2427,6 @@
                         <outlet property="nameLabel" destination="i9n-NQ-UJE" id="HXb-Db-6vA"/>
                         <outlet property="phoneNumber" destination="YXT-o3-p3k" id="SMa-1B-jdT"/>
                         <outlet property="priceLabel" destination="Jq3-2u-Xwp" id="aub-Mc-waf"/>
-                        <segue destination="qwN-af-bPa" kind="presentation" identifier="end_visit_segue" id="KYb-hU-13Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIa-9V-lex" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2772,13 +2782,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you choose to pay by card you will need to pay in 10 minutes after doctor accepts your visit request" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-Cb-Ayi">
-                                <rect key="frame" x="16" y="88" width="343" height="61"/>
+                                <rect key="frame" x="16" y="88" width="343" height="64.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-SJ-Oak" userLabel="price">
-                                <rect key="frame" x="16" y="180" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="183.5" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Price for visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y3-ip-0Pd">
                                         <rect key="frame" x="0.0" y="0.0" width="99.5" height="20.5"/>
@@ -2814,7 +2824,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOy-st-azY" userLabel="total">
-                                <rect key="frame" x="16" y="285" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="288.5" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0B-xv-Vz9">
                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="20.5"/>
@@ -2850,7 +2860,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-Rg-E2k" userLabel="fee">
-                                <rect key="frame" x="16" y="232.5" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="236" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-Za-kNT">
                                         <rect key="frame" x="0.0" y="0.0" width="28" height="20.5"/>
@@ -2886,7 +2896,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajy-uB-Khx" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="433" width="343" height="39"/>
+                                <rect key="frame" x="16" y="436.5" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -2904,13 +2914,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your payment method" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-gb-bXj">
-                                <rect key="frame" x="16" y="337.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="341" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-xu-nmC">
-                                <rect key="frame" x="16" y="376" width="93" height="33"/>
+                                <rect key="frame" x="16" y="379.5" width="93" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2927,7 +2937,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-vf-dDF">
-                                <rect key="frame" x="134" y="376" width="95" height="33"/>
+                                <rect key="frame" x="134" y="379.5" width="95" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -3053,6 +3063,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="phoneAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="X2z-Ul-HKK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CH-uk-MLC">
                                                 <rect key="frame" x="138" y="145" width="123" height="19"/>
@@ -3116,7 +3129,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 SAR fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-yB-hNe">
-                                                <rect key="frame" x="227" y="64" width="116" height="31.5"/>
+                                                <rect key="frame" x="227" y="63.5" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3206,7 +3219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgP-od-Nhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="1225"/>
+            <point key="canvasLocation" x="1206" y="1185"/>
         </scene>
         <!--Doctor Location View Controller-->
         <scene sceneID="VlB-Ob-TbI">
@@ -3220,7 +3233,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI2-px-JnY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-Qj-tAL" customClass="SCImageView" customModule="SwiftCake">
                                                 <rect key="frame" x="16" y="16" width="90" height="90"/>
@@ -3281,20 +3294,12 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbH-pi-69i">
-                                                <rect key="frame" x="138" y="173" width="123" height="19"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="tintColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="0 km from you" image="map"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="phoneAction:" destination="KL2-lx-jWM" eventType="touchUpInside" id="8JM-TA-9V7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPK-C4-lnn" customClass="SCButton" customModule="SwiftCake">
-                                                <rect key="frame" x="105" y="216" width="165" height="39"/>
+                                                <rect key="frame" x="105" y="181" width="165" height="39"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="165" id="LBb-pc-1Xh"/>
@@ -3322,7 +3327,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNF-W7-afR">
-                                                <rect key="frame" x="227" y="91.5" width="116" height="31.5"/>
+                                                <rect key="frame" x="227" y="92" width="116" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3332,14 +3337,12 @@
                                         <constraints>
                                             <constraint firstItem="UPK-C4-lnn" firstAttribute="centerX" secondItem="TI2-px-JnY" secondAttribute="centerX" id="7Ej-gt-Edj"/>
                                             <constraint firstItem="yw0-E0-pNC" firstAttribute="leading" secondItem="J2U-Qj-tAL" secondAttribute="trailing" constant="32" id="89z-Ra-9ue"/>
+                                            <constraint firstItem="UPK-C4-lnn" firstAttribute="top" secondItem="dcm-Qm-O3q" secondAttribute="bottom" constant="24" id="GN8-qe-0kH"/>
                                             <constraint firstAttribute="trailing" secondItem="QNF-W7-afR" secondAttribute="trailing" constant="32" id="IS5-ES-QKK"/>
                                             <constraint firstItem="J2U-Qj-tAL" firstAttribute="top" secondItem="TI2-px-JnY" secondAttribute="top" constant="16" id="M46-Ke-dy3"/>
-                                            <constraint firstItem="UPK-C4-lnn" firstAttribute="top" secondItem="TbH-pi-69i" secondAttribute="bottom" constant="24" id="OMi-M0-aiM"/>
                                             <constraint firstItem="dcm-Qm-O3q" firstAttribute="top" secondItem="faG-Yk-fzV" secondAttribute="bottom" constant="16" id="S8r-l0-u02"/>
-                                            <constraint firstItem="TbH-pi-69i" firstAttribute="top" secondItem="dcm-Qm-O3q" secondAttribute="bottom" constant="16" id="SoO-hl-4R5"/>
                                             <constraint firstAttribute="trailing" secondItem="yw0-E0-pNC" secondAttribute="trailing" constant="16" id="U18-pO-wdF"/>
                                             <constraint firstAttribute="trailing" secondItem="ETY-9g-gAR" secondAttribute="trailing" constant="16" id="W3I-5Q-OnO"/>
-                                            <constraint firstItem="TbH-pi-69i" firstAttribute="leading" secondItem="dcm-Qm-O3q" secondAttribute="leading" id="b8b-qj-tDD"/>
                                             <constraint firstItem="ETY-9g-gAR" firstAttribute="leading" secondItem="yw0-E0-pNC" secondAttribute="leading" id="dNm-gY-7m7"/>
                                             <constraint firstItem="J2U-Qj-tAL" firstAttribute="leading" secondItem="TI2-px-JnY" secondAttribute="leading" constant="16" id="edH-nO-w1r"/>
                                             <constraint firstItem="QNF-W7-afR" firstAttribute="leading" secondItem="faG-Yk-fzV" secondAttribute="trailing" constant="16" id="kHU-hP-yKf"/>
@@ -3361,7 +3364,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWB-hh-bzJ" userLabel="bottomSpace">
-                                <rect key="frame" x="0.0" y="286" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="251" width="375" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="lUD-pX-f4K"/>
@@ -3385,7 +3388,6 @@
                     <connections>
                         <outlet property="avatarImage" destination="J2U-Qj-tAL" id="lyl-Kp-pzV"/>
                         <outlet property="classificationLabel" destination="ETY-9g-gAR" id="YXD-ln-Xzp"/>
-                        <outlet property="distanceButton" destination="TbH-pi-69i" id="dy1-rA-6MS"/>
                         <outlet property="feeLabel" destination="QNF-W7-afR" id="aiO-vG-6rK"/>
                         <outlet property="nameLabel" destination="yw0-E0-pNC" id="LKF-QW-DcO"/>
                         <outlet property="phoneNumber" destination="dcm-Qm-O3q" id="bl4-2B-sEe"/>

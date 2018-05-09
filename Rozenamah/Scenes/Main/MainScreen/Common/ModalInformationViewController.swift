@@ -13,7 +13,6 @@ import SwiftCake
 class ModalInformationViewController: UIViewController {
     
     //MARK: Outlets
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: SCImageView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -32,14 +31,13 @@ class ModalInformationViewController: UIViewController {
         nameLabel.text = user.fullname
         priceLabel.text = "\(cost.price) SAR"
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
-        distanceButton.setTitle("\(visitInfo.distanceInKM) km from you", for: .normal)
         
         // Without this phone number will rever title to previous one (it is a bug but source is uknown)
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .highlighted)
-        distanceButton.setTitle("\(visitInfo.distanceInKM) km from you", for: .highlighted)
+        distanceButton?.setTitle("\(visitInfo.distanceInKM) km from you", for: .highlighted)
         
         // If more then 10 kilometers, highlight distance to red
-        distanceButton.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
+        distanceButton?.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
         
         // If fee > 0, show fee label
         feeLabel.isHidden = cost.fee <= 0

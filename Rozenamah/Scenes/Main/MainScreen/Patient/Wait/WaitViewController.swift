@@ -4,12 +4,14 @@ protocol WaitDisplayLogic: class {
     func handle(error: Error)
     func found(doctor: VisitDetails)
     func noDoctorFoundMatchingCriteria()
+    func visitCancelled()
 }
 
 class WaitViewController: UIViewController, WaitDisplayLogic {
 
     // MARK: Outlets
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
     
     // MARK: Properties
     var interactor: WaitBusinessLogic?
@@ -61,8 +63,11 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             return
         }
         
+        // Mostly this button is visible, so we show it
+        cancelButton.isHidden = false
+        
         switch state {
-        case .waitAccept(let booking):
+        case .waitAccept(_):
             titleLabel.text = "Doctor needs to accept your visit request"
         case .waitSearch(let filters):
             titleLabel.text = "Please wait"
@@ -70,16 +75,24 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             interactor?.searchForDoctor(withFilters: filters)
         case .waitForPayDoctor:
             startCountingTimeLeft()
-        case .doctorOnTheWay(let booking):
-            flowDelegate?.changeStateTo(flowPoint: .visitConfirmed(booking: booking))
+        case .waitForVisitEnd(_):
+            titleLabel.text = "Wait until doctor ends your current visit"
+            cancelButton.isHidden = true
         }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        if flowDelegate != nil {
+        guard let state = state else {
+            return
+        }
+        
+        switch state {
+        case .waitAccept(let booking):
+            interactor?.cancel(booking: booking)
+        case .waitSearch(_):
             interactor?.cancelCurrentRequest()
             flowDelegate?.changeStateTo(flowPoint: .callDoctor)
-        } else {
+        default:
             doctorFlowDelegate?.changeStateTo(flowPoint: .cancel)
         }
     }
@@ -102,6 +115,11 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         router?.showNoDoctorFound()
     }
     
+    func visitCancelled() {
+        
+        // We don't have to call it, we will get notificaion which will close this window
+        // flowDelegate?.changeStateTo(flowPoint: .callDoctor)
+    }
     
     /// When waiting for patient to accept payment we are counting
     /// down so doctor know when user needs to confirm payment

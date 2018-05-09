@@ -18,6 +18,11 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     // MARK: Properties
     var interactor: MainPatientBusinessLogic?
     var router: MainPatientRouter?
+    
+    /// Contains all nearby displayed doctors
+    fileprivate var nearbyDoctorsMarkers = [GMSMarker]()
+    /// By this value we know we should not display nearby doctors
+    fileprivate var shouldDisplayNearbyDoctors = true
 
     // MARK: Object lifecycle
 
@@ -91,9 +96,6 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             // Show all buttons when no form visible
             viewToHideWhenFormVisible.forEach { $0.isHidden = false }
             router?.closeContainer()
-        case .cancel:
-            // TODO: Navigate somewhere
-            break
         case .doctorLocation(let location):
             presentUser(in: location)
         case .visitConfirmed(booking: let booking):
@@ -103,9 +105,28 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     
     // MARK: Presenter methods
     
-
+    /// Called when this screen receives notification about accepted booking
+    func moveToDoctorLocation(inBooking booking: Booking) {
+        // Remove nearby doctors markers
+        nearbyDoctorsMarkers.forEach { $0.map = nil }
+        // We do it because fetching nearby doctors may take longer then displaying current visit
+        shouldDisplayNearbyDoctors = false
+        
+        let position = booking.visit.doctorLocation
+        // Move camera so we can see patient location
+        presentUser(in: position)
+        
+        var coordinates = position.coordinate
+        coordinates.latitude -= 0.003
+        let cameraPosition = GMSCameraPosition(target: coordinates, zoom: 15.0, bearing: 0.0, viewingAngle: 0.0)
+        animateToPosition(cameraPosition)
+    }
+    
     func displayMarkersWithNearbyDoctors(_ markers: [GMSMarker]) {
         // Attach markers to map
-        markers.forEach { $0.map = mapView }
+        if shouldDisplayNearbyDoctors {
+            markers.forEach { $0.map = mapView }
+        }
+        nearbyDoctorsMarkers = markers
     }
 }

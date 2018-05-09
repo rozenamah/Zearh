@@ -15,14 +15,17 @@ class AppRouter {
         guard let booking = decodeObject(toType: Booking.self, from: userInfo) else {
             return
         }
-        // Status "new", doctor receive request from patient
-        if booking.status == .new {
-            // Navigate to doctor router and show modal with patient info
-            MainDoctorRouter.resolve(booking: booking)
-        }  else {
-            // User is waiting for doctor's answer
-            WaitRouter.resolve(booking: booking)
-        }
+        
+        navigateTo(booking: booking)
+    
+    }
+    
+    static func navigateTo(booking: Booking) {
+        
+        // Navigate to doctor/patient router and show modal
+        MainDoctorRouter.resolve(booking: booking)
+        MainPatientRouter.resolve(booking: booking)
+        
     }
     
     private static func decodeObject<H: Decodable>(toType: H.Type, from userInfo: [AnyHashable: Any]) -> H? {

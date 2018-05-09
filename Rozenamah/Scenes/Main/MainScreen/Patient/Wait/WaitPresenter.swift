@@ -3,6 +3,7 @@ import UIKit
 protocol WaitPresentationLogic {
     func handleError(_ error: RMError)
     func presentDoctor(_ doctor: VisitDetails)
+    func visitCancelled()
 }
 
 class WaitPresenter: WaitPresentationLogic {
@@ -23,6 +24,10 @@ class WaitPresenter: WaitPresentationLogic {
     
     func presentDoctor(_ doctor: VisitDetails) {
         viewController?.found(doctor: doctor)
+    }
+    
+    func visitCancelled() {
+        viewController?.visitCancelled()
     }
     
 }

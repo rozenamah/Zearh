@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 class Cost: Decodable {
-    let phone: String?
+    let total: Int
     let price: Int
     let fee: Int
 }
@@ -32,5 +32,9 @@ class VisitDetails: Decodable {
             meters = Int(currentUserLocation.distance(from: coordinates))
         }
         return (meters/1000)
+    }
+    
+    var doctorLocation: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
 }

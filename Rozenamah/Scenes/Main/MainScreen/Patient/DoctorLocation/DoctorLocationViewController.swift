@@ -67,10 +67,17 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
         interactor?.cancelVisit(for: booking)
     }
     
+    @IBAction func phoneAction(_ sender: Any) {
+        if booking.visit.user.phone != nil {
+            router?.makeCall(to: "\(booking.visit.user.phone!)")
+        }
+    }
+    
     // MARK: Presenter methods
     
     func visitCancelled() {
-        flowDelegate?.changeStateTo(flowPoint: .callDoctor)
+        // We don't have to call it because we will get notificaion
+        //flowDelegate?.changeStateTo(flowPoint: .callDoctor)
     }
     
     func updateDoctorLocation(_ location: CLLocation) {

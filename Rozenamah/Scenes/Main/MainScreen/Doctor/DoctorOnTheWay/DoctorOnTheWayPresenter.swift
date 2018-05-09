@@ -2,7 +2,7 @@ import UIKit
 
 protocol DoctorOnTheWayPresentationLogic {
     func handle(_ error: Error)
-    func doctorArrived()
+    func doctorArrived(withBooking booking: Booking)
     func doctorCancelled()
     
 }
@@ -16,8 +16,8 @@ class DoctorOnTheWayPresenter: DoctorOnTheWayPresentationLogic {
         viewController?.presentError(error)
     }
     
-    func doctorArrived() {
-        viewController?.doctorArrived()
+    func doctorArrived(withBooking booking: Booking) {
+        viewController?.doctorArrived(withBooking: booking)
     }
     
     func doctorCancelled() {

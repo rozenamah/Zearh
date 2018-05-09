@@ -38,9 +38,14 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
         super.viewDidAppear(animated)
         
         // If notificiation in AppDelegate exists it means app was started from push notification, resolve it here, in Main
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let lunchingNotification = appDelegate.launchOptions {
-            appDelegate.application(UIApplication.shared, didReceiveRemoteNotification: lunchingNotification)
-            appDelegate.launchOptions = nil
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if let launchBooking = appDelegate.launchBooking {
+                AppRouter.navigateTo(booking: launchBooking)
+                appDelegate.launchBooking = nil
+            } else if let lunchingNotification = appDelegate.launchOptions {
+                appDelegate.application(UIApplication.shared, didReceiveRemoteNotification: lunchingNotification)
+                appDelegate.launchOptions = nil
+            }
         }
     }
     
@@ -94,7 +99,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
             locationMarker = nil
         }
         
-        let icon = UIImage(named: "doctor_icon")
+        let icon = self is MainDoctorViewController ? UIImage(named: "patient_icon") : UIImage(named: "doctor_icon")
         locationMarker = GMSMarker(position: location.coordinate)
         locationMarker?.icon = icon
         locationMarker?.map = mapView

@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Stored launch options from notification, we use it if app was opened from push notification
     /// It is used Splash screen in order to redirect to correct module and state
     var launchOptions: [AnyHashable: Any]?
+    
+    /// When starting app sometimes there is pending booking, we save it here so it is gloablly accessible
+    var launchBooking: Booking?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         

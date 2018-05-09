@@ -9,11 +9,15 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         return viewController
     }
     
-    private static let kVisitRequestNotification = Notification.Name("kVisitRequestNotification")
+    static let kVisitRequestNotification = Notification.Name("kDoctorVisitRequestNotification")
     
     override init() {
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainDoctorRouter.kVisitRequestNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     lazy var patientFormVC: AcceptPatientViewController = {
@@ -38,22 +42,47 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     // MARK: Routing
     
     static func resolve(booking: Booking) {
-        NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["visit" : booking])
+        NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["booking" : booking])
     }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "end_visit_segue" {
-            
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+        case "end_visit_segue":
+            let navVC = segue.destination as? UINavigationController
+            let endVisit = navVC?.visibleViewController as? EndVisitViewController
+            endVisit?.booking = sender as? Booking
+        default:
+            break
         }
     }
 
     // MARK: Navigation
     
+    func navigateToEndVisit(withBooking booking:Booking) {
+        // Close current view
+        animateCloseContainer {
+            self.viewController?.performSegue(withIdentifier: "end_visit_segue", sender: booking)
+        }
+    }
+    
     @objc func handleNotification(for notification: NSNotification) {
-        if let booking = notification.userInfo?["visit"] as? Booking {
-            viewController?.presentUser(in: CLLocation(latitude: booking.latitude, longitude: booking.longitude))
-            viewController?.animateToPosition(GMSCameraPosition(target: booking.patientLocation.coordinate, zoom: 15.0, bearing: 0.0, viewingAngle: 0.0))
-            navigateToPatientToAccept(inBooking: booking)
+        if let booking = notification.userInfo?["booking"] as? Booking {
+            
+            if booking.status == .new {
+                viewController?.moveToPatientLocation(inBooking: booking)
+                navigateToPatientToAccept(inBooking: booking)
+            } else if booking.status == .canceled {
+                navigateToCancel()
+            } else if booking.status == .accepted {
+                navigateToDoctorOnTheWay(onBooking: booking)
+            } else if booking.status == .arrived {
+                navigateToEndVisit(withBooking: booking)
+            }
+            
         }
     }
     
@@ -87,17 +116,14 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             guard let `self` = self else {
                 return
             }
+            
+            self.add(asChildViewController: self.waitVC)
+            self.viewController?.containerHeightConstraint.constant = 202
+            self.waitVC.state = .waitForPayDoctor
+            
+            self.openContainer()
         }
         
-        self.add(asChildViewController: self.waitVC)
-        self.viewController?.containerHeightConstraint.constant = 202
-        self.waitVC.state = .waitForPayDoctor
-        
-        self.openContainer()
-    }
-    
-    func navigateToEndVisit() {
-        viewController?.performSegue(withIdentifier: "end_visit_segue", sender: nil)
     }
     
     /// Adds patient form at app start

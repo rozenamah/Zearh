@@ -22,6 +22,9 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     // Information about patient for doctor when he is about to accept or decline visit
     var booking: Booking! {
         didSet {
+            // Reset minutes
+            minutes = 15
+            // Fill screen with patient info
             customizePatientInfo()
         }
     }
@@ -54,12 +57,12 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     
     private func startTimeLeftCounter() {
         var _ = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] (timer)   in
-            // Self is weak because we want to avoid retain cycle
-            self?.confirmationLabel.text = "Confirm in \((self?.minutes)! - 1) minutes to accept visit"
             if self?.minutes == 0 {
                 timer.invalidate()
                 return
             }
+            // Self is weak because we want to avoid retain cycle
+            self?.confirmationLabel.text = "Confirm in \((self?.minutes)! - 1) minutes to accept visit"
             self?.minutes -= 1
         }
     }
@@ -84,8 +87,8 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     }
     
     @IBAction func phoneAction(_ sender: Any) {
-        if booking.visit.user.phone != nil {
-            router?.makeCall(to: "\(booking.visit.user.phone!)")
+        if booking.patient.phone != nil {
+            router?.makeCall(to: "\(booking.patient.phone!)")
         }
     }
     
@@ -96,7 +99,6 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     // MARK: Presenter methods
     
     func patientAccepted(with booking: Booking) {
-        // TODO: Api should return booking, change it later
         flowDelegate?.changeStateTo(flowPoint: .accepted(booking: booking))
     }
     

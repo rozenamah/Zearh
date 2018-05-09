@@ -4,5 +4,5 @@ enum DoctorFlow {
     case accepted(booking: Booking)
     case rejected
     case cancel
-    case arrived
+    case arrived(booking: Booking)
 }

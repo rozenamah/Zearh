@@ -1,5 +1,7 @@
 import UIKit
+import CoreLocation
 import SwiftCake
+import GoogleMaps
 
 protocol MainDoctorDisplayLogic: MainScreenDisplayLogic {
     func handle(error: Error)
@@ -92,12 +94,24 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
             router?.navigateToCancel()
         case .cancel:
             router?.navigateToCancel()
-        case .arrived:
-            router?.navigateToEndVisit()
+        case .arrived(let booking):
+            router?.navigateToEndVisit(withBooking: booking)
         }
     }
 
     // MARK: Presenter methods
+    
+    /// Called when this screen receives notification about new booking
+    func moveToPatientLocation(inBooking booking: Booking) {
+        let position = booking.patientLocation
+        // Move camera so we can see patient location
+        presentUser(in: position)
+        
+        var coordinates = position.coordinate
+        coordinates.latitude -= 0.003
+        let cameraPosition = GMSCameraPosition(target: coordinates, zoom: 15.0, bearing: 0.0, viewingAngle: 0.0)
+        animateToPosition(cameraPosition)
+    }
     
     func markAsRejectingRequests() {
         requestsReceiveButton.isUserInteractionEnabled = true

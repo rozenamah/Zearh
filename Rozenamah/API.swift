@@ -26,6 +26,7 @@ enum API {
         case updateProfile
         case updateAvatar
         case report
+        case visit
         
         var resource: String { return baseURL + "user/" }
     }
@@ -41,7 +42,6 @@ enum API {
         case position
         case search
         case nearby
-        case arrived
         
         var resource: String { return baseURL + "doctor/" }
     }
@@ -51,6 +51,8 @@ enum API {
         case accept
         case reject
         case cancel
+        case arrived
+        case end
         
         var resource: String { return baseURL + "visit/" }
     }
@@ -67,7 +69,6 @@ extension API.Doctor {
         case .availability: return resource + "availability"
         case .position: return resource + "position"
         case .search: return resource + "search"
-        case .arrived: return resource + "arrived"
         case .nearby: return resource + "nearby"
         }
     }
@@ -88,6 +89,8 @@ extension API.Visit {
         case .accept: return resource + "request/accept"
         case .reject: return resource + "request/reject"
         case .cancel: return resource + "request/cancel"
+        case .arrived: return resource + "arrived"
+        case .end: return resource + "end"
         }
     }
 }
@@ -108,6 +111,7 @@ extension API.User {
         case .updateProfile: return resource + "update"
         case .updateAvatar: return resource + "avatar"
         case .report: return resource + "report"
+        case .visit: return resource + "me/visit"
         }
     }
 }

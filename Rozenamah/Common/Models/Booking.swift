@@ -13,11 +13,14 @@ enum BookingStatus: String, Decodable {
     case new = "new"
     case accepted = "accepted"
     case rejected = "rejected"
+    case canceled = "canceled"
+    case arrived = "arrived"
+    case ended = "ended"
 }
 
 class Booking: Decodable {
     private enum CodingKeys : String, CodingKey {
-        case id, visit = "doctor", patient = "user", latitude, longitude, status
+        case id, visit = "doctor", patient = "user", latitude, longitude, status, payment
     }
     
     let id: String
@@ -26,6 +29,7 @@ class Booking: Decodable {
     let latitude: Double
     let longitude: Double
     let status: BookingStatus
+    let payment: PaymentMethod
     
     var patientLocation: CLLocation {
         return CLLocation(latitude: latitude, longitude: longitude)

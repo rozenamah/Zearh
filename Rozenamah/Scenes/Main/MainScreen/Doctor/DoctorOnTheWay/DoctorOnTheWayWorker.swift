@@ -11,16 +11,16 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
         let ref = Database.database().reference().child("booking/\(booking.id)")
         let locationUpdate: [String: Any] = [
             "latitude": location.coordinate.latitude,
-            "longitude": location.coordinate.latitude
+            "longitude": location.coordinate.longitude
         ]
         
         ref.updateChildValues(locationUpdate)
         
     }
     
-    func doctorArrived(for booking: Booking, completion: @escaping ErrorCompletion) {
+    func doctorArrived(for booking: Booking, completion: @escaping BookingCompletion) {
         guard let token = Keychain.shared.token else {
-            completion(RMError.tokenDoesntExist)
+            completion(nil, RMError.tokenDoesntExist)
             return
         }
         
@@ -32,9 +32,9 @@ class DoctorOnTheWayWorker: DoctorLocationWorker {
             "visit": booking.id
         ]
         
-        Alamofire.request(API.Doctor.arrived.path, method: .post, parameters: params,
+        Alamofire.request(API.Visit.arrived.path, method: .post, parameters: params,
                           encoding: JSONEncoding.default, headers: headers)
             .validate()
-            .responseEmpty(completion: completion)
+            .responseCodable(type: Booking.self, completion: completion)
     }
 }

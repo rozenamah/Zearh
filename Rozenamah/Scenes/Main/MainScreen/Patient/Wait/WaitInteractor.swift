@@ -4,6 +4,7 @@ import Alamofire
 protocol WaitBusinessLogic {
     func searchForDoctor(withFilters form: CallDoctorForm)
     func cancelCurrentRequest()
+    func cancel(booking: Booking)
 }
 
 class WaitInteractor: WaitBusinessLogic {
@@ -25,6 +26,17 @@ class WaitInteractor: WaitBusinessLogic {
             if let doctor = doctor {
                 self.presenter?.presentDoctor(doctor)
             }
+        }
+    }
+    
+    func cancel(booking: Booking) {
+        DoctorOnTheWayWorker().cancelVisit(with: booking) { (error) in
+            if let error = error {
+                self.presenter?.handleError(error)
+                return
+            }
+            
+            self.presenter?.visitCancelled()
         }
     }
     

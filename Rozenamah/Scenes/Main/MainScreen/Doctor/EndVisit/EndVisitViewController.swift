@@ -1,16 +1,30 @@
 import UIKit
 
 protocol EndVisitDisplayLogic: class {
+    func handleError(_ error: Error)
+    func visitEnded()
 }
 
 class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
 
     // MARK: Outlets
-
+    @IBOutlet weak var priceAmountLabel: UILabel!
+    @IBOutlet weak var feeAmountLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var illnesView: UIView!
+    @IBOutlet weak var medicineView: UIView!
+    @IBOutlet weak var paymentMethodLabel: UILabel!
+    @IBOutlet weak var ageView: UIView!
+    
     // MARK: Properties
     var interactor: EndVisitBusinessLogic?
     var router: EndVisitRouter?
 
+    /// Information about patient and booking
+    var booking: Booking!
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -33,7 +47,22 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        let visit = booking.visit
+        let patient = booking.patient
+        
+        // TODO: Fill missing labels with correct data
+        avatarImage.setAvatar(for: patient)
+        nameLabel.text = patient.fullname
+        priceAmountLabel.text = "\(visit.cost.price) SAR"
+        feeAmountLabel.text = "\(visit.cost.fee) SAR"
+        paymentMethodLabel.text = booking.payment.title
+        
+        // Hide view we don't use right now
+        illnesView.isHidden = true
+        medicineView.isHidden = true
+        ageView.isHidden = true
     }
+
 
     // MARK: Event handling
     @IBAction func checkBoxAction(_ sender: UIButton) {
@@ -41,12 +70,17 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     }
     
     @IBAction func endVisitAction(_ sender: Any) {
-        
-    }
-    
-    @IBAction func closeAction(_ sender: Any) {
-        router?.dismiss()
+        interactor?.end(booking: booking)
     }
     
     // MARK: Presenter methods
+    
+    func handleError(_ error: Error) {
+        router?.showError(error)
+    }
+    
+    func visitEnded() {
+        // TODO: Navigate to transactions?
+        router?.dismiss()
+    }
 }

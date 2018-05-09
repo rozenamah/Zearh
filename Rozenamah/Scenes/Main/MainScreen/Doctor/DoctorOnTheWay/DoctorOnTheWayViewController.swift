@@ -4,7 +4,7 @@ import SwiftCake
 
 protocol DoctorOnTheWayDisplayLogic: class {
     func presentError(_ error: Error)
-    func doctorArrived()
+    func doctorArrived(withBooking booking: Booking)
     func doctorCancelled()
 }
 
@@ -69,17 +69,23 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
         router?.navigateToPatient(inBooking: booking)
     }
     
+    @IBAction func phoneAction(_ sender: Any) {
+        if booking.patient.phone != nil {
+            router?.makeCall(to: "\(booking.patient.phone!)")
+        }
+    }
+    
     // MARK: Presenter methods
     
     func presentError(_ error: Error) {
         router?.showError(error)
     }
     
-    func doctorArrived() {
-        flowDelegate?.changeStateTo(flowPoint: .arrived)
+    func doctorArrived(withBooking booking: Booking) {
+        flowDelegate?.changeStateTo(flowPoint: .arrived(booking: booking))
     }
     
     func doctorCancelled() {
-        flowDelegate?.changeStateTo(flowPoint: .cancel)
+//        flowDelegate?.changeStateTo(flowPoint: .cancel)
     }
 }

@@ -21,8 +21,19 @@ class SplashInteractor: SplashBusinessLogic {
                 // Save user in current
                 User.current = user
                 
-                self.presenter?.present(user: user)
+                // Now check if user has any pending booking
+                self.worker.fetchMyBooking(completion: { (booking, error) in
+                    
+                    // Save launch booking in app delegate
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        appDelegate.launchBooking = booking
+                    }
+                    
+                    self.presenter?.present(user: user)
+                })
             }
+            
+            
         }
     }
 }
