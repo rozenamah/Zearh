@@ -88,13 +88,17 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         
         switch state {
         case .waitAccept(let booking):
-            interactor?.cancel(booking: booking)
+            router?.showCancelAlert(forBooking: booking)
         case .waitSearch(_):
             interactor?.cancelCurrentRequest()
             flowDelegate?.changeStateTo(flowPoint: .callDoctor)
         default:
             doctorFlowDelegate?.changeStateTo(flowPoint: .cancel)
         }
+    }
+    
+    func cancelConfirmed(forBooking booking: Booking) {
+        interactor?.cancel(booking: booking)
     }
     
     // MARK: Presenter methods

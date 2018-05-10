@@ -9,6 +9,7 @@ class MainPatientRouter: MainScreenRouter, Router {
     }
     
     static let kVisitRequestNotification = Notification.Name("kPatientVisitRequestNotification")
+    static let kNoVisitRequestNotification = Notification.Name("kPatientNoVisitRequestNotification")
 
     lazy var waitVC: WaitViewController = {
        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "wait_vc") as! WaitViewController
@@ -37,6 +38,7 @@ class MainPatientRouter: MainScreenRouter, Router {
     override init() {
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainPatientRouter.kVisitRequestNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNoBooking), name: MainPatientRouter.kNoVisitRequestNotification, object: nil)
     }
     
     deinit {
@@ -48,11 +50,23 @@ class MainPatientRouter: MainScreenRouter, Router {
     static func resolve(booking: Booking) {
         NotificationCenter.default.post(name: MainPatientRouter.kVisitRequestNotification, object: nil, userInfo: ["booking" : booking])
     }
+    
+    static func stopAllBookings() {
+        NotificationCenter.default.post(name: MainPatientRouter.kNoVisitRequestNotification, object: nil, userInfo: nil )
+    }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
     }
 
     // MARK: Navigation
+    
+    
+    @objc func handleNoBooking() {
+        // Called when system is notified there is no more booking to display, hide current view
+        navigateToCallForm()
+        // There might be modal screen - hide it
+        viewController?.dismiss(animated: true, completion: nil)
+    }
     
     @objc func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["booking"] as? Booking {
@@ -63,7 +77,7 @@ class MainPatientRouter: MainScreenRouter, Router {
                 viewController?.moveToDoctorLocation(inBooking: booking)
                 
                 navigateToDoctorOnTheWay(for: booking)
-            } else if booking.status == .canceled {
+            } else if booking.status == .rejected {
                 navigateToCallForm()
             } else if booking.status == .arrived {
                 navigateToWaitForVisitEnd(withBooking: booking)

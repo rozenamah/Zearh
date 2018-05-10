@@ -99,7 +99,7 @@ extension MainScreenInteractor: CLLocationManagerDelegate {
         
         if let firstLocation = locations.first, !firstLocationDisplayed {
             firstLocationDisplayed = true
-//            basePresenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
+            basePresenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
             
             // Call hook, subclass can override this in order to be notified when first location was loaded
             firstLocationFetched()

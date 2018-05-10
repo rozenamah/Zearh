@@ -2,6 +2,7 @@ import UIKit
 
 protocol EndVisitBusinessLogic {
     func end(booking: Booking)
+    func validate(cashReceived: Bool) -> Bool
 }
 
 class EndVisitInteractor: EndVisitBusinessLogic {
@@ -30,5 +31,14 @@ class EndVisitInteractor: EndVisitBusinessLogic {
                 self.presenter?.doctorEnded(booking: booking)
             }
         }
+    }
+    
+    func validate(cashReceived: Bool) -> Bool {
+        if !cashReceived {
+            presenter?.presentError(.cashNotTaken)
+            return false
+        }
+        
+        return true
     }
 }

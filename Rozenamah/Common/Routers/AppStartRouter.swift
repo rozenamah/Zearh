@@ -19,7 +19,6 @@ extension AppStartRouter where Self: Router {
     
     func navigateToSignUp() {
         if let signUpVC = UIStoryboard(name: "Session", bundle: nil).instantiateViewController(withIdentifier: "welcome_navigation") as? UINavigationController {
-            
             UIApplication.shared.keyWindow?.setRootViewController(signUpVC, options: UIWindow.TransitionOptions(direction: .fade))
         }
     }

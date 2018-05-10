@@ -12,6 +12,12 @@ class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var illnesView: UIView!
+    @IBOutlet weak var medicineView: UIView!
+    @IBOutlet weak var paymentMethodLabel: UILabel!
+    @IBOutlet weak var ageView: UIView!
+    @IBOutlet weak var illnesStackView: UIStackView!
+    @IBOutlet weak var medicineStackView: UIStackView!
     
     // MARK: Properties
     var interactor: PatientDetailsBusinessLogic?
@@ -48,8 +54,12 @@ class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic
         // TODO: Fill missing labels with correct data
         avatarImage.setAvatar(for: patient)
         nameLabel.text = patient.fullname
-        priceAmountLabel.text = "\(visit.cost.price) SAR"
+        priceAmountLabel.text = "\(visit.cost.total) SAR"
         feeAmountLabel.text = "\(visit.cost.fee) SAR"
+        paymentMethodLabel.text = booking.payment.title
+        
+        // Hide view we don't use right now
+        ageView.isHidden = true
     }
 
     // MARK: Event handling

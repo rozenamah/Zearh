@@ -49,6 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        // Refresh state of booking, it might be outdated
+        SplashWorker().fetchMyBooking { (refreshBooking, error) in
+            if let refreshBooking = refreshBooking {
+                AppRouter.navigateTo(booking: refreshBooking)
+            } else {
+                AppRouter.noVisit()
+            }
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -83,8 +91,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
         #endif
         
-        AppRouter.navigateToScreen(from: userInfo)
+        if application.applicationState != .inactive {
+            AppRouter.navigateToScreen(from: userInfo)
+        }
     }
+    
 }
 
 // MARK: Configuration

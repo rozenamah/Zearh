@@ -46,7 +46,10 @@ class AcceptDoctorViewController: ModalInformationViewController, AcceptDoctorDi
     // MARK: View customization
 
     fileprivate func setupView() {
-        
+        // Lower the font so it fits in iphone 4/5
+        if iPhoneDetection.deviceType() == .iphone4 || iPhoneDetection.deviceType() == .iphone5 {
+            
+        }
     }
     
     override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {

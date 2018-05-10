@@ -10,10 +10,12 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }
     
     static let kVisitRequestNotification = Notification.Name("kDoctorVisitRequestNotification")
+    static let kNoVisitRequestNotification = Notification.Name("kDoctorNoVisitRequestNotification")
     
     override init() {
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainDoctorRouter.kVisitRequestNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNoBooking), name: MainDoctorRouter.kNoVisitRequestNotification, object: nil)
     }
     
     deinit {
@@ -44,6 +46,10 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     static func resolve(booking: Booking) {
         NotificationCenter.default.post(name: MainDoctorRouter.kVisitRequestNotification, object: nil, userInfo: ["booking" : booking])
     }
+    
+    static func stopAllBookings() {
+        NotificationCenter.default.post(name: MainDoctorRouter.kNoVisitRequestNotification, object: nil, userInfo: nil )
+    }
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {
@@ -67,6 +73,13 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         animateCloseContainer {
             self.viewController?.performSegue(withIdentifier: "end_visit_segue", sender: booking)
         }
+    }
+    
+    @objc func handleNoBooking() {
+        // Called when system is notified there is no more booking to display, hide current view
+        navigateToCancel()
+        // There might be modal screen - hide it
+        viewController?.dismiss(animated: true, completion: nil)
     }
     
     @objc func handleNotification(for notification: NSNotification) {

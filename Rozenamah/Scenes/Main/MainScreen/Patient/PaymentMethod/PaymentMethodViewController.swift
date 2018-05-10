@@ -55,11 +55,10 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
     fileprivate func setupView() {
         paymentMethodsButtons.forEach({ $0.isSelected = false })
         
-        let user = doctor.user
         let cost = doctor.cost
         
-        visitPriceLabel.text = "\(user.doctor!.price) SAR"
-        totalPriceLabel.text = "\(cost.price) SAR"
+        visitPriceLabel.text = "\(cost.price) SAR"
+        totalPriceLabel.text = "\(cost.total) SAR"
         feePriceLabel.text = "\(cost.fee) SAR"
     }
 

@@ -104,4 +104,9 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
         locationMarker?.icon = icon
         locationMarker?.map = mapView
     }
+    
+    func removePresentedUser() {
+        locationMarker?.map = nil
+        locationMarker = nil
+    }
 }

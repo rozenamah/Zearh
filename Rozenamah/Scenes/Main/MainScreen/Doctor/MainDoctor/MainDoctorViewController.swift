@@ -90,9 +90,11 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         switch flowPoint {
         case .accepted(let booking):
             router?.navigateToDoctorOnTheWay(onBooking: booking)
-        case .rejected:
-            router?.navigateToCancel()
         case .cancel:
+            // Remove patient icon from map, move to doctor position
+            interactor?.returnToUserLocation()
+            removePresentedUser()
+            
             router?.navigateToCancel()
         case .arrived(let booking):
             router?.navigateToEndVisit(withBooking: booking)

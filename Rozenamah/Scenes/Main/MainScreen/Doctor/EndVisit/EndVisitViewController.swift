@@ -17,6 +17,7 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     @IBOutlet weak var medicineView: UIView!
     @IBOutlet weak var paymentMethodLabel: UILabel!
     @IBOutlet weak var ageView: UIView!
+    @IBOutlet weak var cashReceivedCheckbox: UIButton!
     
     // MARK: Properties
     var interactor: EndVisitBusinessLogic?
@@ -61,6 +62,11 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
         illnesView.isHidden = true
         medicineView.isHidden = true
         ageView.isHidden = true
+        
+        // If payment method is card - hide payment checkbox
+        if booking.payment == .card {
+            cashReceivedCheckbox.isHidden = true
+        }
     }
 
 
@@ -70,7 +76,13 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     }
     
     @IBAction func endVisitAction(_ sender: Any) {
-        interactor?.end(booking: booking)
+        if booking.payment == .cash {
+            if interactor?.validate(cashReceived: cashReceivedCheckbox.isSelected) == true {
+                interactor?.end(booking: booking)
+            }
+        } else {
+            interactor?.end(booking: booking)
+        }
     }
     
     // MARK: Presenter methods

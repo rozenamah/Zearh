@@ -103,7 +103,7 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     }
     
     func patientRejected() {
-        flowDelegate?.changeStateTo(flowPoint: .rejected)
+        flowDelegate?.changeStateTo(flowPoint: .cancel)
     }
     
     func handle(error: Error) {
