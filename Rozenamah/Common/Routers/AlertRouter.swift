@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize
 
 protocol AlertRouter {
     func showAlert(message: String)
@@ -52,7 +53,7 @@ extension AlertRouter where Self: Router {
                                                              message: message,
                                                              preferredStyle: .alert)
        
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .cancel, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
 
@@ -63,11 +64,11 @@ extension AlertRouter where Self: Router {
             return
         }
         
-        let alertMessage = UIAlertController(title: "Ups",
+        let alertMessage = UIAlertController(title: "generic.error.ups".localized,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)
         
-        alertMessage.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        alertMessage.addAction(UIAlertAction(title: "generic.ok".localized, style: .cancel, handler: nil))
         viewController.present(alertMessage, animated: true, completion: nil)
         
         

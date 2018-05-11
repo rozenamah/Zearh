@@ -93,6 +93,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentPatientLocation()
                 navigateToCancel()
             } else if booking.status == .accepted {
+                viewController?.moveToPatientLocation(inBooking: booking)
                 navigateToDoctorOnTheWay(onBooking: booking)
             } else if booking.status == .arrived {
                 navigateToEndVisit(withBooking: booking)

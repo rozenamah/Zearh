@@ -59,6 +59,9 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     
     private func fillCurrentFilters() {
         
+        // We store specialization because classificationSelected will remove it so we temproray save it
+        let selectedSpecialization = callForm.specialization
+        
         // Setup current filters
         if let classification = callForm.classification {
             classificationSelected(classification)
@@ -66,7 +69,8 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
             professionButton.isSelected = false
         }
         
-        if let specialization = callForm.specialization {
+        if let specialization = selectedSpecialization {
+            callForm.specialization = selectedSpecialization
             specializationSelected(specialization)
         } else {
             specializationButton.isSelected = false

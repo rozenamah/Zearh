@@ -69,7 +69,7 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     
     func customizePatientInfo() {
         fillInformation(with: booking.patient, andVisitInfo: booking.visit)
-        startTimeLeftCounter()
+//        startTimeLeftCounter()
     }
 
     // MARK: Event handling

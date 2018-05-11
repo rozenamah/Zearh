@@ -152,7 +152,7 @@
     "generic": {
         "error": {
             "unknown": "خطأ غير معروف",
-            "ups": "Ups"
+            "ups": "Oops"
         },
         "ok": "حسنا",
         "success": "نجاح",
