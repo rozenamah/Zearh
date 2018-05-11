@@ -58,7 +58,7 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     // MARK: Event handling
     
     @IBAction func cancelAction(_ sender: Any) {
-        interactor?.cancelVisit(for: booking)
+        router?.showCancelAlert()
     }
     
     @IBAction func arrivedAction(_ sender: Any) {
@@ -73,6 +73,10 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
         if booking.patient.phone != nil {
             router?.makeCall(to: "\(booking.patient.phone!)")
         }
+    }
+    
+    func cancelConfirmed() {
+        interactor?.cancelVisit(for: booking)
     }
     
     // MARK: Presenter methods

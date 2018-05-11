@@ -21,6 +21,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
     
     //MARK: Properties
     // Marker with doctors location, needs to be updated when location is changed

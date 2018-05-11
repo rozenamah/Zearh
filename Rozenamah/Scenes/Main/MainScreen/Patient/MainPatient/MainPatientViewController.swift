@@ -105,6 +105,11 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     
     // MARK: Presenter methods
     
+    func removeCurrentDoctorLocation() {
+        interactor?.returnToUserLocation()
+        removePresentedUser()
+    }
+    
     /// Called when this screen receives notification about accepted booking
     func moveToDoctorLocation(inBooking booking: Booking) {
         // Remove nearby doctors markers

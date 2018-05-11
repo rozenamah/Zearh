@@ -17,11 +17,13 @@ class MainScreenRouter: NSObject {
     private var currentViewController: UIViewController!
     
     func animateCloseContainer(completion: @escaping (()->Void)) {
-        if let containerView = baseViewController?.containerView {
-            var animateFrame = containerView.frame
-            animateFrame.origin.y = UIScreen.main.bounds.height
+        if let animateConstraint = baseViewController?.containerBottomConstraint,
+            let containerHeightConstraint = baseViewController?.containerHeightConstraint {
+            
+            animateConstraint.constant = containerHeightConstraint.constant
+            
             UIView.animate(withDuration: 0.4, animations: {
-                containerView.frame = animateFrame
+                self.baseViewController?.view.layoutIfNeeded()
             }, completion: { (_) in
                 completion()
             })
@@ -29,25 +31,15 @@ class MainScreenRouter: NSObject {
     }
     
     func animateOpenContainer(completion: (()->Void)? = nil) {
-        guard let containerView = baseViewController?.containerView,
-            let viewHeight = baseViewController?.containerHeightConstraint.constant else {
+        guard let containerView = baseViewController?.containerView, let animateConstraint = baseViewController?.containerBottomConstraint else {
                 return
         }
         
         // Animate container from bottom to top
-        var originalFrame = containerView.frame
-        originalFrame.origin.y = UIScreen.main.bounds.height - viewHeight
-        if #available(iOS 11, *) {
-            originalFrame.origin.y -= baseViewController?.view.safeAreaInsets.bottom ?? 0
-        }
-        var animationFrame = originalFrame
-        animationFrame.origin.y = UIScreen.main.bounds.height
-        containerView.frame = animationFrame
-        
-        // Move up
+        animateConstraint.constant = 0
         containerView.isHidden = false
         UIView.animate(withDuration: 0.4, animations: {
-            containerView.frame = originalFrame
+            self.baseViewController?.view.layoutIfNeeded()
         }) { (_) in
             completion?()
         }

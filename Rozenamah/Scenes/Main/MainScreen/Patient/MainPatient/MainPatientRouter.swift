@@ -72,6 +72,7 @@ class MainPatientRouter: MainScreenRouter, Router {
         if let booking = notification.userInfo?["booking"] as? Booking {
             
             if booking.status == .canceled {
+                viewController?.removeCurrentDoctorLocation()
                 navigateToCallForm()
             } else if booking.status == .accepted {
                 viewController?.moveToDoctorLocation(inBooking: booking)
@@ -83,6 +84,7 @@ class MainPatientRouter: MainScreenRouter, Router {
                 navigateToWaitForVisitEnd(withBooking: booking)
             } else if booking.status == .ended {
                 // TODO: Navigate to transactions?
+                viewController?.removeCurrentDoctorLocation()
                 navigateToCallForm()
             }
             

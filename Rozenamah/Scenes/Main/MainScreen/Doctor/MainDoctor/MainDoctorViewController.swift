@@ -73,6 +73,11 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     
     // MARK: Event handling
 
+    func removeCurrentPatientLocation() {
+        interactor?.returnToUserLocation()
+        removePresentedUser()
+    }
+    
     @IBAction func receiveRequestAction(_ sender: UIButton) {
         if sender.isSelected {
             interactor?.stopReceivingRequests()
@@ -92,12 +97,15 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
             router?.navigateToDoctorOnTheWay(onBooking: booking)
         case .cancel:
             // Remove patient icon from map, move to doctor position
-            interactor?.returnToUserLocation()
-            removePresentedUser()
+            removeCurrentPatientLocation()
             
             router?.navigateToCancel()
         case .arrived(let booking):
             router?.navigateToEndVisit(withBooking: booking)
+        case .ended:
+            // Remove patient icon from map, move to doctor position
+            interactor?.returnToUserLocation()
+            removePresentedUser()
         }
     }
 

@@ -29,7 +29,17 @@ class LoginInteractor: LoginBusinessLogic {
                 // Save user in current
                 User.current = response.user
                 
-                self.presenter?.presentLoginSuccess()
+                // Also - load if user has any pending visit
+                SplashWorker().fetchMyBooking(completion: { (booking, error) in
+                    
+                    // Save launch booking in app delegate
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        appDelegate.launchBooking = booking
+                    }
+                    
+                    self.presenter?.presentLoginSuccess()
+                })
+                
             }
             
         }

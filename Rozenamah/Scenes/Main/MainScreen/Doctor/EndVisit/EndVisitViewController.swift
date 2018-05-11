@@ -26,6 +26,9 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     /// Information about patient and booking
     var booking: Booking!
     
+    // Delegate responsible for doctors action, whether accept or cancel patient
+    weak var flowDelegate: DoctortFlowDelegate?
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -93,6 +96,7 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     
     func visitEnded() {
         // TODO: Navigate to transactions?
+        flowDelegate?.changeStateTo(flowPoint: .ended)
         router?.dismiss()
     }
 }

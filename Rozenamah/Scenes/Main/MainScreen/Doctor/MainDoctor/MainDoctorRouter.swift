@@ -61,6 +61,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             let navVC = segue.destination as? UINavigationController
             let endVisit = navVC?.visibleViewController as? EndVisitViewController
             endVisit?.booking = sender as? Booking
+            endVisit?.flowDelegate = viewController
         default:
             break
         }
@@ -89,6 +90,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.moveToPatientLocation(inBooking: booking)
                 navigateToPatientToAccept(inBooking: booking)
             } else if booking.status == .canceled {
+                viewController?.removeCurrentPatientLocation()
                 navigateToCancel()
             } else if booking.status == .accepted {
                 navigateToDoctorOnTheWay(onBooking: booking)

@@ -123,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wBJ-TG-Y1Q"/>
                     <connections>
+                        <outlet property="containerBottomConstraint" destination="rsJ-ms-bv4" id="ljV-Ha-a2y"/>
                         <outlet property="containerHeightConstraint" destination="RFb-PF-Fck" id="bWT-Vj-Vmh"/>
                         <outlet property="containerView" destination="j62-uA-2Py" id="ela-RQ-NgQ"/>
                         <outlet property="mapView" destination="alK-RO-j2e" id="Ult-Pe-5i0"/>
@@ -228,6 +229,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GKJ-HK-WiL"/>
                     <connections>
+                        <outlet property="containerBottomConstraint" destination="AXl-E7-mXV" id="yuf-ZJ-uZX"/>
                         <outlet property="containerHeightConstraint" destination="oRA-ck-4Jk" id="TbI-YK-x6N"/>
                         <outlet property="containerView" destination="Z0H-df-05R" id="v3T-S9-ntw"/>
                         <outlet property="mapView" destination="cfl-zU-M5F" id="8Pf-AO-HBG"/>
