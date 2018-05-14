@@ -8,7 +8,11 @@
 
 import Foundation
 
+#if DEBUG
 fileprivate let baseURL = "https://rozenamah.r4s.ovh/api/"
+#else
+fileprivate let baseURL = "https://rozenamah.ready4s.ovh/api/"
+#endif
 
 enum API {
     
