@@ -84,19 +84,42 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     }
     
     @objc func handleNotification(for notification: NSNotification) {
-        if let booking = notification.userInfo?["booking"] as? Booking {
+        if let booking = notification.userInfo?["booking"] as? Booking,
+            booking.visit.user == User.current {
             
             if booking.status == .new {
-                viewController?.moveToPatientLocation(inBooking: booking)
                 navigateToPatientToAccept(inBooking: booking)
-            } else if booking.status == .canceled {
-                viewController?.removeCurrentPatientLocation()
-                navigateToCancel()
-            } else if booking.status == .accepted {
+                
+                // Save booking and move camera to patient location
+                viewController?.currentBooking = booking
                 viewController?.moveToPatientLocation(inBooking: booking)
+            } else if booking.status == .canceled {
+                navigateToCancel()
+                
+                // Remove booking and move camera to doctor (my) location
+                viewController?.currentBooking = nil
+                viewController?.removeCurrentPatientLocation()
+                
+                showAlert(message: "Visit canceled.")
+            } else if booking.status == .timeout {
+                navigateToCancel()
+                
+                // Remove booking and move camera to doctor (my) location
+                viewController?.currentBooking = nil
+                viewController?.removeCurrentPatientLocation()
+                
+                showAlert(message: "You didn't accept visit within 15 minutes.")
+            } else if booking.status == .accepted {
                 navigateToDoctorOnTheWay(onBooking: booking)
+                
+                // Save booking and move camera to patient location
+                viewController?.currentBooking = booking
+                viewController?.moveToPatientLocation(inBooking: booking)
             } else if booking.status == .arrived {
                 navigateToEndVisit(withBooking: booking)
+                
+                // Remove booking
+                viewController?.currentBooking = nil
             }
             
         }

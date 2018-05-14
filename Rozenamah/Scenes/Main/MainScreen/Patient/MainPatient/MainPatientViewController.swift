@@ -91,15 +91,17 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
         case .accept(let doctor, let filters):
             router?.navigateToAcceptDoctor(withDoctor: doctor, byFilters: filters)
         case .waitForAccept(booking: let booking):
+            // Save booking
+            currentBooking = booking
+            
+            // Display alert with "Wait for doctor accept" message
             router?.navigateToWaitForAccept(withBooking: booking)
         case .pending:
-            // Show all buttons when no form visible
+            // Show all buttons when no form visible, "call doctor" is hidden
             viewToHideWhenFormVisible.forEach { $0.isHidden = false }
             router?.closeContainer()
         case .doctorLocation(let location):
             presentUser(in: location)
-        case .visitConfirmed(booking: let booking):
-            router?.navigateToDoctorOnTheWay(for: booking)
         }
     }
     
@@ -112,6 +114,10 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     
     /// Called when this screen receives notification about accepted booking
     func moveToDoctorLocation(inBooking booking: Booking) {
+        // By this we disable interactor so it will not move camera to
+        // current user location when we restart the app
+        interactor?.firstLocationDisplayed = true
+        
         // Remove nearby doctors markers
         nearbyDoctorsMarkers.forEach { $0.map = nil }
         // We do it because fetching nearby doctors may take longer then displaying current visit

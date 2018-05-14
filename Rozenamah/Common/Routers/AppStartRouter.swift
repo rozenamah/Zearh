@@ -28,6 +28,20 @@ extension AppStartRouter where Self: Router {
             return
         }
         
+        // Check if there is any pending booking - if so, redirect to correct module
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let launchBooking = appDelegate.launchBooking {
+            if launchBooking.visit.user == user {
+                // Doctor module
+                navigateToApp(inModule: .doctor)
+            } else {
+                // Patient module
+                navigateToApp(inModule: .patient)
+            }
+            return
+            
+        }
+        
         if user.type == .doctor {
             if user.doctor?.isVerified == true {
                 // Only if doctor and verified

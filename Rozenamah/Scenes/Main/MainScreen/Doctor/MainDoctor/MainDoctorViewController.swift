@@ -95,17 +95,25 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         switch flowPoint {
         case .accepted(let booking):
             router?.navigateToDoctorOnTheWay(onBooking: booking)
-        case .cancel:
-            // Remove patient icon from map, move to doctor position
-            removeCurrentPatientLocation()
             
+            // Save booking
+            currentBooking = booking
+        case .cancel:
             router?.navigateToCancel()
+
+            // Remove patient icon from map, move to doctor position and remove booking
+            removeCurrentPatientLocation()
+            currentBooking = nil
         case .arrived(let booking):
             router?.navigateToEndVisit(withBooking: booking)
+            
+            // Save booking
+            currentBooking = booking
         case .ended:
             // Remove patient icon from map, move to doctor position
-            interactor?.returnToUserLocation()
             removePresentedUser()
+            interactor?.returnToUserLocation()
+            currentBooking = nil
         }
     }
 
@@ -113,6 +121,10 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     
     /// Called when this screen receives notification about new booking
     func moveToPatientLocation(inBooking booking: Booking) {
+        // By this we disable interactor so it will not move camera to
+        // current user location when we restart the app
+        interactor?.firstLocationDisplayed = true
+        
         let position = booking.patientLocation
         // Move camera so we can see patient location
         presentUser(in: position)

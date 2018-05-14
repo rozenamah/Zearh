@@ -26,7 +26,7 @@ class Doctor: Decodable {
     var isAvailable: Bool
 }
 
-class User: Decodable {
+class User: Decodable, Equatable {
     
     let id: String
     let name: String
@@ -51,5 +51,7 @@ class User: Decodable {
     // Represents currently logged user, assigned on login, removed on logout
     static var current: User?
     
-    
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

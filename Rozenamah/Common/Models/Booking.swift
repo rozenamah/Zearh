@@ -14,6 +14,7 @@ enum BookingStatus: String, Decodable {
     case accepted = "accepted"
     case rejected = "rejected"
     case canceled = "canceled"
+    case timeout = "timed_out"
     case arrived = "arrived"
     case ended = "ended"
 }

@@ -12,6 +12,9 @@ import GoogleMaps
 import UserNotifications
 
 protocol MainScreenBusinessLogic {
+    /// Whenever first location is found move camera to this position
+    var firstLocationDisplayed: Bool { get set }
+    
     func returnToUserLocation()
     func registerForNotifications()
 }
@@ -26,7 +29,7 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
     var locationManager = CLLocationManager()
     
     /// Whenever first location is found move camera to this position
-    fileprivate var firstLocationDisplayed: Bool = false
+    var firstLocationDisplayed: Bool = false
     
     // MARK: Business logic
     

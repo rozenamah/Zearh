@@ -8,7 +8,6 @@ enum PatientFlow {
     case accept(doctor: VisitDetails, foundByFilters: CallDoctorForm)
     case waitForAccept(booking: Booking)
     case doctorLocation(location: CLLocation)
-    case visitConfirmed(booking: Booking)
 }
 
 struct Location: Decodable {

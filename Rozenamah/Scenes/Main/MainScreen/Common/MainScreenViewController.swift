@@ -24,8 +24,11 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
     
     //MARK: Properties
-    // Marker with doctors location, needs to be updated when location is changed
+    /// Marker with doctors location, needs to be updated when location is changed
     private var locationMarker: GMSMarker?
+    
+    /// Currently displayed booking, both for patient and doctor
+    var currentBooking: Booking?
     
     // MARK: View lifecycle
     

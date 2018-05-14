@@ -1,6 +1,6 @@
 import UIKit
 
-class MainPatientRouter: MainScreenRouter, Router {
+class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
     typealias RoutingViewController = MainPatientViewController
     weak var viewController: MainPatientViewController?
     
@@ -69,23 +69,55 @@ class MainPatientRouter: MainScreenRouter, Router {
     }
     
     @objc func handleNotification(for notification: NSNotification) {
-        if let booking = notification.userInfo?["booking"] as? Booking {
+        if let booking = notification.userInfo?["booking"] as? Booking,
+            booking.patient == User.current {
             
-            if booking.status == .canceled {
-                viewController?.removeCurrentDoctorLocation()
-                navigateToCallForm()
-            } else if booking.status == .accepted {
-                viewController?.moveToDoctorLocation(inBooking: booking)
+            if booking.status == .new {
+                navigateToWaitForAccept(withBooking: booking)
                 
+                // Save booking
+                viewController?.currentBooking = booking
+            } else if booking.status == .canceled {
+                navigateToCallForm()
+                
+                // Move camera back to center and remove current booking
+                viewController?.removeCurrentDoctorLocation()
+                viewController?.currentBooking = nil
+                
+                showAlert(message: "Visit canceled, please try another one.")
+            } else if booking.status == .accepted {
                 navigateToDoctorOnTheWay(for: booking)
+                
+                // Move camera to doctor location
+                viewController?.currentBooking = booking
+                viewController?.moveToDoctorLocation(inBooking: booking)
             } else if booking.status == .rejected {
                 navigateToCallForm()
+                
+                // Remove current booking
+                viewController?.currentBooking = nil
+                
+                showAlert(message: "Doctor rejected your visit request.")
+            } else if booking.status == .timeout {
+                navigateToCallForm()
+                
+                // Move camera back to center and remove current booking
+                viewController?.removeCurrentDoctorLocation()
+                viewController?.currentBooking = nil
+                
+                showAlert(message: "Doctor didn't accept visit within 15 minutes.")
             } else if booking.status == .arrived {
                 navigateToWaitForVisitEnd(withBooking: booking)
+                
+                // Save booking
+                viewController?.currentBooking = booking
             } else if booking.status == .ended {
                 // TODO: Navigate to transactions?
-                viewController?.removeCurrentDoctorLocation()
                 navigateToCallForm()
+                
+                // Move camera back to center and remove current booking
+                viewController?.removeCurrentDoctorLocation()
+                viewController?.currentBooking = nil
             }
             
         }

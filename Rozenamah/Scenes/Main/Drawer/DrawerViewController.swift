@@ -98,6 +98,14 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     // MARK: Event handling
     
     @IBAction func switchAccountType(_ sender: Any) {
+        // Check if there is no currently panding booking
+        if let _ = ((slideMenuController()?.mainViewController as? UINavigationController)?
+            .visibleViewController as? MainScreenViewController)?.currentBooking {
+            
+            router?.showAlert(message: "Sorry, you can't change account during pending booking")
+            return
+        }
+        
         if currentMode == .doctor {
             // Doctor may be available, stop his avability
             interactor?.stopReceivingRequests()
