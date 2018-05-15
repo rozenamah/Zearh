@@ -171,6 +171,20 @@
 		F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */; };
 		F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC75205BBBD600266753 /* RMGradientView.swift */; };
 		F940EC78205BEA4A00266753 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EC77205BEA4A00266753 /* User.swift */; };
+		F94CC62720A9CA4200B3C06E /* LocationAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62020A9CA4200B3C06E /* LocationAlertPresenter.swift */; };
+		F94CC62820A9CA4200B3C06E /* LocationAlertWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62120A9CA4200B3C06E /* LocationAlertWorker.swift */; };
+		F94CC62920A9CA4200B3C06E /* LocationAlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62220A9CA4200B3C06E /* LocationAlertRouter.swift */; };
+		F94CC62A20A9CA4200B3C06E /* LocationAlertModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62320A9CA4200B3C06E /* LocationAlertModels.swift */; };
+		F94CC62B20A9CA4200B3C06E /* LocationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62420A9CA4200B3C06E /* LocationAlertViewController.swift */; };
+		F94CC62C20A9CA4200B3C06E /* LocationAlertInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62520A9CA4200B3C06E /* LocationAlertInteractor.swift */; };
+		F94CC62D20A9CA4200B3C06E /* LocationAlertConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62620A9CA4200B3C06E /* LocationAlertConfigurator.swift */; };
+		F94CC63620A9CA5100B3C06E /* NotificationAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC62F20A9CA5100B3C06E /* NotificationAlertPresenter.swift */; };
+		F94CC63720A9CA5100B3C06E /* NotificationAlertWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC63020A9CA5100B3C06E /* NotificationAlertWorker.swift */; };
+		F94CC63820A9CA5100B3C06E /* NotificationAlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC63120A9CA5100B3C06E /* NotificationAlertRouter.swift */; };
+		F94CC63920A9CA5100B3C06E /* NotificationAlertModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC63220A9CA5100B3C06E /* NotificationAlertModels.swift */; };
+		F94CC63A20A9CA5100B3C06E /* NotificationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC63320A9CA5100B3C06E /* NotificationAlertViewController.swift */; };
+		F94CC63B20A9CA5100B3C06E /* NotificationAlertInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC63420A9CA5100B3C06E /* NotificationAlertInteractor.swift */; };
+		F94CC63C20A9CA5100B3C06E /* NotificationAlertConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94CC63520A9CA5100B3C06E /* NotificationAlertConfigurator.swift */; };
 		F95AFBEA206A3DA6007CCFB1 /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */; };
 		F95AFBEC206A4DBE007CCFB1 /* NameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */; };
 		F95AFBF8206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95AFBF1206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift */; };
@@ -422,6 +436,20 @@
 		F940EC6D205AEDD600266753 /* DrawerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfigurator.swift; sourceTree = "<group>"; };
 		F940EC75205BBBD600266753 /* RMGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGradientView.swift; sourceTree = "<group>"; };
 		F940EC77205BEA4A00266753 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F94CC62020A9CA4200B3C06E /* LocationAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertPresenter.swift; sourceTree = "<group>"; };
+		F94CC62120A9CA4200B3C06E /* LocationAlertWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertWorker.swift; sourceTree = "<group>"; };
+		F94CC62220A9CA4200B3C06E /* LocationAlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertRouter.swift; sourceTree = "<group>"; };
+		F94CC62320A9CA4200B3C06E /* LocationAlertModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertModels.swift; sourceTree = "<group>"; };
+		F94CC62420A9CA4200B3C06E /* LocationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertViewController.swift; sourceTree = "<group>"; };
+		F94CC62520A9CA4200B3C06E /* LocationAlertInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertInteractor.swift; sourceTree = "<group>"; };
+		F94CC62620A9CA4200B3C06E /* LocationAlertConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertConfigurator.swift; sourceTree = "<group>"; };
+		F94CC62F20A9CA5100B3C06E /* NotificationAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertPresenter.swift; sourceTree = "<group>"; };
+		F94CC63020A9CA5100B3C06E /* NotificationAlertWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertWorker.swift; sourceTree = "<group>"; };
+		F94CC63120A9CA5100B3C06E /* NotificationAlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertRouter.swift; sourceTree = "<group>"; };
+		F94CC63220A9CA5100B3C06E /* NotificationAlertModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertModels.swift; sourceTree = "<group>"; };
+		F94CC63320A9CA5100B3C06E /* NotificationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertViewController.swift; sourceTree = "<group>"; };
+		F94CC63420A9CA5100B3C06E /* NotificationAlertInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertInteractor.swift; sourceTree = "<group>"; };
+		F94CC63520A9CA5100B3C06E /* NotificationAlertConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertConfigurator.swift; sourceTree = "<group>"; };
 		F95AFBE9206A3DA6007CCFB1 /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
 		F95AFBEB206A4DBE007CCFB1 /* NameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidation.swift; sourceTree = "<group>"; };
 		F95AFBF1206A6CBC007CCFB1 /* CallDoctorFiltersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDoctorFiltersPresenter.swift; sourceTree = "<group>"; };
@@ -845,6 +873,46 @@
 			path = Drawer;
 			sourceTree = "<group>";
 		};
+		F94CC61D20A9CA0C00B3C06E /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F992D334206E3C0800DF0604 /* MainScreenViewController.swift */,
+				F992D345206E40E700DF0604 /* MainScreenInteractor.swift */,
+				F992D347206E418100DF0604 /* MainScreenPresenter.swift */,
+				F99A2EDE207F4614009505EB /* MainScreenRouter.swift */,
+				F9F10FC420A303B900E88987 /* MainScreenWorker.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		F94CC61E20A9CA1B00B3C06E /* LocationAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F94CC62020A9CA4200B3C06E /* LocationAlertPresenter.swift */,
+				F94CC62120A9CA4200B3C06E /* LocationAlertWorker.swift */,
+				F94CC62220A9CA4200B3C06E /* LocationAlertRouter.swift */,
+				F94CC62320A9CA4200B3C06E /* LocationAlertModels.swift */,
+				F94CC62420A9CA4200B3C06E /* LocationAlertViewController.swift */,
+				F94CC62520A9CA4200B3C06E /* LocationAlertInteractor.swift */,
+				F94CC62620A9CA4200B3C06E /* LocationAlertConfigurator.swift */,
+			);
+			path = LocationAlert;
+			sourceTree = "<group>";
+		};
+		F94CC61F20A9CA2D00B3C06E /* NotificationAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F94CC62F20A9CA5100B3C06E /* NotificationAlertPresenter.swift */,
+				F94CC63020A9CA5100B3C06E /* NotificationAlertWorker.swift */,
+				F94CC63120A9CA5100B3C06E /* NotificationAlertRouter.swift */,
+				F94CC63220A9CA5100B3C06E /* NotificationAlertModels.swift */,
+				F94CC63320A9CA5100B3C06E /* NotificationAlertViewController.swift */,
+				F94CC63420A9CA5100B3C06E /* NotificationAlertInteractor.swift */,
+				F94CC63520A9CA5100B3C06E /* NotificationAlertConfigurator.swift */,
+			);
+			path = NotificationAlert;
+			sourceTree = "<group>";
+		};
 		F95AFBF0206A6CAD007CCFB1 /* CallDoctorFilters */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,12 +1049,10 @@
 		F992D333206E3BF700DF0604 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F992D334206E3C0800DF0604 /* MainScreenViewController.swift */,
-				F992D345206E40E700DF0604 /* MainScreenInteractor.swift */,
-				F992D347206E418100DF0604 /* MainScreenPresenter.swift */,
-				F99A2EDE207F4614009505EB /* MainScreenRouter.swift */,
-				F9F10FC420A303B900E88987 /* MainScreenWorker.swift */,
 				570CC5282091CB51006B32AA /* ModalInformationViewController.swift */,
+				F94CC61F20A9CA2D00B3C06E /* NotificationAlert */,
+				F94CC61E20A9CA1B00B3C06E /* LocationAlert */,
+				F94CC61D20A9CA0C00B3C06E /* MainScreen */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1395,6 +1461,7 @@
 				578A6E7E207F659D00CB4E79 /* AcceptPatientInteractor.swift in Sources */,
 				F940EA542058147000266753 /* WelcomeViewController.swift in Sources */,
 				F940EC38205A5BC200266753 /* ForgotPasswordWorker.swift in Sources */,
+				F94CC62C20A9CA4200B3C06E /* LocationAlertInteractor.swift in Sources */,
 				F940EC5C205AB9EC00266753 /* SplashRouter.swift in Sources */,
 				F9CEDE61206521DA004ED0C7 /* EditProfilePresenter.swift in Sources */,
 				57369F25207E0CDE001666EB /* ChangePhoneNumberInteractor.swift in Sources */,
@@ -1431,6 +1498,7 @@
 				5710109D208F6315008B4384 /* DoctorOnTheWayConfigurator.swift in Sources */,
 				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
 				574FC577208493A4001E4059 /* PatientDetailsRouter.swift in Sources */,
+				F94CC63920A9CA5100B3C06E /* NotificationAlertModels.swift in Sources */,
 				573A3052207B65AA0040B438 /* TransactionHistoryPresenter.swift in Sources */,
 				F940EC39205A5BC200266753 /* ForgotPasswordRouter.swift in Sources */,
 				578A6E892080BD7800CB4E79 /* EndVisitWorker.swift in Sources */,
@@ -1444,6 +1512,7 @@
 				5710109A208F6315008B4384 /* DoctorOnTheWayModels.swift in Sources */,
 				F97B71F92062B5960073A968 /* CallDoctorViewController.swift in Sources */,
 				F992D348206E418100DF0604 /* MainScreenPresenter.swift in Sources */,
+				F94CC62920A9CA4200B3C06E /* LocationAlertRouter.swift in Sources */,
 				F95AFBFB206A6CBC007CCFB1 /* CallDoctorFiltersModels.swift in Sources */,
 				574FC575208493A4001E4059 /* PatientDetailsPresenter.swift in Sources */,
 				F940EC6E205AEDD600266753 /* DrawerPresenter.swift in Sources */,
@@ -1455,6 +1524,7 @@
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
 				F940EA502058147000266753 /* WelcomePresenter.swift in Sources */,
 				F940EC48205A9BFF00266753 /* MainPatientPresenter.swift in Sources */,
+				F94CC63620A9CA5100B3C06E /* NotificationAlertPresenter.swift in Sources */,
 				F99A2EC8207CBCC1009505EB /* WaitModels.swift in Sources */,
 				578A6E79207F659D00CB4E79 /* AcceptPatientPresenter.swift in Sources */,
 				57E659D52073AE60004E3926 /* ChangeEmailModels.swift in Sources */,
@@ -1468,6 +1538,7 @@
 				57369F23207E0CDE001666EB /* ChangePhoneNumberModels.swift in Sources */,
 				573A3063207B8A920040B438 /* RMButtonWithSeparator.swift in Sources */,
 				F940EC5D205AB9EC00266753 /* SplashModels.swift in Sources */,
+				F94CC62820A9CA4200B3C06E /* LocationAlertWorker.swift in Sources */,
 				F940EA522058147000266753 /* WelcomeRouter.swift in Sources */,
 				F9CEDE532063F139004ED0C7 /* ReportWorker.swift in Sources */,
 				57369F24207E0CDE001666EB /* ChangePhoneNumberViewController.swift in Sources */,
@@ -1478,6 +1549,7 @@
 				574FC5992084A89A001E4059 /* PaymentMethodConfigurator.swift in Sources */,
 				F940EC222059335E00266753 /* RegisterPatientWorker.swift in Sources */,
 				578A6E7C207F659D00CB4E79 /* AcceptPatientModels.swift in Sources */,
+				F94CC63C20A9CA5100B3C06E /* NotificationAlertConfigurator.swift in Sources */,
 				F99A2EDA207F37D2009505EB /* AcceptDoctorViewController.swift in Sources */,
 				F95AFBFD206A6CBC007CCFB1 /* CallDoctorFiltersInteractor.swift in Sources */,
 				574FC5972084A89A001E4059 /* PaymentMethodViewController.swift in Sources */,
@@ -1490,6 +1562,7 @@
 				F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */,
 				57BC87542090ADEE002147F8 /* DoctorOnTheWayInteractor.swift in Sources */,
 				F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */,
+				F94CC62D20A9CA4200B3C06E /* LocationAlertConfigurator.swift in Sources */,
 				F992D346206E40E700DF0604 /* MainScreenInteractor.swift in Sources */,
 				F992D340206E3D6D00DF0604 /* MainDoctorModels.swift in Sources */,
 				F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */,
@@ -1537,11 +1610,13 @@
 				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
 				573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
+				F94CC62B20A9CA4200B3C06E /* LocationAlertViewController.swift in Sources */,
 				578A6E882080BD7800CB4E79 /* EndVisitPresenter.swift in Sources */,
 				F95AFBFE206A6CBC007CCFB1 /* CallDoctorFiltersConfigurator.swift in Sources */,
 				F940EC71205AEDD600266753 /* DrawerModels.swift in Sources */,
 				573A3057207B65AA0040B438 /* TransactionHistoryInteractor.swift in Sources */,
 				578A6E8C2080BD7800CB4E79 /* EndVisitViewController.swift in Sources */,
+				F94CC62720A9CA4200B3C06E /* LocationAlertPresenter.swift in Sources */,
 				578A6E7F207F659D00CB4E79 /* AcceptPatientConfigurator.swift in Sources */,
 				F99A2ECA207CBCC1009505EB /* WaitInteractor.swift in Sources */,
 				F940EC76205BBBD600266753 /* RMGradientView.swift in Sources */,
@@ -1558,6 +1633,7 @@
 				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,
 				573A3056207B65AA0040B438 /* TransactionHistoryViewController.swift in Sources */,
+				F94CC63820A9CA5100B3C06E /* NotificationAlertRouter.swift in Sources */,
 				F940EC4A205A9BFF00266753 /* MainPatientRouter.swift in Sources */,
 				F940EA70205827AD00266753 /* EmailValidation.swift in Sources */,
 				57E659C320739EBC004E3926 /* ChangePasswordPresenter.swift in Sources */,
@@ -1568,6 +1644,7 @@
 				F9753777205FEA70003DC80E /* UIWindowExtension.swift in Sources */,
 				F940EC2B20595A1100266753 /* API.swift in Sources */,
 				578100F7207CBFE600F4A78B /* TransactionDetailRouter.swift in Sources */,
+				F94CC63720A9CA5100B3C06E /* NotificationAlertWorker.swift in Sources */,
 				578A6E7B207F659D00CB4E79 /* AcceptPatientRouter.swift in Sources */,
 				F9753770205FDADE003DC80E /* RegisterDoctorViewController.swift in Sources */,
 				F992D342206E3D6D00DF0604 /* MainDoctorInteractor.swift in Sources */,
@@ -1595,6 +1672,7 @@
 				F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */,
 				57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */,
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,
+				F94CC62A20A9CA4200B3C06E /* LocationAlertModels.swift in Sources */,
 				574FC58520849E1F001E4059 /* PaymentWorker.swift in Sources */,
 				F940EA66205817DF00266753 /* RMNavigationBar.swift in Sources */,
 				57E659C720739EBC004E3926 /* ChangePasswordViewController.swift in Sources */,
@@ -1604,9 +1682,11 @@
 				F95AFBFA206A6CBC007CCFB1 /* CallDoctorFiltersRouter.swift in Sources */,
 				F9CEDE65206521DA004ED0C7 /* EditProfileViewController.swift in Sources */,
 				F940EC29205937CD00266753 /* PhotoTakeRouter.swift in Sources */,
+				F94CC63A20A9CA5100B3C06E /* NotificationAlertViewController.swift in Sources */,
 				57E659C820739EBC004E3926 /* ChangePasswordInteractor.swift in Sources */,
 				574FC579208493A4001E4059 /* PatientDetailsViewController.swift in Sources */,
 				F975376C205FDADE003DC80E /* RegisterDoctorPresenter.swift in Sources */,
+				F94CC63B20A9CA5100B3C06E /* NotificationAlertInteractor.swift in Sources */,
 				F940EC3B205A5BC200266753 /* ForgotPasswordViewController.swift in Sources */,
 				57BC875020907B83002147F8 /* DoctorLocationViewController.swift in Sources */,
 				F9CA96AC205FCA5200CB4B68 /* Settings.swift in Sources */,

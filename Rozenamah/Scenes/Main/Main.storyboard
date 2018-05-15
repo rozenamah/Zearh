@@ -996,6 +996,170 @@
             </objects>
             <point key="canvasLocation" x="2156" y="268"/>
         </scene>
+        <!--Location Alert View Controller-->
+        <scene sceneID="xaQ-Nu-LZ6">
+            <objects>
+                <viewController storyboardIdentifier="location_alert_vc" id="hXF-Ua-a2n" customClass="LocationAlertViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qxe-9F-oIC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="363"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhe-2X-0AG" customClass="SCButton" customModule="SwiftCake">
+                                <rect key="frame" x="16" y="291" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="52" minY="9.5" maxX="52" maxY="9.5"/>
+                                <state key="normal" title="Go to Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="2We-EH-zog"/>
+                                    <action selector="cancelAction:" destination="hXF-Ua-a2n" eventType="touchUpInside" id="9wc-VU-rPH"/>
+                                    <action selector="settingsAction:" destination="hXF-Ua-a2n" eventType="touchUpInside" id="8fL-tN-bfc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-gs-EE1" userLabel="bottomSpace">
+                                <rect key="frame" x="0.0" y="361" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="xA3-ci-RxE"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" image="navigation" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-hX-XeD">
+                                <rect key="frame" x="159.5" y="12" width="55" height="68"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Location service is off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkN-E3-98r">
+                                <rect key="frame" x="16" y="112" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue using „Rozenamah” you need to turn on your location service" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-LJ-OeP">
+                                <rect key="frame" x="16" y="167.5" width="343" height="99.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mhe-2X-0AG" firstAttribute="top" secondItem="hE3-LJ-OeP" secondAttribute="bottom" constant="24" id="2R0-TK-51W"/>
+                            <constraint firstItem="bAX-z0-wVU" firstAttribute="trailing" secondItem="rkN-E3-98r" secondAttribute="trailing" constant="16" id="6AN-CX-dZo"/>
+                            <constraint firstItem="hE3-LJ-OeP" firstAttribute="top" secondItem="rkN-E3-98r" secondAttribute="bottom" constant="24" id="7pD-rb-8EH"/>
+                            <constraint firstAttribute="trailing" secondItem="Tib-gs-EE1" secondAttribute="trailing" id="BQe-Io-evv"/>
+                            <constraint firstItem="mhe-2X-0AG" firstAttribute="centerX" secondItem="Qxe-9F-oIC" secondAttribute="centerX" id="EJD-VL-Vfq"/>
+                            <constraint firstItem="hE3-LJ-OeP" firstAttribute="leading" secondItem="bAX-z0-wVU" secondAttribute="leading" constant="16" id="JQI-K6-EqS"/>
+                            <constraint firstItem="mhe-2X-0AG" firstAttribute="leading" secondItem="bAX-z0-wVU" secondAttribute="leading" constant="16" id="KAz-lL-ze6"/>
+                            <constraint firstItem="rkN-E3-98r" firstAttribute="leading" secondItem="bAX-z0-wVU" secondAttribute="leading" constant="16" id="KhK-9c-dhf"/>
+                            <constraint firstItem="bAX-z0-wVU" firstAttribute="bottom" secondItem="mhe-2X-0AG" secondAttribute="bottom" constant="32" id="Qty-h8-Y73"/>
+                            <constraint firstItem="bAX-z0-wVU" firstAttribute="trailing" secondItem="mhe-2X-0AG" secondAttribute="trailing" constant="16" id="aAL-TZ-q7I"/>
+                            <constraint firstItem="bAX-z0-wVU" firstAttribute="trailing" secondItem="hE3-LJ-OeP" secondAttribute="trailing" constant="16" id="dd8-s2-2GQ"/>
+                            <constraint firstItem="Tib-gs-EE1" firstAttribute="top" secondItem="mhe-2X-0AG" secondAttribute="bottom" constant="30" id="eMk-LG-Fqj"/>
+                            <constraint firstItem="S1y-hX-XeD" firstAttribute="centerX" secondItem="Qxe-9F-oIC" secondAttribute="centerX" id="fXb-Lk-Fzn"/>
+                            <constraint firstItem="S1y-hX-XeD" firstAttribute="top" secondItem="bAX-z0-wVU" secondAttribute="top" constant="12" id="hXr-53-ivH"/>
+                            <constraint firstItem="Tib-gs-EE1" firstAttribute="leading" secondItem="Qxe-9F-oIC" secondAttribute="leading" id="jSf-gr-Dgi"/>
+                            <constraint firstItem="rkN-E3-98r" firstAttribute="top" secondItem="S1y-hX-XeD" secondAttribute="bottom" constant="32" id="k7D-eh-4mI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bAX-z0-wVU"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="363"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="mhe-2X-0AG" id="eKC-bE-eoK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzy-yy-igY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="-116"/>
+        </scene>
+        <!--Notification Alert View Controller-->
+        <scene sceneID="6Pi-vm-ZzP">
+            <objects>
+                <viewController storyboardIdentifier="notification_alert_vc" id="CC1-nK-Spd" customClass="NotificationAlertViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="va8-9S-156">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="363"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9H-Kp-StM" customClass="SCButton" customModule="SwiftCake">
+                                <rect key="frame" x="16" y="291" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="52" minY="9.5" maxX="52" maxY="9.5"/>
+                                <state key="normal" title="Go to Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelAction:" destination="CC1-nK-Spd" eventType="touchUpInside" id="Fqr-e9-Ekf"/>
+                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="GNQ-vU-UX7"/>
+                                    <action selector="settingsAction:" destination="CC1-nK-Spd" eventType="touchUpInside" id="4Vt-uS-GGf"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYL-St-Abx" userLabel="bottomSpace">
+                                <rect key="frame" x="0.0" y="361" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="pKK-q1-wCV"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" image="notification" translatesAutoresizingMaskIntoConstraints="NO" id="boy-6V-RAy">
+                                <rect key="frame" x="159.5" y="12" width="55" height="68"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Turn on notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTh-Yj-nYZ">
+                                <rect key="frame" x="16" y="112" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue using „Rozenamah” you need to allow application to send notifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-YC-zT4">
+                                <rect key="frame" x="16" y="167.5" width="343" height="99.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="boy-6V-RAy" firstAttribute="top" secondItem="01t-uH-mXv" secondAttribute="top" constant="12" id="2Db-IG-my3"/>
+                            <constraint firstItem="01t-uH-mXv" firstAttribute="bottom" secondItem="j9H-Kp-StM" secondAttribute="bottom" constant="32" id="9rp-je-0Xp"/>
+                            <constraint firstItem="01t-uH-mXv" firstAttribute="trailing" secondItem="j9H-Kp-StM" secondAttribute="trailing" constant="16" id="Dx1-68-MK8"/>
+                            <constraint firstItem="OYL-St-Abx" firstAttribute="top" secondItem="j9H-Kp-StM" secondAttribute="bottom" constant="30" id="HgF-bB-yAG"/>
+                            <constraint firstItem="j9H-Kp-StM" firstAttribute="leading" secondItem="01t-uH-mXv" secondAttribute="leading" constant="16" id="QcX-9L-KbP"/>
+                            <constraint firstItem="01t-uH-mXv" firstAttribute="trailing" secondItem="dhv-YC-zT4" secondAttribute="trailing" constant="16" id="SY6-IW-o74"/>
+                            <constraint firstItem="MTh-Yj-nYZ" firstAttribute="top" secondItem="boy-6V-RAy" secondAttribute="bottom" constant="32" id="T1q-ij-5ta"/>
+                            <constraint firstItem="01t-uH-mXv" firstAttribute="trailing" secondItem="MTh-Yj-nYZ" secondAttribute="trailing" constant="16" id="WMN-2x-h57"/>
+                            <constraint firstItem="dhv-YC-zT4" firstAttribute="top" secondItem="MTh-Yj-nYZ" secondAttribute="bottom" constant="24" id="Wpq-9P-nSq"/>
+                            <constraint firstItem="MTh-Yj-nYZ" firstAttribute="leading" secondItem="01t-uH-mXv" secondAttribute="leading" constant="16" id="ZyF-Px-JB1"/>
+                            <constraint firstAttribute="trailing" secondItem="OYL-St-Abx" secondAttribute="trailing" id="elm-pN-cNI"/>
+                            <constraint firstItem="OYL-St-Abx" firstAttribute="leading" secondItem="va8-9S-156" secondAttribute="leading" id="huE-Xu-39V"/>
+                            <constraint firstItem="dhv-YC-zT4" firstAttribute="leading" secondItem="01t-uH-mXv" secondAttribute="leading" constant="16" id="jp8-SN-WhJ"/>
+                            <constraint firstItem="j9H-Kp-StM" firstAttribute="centerX" secondItem="va8-9S-156" secondAttribute="centerX" id="jti-wd-y16"/>
+                            <constraint firstItem="j9H-Kp-StM" firstAttribute="top" secondItem="dhv-YC-zT4" secondAttribute="bottom" constant="24" id="kEk-dt-eRJ"/>
+                            <constraint firstItem="boy-6V-RAy" firstAttribute="centerX" secondItem="va8-9S-156" secondAttribute="centerX" id="rbk-6R-IWT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="01t-uH-mXv"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="363"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="j9H-Kp-StM" id="JuY-xf-1El"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rXe-Fh-twR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="-563"/>
+        </scene>
         <!--End visit-->
         <scene sceneID="dgv-Xc-VBF">
             <objects>
@@ -3449,6 +3613,8 @@
         <image name="locate_me" width="43" height="43"/>
         <image name="map" width="19" height="19"/>
         <image name="menu" width="24" height="17"/>
+        <image name="navigation" width="55" height="68"/>
+        <image name="notification" width="55" height="68"/>
         <image name="phone_icon" width="19" height="19"/>
         <image name="placeholder_big" width="99" height="100"/>
         <image name="radio_empty_btn" width="18" height="18"/>

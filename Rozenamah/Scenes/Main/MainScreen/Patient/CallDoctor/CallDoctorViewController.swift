@@ -4,6 +4,7 @@ import SwiftCake
 protocol CallDoctorDisplayLogic: ClassificationDelegate, CallDoctorFiltersDelegate {
     func handle(error: Error)
     func handle(error: Error, inField field: CallDoctorViewController.Field)
+    func patientHasNoLocation()
 }
 
 class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
@@ -201,6 +202,10 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
         
         specializationButton.setTitle(specialization.title, for: .selected)
         specializationButton.isSelected = true
+    }
+    
+    func patientHasNoLocation() {
+        flowDelegate?.changeStateTo(flowPoint: .noLocation)
     }
     
     func handle(error: Error) {

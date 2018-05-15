@@ -51,6 +51,8 @@ class CallDoctorPresenter: CallDoctorPresentationLogic {
             viewController?.handle(error: error, inField: .classification)
         case .specializationMissing:
             viewController?.handle(error: error, inField: .specialization)
+        case .noLocation:
+            viewController?.patientHasNoLocation()
         default:
             viewController?.handle(error: error)
         }

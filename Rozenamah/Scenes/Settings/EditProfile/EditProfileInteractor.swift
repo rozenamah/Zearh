@@ -97,7 +97,7 @@ class EditProfileInteractor: EditProfileBusinessLogic {
         }
         
         // Price verification
-        if doctor.price == nil || doctor.price! > 10000000 {
+        if doctor.price == nil || doctor.price! > 1000000 {
             
             allFieldsValid = false
             presenter?.presentError(.priceMissing)

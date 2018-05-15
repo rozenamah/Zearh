@@ -33,7 +33,7 @@ class ModalInformationViewController: UIViewController {
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
         distanceButton?.setTitle("\(visitInfo.distanceInKM) km from you", for: .normal)
         
-        // Without this phone number will rever title to previous one (it is a bug but source is uknown)
+        // Without this phone number will revet title to previous one (it is a bug but source is uknown)
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .highlighted)
         distanceButton?.setTitle("\(visitInfo.distanceInKM) km from you", for: .highlighted)
         

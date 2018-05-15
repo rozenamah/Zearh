@@ -102,6 +102,8 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             router?.closeContainer()
         case .doctorLocation(let location):
             presentUser(in: location)
+        case .noLocation:
+            router?.navigateToNoLocation()
         }
     }
     

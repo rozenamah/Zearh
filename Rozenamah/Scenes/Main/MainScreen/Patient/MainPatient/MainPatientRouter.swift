@@ -218,4 +218,17 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
             self.openContainer()
         }
     }
+    
+    func navigateToNoLocation() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            
+            self.add(asChildViewController: self.locationVC)
+            self.viewController?.containerHeightConstraint.constant = 363
+            
+            self.openContainer()
+        }
+    }
 }

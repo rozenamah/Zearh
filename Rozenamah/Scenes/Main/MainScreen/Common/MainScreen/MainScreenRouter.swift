@@ -16,6 +16,16 @@ class MainScreenRouter: NSObject {
     // Handling of view controllers state
     private var currentViewController: UIViewController!
     
+    lazy var locationVC: LocationAlertViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "location_alert_vc") as! LocationAlertViewController
+        return vc
+    }()
+    
+    lazy var notificationVC: NotificationAlertViewController = {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "notification_alert_vc") as! NotificationAlertViewController
+        return vc
+    }()
+    
     func animateCloseContainer(completion: @escaping (()->Void)) {
         if let animateConstraint = baseViewController?.containerBottomConstraint,
             let containerHeightConstraint = baseViewController?.containerHeightConstraint {
