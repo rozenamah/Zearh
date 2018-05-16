@@ -5,6 +5,7 @@ import UserNotifications
 
 protocol MainPatientBusinessLogic: MainScreenBusinessLogic {
     var currentLocation: CLLocation? { get }
+    func checkIfPermissionsEnabled(completion: @escaping ((Bool)->()))
 }
 
 class MainPatientInteractor: MainScreenInteractor, MainPatientBusinessLogic {
@@ -20,6 +21,30 @@ class MainPatientInteractor: MainScreenInteractor, MainPatientBusinessLogic {
     }
 
 	// MARK: Business logic
+    
+    func checkIfPermissionsEnabled(completion: @escaping ((Bool)->())) {
+        
+        // Verify if there is any user location
+        let locationManager = CLLocationManager()
+        guard let _ = locationManager.location else {
+            presenter?.presentError(.noLocation)
+            completion(false)
+            return
+        }
+        
+        // Check permission of push notification
+        checkIfNotificationEnabled { [weak self] (enabled) in
+            guard enabled else {
+                completion(false)
+                self?.presenter?.presentError(.noPushPermission)
+                return
+            }
+            
+            completion(true)
+            
+        }
+        
+    }
     
     override func firstLocationFetched() {
         // Location fetched, load nearby doctors on map

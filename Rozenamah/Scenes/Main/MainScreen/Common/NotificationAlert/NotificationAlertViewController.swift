@@ -37,5 +37,9 @@ class NotificationAlertViewController: UIViewController, NotificationAlertDispla
 
     // MARK: Event handling
 
+    @IBAction func settingsAction(_ sender: Any) {
+        router?.navigateToSettings()
+    }
+    
     // MARK: Presenter methods
 }

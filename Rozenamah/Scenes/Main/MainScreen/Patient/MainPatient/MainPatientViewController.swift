@@ -8,6 +8,8 @@ protocol PatientFlowDelegate: class {
 
 protocol MainPatientDisplayLogic: MainScreenDisplayLogic, PatientFlowDelegate {
     func displayMarkersWithNearbyDoctors(_ markers: [GMSMarker])
+    func patientHasNoLocation()
+    func patientHasNoPushPermission()
 }
 
 class MainPatientViewController: MainScreenViewController, MainPatientDisplayLogic {
@@ -81,13 +83,20 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
         case .callDoctor:
             router?.navigateToCallForm()
         case .searchWith(let filters):
-            // Attach location to filters - if no filters, display error
-            if let location = interactor?.currentLocation {
-                filters.location = location
-                router?.navigateToSearchScreen(withFilters: filters)
-            } else {
-                // TODO: No location! display error
-            }
+            
+            interactor?.checkIfPermissionsEnabled(completion: { [weak self] (verified) in
+                
+                if !verified {
+                    return
+                }
+                
+                // Attach location to filters - if no filters, display error
+                if let location = self?.interactor?.currentLocation {
+                    filters.location = location
+                    self?.router?.navigateToSearchScreen(withFilters: filters)
+                }
+            })
+            
         case .accept(let doctor, let filters):
             router?.navigateToAcceptDoctor(withDoctor: doctor, byFilters: filters)
         case .waitForAccept(booking: let booking):
@@ -104,6 +113,8 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             presentUser(in: location)
         case .noLocation:
             router?.navigateToNoLocation()
+        case .noPushPermission:
+            router?.navigateToNoPushPermission()
         }
     }
     
@@ -141,5 +152,13 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
             markers.forEach { $0.map = mapView }
         }
         nearbyDoctorsMarkers = markers
+    }
+    
+    func patientHasNoLocation() {
+        changeStateTo(flowPoint: .noLocation)
+    }
+    
+    func patientHasNoPushPermission() {
+        changeStateTo(flowPoint: .noPushPermission)
     }
 }

@@ -26,6 +26,32 @@ class MainScreenRouter: NSObject {
         return vc
     }()
     
+    func navigateToNoLocation() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            
+            self.add(asChildViewController: self.locationVC)
+            self.baseViewController?.containerHeightConstraint.constant = 363
+            
+            self.openContainer()
+        }
+    }
+    
+    func navigateToNoPushPermission() {
+        animateCloseContainer { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            
+            self.add(asChildViewController: self.notificationVC)
+            self.baseViewController?.containerHeightConstraint.constant = 363
+            
+            self.openContainer()
+        }
+    }
+    
     func animateCloseContainer(completion: @escaping (()->Void)) {
         if let animateConstraint = baseViewController?.containerBottomConstraint,
             let containerHeightConstraint = baseViewController?.containerHeightConstraint {
@@ -57,6 +83,9 @@ class MainScreenRouter: NSObject {
     
     // MARK: Passing data
     
+    func openContainer(completion: (()->Void)? = nil) {
+        animateOpenContainer(completion: completion)
+    }
     
     func add(asChildViewController childViewController: UIViewController) {
         

@@ -1,6 +1,7 @@
 import UIKit
 import CoreLocation
 import Alamofire
+import UserNotifications
 
 protocol MainDoctorBusinessLogic: MainScreenBusinessLogic {
     func stopReceivingRequests()
@@ -38,21 +39,32 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
         guard let location = locationManager.location else {
             clearUserLocation()
             
-            // TODO: No location, show error
+            presenter?.presentError(.noLocation)
             return
         }
         
-        worker.updateAvabilityTo(true) { [weak self] (error) in
-            if let error = error {
-                self?.presenter?.handleError(error)
+        // Check permission of push notification
+        checkIfNotificationEnabled { [weak self] (enabled) in
+            guard enabled else {
+                self?.presenter?.presentError(.noPushPermission)
                 return
             }
-            self?.presenter?.avabilityUpdatedTo(true)
             
-            // Send doctor location immidiatly
-            self?.updateUserLocation(location)
+            self?.worker.updateAvabilityTo(true) { [weak self] (error) in
+                if let error = error {
+                    self?.presenter?.handleError(error)
+                    return
+                }
+                self?.presenter?.avabilityUpdatedTo(true)
+                
+                // Send doctor location immidiatly
+                self?.updateUserLocation(location)
+                
+            }
         }
+        
     }
+    
     
     func stopReceivingRequests() {
         worker.updateAvabilityTo(false) { [weak self] (error) in

@@ -7,6 +7,8 @@ protocol MainDoctorDisplayLogic: MainScreenDisplayLogic {
     func handle(error: Error)
     func markAsWaitingForRequests()
     func markAsRejectingRequests()
+    func doctorHasNoLocation()
+    func doctorHasNoPushPermission()
 }
 
 protocol DoctortFlowDelegate: class {
@@ -79,12 +81,12 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     }
     
     @IBAction func receiveRequestAction(_ sender: UIButton) {
+        sender.isUserInteractionEnabled = false
         if sender.isSelected {
             interactor?.stopReceivingRequests()
         } else {
             interactor?.startReceivingRequests()
         }
-        sender.isUserInteractionEnabled = false
     }
     
     @IBAction func locateMeAction(_ sender: Any) {
@@ -114,6 +116,10 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
             removePresentedUser()
             interactor?.returnToUserLocation()
             currentBooking = nil
+        case .noLocation:
+            router?.navigateToNoLocation()
+        case .noPushPermission:
+            router?.navigateToNoPushPermission()
         }
     }
 
@@ -149,6 +155,16 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         
         // Change background depending on state
         requestsReceiveButton.backgroundColor = !requestsReceiveButton.isSelected ? .rmBlue : .white
+    }
+    
+    func doctorHasNoLocation() {
+        requestsReceiveButton.isUserInteractionEnabled = true
+        changeStateTo(flowPoint: .noLocation)
+    }
+    
+    func doctorHasNoPushPermission() {
+        requestsReceiveButton.isUserInteractionEnabled = true
+        changeStateTo(flowPoint: .noPushPermission)
     }
     
     func handle(error: Error) {

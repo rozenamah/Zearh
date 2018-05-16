@@ -955,7 +955,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="RUT-pw-fvX"/>
                                     <action selector="cancelAction:" destination="zln-Li-pml" eventType="touchUpInside" id="mUS-Kv-G7f"/>
                                 </connections>
                             </button>
@@ -1020,8 +1019,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="2We-EH-zog"/>
-                                    <action selector="cancelAction:" destination="hXF-Ua-a2n" eventType="touchUpInside" id="9wc-VU-rPH"/>
                                     <action selector="settingsAction:" destination="hXF-Ua-a2n" eventType="touchUpInside" id="8fL-tN-bfc"/>
                                 </connections>
                             </button>
@@ -1033,16 +1030,16 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" image="navigation" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-hX-XeD">
-                                <rect key="frame" x="159.5" y="12" width="55" height="68"/>
+                                <rect key="frame" x="159.5" y="32" width="55" height="68"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Location service is off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkN-E3-98r">
-                                <rect key="frame" x="16" y="112" width="343" height="31.5"/>
+                                <rect key="frame" x="16" y="132" width="343" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue using „Rozenamah” you need to turn on your location service" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-LJ-OeP">
-                                <rect key="frame" x="16" y="167.5" width="343" height="99.5"/>
+                                <rect key="frame" x="16" y="187.5" width="343" height="79.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1063,16 +1060,13 @@
                             <constraint firstItem="bAX-z0-wVU" firstAttribute="trailing" secondItem="hE3-LJ-OeP" secondAttribute="trailing" constant="16" id="dd8-s2-2GQ"/>
                             <constraint firstItem="Tib-gs-EE1" firstAttribute="top" secondItem="mhe-2X-0AG" secondAttribute="bottom" constant="30" id="eMk-LG-Fqj"/>
                             <constraint firstItem="S1y-hX-XeD" firstAttribute="centerX" secondItem="Qxe-9F-oIC" secondAttribute="centerX" id="fXb-Lk-Fzn"/>
-                            <constraint firstItem="S1y-hX-XeD" firstAttribute="top" secondItem="bAX-z0-wVU" secondAttribute="top" constant="12" id="hXr-53-ivH"/>
+                            <constraint firstItem="S1y-hX-XeD" firstAttribute="top" secondItem="bAX-z0-wVU" secondAttribute="top" constant="32" id="hXr-53-ivH"/>
                             <constraint firstItem="Tib-gs-EE1" firstAttribute="leading" secondItem="Qxe-9F-oIC" secondAttribute="leading" id="jSf-gr-Dgi"/>
                             <constraint firstItem="rkN-E3-98r" firstAttribute="top" secondItem="S1y-hX-XeD" secondAttribute="bottom" constant="32" id="k7D-eh-4mI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bAX-z0-wVU"/>
                     </view>
                     <size key="freeformSize" width="375" height="363"/>
-                    <connections>
-                        <outlet property="cancelButton" destination="mhe-2X-0AG" id="eKC-bE-eoK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzy-yy-igY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1102,8 +1096,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="cancelAction:" destination="CC1-nK-Spd" eventType="touchUpInside" id="Fqr-e9-Ekf"/>
-                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="GNQ-vU-UX7"/>
                                     <action selector="settingsAction:" destination="CC1-nK-Spd" eventType="touchUpInside" id="4Vt-uS-GGf"/>
                                 </connections>
                             </button>
@@ -1115,16 +1107,16 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" image="notification" translatesAutoresizingMaskIntoConstraints="NO" id="boy-6V-RAy">
-                                <rect key="frame" x="159.5" y="12" width="55" height="68"/>
+                                <rect key="frame" x="159.5" y="32" width="55" height="68"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Turn on notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTh-Yj-nYZ">
-                                <rect key="frame" x="16" y="112" width="343" height="31.5"/>
+                                <rect key="frame" x="16" y="132" width="343" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue using „Rozenamah” you need to allow application to send notifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-YC-zT4">
-                                <rect key="frame" x="16" y="167.5" width="343" height="99.5"/>
+                                <rect key="frame" x="16" y="187.5" width="343" height="79.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1132,7 +1124,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="boy-6V-RAy" firstAttribute="top" secondItem="01t-uH-mXv" secondAttribute="top" constant="12" id="2Db-IG-my3"/>
+                            <constraint firstItem="boy-6V-RAy" firstAttribute="top" secondItem="01t-uH-mXv" secondAttribute="top" constant="32" id="2Db-IG-my3"/>
                             <constraint firstItem="01t-uH-mXv" firstAttribute="bottom" secondItem="j9H-Kp-StM" secondAttribute="bottom" constant="32" id="9rp-je-0Xp"/>
                             <constraint firstItem="01t-uH-mXv" firstAttribute="trailing" secondItem="j9H-Kp-StM" secondAttribute="trailing" constant="16" id="Dx1-68-MK8"/>
                             <constraint firstItem="OYL-St-Abx" firstAttribute="top" secondItem="j9H-Kp-StM" secondAttribute="bottom" constant="30" id="HgF-bB-yAG"/>
@@ -1152,9 +1144,6 @@
                         <viewLayoutGuide key="safeArea" id="01t-uH-mXv"/>
                     </view>
                     <size key="freeformSize" width="375" height="363"/>
-                    <connections>
-                        <outlet property="cancelButton" destination="j9H-Kp-StM" id="JuY-xf-1El"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXe-Fh-twR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1452,9 +1441,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="acceptAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="OuD-LW-OvE"/>
                                                     <action selector="endVisitAction:" destination="2eK-9M-0bq" eventType="touchUpInside" id="UIX-KL-YZL"/>
-                                                    <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="ech-ZO-N6O"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1799,7 +1786,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="acceptAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="XvD-VG-I9Q"/>
-                                                    <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="MaA-VV-TrR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-DK-9M3" customClass="SCButton" customModule="SwiftCake">
@@ -1823,8 +1809,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="cancelAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="gYC-rY-e9P"/>
-                                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="qee-5G-uh9"/>
+                                                    <action selector="cancelAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="swA-De-hPj"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="+ fee for cancellation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O36-K5-5eB">
@@ -2463,7 +2448,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="acceptAction:" destination="eVu-zC-hxr" eventType="touchUpInside" id="III-Ll-Qg7"/>
-                                                    <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="Xxx-fg-z1O"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFT-NJ-dqB" customClass="SCButton" customModule="SwiftCake">
@@ -2488,7 +2472,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelAction:" destination="eVu-zC-hxr" eventType="touchUpInside" id="5dG-z9-Vb5"/>
-                                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="znh-u6-a3t"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm in 15 minutes to accept visit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-Sk-jBd">
@@ -2984,13 +2967,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you choose to pay by card you will need to pay in 10 minutes after doctor accepts your visit request" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-Cb-Ayi">
-                                <rect key="frame" x="16" y="88" width="343" height="64.5"/>
+                                <rect key="frame" x="16" y="88" width="343" height="61"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-SJ-Oak" userLabel="price">
-                                <rect key="frame" x="16" y="183.5" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="180" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Price for visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y3-ip-0Pd">
                                         <rect key="frame" x="0.0" y="0.0" width="99.5" height="20.5"/>
@@ -3026,7 +3009,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOy-st-azY" userLabel="total">
-                                <rect key="frame" x="16" y="288.5" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="285" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0B-xv-Vz9">
                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="20.5"/>
@@ -3062,7 +3045,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-Rg-E2k" userLabel="fee">
-                                <rect key="frame" x="16" y="236" width="343" height="28.5"/>
+                                <rect key="frame" x="16" y="232.5" width="343" height="28.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-Za-kNT">
                                         <rect key="frame" x="0.0" y="0.0" width="28" height="20.5"/>
@@ -3098,7 +3081,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajy-uB-Khx" customClass="SCButton" customModule="SwiftCake">
-                                <rect key="frame" x="16" y="436.5" width="343" height="39"/>
+                                <rect key="frame" x="16" y="433" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="9"/>
@@ -3116,13 +3099,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose your payment method" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-gb-bXj">
-                                <rect key="frame" x="16" y="341" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="337.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-xu-nmC">
-                                <rect key="frame" x="16" y="379.5" width="93" height="33"/>
+                                <rect key="frame" x="16" y="376" width="93" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -3139,7 +3122,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-vf-dDF">
-                                <rect key="frame" x="134" y="379.5" width="95" height="33"/>
+                                <rect key="frame" x="134" y="376" width="95" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="6" maxX="0.0" maxY="6"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -3296,7 +3279,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="arrivedAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="pRc-P1-Rub"/>
-                                                    <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="hry-B8-dqZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hb-A7-nam" customClass="SCButton" customModule="SwiftCake">
@@ -3320,7 +3302,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="coA-xx-UPI"/>
                                                     <action selector="cancelAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="vRl-g1-s0g"/>
                                                 </connections>
                                             </button>
@@ -3525,7 +3506,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="4jJ-YM-Uky"/>
                                                     <action selector="cancelAction:" destination="KL2-lx-jWM" eventType="touchUpInside" id="p2Q-ba-W8P"/>
                                                 </connections>
                                             </button>

@@ -12,6 +12,10 @@ class NotificationAlertRouter: Router {
 
     // MARK: Navigation
 
+    func navigateToSettings() {
+        UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+    }
+
     // MARK: Passing data
 
 }

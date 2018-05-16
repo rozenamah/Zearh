@@ -165,14 +165,11 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
         
     }
     
+    
     /// Adds patient form at app start
     func configureFirstScreen() {
         add(asChildViewController: patientFormVC )
         viewController?.containerHeightConstraint.constant = 370
-    }
-    
-    func openContainer(completion: (() -> Void)? = nil) {
-        animateOpenContainer(completion: completion)
     }
 
     func navigateToCancel() {

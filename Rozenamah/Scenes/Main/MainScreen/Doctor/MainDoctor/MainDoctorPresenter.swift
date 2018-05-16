@@ -2,6 +2,7 @@ import UIKit
 
 protocol MainDoctorPresentationLogic: MainScreenPresentationLogic {
     func handleError(_ error: RMError)
+    func presentError(_ error: MainScreenPresenter.MainScreenError)
     func avabilityUpdatedTo(_ newAvaibility: Bool)
 }
 
@@ -11,6 +12,7 @@ class MainDoctorPresenter: MainScreenPresenter, MainDoctorPresentationLogic {
         return viewController
     }
 
+    
 	// MARK: Presentation logic
 	
     func handleError(_ error: RMError) {
@@ -23,5 +25,17 @@ class MainDoctorPresenter: MainScreenPresenter, MainDoctorPresentationLogic {
         } else {
             viewController?.markAsRejectingRequests()
         }
+    }
+    
+    func presentError(_ error: MainScreenPresenter.MainScreenError) {
+        switch error {
+        case .noPushPermission:
+            viewController?.doctorHasNoPushPermission()
+        case .noLocation:
+            viewController?.doctorHasNoLocation()
+        default:
+            viewController?.handle(error: error)
+        }
+            
     }
 }

@@ -16,6 +16,26 @@ protocol MainScreenPresentationLogic {
 
 class MainScreenPresenter: MainScreenPresentationLogic {
     
+    enum MainScreenError: LocalizedError {
+        case noLocation
+        case noPushPermission
+        case unknown(Error?)
+        
+        var errorDescription: String? {
+            switch self {
+            case .noPushPermission:
+                return "You have to enable push notifications"
+            case .noLocation:
+                return "We are unable to determine your location"
+            case .unknown(let error):
+                if let error = error {
+                    return error.localizedDescription
+                }
+                return "Unknown error"
+            }
+        }
+    }
+    
     /// Subclass will override this to provide view controllre which can perform general
     /// main screen action like moving map camera
     var baseViewController: MainScreenDisplayLogic? {

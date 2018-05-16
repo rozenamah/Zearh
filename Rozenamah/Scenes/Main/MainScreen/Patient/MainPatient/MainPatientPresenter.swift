@@ -4,6 +4,7 @@ import GoogleMaps
 
 protocol MainPatientPresentationLogic: MainScreenPresentationLogic {
     func presentDoctorLocations(_ locations: [CLLocationCoordinate2D])
+    func presentError(_ error: MainScreenPresenter.MainScreenError)
 }
 
 class MainPatientPresenter: MainScreenPresenter, MainPatientPresentationLogic {
@@ -23,6 +24,19 @@ class MainPatientPresenter: MainScreenPresenter, MainPatientPresentationLogic {
         }
         
         viewController?.displayMarkersWithNearbyDoctors(markers)
+        
+    }
+    
+    func presentError(_ error: MainScreenPresenter.MainScreenError) {
+        switch error {
+        case .noPushPermission:
+            viewController?.patientHasNoPushPermission()
+        case .noLocation:
+            viewController?.patientHasNoLocation()
+        default:
+            break
+//            viewController?.handle(error: error)
+        }
         
     }
 }

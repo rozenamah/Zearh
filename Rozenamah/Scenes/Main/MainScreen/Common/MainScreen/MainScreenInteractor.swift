@@ -62,6 +62,19 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
         }
     }
     
+    func checkIfNotificationEnabled(completion: @escaping ((Bool)->())) {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            DispatchQueue.main.async {
+                guard settings.authorizationStatus == .authorized else {
+                    completion(false)
+                    return
+                }
+                
+                completion(true)
+            }
+        }
+    }
+    
     func returnToUserLocation() {
         if let myLocation = locationManager.location {
             basePresenter?.moveCameraToPosition(location: myLocation, withAnimation: true)

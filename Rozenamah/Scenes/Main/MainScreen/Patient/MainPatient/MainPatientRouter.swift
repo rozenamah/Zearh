@@ -129,10 +129,6 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
         viewController?.containerHeightConstraint.constant = 433
     }
     
-    func openContainer(completion: (()->Void)? = nil) {
-        animateOpenContainer(completion: completion)
-    }
-    
     func closeContainer() {
         animateCloseContainer {
             // Do nothing
@@ -214,19 +210,6 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
             self.add(asChildViewController: self.waitVC)
             self.viewController?.containerHeightConstraint.constant = 162
             self.waitVC.state = .waitForVisitEnd(booking: booking) // Pass current booking
-            
-            self.openContainer()
-        }
-    }
-    
-    func navigateToNoLocation() {
-        animateCloseContainer { [weak self] in
-            guard let `self` = self else {
-                return
-            }
-            
-            self.add(asChildViewController: self.locationVC)
-            self.viewController?.containerHeightConstraint.constant = 363
             
             self.openContainer()
         }

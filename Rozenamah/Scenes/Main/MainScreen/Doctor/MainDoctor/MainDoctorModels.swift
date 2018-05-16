@@ -5,4 +5,6 @@ enum DoctorFlow {
     case cancel
     case arrived(booking: Booking)
     case ended
+    case noLocation
+    case noPushPermission
 }

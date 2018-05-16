@@ -9,6 +9,7 @@ enum PatientFlow {
     case waitForAccept(booking: Booking)
     case doctorLocation(location: CLLocation)
     case noLocation
+    case noPushPermission
 }
 
 struct Location: Decodable {

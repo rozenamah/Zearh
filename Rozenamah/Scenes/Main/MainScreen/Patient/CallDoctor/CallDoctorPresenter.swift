@@ -13,7 +13,6 @@ class CallDoctorPresenter: CallDoctorPresentationLogic {
     enum CallDoctorError: LocalizedError {
         case professionMissing
         case specializationMissing
-        case noLocation
         case unknown(Error?)
         
         var errorDescription: String? {
@@ -22,8 +21,6 @@ class CallDoctorPresenter: CallDoctorPresentationLogic {
                 return "You need to choose your classification"
             case .specializationMissing:
                 return "You need to choose your specialization"
-            case .noLocation:
-                return "We are unable to determine your location"
             case .unknown(let error):
                 if let error = error {
                     return error.localizedDescription
@@ -51,8 +48,6 @@ class CallDoctorPresenter: CallDoctorPresentationLogic {
             viewController?.handle(error: error, inField: .classification)
         case .specializationMissing:
             viewController?.handle(error: error, inField: .specialization)
-        case .noLocation:
-            viewController?.patientHasNoLocation()
         default:
             viewController?.handle(error: error)
         }
