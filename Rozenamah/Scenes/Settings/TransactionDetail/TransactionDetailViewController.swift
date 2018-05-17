@@ -1,22 +1,21 @@
 import UIKit
+import GoogleMaps
 
 protocol TransactionDetailDisplayLogic: class {
 }
 
-class TransactionDetailViewController: UIViewController, TransactionDetailDisplayLogic {
+class TransactionDetailViewController: BasicModalInformationViewController, TransactionDetailDisplayLogic {
 
     // MARK: Outlets
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var specialistLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var rightAddressConstraint: NSLayoutConstraint!
     @IBOutlet weak var methodTypeLabel: UILabel!
     @IBOutlet weak var arrivalTimeLabel: UILabel!
     @IBOutlet weak var leaveTimeLabel: UILabel!
     @IBOutlet weak var rightDateConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var calendarImage: UIImageView!
     
@@ -25,8 +24,11 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     var router: TransactionDetailRouter?
     
     /// Visit which will be displayed in this screen
-    var transactionDetail: Booking!
+    var booking: Booking!
 
+    /// By this value we know if we should display doctor or patient
+    var currentMode: UserType!
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -49,7 +51,8 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     // MARK: View customization
 
     fileprivate func setupView() {
-        customizeUserDetails()
+        fillInformation(with: currentMode == .patient ? booking.visit.user : booking.patient, andVisitInfo: booking.visit)
+        
         // Adjust view for arabic language
         if self.view.isRTL() {
             // Add needed space in between address label and map icon
@@ -60,29 +63,31 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
         }
     }
     
-    private func customizeUserDetails() {
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
+        super.fillInformation(with: user, andVisitInfo: booking.visit)
         
-//        let user = transactionDetail.user
-//        let visit = transactionDetail.visit
-//        nameLabel.text = user.fullname
-//        specialistLabel.isHidden = user.doctor == nil
-//        specialistLabel.text = user.doctor?.specialization?.title
-////        addressLabel.text = visit.address
-//        priceLabel.text = "\(visit.price) SAR"
-//        feeLabel.isHidden = visit.fee == 0
-//        feeLabel.text = "+ \(visit.fee) SAR for cancellation"
-//        methodTypeLabel.text = transactionDetail.paymentMethod.title
-//        arrivalTimeLabel.text = transactionDetail.arrivalTimestamp.dateToString(.hour)
-//        leaveTimeLabel.text = transactionDetail.leaveTimestamp.dateToString(.hour)
-//        dateLabel.text = transactionDetail.dateTimestamp.dateToString(.date)
+        addressLabel.text = booking.address ?? "Unknown address"
+        specialistLabel.isHidden = currentMode != .patient
+        specialistLabel.text = booking.visit.user.doctor?.specialization?.title
+        methodTypeLabel.text = booking.payment.title
         
+        let position = booking.patientLocation.coordinate
+        let locationMarker = GMSMarker(position: position)
+        locationMarker.icon = UIImage(named: "patient_icon")
+        locationMarker.map = mapView
+        let cameraPosition = GMSCameraPosition(target: position, zoom: 15.0, bearing: 0, viewingAngle: 0)
+        let update = GMSCameraUpdate.setCamera(cameraPosition)
+        mapView.moveCamera(update)
+        mapView.isUserInteractionEnabled = false
+        
+        // TODO
+        arrivalTimeLabel.text = ""
+        leaveTimeLabel.text = ""
+        dateLabel.text = ""
         
     }
 
     // MARK: Event handling
-
-    @IBAction func backAction(_ sender: Any) {
-        router?.popViewController()
-    }
+    
     // MARK: Presenter methods
 }

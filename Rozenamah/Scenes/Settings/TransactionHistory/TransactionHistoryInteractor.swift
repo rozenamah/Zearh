@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 protocol TransactionHistoryBusinessLogic {
     func configureWith(timeRange: TimeRange, andUserType userType: UserType)
@@ -17,10 +18,15 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
     /// Represents current page of previous visits, we increment this with each request
     private var builder: TransactionHistoryBuilder!
     
+    /// Currently pending request, we use it to cancel when switching tabs
+    private var currentRequest: DataRequest?
+    
 	// MARK: Business logic
     
     /// Caled when we change time range - we reset page and info if there is anything more to download
     func configureWith(timeRange: TimeRange, andUserType userType: UserType) {
+        currentRequest?.cancel()
+        
         isMoreToDownload = true
         builder = TransactionHistoryBuilder()
         builder.range = timeRange
@@ -32,7 +38,7 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
             return
         }
         
-        worker.fetchTransactionHistory(builder: builder) { (history, error) in
+        currentRequest = worker.fetchTransactionHistory(builder: builder) { (history, error) in
             
             if let error = error {
                 self.presenter?.handle(error)

@@ -7,13 +7,14 @@ typealias BookingsCompletion = ((TransactionHistory?, Error?)->())
 class TransactionHistoryWorker {
    
     /// Fetches list of all users
-    func fetchTransactionHistory(builder: TransactionHistoryBuilder, completion: @escaping BookingsCompletion) {
+    @discardableResult
+    func fetchTransactionHistory(builder: TransactionHistoryBuilder, completion: @escaping BookingsCompletion) -> DataRequest? {
         
         let params = builder.toParams
         
         guard let token = Keychain.shared.token else {
             completion(nil, RMError.tokenDoesntExist)
-            return
+            return nil
         }
         
         let headers = [
@@ -21,7 +22,7 @@ class TransactionHistoryWorker {
         ]
         
         
-        Alamofire.request(API.Visit.history.path, method: .get, parameters: params, headers: headers)
+        return Alamofire.request(API.Visit.history.path, method: .get, parameters: params, headers: headers)
             .validate()
             .responseCodable(type: TransactionHistory.self, completion: completion)
     }

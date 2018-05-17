@@ -9,27 +9,41 @@
 import UIKit
 import SwiftCake
 
-
-class ModalInformationViewController: UIViewController {
-    
+class BasicModalInformationViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: SCImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
-    @IBOutlet weak var phoneNumber: UIButton!
-    @IBOutlet weak var distanceButton: UIButton!
     
-    // MARK: Properties
     
-    // View customization
-    
+    // MARK: View customization
     func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
         let cost = visitInfo.cost
         
         avatarImage.setAvatar(for: user)
         nameLabel.text = user.fullname
         priceLabel.text = "\(cost.price) SAR"
+        
+        // If fee > 0, show fee label
+        feeLabel.isHidden = cost.fee <= 0
+        feeLabel.text = "+ \(cost.fee) SAR for cancellation"
+    }
+}
+
+class ModalInformationViewController: BasicModalInformationViewController {
+    
+    //MARK: Outlets
+    @IBOutlet weak var phoneNumber: UIButton!
+    @IBOutlet weak var distanceButton: UIButton!
+    
+    // MARK: Properties
+    
+    // MARK: View customization
+    
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
+        super.fillInformation(with: user, andVisitInfo: visitInfo)
+        
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
         distanceButton?.setTitle("\(visitInfo.distanceInKM) km from you", for: .normal)
         
@@ -40,9 +54,6 @@ class ModalInformationViewController: UIViewController {
         // If more then 10 kilometers, highlight distance to red
         distanceButton?.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
         
-        // If fee > 0, show fee label
-        feeLabel.isHidden = cost.fee <= 0
-        feeLabel.text = "+ \(cost.fee) SAR for cancellation"
         
     }
 }

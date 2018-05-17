@@ -46,8 +46,8 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
                 let cost = booking.visit.cost
                 nameLabel.text = currentMode != .patient ? booking.patient.fullname : booking.visit.user.fullname
                 specialistLabel.isHidden = currentMode != .patient
-                specialistLabel.text = booking.visit.user.doctor?.specialization?.rawValue
-                addressLabel.text = booking.address
+                specialistLabel.text = booking.visit.user.doctor?.specialization?.title
+                addressLabel.text = booking.address ?? "Unknown address"
                 priceLabel.text = "\(cost.price) SAR"
                 feeLabel.isHidden = cost.fee <= 0
                 feeLabel.text = "+ \(cost.fee) SAR for cancellation"

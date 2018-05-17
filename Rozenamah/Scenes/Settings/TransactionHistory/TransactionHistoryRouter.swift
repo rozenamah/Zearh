@@ -26,7 +26,8 @@ class TransactionHistoryRouter: Router, AlertRouter {
     
     private func passTransactionInfo(vc: UIViewController, _ booking: Booking) {
         let detailVC = vc as? TransactionDetailViewController
-        detailVC?.transactionDetail = booking
+        detailVC?.booking = booking
+        detailVC?.currentMode = viewController?.currentMode
     }
 
 }

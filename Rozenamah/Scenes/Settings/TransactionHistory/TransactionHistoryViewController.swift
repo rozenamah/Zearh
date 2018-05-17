@@ -12,6 +12,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var buttonViewsCollection: [RMButtonWithSeparator]!
     @IBOutlet weak var dailyView: RMButtonWithSeparator!
+    @IBOutlet weak var weeklyButton: SCButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
     var interactor: TransactionHistoryBusinessLogic?
@@ -45,7 +47,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         setupView()
         registerCells()
         interactor?.configureWith(timeRange: .weekly, andUserType: currentMode)
-        interactor?.fetchTrasactionHistory()
+        // Perform click on week button
+        weeklyAction(weeklyButton)
     }
 
     // MARK: View customization
@@ -89,8 +92,16 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     
     private func reloadContentWithin(timeRange: TimeRange) {
         previousBookings.removeAll()
+        tableView.reloadData()
+        tableView.contentOffset = .zero
+        
         interactor?.configureWith(timeRange: timeRange, andUserType: currentMode)
         interactor?.fetchTrasactionHistory()
+        
+        // Show activity indicator, hide table view
+        activityIndicator.startAnimating()
+        tableView.isHidden = true
+        
     }
     
     // MARK: Presenter methods
@@ -103,6 +114,11 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     }
     
     func displayNextBookings(_ bookings: [Booking], withTotalMoney money: Int, withTotalVisit visit: Int) {
+        
+        // Stop activity indicator, show table view
+        activityIndicator.stopAnimating()
+        tableView.isHidden = false
+        
         previousBookings.append(contentsOf: bookings)
         totalMoney = money
         totalVisits = visit
@@ -123,7 +139,7 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return previousBookings.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -134,14 +150,15 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let booking = previousBookings[indexPath.row]
         if indexPath.section == 0 {
             let cell = tableView.dequeueCell(withReusable: SummaryTableViewCell.self, for: indexPath)
             cell.visitsNumberLabel.text = "\(totalVisits)"
             cell.paymentAmountLabel.text = "\(totalMoney)"
             return cell
         } else {
+            let booking = previousBookings[indexPath.row]
             let cell = tableView.dequeueCell(withReusable: PastVisitTableViewCell.self, for: indexPath)
+            cell.currentMode = currentMode
             cell.booking = booking
             return cell
         }
