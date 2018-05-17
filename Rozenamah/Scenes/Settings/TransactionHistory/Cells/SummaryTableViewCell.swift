@@ -12,7 +12,6 @@ import SwiftCake
 class SummaryTableViewCell: UITableViewCell, SCReusableCell {
     
     // MARK: Outlets
-    
     @IBOutlet weak var visitsNumberLabel: UILabel!
     @IBOutlet weak var paymentAmountLabel: UILabel!
     

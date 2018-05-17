@@ -19,7 +19,6 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
     /// his new location
     private let kDistanceBetweenNextRequest: Double = 200
     
-    
     /// Timeinterval between next request updating user location
     private let kTimeIntervalBetweenNextRequest: Double = 3 * 60
     

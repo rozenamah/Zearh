@@ -1,18 +1,33 @@
 import UIKit
 
-class Transaction: Decodable {
-    var visit: Cost
-    var user: User
-    var dateTimestamp: Double
-    var arrivalTimestamp: Double
-    var leaveTimestamp: Double
-    var paymentMethod: PaymentMethod
+enum TimeRange: String {
+    case daily = "day"
+    case weekly = "week"
+    case monthly = "month"
+    case total = "total"
 }
 
-enum TimeRange {
-    case daily
-    case weekly
-    case monthly
-    case total
+class TransactionHistory: Decodable {
+    
+    let cost: Int
+    let count: Int
+    let visits: [Booking]
+    
 }
 
+class TransactionHistoryBuilder: ParamForm {
+    
+    var page: Int = 0
+    var limit: Int = 10
+    var range: TimeRange = .weekly
+    var userType: UserType!
+    
+    var toParams: [String : Any] {
+        return [
+            "page": page,
+            "limit": limit,
+            "user_type": userType.rawValue,
+            "range": range.rawValue
+        ]
+    }
+}

@@ -7,15 +7,15 @@ class TransactionHistoryRouter: Router, AlertRouter {
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "transaction_detail_segue", let transaction = sender as? Transaction {
-            passTransactionInfo(vc: segue.destination, transaction)
+        if segue.identifier == "transaction_detail_segue", let booking = sender as? Booking {
+            passTransactionInfo(vc: segue.destination, booking)
         }
     }
 
     // MARK: Navigation
     
-    func navigateToTransactionDetail(for transaction: Transaction) {
-        viewController?.performSegue(withIdentifier: "transaction_detail_segue", sender: transaction)
+    func navigateToTransactionDetail(for booking: Booking) {
+        viewController?.performSegue(withIdentifier: "transaction_detail_segue", sender: booking)
     }
     
     func dissmis() {
@@ -24,9 +24,9 @@ class TransactionHistoryRouter: Router, AlertRouter {
 
     // MARK: Passing data
     
-    private func passTransactionInfo(vc: UIViewController, _ transaction: Transaction) {
+    private func passTransactionInfo(vc: UIViewController, _ booking: Booking) {
         let detailVC = vc as? TransactionDetailViewController
-        detailVC?.transactionDetail = transaction
+        detailVC?.transactionDetail = booking
     }
 
 }

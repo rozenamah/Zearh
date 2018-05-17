@@ -2,7 +2,7 @@ import UIKit
 import SwiftCake
 
 protocol TransactionHistoryDisplayLogic: class {
-    func presentTransactions(_ transactions: [Transaction])
+    func displayNextBookings(_ bookings: [Booking], withTotalMoney money: Int, withTotalVisit visit: Int)
     func handleError(error: Error)
 }
 
@@ -18,10 +18,13 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     var router: TransactionHistoryRouter?
     
     /// List of all previous visits in selected range of time
-    var transactions = [Transaction]()
+    fileprivate var previousBookings = [Booking]()
     
-    // Keeps information about time for which we download data
-    fileprivate var timeRange: TimeRange = .daily
+    fileprivate var totalMoney: Int = 0
+    fileprivate var totalVisits: Int = 0
+    
+    /// By this value we know if current app is displaying patient or doctor mode
+    var currentMode: UserType!
 
     // MARK: Object lifecycle
 
@@ -41,7 +44,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         super.viewDidLoad()
         setupView()
         registerCells()
-        interactor?.configureWith(timeRange: .daily)
+        interactor?.configureWith(timeRange: .weekly, andUserType: currentMode)
         interactor?.fetchTrasactionHistory()
     }
 
@@ -85,10 +88,8 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     }
     
     private func reloadContentWithin(timeRange: TimeRange) {
-        self.timeRange = timeRange
-        
-        transactions.removeAll()
-        interactor?.configureWith(timeRange: timeRange)
+        previousBookings.removeAll()
+        interactor?.configureWith(timeRange: timeRange, andUserType: currentMode)
         interactor?.fetchTrasactionHistory()
     }
     
@@ -101,9 +102,11 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         view?.separatorView.isHidden = false
     }
     
-    func presentTransactions(_ transactions: [Transaction]) {
-        self.transactions = transactions
-        //self.tableView.reloadData()
+    func displayNextBookings(_ bookings: [Booking], withTotalMoney money: Int, withTotalVisit visit: Int) {
+        previousBookings.append(contentsOf: bookings)
+        totalMoney = money
+        totalVisits = visit
+        tableView.reloadData()
     }
     
     func handleError(error: Error) {
@@ -120,34 +123,40 @@ extension TransactionHistoryViewController: UITableViewDelegate, UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return transactions.count
+        return previousBookings.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            router?.navigateToTransactionDetail(for: transactions[indexPath.row])
+            router?.navigateToTransactionDetail(for: previousBookings[indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let transaction = transactions[indexPath.row]
+        let booking = previousBookings[indexPath.row]
         if indexPath.section == 0 {
             let cell = tableView.dequeueCell(withReusable: SummaryTableViewCell.self, for: indexPath)
+            cell.visitsNumberLabel.text = "\(totalVisits)"
+            cell.paymentAmountLabel.text = "\(totalMoney)"
             return cell
         } else {
             let cell = tableView.dequeueCell(withReusable: PastVisitTableViewCell.self, for: indexPath)
-            cell.transaction = transaction
+            cell.booking = booking
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        interactor?.fetchTrasactionHistory()
+        if indexPath.section == 1,
+            indexPath.row == previousBookings.count - 1,
+            interactor?.isMoreToDownload == true {
+            
+            interactor?.fetchTrasactionHistory()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Change later with array count
-        return section == 0 ? 1 : transactions.count
+        return section == 0 ? 1 : previousBookings.count
     }
 }

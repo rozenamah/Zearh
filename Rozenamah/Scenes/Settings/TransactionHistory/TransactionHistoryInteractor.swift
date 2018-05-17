@@ -1,8 +1,10 @@
 import UIKit
 
 protocol TransactionHistoryBusinessLogic {
-    func configureWith(timeRange: TimeRange) 
+    func configureWith(timeRange: TimeRange, andUserType userType: UserType)
     func fetchTrasactionHistory()
+    
+    var isMoreToDownload: Bool { get }
 }
 
 class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
@@ -10,43 +12,37 @@ class TransactionHistoryInteractor: TransactionHistoryBusinessLogic {
 	var worker = TransactionHistoryWorker()
 
     /// If this value is false, we know there is more transactions to download
-    private var isMoreToDownload: Bool = true
+    var isMoreToDownload: Bool = true
     
     /// Represents current page of previous visits, we increment this with each request
-    private var page = 0
-    
-    /// Current transaction time range
-    private var timeRange: TimeRange!
+    private var builder: TransactionHistoryBuilder!
     
 	// MARK: Business logic
     
     /// Caled when we change time range - we reset page and info if there is anything more to download
-    func configureWith(timeRange: TimeRange) {
-        self.page = 0
-        self.isMoreToDownload = false
-        self.timeRange = timeRange
+    func configureWith(timeRange: TimeRange, andUserType userType: UserType) {
+        isMoreToDownload = true
+        builder = TransactionHistoryBuilder()
+        builder.range = timeRange
+        builder.userType = userType
     }
     
     func fetchTrasactionHistory() {
-        
-        guard let user = User.current else {
-            return
-        }
-
         if !isMoreToDownload {
             return
         }
         
-        worker.fetchTransactionHistory(for: user, with: timeRange) { (transactions, error) in
+        worker.fetchTransactionHistory(builder: builder) { (history, error) in
+            
             if let error = error {
                 self.presenter?.handle(error)
                 return
             }
             
-            if let transactions = transactions {
-                self.page += 1
-                self.isMoreToDownload = (transactions.count == TransactionHistoryWorker.kHistoryLimit)
-                self.presenter?.presentTransactions(transactions)
+            if let history = history {
+                self.builder.page += 1
+                self.isMoreToDownload = (history.visits.count == self.builder.limit)
+                self.presenter?.presentTransactions(history)
             }
         }
     }

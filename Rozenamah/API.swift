@@ -57,13 +57,9 @@ enum API {
         case cancel
         case arrived
         case end
+        case history
         
         var resource: String { return baseURL + "visit/" }
-    }
-    
-    enum Transaction {
-        case history
-        var resource: String { return baseURL + "history/" }
     }
 }
 
@@ -95,6 +91,7 @@ extension API.Visit {
         case .cancel: return resource + "request/cancel"
         case .arrived: return resource + "arrived"
         case .end: return resource + "end"
+        case .history: return resource + "history/"
         }
     }
 }
@@ -116,14 +113,6 @@ extension API.User {
         case .updateAvatar: return resource + "avatar"
         case .report: return resource + "report"
         case .visit: return resource + "me/visit"
-        }
-    }
-}
-
-extension API.Transaction {
-    var path: String {
-        switch self {
-        case .history: return resource
         }
     }
 }

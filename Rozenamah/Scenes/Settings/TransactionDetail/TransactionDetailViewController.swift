@@ -25,7 +25,7 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     var router: TransactionDetailRouter?
     
     /// Visit which will be displayed in this screen
-    var transactionDetail: Transaction!
+    var transactionDetail: Booking!
 
     // MARK: Object lifecycle
 
@@ -62,19 +62,19 @@ class TransactionDetailViewController: UIViewController, TransactionDetailDispla
     
     private func customizeUserDetails() {
         
-        let user = transactionDetail.user
-        let visit = transactionDetail.visit
-        nameLabel.text = user.fullname
-        specialistLabel.isHidden = user.doctor == nil
-        specialistLabel.text = user.doctor?.specialization?.title
-//        addressLabel.text = visit.address
-        priceLabel.text = "\(visit.price) SAR"
-        feeLabel.isHidden = visit.fee == 0
-        feeLabel.text = "+ \(visit.fee) SAR for cancellation"
-        methodTypeLabel.text = transactionDetail.paymentMethod.title
-        arrivalTimeLabel.text = transactionDetail.arrivalTimestamp.dateToString(.hour)
-        leaveTimeLabel.text = transactionDetail.leaveTimestamp.dateToString(.hour)
-        dateLabel.text = transactionDetail.dateTimestamp.dateToString(.date)
+//        let user = transactionDetail.user
+//        let visit = transactionDetail.visit
+//        nameLabel.text = user.fullname
+//        specialistLabel.isHidden = user.doctor == nil
+//        specialistLabel.text = user.doctor?.specialization?.title
+////        addressLabel.text = visit.address
+//        priceLabel.text = "\(visit.price) SAR"
+//        feeLabel.isHidden = visit.fee == 0
+//        feeLabel.text = "+ \(visit.fee) SAR for cancellation"
+//        methodTypeLabel.text = transactionDetail.paymentMethod.title
+//        arrivalTimeLabel.text = transactionDetail.arrivalTimestamp.dateToString(.hour)
+//        leaveTimeLabel.text = transactionDetail.leaveTimestamp.dateToString(.hour)
+//        dateLabel.text = transactionDetail.dateTimestamp.dateToString(.date)
         
         
     }

@@ -16,6 +16,10 @@ class DrawerRouter: Router, AppStartRouter, AlertRouter {
             let navVC = segue.destination as? UINavigationController
             let termsVC = navVC?.visibleViewController as? TermsViewController
             termsVC?.source = .terms
+        case "transaction_history_segue":
+            let navVC = segue.destination as? UINavigationController
+            let transactionsVC = navVC?.visibleViewController as? TransactionHistoryViewController
+            transactionsVC?.currentMode = viewController?.currentMode
         case "privacy_segue":
             let navVC = segue.destination as? UINavigationController
             let termsVC = navVC?.visibleViewController as? TermsViewController
@@ -58,7 +62,7 @@ class DrawerRouter: Router, AppStartRouter, AlertRouter {
     
     func navigateToTransactions() {
         viewController?.toggleLeft()
-        //viewController?.performSegue(withIdentifier: "transaction_history_segue", sender: nil)
+        viewController?.performSegue(withIdentifier: "transaction_history_segue", sender: nil)
     }
     
     func showLogoutAlert() {

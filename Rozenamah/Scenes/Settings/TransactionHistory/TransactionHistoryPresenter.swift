@@ -2,7 +2,7 @@ import UIKit
 
 protocol TransactionHistoryPresentationLogic {
     func handle(_ error: Error)
-    func presentTransactions(_ transactions: [Transaction])
+    func presentTransactions(_ transactions: TransactionHistory)
 }
 
 class TransactionHistoryPresenter: TransactionHistoryPresentationLogic {
@@ -14,7 +14,7 @@ class TransactionHistoryPresenter: TransactionHistoryPresentationLogic {
         viewController?.handleError(error: error)
     }
     
-    func presentTransactions(_ transactions: [Transaction]) {
-        viewController?.presentTransactions(transactions)
+    func presentTransactions(_ transactions: TransactionHistory) {
+        viewController?.displayNextBookings(transactions.visits, withTotalMoney: transactions.cost, withTotalVisit: transactions.count)
     }
 }

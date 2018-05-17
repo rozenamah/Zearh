@@ -31,6 +31,7 @@ class Booking: Decodable {
     let longitude: Double
     let status: BookingStatus
     let payment: PaymentMethod
+    let address: String
     
     var patientLocation: CLLocation {
         return CLLocation(latitude: latitude, longitude: longitude)

@@ -21,6 +21,7 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var imageViewLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var avatarImaveView: SCImageView!
     
     // MARK: View lifecycle
     override func awakeFromNib() {
@@ -36,19 +37,23 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
     
     // MARK: Properties
     
-    var transaction: Transaction? {
+    /// By this value we know if we should display doctor or patient
+    var currentMode: UserType!
+    
+    var booking: Booking? {
         didSet {
-            if let transaction = transaction {
-                let user = transaction.user
-                let visit = transaction.visit
-                nameLabel.text = user.fullname
-                specialistLabel.isHidden = user.doctor == nil
-                specialistLabel.text = user.doctor?.specialization?.title
-//                addressLabel.text = visit.address
-                priceLabel.text = "\(visit.price) SAR"
-                feeLabel.isHidden = visit.fee == 0
-                feeLabel.text = "+ \(visit.fee) SAR for cancellation"
-                dateLabel.text = transaction.dateTimestamp.dateToString(.date)
+            if let booking = booking {
+                let cost = booking.visit.cost
+                nameLabel.text = currentMode != .patient ? booking.patient.fullname : booking.visit.user.fullname
+                specialistLabel.isHidden = currentMode != .patient
+                specialistLabel.text = booking.visit.user.doctor?.specialization?.rawValue
+                addressLabel.text = booking.address
+                priceLabel.text = "\(cost.price) SAR"
+                feeLabel.isHidden = cost.fee <= 0
+                feeLabel.text = "+ \(cost.fee) SAR for cancellation"
+//                dateLabel.text = transaction.dateTimestamp.dateToString(.date)
+                
+                avatarImaveView.setAvatar(for: currentMode != .patient ? booking.patient : booking.visit.user)
             }
         }
     }

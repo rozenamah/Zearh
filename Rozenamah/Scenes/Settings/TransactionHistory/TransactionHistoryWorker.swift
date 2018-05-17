@@ -1,63 +1,28 @@
 import UIKit
 import Alamofire
+import KeychainAccess
+
+typealias BookingsCompletion = ((TransactionHistory?, Error?)->())
 
 class TransactionHistoryWorker {
-    typealias TransactionResponse = (([Transaction]?, RMError?)->())
-    internal static let kHistoryLimit = 10
-    
-    func fetchTransactionHistory(for user: User, with timeRange: TimeRange, completion: @escaping TransactionResponse) {
+   
+    /// Fetches list of all users
+    func fetchTransactionHistory(builder: TransactionHistoryBuilder, completion: @escaping BookingsCompletion) {
         
-        var transactions = [Transaction]()
-        // TODO: Delete
-        let dict: [String : Any] = [
-            "dateTimestamp": 1524491346,
-            "arrivalTimestamp": 1524491346,
-            "leaveTimestamp": 1524492373,
-            "paymentMethod": "card",
-            "visit": [
-                "longitude": 19.93006,
-                "latitude": 50.089237,
-                "address": "Krowoderskich Zuch= 14, Krak, Poland",
-                "phone": "123456789",
-                "fee": 0,
-                "price": 150.0
-            ],
-            "user": [
-                "id": "6b1070ea418011e892e4020000245d02",
-                "email": "test1@g.com",
-                "name": "Stanis",
-                "surname": "Poniatowski",
-                "type": "patient",
-                "phone": "123456789"
-            ]
-        ]
-        if let trans = decodeObject(toType: Transaction.self, from: dict) {
-            
-            for _ in 1...10 {
-                transactions.append(trans)
-            }
-            completion(transactions, nil)
+        let params = builder.toParams
+        
+        guard let token = Keychain.shared.token else {
+            completion(nil, RMError.tokenDoesntExist)
+            return
         }
         
-//        // TODO: Generate valid params and headers
-//        Alamofire.request(API.Transaction.history.path, method: .post, parameters: nil, headers: nil)
-//            .validate()
-//            .responseCodable(type: [Transaction].self, completion: completion)
-    }
-}
-
-
-private func decodeObject<H: Decodable>(toType: H.Type, from userInfo: [String: Any]) -> H? {
-    // TODO: Delete
-    print(userInfo)
-    do {
-        let jsonData = try JSONSerialization.data(withJSONObject: userInfo, options: .prettyPrinted)
-        let decoder = JSONDecoder()
-        let data = try decoder.decode(toType, from: jsonData)
-        return data
+        let headers = [
+            "Authorization": "Bearer \(token)"
+        ]
         
-    } catch {
-        print(error.localizedDescription)
-        return nil
+        
+        Alamofire.request(API.Visit.history.path, method: .get, parameters: params, headers: headers)
+            .validate()
+            .responseCodable(type: TransactionHistory.self, completion: completion)
     }
 }
