@@ -51,7 +51,7 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
                 priceLabel.text = "\(cost.price) SAR"
                 feeLabel.isHidden = cost.fee <= 0
                 feeLabel.text = "+ \(cost.fee) SAR for cancellation"
-//                dateLabel.text = transaction.dateTimestamp.dateToString(.date)
+                dateLabel.text = booking.dates?.requestedAt?.printer.string(with: DateFormats.day.rawValue) ?? "Unknown date"
                 
                 avatarImaveView.setAvatar(for: currentMode != .patient ? booking.patient : booking.visit.user)
             }

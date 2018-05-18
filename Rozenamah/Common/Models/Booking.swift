@@ -9,6 +9,17 @@
 import Foundation
 import CoreLocation
 
+class Dates: Decodable {
+    private enum CodingKeys : String, CodingKey {
+        case requestedAt = "requested_at", acceptedAt = "accepted_at", arrivedAt = "arrived_at", endedAt = "ended_at"
+    }
+    
+    let requestedAt: Date?
+    let acceptedAt: Date?
+    let arrivedAt: Date?
+    let endedAt: Date?
+}
+
 enum BookingStatus: String, Decodable {
     case new = "new"
     case accepted = "accepted"
@@ -21,7 +32,7 @@ enum BookingStatus: String, Decodable {
 
 class Booking: Decodable {
     private enum CodingKeys : String, CodingKey {
-        case id, visit = "doctor", patient = "user", latitude, longitude, status, payment, address
+        case id, visit = "doctor", patient = "user", latitude, longitude, status, payment, address, dates
     }
     
     let id: String
@@ -32,6 +43,7 @@ class Booking: Decodable {
     let status: BookingStatus
     let payment: PaymentMethod
     let address: String?
+    let dates: Dates?
     
     var patientLocation: CLLocation {
         return CLLocation(latitude: latitude, longitude: longitude)

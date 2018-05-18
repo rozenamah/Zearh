@@ -74,7 +74,9 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
             // Start calling search immidatly after fitlers are changed
             interactor?.searchForDoctor(withFilters: filters)
         case .waitForPayDoctor:
-            startCountingTimeLeft()
+            titleLabel.text = "Your patient needs to confirm payment within 10 minutes"
+            cancelButton.isHidden = true
+//            startCountingTimeLeft()
         case .waitForVisitEnd(_):
             titleLabel.text = "Wait until doctor ends your current visit"
             cancelButton.isHidden = true

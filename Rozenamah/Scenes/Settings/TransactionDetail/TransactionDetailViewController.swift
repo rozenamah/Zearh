@@ -80,10 +80,9 @@ class TransactionDetailViewController: BasicModalInformationViewController, Tran
         mapView.moveCamera(update)
         mapView.isUserInteractionEnabled = false
         
-        // TODO
-        arrivalTimeLabel.text = ""
-        leaveTimeLabel.text = ""
-        dateLabel.text = ""
+        dateLabel.text = booking.dates?.requestedAt?.printer.string(with: DateFormats.day.rawValue) ?? "Unknown date"
+        arrivalTimeLabel.text = booking.dates?.arrivedAt?.printer.string(with: DateFormats.time.rawValue) ?? "-"
+        leaveTimeLabel.text = booking.dates?.endedAt?.printer.string(with: DateFormats.time.rawValue) ?? "-"
         
     }
 

@@ -91,7 +91,7 @@ extension API.Visit {
         case .cancel: return resource + "request/cancel"
         case .arrived: return resource + "arrived"
         case .end: return resource + "end"
-        case .history: return resource + "history/"
+        case .history: return resource + "history"
         }
     }
 }

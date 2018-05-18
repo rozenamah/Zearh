@@ -27,7 +27,7 @@ class BasicModalInformationViewController: UIViewController {
         
         // If fee > 0, show fee label
         feeLabel.isHidden = cost.fee <= 0
-        feeLabel.text = "+ \(cost.fee) SAR for cancellation"
+        feeLabel.text = cost.fee <= 0 ? "" : "+ \(cost.fee) SAR for cancellation"
     }
 }
 

@@ -157,7 +157,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             }
             
             self.add(asChildViewController: self.waitVC)
-            self.viewController?.containerHeightConstraint.constant = 202
+            self.viewController?.containerHeightConstraint.constant = 162
             self.waitVC.state = .waitForPayDoctor
             
             self.openContainer()

@@ -35,6 +35,7 @@ class AppRouter {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
                 let data = try decoder.decode(toType, from: jsonData)
                 return data
                 

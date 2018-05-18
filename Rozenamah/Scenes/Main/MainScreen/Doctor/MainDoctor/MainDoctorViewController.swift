@@ -96,8 +96,12 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
     func changeStateTo(flowPoint: DoctorFlow) {
         switch flowPoint {
         case .accepted(let booking):
-            router?.navigateToDoctorOnTheWay(onBooking: booking)
-            
+            // Depending if cash or card we redirect to diffrent views
+            if booking.payment == .cash {
+                router?.navigateToDoctorOnTheWay(onBooking: booking)
+            } else {
+                router?.navigateToWaitForPayment()
+            }
             // Save booking
             currentBooking = booking
         case .cancel:
