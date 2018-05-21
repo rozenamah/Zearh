@@ -37,6 +37,10 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
         super.init(coder: aDecoder)
         setup()
     }
+    
+    deinit {
+        print("Main patient deinit")
+    }
 
     // MARK: View lifecycle
 

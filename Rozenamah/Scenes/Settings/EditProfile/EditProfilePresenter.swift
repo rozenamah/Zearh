@@ -2,6 +2,7 @@ import UIKit
 
 protocol EditProfilePresentationLogic {
     func profileUpdated()
+    func presentDeleteSuccess()
     func handleError(_ error: RMError)
     func presentError(_ error: EditProfilePresenter.EditProfileError)
 }
@@ -77,6 +78,10 @@ class EditProfilePresenter: EditProfilePresentationLogic {
         default:
             viewController?.handle(error: error)
         }
+    }
+    
+    func presentDeleteSuccess() {
+        viewController?.deleteSuccess()
     }
     
     func profileUpdated() {

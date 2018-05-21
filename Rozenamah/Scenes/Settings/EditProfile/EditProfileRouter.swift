@@ -1,6 +1,6 @@
 import UIKit
 
-class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter, AlertRouter {
+class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter, AlertRouter, AppStartRouter {
     typealias RoutingViewController = EditProfileViewController
     weak var viewController: EditProfileViewController?
 
@@ -14,6 +14,12 @@ class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter
     
     func dismiss() {
         viewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func navigateToWelcomeScreen() {
+        viewController?.dismiss(animated: true, completion: {
+            self.navigateToSignUp()
+        })
     }
     
     func showSuccessChangeAlert() {

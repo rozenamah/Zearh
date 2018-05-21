@@ -36,6 +36,10 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         super.init(coder: aDecoder)
         setup()
     }
+    
+    deinit {
+        print("Login deinit")
+    }
 
     // MARK: View lifecycle
 

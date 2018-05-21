@@ -35,6 +35,10 @@ class MainDoctorViewController: MainScreenViewController, MainDoctorDisplayLogic
         super.init(coder: aDecoder)
         setup()
     }
+    
+    deinit {
+        print("Main doctor deinit")
+    }
 
     // MARK: View lifecycle
 

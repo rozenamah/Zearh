@@ -5,6 +5,7 @@ protocol EditProfileBusinessLogic {
     func updateUserInfo(_ editProfile: EditProfileForm)
     func updateUserAvatar(_ editProfile: EditProfileForm)
     func validate(_ editProfile: EditProfileForm) -> Bool
+    func deleteAccount()
 }
 
 class EditProfileInteractor: EditProfileBusinessLogic {
@@ -13,6 +14,16 @@ class EditProfileInteractor: EditProfileBusinessLogic {
 
 	// MARK: Business logic
 	
+    func deleteAccount() {
+//        worker.deleteAccount { (error) in
+//            // Logout anyway if errorm remove token
+//            Keychain.shared.token = nil
+//            // Remove all firebase observers
+//            DatabaseObserver.removeAll()
+            self.presenter?.presentDeleteSuccess()
+//        }
+    }
+    
     func updateUserInfo(_ editProfile: EditProfileForm) {
         worker.editUserProfile(profileForm: editProfile) { (response,error)  in
             if let error = error {

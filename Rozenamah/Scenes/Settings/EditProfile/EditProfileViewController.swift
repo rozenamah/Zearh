@@ -5,6 +5,7 @@ protocol EditProfileDisplayLogic: ClassificationDelegate {
     func profileUpdatedSuccessful()
     func handle(error: Error, inField field: EditProfileViewController.Field)
     func handle(error: Error)
+    func deleteSuccess()
 }
 
 class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
@@ -57,6 +58,10 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    deinit {
+        print("Edit profile deinit")
     }
 
     // MARK: View customization
@@ -131,6 +136,7 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
     
     @IBAction func deleteAccountAction(_ sender: Any) {
+        router?.showDeleteAlert()
     }
     
     @IBAction func professionAction(_ sender: Any) {
@@ -156,10 +162,14 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
     
     func deleteConfirm() {
-        // TODO
+        interactor?.deleteAccount()
     }
     
     // MARK: Presenter methods
+    
+    func deleteSuccess() {
+        router?.navigateToWelcomeScreen()
+    }
     
     func profileUpdatedSuccessful() {
         guard let user = User.current else {

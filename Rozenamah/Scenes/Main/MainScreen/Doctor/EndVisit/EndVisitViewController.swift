@@ -40,6 +40,10 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
         super.init(coder: aDecoder)
         setup()
     }
+    
+    deinit {
+        print("End visit deinit")
+    }
 
     // MARK: View lifecycle
 

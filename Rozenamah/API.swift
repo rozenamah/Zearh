@@ -25,6 +25,7 @@ enum API {
         case verifyPhone
         case resetPassword
         case logout
+        case delete
         case devices
         case changePassword
         case updateProfile
@@ -107,6 +108,7 @@ extension API.User {
         case .verifyPhone: return resource + "phone/check"
         case .me: return resource + "me"
         case .logout: return resource + "logout"
+        case .delete: return resource + "delete"
         case .devices: return resource + "devices"
         case .changePassword: return resource + "password/change"
         case .updateProfile: return resource + "update"
