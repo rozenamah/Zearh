@@ -11,6 +11,8 @@ protocol DoctorOnTheWayDisplayLogic: class {
 class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheWayDisplayLogic {
 
     // MARK: Outlets
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
     
     // MARK: Properties
     var interactor: DoctorOnTheWayBusinessLogic?
@@ -22,6 +24,9 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     // Variable represents current booking for which doctor will serve services and where he will be driving
     var booking: Booking! {
         didSet {
+            acceptButton.isUserInteractionEnabled = true
+            cancelButton.isUserInteractionEnabled = true
+            
             customizePatientInfo()
             interactor?.setupBooking(booking)
         }
@@ -52,7 +57,7 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     }
     
     func customizePatientInfo() {
-        fillInformation(with: booking.patient, andVisitInfo: booking.visit)
+        fillInformation(with: booking.patient, andVisitInfo: booking.visit, withAddress: booking.address)
     }
 
     // MARK: Event handling
@@ -62,6 +67,9 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     }
     
     @IBAction func arrivedAction(_ sender: Any) {
+        acceptButton.isUserInteractionEnabled = false
+        cancelButton.isUserInteractionEnabled = false
+        
         interactor?.doctorArrived(for: booking)
     }
     
@@ -76,20 +84,32 @@ class DoctorOnTheWayViewController: ModalInformationViewController, DoctorOnTheW
     }
     
     func cancelConfirmed() {
+        acceptButton.isUserInteractionEnabled = false
+        cancelButton.isUserInteractionEnabled = false
+        
         interactor?.cancelVisit(for: booking)
     }
     
     // MARK: Presenter methods
     
     func presentError(_ error: Error) {
+        acceptButton.isUserInteractionEnabled = true
+        cancelButton.isUserInteractionEnabled = true
+        
         router?.showError(error)
     }
     
     func doctorArrived(withBooking booking: Booking) {
+        acceptButton.isUserInteractionEnabled = true
+        cancelButton.isUserInteractionEnabled = true
+        
         flowDelegate?.changeStateTo(flowPoint: .arrived(booking: booking))
     }
     
     func doctorCancelled() {
+        acceptButton.isUserInteractionEnabled = true
+        cancelButton.isUserInteractionEnabled = true
+        
 //        flowDelegate?.changeStateTo(flowPoint: .cancel)
     }
 }

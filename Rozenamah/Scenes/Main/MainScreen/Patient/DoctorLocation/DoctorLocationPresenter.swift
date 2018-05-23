@@ -4,7 +4,7 @@ import CoreLocation
 protocol DoctorLocationPresentationLogic {
     func visitCancelled()
     func updateDoctorLocation(_ location: CLLocation)
-    func handle(_ error: Error)
+    func handle(_ error: RMError)
 }
 
 class DoctorLocationPresenter: DoctorLocationPresentationLogic {
@@ -20,8 +20,14 @@ class DoctorLocationPresenter: DoctorLocationPresentationLogic {
         viewController?.updateDoctorLocation(location)
     }
     
-    func handle(_ error: Error) {
-        viewController?.presentError(error)
+    func handle(_ error: RMError) {
+        switch error {
+        case .status(let code, _) where code == .badRequest:
+            // Propably booking changed it's state, skip this error
+            break
+        default:
+            viewController?.presentError(error)
+        }
     }
 	
 }

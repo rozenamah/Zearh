@@ -4,6 +4,9 @@ class WaitRouter: Router, AlertRouter {
     typealias RoutingViewController = WaitViewController
     weak var viewController: WaitViewController?
     
+    /// Alert view, displayed when canceling search
+    private var alertLoading: UIAlertController?
+    
     // MARK: Routing
     
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
@@ -31,6 +34,14 @@ class WaitRouter: Router, AlertRouter {
         viewController?.present(alert, animated: true, completion: nil)
     }
 
+    func showWaitAlert() {
+        alertLoading = showLoadingAlert()
+    }
+    
+    func hideWaitAlert(completion: (() -> Void)? = nil) {
+        alertLoading?.dismiss(animated: true, completion: completion)
+    }
+    
     // MARK: Passing data
 
 }

@@ -141,6 +141,7 @@
             "payment": "دفع",
             "feeInfo": "رسوم للإلغاء",
             "paymentMethod": "طريقة الدفع او السداد",
+            "status": "Status",
             "byCard": "عن طريق البطاقة",
             "byCash": "نقدا",
             "arrivalTime": "وقت الوصول",

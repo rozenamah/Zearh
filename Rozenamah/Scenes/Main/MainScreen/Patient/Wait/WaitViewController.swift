@@ -65,6 +65,7 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         
         // Mostly this button is visible, so we show it
         cancelButton.isHidden = false
+        cancelButton.isUserInteractionEnabled = true
         
         switch state {
         case .waitAccept(_):
@@ -100,16 +101,19 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     }
     
     func cancelConfirmed(forBooking booking: Booking) {
+        cancelButton.isUserInteractionEnabled = false
         interactor?.cancel(booking: booking)
     }
     
     // MARK: Presenter methods
     
     func handle(error: Error) {
+        cancelButton.isUserInteractionEnabled = true
         router?.showError(error)
     }
     
     func found(doctor: VisitDetails) {
+        cancelButton.isUserInteractionEnabled = true
         guard case let .waitSearch(filters) = state! else {
             return
         }
@@ -118,13 +122,14 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     }
     
     func noDoctorFoundMatchingCriteria() {
+        cancelButton.isUserInteractionEnabled = true
         router?.showNoDoctorFound()
     }
     
     func visitCancelled() {
-        
         // We don't have to call it, we will get notificaion which will close this window
         // flowDelegate?.changeStateTo(flowPoint: .callDoctor)
+        cancelButton.isUserInteractionEnabled = true
     }
     
     /// When waiting for patient to accept payment we are counting

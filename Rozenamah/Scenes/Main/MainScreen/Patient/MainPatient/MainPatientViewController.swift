@@ -47,7 +47,6 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     override func viewDidLoad() {
         super.viewDidLoad() // Setup view is called in not called in subclass
         
-        router?.configureFirstScreen() // Show call form at start
         interactor?.registerForNotifications()
     }
     
@@ -72,7 +71,7 @@ class MainPatientViewController: MainScreenViewController, MainPatientDisplayLog
     // MARK: Event handling
     
     @IBAction func callDoctorAction(_ sender: Any) {
-        router?.openContainer(completion: {
+        router?.navigateToCallForm(withClosePrevious: false, completion: {
             // Hide all buttons when call doctor visible
             self.viewToHideWhenFormVisible.forEach { $0.isHidden = true }
         })

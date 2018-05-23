@@ -28,6 +28,18 @@ enum BookingStatus: String, Decodable {
     case timeout = "timed_out"
     case arrived = "arrived"
     case ended = "ended"
+    
+    var title: String {
+        switch self {
+        case .new: return "New"
+        case .accepted: return "Accepted"
+        case .rejected: return "Rejected"
+        case .canceled: return "Canceled"
+        case .timeout: return "Timed out"
+        case .arrived: return "Arrived"
+        case .ended: return "Ended"
+        }
+    }
 }
 
 class Booking: Decodable {

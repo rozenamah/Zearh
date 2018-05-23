@@ -11,6 +11,8 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
 
     // MARK: Outlets
     @IBOutlet weak var confirmationLabel: UILabel!
+    @IBOutlet weak var rejectButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
     
     // MARK: Properties
     var interactor: AcceptPatientBusinessLogic?
@@ -22,6 +24,9 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     // Information about patient for doctor when he is about to accept or decline visit
     var booking: Booking! {
         didSet {
+            acceptButton.isUserInteractionEnabled = true
+            rejectButton.isUserInteractionEnabled = true
+            
             // Reset minutes
             minutes = 15
             // Fill screen with patient info
@@ -68,17 +73,23 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     }
     
     func customizePatientInfo() {
-        fillInformation(with: booking.patient, andVisitInfo: booking.visit)
+        fillInformation(with: booking.patient, andVisitInfo: booking.visit, withAddress: booking.address)
 //        startTimeLeftCounter()
     }
 
     // MARK: Event handling
 
     @IBAction func acceptAction(_ sender: Any) {
+        acceptButton.isUserInteractionEnabled = false
+        rejectButton.isUserInteractionEnabled = false
+        
         interactor?.acceptPatient(for: booking)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
+        acceptButton.isUserInteractionEnabled = false
+        rejectButton.isUserInteractionEnabled = false
+        
         interactor?.rejectPatient(for: booking)
     }
     
@@ -99,14 +110,23 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     // MARK: Presenter methods
     
     func patientAccepted(with booking: Booking) {
+        acceptButton.isUserInteractionEnabled = true
+        rejectButton.isUserInteractionEnabled = true
+        
         flowDelegate?.changeStateTo(flowPoint: .accepted(booking: booking))
     }
     
     func patientRejected() {
+        acceptButton.isUserInteractionEnabled = true
+        rejectButton.isUserInteractionEnabled = true
+        
         flowDelegate?.changeStateTo(flowPoint: .cancel)
     }
     
     func handle(error: Error) {
+        acceptButton.isUserInteractionEnabled = true
+        rejectButton.isUserInteractionEnabled = true
+        
         router?.showError(error)
     }
 }

@@ -123,12 +123,6 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
         }
     }
     
-    /// Adds call doctor form at app start
-    func configureFirstScreen() {
-        add(asChildViewController: callFormVC)
-        viewController?.containerHeightConstraint.constant = 433
-    }
-    
     func closeContainer() {
         animateCloseContainer {
             // Do nothing
@@ -147,15 +141,29 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
         }
     }
     
-    func navigateToCallForm() {
-        animateCloseContainer {[weak self] in
+    func navigateToCallForm(
+        withClosePrevious previous: Bool = true, completion: (()->())? = nil) {
+        
+        if currentViewController is CallDoctorViewController {
+            return
+        }
+        
+        let openCallDoctor = { [weak self] in
             guard let `self` = self else {
                 return
             }
             
             self.add(asChildViewController: self.callFormVC)
             self.viewController?.containerHeightConstraint.constant = 433
-            self.openContainer()
+            self.openContainer(completion: completion)
+        }
+        
+        if previous {
+            animateCloseContainer {
+                openCallDoctor()
+            }
+        } else {
+            openCallDoctor()
         }
     }
     

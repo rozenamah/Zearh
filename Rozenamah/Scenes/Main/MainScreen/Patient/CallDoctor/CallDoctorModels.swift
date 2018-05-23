@@ -15,14 +15,9 @@ class CallDoctorForm: ParamForm {
             }
         }
     }
-    var specialization: DoctorSpecialization? {
-        didSet {
-            disabledDoctors = []
-        }
-    }
+    var specialization: DoctorSpecialization? 
     var minPrice: Int? {
         didSet {
-            disabledDoctors = []
             if minPrice == 0 {
                 minPrice = nil
             }
@@ -30,17 +25,12 @@ class CallDoctorForm: ParamForm {
     }
     var maxPrice: Int? {
         didSet {
-            disabledDoctors = []
             if maxPrice == Int(kMaxPriceToFilter) {
                 maxPrice = nil
             }
         }
     }
-    var gender: Gender? {
-        didSet {
-            disabledDoctors = []
-        }
-    }
+    var gender: Gender?
     
     /// Location will be attached on patient main module, when passing between screens
     var location: CLLocation?

@@ -15,6 +15,9 @@ class WaitPresenter: WaitPresentationLogic {
     // messages
     func handleError(_ error: RMError) {
         switch error {
+        case .status(let code, _) where code == .badRequest:
+            // Propably booking changed it's state, skip this error
+            break
         case .noData:
             viewController?.noDoctorFoundMatchingCriteria()
         default:

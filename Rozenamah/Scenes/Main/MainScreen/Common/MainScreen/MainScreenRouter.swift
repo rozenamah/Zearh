@@ -14,7 +14,7 @@ class MainScreenRouter: NSObject {
     }
     
     // Handling of view controllers state
-    private var currentViewController: UIViewController!
+    var currentViewController: UIViewController!
     
     lazy var locationVC: LocationAlertViewController = {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "location_alert_vc") as! LocationAlertViewController

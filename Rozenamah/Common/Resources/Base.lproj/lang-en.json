@@ -142,6 +142,7 @@
             "payment": "Payment",
             "feeInfo": "fee for cancellation",
             "paymentMethod": "Payment method",
+            "status": "Status",
             "byCard": "By card",
             "byCash": "By cash",
             "arrivalTime": "Arrival time",

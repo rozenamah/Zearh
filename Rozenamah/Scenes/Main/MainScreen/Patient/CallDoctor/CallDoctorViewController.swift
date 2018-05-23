@@ -143,6 +143,9 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     // MARK: Event handling
 
     @IBAction func cancelAction(_ sender: Any) {
+        // Reset disabled doctors when closing this view
+        callForm.disabledDoctors = []
+        
         flowDelegate?.changeStateTo(flowPoint: .pending)
     }
     

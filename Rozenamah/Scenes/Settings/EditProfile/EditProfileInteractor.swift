@@ -15,13 +15,13 @@ class EditProfileInteractor: EditProfileBusinessLogic {
 	// MARK: Business logic
 	
     func deleteAccount() {
-//        worker.deleteAccount { (error) in
-//            // Logout anyway if errorm remove token
-//            Keychain.shared.token = nil
-//            // Remove all firebase observers
-//            DatabaseObserver.removeAll()
+        worker.deleteAccount { (error) in
+            // Logout anyway if errorm remove token
+            Keychain.shared.token = nil
+            // Remove all firebase observers
+            DatabaseObserver.removeAll()
             self.presenter?.presentDeleteSuccess()
-//        }
+        }
     }
     
     func updateUserInfo(_ editProfile: EditProfileForm) {

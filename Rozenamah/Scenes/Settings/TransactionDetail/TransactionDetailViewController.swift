@@ -18,6 +18,7 @@ class TransactionDetailViewController: BasicModalInformationViewController, Tran
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var calendarImage: UIImageView!
+    @IBOutlet weak var statusLabel: UILabel!
     
     // MARK: Properties
     var interactor: TransactionDetailBusinessLogic?
@@ -70,6 +71,7 @@ class TransactionDetailViewController: BasicModalInformationViewController, Tran
         specialistLabel.isHidden = currentMode != .patient
         specialistLabel.text = booking.visit.user.doctor?.specialization?.title
         methodTypeLabel.text = booking.payment.title
+        statusLabel.text = booking.status.title
         
         let position = booking.patientLocation.coordinate
         let locationMarker = GMSMarker(position: position)

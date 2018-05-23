@@ -9,11 +9,10 @@ protocol TransactionHistoryDisplayLogic: class {
 class TransactionHistoryViewController: UIViewController, TransactionHistoryDisplayLogic {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: SCStateTableView!
     @IBOutlet var buttonViewsCollection: [RMButtonWithSeparator]!
     @IBOutlet weak var dailyView: RMButtonWithSeparator!
     @IBOutlet weak var weeklyButton: SCButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
     var interactor: TransactionHistoryBusinessLogic?
@@ -55,6 +54,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
 
     fileprivate func setupView() {
         customizeDateButtons()
+        tableView.state = .loading
     }
     
     private func customizeDateButtons() {
@@ -99,8 +99,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
         interactor?.fetchTrasactionHistory()
         
         // Show activity indicator, hide table view
-        activityIndicator.startAnimating()
-        tableView.isHidden = true
+        tableView.state = .loading
         
     }
     
@@ -116,10 +115,13 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     func displayNextBookings(_ bookings: [Booking], withTotalMoney money: Int, withTotalVisit visit: Int) {
         
         // Stop activity indicator, show table view
-        activityIndicator.stopAnimating()
-        tableView.isHidden = false
         
-        previousBookings.append(contentsOf: bookings)
+        if previousBookings.isEmpty, bookings.isEmpty {
+            tableView.state = .noItems
+        } else {
+            tableView.state = .showItems
+            previousBookings.append(contentsOf: bookings)
+        }
         totalMoney = money
         totalVisits = visit
         tableView.reloadData()

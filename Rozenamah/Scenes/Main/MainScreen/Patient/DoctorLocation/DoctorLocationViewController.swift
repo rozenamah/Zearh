@@ -11,6 +11,7 @@ protocol DoctorLocationDisplayLogic: class {
 class DoctorLocationViewController: ModalInformationViewController, DoctorLocationDisplayLogic {
 
     // MARK: Outlets
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var classificationLabel: UILabel!
     
     // MARK: Properties
@@ -22,6 +23,8 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     
     var booking: Booking! {
         didSet {
+            cancelButton.isUserInteractionEnabled = true
+            
             interactor?.stopObservingDoctorLocation()
             fillInformation(with: booking.visit.user, andVisitInfo: booking.visit)
             interactor?.observeDoctorLocation(for: booking)
@@ -64,6 +67,7 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     }
     
     func cancelConfirmed() {
+        cancelButton.isUserInteractionEnabled = false
         interactor?.cancelVisit(for: booking)
     }
     
@@ -78,6 +82,7 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     func visitCancelled() {
         // We don't have to call it because we will get notificaion
         //flowDelegate?.changeStateTo(flowPoint: .callDoctor)
+        cancelButton.isUserInteractionEnabled = true
     }
     
     func updateDoctorLocation(_ location: CLLocation) {
@@ -85,6 +90,7 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     }
     
     func presentError(_ error: Error) {
+        cancelButton.isUserInteractionEnabled = true
         router?.showError(error)
     }
 }

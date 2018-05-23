@@ -1759,8 +1759,8 @@
                                                     <action selector="callAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="Bu6-1M-hFl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sco-Hx-4p4">
-                                                <rect key="frame" x="138" y="172.5" width="123" height="19"/>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sco-Hx-4p4">
+                                                <rect key="frame" x="138" y="172.5" width="221" height="19"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="tintColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1826,6 +1826,7 @@
                                             <constraint firstItem="aY7-nC-bhD" firstAttribute="top" secondItem="2s6-jm-W46" secondAttribute="top" constant="24" id="9Gf-4F-lUP"/>
                                             <constraint firstItem="5uP-wO-6vS" firstAttribute="top" secondItem="2s6-jm-W46" secondAttribute="top" constant="16" id="9sl-Vc-voR"/>
                                             <constraint firstAttribute="trailing" secondItem="O36-K5-5eB" secondAttribute="trailing" constant="32" id="CoJ-2K-EoC"/>
+                                            <constraint firstAttribute="trailing" secondItem="sco-Hx-4p4" secondAttribute="trailing" constant="16" id="EyK-x3-Teb"/>
                                             <constraint firstAttribute="trailing" secondItem="aY7-nC-bhD" secondAttribute="trailing" constant="16" id="JGT-jR-3PK"/>
                                             <constraint firstItem="sco-Hx-4p4" firstAttribute="leading" secondItem="eb6-BC-znF" secondAttribute="leading" id="K9D-Ww-Beb"/>
                                             <constraint firstItem="5uP-wO-6vS" firstAttribute="leading" secondItem="2s6-jm-W46" secondAttribute="leading" constant="16" id="Kmj-UZ-wbR"/>
@@ -2418,8 +2419,8 @@
                                                     <action selector="phoneAction:" destination="eVu-zC-hxr" eventType="touchUpInside" id="uvM-b5-kfs"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vba-1Z-kyj">
-                                                <rect key="frame" x="138" y="197.5" width="123" height="19"/>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vba-1Z-kyj">
+                                                <rect key="frame" x="138" y="197.5" width="221" height="19"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="tintColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2523,6 +2524,7 @@
                                             <constraint firstItem="xFT-NJ-dqB" firstAttribute="leading" secondItem="bJl-pS-8YB" secondAttribute="trailing" constant="16" id="HUr-rz-xh6"/>
                                             <constraint firstItem="xFT-NJ-dqB" firstAttribute="width" secondItem="bJl-pS-8YB" secondAttribute="width" id="PRu-WW-Vkp"/>
                                             <constraint firstItem="i9n-NQ-UJE" firstAttribute="leading" secondItem="OWa-HB-oDb" secondAttribute="trailing" constant="32" id="T8G-Fd-rKg"/>
+                                            <constraint firstItem="O9N-9J-bMH" firstAttribute="trailing" secondItem="Vba-1Z-kyj" secondAttribute="trailing" constant="16" id="Tbn-HP-La2"/>
                                             <constraint firstItem="xFT-NJ-dqB" firstAttribute="top" secondItem="bJl-pS-8YB" secondAttribute="top" id="Ton-21-Wfs"/>
                                             <constraint firstItem="Lmv-uY-bXK" firstAttribute="top" secondItem="Vba-1Z-kyj" secondAttribute="bottom" constant="24" id="WBH-jc-hWo"/>
                                             <constraint firstItem="bJl-pS-8YB" firstAttribute="top" secondItem="Lmv-uY-bXK" secondAttribute="bottom" constant="32" id="aqd-Bx-jbd"/>
@@ -2572,6 +2574,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="370"/>
                     <connections>
+                        <outlet property="acceptButton" destination="bJl-pS-8YB" id="NZR-R0-Avl"/>
                         <outlet property="avatarImage" destination="OWa-HB-oDb" id="i2n-VH-Pzv"/>
                         <outlet property="confirmationLabel" destination="9g5-Sk-jBd" id="lLE-9R-wmj"/>
                         <outlet property="distanceButton" destination="Vba-1Z-kyj" id="EEB-jt-rWE"/>
@@ -2579,6 +2582,7 @@
                         <outlet property="nameLabel" destination="i9n-NQ-UJE" id="HXb-Db-6vA"/>
                         <outlet property="phoneNumber" destination="YXT-o3-p3k" id="SMa-1B-jdT"/>
                         <outlet property="priceLabel" destination="Jq3-2u-Xwp" id="aub-Mc-waf"/>
+                        <outlet property="rejectButton" destination="xFT-NJ-dqB" id="l38-K5-rq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIa-9V-lex" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3252,8 +3256,8 @@
                                                     <action selector="phoneAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="X2z-Ul-HKK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CH-uk-MLC">
-                                                <rect key="frame" x="138" y="145" width="123" height="19"/>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CH-uk-MLC">
+                                                <rect key="frame" x="138" y="145" width="221" height="19"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="tintColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -3360,6 +3364,7 @@
                                             <constraint firstItem="nAv-0x-ROP" firstAttribute="top" secondItem="F2M-sa-S6U" secondAttribute="bottom" constant="16" id="vV9-hq-V6L"/>
                                             <constraint firstItem="3CH-uk-MLC" firstAttribute="top" secondItem="qMe-Tj-oNF" secondAttribute="bottom" constant="16" id="xWm-Hv-bd2"/>
                                             <constraint firstItem="XsA-Xw-r0d" firstAttribute="leading" secondItem="wYd-qV-VVm" secondAttribute="leading" constant="16" id="z92-Qe-Fu5"/>
+                                            <constraint firstAttribute="trailing" secondItem="3CH-uk-MLC" secondAttribute="trailing" constant="16" id="zkT-9d-X9Y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNx-2p-7bE" userLabel="bottomSpace">
@@ -3393,7 +3398,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="309"/>
                     <connections>
+                        <outlet property="acceptButton" destination="dNY-5f-CzT" id="Bi1-Zj-Szb"/>
                         <outlet property="avatarImage" destination="XsA-Xw-r0d" id="b08-HE-kbk"/>
+                        <outlet property="cancelButton" destination="3Hb-A7-nam" id="Io9-P9-gAf"/>
                         <outlet property="distanceButton" destination="3CH-uk-MLC" id="Qua-H3-AsF"/>
                         <outlet property="feeLabel" destination="ncr-yB-hNe" id="KhW-M2-s0p"/>
                         <outlet property="nameLabel" destination="F2M-sa-S6U" id="Vce-aU-0JS"/>
@@ -3571,6 +3578,7 @@
                     <size key="freeformSize" width="375" height="286"/>
                     <connections>
                         <outlet property="avatarImage" destination="J2U-Qj-tAL" id="lyl-Kp-pzV"/>
+                        <outlet property="cancelButton" destination="UPK-C4-lnn" id="JHq-o1-csv"/>
                         <outlet property="classificationLabel" destination="ETY-9g-gAR" id="YXD-ln-Xzp"/>
                         <outlet property="feeLabel" destination="QNF-W7-afR" id="aiO-vG-6rK"/>
                         <outlet property="nameLabel" destination="yw0-E0-pNC" id="LKF-QW-DcO"/>

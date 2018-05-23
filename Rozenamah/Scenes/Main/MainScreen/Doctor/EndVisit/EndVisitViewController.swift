@@ -85,9 +85,11 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     @IBAction func endVisitAction(_ sender: Any) {
         if booking.payment == .cash {
             if interactor?.validate(cashReceived: cashReceivedCheckbox.isSelected) == true {
+                router?.showWaitAlert()
                 interactor?.end(booking: booking)
             }
         } else {
+            router?.showWaitAlert()
             interactor?.end(booking: booking)
         }
     }
@@ -95,12 +97,16 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     // MARK: Presenter methods
     
     func handleError(_ error: Error) {
-        router?.showError(error)
+        router?.hideWaitAlert(completion: {
+            self.router?.showError(error)
+        })
     }
     
     func visitEnded() {
         // TODO: Navigate to transactions?
-        flowDelegate?.changeStateTo(flowPoint: .ended)
-        router?.dismiss()
+        router?.hideWaitAlert(completion: {
+            self.flowDelegate?.changeStateTo(flowPoint: .ended)
+            self.router?.dismiss()
+        })
     }
 }
