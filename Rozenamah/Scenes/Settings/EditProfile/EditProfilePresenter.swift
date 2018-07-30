@@ -30,7 +30,7 @@ class EditProfilePresenter: EditProfilePresentationLogic {
         var errorDescription: String? {
             switch self {
             case .incorrectName:
-                return "session.patient.incorrectName".localized
+                return "session.patient.error.incorrectName".localized
             case .surnameToLong:
                 return "session.patient.error.surnameTooLong".localized
             case .surnameToShort:
