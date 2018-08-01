@@ -1852,7 +1852,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e623c32f-3fb4-4211-a8a4-6ecd12c7dc4e";
+				PROVISIONING_PROFILE = "3df8465e-0b1c-4417-85f8-7c4d9c3751ba";
 				PROVISIONING_PROFILE_SPECIFIER = "Rozemanah dev";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;

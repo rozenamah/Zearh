@@ -143,11 +143,12 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
     
     func navigateToCallForm(
         withClosePrevious previous: Bool = true, completion: (()->())? = nil) {
-        
-        if currentViewController is CallDoctorViewController {
-            return
-        }
-        
+      
+      // KAMIL - I'm not sure what this line actually doing
+//        if currentViewController is CallDoctorViewController {
+//            return
+//        }
+      
         let openCallDoctor = { [weak self] in
             guard let `self` = self else {
                 return
