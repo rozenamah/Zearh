@@ -54,6 +54,7 @@ class AcceptDoctorViewController: ModalInformationViewController, AcceptDoctorDi
     
     override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
         super.fillInformation(with: user, andVisitInfo: visitInfo)
+        phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
         classificationLabel.text = visitInfo.user.doctor?.classification.title
     }
 
