@@ -120,6 +120,11 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
                 
                 // Remove booking
                 viewController?.currentBooking = nil
+            } else if booking.status == .waitingForPayment {
+                navigateToCancel()
+                navigateToWaitForPayment()
+                
+                viewController?.currentBooking = nil
             }
             
         }

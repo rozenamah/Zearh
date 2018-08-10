@@ -62,6 +62,13 @@ enum API {
         
         var resource: String { return baseURL + "visit/" }
     }
+  
+    enum Payments {
+        case paypage
+        
+        var resource: String { return baseURL + "payment/" }
+
+    }
 }
 
 extension API.Doctor {
@@ -118,3 +125,12 @@ extension API.User {
         }
     }
 }
+
+extension API.Payments {
+    var path: String {
+        switch self {
+        case .paypage: return resource + "paypage"
+        }
+    }
+}
+

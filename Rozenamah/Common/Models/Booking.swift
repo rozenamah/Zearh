@@ -28,6 +28,7 @@ enum BookingStatus: String, Decodable {
     case timeout = "timed_out"
     case arrived = "arrived"
     case ended = "ended"
+    case waitingForPayment = "waiting_for_payment"
     
     var title: String {
         switch self {
@@ -38,6 +39,7 @@ enum BookingStatus: String, Decodable {
         case .timeout: return "Timed out"
         case .arrived: return "Arrived"
         case .ended: return "Ended"
+        case .waitingForPayment: return "Waiting for payment"
         }
     }
 }

@@ -118,6 +118,8 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 // Move camera back to center and remove current booking
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
+            } else if booking.status == .waitingForPayment {
+                //TODO waiting for payment navigation
             }
             
         }
