@@ -162,6 +162,16 @@
         "classification": "تصنيف",
         "selectOne": "اختر واحدة ..."
         
+    },
+    "payment": {
+        "title": "املأ الملف الشخصي للدفع",
+        "address1": "العنوان الأول",
+        "address2": "سطر العنوان 2",
+        "state": "حالة",
+        "city": "مدينة",
+        "postalCode": "الكود البريدى",
+        "country": "بلد",
+        "confirm": "تؤكد"
     }
 }
 

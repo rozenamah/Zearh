@@ -162,6 +162,16 @@
         "specialization": "Specialization",
         "classification": "Classification",
         "selectOne": "Select one..."
+    },
+    "payment": {
+        "title": "Fill your payment profile",
+        "address1": "Address line 1",
+        "address2": "Address line 2",
+        "state": "State",
+        "city": "City",
+        "postalCode": "Postal Code",
+        "country": "Country",
+        "confirm": "Confirm"
     }
 }
 

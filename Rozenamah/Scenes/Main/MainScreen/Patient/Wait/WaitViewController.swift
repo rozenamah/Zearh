@@ -77,7 +77,7 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         case .waitForPayDoctor:
             titleLabel.text = "Your patient needs to confirm payment within 10 minutes"
             cancelButton.isHidden = true
-            startCountingTimeLeft()
+//            startCountingTimeLeft()
         case .waitForVisitEnd(_):
             titleLabel.text = "Wait until doctor ends your current visit"
             cancelButton.isHidden = true

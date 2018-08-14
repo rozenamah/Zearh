@@ -119,6 +119,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
             } else if booking.status == .waitingForPayment {
+                showPayByCardScreen()
                 //TODO waiting for payment navigation
             }
             
@@ -225,4 +226,11 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
             self.openContainer()
         }
     }
+    
+    func showPayByCardScreen() {
+        let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "payment_vc")
+        destinationVC.modalPresentationStyle = .overCurrentContext
+        viewController?.present(destinationVC, animated: true, completion: nil)
+    }
+    
 }
