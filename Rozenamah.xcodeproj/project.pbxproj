@@ -111,6 +111,12 @@
 		B4FF98A52122C49900269AA0 /* PaymentProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989F2122C49900269AA0 /* PaymentProfileModels.swift */; };
 		B4FF98A62122C49900269AA0 /* PaymentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98A02122C49900269AA0 /* PaymentProfileViewController.swift */; };
 		B4FF98A72122C49900269AA0 /* PaymentProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98A12122C49900269AA0 /* PaymentProfileInteractor.swift */; };
+		B4FF98AF2122DAF400269AA0 /* PaymentWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98A92122DAF400269AA0 /* PaymentWebViewPresenter.swift */; };
+		B4FF98B02122DAF400269AA0 /* PaymentWebViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AA2122DAF400269AA0 /* PaymentWebViewWorker.swift */; };
+		B4FF98B12122DAF400269AA0 /* PaymentWebViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AB2122DAF400269AA0 /* PaymentWebViewRouter.swift */; };
+		B4FF98B22122DAF400269AA0 /* PaymentWebViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */; };
+		B4FF98B32122DAF400269AA0 /* PaymentWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */; };
+		B4FF98B42122DAF400269AA0 /* PaymentWebViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
 		F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen.storyboard */; };
@@ -380,6 +386,12 @@
 		B4FF989F2122C49900269AA0 /* PaymentProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileModels.swift; sourceTree = "<group>"; };
 		B4FF98A02122C49900269AA0 /* PaymentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileViewController.swift; sourceTree = "<group>"; };
 		B4FF98A12122C49900269AA0 /* PaymentProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileInteractor.swift; sourceTree = "<group>"; };
+		B4FF98A92122DAF400269AA0 /* PaymentWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewPresenter.swift; sourceTree = "<group>"; };
+		B4FF98AA2122DAF400269AA0 /* PaymentWebViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewWorker.swift; sourceTree = "<group>"; };
+		B4FF98AB2122DAF400269AA0 /* PaymentWebViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewRouter.swift; sourceTree = "<group>"; };
+		B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModels.swift; sourceTree = "<group>"; };
+		B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewViewController.swift; sourceTree = "<group>"; };
+		B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewInteractor.swift; sourceTree = "<group>"; };
 		F9093A6D204992CB00CB041A /* Rozenamah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozenamah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9093A70204992CB00CB041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9093A77204992CB00CB041A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -645,6 +657,7 @@
 				574FC58220849E1F001E4059 /* PaymentInteractor.swift */,
 				574FC58320849E1F001E4059 /* PaymentConfigurator.swift */,
 				B4FF989B2122C48000269AA0 /* PaymentProfile */,
+				B4FF98A82122DADC00269AA0 /* PaymentWebView */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -766,6 +779,19 @@
 				B4FF98A12122C49900269AA0 /* PaymentProfileInteractor.swift */,
 			);
 			path = PaymentProfile;
+			sourceTree = "<group>";
+		};
+		B4FF98A82122DADC00269AA0 /* PaymentWebView */ = {
+			isa = PBXGroup;
+			children = (
+				B4FF98A92122DAF400269AA0 /* PaymentWebViewPresenter.swift */,
+				B4FF98AA2122DAF400269AA0 /* PaymentWebViewWorker.swift */,
+				B4FF98AB2122DAF400269AA0 /* PaymentWebViewRouter.swift */,
+				B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */,
+				B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */,
+				B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */,
+			);
+			path = PaymentWebView;
 			sourceTree = "<group>";
 		};
 		F9093A64204992CB00CB041A = {
@@ -1523,6 +1549,7 @@
 				F992D33D206E3D6D00DF0604 /* MainDoctorPresenter.swift in Sources */,
 				F99A2ECD207E06D3009505EB /* PhoneValidation.swift in Sources */,
 				F9CEDE62206521DA004ED0C7 /* EditProfileWorker.swift in Sources */,
+				B4FF98B02122DAF400269AA0 /* PaymentWebViewWorker.swift in Sources */,
 				5710109D208F6315008B4384 /* DoctorOnTheWayConfigurator.swift in Sources */,
 				578100F6207CBFE600F4A78B /* TransactionDetailWorker.swift in Sources */,
 				574FC577208493A4001E4059 /* PatientDetailsRouter.swift in Sources */,
@@ -1549,6 +1576,7 @@
 				574FC57A208493A4001E4059 /* PatientDetailsInteractor.swift in Sources */,
 				57E659D42073AE60004E3926 /* ChangeEmailRouter.swift in Sources */,
 				F940EC3C205A5BC200266753 /* ForgotPasswordInteractor.swift in Sources */,
+				B4FF98B42122DAF400269AA0 /* PaymentWebViewInteractor.swift in Sources */,
 				F975376D205FDADE003DC80E /* RegisterDoctorWorker.swift in Sources */,
 				F940EA502058147000266753 /* WelcomePresenter.swift in Sources */,
 				F940EC48205A9BFF00266753 /* MainPatientPresenter.swift in Sources */,
@@ -1592,7 +1620,9 @@
 				F9CEDE66206521DA004ED0C7 /* EditProfileInteractor.swift in Sources */,
 				57BC87542090ADEE002147F8 /* DoctorOnTheWayInteractor.swift in Sources */,
 				F940EC70205AEDD600266753 /* DrawerRouter.swift in Sources */,
+				B4FF98B22122DAF400269AA0 /* PaymentWebViewModels.swift in Sources */,
 				F94CC62D20A9CA4200B3C06E /* LocationAlertConfigurator.swift in Sources */,
+				B4FF98AF2122DAF400269AA0 /* PaymentWebViewPresenter.swift in Sources */,
 				F992D346206E40E700DF0604 /* MainScreenInteractor.swift in Sources */,
 				F992D340206E3D6D00DF0604 /* MainDoctorModels.swift in Sources */,
 				F940EC74205AEDD600266753 /* DrawerConfigurator.swift in Sources */,
@@ -1640,6 +1670,7 @@
 				F940EC3A205A5BC200266753 /* ForgotPasswordModels.swift in Sources */,
 				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
 				573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */,
+				B4FF98B12122DAF400269AA0 /* PaymentWebViewRouter.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
 				F94CC62B20A9CA4200B3C06E /* LocationAlertViewController.swift in Sources */,
 				578A6E882080BD7800CB4E79 /* EndVisitPresenter.swift in Sources */,
@@ -1660,6 +1691,7 @@
 				F99A2EDF207F4614009505EB /* MainScreenRouter.swift in Sources */,
 				57101097208F6315008B4384 /* DoctorOnTheWayPresenter.swift in Sources */,
 				F9CEDE64206521DA004ED0C7 /* EditProfileModels.swift in Sources */,
+				B4FF98B32122DAF400269AA0 /* PaymentWebViewViewController.swift in Sources */,
 				57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */,
 				574FC5932084A89A001E4059 /* PaymentMethodPresenter.swift in Sources */,
 				F940EA602058148300266753 /* LoginRouter.swift in Sources */,

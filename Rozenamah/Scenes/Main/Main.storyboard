@@ -3611,7 +3611,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.payment.title"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="payment.title"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76s-WJ-aNN" userLabel="Name" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
@@ -3626,7 +3626,7 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.payment.address1"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.address1"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="fVr-Ha-Gmc"/>
@@ -3678,7 +3678,7 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.payment.address2"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.address2"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="zQq-N8-7bF"/>
@@ -3725,12 +3725,12 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.payment.state"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.state"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="RJn-Hf-BxY"/>
@@ -3777,12 +3777,12 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.payment.city"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.city"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="9b0-Ok-uNr"/>
@@ -3829,12 +3829,12 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.payment.postalCode"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.postalCode"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="KkZ-C9-FUh"/>
@@ -3881,12 +3881,12 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go" textContentType="name"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="session.payment.country"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.country"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="uIM-bh-3qK"/>
@@ -3939,8 +3939,11 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.welcome.create"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="payment.confirm"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmPressed:" destination="iKa-Je-ABr" eventType="touchUpInside" id="Rey-54-ZNA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3996,7 +3999,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="isc-5C-BpB">
-                        <barButtonItem key="backBarButtonItem" title="session.welcome.welcome" id="ZB4-zg-pCa"/>
+                        <barButtonItem key="backBarButtonItem" title="Payment" id="dKi-Au-MTD"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
@@ -4020,6 +4023,36 @@
                 <tapGestureRecognizer id="1F2-qF-lVl"/>
             </objects>
             <point key="canvasLocation" x="6718" y="461"/>
+        </scene>
+        <!--Payment Web View View Controller-->
+        <scene sceneID="RZX-En-h5j">
+            <objects>
+                <viewController storyboardIdentifier="PaymentWebViewVC" id="XyS-Jg-HB3" customClass="PaymentWebViewViewController" customModule="Rozenamah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rec-tD-MXT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htR-xe-IZr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Tu-Tf-Otx" firstAttribute="trailing" secondItem="htR-xe-IZr" secondAttribute="trailing" id="HpZ-8R-M8h"/>
+                            <constraint firstItem="0Tu-Tf-Otx" firstAttribute="bottom" secondItem="htR-xe-IZr" secondAttribute="bottom" id="dSg-et-cwg"/>
+                            <constraint firstItem="htR-xe-IZr" firstAttribute="leading" secondItem="0Tu-Tf-Otx" secondAttribute="leading" id="kwl-fa-XLf"/>
+                            <constraint firstItem="htR-xe-IZr" firstAttribute="top" secondItem="0Tu-Tf-Otx" secondAttribute="top" id="zo1-Oo-qcF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Tu-Tf-Otx"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="htR-xe-IZr" id="V68-sw-LnP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbV-8E-rMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7406" y="401"/>
         </scene>
     </scenes>
     <resources>

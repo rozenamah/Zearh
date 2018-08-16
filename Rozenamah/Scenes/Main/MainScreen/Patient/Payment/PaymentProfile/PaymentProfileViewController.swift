@@ -9,18 +9,13 @@
 import UIKit
 import SwiftCake
 
-protocol PaymentProfileDisplayLogic: class {}
+protocol PaymentProfileDisplayLogic: class {
+    func displayPaymentValidationError(error: PaymentProfilePresenter.PaymentValidationError)
+    func displayError(error: Error)
+    func displayWebView()
+}
 
 class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic {
-    
-    enum Field {
-        case addressLine1
-        case addressLine2
-        case state
-        case city
-        case postalCode
-        case country
-    }
 
     // MARK: - Outlets
     
@@ -81,40 +76,65 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
 	}
 
-	// MARK: - Display Logic
+    // MARK: - Private
     
-    fileprivate func setupView() {
+    private func setupView() {
         // Customize button insets depedning on layout direction
         if self.view.isRTL() {
             // Set text input from right if arabic language
             textfieldCollection.forEach({ $0.textAlignment = .right })
         }
     }
-	
+    
+	// MARK: - Display Logic
+    
+    func displayPaymentValidationError(error: PaymentProfilePresenter.PaymentValidationError) {
+        switch error {
+        case .emptyAddress:
+            addressLine1View.adjustToState(.error(msg: error))
+        case .emptyCity:
+            cityView.adjustToState(.error(msg: error))
+        case .emptyCountry:
+            countryView.adjustToState(.error(msg: error))
+        case .emptyPostalCode:
+            postalCodeView.adjustToState(.error(msg: error))
+        case .emptyState:
+            stateView.adjustToState(.error(msg: error))
+        default:
+            break
+        }
+    }
+    
+    func displayError(error: Error) {
+        router?.showError(error)
+    }
+    
+    func displayWebView() {
+        router?.navigateToPaymentWebViewController()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func confirmPressed(_ sender: SCButton) {
+        let request = PaymentProfile.ValidateForm.Request(addressLine1: addressLine1View.textField.text,
+                                                          addressLine2: addressLine2View.textField.text,
+                                                          state: stateView.textField.text,
+                                                          city: cityView.textField.text,
+                                                          postalCode: postalCodeView.textField.text,
+                                                          country: countryView.textField.text,
+                                                          language: "English")
+        interactor?.actionWithForm(request: request)
+    }
+    
 }
 
 extension PaymentProfileViewController: UITextFieldDelegate {
     
     @IBAction func textChanged(_ textField: UITextField) {
-//        switch textField {
-//        case addressLine1View.textField:
-//            registerForm.email = textField.text
-//        case passwordView.textField:
-//            registerForm.password = textField.text
-//        case nameView.textField:
-//            registerForm.name = textField.text
-//        case surnameView.textField:
-//            registerForm.surname = textField.text
-//        case confirmPasswordView.textField:
-//            registerForm.repeatPassword = textField.text
-//        case phoneView.textField:
-//            registerForm.phone = textField.text
-//        default:
-//            break
-//        }
-        textFieldDidBeginEditing(textField) // To mark as active
+        textFieldDidBeginEditing(textField)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

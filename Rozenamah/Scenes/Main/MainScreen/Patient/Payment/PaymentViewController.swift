@@ -42,7 +42,8 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     // MARK: Event handling
 
     @IBAction func payAction(_ sender: Any) {
-        // TODO
+        // Todo fetch payment profile from API
+//        performSegue(withIdentifier: "PaymentProfile", sender: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {

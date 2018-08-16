@@ -164,14 +164,22 @@
         "selectOne": "Select one..."
     },
     "payment": {
+        "header": "Payment",
         "title": "Fill your payment profile",
         "address1": "Address line 1",
         "address2": "Address line 2",
         "state": "State",
         "city": "City",
-        "postalCode": "Postal Code",
+        "postalCode": "Postal code",
         "country": "Country",
-        "confirm": "Confirm"
+        "confirm": "Confirm",
+        "error": {
+            "address": "Address is required",
+            "state": "State is required",
+            "city": "City is required",
+            "postalCode": "Postal code is required",
+            "country": "Country is required",
+        }
     }
 }
 
