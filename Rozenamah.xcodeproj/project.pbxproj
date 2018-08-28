@@ -1364,7 +1364,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1910,14 +1910,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Rozenamah/Rozenamah.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J5AJCLAX66;
+				DEVELOPMENT_TEAM = G8W9SZ8VZM;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3df8465e-0b1c-4417-85f8-7c4d9c3751ba";
-				PROVISIONING_PROFILE_SPECIFIER = "Rozemanah dev";
+				PROVISIONING_PROFILE = "2ddbf442-a32a-4026-b4ba-38e469f4fa70";
+				PROVISIONING_PROFILE_SPECIFIER = RozenamahDevelopment;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1932,14 +1932,14 @@
 				CODE_SIGN_ENTITLEMENTS = Rozenamah/Rozenamah.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J5AJCLAX66;
+				DEVELOPMENT_TEAM = G8W9SZ8VZM;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Rozenamah.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f14d04c7-ebec-43d8-9e82-cc6acc08b3e4";
-				PROVISIONING_PROFILE_SPECIFIER = "Rozenamah AppStore";
+				PROVISIONING_PROFILE = "dff1086f-7650-4e31-b5a3-0c70603db362";
+				PROVISIONING_PROFILE_SPECIFIER = RozemanahDistribution;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
