@@ -13,6 +13,7 @@ protocol PaymentProfileDisplayLogic: class {
     func displayPaymentValidationError(error: PaymentProfilePresenter.PaymentValidationError)
     func displayError(error: Error)
     func displayWebView()
+    func displayWaitAlert()
 }
 
 class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic {
@@ -92,28 +93,38 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
 	// MARK: - Display Logic
     
     func displayPaymentValidationError(error: PaymentProfilePresenter.PaymentValidationError) {
-        switch error {
-        case .emptyAddress:
-            addressLine1View.adjustToState(.error(msg: error))
-        case .emptyCity:
-            cityView.adjustToState(.error(msg: error))
-        case .emptyCountry:
-            countryView.adjustToState(.error(msg: error))
-        case .emptyPostalCode:
-            postalCodeView.adjustToState(.error(msg: error))
-        case .emptyState:
-            stateView.adjustToState(.error(msg: error))
-        default:
-            break
+        router?.hideWaitAlert { [weak self] in
+            switch error {
+            case .emptyAddress:
+                self?.addressLine1View.adjustToState(.error(msg: error))
+            case .emptyCity:
+                self?.cityView.adjustToState(.error(msg: error))
+            case .emptyCountry:
+                self?.countryView.adjustToState(.error(msg: error))
+            case .emptyPostalCode:
+                self?.postalCodeView.adjustToState(.error(msg: error))
+            case .emptyState:
+                self?.stateView.adjustToState(.error(msg: error))
+            default:
+                self?.router?.showError(error)
+            }
         }
     }
     
     func displayError(error: Error) {
-        router?.showError(error)
+        router?.hideWaitAlert { [weak self] in
+            self?.router?.showError(error)
+        }
     }
     
     func displayWebView() {
-        router?.navigateToPaymentWebViewController()
+        router?.hideWaitAlert { [weak self] in
+            self?.router?.navigateToPaymentWebViewController()
+        }
+    }
+    
+    func displayWaitAlert() {
+        router?.showWaitAlert()
     }
     
     // MARK: - Actions

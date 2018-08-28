@@ -79,3 +79,17 @@ class PaymentWebViewViewController: UIViewController, PaymentWebViewDisplayLogic
 	// MARK: - Display Logic
 	
 }
+
+// MARK: - UIWebViewDelegate
+
+extension PaymentWebViewViewController: UIWebViewDelegate {
+  
+  func webViewDidStartLoad(_ webView: UIWebView) {
+    
+  }
+  
+  func webViewDidFinishLoad(_ webView: UIWebView) {
+    
+  }
+  
+}

@@ -30,6 +30,7 @@ class PaymentProfileInteractor: PaymentProfileBusinessLogic, PaymentProfileDataS
         guard let request = validateFormWith(request: request) else {
             return
         }
+        presenter?.presentWaitAlert()
         worker.sendPaymentProfileDetailsWith(request: request, completion: { [weak self] (response, error) in
             guard let `self` = self else { return }
             if let error = error {

@@ -12,6 +12,7 @@ protocol PaymentProfilePresentationLogic {
     func presentValidationError(error: PaymentProfilePresenter.PaymentValidationError)
     func handleError(_ error: RMError)
     func presentWebView()
+    func presentWaitAlert()
 }
 
 class PaymentProfilePresenter: PaymentProfilePresentationLogic {
@@ -66,6 +67,10 @@ class PaymentProfilePresenter: PaymentProfilePresentationLogic {
     
     func presentWebView() {
         viewController?.displayWebView()
+    }
+    
+    func presentWaitAlert() {
+        viewController?.displayWaitAlert()
     }
     
 }
