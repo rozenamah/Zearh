@@ -63,6 +63,12 @@ enum API {
         var resource: String { return baseURL + "visit/" }
     }
   
+    enum Report {
+        case create
+        
+        var resource: String { return baseURL + "report/" }
+    }
+  
     enum Payments {
         case paypage
         
@@ -120,10 +126,18 @@ extension API.User {
         case .changePassword: return resource + "password/change"
         case .updateProfile: return resource + "update"
         case .updateAvatar: return resource + "avatar"
-        case .report: return resource + "report"
+        case .report: return resource + "report/create"
         case .visit: return resource + "me/visit"
         }
     }
+}
+
+extension API.Report {
+  var path: String {
+    switch self {
+    case .create: return resource + "create"
+    }
+  }
 }
 
 extension API.Payments {

@@ -8,8 +8,17 @@ class ReportWorker {
         
         let params = reportForm.toParams
         
-        Alamofire.request(API.User.report.path, method: .post, parameters: params,
-                          encoding: JSONEncoding.default)
+        guard let token = Keychain.shared.token else {
+            completion(RMError.tokenDoesntExist)
+            return
+        }
+        
+        let headers = [
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        Alamofire.request(API.Report.create.path, method: .post, parameters: params,
+                          encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)
         

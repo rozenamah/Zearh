@@ -6,8 +6,8 @@ class ReportForm {
     
     var toParams: [String: Any] {
         let params: [String: Any] = [
-            "text": text!,
-            "subject": subject!.rawValue
+            "message": text!,
+            "type": subject!.rawValue
         ]
         return params
     }
@@ -15,22 +15,22 @@ class ReportForm {
 
 enum ReportSubject: String, Decodable {
     
-    case notArrived = "notArrived"
-    case late = "late"
-    case misbehave = "misbehaved"
-    case wrongDiagnose = "wrongDiagnose"
+    case bug = "bug"
+    case user = "user"
+    case refund = "refund"
+    case opinion = "opinion"
     case other = "other"
     
     static var all: [ReportSubject] {
-        return [.notArrived, .late, .misbehave, .wrongDiagnose, .other ]
+        return [.bug, .user, .refund, .opinion, .other ]
     }
     
     var title: String {
         switch self {
-        case .notArrived: return "settings.report.reportTopic.notArrived".localized
-        case .late: return "settings.report.reportTopic.late".localized
-        case .misbehave: return "settings.report.reportTopic.misbehave".localized
-        case .wrongDiagnose: return "settings.report.reportTopic.wrongDiagnose".localized
+        case .bug: return "settings.report.reportTopic.notArrived".localized
+        case .user: return "settings.report.reportTopic.late".localized
+        case .refund: return "settings.report.reportTopic.misbehave".localized
+        case .opinion: return "settings.report.reportTopic.wrongDiagnose".localized
         case .other: return "settings.report.reportTopic.other".localized
         }
     }
