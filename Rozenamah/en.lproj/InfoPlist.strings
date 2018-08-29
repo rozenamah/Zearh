@@ -6,3 +6,4 @@
   Copyright © 2018 Dominik Majda. All rights reserved.
 */
 "CFBundleDisplayName" = "Zearh";
+"UILaunchStoryboardName" = "LaunchScreen_en";

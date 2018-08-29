@@ -180,6 +180,9 @@
             "postalCode": "Postal code is required",
             "country": "Country is required",
         }
+    },
+    "image": {
+        "logo": "ic_zearhLogoText_en"
     }
 }
 

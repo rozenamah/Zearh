@@ -11,7 +11,8 @@ protocol SplashDisplayLogic: class {
 class SplashViewController: UIViewController, SplashDisplayLogic {
 
     // MARK: Outlets
-
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     // MARK: Properties
     var interactor: SplashBusinessLogic?
     var router: SplashRouter?
@@ -38,6 +39,8 @@ class SplashViewController: UIViewController, SplashDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        logoImageView.image = UIImage(named: "image.logo".localized)
+        
         // Check if token exists - if so start main screen
         if let _ = Keychain.shared.token {
             interactor?.fetchUserData()

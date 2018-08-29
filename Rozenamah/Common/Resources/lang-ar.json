@@ -179,6 +179,9 @@
             "postalCode": "الرمز البريدي مطلوب",
             "country": "الدولة مطلوبة",
         }
+    },
+    "image": {
+        "logo": "ic_zearhLogoText_ar"
     }
 }
 

@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-Wm-OtL">
-                                <rect key="frame" x="40" y="247.5" width="240" height="73"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_zearhLogoText_en" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-Wm-OtL">
+                                <rect key="frame" x="40" y="151" width="240" height="266"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pYy-bz-MLn">
-                                <rect key="frame" x="150" y="352.5" width="20" height="20"/>
+                                <rect key="frame" x="150" y="449" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,6 +35,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QdO-Nl-0cX"/>
                     </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="gl2-Wm-OtL" id="MmH-Iq-fbO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQV-Oh-FcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,14 +93,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="s6S-ae-yEA">
-                                <rect key="frame" x="40" y="23" width="240" height="73"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_zearhLogoText_en" translatesAutoresizingMaskIntoConstraints="NO" id="s6S-ae-yEA">
+                                <rect key="frame" x="40" y="13" width="240" height="186"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="Q1z-xx-ydL"/>
+                                    <constraint firstAttribute="height" constant="186" id="Q1z-xx-ydL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please log in to continue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mae-7M-inr">
-                                <rect key="frame" x="16" y="128" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="221" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -165,7 +168,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mae-7M-inr" firstAttribute="top" secondItem="s6S-ae-yEA" secondAttribute="bottom" constant="32" id="2Xk-cb-gkX"/>
+                            <constraint firstItem="mae-7M-inr" firstAttribute="top" secondItem="s6S-ae-yEA" secondAttribute="bottom" constant="22" id="2Xk-cb-gkX"/>
                             <constraint firstItem="mae-7M-inr" firstAttribute="leading" secondItem="gcR-Bg-cGm" secondAttribute="leading" constant="16" id="4F1-wc-wvC"/>
                             <constraint firstItem="VcL-hV-rH3" firstAttribute="leading" secondItem="gcR-Bg-cGm" secondAttribute="leading" constant="16" id="H6A-1y-N06"/>
                             <constraint firstItem="gcR-Bg-cGm" firstAttribute="trailing" secondItem="s6S-ae-yEA" secondAttribute="trailing" constant="40" id="I6I-KA-Qmb"/>
@@ -173,7 +176,7 @@
                             <constraint firstItem="gcR-Bg-cGm" firstAttribute="trailing" secondItem="VcL-hV-rH3" secondAttribute="trailing" constant="16" id="Skk-dx-xXr"/>
                             <constraint firstItem="s6S-ae-yEA" firstAttribute="leading" secondItem="gcR-Bg-cGm" secondAttribute="leading" constant="40" id="To2-vt-7lH"/>
                             <constraint firstItem="gcR-Bg-cGm" firstAttribute="trailing" secondItem="fxb-MO-Vmt" secondAttribute="trailing" constant="16" id="XId-IZ-oKZ"/>
-                            <constraint firstItem="s6S-ae-yEA" firstAttribute="top" secondItem="gcR-Bg-cGm" secondAttribute="top" constant="23" id="aL7-9r-33T"/>
+                            <constraint firstItem="s6S-ae-yEA" firstAttribute="top" secondItem="gcR-Bg-cGm" secondAttribute="top" constant="13" id="aL7-9r-33T"/>
                             <constraint firstItem="fxb-MO-Vmt" firstAttribute="leading" secondItem="gcR-Bg-cGm" secondAttribute="leading" constant="16" id="bUn-l5-XUw"/>
                             <constraint firstItem="pED-Pt-i5t" firstAttribute="leading" secondItem="gcR-Bg-cGm" secondAttribute="leading" constant="16" id="mpI-dT-EsB"/>
                             <constraint firstItem="fxb-MO-Vmt" firstAttribute="top" secondItem="VcL-hV-rH3" secondAttribute="bottom" constant="18" id="smB-TN-VLx"/>
@@ -186,6 +189,9 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="GEt-v2-R0l">
                         <barButtonItem key="backBarButtonItem" title="session.welcome.welcome" id="bO5-Do-Qx0"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="logoImageView" destination="s6S-ae-yEA" id="b8G-G5-t9B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bx6-Y9-p10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1423,7 +1429,7 @@
         <image name="arrow" width="10" height="7"/>
         <image name="checkbox" width="16" height="16"/>
         <image name="checkbox_s" width="16" height="16"/>
-        <image name="logo" width="295" height="73"/>
+        <image name="ic_zearhLogoText_en" width="200" height="266"/>
         <image name="pdf_icon" width="22" height="25"/>
         <image name="pdf_upload" width="59" height="59"/>
         <image name="pdf_upload_s" width="59" height="59"/>
