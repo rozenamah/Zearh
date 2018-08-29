@@ -122,7 +122,7 @@ extension AppDelegate {
         Fabric.with([Crashlytics.self])
         
         // Google Maps
-        GMSServices.provideAPIKey("AIzaSyAQn-t2THtonY3SIyOyPTJTAskXO_f6KyY")
+        GMSServices.provideAPIKey("AIzaSyD4YIMG6xuvbw8MQpthFVXLt4-yng6xzjk")
         
         // Slide menu
         let slideWidth = UIScreen.main.bounds.width * 0.82

@@ -16,7 +16,6 @@
 		5710109A208F6315008B4384 /* DoctorOnTheWayModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101093208F6315008B4384 /* DoctorOnTheWayModels.swift */; };
 		5710109B208F6315008B4384 /* DoctorOnTheWayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */; };
 		5710109D208F6315008B4384 /* DoctorOnTheWayConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */; };
-		5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5710109E208F6FB2008B4384 /* GoogleService-Info.plist */; };
 		57105E17209993D2007259A0 /* DatabseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57105E16209993D2007259A0 /* DatabseObserver.swift */; };
 		57105E192099A07C007259A0 /* PatientsDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57105E182099A07C007259A0 /* PatientsDetailsRouter.swift */; };
 		57133DF42087744500BB69A5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133DF32087744500BB69A5 /* UIViewExtension.swift */; };
@@ -105,6 +104,7 @@
 		57E659D72073AE60004E3926 /* ChangeEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */; };
 		57E659D82073AE60004E3926 /* ChangeEmailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */; };
 		7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */; };
+		B4A110B02135944000FD777C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4A110AF2135943F00FD777C /* GoogleService-Info.plist */; };
 		B4FF98A22122C49900269AA0 /* PaymentProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989C2122C49900269AA0 /* PaymentProfilePresenter.swift */; };
 		B4FF98A32122C49900269AA0 /* PaymentProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989D2122C49900269AA0 /* PaymentProfileWorker.swift */; };
 		B4FF98A42122C49900269AA0 /* PaymentProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989E2122C49900269AA0 /* PaymentProfileRouter.swift */; };
@@ -291,7 +291,6 @@
 		57101093208F6315008B4384 /* DoctorOnTheWayModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayModels.swift; sourceTree = "<group>"; };
 		57101094208F6315008B4384 /* DoctorOnTheWayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayViewController.swift; sourceTree = "<group>"; };
 		57101096208F6315008B4384 /* DoctorOnTheWayConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorOnTheWayConfigurator.swift; sourceTree = "<group>"; };
-		5710109E208F6FB2008B4384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57105E16209993D2007259A0 /* DatabseObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabseObserver.swift; sourceTree = "<group>"; };
 		57105E182099A07C007259A0 /* PatientsDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsDetailsRouter.swift; sourceTree = "<group>"; };
 		57133DF32087744500BB69A5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -380,6 +379,7 @@
 		57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailInteractor.swift; sourceTree = "<group>"; };
 		57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailConfigurator.swift; sourceTree = "<group>"; };
 		5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.debug.xcconfig"; sourceTree = "<group>"; };
+		B4A110AF2135943F00FD777C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4FF989C2122C49900269AA0 /* PaymentProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfilePresenter.swift; sourceTree = "<group>"; };
 		B4FF989D2122C49900269AA0 /* PaymentProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileWorker.swift; sourceTree = "<group>"; };
 		B4FF989E2122C49900269AA0 /* PaymentProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileRouter.swift; sourceTree = "<group>"; };
@@ -819,7 +819,7 @@
 				F9F10FC020A0854C00E88987 /* Cracow.gpx */,
 				F9A9F2A0204D5881006E8999 /* Common */,
 				F9A9F297204D57FA006E8999 /* Scenes */,
-				5710109E208F6FB2008B4384 /* GoogleService-Info.plist */,
+				B4A110AF2135943F00FD777C /* GoogleService-Info.plist */,
 				F9093A70204992CB00CB041A /* AppDelegate.swift */,
 				F940EC2A20595A1100266753 /* API.swift */,
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
@@ -1401,8 +1401,8 @@
 				F969920F20863907007E6C42 /* lang-en.json in Resources */,
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F969921020863907007E6C42 /* lang-ar.json in Resources */,
-				5710109F208F6FB3008B4384 /* GoogleService-Info.plist in Resources */,
 				F9F10FC120A0854C00E88987 /* Cracow.gpx in Resources */,
+				B4A110B02135944000FD777C /* GoogleService-Info.plist in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
 			);
@@ -1440,7 +1440,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

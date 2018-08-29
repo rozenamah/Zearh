@@ -14,10 +14,10 @@ PODS:
   - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseCore (4.0.17):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseDatabase (4.1.5):
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
@@ -30,7 +30,7 @@ PODS:
   - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
   - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - IQKeyboardManager (5.0.8)
   - KeychainAccess (3.1.0)
@@ -51,6 +51,7 @@ DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - Crashlytics
   - Fabric
+  - Firebase/Core
   - Firebase/Database
   - GoogleMaps
   - IQKeyboardManager
@@ -60,6 +61,26 @@ DEPENDENCIES:
   - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider`, branch `swift_4`)
   - SlideMenuControllerSwift
   - SwiftCake (from `https://github.com/Rovalx/SwiftCake.git`, branch `master`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - Crashlytics
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - GoogleMaps
+    - GoogleToolboxForMac
+    - IQKeyboardManager
+    - KeychainAccess
+    - Kingfisher
+    - leveldb-library
+    - nanopb
+    - SlideMenuControllerSwift
 
 EXTERNAL SOURCES:
   Localize:
@@ -105,6 +126,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftCake: c3ecf5fe2d943bf6fe86197cb3ecab4ec9c4dc5b
 
-PODFILE CHECKSUM: 87a4e1a69bc9c8ea3e9012474799b74b8cec713f
+PODFILE CHECKSUM: 39bf38a61352bdd8664ac9e4c488452495cce7c0
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
