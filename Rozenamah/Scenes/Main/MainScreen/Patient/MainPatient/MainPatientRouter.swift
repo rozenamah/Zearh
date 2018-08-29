@@ -71,7 +71,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["booking"] as? Booking,
             booking.patient == User.current {
-            
+            print(booking.status)
             if booking.status == .new {
                 navigateToWaitForAccept(withBooking: booking)
                 

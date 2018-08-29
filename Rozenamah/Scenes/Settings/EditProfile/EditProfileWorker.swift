@@ -55,7 +55,7 @@ class EditProfileWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.User.delete.path, method: .post, parameters: params,
+        Alamofire.request(API.User.delete.path, method: .delete, parameters: params,
                           encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)

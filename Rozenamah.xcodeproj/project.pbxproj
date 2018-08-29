@@ -1364,7 +1364,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1916,7 +1916,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2ddbf442-a32a-4026-b4ba-38e469f4fa70";
+				PROVISIONING_PROFILE = "d61e723d-4498-4d25-9118-229b6ac1fde6";
 				PROVISIONING_PROFILE_SPECIFIER = RozenamahDevelopment;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
