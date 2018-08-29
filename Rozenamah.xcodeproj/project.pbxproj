@@ -117,6 +117,7 @@
 		B4FF98B22122DAF400269AA0 /* PaymentWebViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */; };
 		B4FF98B32122DAF400269AA0 /* PaymentWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */; };
 		B4FF98B42122DAF400269AA0 /* PaymentWebViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */; };
+		E998D50C2136A52400BB93B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E998D50E2136A52400BB93B2 /* InfoPlist.strings */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
 		F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen.storyboard */; };
@@ -392,6 +393,8 @@
 		B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModels.swift; sourceTree = "<group>"; };
 		B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewViewController.swift; sourceTree = "<group>"; };
 		B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewInteractor.swift; sourceTree = "<group>"; };
+		E998D50D2136A52400BB93B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E998D50F2136A52700BB93B2 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		F9093A6D204992CB00CB041A /* Rozenamah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozenamah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9093A70204992CB00CB041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9093A77204992CB00CB041A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -825,6 +828,7 @@
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
 				F9093A79204992CB00CB041A /* LaunchScreen.storyboard */,
 				F9093A7C204992CB00CB041A /* Info.plist */,
+				E998D50E2136A52400BB93B2 /* InfoPlist.strings */,
 			);
 			path = Rozenamah;
 			sourceTree = "<group>";
@@ -1395,6 +1399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
+				E998D50C2136A52400BB93B2 /* InfoPlist.strings in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
 				573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
@@ -1771,6 +1776,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E998D50E2136A52400BB93B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E998D50D2136A52400BB93B2 /* en */,
+				E998D50F2136A52700BB93B2 /* ar-SA */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		F9093A79204992CB00CB041A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1916,7 +1930,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2ddbf442-a32a-4026-b4ba-38e469f4fa70";
+				PROVISIONING_PROFILE = "d61e723d-4498-4d25-9118-229b6ac1fde6";
 				PROVISIONING_PROFILE_SPECIFIER = RozenamahDevelopment;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
