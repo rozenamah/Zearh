@@ -10,10 +10,12 @@ import UIKit
 
 protocol PaymentProfileBusinessLogic {
     func actionWithForm(request: PaymentProfile.ValidateForm.Request)
+    func prepareFieldsIfPossible()
 }
 
 protocol PaymentProfileDataStore {
     var webViewURL: String {get set}
+    var paymentProfile: Payment.Details? { get set }
 }
 
 class PaymentProfileInteractor: PaymentProfileBusinessLogic, PaymentProfileDataStore {
@@ -21,10 +23,19 @@ class PaymentProfileInteractor: PaymentProfileBusinessLogic, PaymentProfileDataS
 	// MARK: - Properties
     
     var webViewURL: String = ""
+    var paymentProfile: Payment.Details?
 	var presenter: PaymentProfilePresentationLogic?
 	var worker = PaymentProfileWorker()
 	
 	// MARK: - Business Logic
+    
+    func prepareFieldsIfPossible() {
+        guard let paymentProfile = paymentProfile else {
+            print("There is no payment profile, so we have empty fields")
+            return
+        }
+        presenter?.presentPaymentProfile(profile: paymentProfile)
+    }
     
     func actionWithForm(request: PaymentProfile.ValidateForm.Request) {
         guard let request = validateFormWith(request: request) else {

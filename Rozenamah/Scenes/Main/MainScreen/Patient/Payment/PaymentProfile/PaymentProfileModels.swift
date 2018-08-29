@@ -11,13 +11,15 @@ import UIKit
 enum PaymentProfile {
     enum ValidateForm {
         struct Request {
-            let addressLine1: String?
-            let addressLine2: String?
-            let state: String?
-            let city: String?
-            let postalCode: String?
-            let country: String?
-            let language: String
+            var addressLine1: String?
+            var addressLine2: String?
+            var state: String?
+            var city: String?
+            var postalCode: String?
+            var country: String?
+            var language: String?
+            
+            init() {}
         }
     }
     class Response: Decodable {

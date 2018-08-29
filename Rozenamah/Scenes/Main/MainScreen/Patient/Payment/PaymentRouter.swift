@@ -9,10 +9,11 @@ class PaymentRouter: Router {
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier,
         identifier == "PaymentProfile", let destinationVC = segue.destination as? PaymentProfileViewController,
-        var destinationDS = destinationVC.router?.dataStore else {
+        var destinationDS = destinationVC.router?.dataStore, let paymentProfile = sender as? Payment.Details else {
             print("Cannot initalize payment profile view controller")
             return
         }
+        destinationDS.paymentProfile = paymentProfile
         print("Route to payment profile")
     }
 

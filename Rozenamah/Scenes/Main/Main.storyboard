@@ -1658,6 +1658,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="payButton" destination="OR3-4x-FKZ" id="8sn-Dn-9wV"/>
                         <outlet property="paymentMethodLabel" destination="u1A-Xx-CyI" id="u7H-7t-w1Y"/>
                         <outlet property="totalPriceLabel" destination="k5X-od-sgb" id="3X3-MB-nH8"/>
                     </connections>

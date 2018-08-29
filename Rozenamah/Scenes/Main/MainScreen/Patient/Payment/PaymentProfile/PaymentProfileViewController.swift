@@ -14,6 +14,7 @@ protocol PaymentProfileDisplayLogic: class {
     func displayError(error: Error)
     func displayWebView()
     func displayWaitAlert()
+    func displayPaymentProfile(profile: Payment.Details)
 }
 
 class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic {
@@ -34,6 +35,7 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
 
 	var interactor: PaymentProfileBusinessLogic?
 	var router: (NSObjectProtocol & PaymentProfileRoutingLogic & PaymentProfileDataPassing)?
+    private var request = PaymentProfile.ValidateForm.Request()
 
 	// MARK: - Initialization
 	
@@ -77,7 +79,7 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
+        interactor?.prepareFieldsIfPossible()
 	}
 
     // MARK: - Private
@@ -127,16 +129,24 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
         router?.showWaitAlert()
     }
     
+    func displayPaymentProfile(profile: Payment.Details) {
+        addressLine1View.textField.text = profile.billingAddress
+        stateView.textField.text = profile.state
+        cityView.textField.text = profile.city
+        postalCodeView.textField.text = profile.postalCode
+        countryView.textField.text = profile.country
+    }
+    
     // MARK: - Actions
     
     @IBAction func confirmPressed(_ sender: SCButton) {
-        let request = PaymentProfile.ValidateForm.Request(addressLine1: addressLine1View.textField.text,
-                                                          addressLine2: addressLine2View.textField.text,
-                                                          state: stateView.textField.text,
-                                                          city: cityView.textField.text,
-                                                          postalCode: postalCodeView.textField.text,
-                                                          country: countryView.textField.text,
-                                                          language: "English")
+        request.addressLine1 = addressLine1View.textField.text
+        request.addressLine2 = addressLine2View.textField.text
+        request.state = stateView.textField.text
+        request.city = cityView.textField.text
+        request.postalCode = postalCodeView.textField.text
+        request.country = countryView.textField.text
+        request.language = "English" // Todo
         interactor?.actionWithForm(request: request)
     }
     

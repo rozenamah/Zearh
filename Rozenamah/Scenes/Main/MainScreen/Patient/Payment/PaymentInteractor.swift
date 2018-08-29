@@ -1,6 +1,7 @@
 import UIKit
 
 protocol PaymentBusinessLogic {
+    func fetchPaymentProfile()
 }
 
 class PaymentInteractor: PaymentBusinessLogic {
@@ -9,4 +10,10 @@ class PaymentInteractor: PaymentBusinessLogic {
 
 	// MARK: Business logic
 	
+    func fetchPaymentProfile() {
+        worker.fetchPaymentProfile { [weak self] (profileDetails, error) in
+            self?.presenter?.presentPaymentProfileWith(profile: profileDetails)
+        }
+    }
+    
 }
