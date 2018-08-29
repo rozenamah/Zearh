@@ -146,7 +146,11 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
         request.city = cityView.textField.text
         request.postalCode = postalCodeView.textField.text
         request.country = countryView.textField.text
-        request.language = "English" // Todo
+        if self.view.isRTL() {
+            request.language = "Arabic"
+        } else {
+            request.language = "English"
+        }
         interactor?.actionWithForm(request: request)
     }
     

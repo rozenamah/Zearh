@@ -119,7 +119,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
             } else if booking.status == .waitingForPayment {
-                showPayByCardScreen()
+                showPayByCardScreenWith(booking: booking)
                 //TODO waiting for payment navigation
             }
             
@@ -227,10 +227,14 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
         }
     }
     
-    func showPayByCardScreen() {
-        let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "payment_vc")
+    func showPayByCardScreenWith(booking: Booking) {
+        guard let navigationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "payment_vc") as? UINavigationController, let destinationVC = navigationVC.viewControllers.first as? PaymentViewController else {
+            print("Cannot initalize payment view controller")
+            return
+        }
+        destinationVC.visitDetails = booking.visit
         destinationVC.modalPresentationStyle = .overCurrentContext
-        viewController?.present(destinationVC, animated: true, completion: nil)
+        viewController?.present(navigationVC, animated: true, completion: nil)
     }
     
 }

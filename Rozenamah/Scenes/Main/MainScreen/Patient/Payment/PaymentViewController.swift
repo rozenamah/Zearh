@@ -17,6 +17,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     // MARK: Properties
     var interactor: PaymentBusinessLogic?
     var router: PaymentRouter?
+    var visitDetails: VisitDetails?
     
     private var shouldPerformSegue = false
     
@@ -51,6 +52,10 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     // MARK: View customization
     
     fileprivate func setupView() {
+        guard let visit = visitDetails else {
+            return
+        }
+        totalPriceLabel.text = "\(visit.cost.total) SAR"
     }
     
     // MARK: - Display Logic

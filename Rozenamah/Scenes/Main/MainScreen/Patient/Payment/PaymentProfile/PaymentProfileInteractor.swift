@@ -85,7 +85,7 @@ class PaymentProfileInteractor: PaymentProfileBusinessLogic, PaymentProfileDataS
                                                               city: "\(request.city!)",
                                                               postalCode: "\(request.postalCode!)",
                                                               country: "\(request.country!)",
-                                                              language: "\(request.language)")
+                                                              language: "\(request.language ?? "English")")
             return (request)
         } else {
             return nil

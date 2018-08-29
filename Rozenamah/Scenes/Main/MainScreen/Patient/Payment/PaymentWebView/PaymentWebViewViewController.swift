@@ -62,9 +62,22 @@ class PaymentWebViewViewController: UIViewController, PaymentWebViewDisplayLogic
     override func viewDidLoad() {
         super.viewDidLoad()
         loadWebView()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainPatientRouter.kVisitRequestNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: MainPatientRouter.kVisitRequestNotification, object: nil)
     }
     
     // MARK: - Private
+    
+    @objc private func handleNotification(for notification: NSNotification) {
+        if let booking = notification.userInfo?["booking"] as? Booking,
+            booking.patient == User.current, booking.status == .accepted,
+            let paymentViewController = navigationController?.viewControllers.first {
+            paymentViewController.dismiss(animated: true, completion: nil)
+        }
+    }
     
     private func loadWebView() {
         guard let urlString = router?.dataStore?.webViewURL,
