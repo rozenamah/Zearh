@@ -44,12 +44,12 @@ class ModalInformationViewController: BasicModalInformationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if view.isRTL() {
-            distanceButton.contentHorizontalAlignment = .right
-            distanceButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 16)
-            distanceButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
-            phoneNumber.contentHorizontalAlignment = .right
-            phoneNumber.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 16)
-            phoneNumber.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            distanceButton?.contentHorizontalAlignment = .right
+            distanceButton?.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 16)
+            distanceButton?.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            phoneNumber?.contentHorizontalAlignment = .right
+            phoneNumber?.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 16)
+            phoneNumber?.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
         }
     }
     

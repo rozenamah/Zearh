@@ -64,10 +64,10 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
         if view.isRTL() {
             byCardButton.contentHorizontalAlignment = .right
             byCardButton.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 16)
-            byCardButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            byCardButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
             byCashButton.contentHorizontalAlignment = .right
             byCashButton.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 16)
-            byCashButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            byCashButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
         }
     }
 
