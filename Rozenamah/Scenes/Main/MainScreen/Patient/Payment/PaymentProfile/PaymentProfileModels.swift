@@ -12,7 +12,6 @@ enum PaymentProfile {
     enum ValidateForm {
         struct Request {
             var addressLine1: String?
-            var addressLine2: String?
             var state: String?
             var city: String?
             var postalCode: String?

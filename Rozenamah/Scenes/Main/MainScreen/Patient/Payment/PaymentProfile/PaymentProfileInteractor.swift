@@ -80,7 +80,7 @@ class PaymentProfileInteractor: PaymentProfileBusinessLogic, PaymentProfileDataS
             areFieldsValidated = false
         }
         if areFieldsValidated {
-            let request = PaymentProfileWorker.Request(address: "\(request.addressLine1!)\(request.addressLine2 ?? "")",
+            let request = PaymentProfileWorker.Request(address: "\(request.addressLine1!)",
                                                               state: "\(request.state!)",
                                                               city: "\(request.city!)",
                                                               postalCode: "\(request.postalCode!)",

@@ -3660,58 +3660,6 @@
                                                     <outlet property="textField" destination="7Tl-Cm-q5o" id="nsx-xN-0me"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXp-AT-kHl" userLabel="Surname" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="138" width="343" height="47"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address line 2" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bwz-xU-SaP" customClass="SCTextField" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                                <color key="value" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="payment.address2"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="textChanged:" destination="iKa-Je-ABr" eventType="editingChanged" id="zQq-N8-7bF"/>
-                                                            <outlet property="delegate" destination="iKa-Je-ABr" id="eT1-k5-9Px"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Bu-fjW">
-                                                        <rect key="frame" x="0.0" y="28" width="343" height="1"/>
-                                                        <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="Mw7-Xm-3G8"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error about address line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zO-o3-cnL">
-                                                        <rect key="frame" x="0.0" y="31" width="343" height="16"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                        <color key="textColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="wb7-Bu-fjW" firstAttribute="top" secondItem="Bwz-xU-SaP" secondAttribute="bottom" constant="7" id="3ef-zk-pcs"/>
-                                                    <constraint firstItem="0zO-o3-cnL" firstAttribute="top" secondItem="wb7-Bu-fjW" secondAttribute="bottom" constant="2" id="IVV-tD-KO4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Bwz-xU-SaP" secondAttribute="trailing" id="KJJ-R1-YJT"/>
-                                                    <constraint firstItem="0zO-o3-cnL" firstAttribute="leading" secondItem="GXp-AT-kHl" secondAttribute="leading" id="Od1-od-Ggh"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0zO-o3-cnL" secondAttribute="bottom" id="PG5-mm-Orb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="wb7-Bu-fjW" secondAttribute="trailing" id="Ws1-4z-xh7"/>
-                                                    <constraint firstItem="Bwz-xU-SaP" firstAttribute="leading" secondItem="GXp-AT-kHl" secondAttribute="leading" id="jJn-YB-EpK"/>
-                                                    <constraint firstAttribute="trailing" secondItem="0zO-o3-cnL" secondAttribute="trailing" id="jjv-gb-jq4"/>
-                                                    <constraint firstItem="wb7-Bu-fjW" firstAttribute="leading" secondItem="GXp-AT-kHl" secondAttribute="leading" id="oAB-0r-I76"/>
-                                                    <constraint firstItem="Bwz-xU-SaP" firstAttribute="top" secondItem="GXp-AT-kHl" secondAttribute="top" id="vmN-nV-V4U"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="errorLabel" destination="0zO-o3-cnL" id="MCM-Br-U5y"/>
-                                                    <outlet property="separatorView" destination="wb7-Bu-fjW" id="2Ie-iW-kzO"/>
-                                                    <outlet property="textField" destination="Bwz-xU-SaP" id="8wq-UK-1dP"/>
-                                                </connections>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FV-hP-pdZ" userLabel="Email" customClass="RMTextFieldWithError" customModule="Rozenamah" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="208" width="343" height="47"/>
                                                 <subviews>
@@ -3942,14 +3890,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="GXp-AT-kHl" firstAttribute="leading" secondItem="0Xw-gL-tNp" secondAttribute="leading" constant="16" id="1At-Bp-Is5"/>
                                             <constraint firstItem="76s-WJ-aNN" firstAttribute="top" secondItem="eKo-UC-hY0" secondAttribute="bottom" constant="24" id="2kW-Rx-bwg"/>
                                             <constraint firstAttribute="trailing" secondItem="pFq-fM-9Nf" secondAttribute="trailing" constant="16" id="3wR-uQ-7fA"/>
                                             <constraint firstAttribute="trailing" secondItem="aLG-Qk-qoS" secondAttribute="trailing" constant="16" id="9wv-lK-OcX"/>
                                             <constraint firstItem="pFq-fM-9Nf" firstAttribute="top" secondItem="QA8-Z2-tk3" secondAttribute="bottom" constant="24" id="Ehg-r7-6dS"/>
                                             <constraint firstAttribute="trailing" secondItem="eKo-UC-hY0" secondAttribute="trailing" constant="16" id="F8m-np-XUD"/>
-                                            <constraint firstAttribute="bottom" secondItem="pFq-fM-9Nf" secondAttribute="bottom" constant="32" id="J5y-8Z-YGe"/>
-                                            <constraint firstItem="7FV-hP-pdZ" firstAttribute="top" secondItem="GXp-AT-kHl" secondAttribute="bottom" constant="23" id="Kne-Pd-s1l"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pFq-fM-9Nf" secondAttribute="bottom" constant="32" id="J5y-8Z-YGe"/>
                                             <constraint firstItem="QA8-Z2-tk3" firstAttribute="top" secondItem="aLG-Qk-qoS" secondAttribute="bottom" constant="23" id="LrH-54-vcx"/>
                                             <constraint firstAttribute="trailing" secondItem="7FV-hP-pdZ" secondAttribute="trailing" constant="16" id="Oqi-1s-oh0"/>
                                             <constraint firstItem="aLG-Qk-qoS" firstAttribute="leading" secondItem="0Xw-gL-tNp" secondAttribute="leading" constant="16" id="P9x-gt-Emk"/>
@@ -3957,8 +3903,8 @@
                                             <constraint firstItem="76s-WJ-aNN" firstAttribute="leading" secondItem="0Xw-gL-tNp" secondAttribute="leading" constant="16" id="RFG-g1-WCG"/>
                                             <constraint firstAttribute="trailing" secondItem="QA8-Z2-tk3" secondAttribute="trailing" constant="16" id="RvD-tS-OdY"/>
                                             <constraint firstAttribute="trailing" secondItem="76s-WJ-aNN" secondAttribute="trailing" constant="16" id="TSC-0G-RWG"/>
+                                            <constraint firstItem="7FV-hP-pdZ" firstAttribute="top" secondItem="76s-WJ-aNN" secondAttribute="bottom" constant="23" id="UQW-g1-jhd"/>
                                             <constraint firstAttribute="trailing" secondItem="tii-g2-Maf" secondAttribute="trailing" constant="16" id="W4S-Uw-4hl"/>
-                                            <constraint firstAttribute="trailing" secondItem="GXp-AT-kHl" secondAttribute="trailing" constant="16" id="cB3-hI-bDx"/>
                                             <constraint firstItem="pFq-fM-9Nf" firstAttribute="leading" secondItem="0Xw-gL-tNp" secondAttribute="leading" constant="16" id="elN-hs-Le1"/>
                                             <constraint firstItem="tii-g2-Maf" firstAttribute="leading" secondItem="0Xw-gL-tNp" secondAttribute="leading" constant="16" id="nlo-Ot-5fc"/>
                                             <constraint firstItem="aLG-Qk-qoS" firstAttribute="top" secondItem="tii-g2-Maf" secondAttribute="bottom" constant="23" id="o8A-GS-xgl"/>
@@ -3966,7 +3912,6 @@
                                             <constraint firstItem="eKo-UC-hY0" firstAttribute="top" secondItem="0Xw-gL-tNp" secondAttribute="top" constant="3" id="pH5-TI-C9h"/>
                                             <constraint firstItem="QA8-Z2-tk3" firstAttribute="leading" secondItem="0Xw-gL-tNp" secondAttribute="leading" constant="16" id="vvm-hF-PiX"/>
                                             <constraint firstItem="tii-g2-Maf" firstAttribute="top" secondItem="7FV-hP-pdZ" secondAttribute="bottom" constant="23" id="y1v-9N-oN0"/>
-                                            <constraint firstItem="GXp-AT-kHl" firstAttribute="top" secondItem="76s-WJ-aNN" secondAttribute="bottom" constant="23" id="yj6-i8-EUy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -3998,7 +3943,6 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="addressLine1View" destination="76s-WJ-aNN" id="Rga-B3-vMF"/>
-                        <outlet property="addressLine2View" destination="GXp-AT-kHl" id="tWH-2N-fvQ"/>
                         <outlet property="cityView" destination="tii-g2-Maf" id="vnc-hM-WEc"/>
                         <outlet property="confirmButton" destination="pFq-fM-9Nf" id="4rN-Dm-mYT"/>
                         <outlet property="countryView" destination="QA8-Z2-tk3" id="QNb-7x-CYI"/>
@@ -4006,7 +3950,6 @@
                         <outlet property="stateView" destination="7FV-hP-pdZ" id="c5U-FN-lRG"/>
                         <outlet property="titleLabel" destination="eKo-UC-hY0" id="j8u-TS-0fC"/>
                         <outletCollection property="textfieldCollection" destination="7Tl-Cm-q5o" collectionClass="NSMutableArray" id="GbO-eS-niP"/>
-                        <outletCollection property="textfieldCollection" destination="Bwz-xU-SaP" collectionClass="NSMutableArray" id="WsV-bI-RlS"/>
                         <outletCollection property="textfieldCollection" destination="HbX-fr-sH2" collectionClass="NSMutableArray" id="FdO-cc-L18"/>
                         <outletCollection property="textfieldCollection" destination="mbL-iL-lKU" collectionClass="NSMutableArray" id="f80-VD-bqg"/>
                         <outletCollection property="textfieldCollection" destination="1Qc-Q1-yhP" collectionClass="NSMutableArray" id="4JA-DN-Ikf"/>

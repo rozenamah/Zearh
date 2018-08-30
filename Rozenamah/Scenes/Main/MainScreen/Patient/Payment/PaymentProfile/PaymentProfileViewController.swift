@@ -23,7 +23,6 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addressLine1View: RMTextFieldWithError!
-    @IBOutlet weak var addressLine2View: RMTextFieldWithError!
     @IBOutlet weak var stateView: RMTextFieldWithError!
     @IBOutlet weak var cityView: RMTextFieldWithError!
     @IBOutlet weak var postalCodeView: RMTextFieldWithError!
@@ -141,7 +140,6 @@ class PaymentProfileViewController: UIViewController, PaymentProfileDisplayLogic
     
     @IBAction func confirmPressed(_ sender: SCButton) {
         request.addressLine1 = addressLine1View.textField.text
-        request.addressLine2 = addressLine2View.textField.text
         request.state = stateView.textField.text
         request.city = cityView.textField.text
         request.postalCode = postalCodeView.textField.text
@@ -166,8 +164,6 @@ extension PaymentProfileViewController: UITextFieldDelegate {
         switch textField {
         case addressLine1View.textField:
             addressLine1View.adjustToState(.active)
-        case addressLine2View.textField:
-            addressLine2View.adjustToState(.active)
         case stateView.textField:
             stateView.adjustToState(.active)
         case cityView.textField:
@@ -185,8 +181,6 @@ extension PaymentProfileViewController: UITextFieldDelegate {
         switch textField {
         case addressLine1View.textField:
             addressLine1View.adjustToState(.inactive)
-        case addressLine2View.textField:
-            addressLine2View.adjustToState(.inactive)
         case stateView.textField:
             stateView.adjustToState(.inactive)
         case cityView.textField:
@@ -204,9 +198,6 @@ extension PaymentProfileViewController: UITextFieldDelegate {
         
         switch textField {
         case addressLine1View.textField:
-            addressLine2View.textField.becomeFirstResponder()
-            return false
-        case addressLine2View.textField:
             stateView.textField.becomeFirstResponder()
             return false
         case stateView.textField:
