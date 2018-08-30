@@ -88,6 +88,9 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
                 buttonCollection.forEach({ $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) })
                 // In arabic we need to change direction of arrows 
                 arrowImageCollection.forEach({ $0.image = UIImage(named: "reversed_chevron") })
+                professionButton.contentHorizontalAlignment = .right
+                specializationButton.contentHorizontalAlignment = .right
+                priceTextField.textAlignment = .right
                 
             }
         }

@@ -55,6 +55,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     fileprivate func setupView() {
         customizeDateButtons()
         tableView.state = .loading
+        tableView.noItemsMessage = "settings.transactionHistory.noVisit".localized
     }
     
     private func customizeDateButtons() {

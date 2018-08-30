@@ -16,6 +16,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBOutlet weak var switchAccountView: UIView!
     @IBOutlet weak var switchAccountButton: UIButton!
     @IBOutlet var drawerButtons: [UIButton]!
+    @IBOutlet var arrowImages: [UIImageView]!
     @IBOutlet weak var avatarHeightConstraint: NSLayoutConstraint!
     
     // MARK: Properties
@@ -69,8 +70,18 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         
         // If doctor account active, display ability to switch to doctor account
         if currentMode == .doctor {
-            switchAccountButton.setTitle("Patient account", for: .normal)
+            switchAccountButton.setTitle("menu.patientAccount".localized, for: .normal)
+        } else {
+            switchAccountButton.setTitle("menu.doctorAccount".localized, for: .normal)
         }
+        if view.isRTL() {
+            drawerButtons.forEach { (button) in
+                button.contentHorizontalAlignment = .right
+                button.contentEdgeInsets = UIEdgeInsetsMake(8, 40, 8, 0)
+            }
+            arrowImages.forEach { $0.image = UIImage(named: "reversed_chevron") }
+        }
+        
     }
     
     private func fillUserData() {
@@ -102,7 +113,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         if let _ = ((slideMenuController()?.mainViewController as? UINavigationController)?
             .visibleViewController as? MainScreenViewController)?.currentBooking {
             
-            router?.showAlert(message: "Sorry, you can't change account during pending booking")
+            router?.showAlert(message: "alerts.cannotChangePendingBooking".localized)
             return
         }
         
@@ -115,7 +126,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         if currentMode == .patient,
             User.current?.doctor?.isVerified == false {
             
-            router?.showAlert(message: "Your doctor account is waiting for validation")
+            router?.showAlert(message: "alerts.doctorAccountValidation".localized)
             return
         }
         router?.navigateToApp(inModule: currentMode == .doctor ? .patient : .doctor)

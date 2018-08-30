@@ -14,7 +14,7 @@ class AcceptDoctorViewController: ModalInformationViewController, AcceptDoctorDi
     
     var visitInfo: VisitDetails! {
         didSet {
-            fillInformation(with: visitInfo.user, andVisitInfo: visitInfo)
+            fillInformation(with: visitInfo.user, andVisitInfo: visitInfo, withAddress: nil)
         }
     }
     
@@ -50,10 +50,13 @@ class AcceptDoctorViewController: ModalInformationViewController, AcceptDoctorDi
         if iPhoneDetection.deviceType() == .iphone4 || iPhoneDetection.deviceType() == .iphone5 {
             
         }
+        if view.isRTL() {
+            classificationLabel.textAlignment = .right
+        }
     }
     
-    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
-        super.fillInformation(with: user, andVisitInfo: visitInfo)
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails, withAddress address: String?) {
+        super.fillInformation(with: user, andVisitInfo: visitInfo, withAddress: address)
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
         classificationLabel.text = visitInfo.user.doctor?.classification.title
     }

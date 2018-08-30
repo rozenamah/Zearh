@@ -1144,6 +1144,7 @@
                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="professionAction:" destination="fZT-KZ-HLl" eventType="touchUpInside" id="mpn-QG-qi6"/>
@@ -1204,6 +1205,7 @@
                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="specializatioAction:" destination="fZT-KZ-HLl" eventType="touchUpInside" id="g6L-pj-7ri"/>
@@ -1321,6 +1323,7 @@
                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="genderAction:" destination="fZT-KZ-HLl" eventType="touchUpInside" id="pAP-ly-hjg"/>

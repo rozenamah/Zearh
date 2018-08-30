@@ -80,6 +80,10 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
                 disableSpecialization()
             }
         }
+        if view.isRTL() {
+            professionButton.contentHorizontalAlignment = .right
+            specializationButton.contentHorizontalAlignment = .right
+        }
         
         fillGenderAndPriceFilters()
     }

@@ -39,6 +39,9 @@
                                 <action selector="dismissAction" destination="Bhe-py-QR1" id="87p-Up-zFb"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="menu.termsConditions"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="VKy-TC-vAk" id="ODJ-bp-5Ck"/>
@@ -1596,7 +1599,7 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-bp-fwC">
                                                                 <rect key="frame" x="0.0" y="-1.5" width="19" height="19"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Bushwick 12, Brooklyn" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-B2-Dj5">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Bushwick 12, Brooklyn" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-B2-Dj5">
                                                                 <rect key="frame" x="35" y="0.0" width="172" height="16"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1604,6 +1607,7 @@
                                                             </label>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="MAr-B2-Dj5" secondAttribute="trailing" id="2UV-zx-Bhy"/>
                                                             <constraint firstAttribute="bottom" secondItem="MAr-B2-Dj5" secondAttribute="bottom" id="3in-RX-RxG"/>
                                                             <constraint firstItem="MAr-B2-Dj5" firstAttribute="leading" secondItem="Ecb-bp-fwC" secondAttribute="trailing" constant="16" id="5mh-Ec-PIA"/>
                                                             <constraint firstItem="MAr-B2-Dj5" firstAttribute="top" secondItem="amH-Xw-RTz" secondAttribute="top" id="IPa-V9-dx0"/>
@@ -1682,7 +1686,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCard"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCash"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>

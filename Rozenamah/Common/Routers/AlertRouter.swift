@@ -24,7 +24,7 @@ extension AlertRouter where Self: Router {
         let vc = viewController as? UIViewController
         
         let alertMessage = UIAlertController(title: nil,
-                                               message: "Please wait",
+                                               message: "alerts.pleaseWait.pleaseWait".localized,
                                                preferredStyle: .alert)
         
         let indicator = UIActivityIndicatorView()

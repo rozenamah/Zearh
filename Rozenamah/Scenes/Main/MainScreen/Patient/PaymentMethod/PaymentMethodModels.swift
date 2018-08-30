@@ -6,10 +6,8 @@ enum PaymentMethod: String, Decodable {
     
     var title: String {
         switch self {
-        case .card:
-            return "By card"
-        case .cash:
-            return "By cash"
+        case .card: return "settings.transactionHistory.byCard".localized
+        case .cash: return "settings.transactionHistory.byCash".localized
         }
     }
 }

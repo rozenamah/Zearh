@@ -52,7 +52,7 @@ class TransactionDetailViewController: BasicModalInformationViewController, Tran
     // MARK: View customization
 
     fileprivate func setupView() {
-        fillInformation(with: currentMode == .patient ? booking.visit.user : booking.patient, andVisitInfo: booking.visit)
+        fillInformation(with: currentMode == .patient ? booking.visit.user : booking.patient, andVisitInfo: booking.visit, withAddress: nil)
         
         // Adjust view for arabic language
         if self.view.isRTL() {
@@ -61,13 +61,15 @@ class TransactionDetailViewController: BasicModalInformationViewController, Tran
             // Add needed space in between date label and map calendar icon
             rightDateConstraint.constant = 16 + calendarImage.bounds.width
             feeLabel.textAlignment = .right
+            specialistLabel.textAlignment = .right
+            addressLabel.textAlignment = .right
         }
     }
     
-    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
-        super.fillInformation(with: user, andVisitInfo: booking.visit)
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails, withAddress address: String?) {
+        super.fillInformation(with: user, andVisitInfo: booking.visit, withAddress: address)
         
-        addressLabel.text = booking.address ?? "Unknown address"
+        addressLabel.text = booking.address ?? "errors.unknownAddress".localized
         specialistLabel.isHidden = currentMode != .patient
         specialistLabel.text = booking.visit.user.doctor?.specialization?.title
         methodTypeLabel.text = booking.payment.title
@@ -82,7 +84,7 @@ class TransactionDetailViewController: BasicModalInformationViewController, Tran
         mapView.moveCamera(update)
         mapView.isUserInteractionEnabled = false
         
-        dateLabel.text = booking.dates?.requestedAt?.printer.string(with: DateFormats.day.rawValue) ?? "Unknown date"
+        dateLabel.text = booking.dates?.requestedAt?.printer.string(with: DateFormats.day.rawValue) ?? "errors.unknownDate".localized
         arrivalTimeLabel.text = booking.dates?.arrivedAt?.printer.string(with: DateFormats.time.rawValue) ?? "-"
         leaveTimeLabel.text = booking.dates?.endedAt?.printer.string(with: DateFormats.time.rawValue) ?? "-"
         

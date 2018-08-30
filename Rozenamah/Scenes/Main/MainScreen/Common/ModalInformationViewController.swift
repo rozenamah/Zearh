@@ -18,7 +18,7 @@ class BasicModalInformationViewController: UIViewController {
     
     
     // MARK: View customization
-    func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
+    func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails, withAddress address: String?) {
         let cost = visitInfo.cost
         
         avatarImage.setAvatar(for: user)
@@ -27,7 +27,7 @@ class BasicModalInformationViewController: UIViewController {
         
         // If fee > 0, show fee label
         feeLabel.isHidden = cost.fee <= 0
-        feeLabel.text = cost.fee <= 0 ? "" : "+ \(cost.fee) SAR for cancellation"
+        feeLabel.text = cost.fee <= 0 ? "" : "+ \(cost.fee) SAR \("settings.transactionHistory.feeInfo".localized)"
     }
 }
 
@@ -41,13 +41,25 @@ class ModalInformationViewController: BasicModalInformationViewController {
     
     // MARK: View customization
     
-    func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails, withAddress address: String? = nil) {
-        super.fillInformation(with: user, andVisitInfo: visitInfo)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if view.isRTL() {
+            distanceButton.contentHorizontalAlignment = .right
+            distanceButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 16)
+            distanceButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            phoneNumber.contentHorizontalAlignment = .right
+            phoneNumber.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 16)
+            phoneNumber.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+        }
+    }
+    
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails, withAddress address: String?) {
+        super.fillInformation(with: user, andVisitInfo: visitInfo, withAddress: address)
         
-        phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
+        phoneNumber.setTitle(user.phone ?? "errors.noPhoneNumber".localized, for: .normal)
         
         // Without this phone number will revet title to previous one (it is a bug but source is uknown)
-        phoneNumber.setTitle(user.phone ?? "No phone number", for: .highlighted)
+        phoneNumber.setTitle(user.phone ?? "errors.noPhoneNumber".localized, for: .highlighted)
         
         // Depending on this value we set distance to user or his exact location
         if let address = address {
@@ -55,8 +67,8 @@ class ModalInformationViewController: BasicModalInformationViewController {
             distanceButton?.setTitle(address, for: .highlighted)
             distanceButton?.tintColor = .rmGray
         } else {
-            distanceButton?.setTitle("\(visitInfo.distanceInKM) km from you", for: .normal)
-            distanceButton?.setTitle("\(visitInfo.distanceInKM) km from you", for: .highlighted)
+            distanceButton?.setTitle("\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .normal)
+            distanceButton?.setTitle("\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .highlighted)
             // If more then 10 kilometers, highlight distance to red
             distanceButton?.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
         }

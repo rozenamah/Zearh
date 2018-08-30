@@ -47,11 +47,11 @@ class PastVisitTableViewCell: UITableViewCell, SCReusableCell {
                 nameLabel.text = currentMode != .patient ? booking.patient.fullname : booking.visit.user.fullname
                 specialistLabel.isHidden = currentMode != .patient
                 specialistLabel.text = booking.visit.user.doctor?.specialization?.title
-                addressLabel.text = booking.address ?? "Unknown address"
+                addressLabel.text = booking.address ?? "errors.unknownAddress".localized
                 priceLabel.text = "\(cost.price) SAR"
                 feeLabel.isHidden = cost.fee <= 0
-                feeLabel.text = "+ \(cost.fee) SAR for cancellation"
-                dateLabel.text = booking.dates?.requestedAt?.printer.string(with: DateFormats.day.rawValue) ?? "Unknown date"
+                feeLabel.text = "+ \(cost.fee) SAR \("settings.transactionHistory.feeInfo".localized)"
+                dateLabel.text = booking.dates?.requestedAt?.printer.string(with: DateFormats.day.rawValue) ?? "errors.unknownDate".localized
                 
                 avatarImaveView.setAvatar(for: currentMode != .patient ? booking.patient : booking.visit.user)
             }

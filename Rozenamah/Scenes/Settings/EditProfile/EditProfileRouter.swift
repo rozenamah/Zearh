@@ -23,25 +23,28 @@ class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter
     }
     
     func showSuccessChangeAlert() {
-        let alert = UIAlertController(title: "Success", message: "Your profile has been updated", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let alert = UIAlertController(title: "generic.success".localized,
+                                      message: "alerts.profileUpadted.message".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
         
     }
     
     func showErrorAlert() {
-        let alert = UIAlertController(title: "Error", message: "Oops, something went wrong", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let alert = UIAlertController(title: "generic.error.error".localized,
+                                      message: "errors.somethingWentWrong".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
         
     }
     
     func showDeleteAlert() {
-        let alert = UIAlertController(title: "Delete account", message: "Are you sure you want to remove user's account?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+        let alert = UIAlertController(title: "settings.editProfile.deleteAccount".localized,
+                                      message: "alerts.deleteAccount.message".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.yes".localized, style: .default, handler: { (action) in
             self.viewController?.deleteConfirm()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.no".localized, style: .cancel, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
     }
 

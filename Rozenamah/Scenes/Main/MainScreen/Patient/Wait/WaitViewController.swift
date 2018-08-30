@@ -69,17 +69,17 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         
         switch state {
         case .waitAccept(_):
-            titleLabel.text = "Doctor needs to accept your visit request"
+            titleLabel.text = "alerts.waitAccept".localized
         case .waitSearch(let filters):
-            titleLabel.text = "Please wait"
+            titleLabel.text = "alerts.pleaseWait.pleaseWait".localized
             // Start calling search immidatly after fitlers are changed
             interactor?.searchForDoctor(withFilters: filters)
         case .waitForPayDoctor:
-            titleLabel.text = "Your patient needs to confirm payment within 10 minutes"
+            titleLabel.text = "alerts.waitForPayDoctor".localized
             cancelButton.isHidden = true
 //            startCountingTimeLeft()
         case .waitForVisitEnd(_):
-            titleLabel.text = "Wait until doctor ends your current visit"
+            titleLabel.text = "alerts.waitForVisitEnd".localized
             cancelButton.isHidden = true
         }
     }

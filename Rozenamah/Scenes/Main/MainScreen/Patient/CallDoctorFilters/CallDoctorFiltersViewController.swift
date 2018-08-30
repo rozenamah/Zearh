@@ -65,10 +65,20 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
         priceSlider.maxLabelFont = UIFont.preferredFont(forTextStyle: .footnote)
         priceSlider.minLabelFont = UIFont.preferredFont(forTextStyle: .footnote)
         priceSlider.numberFormatter.positiveSuffix = " SAR"
-        priceSlider.numberFormatter.zeroSymbol = "FREE"
+        priceSlider.numberFormatter.zeroSymbol = "home.free".localized.uppercased()
         priceSlider.delegate = self
         priceSlider.maxValue = kMaxPriceToFilter
         priceSlider.selectedMaxValue = kMaxPriceToFilter
+        
+        if view.isRTL() {
+            classificationButton.contentHorizontalAlignment = .right
+            specializationButton.contentHorizontalAlignment = .right
+            genderButtons.forEach { (button) in
+                button.contentHorizontalAlignment = .right
+                button.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8)
+                button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            }
+        }
         
         fillCurrentFilters()
     }

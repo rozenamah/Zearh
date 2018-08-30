@@ -74,6 +74,7 @@
         "forgotPassword": {
             "title": "هل نسيت كلمة المرور؟",
             "description": "أدخل عنوان بريدك الإلكتروني لتلقي رابط لإعادة تعيين كلمة المرور الخاصة بك",
+            "email": "_Email",
             "resetButton": "إعادة تعيين كلمة المرور",
             "resetLink": "يجب أن تتلقى رابط إعادة التعيين على بريدك الإلكتروني"
         },
@@ -141,29 +142,45 @@
             "payment": "دفع",
             "feeInfo": "رسوم للإلغاء",
             "paymentMethod": "طريقة الدفع او السداد",
-            "status": "Status",
+            "status": "_Status",
             "byCard": "عن طريق البطاقة",
             "byCash": "نقدا",
             "arrivalTime": "وقت الوصول",
             "leaveTime": "اترك الوقت",
             "title": "المعاملات",
-            "detailTitle": "تفاصيل الصفقه"
+            "detailTitle": "تفاصيل الصفقه",
+            "noVisit": "_No previous visits"
         }
     },
     "generic": {
         "error": {
+            "error": "_Error",
             "unknown": "خطأ غير معروف",
             "ups": "Oops"
         },
         "ok": "حسنا",
         "success": "نجاح",
         "cancel": "إلغاء",
+        "search": "_Search",
         "specialization": "تخصص",
         "classification": "تصنيف",
-        "selectOne": "اختر واحدة ..."
-        
+        "selectOne": "اختر واحدة ...",
+        "clear": "_Clear",
+        "yes": "_Yes",
+        "no": "_No",
+        "pay": "_Pay",
+        "confirm": "تؤكد",
+        "new": "_New",
+        "accepted": "_Accepted",
+        "rejected": "_Rejected",
+        "canceled": "_Canceled",
+        "timeout": "_Timed out",
+        "arrived": "_Arrived",
+        "ended": "_Ended",
+        "waitingForPayment": "_Waiting for payment"
     },
     "payment": {
+        "header": "_Payment",
         "title": "املأ الملف الشخصي للدفع",
         "address1": "العنوان الأول",
         "address2": "سطر العنوان 2",
@@ -171,17 +188,145 @@
         "city": "مدينة",
         "postalCode": "الكود البريدى",
         "country": "بلد",
-        "confirm": "تؤكد",
         "error": {
             "address": "العنوان مطلوب",
             "state": "الدولة مطلوبة",
             "city": "المدينة مطلوبة",
             "postalCode": "الرمز البريدي مطلوب",
-            "country": "الدولة مطلوبة",
+            "country": "الدولة مطلوبة"
         }
     },
     "image": {
         "logo": "ic_zearhLogoText_ar"
+    },
+    "home": {
+        "callDoctor": "_callDoctor",
+        "startReceivingVisitRequests": "_Start receiving visit requests",
+        "stopReceivingVisitRequests": "_Stop receiving visit requests",
+        "whatKindOfDoctor": "_whatKindOfDoctor",
+        "chooseSpecialization": "_chooseSpecialization",
+        "chooseGender": "_pleasechoosegender",
+        "moreOption": "_moreOption",
+        "all": "_all",
+        "priceRange": "_pricerange",
+        "save": "_save",
+        "free": "_free",
+        "doctor": "_General Doctor",
+        "nurse": "_Nurse",
+        "specialist": "_Specialist",
+        "consultants": "_Consultants",
+        "specialization": {
+            "cardiologists": "_Cardiologists",
+            "dentist": "_Dentist",
+            "dermatology": "_Dermatology",
+            "earDoctors": "_Ear. Nose & Throat Doctors",
+            "nutrition": "_Nutrition",
+            "diabetics": "_Diabetics & Endocrinologists",
+            "familiyPhsicians": "_Familty Phsicians",
+            "gastroenterologists": "_Gastroenterologists",
+            "infertilitySpecialists": "_Infertility Specialists",
+            "internists": "_Internists",
+            "nephrologists": "_Nephrologistis",
+            "neurologists": "_Neurologists",
+            "obgyn": "_OB-GYNs",
+            "oncologists": "_Oncologists",
+            "ophthalmologists": "_Ophthalmologists",
+            "orthopedic": "_Ortopedic",
+            "pediatrics": "_Pediatrics",
+            "physicalTherapists": "_Physical Therapists",
+            "plasticSurgeons": "_Plastic Surgeons",
+            "psychologists": "_Psychologists",
+            "sportMedicine": "_Sport Medicine Specialists",
+            "urologists": "_Urologists",
+            "generalPractitioner": "_General Practitioner",
+            "generalSurgery": "_General Surgery"
+        },
+        "visits": {
+            "accept": "_Accept",
+            "reject": "_Reject",
+            "priceForVisit": "_Price for visit",
+            "fee": "_Fee",
+            "age": "_Age",
+            "paymentMethod": "_Payment method",
+            "illnesAilment": "_Illnes/Ailment",
+            "medicine": "_Medicine",
+            "receivedPaymentCash": "_I received payment in cash",
+            "endVisit": "_End visit",
+            "feeforCancelation": "_for cancellation",
+            "paymentInfo": "_If you choose to pay by card you will need to pay in 10 minutes after doctor accepts your visit request",
+            "choosePaymentMethod": "_Please choose your payment method",
+            "confirmPayment": "_Confirm payment",
+            "patientsDetails":"_Patient's details",
+            "confirmationInfo": "_Confirm in 15 minutes to accept visit"
+        },
+        "payment": {
+            "payment": "_Payment",
+            "paymentInfo": "_Doctor accepted your visit request - you need to pay for visit within 10 minutes",
+            "total":"_Total"
+        }
+    },
+    "menu": {
+        "editProfile": "_Edit Profile",
+        "createDoctorsAccount": "_Create doctor's account",
+        "patientAccount": "_Patient account",
+        "doctorAccount": "_Doctor account",
+        "transactions": "_Transactions",
+        "report": "_Report",
+        "privacyPolicy": "_Privacy Policy",
+        "termsConditions": "_Terms & Conditions",
+        "logout": "_Logout",
+        "logoutQuestion": "_Are you sure you want to log out a user?"
+    },
+    "errors": {
+        "unknownAddress": "_Unknown address",
+        "unknownDate": "_Unknown date",
+        "noPhoneNumber": "_No phone number",
+        "somethingWentWrong": "_Oops, something went wrong",
+        "locationOff": {
+            "title": "_Location service is off",
+            "message": "_To continue using „Zearh” you need to turn on your location service",
+            "button": "_Go to Settings"
+        },
+        "notificationOff": {
+            "title": "_Turn on notifications",
+            "message": "_To continue using „Zearh” you need to allow application to send notifications",
+            "button": "_Go to Settings"
+        }
+    },
+    "alerts": {
+        "pleaseWait": {
+            "pleaseWait": "_Please wait..."
+        },
+        "cancelVisit": {
+            "title": "_Cancel visit",
+            "message": "_Are you sure you want to cancel this visit?",
+            "feeMessage": "Are you sure you want to cancel this visit? You will be charged 5% of this visit price next time you order a visit!"
+        },
+        "cantFindDoctor": {
+            "title": "_Sorry",
+            "message": "_We can't find any doctor matching your criteria"
+        },
+        "profileUpadted": {
+            "message": "_Your profile has been updated"
+        },
+        "deleteAccount": {
+            "message": "_Are you sure you want to remove user's account?"
+        },
+        "photo": {
+            "takePhoto": "_Take photo",
+            "chooseFromLibrary": "_Choose From Library"
+        },
+        "waitForPayDoctor": "_Your patient needs to confirm payment within 10 minutes",
+        "waitForVisitEnd": "_Wait until doctor ends your current visit",
+        "waitAccept": "_Doctor needs to accept your visit request",
+        "distanceFromYou": "_km from you",
+        "visitCanceled": "_Visit canceled, please try another one.",
+        "visitCanceled2": "_Visit canceled.",
+        "doctorRejected": "_Doctor rejected your visit request.",
+        "doctorDidntAccepted": "_Doctor didn't accept visit within 15 minutes.",
+        "youDidntAccepted": "_You didn't accept visit within 15 minutes.",
+        "doctorAccountValidation": "_Your doctor account is waiting for validation",
+        "cannotChangePendingBooking": "_Sorry, you can't change account during pending booking"
     }
 }
 

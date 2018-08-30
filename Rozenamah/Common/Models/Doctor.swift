@@ -47,30 +47,30 @@ enum DoctorSpecialization: String, Decodable {
     
     var title: String {
         switch self {
-        case .cardiologists: return "Cardiologists"
-        case .dentist: return "Dentist"
-        case .dermatology: return "Dermatology"
-        case .earDoctors: return "Ear. Nose & Throat Doctors"
-        case .nutrition: return "Nutrition"
-        case .diabetics: return "Diabetics & Endocrinologists"
-        case .familiyPhsicians: return "Familty Phsicians"
-        case .gastroenterologists: return "Gastroenterologists"
-        case .infertilitySpecialists: return "Infertility Specialists"
-        case .internists: return "Internists"
-        case .nephrologists: return "Nephrologistis"
-        case .neurologists: return "Neurologists"
-        case .obgyn: return "OB-GYNs"
-        case .oncologists: return "Oncologists"
-        case .ophthalmologists: return "Ophthalmologists"
-        case .orthopedic: return "Ortopedic"
-        case .pediatrics: return "Pediatrics"
-        case .physicalTherapists: return "Physical Therapists"
-        case .plasticSurgeons: return "Plastic Surgeons"
-        case .psychologists: return "Psychologists"
-        case .sportMedicine: return "Sport Medicine Specialists"
-        case .urologists: return "Urologists"
-        case .generalPractitioner: return "General Practitioner"
-        case .generalSurgery: return "General Surgery"
+        case .cardiologists: return "home.specialization.cardiologists".localized
+        case .dentist: return "home.specialization.dentist".localized
+        case .dermatology: return "home.specialization.dermatology".localized
+        case .earDoctors: return "home.specialization.earDoctors".localized
+        case .nutrition: return "home.specialization.nutrition".localized
+        case .diabetics: return "home.specialization.diabetics".localized
+        case .familiyPhsicians: return "home.specialization.familiyPhsicians".localized
+        case .gastroenterologists: return "home.specialization.gastroenterologists".localized
+        case .infertilitySpecialists: return "home.specialization.infertilitySpecialists".localized
+        case .internists: return "home.specialization.internists".localized
+        case .nephrologists: return "home.specialization.nephrologists".localized
+        case .neurologists: return "home.specialization.neurologists".localized
+        case .obgyn: return "home.specialization.obgyn".localized
+        case .oncologists: return "home.specialization.oncologists".localized
+        case .ophthalmologists: return "home.specialization.ophthalmologists".localized
+        case .orthopedic: return "home.specialization.orthopedic".localized
+        case .pediatrics: return "home.specialization.pediatrics".localized
+        case .physicalTherapists: return "home.specialization.physicalTherapists".localized
+        case .plasticSurgeons: return "home.specialization.plasticSurgeons".localized
+        case .psychologists: return "home.specialization.psychologists".localized
+        case .sportMedicine: return "home.specialization.sportMedicine".localized
+        case .urologists: return "home.specialization.urologists".localized
+        case .generalPractitioner: return "home.specialization.generalPractitioner".localized
+        case .generalSurgery: return "home.specialization.generalSurgery".localized
         }
     }
 }
@@ -87,10 +87,10 @@ enum Classification: String, Decodable {
     
     var title: String {
         switch self {
-        case .doctor: return "General Doctor"
-        case .nurse: return "Nurse"
-        case .specialist: return "Specialist"
-        case .consultants: return "Consultants"
+        case .doctor: return "home.doctor".localized
+        case .nurse: return "home.nurse".localized
+        case .specialist: return "home.specialist".localized
+        case .consultants: return "home.consultants".localized
         }
     }
 }
@@ -101,8 +101,8 @@ enum Gender: String, Decodable {
     
     var title: String {
         switch self {
-        case .male: return "Male"
-        case .female: return "Female"
+        case .male: return "session.doctor.male".localized
+        case .female: return "session.doctor.female".localized
         }
     }
 }
