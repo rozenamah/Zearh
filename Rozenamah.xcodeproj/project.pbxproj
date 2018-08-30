@@ -117,9 +117,11 @@
 		B4FF98B22122DAF400269AA0 /* PaymentWebViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */; };
 		B4FF98B32122DAF400269AA0 /* PaymentWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */; };
 		B4FF98B42122DAF400269AA0 /* PaymentWebViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */; };
+		E998D50C2136A52400BB93B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E998D50E2136A52400BB93B2 /* InfoPlist.strings */; };
+		E998D5182136BD8600BB93B2 /* LaunchScreen_ar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E998D5162136BD8600BB93B2 /* LaunchScreen_ar.storyboard */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
 		F9093A78204992CB00CB041A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9093A77204992CB00CB041A /* Assets.xcassets */; };
-		F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen.storyboard */; };
+		F9093A7B204992CB00CB041A /* LaunchScreen_en.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9093A79204992CB00CB041A /* LaunchScreen_en.storyboard */; };
 		F92D1974206CEF9700F5FC78 /* ClassificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */; };
 		F940EA502058147000266753 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA492058147000266753 /* WelcomePresenter.swift */; };
 		F940EA512058147000266753 /* WelcomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F940EA4A2058147000266753 /* WelcomeWorker.swift */; };
@@ -392,10 +394,13 @@
 		B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModels.swift; sourceTree = "<group>"; };
 		B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewViewController.swift; sourceTree = "<group>"; };
 		B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewInteractor.swift; sourceTree = "<group>"; };
+		E998D50D2136A52400BB93B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E998D50F2136A52700BB93B2 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E998D5172136BD8600BB93B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen_ar.storyboard; sourceTree = "<group>"; };
 		F9093A6D204992CB00CB041A /* Rozenamah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozenamah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9093A70204992CB00CB041A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9093A77204992CB00CB041A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F9093A7A204992CB00CB041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9093A7A204992CB00CB041A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen_en.storyboard; sourceTree = "<group>"; };
 		F9093A7C204992CB00CB041A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F92D1973206CEF9700F5FC78 /* ClassificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationsRouter.swift; sourceTree = "<group>"; };
 		F940EA492058147000266753 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
@@ -823,8 +828,10 @@
 				F9093A70204992CB00CB041A /* AppDelegate.swift */,
 				F940EC2A20595A1100266753 /* API.swift */,
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
-				F9093A79204992CB00CB041A /* LaunchScreen.storyboard */,
+				F9093A79204992CB00CB041A /* LaunchScreen_en.storyboard */,
 				F9093A7C204992CB00CB041A /* Info.plist */,
+				E998D5162136BD8600BB93B2 /* LaunchScreen_ar.storyboard */,
+				E998D50E2136A52400BB93B2 /* InfoPlist.strings */,
 			);
 			path = Rozenamah;
 			sourceTree = "<group>";
@@ -1394,7 +1401,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9093A7B204992CB00CB041A /* LaunchScreen.storyboard in Resources */,
+				F9093A7B204992CB00CB041A /* LaunchScreen_en.storyboard in Resources */,
+				E998D50C2136A52400BB93B2 /* InfoPlist.strings in Resources */,
 				F9093A78204992CB00CB041A /* Assets.xcassets in Resources */,
 				573A3061207B66E00040B438 /* PastVisitTableViewCell.xib in Resources */,
 				F940EC2F20596CAE00266753 /* Main.storyboard in Resources */,
@@ -1403,6 +1411,7 @@
 				F969921020863907007E6C42 /* lang-ar.json in Resources */,
 				F9F10FC120A0854C00E88987 /* Cracow.gpx in Resources */,
 				B4A110B02135944000FD777C /* GoogleService-Info.plist in Resources */,
+				E998D5182136BD8600BB93B2 /* LaunchScreen_ar.storyboard in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
 			);
@@ -1771,12 +1780,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F9093A79204992CB00CB041A /* LaunchScreen.storyboard */ = {
+		E998D50E2136A52400BB93B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E998D50D2136A52400BB93B2 /* en */,
+				E998D50F2136A52700BB93B2 /* ar-SA */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E998D5162136BD8600BB93B2 /* LaunchScreen_ar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E998D5172136BD8600BB93B2 /* Base */,
+			);
+			name = LaunchScreen_ar.storyboard;
+			sourceTree = "<group>";
+		};
+		F9093A79204992CB00CB041A /* LaunchScreen_en.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F9093A7A204992CB00CB041A /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen_en.storyboard;
 			sourceTree = "<group>";
 		};
 		F969920B20863907007E6C42 /* lang-en.json */ = {

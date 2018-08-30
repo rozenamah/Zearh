@@ -66,11 +66,13 @@ class DrawerRouter: Router, AppStartRouter, AlertRouter {
     }
     
     func showLogoutAlert() {
-        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to log out a user?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+        let alert = UIAlertController(title: "menu.logout".localized,
+                                      message: "menu.logoutQuestion".localized,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "generic.yes".localized, style: .default, handler: { (action) in
             self.viewController?.loginCofirmed()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "generic.no".localized, style: .cancel, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
     }
 

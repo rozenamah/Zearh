@@ -71,6 +71,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.callDoctor"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="callDoctorAction:" destination="KxT-QR-OiG" eventType="touchUpInside" id="9K2-lo-S7a"/>
@@ -177,6 +178,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.startReceivingVisitRequests"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="receiveRequestAction:" destination="nfi-fJ-kA6" eventType="touchUpInside" id="yLk-6q-N2D"/>
@@ -282,6 +284,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.whatKindOfDoctor"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="hB1-ls-her">
                                                         <rect key="frame" x="326" y="62.5" width="10" height="7"/>
@@ -312,6 +317,7 @@
                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="professionChooseAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="3Bk-iv-NeE"/>
@@ -340,6 +346,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.chooseSpecialization"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="fX0-sg-EQv">
                                                         <rect key="frame" x="326" y="62.5" width="10" height="7"/>
@@ -370,6 +379,7 @@
                                                                 <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="specializationChooseAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="CNq-aD-uDC"/>
@@ -398,6 +408,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.chooseGender"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EfM-8G-o6y">
                                                         <rect key="frame" x="0.0" y="40.5" width="343" height="41"/>
@@ -413,6 +426,7 @@
                                                                 <state key="selected" image="radio_full_btn"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.all"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="vyT-OP-yaN"/>
@@ -429,6 +443,7 @@
                                                                 <state key="selected" image="radio_full_btn"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.doctor.male"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="VaR-zN-Nus"/>
@@ -445,6 +460,7 @@
                                                                 <state key="selected" image="radio_full_btn"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="session.doctor.female"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="ft8-fz-Mws"/>
@@ -475,6 +491,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.priceRange"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOB-Gl-w0E" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                                         <rect key="frame" x="0.0" y="20.5" width="343" height="49"/>
@@ -554,6 +573,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.save"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="saveAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="gLr-tr-NCN"/>
@@ -609,10 +629,16 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="Uvq-ZN-jbM">
                             <color key="tintColor" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.clear"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="clearAction:" destination="oT4-45-pP6" id="Z37-OF-u47"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="home.callDoctor"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="allButton" destination="Mt1-fQ-MFV" id="A0J-BS-a2A"/>
@@ -647,6 +673,9 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.callDoctor"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfN-og-B0R" userLabel="profession">
                                         <rect key="frame" x="16" y="68.5" width="343" height="87.5"/>
@@ -656,6 +685,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.whatKindOfDoctor"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="42k-KN-ZGk">
                                                 <rect key="frame" x="326" y="62.5" width="10" height="7"/>
@@ -686,6 +718,7 @@
                                                         <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="professionChooseAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="9fE-FG-lsL"/>
@@ -713,6 +746,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.chooseSpecialization"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="OZk-nR-TJw">
                                                 <rect key="frame" x="326" y="62.5" width="10" height="7"/>
@@ -743,6 +779,7 @@
                                                         <color key="value" red="0.87843137250000003" green="0.90588235289999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.selectOne"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="specializationChooseAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="Vk6-WN-Ww6"/>
@@ -770,6 +807,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.moreOption"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="moreOptions:" destination="jYS-vC-x7G" eventType="touchUpInside" id="0Pa-fm-MUY"/>
@@ -788,6 +826,7 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.search"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="searchAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="4Q4-L2-FhN"/>
@@ -812,6 +851,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.cancel"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="cancelAction:" destination="jYS-vC-x7G" eventType="touchUpInside" id="Syp-GC-den"/>
@@ -933,6 +973,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="alerts.pleaseWait.pleaseWait"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8So-a7-Cde" customClass="SCButton" customModule="SwiftCake">
                                 <rect key="frame" x="107.5" y="130" width="159" height="40"/>
@@ -953,6 +996,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.cancel"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="cancelAction:" destination="zln-Li-pml" eventType="touchUpInside" id="mUS-Kv-G7f"/>
@@ -1017,6 +1061,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="errors.locationOff.button"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="settingsAction:" destination="hXF-Ua-a2n" eventType="touchUpInside" id="8fL-tN-bfc"/>
@@ -1037,12 +1082,18 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="errors.locationOff.title"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue using „Rozenamah” you need to turn on your location service" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-LJ-OeP">
                                 <rect key="frame" x="16" y="187.5" width="343" height="79.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="errors.locationOff.message"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1094,6 +1145,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reversed" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="errors.notificationOff.button"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="settingsAction:" destination="CC1-nK-Spd" eventType="touchUpInside" id="4Vt-uS-GGf"/>
@@ -1114,12 +1166,18 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="errors.notificationOff.title"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue using „Rozenamah” you need to allow application to send notifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-YC-zT4">
                                 <rect key="frame" x="16" y="187.5" width="343" height="79.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="errors.notificationOff.message"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1192,6 +1250,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.priceForVisit"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imb-so-EMl">
                                                                 <rect key="frame" x="285.5" y="0.0" width="57.5" height="20.5"/>
@@ -1228,6 +1289,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.fee"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWo-CJ-SMI">
                                                                 <rect key="frame" x="285.5" y="0.5" width="57.5" height="20.5"/>
@@ -1264,6 +1328,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.age"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei0-y9-wtn">
                                                                 <rect key="frame" x="322.5" y="0.5" width="20.5" height="20.5"/>
@@ -1299,11 +1366,17 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.paymentMethod"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khS-Il-hzn">
                                                                 <rect key="frame" x="284.5" y="0.5" width="58.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCard"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-aR-HFF">
                                                                 <rect key="frame" x="0.0" y="27.5" width="343" height="1"/>
@@ -1334,6 +1407,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.illnesAilment"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOS-Bw-Dmg">
                                                                 <rect key="frame" x="0.0" y="54.5" width="343" height="1"/>
@@ -1374,6 +1450,9 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.medicine"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-Hs-rCt">
                                                                 <rect key="frame" x="0.0" y="53.5" width="343" height="1"/>
@@ -1418,6 +1497,7 @@
                                                 <state key="selected" image="checkbox_s"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.receivedPaymentCash"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="checkBoxAction:" destination="2eK-9M-0bq" eventType="touchUpInside" id="viX-1e-QGN"/>
@@ -1439,6 +1519,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.endVisit"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="endVisitAction:" destination="2eK-9M-0bq" eventType="touchUpInside" id="UIX-KL-YZL"/>
@@ -1480,7 +1561,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9EV-d0-1oO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="End visit" id="xUM-jv-OzO"/>
+                    <navigationItem key="navigationItem" title="End visit" id="xUM-jv-OzO">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="home.visits.endVisit"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="ageLabel" destination="Ei0-y9-wtn" id="pnn-8j-ybo"/>
@@ -1512,6 +1597,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.payment.paymentInfo"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-VA-GzN">
                                 <rect key="frame" x="16" y="161" width="343" height="28.5"/>
@@ -1521,6 +1609,9 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.payment.total"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5X-od-sgb">
                                         <rect key="frame" x="285.5" y="0.0" width="57.5" height="20.5"/>
@@ -1557,12 +1648,18 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.paymentMethod"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1A-Xx-CyI">
                                         <rect key="frame" x="284.5" y="0.0" width="58.5" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCard"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9G5-Ca-Yyf">
                                         <rect key="frame" x="0.0" y="27.5" width="343" height="1"/>
@@ -1598,6 +1695,7 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.pay"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="payAction:" destination="XWQ-UE-Hnz" eventType="touchUpInside" id="DOQ-fH-McW"/>
@@ -1623,6 +1721,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.cancel"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="cancelAction:" destination="XWQ-UE-Hnz" eventType="touchUpInside" id="pFf-aY-23W"/>
@@ -1778,6 +1877,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.accept"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="acceptAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="XvD-VG-I9Q"/>
@@ -1802,6 +1902,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.reject"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelAction:" destination="9V9-2Z-O3X" eventType="touchUpInside" id="swA-De-hPj"/>
@@ -1939,6 +2040,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.editProfile"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="editProfileAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="wRf-nM-Dsa"/>
@@ -2021,6 +2123,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.createDoctorsAccount"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="createDoctorAccount:" destination="ERD-lc-8SX" eventType="touchUpInside" id="QSC-kh-y2D"/>
@@ -2062,6 +2165,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.transactions"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="transactionsAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="Dfi-mp-sjj"/>
@@ -2103,6 +2207,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.report"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="reportAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="1Sa-uv-SZC"/>
@@ -2144,6 +2249,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.privacyPolicy"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="privacyPolicyAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="8Ij-cW-Fpz"/>
@@ -2185,6 +2291,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.termsConditions"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="termsAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="IjX-JF-IWY"/>
@@ -2226,6 +2333,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.logout"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="logoutAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="FnI-u5-sjT"/>
@@ -2298,6 +2406,13 @@
                         <outletCollection property="drawerButtons" destination="KC1-gl-BTp" collectionClass="NSMutableArray" id="a5m-kx-Kjh"/>
                         <outletCollection property="drawerButtons" destination="419-qV-q10" collectionClass="NSMutableArray" id="N2b-NN-lCv"/>
                         <outletCollection property="drawerButtons" destination="Ptb-Qi-Dga" collectionClass="NSMutableArray" id="eII-p1-jDF"/>
+                        <outletCollection property="arrowImages" destination="clb-0d-47n" collectionClass="NSMutableArray" id="DeU-6F-dnF"/>
+                        <outletCollection property="arrowImages" destination="X0c-ag-eOQ" collectionClass="NSMutableArray" id="Itj-GK-iDu"/>
+                        <outletCollection property="arrowImages" destination="m2j-To-9Zt" collectionClass="NSMutableArray" id="97r-5z-HBl"/>
+                        <outletCollection property="arrowImages" destination="FUl-xL-5E1" collectionClass="NSMutableArray" id="C3i-9A-eau"/>
+                        <outletCollection property="arrowImages" destination="39c-HG-QcM" collectionClass="NSMutableArray" id="nek-jY-71d"/>
+                        <outletCollection property="arrowImages" destination="asm-SF-erf" collectionClass="NSMutableArray" id="JsW-az-EfB"/>
+                        <outletCollection property="arrowImages" destination="QVb-gI-SGd" collectionClass="NSMutableArray" id="3re-au-tfz"/>
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="terms_segue" id="CEi-hk-pLN"/>
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="privacy_segue" id="ApP-20-oVH"/>
                         <segue destination="2nn-Z7-JdC" kind="presentation" identifier="edit_profile_segue" id="gHm-Yt-bkJ"/>
@@ -2441,6 +2556,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.accept"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="acceptAction:" destination="eVu-zC-hxr" eventType="touchUpInside" id="III-Ll-Qg7"/>
@@ -2465,6 +2581,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.reject"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelAction:" destination="eVu-zC-hxr" eventType="touchUpInside" id="5dG-z9-Vb5"/>
@@ -2475,6 +2592,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.confirmationInfo"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-NQ-UJE">
                                                 <rect key="frame" x="138" y="76.5" width="221" height="24"/>
@@ -2499,6 +2619,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.patientsDetails"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="patientDetailsAction:" destination="eVu-zC-hxr" eventType="touchUpInside" id="nIk-g9-y1J"/>
@@ -2630,6 +2751,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.priceForVisit"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1q-gz-GKj">
                                                                         <rect key="frame" x="285.5" y="0.0" width="57.5" height="20.5"/>
@@ -2666,6 +2790,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.fee"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPi-08-PXs">
                                                                         <rect key="frame" x="285.5" y="0.5" width="57.5" height="20.5"/>
@@ -2702,6 +2829,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.age"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcr-W1-jey">
                                                                         <rect key="frame" x="322.5" y="0.5" width="20.5" height="20.5"/>
@@ -2737,11 +2867,17 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.paymentMethod"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eau-rg-lZp">
                                                                         <rect key="frame" x="284.5" y="0.5" width="58.5" height="20.5"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCard"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwT-R1-0ow">
                                                                         <rect key="frame" x="0.0" y="27.5" width="343" height="1"/>
@@ -2772,6 +2908,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.illnesAilment"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-5s-b30">
                                                                         <rect key="frame" x="0.0" y="54.5" width="343" height="1"/>
@@ -2808,6 +2947,9 @@
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.medicine"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wC8-DW-bc7">
                                                                         <rect key="frame" x="0.0" y="53.5" width="343" height="1"/>
@@ -2887,6 +3029,9 @@
                                 <action selector="closeAction:" destination="DM2-yZ-tfA" id="hva-ge-MUf"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="home.visits.patientsDetails"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="ageLabel" destination="gcr-W1-jey" id="6yi-gl-bbt"/>
@@ -2970,6 +3115,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.paymentInfo"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-SJ-Oak" userLabel="price">
                                 <rect key="frame" x="16" y="180" width="343" height="28.5"/>
@@ -2979,6 +3127,9 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.priceForVisit"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yo-Sg-IG1">
                                         <rect key="frame" x="285.5" y="0.0" width="57.5" height="20.5"/>
@@ -3015,6 +3166,9 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.total"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvz-PU-chJ">
                                         <rect key="frame" x="285.5" y="0.0" width="57.5" height="20.5"/>
@@ -3051,6 +3205,9 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.fee"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofd-hF-jOp">
                                         <rect key="frame" x="288.5" y="0.0" width="54.5" height="20.5"/>
@@ -3092,6 +3249,7 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.confirmPayment"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="confirmAction:" destination="ddk-Me-47t" eventType="touchUpInside" id="JTQ-O9-3sF"/>
@@ -3102,6 +3260,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.choosePaymentMethod"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-xu-nmC">
                                 <rect key="frame" x="16" y="376" width="93" height="33"/>
@@ -3114,6 +3275,7 @@
                                 <state key="selected" image="radio_full_btn"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCard"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="fPb-dX-3CE"/>
@@ -3131,6 +3293,7 @@
                                 <state key="selected" image="radio_full_btn"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="settings.transactionHistory.byCash"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeGenderAction:" destination="oT4-45-pP6" eventType="touchUpInside" id="Rro-4k-15T"/>
@@ -3172,6 +3335,9 @@
                                 <action selector="closeAction:" destination="ddk-Me-47t" id="7GE-4F-59B"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeTitle" value="home.visits.paymentMethod"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="byCardButton" destination="9mT-xu-nmC" id="kdH-zc-FjP"/>
@@ -3275,6 +3441,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.arrived"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="arrivedAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="pRc-P1-Rub"/>
@@ -3299,6 +3466,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.cancel"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="vRl-g1-s0g"/>
@@ -3327,6 +3495,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="home.visits.patientsDetails"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="patientInfoAction:" destination="Nml-ZC-XLF" eventType="touchUpInside" id="bGm-Hc-nbx"/>
@@ -3506,6 +3675,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.35686274509999999" green="0.75294117650000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.cancel"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelAction:" destination="KL2-lx-jWM" eventType="touchUpInside" id="p2Q-ba-W8P"/>
@@ -3881,7 +4051,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="payment.confirm"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="generic.confirm"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="confirmPressed:" destination="iKa-Je-ABr" eventType="touchUpInside" id="Rey-54-ZNA"/>

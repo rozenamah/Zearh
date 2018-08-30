@@ -74,6 +74,11 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
         if booking.payment == .card {
             cashReceivedCheckbox.isHidden = true
         }
+        if view.isRTL() {
+            cashReceivedCheckbox.contentHorizontalAlignment = .right
+            cashReceivedCheckbox.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 15)
+            cashReceivedCheckbox.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -15)
+        }
     }
 
 

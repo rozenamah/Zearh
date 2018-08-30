@@ -26,14 +26,14 @@ extension PhotoTakeRouter where Self: Router {
                                                          message: nil,
                                                          preferredStyle: .actionSheet)
         
-        let cameraAction = UIAlertAction(title: "Take Photo", style: .default) { action in
+        let cameraAction = UIAlertAction(title: "alerts.photo.takePhoto".localized, style: .default) { action in
             self.navigateToCamera(allowEditing: allowEditing)
         }
         
-        let galleryAction = UIAlertAction(title: "Choose From Library", style: .default) { action in
+        let galleryAction = UIAlertAction(title: "alerts.chooseFromLibrary".localized, style: .default) { action in
             self.navigateToGallery(allowEditing: allowEditing)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "generic.cancel", style: .cancel)
         
         
         alert.addAction(cameraAction)

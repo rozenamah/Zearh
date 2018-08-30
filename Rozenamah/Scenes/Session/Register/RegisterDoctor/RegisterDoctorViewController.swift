@@ -84,7 +84,12 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
             // Create update form, it contains only doctor info
             registerForm = UpdateDoctorForm()
         }
-        
+        if view.isRTL() {
+            professionButton.contentHorizontalAlignment = .right
+            specializationButton.contentHorizontalAlignment = .right
+            priceTextField.textAlignment = .right
+            genderButton.contentHorizontalAlignment = .right
+        }
         // Specialization and price will be enabled if General Doctor - otherwise it is hardcoded
         disableSpecialization()
     }

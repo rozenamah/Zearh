@@ -29,10 +29,10 @@ class TermsViewController: UIViewController {
 
         switch source! {
         case .privacyPolicy:
-            title = "Privacy Policy"
+            title = "menu.privacyPolicy".localized
             webView.loadRequest(URLRequest(url: URL(string: "https://www.google.com")!))
         case .terms:
-            title = "Terms & Conditions"
+            title = "menu.termsConditions".localized
             webView.loadRequest(URLRequest(url: URL(string: "https://www.google.com")!))
         }
     }

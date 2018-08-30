@@ -26,7 +26,7 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
             cancelButton.isUserInteractionEnabled = true
             
             interactor?.stopObservingDoctorLocation()
-            fillInformation(with: booking.visit.user, andVisitInfo: booking.visit)
+            fillInformation(with: booking.visit.user, andVisitInfo: booking.visit, withAddress: nil)
             interactor?.observeDoctorLocation(for: booking)
         }
     }
@@ -53,10 +53,13 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     // MARK: View customization
 
     fileprivate func setupView() {
+        if view.isRTL() {
+            classificationLabel.textAlignment = .right
+        }
     }
     
-    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails) {
-        super.fillInformation(with: booking.visit.user, andVisitInfo: booking.visit)
+    override func fillInformation(with user: User, andVisitInfo visitInfo: VisitDetails, withAddress address: String?) {
+        super.fillInformation(with: booking.visit.user, andVisitInfo: booking.visit, withAddress: address)
         phoneNumber.setTitle(user.phone ?? "No phone number", for: .normal)
         classificationLabel.text = visitInfo.user.doctor?.classification.title
     }

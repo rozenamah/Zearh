@@ -65,7 +65,7 @@ class PaymentProfileRouter: NSObject, PaymentProfileRoutingLogic, PaymentProfile
     let vc = viewController
     
     let alertMessage = UIAlertController(title: nil,
-                                         message: "Please wait",
+                                         message: "alerts.pleaseWait.pleaseWait".localized,
                                          preferredStyle: .alert)
     
     let indicator = UIActivityIndicatorView()

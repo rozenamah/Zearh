@@ -148,20 +148,36 @@
             "arrivalTime": "Arrival time",
             "leaveTime": "Leave time",
             "title": "Transactions",
-            "detailTitle": "Trasaction details"
+            "detailTitle": "Trasaction details",
+            "noVisit": "No previous visits"
         }
     },
     "generic": {
         "error": {
+            "error": "Error",
             "unknown": "Unknown error",
             "ups": "Oops"
         },
         "ok": "Ok",
         "success": "Success",
         "cancel": "Cancel",
+        "search": "Search",
         "specialization": "Specialization",
         "classification": "Classification",
-        "selectOne": "Select one..."
+        "selectOne": "Select one...",
+        "clear": "Clear",
+        "yes": "Yes",
+        "no": "No",
+        "pay": "Pay",
+        "confirm": "Confirm",
+        "new": "New",
+        "accepted": "Accepted",
+        "rejected": "Rejected",
+        "canceled": "Canceled",
+        "timeout": "Timed out",
+        "arrived": "Arrived",
+        "ended": "Ended",
+        "waitingForPayment": "Waiting for payment"
     },
     "payment": {
         "header": "Payment",
@@ -172,7 +188,6 @@
         "city": "City",
         "postalCode": "Postal code",
         "country": "Country",
-        "confirm": "Confirm",
         "error": {
             "address": "Address is required",
             "state": "State is required",
@@ -180,6 +195,138 @@
             "postalCode": "Postal code is required",
             "country": "Country is required",
         }
+    },
+    "image": {
+        "logo": "ic_zearhLogoText_en"
+    },
+    "home": {
+        "callDoctor": "Call a doctor",
+        "startReceivingVisitRequests": "Start receiving visit requests",
+        "stopReceivingVisitRequests": "Stop receiving visit requests",
+        "whatKindOfDoctor": "What kind of a doctor?",
+        "chooseSpecialization": "Please choose specialization",
+        "chooseGender": "Please choose gender",
+        "moreOption": "+ More options",
+        "all": "All",
+        "priceRange": "Price range",
+        "save": "Save",
+        "free": "Free",
+        "doctor": "General Doctor",
+        "nurse": "Nurse",
+        "specialist": "Specialist",
+        "consultants": "Consultants",
+        "specialization": {
+            "cardiologists": "Cardiologists",
+            "dentist": "Dentist",
+            "dermatology": "Dermatology",
+            "earDoctors": "Ear. Nose & Throat Doctors",
+            "nutrition": "Nutrition",
+            "diabetics": "Diabetics & Endocrinologists",
+            "familiyPhsicians": "Familty Phsicians",
+            "gastroenterologists": "Gastroenterologists",
+            "infertilitySpecialists": "Infertility Specialists",
+            "internists": "Internists",
+            "nephrologists": "Nephrologistis",
+            "neurologists": "Neurologists",
+            "obgyn": "OB-GYNs",
+            "oncologists": "Oncologists",
+            "ophthalmologists": "Ophthalmologists",
+            "orthopedic": "Ortopedic",
+            "pediatrics": "Pediatrics",
+            "physicalTherapists": "Physical Therapists",
+            "plasticSurgeons": "Plastic Surgeons",
+            "psychologists": "Psychologists",
+            "sportMedicine": "Sport Medicine Specialists",
+            "urologists": "Urologists",
+            "generalPractitioner": "General Practitioner",
+            "generalSurgery": "General Surgery"
+        },
+        "visits": {
+            "accept": "Accept",
+            "reject": "Reject",
+            "priceForVisit": "Price for visit",
+            "fee": "Fee",
+            "age": "Age",
+            "paymentMethod": "Payment method",
+            "illnesAilment": "Illnes/Ailment",
+            "medicine": "Medicine",
+            "receivedPaymentCash": "I received payment in cash",
+            "endVisit": "End visit",
+            "feeforCancelation": "for cancellation",
+            "paymentInfo": "If you choose to pay by card you will need to pay in 10 minutes after doctor accepts your visit request",
+            "choosePaymentMethod": "Please choose your payment method",
+            "confirmPayment": "Confirm payment",
+            "patientsDetails":"Patient's details",
+            "confirmationInfo": "Confirm in 15 minutes to accept visit"
+        },
+        "payment": {
+            "payment": "Payment",
+            "paymentInfo": "Doctor accepted your visit request - you need to pay for visit within 10 minutes",
+            "total":"Total"
+        }
+    },
+    "menu": {
+        "editProfile": "Edit Profile",
+        "createDoctorsAccount": "Create doctor's account",
+        "patientAccount": "Patient account",
+        "doctorAccount": "Doctor account",
+        "transactions": "Transactions",
+        "report": "Report",
+        "privacyPolicy": "Privacy Policy",
+        "termsConditions": "Terms & Conditions",
+        "logout": "Logout",
+        "logoutQuestion": "Are you sure you want to log out a user?"
+    },
+    "errors": {
+        "unknownAddress": "Unknown address",
+        "unknownDate": "Unknown date",
+        "noPhoneNumber": "No phone number",
+        "somethingWentWrong": "Oops, something went wrong",
+        "locationOff": {
+            "title": "Location service is off",
+            "message": "To continue using „Zearh” you need to turn on your location service",
+            "button": "Go to Settings"
+        },
+        "notificationOff": {
+            "title": "Turn on notifications",
+            "message": "To continue using „Zearh” you need to allow application to send notifications",
+            "button": "Go to Settings"
+        }
+    },
+    "alerts": {
+        "pleaseWait": {
+            "pleaseWait": "Please wait...",
+        },
+        "cancelVisit": {
+            "title": "Cancel visit",
+            "message": "Are you sure you want to cancel this visit?",
+            "feeMessage": "Are you sure you want to cancel this visit? You will be charged 5% of this visit price next time you order a visit!"
+        },
+        "cantFindDoctor": {
+            "title": "Sorry",
+            "message": "We can't find any doctor matching your criteria"
+        },
+        "profileUpadted": {
+            "message": "Your profile has been updated"
+        },
+        "deleteAccount": {
+            "message": "Are you sure you want to remove user's account?"
+        },
+        "photo": {
+            "takePhoto": "Take photo",
+            "chooseFromLibrary": "Choose From Library"
+        },
+        "waitForPayDoctor": "Your patient needs to confirm payment within 10 minutes",
+        "waitForVisitEnd": "Wait until doctor ends your current visit",
+        "waitAccept": "Doctor needs to accept your visit request",
+        "distanceFromYou": "km from you",
+        "visitCanceled": "Visit canceled, please try another one.",
+        "visitCanceled2": "Visit canceled.",
+        "doctorRejected": "Doctor rejected your visit request.",
+        "doctorDidntAccepted": "Doctor didn't accept visit within 15 minutes.",
+        "youDidntAccepted": "You didn't accept visit within 15 minutes.",
+        "doctorAccountValidation": "Your doctor account is waiting for validation",
+        "cannotChangePendingBooking": "Sorry, you can't change account during pending booking"
     }
 }
 

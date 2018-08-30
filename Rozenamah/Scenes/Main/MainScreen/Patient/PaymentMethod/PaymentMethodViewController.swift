@@ -60,6 +60,15 @@ class PaymentMethodViewController: UIViewController, PaymentMethodDisplayLogic {
         visitPriceLabel.text = "\(cost.price) SAR"
         totalPriceLabel.text = "\(cost.total) SAR"
         feePriceLabel.text = "\(cost.fee) SAR"
+        
+        if view.isRTL() {
+            byCardButton.contentHorizontalAlignment = .right
+            byCardButton.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 16)
+            byCardButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+            byCashButton.contentHorizontalAlignment = .right
+            byCashButton.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 16)
+            byCashButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -16)
+        }
     }
 
     // MARK: Event handling

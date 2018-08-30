@@ -32,14 +32,14 @@ enum BookingStatus: String, Decodable {
     
     var title: String {
         switch self {
-        case .new: return "New"
-        case .accepted: return "Accepted"
-        case .rejected: return "Rejected"
-        case .canceled: return "Canceled"
-        case .timeout: return "Timed out"
-        case .arrived: return "Arrived"
-        case .ended: return "Ended"
-        case .waitingForPayment: return "Waiting for payment"
+        case .new: return "generic.new".localized
+        case .accepted: return "generic.accepted".localized
+        case .rejected: return "generic.rejected".localized
+        case .canceled: return "generic.canceled".localized
+        case .timeout: return "generic.timeout".localized
+        case .arrived: return "generic.arrived".localized
+        case .ended: return "generic.ended".localized
+        case .waitingForPayment: return "generic.waitingForPayment".localized
         }
     }
 }

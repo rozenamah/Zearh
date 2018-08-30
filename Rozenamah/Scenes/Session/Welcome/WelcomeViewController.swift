@@ -6,7 +6,8 @@ protocol WelcomeDisplayLogic: class {
 class WelcomeViewController: UIViewController, WelcomeDisplayLogic {
 
     // MARK: Outlets
-
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     // MARK: Properties
     var interactor: WelcomeBusinessLogic?
     var router: WelcomeRouter?
@@ -33,6 +34,7 @@ class WelcomeViewController: UIViewController, WelcomeDisplayLogic {
     // MARK: View customization
 
     fileprivate func setupView() {
+        logoImageView.image = UIImage(named: "image.logo".localized)
     }
 
     // MARK: Event handling

@@ -84,7 +84,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
                 
-                showAlert(message: "Visit canceled, please try another one.")
+                showAlert(message: "alerts.visitCanceled".localized)
             } else if booking.status == .accepted {
                 navigateToDoctorOnTheWay(for: booking)
                 
@@ -97,7 +97,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 // Remove current booking
                 viewController?.currentBooking = nil
                 
-                showAlert(message: "Doctor rejected your visit request.")
+                showAlert(message: "alerts.doctorRejected".localized)
             } else if booking.status == .timeout {
                 navigateToCallForm()
                 
@@ -105,7 +105,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
                 
-                showAlert(message: "Doctor didn't accept visit within 15 minutes.")
+                showAlert(message: "alerts.doctorDidntAccepted".localized)
             } else if booking.status == .arrived {
                 navigateToWaitForVisitEnd(withBooking: booking)
                 
