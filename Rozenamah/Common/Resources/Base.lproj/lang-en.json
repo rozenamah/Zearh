@@ -121,11 +121,10 @@
             "selectSubject": "Please choose your subject",
             "alertTitle": "Subject",
             "reportTopic": {
-                "notArrived": "Doctor did not arrive",
-                "late": "Doctor was late",
-                "misbehave": "Doctor was behaving badly",
-                "wrongDiagnose": "Doctor's diagnosis was wrong",
-                "other": "Other"
+                "bug": "Bug",
+                "user": "User",
+                "refund": "Refund",
+                "opinion": "Opinion",
             },
             "error": {
                 "subjectMissing": "You need to choose your subject",

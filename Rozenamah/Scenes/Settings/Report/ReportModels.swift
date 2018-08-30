@@ -19,19 +19,17 @@ enum ReportSubject: String, Decodable {
     case user = "user"
     case refund = "refund"
     case opinion = "opinion"
-    case other = "other"
     
     static var all: [ReportSubject] {
-        return [.bug, .user, .refund, .opinion, .other ]
+        return [.bug, .user, .refund, .opinion, ]
     }
     
     var title: String {
         switch self {
-        case .bug: return "settings.report.reportTopic.notArrived".localized
-        case .user: return "settings.report.reportTopic.late".localized
-        case .refund: return "settings.report.reportTopic.misbehave".localized
-        case .opinion: return "settings.report.reportTopic.wrongDiagnose".localized
-        case .other: return "settings.report.reportTopic.other".localized
+        case .bug: return "settings.report.reportTopic.bug".localized
+        case .user: return "settings.report.reportTopic.user".localized
+        case .refund: return "settings.report.reportTopic.refund".localized
+        case .opinion: return "settings.report.reportTopic.opinion".localized
         }
     }
 }
