@@ -3,6 +3,8 @@ import SwiftCake
 
 protocol PaymentDisplayLogic: class {
     func displayPaymentProfileWith(profile: Payment.Details?)
+    func handle(error: Error)
+    func visitCancelled()
 }
 
 class PaymentViewController: UIViewController, PaymentDisplayLogic {
@@ -13,11 +15,10 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     @IBOutlet weak var paymentMethodLabel: UILabel!
     @IBOutlet weak var payButton: SCButton!
     
-    
     // MARK: Properties
     var interactor: PaymentBusinessLogic?
     var router: PaymentRouter?
-    var visitDetails: VisitDetails?
+    var booking: Booking!
     
     private var shouldPerformSegue = false
     
@@ -52,10 +53,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     // MARK: View customization
     
     fileprivate func setupView() {
-        guard let visit = visitDetails else {
-            return
-        }
-        totalPriceLabel.text = "\(visit.cost.total) SAR"
+        totalPriceLabel.text = "\(booking.visit.cost.total) SAR"
     }
     
     // MARK: - Display Logic
@@ -66,6 +64,13 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
         performSegue(withIdentifier: "PaymentProfile", sender: profile)
     }
     
+    func handle(error: Error) {
+        router?.showError(error)
+    }
+    func visitCancelled() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: Event handling
     
     @IBAction func payAction(_ sender: Any) {
@@ -74,7 +79,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        router?.dismiss()
+        interactor?.cancelVisitRequestFor(booking: booking)
     }
     
     @IBAction func closeAction(_ sender: Any) {

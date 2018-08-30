@@ -1,6 +1,6 @@
 import UIKit
 
-class PaymentRouter: Router {
+class PaymentRouter: Router, AlertRouter {
     typealias RoutingViewController = PaymentViewController
     weak var viewController: PaymentViewController?
 

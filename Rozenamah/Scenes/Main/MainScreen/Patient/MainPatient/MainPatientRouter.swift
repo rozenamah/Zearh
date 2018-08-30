@@ -232,7 +232,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
             print("Cannot initalize payment view controller")
             return
         }
-        destinationVC.visitDetails = booking.visit
+        destinationVC.booking = booking
         destinationVC.modalPresentationStyle = .overCurrentContext
         viewController?.present(navigationVC, animated: true, completion: nil)
     }
