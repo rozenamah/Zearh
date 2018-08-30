@@ -41,10 +41,6 @@ class EditProfileWorker {
     
     func deleteAccount(completion: @escaping ErrorCompletion) {
         
-        var params: [String: Any] = [:]
-        if let deviceToken = Settings.shared.deviceToken {
-            params["device_token"] = deviceToken
-        }
         
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
@@ -55,7 +51,7 @@ class EditProfileWorker {
             "Authorization": "Bearer \(token)"
         ]
         
-        Alamofire.request(API.User.delete.path, method: .delete, parameters: params,
+        Alamofire.request(API.User.delete.path, method: .post,
                           encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseEmpty(completion: completion)

@@ -18,6 +18,7 @@ class PaymentWebViewViewController: UIViewController, PaymentWebViewDisplayLogic
     
     var interactor: PaymentWebViewBusinessLogic?
     var router: (NSObjectProtocol & PaymentWebViewRoutingLogic & PaymentWebViewDataPassing)?
+    private var isLoadingAlertVisible = false
     
     // MARK: - Initialization
     
@@ -61,6 +62,7 @@ class PaymentWebViewViewController: UIViewController, PaymentWebViewDisplayLogic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.delegate = self
         loadWebView()
         NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainPatientRouter.kVisitRequestNotification, object: nil)
     }
@@ -73,9 +75,10 @@ class PaymentWebViewViewController: UIViewController, PaymentWebViewDisplayLogic
     
     @objc private func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["booking"] as? Booking,
-            booking.patient == User.current, booking.status == .accepted,
-            let paymentViewController = navigationController?.viewControllers.first {
-            paymentViewController.dismiss(animated: true, completion: nil)
+            booking.patient == User.current, booking.status == .accepted {
+            router?.dismissLoadingAlert(completion: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+            })
         }
     }
     
@@ -98,11 +101,22 @@ class PaymentWebViewViewController: UIViewController, PaymentWebViewDisplayLogic
 extension PaymentWebViewViewController: UIWebViewDelegate {
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        
+        if !isLoadingAlertVisible {
+            isLoadingAlertVisible = true
+            router?.showLoadingAlert()
+        }
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        
+        router?.dismissLoadingAlert(completion: { [weak self] in
+            self?.isLoadingAlertVisible = false
+        })
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        router?.dismissLoadingAlert(completion: { [weak self] in
+            self?.isLoadingAlertVisible = false
+        })
     }
     
 }

@@ -8,13 +8,27 @@
 
 import UIKit
 
-@objc protocol PaymentWebViewRoutingLogic {}
+@objc protocol PaymentWebViewRoutingLogic {
+    func showLoadingAlert()
+    func dismissLoadingAlert(completion: @escaping () -> ())
+}
 
 protocol PaymentWebViewDataPassing {
 	var dataStore: PaymentWebViewDataStore? { get }
 }
 
-class PaymentWebViewRouter: NSObject, PaymentWebViewRoutingLogic, PaymentWebViewDataPassing {
+class PaymentWebViewRouter: NSObject, AlertRouter, Router, PaymentWebViewRoutingLogic, PaymentWebViewDataPassing {
+    
+    private var alertLoading: UIAlertController?
+    
+    func showLoadingAlert() {
+        alertLoading = showLoadingAlert()
+    }
+    
+    func dismissLoadingAlert(completion: @escaping () -> ()) {
+        alertLoading?.dismiss(animated: true, completion: completion)
+    }
+    
 
 	// MARK: - Properties
 
