@@ -300,7 +300,7 @@
         "cancelVisit": {
             "title": "_Cancel visit",
             "message": "_Are you sure you want to cancel this visit?",
-            "feeMessage": "Are you sure you want to cancel this visit? You will be charged 5% of this visit price next time you order a visit!"
+            "feeMessage": "_Are you sure you want to cancel this visit? You will be charged 5% of this visit price next time you order a visit!"
         },
         "cantFindDoctor": {
             "title": "_Sorry",
