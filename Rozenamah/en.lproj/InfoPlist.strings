@@ -7,3 +7,8 @@
 */
 "CFBundleDisplayName" = "Zearh";
 "UILaunchStoryboardName" = "LaunchScreen_en";
+"NSCameraUsageDescription" = "Accept this permission in order to take photo with your camera";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Accept this permission in order to use this app";
+"NSLocationAlwaysUsageDescription" = "Accept this permission in order to use this app";
+"NSLocationWhenInUseUsageDescription" = "Accept this permission in order to use this app";
+"NSPhotoLibraryUsageDescription" = "Accept this permission in order to select photo from your gallery";
