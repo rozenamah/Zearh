@@ -18,10 +18,10 @@ class EndVisitPresenter: EndVisitPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .cashNotTaken:
-                return "You have to confirm that you received money from patient"
+                return "errors.cashNotTaken".localized
             case .unknown(let error):
                 if let error = error {
-                    return error.localizedDescription
+                    return error.localizedDescription.localizedError ?? error.localizedDescription
                 }
                 return "generic.error.unknown".localized
             }

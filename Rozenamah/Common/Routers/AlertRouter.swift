@@ -64,6 +64,8 @@ extension AlertRouter where Self: Router {
             return
         }
         
+        let message = error.localizedDescription.localizedError ?? error.localizedDescription
+        
         let alertMessage = UIAlertController(title: "generic.error.ups".localized,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)

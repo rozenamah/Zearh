@@ -11,7 +11,6 @@ class TransactionHistoryWorker {
     func fetchTransactionHistory(builder: TransactionHistoryBuilder, completion: @escaping BookingsCompletion) -> DataRequest? {
         
         let params = builder.toParams
-        
         guard let token = Keychain.shared.token else {
             completion(nil, RMError.tokenDoesntExist)
             return nil

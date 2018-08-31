@@ -30,10 +30,10 @@ extension PhotoTakeRouter where Self: Router {
             self.navigateToCamera(allowEditing: allowEditing)
         }
         
-        let galleryAction = UIAlertAction(title: "alerts.chooseFromLibrary".localized, style: .default) { action in
+        let galleryAction = UIAlertAction(title: "alerts.photo.chooseFromLibrary".localized, style: .default) { action in
             self.navigateToGallery(allowEditing: allowEditing)
         }
-        let cancelAction = UIAlertAction(title: "generic.cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "generic.cancel".localized, style: .cancel)
         
         
         alert.addAction(cameraAction)

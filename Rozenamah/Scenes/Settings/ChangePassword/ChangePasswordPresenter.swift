@@ -18,7 +18,7 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
         case passwordsDontMatch
         case incorrectPassword
         case oldPasswordIncorrect
-        case unknownError
+        case unknownError(RMError)
         
         var errorDescription: String? {
             switch self {
@@ -34,7 +34,10 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
                 return "session.patient.error.incorrectPassword".localized
             case .oldPasswordIncorrect:
                 return "session.patient.error.incorrectPassword".localized
-            case .unknownError:
+            case .unknownError(let error):
+                if let errorMsg = error.localizedDescription.localizedError {
+                    return errorMsg
+                }
                 return "generic.error.unknown".localized
             }
         }
@@ -49,7 +52,7 @@ class ChangePasswordPresenter: ChangePasswordPresentationLogic {
         case .status(let code, _) where code == .unauthorized:
             presentError(.oldPasswordIncorrect)
         default:
-            presentError(.unknownError)
+            presentError(.unknownError(error))
         }
     }
     

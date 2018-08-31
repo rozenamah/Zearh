@@ -59,7 +59,7 @@ class RegisterPatientPresenter: RegisterPatientPresentationLogic {
                 return "session.patient.error.diffrentPasswords".localized
             case .unknown(let error):
                 if let error = error {
-                    return error.localizedDescription
+                    return error.localizedDescription.localizedError ?? error.localizedDescription
                 }
                 return "generic.error.unknown".localized
             }

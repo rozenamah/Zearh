@@ -14,16 +14,19 @@ class ChangePhoneNumberPresenter: ChangePhoneNumberPresentationLogic {
     enum ChangeNumberError: LocalizedError {
         case numberTaken
         case incorrectNumber
-        case unknownError
+        case unknownError(RMError)
         
         var errorDescription: String? {
             switch self {
             case .incorrectNumber:
-                return "Phone number is incorrect"
+                return "errors.incorrectNumber".localized
             case .numberTaken:
-                return "Phone number is already taken"
-            case .unknownError:
-                return "Unknown error"
+                return "error.numberTaken".localized
+            case .unknownError(let error):
+                if let errorMsg = error.localizedDescription.localizedError {
+                    return errorMsg
+                }
+                return "generic.error.unknowon".localized
             }
         }
     }
@@ -37,7 +40,7 @@ class ChangePhoneNumberPresenter: ChangePhoneNumberPresentationLogic {
         case .status(let code, _) where code == .duplicate:
             presentError(.numberTaken)
         default:
-            presentError(.unknownError)
+            presentError(.unknownError(error))
         }
     }
     

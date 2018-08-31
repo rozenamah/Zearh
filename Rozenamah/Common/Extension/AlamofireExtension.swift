@@ -30,15 +30,15 @@ enum RMError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unknown(let error):
-            return error.localizedDescription
+            return error.localizedDescription.localizedError ?? error.localizedDescription
         case .status(let code, _) where code == .serverError:
-            return "Something is wrong with our server :("
+            return "errors.somethingWrongWithServer".localized
         case .status(_, let error):
             return error.message
         case .tokenDoesntExist:
-            return "You need to sign in again"
+            return "errors.tokenNotFound".localized
         case .noData:
-            return "Data not found"
+            return "errors.dataNotFound".localized
         }
     }
 }

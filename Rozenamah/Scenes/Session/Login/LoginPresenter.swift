@@ -31,7 +31,7 @@ class LoginPresenter: LoginPresentationLogic {
                 return "session.login.error.invalidEmailPassword".localized
             case .unknown(let error):
                 if let error = error {
-                    return error.localizedDescription
+                    return error.localizedDescription.localizedError ?? error.localizedDescription
                 }
                 return "generic.error.unknown".localized
             }

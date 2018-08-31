@@ -24,14 +24,14 @@ class MainScreenPresenter: MainScreenPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .noPushPermission:
-                return "You have to enable push notifications"
+                return "errors.noPushPermission".localized
             case .noLocation:
-                return "We are unable to determine your location"
+                return "errors.noLocation".localized
             case .unknown(let error):
                 if let error = error {
-                    return error.localizedDescription
+                    return error.localizedDescription.localizedError ?? error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }
