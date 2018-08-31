@@ -124,7 +124,7 @@
                 "bug": "_Bug",
                 "user": "_User",
                 "refund": "_Refund",
-                "opinion": "_Opinion",
+                "opinion": "_Opinion"
             },
             "error": {
                 "subjectMissing": "أنت في حاجة لاختيار الموضوع الخاص بك",
@@ -283,7 +283,7 @@
         "noLocation": "_We are unable to determine your location",
         "noPushPermission": "_You have to enable push notifications",
         "cashNotTaken": "_You have to confirm that you received money from patient",
-        "somethingWentWrong": "_Oops, something went wrong",,
+        "somethingWentWrong": "_Oops, something went wrong",
         "somethingWrongWithServer": "_Something is wrong with our server :(",
         "tokenNotFound": "_You need to sign in again",
         "dataNotFound": "_Data not found",
