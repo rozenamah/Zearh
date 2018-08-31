@@ -18,14 +18,14 @@ class CallDoctorPresenter: CallDoctorPresentationLogic {
         var errorDescription: String? {
             switch self {
             case .professionMissing:
-                return "You need to choose your classification"
+                return "errors.professionMissing".localized
             case .specializationMissing:
-                return "You need to choose your specialization"
+                return "errors.specializationMissing".localized
             case .unknown(let error):
                 if let error = error {
-                    return error.localizedDescription
+                    return error.localizedDescription.localizedError ?? error.localizedDescription
                 }
-                return "Unknown error"
+                return "generic.error.unknown".localized
             }
         }
     }

@@ -13,7 +13,7 @@ class ReportPresenter: ReportPresentationLogic {
     enum ReportError: LocalizedError {
         case subjectMissing
         case messageMissing
-        case unknown
+        case unknown(RMError)
         
         var errorDescription: String? {
             switch self {
@@ -21,8 +21,8 @@ class ReportPresenter: ReportPresentationLogic {
                 return "settings.report.error.subjectMissing".localized
             case .messageMissing:
                 return "settings.report.error.messageMissing".localized
-            case .unknown:
-                return "settings.report.error.unknown".localized
+            case .unknown(let error):
+                return error.localizedDescription.localizedError ?? "settings.report.error.unknown".localized
             }
         }
     }

@@ -49,7 +49,7 @@ class EditProfilePresenter: EditProfilePresentationLogic {
                 return "session.doctor.error.priceMissing".localized
             case .unknown(let error):
                 if let error = error {
-                    return error.localizedDescription
+                    return error.localizedDescription.localizedError ?? error.localizedDescription
                 }
                 return "generic.error.unknown".localized
             }

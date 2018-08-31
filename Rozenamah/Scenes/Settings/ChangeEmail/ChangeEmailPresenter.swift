@@ -14,7 +14,7 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
     enum ChangeEmailError: LocalizedError {
         case emailAlreadyTaken
         case incorrectEmail
-        case unknownError
+        case unknownError(RMError)
         
         var errorDescription: String? {
             switch self {
@@ -22,7 +22,10 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
                 return "session.patient.error.emailTaken".localized
             case .incorrectEmail:
                 return "settings.changeEmail.incorrectEmail".localized 
-            case .unknownError:
+            case .unknownError(let error):
+                if let errorMsg = error.localizedDescription.localizedError {
+                    return errorMsg
+                }
                 return "generic.error.unknown".localized
             }
         }
@@ -37,7 +40,7 @@ class ChangeEmailPresenter: ChangeEmailPresentationLogic {
         case .status(let code, _) where code == .duplicate:
             presentError(.emailAlreadyTaken)
         default:
-            presentError(.unknownError)
+            presentError(.unknownError(error))
         }
     }
     

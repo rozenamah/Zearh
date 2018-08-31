@@ -117,6 +117,7 @@
 		B4FF98B22122DAF400269AA0 /* PaymentWebViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */; };
 		B4FF98B32122DAF400269AA0 /* PaymentWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */; };
 		B4FF98B42122DAF400269AA0 /* PaymentWebViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */; };
+		E93720AA2139329000DFEA41 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93720A92139329000DFEA41 /* StringExtension.swift */; };
 		E998D50C2136A52400BB93B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E998D50E2136A52400BB93B2 /* InfoPlist.strings */; };
 		E998D5182136BD8600BB93B2 /* LaunchScreen_ar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E998D5162136BD8600BB93B2 /* LaunchScreen_ar.storyboard */; };
 		F9093A71204992CB00CB041A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9093A70204992CB00CB041A /* AppDelegate.swift */; };
@@ -394,6 +395,7 @@
 		B4FF98AC2122DAF400269AA0 /* PaymentWebViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModels.swift; sourceTree = "<group>"; };
 		B4FF98AD2122DAF400269AA0 /* PaymentWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewViewController.swift; sourceTree = "<group>"; };
 		B4FF98AE2122DAF400269AA0 /* PaymentWebViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewInteractor.swift; sourceTree = "<group>"; };
+		E93720A92139329000DFEA41 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E998D50D2136A52400BB93B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E998D50F2136A52700BB93B2 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E998D5172136BD8600BB93B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen_ar.storyboard; sourceTree = "<group>"; };
@@ -870,6 +872,7 @@
 				F97B73A22063A9040073A968 /* KingfisherExtension.swift */,
 				57133DF32087744500BB69A5 /* UIViewExtension.swift */,
 				570DC856208E1E7A0034B264 /* DoubleExtension.swift */,
+				E93720A92139329000DFEA41 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1741,6 +1744,7 @@
 				F99A2EDC207F37D2009505EB /* AcceptDoctorConfigurator.swift in Sources */,
 				578A6E8A2080BD7800CB4E79 /* EndVisitRouter.swift in Sources */,
 				578A6E8B2080BD7800CB4E79 /* EndVisitModels.swift in Sources */,
+				E93720AA2139329000DFEA41 /* StringExtension.swift in Sources */,
 				F95F140820614A6E00CDC2E5 /* iPhoneDeviceDetection.swift in Sources */,
 				57E659C420739EBC004E3926 /* ChangePasswordWorker.swift in Sources */,
 				F940EC2D205963ED00266753 /* AlamofireExtension.swift in Sources */,

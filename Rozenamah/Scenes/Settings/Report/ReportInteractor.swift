@@ -13,8 +13,8 @@ class ReportInteractor: ReportBusinessLogic {
     
     func reportSubject(_ reportForm: ReportForm) {
         worker.reportDoctor(reportForm) { (error) in
-            if let _ = error {
-                self.presenter?.presentError(.unknown)
+            if let error = error {
+                self.presenter?.presentError(.unknown(error))
             } else {
                 self.presenter?.reportSent()
             }
