@@ -65,7 +65,8 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     }
     
     func handle(error: Error) {
-        router?.showError(error)
+//        router?.showError(error)
+        dismiss(animated: true, completion: nil)
     }
     func visitCancelled() {
         dismiss(animated: true, completion: nil)
