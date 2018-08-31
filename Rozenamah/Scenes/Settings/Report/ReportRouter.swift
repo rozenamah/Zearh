@@ -13,7 +13,7 @@ class ReportRouter: Router, AlertRouter {
     // MARK: Navigation
     
     func showReportSent() {
-        let alert = UIAlertController(title: nil, message: "settings.report.reportSent".localized, preferredStyle: .alert)
+        let alert = UIAlertController(title: "settings.report.reportSent".localized, message: "settings.report.description".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in
             self.dismiss()
         }))
