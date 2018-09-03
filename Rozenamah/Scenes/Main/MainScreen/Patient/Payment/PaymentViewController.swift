@@ -39,6 +39,11 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(for:)), name: MainPatientRouter.kVisitRequestNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: MainPatientRouter.kVisitRequestNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +59,15 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     
     fileprivate func setupView() {
         totalPriceLabel.text = "\(booking.visit.cost.total) SAR"
+    }
+    
+    // MARK: - Private
+    
+    @objc private func handleNotification(for notification: NSNotification) {
+        if let booking = notification.userInfo?["booking"] as? Booking,
+            booking.patient == User.current, booking.status == .canceled {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Display Logic

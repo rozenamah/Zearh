@@ -54,7 +54,7 @@ class PatientDetailsViewController: UIViewController, PatientDetailsDisplayLogic
         // TODO: Fill missing labels with correct data
         avatarImage.setAvatar(for: patient)
         nameLabel.text = patient.fullname
-        priceAmountLabel.text = "\(visit.cost.total) SAR"
+        priceAmountLabel.text = "\(visit.cost.price) SAR"
         feeAmountLabel.text = "\(visit.cost.fee) SAR"
         paymentMethodLabel.text = booking.payment.title
         
