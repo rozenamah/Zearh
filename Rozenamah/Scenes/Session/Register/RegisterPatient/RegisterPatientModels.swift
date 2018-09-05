@@ -14,6 +14,7 @@ class RegisterForm: ParamForm {
     var surname: String?
     var avatar: UIImage?
     var phone: String?
+    var language: String?
     
     var toParams: [String: Any] {
         
@@ -24,7 +25,8 @@ class RegisterForm: ParamForm {
             "password": password!,
             "name": name!,
             "surname": surname!,
-            "phone": phone!
+            "phone": phone!,
+            "lang": language ?? "en"
         ]
         
         if let avatar = avatar {

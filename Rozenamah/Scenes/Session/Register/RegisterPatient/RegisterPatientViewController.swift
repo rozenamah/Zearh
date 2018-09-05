@@ -102,6 +102,11 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
              if termsAndConditionsCheckbox.isSelected {
                 
                 router?.showWaitAlert()
+                if view.isRTL() {
+                    registerForm.language = "sa"
+                } else {
+                    registerForm.language = "en"
+                }
                 if registrationMode == .doctor {
                     interactor?.checkIfEmailOrPhoneTaken(registerForm) 
                 } else {

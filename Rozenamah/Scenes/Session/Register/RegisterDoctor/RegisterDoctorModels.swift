@@ -10,9 +10,11 @@ protocol CreateDoctorForm: ParamForm {
     var price: Int? { get set }
     var gender: Gender? { get set }
     var pdf: Data? { get set }
+    var language: String? { get set }
 }
 
 final class UpdateDoctorForm: CreateDoctorForm {
+    var language: String?
     var classification: Classification?
     var specialization: DoctorSpecialization?
     var price: Int?
@@ -30,7 +32,7 @@ final class UpdateDoctorForm: CreateDoctorForm {
         params["price"] = price!
         params["type"] = "doctor"
         params["pdf"] = "data:application/pdf;base64,\(pdf!.base64EncodedString())"
-        
+        params["lang"] = language ?? "en"
         return params
     }
 }
@@ -53,7 +55,7 @@ final class RegisterDoctorForm: RegisterForm, CreateDoctorForm {
         params["price"] = price!
         params["type"] = "doctor"
         params["pdf"] = "data:application/pdf;base64,\(pdf!.base64EncodedString())"
-        
+        params["lang"] = language ?? "en"
         return params
     }
 }
