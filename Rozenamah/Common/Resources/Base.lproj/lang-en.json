@@ -256,7 +256,7 @@
             "choosePaymentMethod": "Please choose your payment method",
             "confirmPayment": "Confirm payment",
             "patientsDetails": "Patient's details",
-            "confirmationInfo": "Confirm in 15 minutes to accept visit"
+            "confirmationInfo": "Confirm in 5 minutes to accept visit"
         },
         "payment": {
             "payment": "Payment",
@@ -395,8 +395,8 @@
         "visitCanceled": "Visit canceled, please try another one.",
         "visitCanceled2": "Visit canceled.",
         "doctorRejected": "Doctor rejected your visit request.",
-        "doctorDidntAccepted": "Doctor didn't accept visit within 15 minutes.",
-        "youDidntAccepted": "You didn't accept visit within 15 minutes.",
+        "doctorDidntAccepted": "Doctor didn't accept visit within 5 minutes.",
+        "youDidntAccepted": "You didn't accept visit within 5 minutes.",
         "doctorAccountValidation": "Your doctor account is waiting for validation",
         "cannotChangePendingBooking": "Sorry, you can't change account during pending booking"
     }

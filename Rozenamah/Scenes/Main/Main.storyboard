@@ -2030,7 +2030,7 @@
                                 <rect key="frame" x="16" y="230" width="273" height="379"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-fh-sTN">
-                                        <rect key="frame" x="0.0" y="0.0" width="273" height="537"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="468"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-vC-1AL" userLabel="Edit profile">
                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="54"/>
@@ -2241,50 +2241,8 @@
                                                     <constraint firstAttribute="bottom" secondItem="YHa-Z4-s16" secondAttribute="bottom" id="zaI-MH-5Re"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITH-P4-v22" userLabel="Privacy Policy">
-                                                <rect key="frame" x="0.0" y="345" width="273" height="54"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KC1-gl-BTp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="273" height="54"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="40" maxY="8"/>
-                                                        <state key="normal" title="Privacy Policy">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="automaticallyAdjustFont" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="menu.privacyPolicy"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="privacyPolicyAction:" destination="ERD-lc-8SX" eventType="touchUpInside" id="8Ij-cW-Fpz"/>
-                                                        </connections>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpi-G2-aTV">
-                                                        <rect key="frame" x="0.0" y="53" width="273" height="1"/>
-                                                        <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="fZB-zL-xrJ"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="asm-SF-erf">
-                                                        <rect key="frame" x="249" y="20.5" width="8" height="13"/>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="asm-SF-erf" secondAttribute="trailing" constant="16" id="6eW-bV-FNS"/>
-                                                    <constraint firstItem="cpi-G2-aTV" firstAttribute="leading" secondItem="ITH-P4-v22" secondAttribute="leading" id="95a-Tl-cgA"/>
-                                                    <constraint firstItem="KC1-gl-BTp" firstAttribute="leading" secondItem="ITH-P4-v22" secondAttribute="leading" id="Fp5-xe-FQ9"/>
-                                                    <constraint firstItem="asm-SF-erf" firstAttribute="centerY" secondItem="KC1-gl-BTp" secondAttribute="centerY" id="Kdb-mP-yQJ"/>
-                                                    <constraint firstItem="KC1-gl-BTp" firstAttribute="top" secondItem="ITH-P4-v22" secondAttribute="top" id="OEX-bI-j5M"/>
-                                                    <constraint firstAttribute="bottom" secondItem="KC1-gl-BTp" secondAttribute="bottom" id="P5E-bx-g1F"/>
-                                                    <constraint firstAttribute="trailing" secondItem="KC1-gl-BTp" secondAttribute="trailing" id="XfS-Ga-NBA"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cpi-G2-aTV" secondAttribute="trailing" id="Yiz-ZJ-D2S"/>
-                                                    <constraint firstAttribute="bottom" secondItem="cpi-G2-aTV" secondAttribute="bottom" id="aTc-6e-dIJ"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4I-aY-zU6" userLabel="Terms &amp; Conditions">
-                                                <rect key="frame" x="0.0" y="414" width="273" height="54"/>
+                                                <rect key="frame" x="0.0" y="345" width="273" height="54"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="419-qV-q10">
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="54"/>
@@ -2326,7 +2284,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-cg-X8N" userLabel="Edit profile">
-                                                <rect key="frame" x="0.0" y="483" width="273" height="54"/>
+                                                <rect key="frame" x="0.0" y="414" width="273" height="54"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptb-Qi-Dga">
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="54"/>
@@ -2407,7 +2365,6 @@
                         <outletCollection property="drawerButtons" destination="U5J-82-JWk" collectionClass="NSMutableArray" id="dr1-Cm-mOV"/>
                         <outletCollection property="drawerButtons" destination="bjs-nG-NTO" collectionClass="NSMutableArray" id="5pf-YY-gNU"/>
                         <outletCollection property="drawerButtons" destination="FnM-L3-Mv8" collectionClass="NSMutableArray" id="qhm-1O-6R6"/>
-                        <outletCollection property="drawerButtons" destination="KC1-gl-BTp" collectionClass="NSMutableArray" id="a5m-kx-Kjh"/>
                         <outletCollection property="drawerButtons" destination="419-qV-q10" collectionClass="NSMutableArray" id="N2b-NN-lCv"/>
                         <outletCollection property="drawerButtons" destination="Ptb-Qi-Dga" collectionClass="NSMutableArray" id="eII-p1-jDF"/>
                         <outletCollection property="arrowImages" destination="clb-0d-47n" collectionClass="NSMutableArray" id="DeU-6F-dnF"/>
@@ -2415,7 +2372,6 @@
                         <outletCollection property="arrowImages" destination="m2j-To-9Zt" collectionClass="NSMutableArray" id="97r-5z-HBl"/>
                         <outletCollection property="arrowImages" destination="FUl-xL-5E1" collectionClass="NSMutableArray" id="C3i-9A-eau"/>
                         <outletCollection property="arrowImages" destination="39c-HG-QcM" collectionClass="NSMutableArray" id="nek-jY-71d"/>
-                        <outletCollection property="arrowImages" destination="asm-SF-erf" collectionClass="NSMutableArray" id="JsW-az-EfB"/>
                         <outletCollection property="arrowImages" destination="QVb-gI-SGd" collectionClass="NSMutableArray" id="3re-au-tfz"/>
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="terms_segue" id="CEi-hk-pLN"/>
                         <segue destination="qia-dz-6e0" kind="presentation" identifier="privacy_segue" id="ApP-20-oVH"/>

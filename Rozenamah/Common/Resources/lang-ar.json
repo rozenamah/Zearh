@@ -256,7 +256,7 @@
             "choosePaymentMethod": "الرجاء اختيار طريقة الدفع",
             "confirmPayment": "تم قبول العملية",
             "patientsDetails":"بيانات المريض",
-            "confirmationInfo": "سيتم تأكيد الزيارة خلال 15 دقيقة"
+            "confirmationInfo": "سيتم تأكيد الزيارة خلال 5 دقيقة"
         },
         "payment": {
             "payment": "الدفع",
@@ -395,8 +395,8 @@
         "visitCanceled": "تم الغاء الزيارة , حاول مرة أخرى",
         "visitCanceled2": "تم الغاء الزيارة  ",
         "doctorRejected": "تم رفض الطلب من الطبيب",
-        "doctorDidntAccepted": "الطبيب لم يوافق على الزيارة خلال الفترة المسموح بها 15 دقيقة",
-        "youDidntAccepted": "لم تقوم بتأكيد الموافقة على طلب الزيارة خلال الفترة المسموح بها 15 دقيقة",
+        "doctorDidntAccepted": "الطبيب لم يوافق على الزيارة خلال الفترة المسموح بها 5 دقيقة",
+        "youDidntAccepted": "لم تقوم بتأكيد الموافقة على طلب الزيارة خلال الفترة المسموح بها 5 دقيقة",
         "doctorAccountValidation": "حساب الطبيب قيد الدراسة",
         "cannotChangePendingBooking": "للآسف,لاتستطيع تغيير الحساب خلال هذه الفترة"
     }

@@ -140,10 +140,6 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         router?.naviagateToEdit()
     }
     
-    @IBAction func privacyPolicyAction(_ sender: Any) {
-        router?.navigateToPrivacyPolicy()
-    }
-    
     @IBAction func termsAction(_ sender: Any) {
         router?.navigateToTermsAndConditions()
     }
