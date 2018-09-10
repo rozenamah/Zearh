@@ -32,7 +32,7 @@
             "acceptButton": "موافق",
             "termsButton": "الشروط والاحكام",
             "previous": "السابق",
-            "terms": "الموافقة على الشروط والاحكام"
+            "terms": "الموافقة على الشروط والاحكام",
             "error": {
                 "emailTaken": "البريد الالكتروني مسجل سابقآ",
                 "incorrectPhone": "رقم الجوال غير صحيح",
@@ -44,7 +44,7 @@
                 "nameTooShort": "الاسم لايقل عن 3 خانات",
                 "surnameTooShort": "اللقب لايقل عن 3 خانات",
                 "diffrentPasswords": "الرقم السري غير مطابق",
-                "phoneNumberExists": "رقم الجوال مسجل سابقآ",
+                "phoneNumberExists": "رقم الجوال مسجل سابقآ"
             }
         },
         "doctor": {
@@ -68,7 +68,7 @@
                 "professionMissing": "تحديد التصنيف",
                 "specializationMissing": "تحديد التخصص",
                 "priceMissing": "توضيح قيمة الكشفية",
-                "genderMissing": "توضيح نوع الجنس",
+                "genderMissing": "توضيح نوع الجنس"
             }
         },
         "forgotPassword": {
@@ -76,7 +76,7 @@
             "description": "الرجاء ادخال البريد الالكتروني لتحديث الرقم السري",
             "email": "البريد الالكتروني مسجل سابقآ",
             "resetButton": "إعادة تعيين الرقم السري",
-            "resetLink": "سيتم ارسال الرابط عبر البريد الالكتروني",
+            "resetLink": "سيتم ارسال الرابط عبر البريد الالكتروني"
         },
         "resetPassword": {
             "emailNotConnected": "البريد الالكتروني غير متطابق"
@@ -99,7 +99,7 @@
             "currentPassword": "الرقم السري الحالي",
             "newPassword": "الرقم السري الجديد",
             "confirmPassword": "تأكيد الرقم السري",
-            "passwordChanged": "تم تغيير الرقم السري",
+            "passwordChanged": "تم تغيير الرقم السري"
         },
         "changeEmail": {
             "enterEmail": "ادخل البريد الالكتروني",
