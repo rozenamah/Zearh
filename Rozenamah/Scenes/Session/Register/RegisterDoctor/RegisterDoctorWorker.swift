@@ -11,7 +11,10 @@ class RegisterDoctorWorker: RegisterPatientWorker {
             return
         }
         
-        let params = form.toParams
+        var params = form.toParams
+        if let index = params.index(where: {$0.key == "lang"}) {
+            params.remove(at: index)
+        }
         let headers = [
             "Authorization": "Bearer \(token)"
         ]

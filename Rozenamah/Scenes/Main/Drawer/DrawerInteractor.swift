@@ -14,7 +14,7 @@ class DrawerInteractor: DrawerBusinessLogic {
     
     func logout() {
         worker.logout { (error) in
-            // Logout anyway if errorm remove token
+            // Logout anyway if errorm remove tokensafa
             Keychain.shared.token = nil
             // Remove all firebase observers
             DatabaseObserver.removeAll()

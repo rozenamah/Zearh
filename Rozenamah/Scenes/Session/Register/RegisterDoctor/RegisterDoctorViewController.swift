@@ -143,12 +143,12 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
                 return
             }
             router?.showWaitAlert()
-            if view.isRTL() {
-                registerForm.language = "sa"
-            } else {
-                registerForm.language = "en"
-            }
             if registerType == .register {
+                if view.isRTL() {
+                    registerForm.language = "sa"
+                } else {
+                    registerForm.language = "en"
+                }
                 interactor?.register(withForm: registerForm)
             } else {
                 interactor?.update(withForm: registerForm)
