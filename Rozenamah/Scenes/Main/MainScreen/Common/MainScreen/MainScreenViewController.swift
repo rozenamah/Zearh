@@ -79,7 +79,11 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     // MARK: Event handling
     
     @IBAction func slideMenuAction(_ sender: Any) {
-        slideMenuController()?.toggleLeft()
+        if view.isRTL() {
+            slideMenuController()?.toggleRight()
+        } else {
+            slideMenuController()?.toggleLeft()
+        }
     }
     
     

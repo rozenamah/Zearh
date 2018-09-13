@@ -65,9 +65,14 @@ extension AppStartRouter where Self: Router {
         let homeVC = module == .doctor ?
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "map_doctor_vc") :
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "map_patient_vc")
-        
-        let slideMenuController = SlideMenuController(mainViewController: homeVC,
+        var slideMenuController: SlideMenuController
+        if homeVC.view.isRTL() {
+            slideMenuController = SlideMenuController(mainViewController: homeVC,
+                                                      rightMenuViewController: sideBarVC)
+        } else {
+            slideMenuController = SlideMenuController(mainViewController: homeVC,
                                                       leftMenuViewController: sideBarVC)
+        }
         
         UIApplication.shared.keyWindow?.setRootViewController(slideMenuController, options: UIWindow.TransitionOptions(direction: .fade))
         
