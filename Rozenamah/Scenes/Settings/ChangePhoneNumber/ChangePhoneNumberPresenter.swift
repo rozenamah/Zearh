@@ -21,7 +21,7 @@ class ChangePhoneNumberPresenter: ChangePhoneNumberPresentationLogic {
             case .incorrectNumber:
                 return "errors.incorrectNumber".localized
             case .numberTaken:
-                return "error.numberTaken".localized
+                return "errors.numberTaken".localized
             case .unknownError(let error):
                 if let errorMsg = error.localizedDescription.localizedError {
                     return errorMsg
