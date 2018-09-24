@@ -32,7 +32,6 @@ class RMTextFieldWithError: UIView {
             if case .error(_) = currentState {
                 break
             }
-            
             errorLabel.isHidden = true
             separatorView.backgroundColor =  UIColor.rmGray
         case .error(let msg):

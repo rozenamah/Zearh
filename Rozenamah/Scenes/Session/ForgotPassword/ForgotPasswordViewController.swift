@@ -45,7 +45,7 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
 
     fileprivate func setupView() {
         // When app detects that is used with layout direction RTL, change textfield aligment to confrom arabic language
-        if view.effectiveUserInterfaceLayoutDirection == .rightToLeft {
+        if view.isRTL() {
             emailView.textField.textAlignment = .right
         }
     }

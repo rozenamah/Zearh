@@ -10,6 +10,6 @@ import UIKit
 
 extension UIView {
     func isRTL() -> Bool {
-        return effectiveUserInterfaceLayoutDirection == .rightToLeft
+        return UIView.appearance().semanticContentAttribute == .forceRightToLeft
     }
 }

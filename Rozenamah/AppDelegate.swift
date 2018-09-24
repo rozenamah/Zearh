@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureAlamofire()
         configureLanguage()
     
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
         return true
     }
 

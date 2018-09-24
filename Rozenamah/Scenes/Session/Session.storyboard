@@ -905,6 +905,8 @@
                         <outletCollection property="textfieldCollection" destination="4qp-qF-JAL" collectionClass="NSMutableArray" id="xtE-77-bem"/>
                         <outletCollection property="textfieldCollection" destination="cW1-kM-jRs" collectionClass="NSMutableArray" id="b9G-vB-udw"/>
                         <outletCollection property="textfieldCollection" destination="fQs-Xa-TmQ" collectionClass="NSMutableArray" id="PTD-82-igu"/>
+                        <outletCollection property="textfieldCollection" destination="o1O-sZ-Jai" collectionClass="NSMutableArray" id="9eg-Eb-YXZ"/>
+                        <outletCollection property="textfieldCollection" destination="TYE-Ht-6fP" collectionClass="NSMutableArray" id="gWr-Uj-hEz"/>
                         <segue destination="fZT-KZ-HLl" kind="show" identifier="doctor_step_segue" id="D9H-Nv-3Fh"/>
                     </connections>
                 </viewController>
@@ -1064,7 +1066,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your licence in .pdf format" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1j-OZ-PSm">
-                                                <rect key="frame" x="100.5" y="84" width="258" height="42.5"/>
+                                                <rect key="frame" x="100.5" y="83.5" width="258" height="42.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

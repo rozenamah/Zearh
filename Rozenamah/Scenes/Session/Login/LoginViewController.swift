@@ -56,6 +56,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         if self.view.isRTL() {
             hidePasswordButton.contentEdgeInsets = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 30)
             emailView.textField.textAlignment = .right
+            passwordView.textField.textAlignment = .right
         }
     }
 
