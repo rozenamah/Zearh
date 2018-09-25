@@ -149,7 +149,8 @@
             "title": "Transactions",
             "detailTitle": "Trasaction details",
             "noVisit": "No previous visits"
-        }
+        },
+        "language": "العربية"
     },
     "generic": {
         "error": {

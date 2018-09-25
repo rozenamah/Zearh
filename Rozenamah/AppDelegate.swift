@@ -38,8 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureApp()
         configureAlamofire()
         configureLanguage()
-    
-        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+      
         return true
     }
 
@@ -110,7 +109,12 @@ extension AppDelegate {
         // Set your file name
         localize.update(fileName: "lang")
         // If you want remove storaged languaje use
-        localize.resetLanguage()
+//        localize.resetLanguage()
+      if localize.currentLanguage == "ar" {
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+      } else {
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+      }
     }
     
     fileprivate func configureApp() {

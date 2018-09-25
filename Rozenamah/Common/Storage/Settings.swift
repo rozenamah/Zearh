@@ -39,6 +39,5 @@ class Settings {
             defaults.set(newValue, forKey: "deviceToken")
         }
     }
-    
-    
+  
 }

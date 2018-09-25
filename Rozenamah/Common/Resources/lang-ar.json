@@ -149,7 +149,8 @@
             "title": "المعاملات",
             "detailTitle": "تفاصيل العملية",
             "noVisit": "لاتوجد زيارات سابقة"
-        }
+        },
+        "language": "English"
     },
     "generic": {
         "error": {

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Localize
 
 extension UIView {
     func isRTL() -> Bool {
-        return UIView.appearance().semanticContentAttribute == .forceRightToLeft
+      return Localize.shared.currentLanguage == "ar"
     }
 }

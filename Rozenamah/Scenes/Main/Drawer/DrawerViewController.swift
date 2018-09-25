@@ -1,5 +1,6 @@
 import UIKit
 import SwiftCake
+import Localize
 
 protocol DrawerDisplayLogic: class {
     func logoutSuccess()
@@ -147,6 +148,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBAction func logoutAction(_ sender: Any) {
         router?.showLogoutAlert()
     }
+  
     @IBAction func transactionsAction(_ sender: Any) {
         router?.navigateToTransactions()
     }
@@ -154,7 +156,24 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     @IBAction func reportAction(_ sender: Any) {
         router?.navigateToReport()
     }
-    /// Called from confirmation alert
+  
+    @IBAction func switchLanguageAction(_ sender: Any) {
+      if Localize.shared.currentLanguage == "ar"  {
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        Localize.shared.update(language: "en")
+      } else {
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        Localize.shared.update(language: "ar")
+      }
+      let storyboard = UIStoryboard(name: "Session", bundle: nil)
+      guard let startVC = storyboard.instantiateInitialViewController(),
+      let delegate = UIApplication.shared.delegate as? AppDelegate,
+      let window = delegate.window
+        else { return }
+      window.rootViewController = startVC
+    }
+  
+  /// Called from confirmation alert
     func loginCofirmed() {
         interactor?.logout()
     }
