@@ -48,6 +48,14 @@ class ChangePasswordViewController: UIViewController, ChangePasswordDisplayLogic
     // MARK: View customization
 
     fileprivate func setupView() {
+      if view.isRTL() {
+        currentPasswordView.textField.textAlignment = .right
+        currentPasswordView.errorLabel.textAlignment = .right
+        newPasswordView.textField.textAlignment = .right
+        newPasswordView.errorLabel.textAlignment = .right
+        confirmPasswordView.textField.textAlignment = .right
+        confirmPasswordView.errorLabel.textAlignment = .right        
+      }
     }
 
     // MARK: Event handling

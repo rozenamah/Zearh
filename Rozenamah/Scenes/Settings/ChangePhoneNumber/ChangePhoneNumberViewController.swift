@@ -39,6 +39,10 @@ class ChangePhoneNumberViewController: UIViewController, ChangePhoneNumberDispla
     // MARK: View customization
 
     fileprivate func setupView() {
+      if view.isRTL() {
+        phoneNumberView.textField.textAlignment = .right
+        phoneNumberView.errorLabel.textAlignment = .right
+      }
     }
  
     
