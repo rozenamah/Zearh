@@ -11,7 +11,7 @@ import Foundation
 #if DEBUG
 fileprivate let baseURL = "https://rozenamah.r4s.ovh/api/"
 #else
-fileprivate let baseURL = "https://rozenamah.ready4s.ovh/api/"
+fileprivate let baseURL = "https://zearh-api.rozenamah.com/api/"
 #endif
 
 enum API {
