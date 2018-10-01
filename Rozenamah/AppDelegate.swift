@@ -113,7 +113,9 @@ extension AppDelegate {
       if localize.currentLanguage == "ar" {
         UIView.appearance().semanticContentAttribute = .forceRightToLeft
       } else {
+        
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        Localize.shared.update(language: "en")
       }
     }
     
