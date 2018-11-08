@@ -278,6 +278,7 @@
         "logoutQuestion": "Are you sure you want to log out a user?"
     },
     "errors": {
+        "noInternetConnection": "The Internet connection appears to be offline.",
         "unknownAddress": "Unknown address",
         "unknownDate": "Unknown date",
         "noPhoneNumber": "No phone number",

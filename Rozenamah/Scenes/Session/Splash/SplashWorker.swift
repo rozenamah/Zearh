@@ -28,7 +28,7 @@ class SplashWorker {
             completion(nil, RMError.tokenDoesntExist)
             return
         }
-        
+
         let headers = [
             "Authorization": "Bearer \(token)"
         ]

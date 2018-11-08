@@ -19,6 +19,16 @@ class SplashRouter: Router, AppStartRouter, AlertRouter {
 
     // MARK: Navigation
     
+    func showNoConnection(_ error: RMError) {
+        
+        let alertMessage = UIAlertController(title: "generic.error.ups".localized,
+                                             message: "errors.noInternetConnection".localized,
+                                             preferredStyle: .alert)
+        
+        alertMessage.addAction(UIAlertAction(title: "generic.ok".localized, style: .cancel, handler: nil))
+        viewController?.present(alertMessage, animated: true, completion: nil)
+    }
+    
     func showUserBlocked() {
         let alert = UIAlertController(title: "generic.error.ups".localized, message: "session.splash.userBlocked".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in

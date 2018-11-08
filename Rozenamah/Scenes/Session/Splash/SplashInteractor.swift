@@ -12,6 +12,7 @@ class SplashInteractor: SplashBusinessLogic {
 	
     func fetchUserData() {
         worker.fetchMyUser { (user, error) in
+            
             if let error = error {
                 self.presenter?.present(error: error)
                 return

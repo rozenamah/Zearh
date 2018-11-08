@@ -65,15 +65,13 @@ extension AlertRouter where Self: Router {
         }
         
         let message = error.localizedDescription.localizedError ?? error.localizedDescription
-        
+    
         let alertMessage = UIAlertController(title: "generic.error.ups".localized,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)
         
         alertMessage.addAction(UIAlertAction(title: "generic.ok".localized, style: .cancel, handler: nil))
         viewController.present(alertMessage, animated: true, completion: nil)
-        
-        
     }
     
 }

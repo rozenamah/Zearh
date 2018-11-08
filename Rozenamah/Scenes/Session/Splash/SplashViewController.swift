@@ -6,6 +6,7 @@ protocol SplashDisplayLogic: class {
     func tokenInvalid()
     func blockedUser()
     func handle(error: Error)
+    func noInternetConnection(_ error: RMError)
 }
 
 class SplashViewController: UIViewController, SplashDisplayLogic {
@@ -63,6 +64,10 @@ class SplashViewController: UIViewController, SplashDisplayLogic {
     
     func userCorrect() {
         router?.navigateToAppWithDelay()
+    }
+    
+    func noInternetConnection(_ error: RMError) {
+        router?.showNoConnection(error)
     }
     
     func handle(error: Error) {
