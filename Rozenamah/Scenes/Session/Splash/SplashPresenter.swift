@@ -15,10 +15,6 @@ class SplashPresenter: SplashPresentationLogic {
     }
     
     func present(error: RMError) {
-        if (error as NSError).code == 0 {
-            viewController?.noInternetConnection(error)
-            return
-        }
         
         switch error {
         case .status(let code, _) where code == .unauthorized:

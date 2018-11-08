@@ -24,6 +24,8 @@ enum RMError: LocalizedError {
     
     case unknown(error: Error)
     case tokenDoesntExist
+    case noInternetConnection
+    case timeout
     case noData
     case status(code: StatusCode, response: ErrorResponse)
     
@@ -39,9 +41,14 @@ enum RMError: LocalizedError {
             return "errors.tokenNotFound".localized
         case .noData:
             return "errors.dataNotFound".localized
+        case .noInternetConnection:
+            return "errors.noInternetConnection".localized
+        case .timeout:
+            return "errors.timeout".localized
         }
     }
 }
+
 
 extension Alamofire.DataRequest {
     
@@ -166,6 +173,16 @@ extension Alamofire.DataRequest {
                 
                 return RMError.status(code: code,
                                       response: error)
+            } else if let error = response.error {
+                // Alamofire error responses
+                switch (error as NSError).code {
+                case -1009:
+                    return RMError.noInternetConnection
+                case -1001:
+                    return RMError.timeout
+                default:
+                    return nil
+                }
             }
         }
         return nil

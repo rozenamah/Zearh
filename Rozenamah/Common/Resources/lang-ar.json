@@ -278,6 +278,7 @@
         "logoutQuestion": "هل أنت متأكد من تسجيل الخروج"
     },
     "errors": {
+        "timeout": "انتهى الوقت",
         "noInternetConnection": "لا يوجد اتصال بالإنترنت",
         "unknownAddress": "العنوان غير معروف",
         "unknownDate": "التاريخ غير معروف",

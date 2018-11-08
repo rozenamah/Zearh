@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if !DEBUG
+#if DEBUG
 fileprivate let baseURL = "https://rozenamah.r4s.ovh/api/"
 #else
 fileprivate let baseURL = "https://zearh-api.rozenamah.com/api/"
