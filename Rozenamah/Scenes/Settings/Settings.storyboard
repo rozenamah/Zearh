@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,7 +84,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1025"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big" translatesAutoresizingMaskIntoConstraints="NO" id="mvr-zi-Tkw" customClass="SCImageView" customModule="SwiftCake">
-                                                <rect key="frame" x="137" y="24" width="100" height="100"/>
+                                                <rect key="frame" x="137.5" y="24" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="05o-8K-bBA"/>
                                                     <constraint firstAttribute="height" constant="100" id="4mf-I9-EnH"/>
@@ -288,7 +288,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="UPo-C0-0A3">
-                                                                        <rect key="frame" x="326" y="63" width="10" height="7"/>
+                                                                        <rect key="frame" x="326" y="62.5" width="10" height="7"/>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cy-Ot-mRE" customClass="SCButton" customModule="SwiftCake">
                                                                         <rect key="frame" x="0.0" y="44.5" width="343" height="43"/>
@@ -349,7 +349,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-Q1-qjd">
-                                                                        <rect key="frame" x="326" y="63" width="10" height="7"/>
+                                                                        <rect key="frame" x="326" y="62.5" width="10" height="7"/>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhk-xB-80v" customClass="SCButton" customModule="SwiftCake">
                                                                         <rect key="frame" x="0.0" y="44.5" width="343" height="43"/>
@@ -518,7 +518,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZQ-71-IgA" customClass="SCButton" customModule="SwiftCake">
-                                                <rect key="frame" x="108" y="953.5" width="158" height="39.5"/>
+                                                <rect key="frame" x="108.5" y="953.5" width="158" height="39.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <inset key="contentEdgeInsets" minX="20" minY="9.5" maxX="20" maxY="9"/>
                                                 <state key="normal" title="Delete Account">
@@ -1336,7 +1336,7 @@
                                                 <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEC-nA-Jsg" customClass="SCButton" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Weekly">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1416,7 +1416,7 @@
                                                 <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwu-K8-0uN" customClass="SCButton" customModule="SwiftCake">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Total">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1643,7 +1643,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ SAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-or-mBQ">
-                                                <rect key="frame" x="237.5" y="172" width="121.5" height="24.5"/>
+                                                <rect key="frame" x="237.5" y="172.5" width="121.5" height="24"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.92156862750000001" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1763,7 +1763,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:55" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-W6-68u">
-                                                                <rect key="frame" x="316" y="23" width="43" height="20.5"/>
+                                                                <rect key="frame" x="316" y="23.5" width="43" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1794,7 +1794,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxF-Go-Obr">
-                                                                <rect key="frame" x="315.5" y="23" width="43.5" height="20.5"/>
+                                                                <rect key="frame" x="315.5" y="23.5" width="43.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

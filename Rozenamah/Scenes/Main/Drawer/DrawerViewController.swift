@@ -145,6 +145,10 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         router?.navigateToTermsAndConditions()
     }
     
+    @IBAction func privacyAction(_ sender: Any) {
+        router?.navigateToPrivacyPolicy()
+    }
+    
     @IBAction func logoutAction(_ sender: Any) {
         router?.showLogoutAlert()
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize
 
 class TermsViewController: UIViewController {
 
@@ -26,14 +27,26 @@ class TermsViewController: UIViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let localize = Localize.shared
+        var privacy: URL
+        var terms: URL
+        
+        if localize.currentLanguage == "ar" {
+           privacy = URL(string: "https://zearh-api.rozenamah.com/documents/service-provider?lang=ar")!
+           terms = URL(string: "https://zearh-api.rozenamah.com/documents/terms?lang=ar")!
+        } else {
+            privacy = URL(string: "https://zearh-api.rozenamah.com/documents/service-provider?lang=en")!
+            terms = URL(string: "https://zearh-api.rozenamah.com/documents/terms?lang=en")!
+        }
+        
         switch source! {
         case .privacyPolicy:
             title = "menu.privacyPolicy".localized
-            webView.loadRequest(URLRequest(url: URL(string: "https://www.google.com")!))
+            webView.loadRequest(URLRequest(url: privacy))
         case .terms:
             title = "menu.termsConditions".localized
-            webView.loadRequest(URLRequest(url: URL(string: "https://www.google.com")!))
+            webView.loadRequest(URLRequest(url: terms))
         }
     }
     
