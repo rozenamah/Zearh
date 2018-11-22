@@ -22,13 +22,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XfD-Ry-wX9">
+                                <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aJ7-Y6-Tfu" firstAttribute="trailing" secondItem="VKy-TC-vAk" secondAttribute="trailing" id="2ar-dW-nOq"/>
+                            <constraint firstItem="XfD-Ry-wX9" firstAttribute="centerY" secondItem="5Tc-w1-I9K" secondAttribute="centerY" id="BR5-HO-c4Q"/>
                             <constraint firstAttribute="bottom" secondItem="VKy-TC-vAk" secondAttribute="bottom" id="FqZ-Cv-MIF"/>
                             <constraint firstItem="VKy-TC-vAk" firstAttribute="leading" secondItem="5Tc-w1-I9K" secondAttribute="leading" id="H1a-TV-fYq"/>
                             <constraint firstItem="VKy-TC-vAk" firstAttribute="top" secondItem="5Tc-w1-I9K" secondAttribute="top" id="Te2-jV-wZM"/>
+                            <constraint firstItem="XfD-Ry-wX9" firstAttribute="centerX" secondItem="5Tc-w1-I9K" secondAttribute="centerX" id="vj6-EE-8SZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aJ7-Y6-Tfu"/>
                     </view>
@@ -44,6 +49,7 @@
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="XfD-Ry-wX9" id="MCc-4I-eGg"/>
                         <outlet property="webView" destination="VKy-TC-vAk" id="ODJ-bp-5Ck"/>
                     </connections>
                 </viewController>

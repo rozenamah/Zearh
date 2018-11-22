@@ -18,6 +18,7 @@ class TermsViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
     
@@ -27,6 +28,7 @@ class TermsViewController: UIViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.delegate = self
         
         let localize = Localize.shared
         var privacy: URL
@@ -55,6 +57,14 @@ class TermsViewController: UIViewController {
     @IBAction func dismissAction() {
         dismiss(animated: true, completion: nil)
     }
+}
 
-
+extension TermsViewController: UIWebViewDelegate {
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.startAnimating()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.stopAnimating()
+    }
 }
