@@ -1964,14 +1964,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J5AJCLAX66;
+				DEVELOPMENT_TEAM = G8W9SZ8VZM;
 				INFOPLIST_FILE = Rozenamah/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dff1086f-7650-4e31-b5a3-0c70603db362";
-				PROVISIONING_PROFILE_SPECIFIER = prod;
+				PROVISIONING_PROFILE_SPECIFIER = RozemanahDistribution;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
