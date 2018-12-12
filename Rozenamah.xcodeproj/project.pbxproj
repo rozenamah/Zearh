@@ -1951,7 +1951,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = RozenamahDevelopment;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1973,7 +1973,7 @@
 				PROVISIONING_PROFILE = "dff1086f-7650-4e31-b5a3-0c70603db362";
 				PROVISIONING_PROFILE_SPECIFIER = RozemanahDistribution;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
