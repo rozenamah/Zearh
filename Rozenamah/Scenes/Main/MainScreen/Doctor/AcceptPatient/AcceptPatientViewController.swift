@@ -1,5 +1,7 @@
 import UIKit
 import SwiftCake
+import CoreLocation
+import MapKit
 
 protocol AcceptPatientDisplayLogic: class {
     func patientAccepted(with booking: Booking)
@@ -73,6 +75,9 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     }
     
     func customizePatientInfo() {
+        //newCode fix 0 km from doctor side
+        booking.visit.latitude = booking.latitude
+        booking.visit.longitude = booking.longitude
         fillInformation(with: booking.patient, andVisitInfo: booking.visit, withAddress: booking.address)
 //        startTimeLeftCounter()
     }
@@ -82,14 +87,15 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     @IBAction func acceptAction(_ sender: Any) {
         acceptButton.isUserInteractionEnabled = false
         rejectButton.isUserInteractionEnabled = false
-        
+        router?.showWaitAlert(sender: sender as! UIView)
         interactor?.acceptPatient(for: booking)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
+        LoginUserManager.sharedInstance.visitFound = false
         acceptButton.isUserInteractionEnabled = false
         rejectButton.isUserInteractionEnabled = false
-        
+        router?.showWaitAlert(sender: sender as! UIView)
         interactor?.rejectPatient(for: booking)
     }
     
@@ -104,7 +110,68 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     }
     
     @IBAction func mapAction(_ sender: Any) {
+        // use default map application
+        openMapsOptions()
+    }
+    
+    
+    func openMapsOptions() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
+        alert.addAction(UIAlertAction(title: "generic.googleMap".localized, style: .default, handler: { (action) in
+                // Open Google Map
+                self.openGoogleMap()
+            }))
+        
+        alert.addAction(UIAlertAction(title: "generic.defaultMap".localized, style: .default, handler: { (action) in
+            // Open Default Apple Map
+            self.openMap()
+        }))
+      
+        alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = self.view.bounds
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func openMap() {
+        let lat:CLLocationDegrees = booking.latitude
+        let long:CLLocationDegrees = booking.longitude
+        let regionDistance:CLLocationDistance = 1000
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinate, regionDistance, regionDistance)
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placeMark = MKPlacemark(coordinate: coordinate)
+        let mapItem = MKMapItem(placemark: placeMark)
+        mapItem.name = "Patient Loction"
+        mapItem.openInMaps(launchOptions: options)
+    }
+    
+    func openGoogleMap() {
+        let googleMapInstall = UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)
+        if googleMapInstall {
+            UIApplication.shared.open(NSURL(string:
+                "comgooglemaps://?saddr=&daddr=\(booking.latitude),\(booking.longitude)&directionsmode=driving")! as URL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.open(NSURL(string:
+                "https://www.google.co.in/maps/dir/?saddr=&daddr=\(booking.latitude),\(booking.longitude)")! as URL, options: [:], completionHandler: nil)
+        }
+        
+       
+        
+        // route Lahore to Gujranwala
+//        UIApplication.shared.open(URL(string:"comgooglemaps://?center=31.5204,74.3587&zoom=14&views=traffic&q=32.1877,74.1945")!, options: [:], completionHandler: nil)
+        
+        
+        //if show direction from current location leave saddr blank
+//        UIApplication.sharedApplication().openURL(NSURL(string:
+//            "comgooglemaps://?saddr=&daddr=\(place.latitude),\(place.longitude)&directionsmode=driving")!)
+
     }
     
     // MARK: Presenter methods
@@ -112,21 +179,21 @@ class AcceptPatientViewController: ModalInformationViewController, AcceptPatient
     func patientAccepted(with booking: Booking) {
         acceptButton.isUserInteractionEnabled = true
         rejectButton.isUserInteractionEnabled = true
-        
+        router?.hideWaitAlert()
         flowDelegate?.changeStateTo(flowPoint: .accepted(booking: booking))
     }
     
     func patientRejected() {
         acceptButton.isUserInteractionEnabled = true
         rejectButton.isUserInteractionEnabled = true
-        
+        router?.hideWaitAlert()
         flowDelegate?.changeStateTo(flowPoint: .cancel)
     }
     
     func handle(error: Error) {
         acceptButton.isUserInteractionEnabled = true
         rejectButton.isUserInteractionEnabled = true
-        
-        router?.showError(error)
+        router?.hideWaitAlert()
+        router?.showError(error, sender: self.view)
     }
 }

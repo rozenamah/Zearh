@@ -43,8 +43,8 @@ class RegisterPatientRouter: NSObject, Router, AlertRouter, PhotoTakeRouter, App
         viewController?.performSegue(withIdentifier: "doctor_step_segue", sender: nil)
     }
     
-    func showWaitAlert() {
-        alertLoading = showLoadingAlert()
+    func showWaitAlert(sender:UIView) {
+        alertLoading = showLoadingAlert(sender: sender)
     }
     
     func hideWaitAlert(completion: (() -> Void)? = nil) {

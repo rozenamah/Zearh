@@ -12,15 +12,19 @@ class ReportRouter: Router, AlertRouter {
 
     // MARK: Navigation
     
-    func showReportSent() {
+    func showReportSent(sender:UIView) {
         let alert = UIAlertController(title: "settings.report.reportSent".localized, message: "settings.report.description".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in
             self.dismiss()
         }))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
     
-    func navigateToSelectingSubject() {
+    func navigateToSelectingSubject(sender:UIView) {
         let alert = UIAlertController(title: "settings.report.alertTitle".localized, message: "settings.report.selectSubject".localized, preferredStyle: .actionSheet)
         ReportSubject.all.forEach { (subject) in
             alert.addAction(UIAlertAction(title: subject.title, style: .default, handler: { (action) in
@@ -28,6 +32,10 @@ class ReportRouter: Router, AlertRouter {
             }))
         }
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
         
     }

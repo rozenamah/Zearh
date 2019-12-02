@@ -1,6 +1,11 @@
 import UIKit
 import SwiftCake
 
+
+protocol PaymentViewDelegate {
+    func onPaymentDone()
+}
+
 protocol PaymentDisplayLogic: class {
     func displayPaymentProfileWith(profile: Payment.Details?)
     func handle(error: Error)
@@ -19,6 +24,8 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
     var interactor: PaymentBusinessLogic?
     var router: PaymentRouter?
     var booking: Booking!
+    
+    var delegate: PaymentViewDelegate?
     
     private var shouldPerformSegue = false
     
@@ -101,4 +108,7 @@ class PaymentViewController: UIViewController, PaymentDisplayLogic {
         router?.dismiss()
     }
     // MARK: Presenter methods
+    
+    
+    
 }

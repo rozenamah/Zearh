@@ -23,6 +23,8 @@ class MainPatientWorker {
             "Authorization": "Bearer \(token)"
         ]
         
+        print(params)
+        print(API.Doctor.nearby.path)
         Alamofire.request(API.Doctor.nearby.path, method: .get, parameters: params, headers: headers)
             .validate()
             .responseCodable(type: [Location].self, completion: completion)

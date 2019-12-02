@@ -30,15 +30,18 @@ class LoginInteractor: LoginBusinessLogic {
                 User.current = response.user
                 
                 // Also - load if user has any pending visit
+                //newCode remove get visits and add in main view controller if notification not work
                 SplashWorker().fetchMyBooking(completion: { (booking, error) in
-                    
+
                     // Save launch booking in app delegate
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                         appDelegate.launchBooking = booking
                     }
-                    
+
                     self.presenter?.presentLoginSuccess()
                 })
+//                self.presenter?.presentLoginSuccess()
+
                 
             }
             

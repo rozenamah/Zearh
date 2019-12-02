@@ -24,7 +24,7 @@ class BasicModalInformationViewController: UIViewController {
         avatarImage.setAvatar(for: user)
         nameLabel.text = user.fullname
         priceLabel.text = "\(cost.price) SAR"
-        
+              
         // If fee > 0, show fee label
         feeLabel.isHidden = cost.fee <= 0
         feeLabel.text = cost.fee <= 0 ? "" : "+ \(cost.fee) SAR \("settings.transactionHistory.feeInfo".localized)"
@@ -63,17 +63,16 @@ class ModalInformationViewController: BasicModalInformationViewController {
         
         // Depending on this value we set distance to user or his exact location
         if let address = address {
-            distanceButton?.setTitle(address, for: .normal)
-            distanceButton?.setTitle(address, for: .highlighted)
+            //newDistance
+            distanceButton?.setTitle("\(address) \n\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .normal)
+//            distanceButton?.setTitle("\(address) \n\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .highlighted)
             distanceButton?.tintColor = .rmGray
         } else {
             distanceButton?.setTitle("\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .normal)
-            distanceButton?.setTitle("\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .highlighted)
+//            distanceButton?.setTitle("\(visitInfo.distanceInKM) \("alerts.distanceFromYou".localized)", for: .highlighted)
             // If more then 10 kilometers, highlight distance to red
             distanceButton?.tintColor = visitInfo.distanceInKM > 10 ? .rmRed : .rmGray
         }
-        
-        
         
     }
 }

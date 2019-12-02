@@ -36,6 +36,7 @@ class User: Decodable, Equatable {
     let type: UserType
     let doctor: Doctor?
     let phone: String?
+    var is_deleted: Bool
 
     var avatarURL: URL? {
         if let avatar = avatar {
@@ -54,4 +55,5 @@ class User: Decodable, Equatable {
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
+    
 }

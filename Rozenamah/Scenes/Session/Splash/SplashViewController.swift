@@ -59,7 +59,7 @@ class SplashViewController: UIViewController, SplashDisplayLogic {
     }
     
     func blockedUser() {
-        router?.showUserBlocked()
+        router?.showUserBlocked(sender: self.view)
     }
     
     func userCorrect() {
@@ -67,10 +67,11 @@ class SplashViewController: UIViewController, SplashDisplayLogic {
     }
     
     func noInternetConnection(_ error: RMError) {
-        router?.showNoConnection(error)
+        router?.showNoConnection(error,sender: self.view)
     }
     
+
     func handle(error: Error) {
-        router?.showError(error)
+        router?.showError(error,sender: self.view)
     }
 }

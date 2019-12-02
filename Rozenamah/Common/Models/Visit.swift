@@ -22,16 +22,24 @@ class VisitDetails: Decodable {
     
     let cost: Cost
     let user: User
-    let latitude: Double
-    let longitude: Double
+    var latitude: Double
+    var longitude: Double
     
-    var distanceInKM: Int {
+    var distanceInKM: Double {
         let coordinates = CLLocation(latitude: latitude, longitude: longitude)
-        var meters: Int = 0
-        if let currentUserLocation = CLLocationManager().location {
-            meters = Int(currentUserLocation.distance(from: coordinates))
+        var meters: Double = 0
+        
+        //added by Najam
+        if LoginUserManager.sharedInstance.userType == .doctor {
+            if let currentUserLocation = CLLocationManager().location {
+                meters = currentUserLocation.distance(from: coordinates)
+            }
+        } else {
+            let currentUserLocation = CLLocation(latitude: LoginUserManager.sharedInstance.newPatientLocation?.latitude ?? 0, longitude: LoginUserManager.sharedInstance.newPatientLocation?.longitude ?? 0)
+                meters = currentUserLocation.distance(from: coordinates)
         }
-        return (meters/1000)
+        meters = meters/1000
+        return Double(round(10*meters)/10)
     }
     
     var doctorLocation: CLLocation {

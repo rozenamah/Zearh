@@ -101,7 +101,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
         if interactor?.validate(registerForm: registerForm) == true {
              if termsAndConditionsCheckbox.isSelected {
                 
-                router?.showWaitAlert()
+                router?.showWaitAlert(sender: sender as! UIView)
                 if view.isRTL() {
                     registerForm.language = "sa"
                 } else {
@@ -113,13 +113,13 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
                     interactor?.register(withForm: registerForm)
                 }
              } else {
-                router?.showAlert(message: "session.patient.terms".localized)
+                router?.showAlert(message: "session.patient.terms".localized, sender: sender as! UIView)
             }
         }
     }
     
     @IBAction func changeProfileImageAction(_ sender: Any) {
-        router?.navigateToSelectingImageSource(allowEditing: true)
+        router?.navigateToSelectingImageSource(allowEditing: true, sender: sender)
     }
     
     // MARK: Presenter methods
@@ -131,7 +131,7 @@ class RegisterPatientViewController: UIViewController, RegisterPatientDisplayLog
     
     func handle(error: Error) {
         router?.hideWaitAlert {
-            self.router?.showError(error)
+            self.router?.showError(error, sender: self.view)
         }
     }
     

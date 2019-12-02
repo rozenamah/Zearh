@@ -4,6 +4,7 @@ class AcceptDoctorRouter: Router, PhoneCallRouter {
     typealias RoutingViewController = AcceptDoctorViewController
     weak var viewController: AcceptDoctorViewController?
 
+
     // MARK: Routing
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
@@ -27,5 +28,7 @@ class AcceptDoctorRouter: Router, PhoneCallRouter {
         vc?.delegate = viewController
         vc?.doctor = viewController?.visitInfo
     }
+    
+   
 
 }

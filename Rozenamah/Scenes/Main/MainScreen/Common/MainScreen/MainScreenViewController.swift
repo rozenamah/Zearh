@@ -116,5 +116,7 @@ class MainScreenViewController: UIViewController, MainScreenDisplayLogic {
     func removePresentedUser() {
         locationMarker?.map = nil
         locationMarker = nil
+        self.mapView.clear()
+        LoginUserManager.sharedInstance.lastBooking = nil
     }
 }

@@ -52,9 +52,9 @@ class Booking: Decodable {
     let id: String
     let visit: VisitDetails
     let patient: User
-    let latitude: Double
-    let longitude: Double
-    let status: BookingStatus
+    var latitude: Double
+    var longitude: Double
+    var status: BookingStatus
     let payment: PaymentMethod
     let address: String?
     let dates: Dates?

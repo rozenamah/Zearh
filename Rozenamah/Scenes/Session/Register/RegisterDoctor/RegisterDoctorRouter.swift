@@ -22,7 +22,7 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
         viewController?.dismiss(animated: true, completion: nil)
     }
     
-    func showDoctorCreatedAlert(withDismiss dismiss: Bool) {
+    func showDoctorCreatedAlert(withDismiss dismiss: Bool, sender:UIView) {
         let alert = UIAlertController(title: "session.doctor.accCreated".localized, message: "session.doctor.message".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in
             if dismiss {
@@ -31,10 +31,16 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
                 self.navigateToDefaultApp()
             }
         }))
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
+        
         viewController?.present(alert, animated: true, completion: nil)
     }
     
-    func showGenderSelection() {
+    func showGenderSelection(sender:UIView) {
         let alert = UIAlertController(title: "session.doctor.genderInfo".localized, message: "session.doctor.gender".localized, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "session.doctor.male".localized, style: .default, handler: { (action) in
             self.viewController?.genderSelected(.male)
@@ -43,6 +49,10 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
             self.viewController?.genderSelected(.female)
         }))
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
     
@@ -57,7 +67,7 @@ class RegisterDoctorRouter: NSObject, Router, AppStartRouter, UINavigationContro
     }
     
     func showWaitAlert() {
-        alertLoading = showLoadingAlert()
+        alertLoading = showLoadingAlert(sender: viewController!.view)
     }
     
     func hideWaitAlert(completion: (() -> Void)? = nil) {

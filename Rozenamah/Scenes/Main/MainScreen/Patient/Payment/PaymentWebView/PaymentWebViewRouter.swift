@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol PaymentWebViewRoutingLogic {
-    func showLoadingAlert()
+    func showLoadingAlert(sender: UIView)
     func dismissLoadingAlert(completion: @escaping () -> ())
 }
 
@@ -21,8 +21,8 @@ class PaymentWebViewRouter: NSObject, AlertRouter, Router, PaymentWebViewRouting
     
     private var alertLoading: UIAlertController?
     
-    func showLoadingAlert() {
-        alertLoading = showLoadingAlert()
+    func showLoadingAlert(sender:UIView) {
+        alertLoading = showLoadingAlert(sender: sender)
     }
     
     func dismissLoadingAlert(completion: @escaping () -> ()) {

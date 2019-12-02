@@ -103,7 +103,7 @@ extension PaymentWebViewViewController: UIWebViewDelegate {
     func webViewDidStartLoad(_ webView: UIWebView) {
         if !isLoadingAlertVisible {
             isLoadingAlertVisible = true
-            router?.showLoadingAlert()
+            router?.showLoadingAlert(sender: self.view)
         }
     }
     

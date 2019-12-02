@@ -15,7 +15,8 @@ protocol PhoneCallRouter {
 extension PhoneCallRouter where Self: Router {
     
     func makeCall(to phoneNumber: String) {
-        guard let number = URL(string: "tel://" + phoneNumber) else { return }
+        let str = "tel://\(phoneNumber)"
+        guard let number = URL(string: str) else { return }
         UIApplication.shared.open(number)
     }
 }

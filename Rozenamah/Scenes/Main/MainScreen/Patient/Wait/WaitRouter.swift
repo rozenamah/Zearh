@@ -15,7 +15,7 @@ class WaitRouter: Router, AlertRouter {
 
     // MARK: Navigation
     
-    func showCancelAlert(forBooking booking: Booking) {
+    func showCancelAlert(forBooking booking: Booking,sender:UIView) {
         let alert = UIAlertController(title: "alerts.cancelVisit.title".localized,
                                       message: "alerts.cancelVisit.message".localized, preferredStyle: .alert)
         
@@ -23,21 +23,29 @@ class WaitRouter: Router, AlertRouter {
             self.viewController?.cancelConfirmed(forBooking: booking)
         }))
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
 
     
-    func showNoDoctorFound() {
+    func showNoDoctorFound(sender:UIView) {
         let alert = UIAlertController(title: "alerts.cantFindDoctor.title".localized,
                                       message: "alerts.cantFindDoctor.message".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: { (_) in
             self.viewController?.flowDelegate?.changeStateTo(flowPoint: .callDoctor)
         }))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
 
     func showWaitAlert() {
-        alertLoading = showLoadingAlert()
+        alertLoading = showLoadingAlert(sender: viewController!.view)
     }
     
     func hideWaitAlert(completion: (() -> Void)? = nil) {

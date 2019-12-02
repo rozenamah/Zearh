@@ -109,6 +109,10 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
             if let price = doctor.price {
                 priceTextField.text = "\(price)"
             }
+            
+            //added by Najam
+            specializationView.isHidden = true
+            professionView.isHidden = true
         }
     }
 
@@ -135,21 +139,21 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
     }
     
     @IBAction func profileChangeAction(_ sender: Any) {
-        router?.navigateToSelectingImageSource(allowEditing: true)
+        router?.navigateToSelectingImageSource(allowEditing: true, sender: sender)
     }
     
     @IBAction func deleteAccountAction(_ sender: Any) {
-        router?.showDeleteAlert()
+        router?.showDeleteAlert(sender: sender as! UIView)
     }
     
     @IBAction func professionAction(_ sender: Any) {
         hideErrorIn(button: professionButton)
-        router?.navigateToSelectingClassification()
+        router?.navigateToSelectingClassification(sender: sender as! UIView)
     }
     
     @IBAction func specializatioAction(_ sender: Any) {
         hideErrorIn(button: specializationButton)
-        router?.navigateToSelectingSpecialization()
+        router?.navigateToSelectingSpecialization(sender: sender as! UIView)
     }
     
     @IBAction func priceChanged(_ sender: SCTextField) {
@@ -184,14 +188,14 @@ class EditProfileViewController: UIViewController, EditProfileDisplayLogic {
         nameView.textField.text = user.name
         surnameView.textField.text = user.surname
         
-        router?.showSuccessChangeAlert()
+        router?.showSuccessChangeAlert(sender: view)
     }
     
     func handle(error: Error) {
         // Unblock button
         saveButton.isUserInteractionEnabled = true
         
-        router?.showError(error)
+        router?.showError(error, sender: view)
     }
     
     func handle(error: Error, inField field: EditProfileViewController.Field) {

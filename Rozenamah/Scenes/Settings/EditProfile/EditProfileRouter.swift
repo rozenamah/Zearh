@@ -22,29 +22,41 @@ class EditProfileRouter: NSObject, Router, PhotoTakeRouter, ClassificationRouter
         })
     }
     
-    func showSuccessChangeAlert() {
+    func showSuccessChangeAlert(sender:UIView) {
         let alert = UIAlertController(title: "generic.success".localized,
                                       message: "alerts.profileUpadted.message".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
         
     }
     
-    func showErrorAlert() {
+    func showErrorAlert(sender:UIView) {
         let alert = UIAlertController(title: "generic.error.error".localized,
                                       message: "errors.somethingWentWrong".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.ok".localized, style: .default, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
         
     }
     
-    func showDeleteAlert() {
+    func showDeleteAlert(sender:UIView) {
         let alert = UIAlertController(title: "settings.editProfile.deleteAccount".localized,
                                       message: "alerts.deleteAccount.message".localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "generic.yes".localized, style: .default, handler: { (action) in
             self.viewController?.deleteConfirm()
         }))
         alert.addAction(UIAlertAction(title: "generic.no".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
 

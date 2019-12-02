@@ -14,13 +14,13 @@ protocol ClassificationDelegate: class {
 }
 
 protocol ClassificationRouter {
-    func navigateToSelectingClassification()
-    func navigateToSelectingSpecialization()
+    func navigateToSelectingClassification(sender:Any)
+    func navigateToSelectingSpecialization(sender:Any)
 }
 
 extension ClassificationRouter where Self: Router {
     
-    func navigateToSelectingSpecialization() {
+    func navigateToSelectingSpecialization(sender:Any) {
         
         guard let viewController = viewController as? UIViewController else {
             return
@@ -34,10 +34,14 @@ extension ClassificationRouter where Self: Router {
             }))
         }
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender as! UIView
+            popoverController.sourceRect = (sender as AnyObject).bounds
+        }
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    func navigateToSelectingClassification() {
+    func navigateToSelectingClassification(sender:Any) {
         
         guard let viewController = viewController as? UIViewController else {
             return
@@ -51,6 +55,12 @@ extension ClassificationRouter where Self: Router {
             }))
         }
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender as! UIView
+            popoverController.sourceRect = (sender as AnyObject).bounds
+        }
+        
         viewController.present(alert, animated: true, completion: nil)
         
     }

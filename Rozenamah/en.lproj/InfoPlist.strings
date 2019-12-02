@@ -5,6 +5,7 @@
   Created by Piotr Soboń on 29.08.2018.
   Copyright © 2018 Dominik Majda. All rights reserved.
 */
+
 "CFBundleDisplayName" = "Zearh";
 "UILaunchStoryboardName" = "LaunchScreen_en";
 "NSCameraUsageDescription" = "This will let you take photos for your profile";

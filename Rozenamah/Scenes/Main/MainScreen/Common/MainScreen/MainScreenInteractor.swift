@@ -26,6 +26,8 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
         return nil
     }
     
+    var firstMyLocation: CLLocation?
+
     var locationManager = CLLocationManager()
     
     /// Whenever first location is found move camera to this position
@@ -90,7 +92,6 @@ class MainScreenInteractor: NSObject, MainScreenBusinessLogic {
     }
     
     func firstLocationFetched() {
-        
     }
 }
 
@@ -116,7 +117,7 @@ extension MainScreenInteractor: CLLocationManagerDelegate {
         if let firstLocation = locations.first, !firstLocationDisplayed {
             firstLocationDisplayed = true
             basePresenter?.moveCameraToPosition(location: firstLocation, withAnimation: false)
-            
+            self.firstMyLocation = firstLocation
             // Call hook, subclass can override this in order to be notified when first location was loaded
             firstLocationFetched()
         }

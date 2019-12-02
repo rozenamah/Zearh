@@ -5,6 +5,9 @@ class DoctorOnTheWayRouter: Router, AlertRouter, PatientsDetailsRouter, PhoneCal
     weak var viewController: DoctorOnTheWayViewController?
 
     // MARK: Routing
+    
+    private var alertLoading: UIAlertController?
+
 
     func passDataToNextScene(segue: UIStoryboardSegue, sender: Any?) {
         
@@ -12,7 +15,7 @@ class DoctorOnTheWayRouter: Router, AlertRouter, PatientsDetailsRouter, PhoneCal
 
     // MARK: Navigation
 
-    func showCancelAlert() {
+    func showCancelAlert(sender:UIView) {
         let alert = UIAlertController(title: "alerts.cancelVisit.title".localized,
                                       message: "alerts.cancelVisit.message".localized, preferredStyle: .alert)
         
@@ -20,9 +23,22 @@ class DoctorOnTheWayRouter: Router, AlertRouter, PatientsDetailsRouter, PhoneCal
             self.viewController?.cancelConfirmed()
         }))
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
     
     // MARK: Passing data
+    
+    
+    func showWaitAlert(sender:UIView) {
+        alertLoading = showLoadingAlertwithoutText(sender: sender)
+    }
+    
+    func hideWaitAlert() {
+        alertLoading?.dismiss(animated: true, completion: nil)
+    }
 
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
+class MainPatientRouter: MainScreenRouter, Router, AppStartRouter, AlertRouter {
     typealias RoutingViewController = MainPatientViewController
     weak var viewController: MainPatientViewController?
     
@@ -63,15 +63,34 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
     
     @objc func handleNoBooking() {
         // Called when system is notified there is no more booking to display, hide current view
+        LoginUserManager.sharedInstance.bookingStatus = nil
+        LoginUserManager.sharedInstance.visitFound = false
         navigateToCallForm()
         // There might be modal screen - hide it
         viewController?.dismiss(animated: true, completion: nil)
+        
+        if let booking = LoginUserManager.sharedInstance.lastBooking {
+            booking.status = BookingStatus.ended
+            LoginUserManager.sharedInstance.lastBooking = nil
+            
+            //added by Najam
+            //goto visit end popUp for showing details
+//            navigateToEndVisitPopUp(withBooking: booking)
+        }
     }
     
     @objc func handleNotification(for notification: NSNotification) {
         if let booking = notification.userInfo?["booking"] as? Booking,
             booking.patient == User.current {
             print(booking.status)
+            
+            if booking.status == .ended || booking.status == .canceled || booking.status == .rejected {
+                viewController?.lblAddress.isHidden = false
+                viewController?.pinImage.isHidden = false
+            } else {
+                viewController?.lblAddress.isHidden = true
+                viewController?.pinImage.isHidden = true
+            }
             if booking.status == .new {
                 navigateToWaitForAccept(withBooking: booking)
                 
@@ -84,7 +103,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
                 
-                showAlert(message: "alerts.visitCanceled".localized)
+                showAlert(message: "alerts.visitCanceled".localized, sender: viewController!.view)
             } else if booking.status == .accepted {
                 navigateToDoctorOnTheWay(for: booking)
                 
@@ -97,7 +116,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 // Remove current booking
                 viewController?.currentBooking = nil
                 
-                showAlert(message: "alerts.doctorRejected".localized)
+                showAlert(message: "alerts.doctorRejected".localized, sender: viewController!.view)
             } else if booking.status == .timeout {
                 navigateToCallForm()
                 
@@ -105,7 +124,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
                 
-                showAlert(message: "alerts.doctorDidntAccepted".localized)
+                showAlert(message: "alerts.doctorDidntAccepted".localized, sender: viewController!.view)
             } else if booking.status == .arrived {
                 navigateToWaitForVisitEnd(withBooking: booking)
                 
@@ -118,12 +137,17 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 // Move camera back to center and remove current booking
                 viewController?.removeCurrentDoctorLocation()
                 viewController?.currentBooking = nil
+                
             } else if booking.status == .waitingForPayment {
                 showPayByCardScreenWith(booking: booking)
                 //TODO waiting for payment navigation
             }
             
         }
+    }
+    
+    func navigateToAppAfterAccountVerified() {
+        self.navigateToDefaultApp()
     }
     
     func closeContainer() {
@@ -158,7 +182,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
             }
             
             self.add(asChildViewController: self.callFormVC)
-            self.viewController?.containerHeightConstraint.constant = 433
+            self.viewController?.containerHeightConstraint.constant = 455
             self.openContainer(completion: completion)
         }
         
@@ -177,7 +201,7 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
                 return
             }
             self.add(asChildViewController: self.acceptDoctorVC)
-            self.viewController?.containerHeightConstraint.constant = 286
+            self.viewController?.containerHeightConstraint.constant = 320
             self.acceptDoctorVC.visitInfo = doctor // Pass found doctor
             self.acceptDoctorVC.filters = filters
             
@@ -227,6 +251,15 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
         }
     }
     
+    
+    func navigateToEndVisitPopUp(withBooking booking: Booking) {
+       let vc = self.viewController?.storyboard?.instantiateViewController(withIdentifier: "EndVisitPopUpViewController") as! EndVisitPopUpViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.booking = booking
+        vc.currentMode = .patient
+        self.viewController?.present(vc, animated: true, completion: nil)
+    }
+    
     func showPayByCardScreenWith(booking: Booking) {
         guard let navigationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "payment_vc") as? UINavigationController, let destinationVC = navigationVC.viewControllers.first as? PaymentViewController else {
             print("Cannot initalize payment view controller")
@@ -234,7 +267,14 @@ class MainPatientRouter: MainScreenRouter, Router, AlertRouter {
         }
         destinationVC.booking = booking
         destinationVC.modalPresentationStyle = .overCurrentContext
+        destinationVC.delegate = self
         viewController?.present(navigationVC, animated: true, completion: nil)
     }
     
+}
+
+extension MainPatientRouter: PaymentViewDelegate {
+    func onPaymentDone() {
+        viewController?.dismiss(animated: true, completion: nil)
+    }
 }

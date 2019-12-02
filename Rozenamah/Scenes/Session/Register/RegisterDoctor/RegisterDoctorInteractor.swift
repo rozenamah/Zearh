@@ -51,6 +51,9 @@ class RegisterDoctorInteractor: RegisterDoctorBusinessLogic {
         }
     }
     
+    
+    
+    
     func validate(registerForm: CreateDoctorForm) -> Bool {
         
         var allFieldsValid = true

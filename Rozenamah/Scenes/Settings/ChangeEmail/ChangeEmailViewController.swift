@@ -70,7 +70,7 @@ class ChangeEmailViewController: UIViewController, ChangeEmailDisplayLogic {
     }
     
     func emailChangedSuccessful() {
-        router?.dismissAfterChangedEmail()
+        router?.dismissAfterChangedEmail(sender: self.view)
     }
 }
 

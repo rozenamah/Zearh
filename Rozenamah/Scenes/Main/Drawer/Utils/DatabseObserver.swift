@@ -22,7 +22,7 @@ struct DatabaseObserver: Hashable {
     init(ref: DatabaseReference, handle: UInt) {
         self.ref = ref
         self.handle = handle
-        self.key = ref.childByAutoId().key // We us it key to be able to hash
+        self.key = ref.childByAutoId().key! // We us it key to be able to hash
         
         DatabaseObserver.observers.insert(self)
     }

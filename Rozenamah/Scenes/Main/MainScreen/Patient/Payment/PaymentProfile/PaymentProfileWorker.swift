@@ -32,7 +32,7 @@ class PaymentProfileWorker {
             "city": request.city,
             "postal_code": request.postalCode,
             "country": request.country,
-            "msg_lang": request.language,
+            "msg_lang": request.language
         ]
         guard let token = Keychain.shared.token else {
             completion(nil, RMError.tokenDoesntExist)
@@ -42,10 +42,22 @@ class PaymentProfileWorker {
         let headers = [
             "Authorization": "Bearer \(token)"
         ]
+        //old payment method and api commented by Najam
+//        splashWorker.fetchMyBooking(completion: { (booking, error) in
+//            if let fetchedBooking = booking {
+//                params["visit"] = fetchedBooking.id
+//                Alamofire.request(API.Payments.paypage.path, method: .post, parameters: params,
+//                                  encoding: JSONEncoding.default, headers: headers)
+//                    .validate()
+//                    .responseCodable(type: PaymentProfile.Response.self, completion: completion)
+//            }
+//        })
+        
+        // newCode added by Najam hyperpay and new api
         splashWorker.fetchMyBooking(completion: { (booking, error) in
             if let fetchedBooking = booking {
                 params["visit"] = fetchedBooking.id
-                Alamofire.request(API.Payments.paypage.path, method: .post, parameters: params,
+                Alamofire.request(API.Payments.confirm.path, method: .post, parameters: params,
                                   encoding: JSONEncoding.default, headers: headers)
                     .validate()
                     .responseCodable(type: PaymentProfile.Response.self, completion: completion)

@@ -154,11 +154,11 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     }
     
     @IBAction func professionChooseAction(_ sender: Any) {
-        router?.navigateToSelectingClassification()
+        router?.navigateToSelectingClassification(sender: sender)
     }
     
     @IBAction func specializationChooseAction(_ sender: Any) {
-        router?.navigateToSelectingSpecialization()
+        router?.navigateToSelectingSpecialization(sender: sender)
     }
     
     @IBAction func moreOptions(_ sender: Any) {
@@ -212,7 +212,7 @@ class CallDoctorViewController: UIViewController, CallDoctorDisplayLogic {
     }
     
     func handle(error: Error) {
-        router?.showError(error)
+        router?.showError(error, sender: self.view)
     }
     
     func handle(error: Error, inField field: CallDoctorViewController.Field) {

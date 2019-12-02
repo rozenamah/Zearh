@@ -71,7 +71,7 @@ class ChangePhoneNumberViewController: UIViewController, ChangePhoneNumberDispla
     }
     
     func phoneNumberChangedSuccessful() {
-        router?.dismissAfterChangedNumber()
+        router?.dismissAfterChangedNumber(sender: self.view)
     }
 }
 

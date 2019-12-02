@@ -9,13 +9,19 @@ target 'Rozenamah' do
   pod 'SlideMenuControllerSwift'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'IQKeyboardManager'
+  pod 'IQKeyboardManagerSwift'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'Alamofire'  
   pod 'Kingfisher'
   pod 'SwiftCake', :git => 'https://github.com/Rovalx/SwiftCake.git', :branch => 'master'
   pod 'Localize' , :git => 'https://github.com/andresilvagomez/Localize.git', :branch => 'master'
-  pod 'Firebase/Database'
-  pod 'Firebase/Core'
-  
+ 
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+	pod 'Firebase/Database'
+	
+  pod 'RappleProgressHUD'
+  pod 'CountryPickerSwift'
+  pod 'SwiftyJSON'
+
 end

@@ -65,7 +65,7 @@ class DrawerRouter: Router, AppStartRouter, AlertRouter {
         viewController?.performSegue(withIdentifier: "transaction_history_segue", sender: nil)
     }
     
-    func showLogoutAlert() {
+    func showLogoutAlert(sender:UIView) {
         let alert = UIAlertController(title: "menu.logout".localized,
                                       message: "menu.logoutQuestion".localized,
                                       preferredStyle: .alert)
@@ -73,6 +73,11 @@ class DrawerRouter: Router, AppStartRouter, AlertRouter {
             self.viewController?.loginCofirmed()
         }))
         alert.addAction(UIAlertAction(title: "generic.no".localized, style: .cancel, handler: nil))
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
 

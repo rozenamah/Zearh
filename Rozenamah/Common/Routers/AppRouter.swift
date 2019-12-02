@@ -20,12 +20,14 @@ class AppRouter {
     
     static func navigateTo(booking: Booking) {
         // Navigate to doctor/patient router and show modal
+        LoginUserManager.sharedInstance.lastBooking = booking
         MainDoctorRouter.resolve(booking: booking)
         MainPatientRouter.resolve(booking: booking)
     }
     
     /// Called when refreshing state is saying there is no pending visit, so we should close any pending visit
     static func noVisit() {
+        LoginUserManager.sharedInstance.lastBooking = nil
         MainDoctorRouter.stopAllBookings()
         MainPatientRouter.stopAllBookings()
     }

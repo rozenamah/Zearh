@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IQKeyboardManager
+import IQKeyboardManagerSwift
 import AlamofireNetworkActivityIndicator
 import Fabric
 import Crashlytics
@@ -16,10 +16,11 @@ import SlideMenuControllerSwift
 import KeychainAccess
 import Localize
 import Firebase
+import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate,UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     
@@ -32,12 +33,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
         storeLaunchOptionsIfAny(launchOptions: launchOptions)
         
         configureGlobalApperance()
         configureApp()
         configureAlamofire()
         configureLanguage()
+        
+        
+        
+//        if #available(iOS 10.0, *) {
+//            // For iOS 10 display notification (sent via APNS)
+//            UNUserNotificationCenter.current().delegate = self
+//
+//            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//            UNUserNotificationCenter.current().requestAuthorization(
+//                options: authOptions,
+//                completionHandler: {_, _ in })
+//        } else {
+//            let settings: UIUserNotificationSettings =
+//                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//            application.registerUserNotificationSettings(settings)
+//        }
+//
+//        application.registerForRemoteNotifications()
+//
+//        Messaging.messaging().delegate = self
+
       
         return true
     }
@@ -50,9 +74,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Refresh state of booking, it might be outdated
+        //newCode for AI fetch pendig visit on application start and resume
         SplashWorker().fetchMyBooking { (refreshBooking, error) in
             if let refreshBooking = refreshBooking {
-                AppRouter.navigateTo(booking: refreshBooking)
+                if LoginUserManager.sharedInstance.lastBooking != nil {
+                    if LoginUserManager.sharedInstance.lastBooking!.status != refreshBooking.status {
+                        AppRouter.navigateTo(booking: refreshBooking)
+                    }
+                } else {
+                    AppRouter.navigateTo(booking: refreshBooking)
+                }
             } else {
                 AppRouter.noVisit()
             }
@@ -63,6 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        if LoginUserManager.sharedInstance.timer != nil {
+            LoginUserManager.sharedInstance.timer.invalidate()
+        }
     }
 
     // MARK: Notifications
@@ -77,13 +111,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
+
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        print(token)
         // Save device token to currently logged user
         NotificationWorker().saveDeviceToken(inData: deviceToken) { (error) in
             // Do nothing
         }
     }
+    
+    
+    
+    
+    
+    
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//
+//        print("test")
+//
+//    }
+    
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         
@@ -95,6 +149,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AppRouter.navigateToScreen(from: userInfo)
         }
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print(notification)
+        completionHandler([.badge, .sound, .alert])
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print(response)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        let navController = self.window?.rootViewController as! UINavigationController
+        let notificationSettingsVC = NotificationAlertViewController()
+        navController.pushViewController(notificationSettingsVC, animated: true)
+    }
+
     
 }
 
@@ -110,10 +181,13 @@ extension AppDelegate {
         localize.update(fileName: "lang")
         // If you want remove storaged languaje use
 //        localize.resetLanguage()
-      if localize.currentLanguage == "ar" {
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
-      } else {
         
+        //commented By Najam change condition only
+//        if(localize.currentLanguage == "ar")
+      if Locale.current.languageCode == "ar" {
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        Localize.shared.update(language: "ar")
+      } else {
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
         Localize.shared.update(language: "en")
       }
@@ -122,8 +196,8 @@ extension AppDelegate {
     fileprivate func configureApp() {
         
         // Keyboard manager
-        IQKeyboardManager.shared().isEnabled = true
-        IQKeyboardManager.shared().isEnableAutoToolbar = false
+        IQKeyboardManager.shared.enable = true
+//        IQKeyboardManager.shared.enableAutoToolbar = true
         
         // Crashlytics
         Fabric.with([Crashlytics.self])
@@ -138,14 +212,12 @@ extension AppDelegate {
         SlideMenuOptions.hideStatusBar = false
         SlideMenuOptions.panFromBezel = false
         
-        // Firebase
-        FirebaseApp.configure()
-        
         // If app first launch - remove token in keychain memory if available
         if !Settings.shared.isFirstAppRun {
             Keychain.shared.token = nil
             Settings.shared.isFirstAppRun = true
         }
+        
     }
     
     private func configureGlobalApperance() {
@@ -159,3 +231,24 @@ extension AppDelegate {
     }
 }
 
+
+//Mark:- Payment Linking - Hassan Bhatti
+extension AppDelegate {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Make sure that URL scheme is identical to the registered one
+        if url.scheme?.localizedCaseInsensitiveCompare(Config.urlScheme) == .orderedSame {
+            // Send notification to handle result in the view controller.
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Config.asyncPaymentCompletedNotificationKey), object: nil)
+            return true
+        }
+        return false
+    }
+    
+    
+    func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
+        if (extensionPointIdentifier == UIApplication.ExtensionPointIdentifier.keyboard) {
+            return false
+        }
+        return true
+    }
+}

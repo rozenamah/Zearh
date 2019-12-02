@@ -79,6 +79,8 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
     @objc func handleNoBooking() {
         // Called when system is notified there is no more booking to display, hide current view
         navigateToCancel()
+        viewController?.removeCurrentPatientLocation()
+
         // There might be modal screen - hide it
         viewController?.dismiss(animated: true, completion: nil)
     }
@@ -88,19 +90,20 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             booking.visit.user == User.current {
             print(booking.status)
             if booking.status == .new {
-                navigateToPatientToAccept(inBooking: booking)
                 
+                navigateToPatientToAccept(inBooking: booking)
+                viewController?.drawRoute(myLat: "\(booking.visit.latitude)", myLng: "\(booking.visit.longitude)", pLat: "\(booking.latitude)", pLng: "\(booking.longitude)", booking: booking)
                 // Save booking and move camera to patient location
                 viewController?.currentBooking = booking
-                viewController?.moveToPatientLocation(inBooking: booking)
+                //newRoute
+//                viewController?.moveToPatientLocation(inBooking: booking)
+                viewController?.moveToBoundLocations(inBooking: booking)
             } else if booking.status == .canceled {
                 navigateToCancel()
-                
                 // Remove booking and move camera to doctor (my) location
                 viewController?.currentBooking = nil
                 viewController?.removeCurrentPatientLocation()
-                
-                showAlert(message: "alerts.visitCanceled2".localized)
+                showAlert(message: "alerts.visitCanceled2".localized,sender: viewController!.view)
             } else if booking.status == .timeout {
                 navigateToCancel()
                 
@@ -108,13 +111,15 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
                 viewController?.currentBooking = nil
                 viewController?.removeCurrentPatientLocation()
                 
-                showAlert(message: "alerts.youDidntAccepted".localized)
+                showAlert(message: "alerts.youDidntAccepted".localized,sender: viewController!.view)
             } else if booking.status == .accepted {
                 navigateToDoctorOnTheWay(onBooking: booking)
-                
+                viewController?.drawRoute(myLat: "\(booking.visit.latitude)", myLng: "\(booking.visit.longitude)", pLat: "\(booking.latitude)", pLng: "\(booking.longitude)", booking: booking)
                 // Save booking and move camera to patient location
                 viewController?.currentBooking = booking
-                viewController?.moveToPatientLocation(inBooking: booking)
+                //newRoute
+//                viewController?.moveToPatientLocation(inBooking: booking)
+                viewController?.moveToBoundLocations(inBooking: booking)
             } else if booking.status == .arrived {
                 navigateToEndVisit(withBooking: booking)
                 
@@ -137,7 +142,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
             }
             self.add(asChildViewController: self.patientFormVC)
             self.patientFormVC.booking = booking
-            self.viewController?.containerHeightConstraint.constant = 370
+            self.viewController?.containerHeightConstraint.constant = 420
             self.openContainer()
         }
     }
@@ -149,7 +154,7 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
                 return
             }
             self.add(asChildViewController: self.doctorBusyVC)
-            self.viewController?.containerHeightConstraint.constant = 309
+            self.viewController?.containerHeightConstraint.constant = 370
             self.doctorBusyVC.booking = booking
             self.openContainer()
         }
@@ -185,3 +190,5 @@ class MainDoctorRouter: MainScreenRouter, Router, AlertRouter {
 
     // MARK: Passing data
 }
+
+

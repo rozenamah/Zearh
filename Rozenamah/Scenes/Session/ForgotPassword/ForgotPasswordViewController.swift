@@ -67,11 +67,11 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
     // MARK: Presenter methods
     
     func resetPasswordSuccess() {
-        router?.dismissAfterReset()
+        router?.dismissAfterReset(sender: self.view)
     }
     
     func handle(error: Error) {
-        router?.showError(error)
+        router?.showError(error, sender: self.view)
     }
     
     func handle(error: Error, inField field: ForgotPasswordViewController.Field) {

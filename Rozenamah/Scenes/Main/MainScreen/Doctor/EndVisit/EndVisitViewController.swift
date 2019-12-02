@@ -89,12 +89,14 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     
     @IBAction func endVisitAction(_ sender: Any) {
         if booking.payment == .cash {
+            //end for cash
             if interactor?.validate(cashReceived: cashReceivedCheckbox.isSelected) == true {
-                router?.showWaitAlert()
+                router?.showWaitAlert(sender: sender as! UIView)
                 interactor?.end(booking: booking)
+                LoginUserManager.sharedInstance.visitFound = false
             }
         } else {
-            router?.showWaitAlert()
+            router?.showWaitAlert(sender: sender as! UIView)
             interactor?.end(booking: booking)
         }
     }
@@ -103,7 +105,7 @@ class EndVisitViewController: UIViewController, EndVisitDisplayLogic {
     
     func handleError(_ error: Error) {
         router?.hideWaitAlert(completion: {
-            self.router?.showError(error)
+            self.router?.showError(error, sender: self.view)
         })
     }
     

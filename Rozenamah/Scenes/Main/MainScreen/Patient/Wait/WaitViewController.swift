@@ -91,7 +91,7 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
         
         switch state {
         case .waitAccept(let booking):
-            router?.showCancelAlert(forBooking: booking)
+            router?.showCancelAlert(forBooking: booking, sender: sender as! UIView)
         case .waitSearch(_):
             interactor?.cancelCurrentRequest()
             flowDelegate?.changeStateTo(flowPoint: .callDoctor)
@@ -109,7 +109,7 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     
     func handle(error: Error) {
         cancelButton.isUserInteractionEnabled = true
-        router?.showError(error)
+        router?.showError(error, sender: self.view)
     }
     
     func found(doctor: VisitDetails) {
@@ -123,7 +123,7 @@ class WaitViewController: UIViewController, WaitDisplayLogic {
     
     func noDoctorFoundMatchingCriteria() {
         cancelButton.isUserInteractionEnabled = true
-        router?.showNoDoctorFound()
+        router?.showNoDoctorFound(sender: self.view)
     }
     
     func visitCancelled() {

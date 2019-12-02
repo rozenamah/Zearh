@@ -158,8 +158,18 @@
             "unknown": "Unknown error",
             "ups": "Oops"
         },
+        "recoverd": "Your account has been activated",
+        "doctorVerified": "Your doctor account has been verified",
+        "googleMap": "Google Map",
+        "defaultMap": "Default Map",
         "ok": "Ok",
+        "welcomeBack": "Welcome Back",
         "success": "Success",
+        "failure": "Failure",
+        "checkoutIDNotFound": "Try again later",
+        "paymentSuccess": "Your request processed successfully",
+        "paymentFailed": "Your request failed to complete",
+        "invalidTransaction": "Invalid transaction",
         "cancel": "Cancel",
         "search": "Search",
         "specialization": "Specialization",
@@ -242,6 +252,7 @@
             "generalSurgery": "General Surgery"
         },
         "visits": {
+            "openLocation": "Open location",
             "accept": "Accept",
             "reject": "Reject",
             "priceForVisit": "Price for visit",

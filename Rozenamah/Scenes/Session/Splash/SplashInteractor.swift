@@ -23,15 +23,17 @@ class SplashInteractor: SplashBusinessLogic {
                 User.current = user
                 
                 // Now check if user has any pending booking
+                //newCode remove get vuisits and add in main view controller
                 self.worker.fetchMyBooking(completion: { (booking, error) in
-                    
+
                     // Save launch booking in app delegate
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                         appDelegate.launchBooking = booking
                     }
-                    
                     self.presenter?.present(user: user)
                 })
+                //remove after notification work
+//                self.presenter?.present(user: user)
             }
             
             

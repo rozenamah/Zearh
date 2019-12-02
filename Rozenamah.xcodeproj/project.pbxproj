@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2C463823102473007B1358 /* OPPWAMobile-Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E2C463423102472007B1358 /* OPPWAMobile-Resources.bundle */; };
+		0E2C463C231024B7007B1358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C4639231024B7007B1358 /* Utils.swift */; };
+		0E2C463D231024B7007B1358 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C463A231024B7007B1358 /* Config.swift */; };
+		0E2C463E231024B7007B1358 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C463B231024B7007B1358 /* Request.swift */; };
 		5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CEBE2089E7AE00245F7A /* AppRouter.swift */; };
 		570CC5292091CB51006B32AA /* ModalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570CC5282091CB51006B32AA /* ModalInformationViewController.swift */; };
 		570DC857208E1E7A0034B264 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570DC856208E1E7A0034B264 /* DoubleExtension.swift */; };
@@ -104,7 +108,11 @@
 		57E659D72073AE60004E3926 /* ChangeEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */; };
 		57E659D82073AE60004E3926 /* ChangeEmailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */; };
 		7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */; };
-		B4A110B02135944000FD777C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4A110AF2135943F00FD777C /* GoogleService-Info.plist */; };
+		8E1350A72345E30A002E496D /* EndVisitPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1350A62345E30A002E496D /* EndVisitPopUpViewController.swift */; };
+		8E3A2C3823424DFC005AD281 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E3A2C3723424DFC005AD281 /* GoogleService-Info.plist */; };
+		8EE6CFE5233A16FE00E2754D /* OPPWAMobile-Resources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2C463423102472007B1358 /* OPPWAMobile-Resources.bundle */; };
+		8EE6CFE6233A16FE00E2754D /* OPPWAMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2C463223102472007B1358 /* OPPWAMobile.framework */; };
+		8EE6CFE8233A51CF00E2754D /* LoginUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6CFE7233A51CF00E2754D /* LoginUserManager.swift */; };
 		B4FF98A22122C49900269AA0 /* PaymentProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989C2122C49900269AA0 /* PaymentProfilePresenter.swift */; };
 		B4FF98A32122C49900269AA0 /* PaymentProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989D2122C49900269AA0 /* PaymentProfileWorker.swift */; };
 		B4FF98A42122C49900269AA0 /* PaymentProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF989E2122C49900269AA0 /* PaymentProfileRouter.swift */; };
@@ -282,7 +290,26 @@
 		F9FADAFF208E0735002450FD /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FADAFE208E0735002450FD /* Booking.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0E2C4645231026C8007B1358 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0E2C463223102472007B1358 /* OPPWAMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OPPWAMobile.framework; sourceTree = "<group>"; };
+		0E2C463423102472007B1358 /* OPPWAMobile-Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "OPPWAMobile-Resources.bundle"; sourceTree = "<group>"; };
+		0E2C4639231024B7007B1358 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0E2C463A231024B7007B1358 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0E2C463B231024B7007B1358 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		0E2C463F23102506007B1358 /* Rozenamah-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rozenamah-Bridging-Header.h"; sourceTree = "<group>"; };
 		12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.release.xcconfig"; sourceTree = "<group>"; };
 		4CCFFA696C6B25E57686CF22 /* Pods_Rozenamah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rozenamah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5702CEBE2089E7AE00245F7A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -382,7 +409,9 @@
 		57E659D02073AE60004E3926 /* ChangeEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailInteractor.swift; sourceTree = "<group>"; };
 		57E659D12073AE60004E3926 /* ChangeEmailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailConfigurator.swift; sourceTree = "<group>"; };
 		5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rozenamah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah.debug.xcconfig"; sourceTree = "<group>"; };
-		B4A110AF2135943F00FD777C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E1350A62345E30A002E496D /* EndVisitPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndVisitPopUpViewController.swift; sourceTree = "<group>"; };
+		8E3A2C3723424DFC005AD281 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8EE6CFE7233A51CF00E2754D /* LoginUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserManager.swift; sourceTree = "<group>"; };
 		B4FF989C2122C49900269AA0 /* PaymentProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfilePresenter.swift; sourceTree = "<group>"; };
 		B4FF989D2122C49900269AA0 /* PaymentProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileWorker.swift; sourceTree = "<group>"; };
 		B4FF989E2122C49900269AA0 /* PaymentProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProfileRouter.swift; sourceTree = "<group>"; };
@@ -570,12 +599,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ECDCEA743DA7CE9F4FA6022 /* Pods_Rozenamah.framework in Frameworks */,
+				8EE6CFE5233A16FE00E2754D /* OPPWAMobile-Resources.bundle in Frameworks */,
+				8EE6CFE6233A16FE00E2754D /* OPPWAMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2C4630231023F8007B1358 /* Hyper Pay */ = {
+			isa = PBXGroup;
+			children = (
+				0E2C463F23102506007B1358 /* Rozenamah-Bridging-Header.h */,
+				0E2C463A231024B7007B1358 /* Config.swift */,
+				0E2C463B231024B7007B1358 /* Request.swift */,
+				0E2C4639231024B7007B1358 /* Utils.swift */,
+			);
+			path = "Hyper Pay";
+			sourceTree = "<group>";
+		};
 		2F43CA1628D611B968D46E2E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +714,9 @@
 		574FC58B2084A888001E4059 /* PaymentMethod */ = {
 			isa = PBXGroup;
 			children = (
+				0E2C463423102472007B1358 /* OPPWAMobile-Resources.bundle */,
+				0E2C463223102472007B1358 /* OPPWAMobile.framework */,
+				0E2C4630231023F8007B1358 /* Hyper Pay */,
 				574FC58C2084A89A001E4059 /* PaymentMethodPresenter.swift */,
 				574FC58D2084A89A001E4059 /* PaymentMethodWorker.swift */,
 				574FC58E2084A89A001E4059 /* PaymentMethodRouter.swift */,
@@ -775,6 +820,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E1350A52345E2EB002E496D /* EndVisitPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				8E1350A62345E30A002E496D /* EndVisitPopUpViewController.swift */,
+			);
+			path = EndVisitPopUp;
+			sourceTree = "<group>";
+		};
 		B4FF989B2122C48000269AA0 /* PaymentProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,7 +879,7 @@
 				F9F10FC020A0854C00E88987 /* Cracow.gpx */,
 				F9A9F2A0204D5881006E8999 /* Common */,
 				F9A9F297204D57FA006E8999 /* Scenes */,
-				B4A110AF2135943F00FD777C /* GoogleService-Info.plist */,
+				8E3A2C3723424DFC005AD281 /* GoogleService-Info.plist */,
 				F9093A70204992CB00CB041A /* AppDelegate.swift */,
 				F940EC2A20595A1100266753 /* API.swift */,
 				F9093A77204992CB00CB041A /* Assets.xcassets */,
@@ -834,6 +887,7 @@
 				F9093A7C204992CB00CB041A /* Info.plist */,
 				E998D5162136BD8600BB93B2 /* LaunchScreen_ar.storyboard */,
 				E998D50E2136A52400BB93B2 /* InfoPlist.strings */,
+				8EE6CFE7233A51CF00E2754D /* LoginUserManager.swift */,
 			);
 			path = Rozenamah;
 			sourceTree = "<group>";
@@ -864,8 +918,8 @@
 		F940EA6A2058237A00266753 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F940EA6B2058239100266753 /* UIColorExtension.swift */,
 				F940EC2C205963ED00266753 /* AlamofireExtension.swift */,
+				F940EA6B2058239100266753 /* UIColorExtension.swift */,
 				F940EC64205AC04700266753 /* KeychainExtension.swift */,
 				F9753776205FEA70003DC80E /* UIWindowExtension.swift */,
 				F9753778205FF24B003DC80E /* UIButtonExtension.swift */,
@@ -1001,6 +1055,7 @@
 		F95F140C2061543600CDC2E5 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				8E1350A52345E2EB002E496D /* EndVisitPopUp */,
 				57BC874420907B51002147F8 /* DoctorLocation */,
 				574FC58B2084A888001E4059 /* PaymentMethod */,
 				574FC57C20849DFB001E4059 /* Payment */,
@@ -1346,6 +1401,7 @@
 				87CC8A2E5D54EE3735BA8D9D /* [CP] Embed Pods Frameworks */,
 				85ECF47341E4347EB6C1F628 /* [CP] Copy Pods Resources */,
 				F940EC3E205A872700266753 /* ShellScript */,
+				0E2C4645231026C8007B1358 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1368,6 +1424,7 @@
 				TargetAttributes = {
 					F9093A6C204992CB00CB041A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1413,10 +1470,11 @@
 				573A305D207B66D20040B438 /* SummaryTableViewCell.xib in Resources */,
 				F969921020863907007E6C42 /* lang-ar.json in Resources */,
 				F9F10FC120A0854C00E88987 /* Cracow.gpx in Resources */,
-				B4A110B02135944000FD777C /* GoogleService-Info.plist in Resources */,
+				0E2C463823102473007B1358 /* OPPWAMobile-Resources.bundle in Resources */,
 				E998D5182136BD8600BB93B2 /* LaunchScreen_ar.storyboard in Resources */,
 				F9753761205FCFAA003DC80E /* Settings.storyboard in Resources */,
 				F9699212208639A4007E6C42 /* Session.storyboard in Resources */,
+				8E3A2C3823424DFC005AD281 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1468,14 +1526,18 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Rozenamah/Pods-Rozenamah-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize/Localize.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/RappleProgressHUD/RappleProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftCake/SwiftCake.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1483,14 +1545,18 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RappleProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCake.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1505,12 +1571,14 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/⁨Rozenamah⁩/Scenes⁩/⁨Main⁩/⁨MainScreen⁩/⁨Patient⁩/⁨PaymentMethod⁩⁩/OPPWAMobile.framework",
+				"$(SRCROOT)/⁨Rozenamah⁩/Scenes⁩/⁨Main⁩/⁨MainScreen⁩/⁨Patient⁩/⁨PaymentMethod⁩/OPPWAMobile-CardIO.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3bad39c7450316381cb752e8697bfd31879096e1 69c933c66f36599e4a3956ec99891a9b65fe89efccf3e57454ae257e846bb3c0";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3bad39c7450316381cb752e8697bfd31879096e1 69c933c66f36599e4a3956ec99891a9b65fe89efccf3e57454ae257e846bb3c0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1536,11 +1604,13 @@
 				F97B73A32063A9040073A968 /* KingfisherExtension.swift in Sources */,
 				574FC5962084A89A001E4059 /* PaymentMethodModels.swift in Sources */,
 				57E659C620739EBC004E3926 /* ChangePasswordModels.swift in Sources */,
+				8EE6CFE8233A51CF00E2754D /* LoginUserManager.swift in Sources */,
 				F940EC5E205AB9EC00266753 /* SplashViewController.swift in Sources */,
 				F97B71FA2062B5960073A968 /* CallDoctorInteractor.swift in Sources */,
 				574FC58720849E1F001E4059 /* PaymentModels.swift in Sources */,
 				F99A2ED6207F37D2009505EB /* AcceptDoctorPresenter.swift in Sources */,
 				F9CEDE67206521DA004ED0C7 /* EditProfileConfigurator.swift in Sources */,
+				8E1350A72345E30A002E496D /* EndVisitPopUpViewController.swift in Sources */,
 				57BC874F20907B83002147F8 /* DoctorLocationModels.swift in Sources */,
 				573A305C207B66D20040B438 /* SummaryTableViewCell.swift in Sources */,
 				F9CEDE542063F139004ED0C7 /* ReportRouter.swift in Sources */,
@@ -1654,6 +1724,7 @@
 				574FC5982084A89A001E4059 /* PaymentMethodInteractor.swift in Sources */,
 				574FC58A20849E1F001E4059 /* PaymentConfigurator.swift in Sources */,
 				5710109B208F6315008B4384 /* DoctorOnTheWayViewController.swift in Sources */,
+				0E2C463C231024B7007B1358 /* Utils.swift in Sources */,
 				F940EC4D205A9BFF00266753 /* MainPatientInteractor.swift in Sources */,
 				F975376E205FDADE003DC80E /* RegisterDoctorRouter.swift in Sources */,
 				F9753771205FDADE003DC80E /* RegisterDoctorInteractor.swift in Sources */,
@@ -1683,6 +1754,7 @@
 				F97B71F82062B5960073A968 /* CallDoctorModels.swift in Sources */,
 				573A3053207B65AA0040B438 /* TransactionHistoryWorker.swift in Sources */,
 				B4FF98B12122DAF400269AA0 /* PaymentWebViewRouter.swift in Sources */,
+				0E2C463E231024B7007B1358 /* Request.swift in Sources */,
 				F940EC242059335E00266753 /* RegisterPatientModels.swift in Sources */,
 				F94CC62B20A9CA4200B3C06E /* LocationAlertViewController.swift in Sources */,
 				578A6E882080BD7800CB4E79 /* EndVisitPresenter.swift in Sources */,
@@ -1772,6 +1844,7 @@
 				5702CEBF2089E7AE00245F7A /* AppRouter.swift in Sources */,
 				F940EA69205820DF00266753 /* RMTextFieldWithError.swift in Sources */,
 				F9753772205FDADE003DC80E /* RegisterDoctorConfigurator.swift in Sources */,
+				0E2C463D231024B7007B1358 /* Config.swift in Sources */,
 				574FC576208493A4001E4059 /* PatientDetailsWorker.swift in Sources */,
 				F9CEDE522063F139004ED0C7 /* ReportPresenter.swift in Sources */,
 				F940EC52205A9D8E00266753 /* AppStartRouter.swift in Sources */,
@@ -1938,18 +2011,30 @@
 			baseConfigurationReference = 5EADC32AED147D733870FB5F /* Pods-Rozenamah.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Rozenamah/Rozenamah.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G8W9SZ8VZM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod",
+				);
 				INFOPLIST_FILE = Rozenamah/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d61e723d-4498-4d25-9118-229b6ac1fde6";
-				PROVISIONING_PROFILE_SPECIFIER = RozenamahDevelopment;
+				PROVISIONING_PROFILE_SPECIFIER = ZearhDev;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper Pay/Rozenamah-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1960,18 +2045,29 @@
 			baseConfigurationReference = 12F2CF19FFFACE3A5994653E /* Pods-Rozenamah.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Rozenamah/Rozenamah.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G8W9SZ8VZM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper\\ Pay",
+					"$(PROJECT_DIR)/Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod",
+				);
 				INFOPLIST_FILE = Rozenamah/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rozenamah.zearh.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dff1086f-7650-4e31-b5a3-0c70603db362";
-				PROVISIONING_PROFILE_SPECIFIER = RozemanahDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = ZearhDist;
+				SWIFT_OBJC_BRIDGING_HEADER = "Rozenamah/Scenes/Main/MainScreen/Patient/PaymentMethod/Hyper Pay/Rozenamah-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

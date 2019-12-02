@@ -67,7 +67,7 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     // MARK: Event handling
 
     @IBAction func cancelAction(_ sender: Any) {
-        router?.showFeeAlert()
+        router?.showFeeAlert(sender: sender as! UIView)
     }
     
     func cancelConfirmed() {
@@ -95,6 +95,6 @@ class DoctorLocationViewController: ModalInformationViewController, DoctorLocati
     
     func presentError(_ error: Error) {
         cancelButton.isUserInteractionEnabled = true
-        router?.showError(error)
+        router?.showError(error, sender: self.view)
     }
 }

@@ -24,10 +24,29 @@ extension AppStartRouter where Self: Router {
     }
     
     func navigateToDefaultApp() {
+        
+//        guard let sideBarVC = UIStoryboard(name: "Main", bundle: nil)
+//            .instantiateViewController(withIdentifier: "side_vc") as? DrawerViewController else {
+//                return
+//        }
+//        sideBarVC.currentMode = .patient
+//
+//        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "payment_vc")
+//        var slideMenuController: SlideMenuController
+//        if homeVC.view.isRTL() {
+//            slideMenuController = SlideMenuController(mainViewController: homeVC,
+//                                                      rightMenuViewController: sideBarVC)
+//        } else {
+//            slideMenuController = SlideMenuController(mainViewController: homeVC,
+//                                                      leftMenuViewController: sideBarVC)
+//        }
+//
+//        UIApplication.shared.keyWindow?.setRootViewController(slideMenuController, options: UIWindow.TransitionOptions(direction: .fade))
+
         guard let user = User.current else {
             return
         }
-        
+
         // Check if there is any pending booking - if so, redirect to correct module
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let launchBooking = appDelegate.launchBooking {
@@ -39,9 +58,9 @@ extension AppStartRouter where Self: Router {
                 navigateToApp(inModule: .patient)
             }
             return
-            
+
         }
-        
+
         if user.type == .doctor {
             if user.doctor?.isVerified == true {
                 // Only if doctor and verified
@@ -55,7 +74,7 @@ extension AppStartRouter where Self: Router {
     }
     
     func navigateToApp(inModule module: UserType) {
-        
+        LoginUserManager.sharedInstance.userType = module
         guard let sideBarVC = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "side_vc") as? DrawerViewController else {
                 return

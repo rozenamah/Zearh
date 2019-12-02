@@ -72,6 +72,7 @@ class CallDoctorForm: ParamForm {
             params["gender"] = gender.rawValue
         }
         let disabledDoctorsId = disabledDoctors.map { $0.id }
+        print(disabledDoctorsId)
         if !disabledDoctorsId.isEmpty {
             params["disabled_doctors"] = disabledDoctorsId
         }

@@ -30,6 +30,7 @@ class AcceptPatientInteractor: AcceptPatientBusinessLogic {
             }
             
             if let booking = booking {
+                LoginUserManager.sharedInstance.bookingStatus = booking.status
                  self.presenter?.patientAccepted(with: booking)
             }
            

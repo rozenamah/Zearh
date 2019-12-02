@@ -9,9 +9,9 @@
 import UIKit
 
 @objc protocol PaymentProfileRoutingLogic {
-  func showError(_ error: Error)
+    func showError(_ error: Error,sender:UIView)
   func navigateToPaymentWebViewController()
-  func showWaitAlert()
+    func showWaitAlert(sender:UIView)
 func hideWaitAlert(completion: @escaping () -> ())
 }
 
@@ -20,6 +20,8 @@ protocol PaymentProfileDataPassing {
 }
 
 class PaymentProfileRouter: NSObject, PaymentProfileRoutingLogic, PaymentProfileDataPassing {
+    
+    
   
   // MARK: - Properties
   
@@ -29,13 +31,17 @@ class PaymentProfileRouter: NSObject, PaymentProfileRoutingLogic, PaymentProfile
   
   // MARK: - Routing
   
-  func showError(_ error: Error) {
+    func showError(_ error: Error,sender:UIView) {
     
     let alertMessage = UIAlertController(title: "generic.error.ups".localized,
                                          message: error.localizedDescription,
                                          preferredStyle: .alert)
     
     alertMessage.addAction(UIAlertAction(title: "generic.ok".localized, style: .cancel, handler: nil))
+    if let popoverController = alertMessage.popoverPresentationController {
+        popoverController.sourceView = sender
+        popoverController.sourceRect = sender.bounds
+    }
     viewController?.present(alertMessage, animated: true, completion: nil)
     
     
@@ -52,15 +58,15 @@ class PaymentProfileRouter: NSObject, PaymentProfileRoutingLogic, PaymentProfile
     viewController.navigationController?.pushViewController(destinationVC, animated: true)
   }
   
-  func showWaitAlert() {
-    alertLoading = showLoadingAlert()
+    func showWaitAlert(sender:UIView) {
+    alertLoading = showLoadingAlert(sender: sender)
   }
   
     func hideWaitAlert(completion: @escaping () -> ()) {
         alertLoading?.dismiss(animated: true, completion: completion)
     }
   
-  private func showLoadingAlert() -> UIAlertController {
+    private func showLoadingAlert(sender:UIView) -> UIAlertController {
     
     let vc = viewController
     
@@ -79,6 +85,11 @@ class PaymentProfileRouter: NSObject, PaymentProfileRoutingLogic, PaymentProfile
     
     indicator.isUserInteractionEnabled = false
     indicator.startAnimating()
+    
+    if let popoverController = alertMessage.popoverPresentationController {
+        popoverController.sourceView = sender
+        popoverController.sourceRect = sender.bounds
+    }
     
     vc?.present(alertMessage, animated: true, completion: nil)
     return alertMessage

@@ -12,6 +12,7 @@ extension MainDoctorViewController {
         let interactor = MainDoctorInteractor()
         let presenter = MainDoctorPresenter()
         let router = MainDoctorRouter()
+        viewController.interactorNew = interactor
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter

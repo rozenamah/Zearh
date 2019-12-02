@@ -197,7 +197,7 @@ extension Alamofire.DataRequest {
             guard let refreshToken = Keychain.shared.refreshToken else {
                 completion(nil)
                 return
-            }
+            }   
             
             let params = [
                 "refresh_token": refreshToken

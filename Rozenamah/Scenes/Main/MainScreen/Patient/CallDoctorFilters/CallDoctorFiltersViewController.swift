@@ -185,11 +185,11 @@ class CallDoctorFiltersViewController: UIViewController, CallDoctorFiltersDispla
     }
     
     @IBAction func professionChooseAction(_ sender: Any) {
-        router?.navigateToSelectingClassification()
+        router?.navigateToSelectingClassification(sender: sender)
     }
     
     @IBAction func specializationChooseAction(_ sender: Any) {
-        router?.navigateToSelectingSpecialization()
+        router?.navigateToSelectingSpecialization(sender: sender)
     }
     
     // MARK: Presenter methods

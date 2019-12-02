@@ -19,8 +19,8 @@ class PaymentMethodRouter: Router, AlertRouter {
         viewController?.dismiss(animated: true, completion: nil)
     }
 
-    func showWaitAlert() {
-        alertLoading = showLoadingAlert()
+    func showWaitAlert(sender:UIView) {
+        alertLoading = showLoadingAlert(sender: sender)
     }
     
     func hideWaitAlert(completion: (() -> Void)? = nil) {

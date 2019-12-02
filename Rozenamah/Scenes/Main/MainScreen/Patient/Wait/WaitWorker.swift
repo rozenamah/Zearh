@@ -15,6 +15,7 @@ class WaitWorker {
         }
         
         let params = form.toParams
+        print(params)
         let headers = [
             "Authorization": "Bearer \(token)"
         ]

@@ -129,7 +129,7 @@ class TransactionHistoryViewController: UIViewController, TransactionHistoryDisp
     }
     
     func handleError(error: Error) {
-        router?.showError(error)
+        router?.showError(error, sender: self.view)
     }
 
 }

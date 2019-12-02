@@ -114,7 +114,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         if let _ = ((slideMenuController()?.mainViewController as? UINavigationController)?
             .visibleViewController as? MainScreenViewController)?.currentBooking {
             
-            router?.showAlert(message: "alerts.cannotChangePendingBooking".localized)
+            router?.showAlert(message: "alerts.cannotChangePendingBooking".localized, sender: sender as! UIView)
             return
         }
         
@@ -127,7 +127,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
         if currentMode == .patient,
             User.current?.doctor?.isVerified == false {
             
-            router?.showAlert(message: "alerts.doctorAccountValidation".localized)
+            router?.showAlert(message: "alerts.doctorAccountValidation".localized, sender: sender as! UIView)
             return
         }
         router?.navigateToApp(inModule: currentMode == .doctor ? .patient : .doctor)
@@ -150,7 +150,7 @@ class DrawerViewController: UIViewController, DrawerDisplayLogic {
     }
     
     @IBAction func logoutAction(_ sender: Any) {
-        router?.showLogoutAlert()
+        router?.showLogoutAlert(sender: sender as! UIView)
     }
   
     @IBAction func transactionsAction(_ sender: Any) {

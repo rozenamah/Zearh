@@ -8,11 +8,11 @@
 
 import Foundation
 
-#if DEBUG
-fileprivate let baseURL = "https://rozenamah.r4s.ovh/api/"
-#else
+//#if DEBUG
+//fileprivate let baseURL = "https://rozenamah.r4s.ovh/api/"
+//#else
 fileprivate let baseURL = "https://zearh-api.rozenamah.com/api/"
-#endif
+//#endif
 
 enum API {
     
@@ -71,7 +71,12 @@ enum API {
   
     enum Payments {
         case paypage
+        case confirm
         
+        //commented by Najam
+//        var resource: String { return baseURL + "payment/" }
+
+        // Added by Najam
         var resource: String { return baseURL + "payment/" }
 
     }
@@ -144,6 +149,7 @@ extension API.Payments {
     var path: String {
         switch self {
         case .paypage: return resource + "paypage"
+        case .confirm: return resource + "confirm"
         }
     }
 }

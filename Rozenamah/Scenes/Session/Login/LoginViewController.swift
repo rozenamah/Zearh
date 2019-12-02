@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 protocol LoginDisplayLogic: class {
     func handle(error: Error)
@@ -46,6 +47,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        
     }
 
     // MARK: View customization
@@ -83,7 +86,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     // MARK: Presenter methods
     
     func handle(error: Error) {
-        router?.showError(error)
+        router?.showError(error,sender: self.view)
     }
     
     func handle(error: Error, inField field: LoginViewController.Field) {

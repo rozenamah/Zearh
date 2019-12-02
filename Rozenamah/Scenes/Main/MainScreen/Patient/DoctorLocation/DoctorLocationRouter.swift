@@ -12,7 +12,7 @@ class DoctorLocationRouter: Router, AlertRouter, PhoneCallRouter {
 
     // MARK: Navigation
     
-    func showFeeAlert() {
+    func showFeeAlert(sender:UIView) {
         let alert = UIAlertController(title: "alerts.cancelVisit.title".localized,
                                       message: "alerts.cancelVisit.feeMessage".localized, preferredStyle: .alert)
         
@@ -20,6 +20,10 @@ class DoctorLocationRouter: Router, AlertRouter, PhoneCallRouter {
             self.viewController?.cancelConfirmed()
         }))
         alert.addAction(UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+        }
         viewController?.present(alert, animated: true, completion: nil)
     }
 

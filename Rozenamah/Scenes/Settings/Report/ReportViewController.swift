@@ -1,6 +1,6 @@
 import UIKit
 import SwiftCake
-import IQKeyboardManager
+import IQKeyboardManagerSwift
 
 protocol ReportDisplayLogic: class {
     func handle(error: Error, inField field: ReportViewController.Field)
@@ -51,12 +51,12 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
         // We disable IQKeyboard for this screen, because textView is is too big
         // and it causes that some views are out of the screen
         // when IQKeyboard scrolls it up
-        IQKeyboardManager.shared().isEnabled = false
+        IQKeyboardManager.shared.enable = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared.enable = true
     }
 
     // MARK: View customization
@@ -85,7 +85,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     
     @IBAction func subjectAction(_ sender: Any) {
         hideErrorIn(button: subjectButton)
-        router?.navigateToSelectingSubject()
+        router?.navigateToSelectingSubject(sender: sender as! UIView)
     }
     
     func subjectSelected(_ subject: ReportSubject) {
@@ -108,7 +108,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
         case .subject:
             displayErrorIn(button: subjectButton)
         case .unknown:
-            router?.showError(error)
+            router?.showError(error, sender: self.view)
         }
     }
     
@@ -123,7 +123,7 @@ class ReportViewController: UIViewController, ReportDisplayLogic {
     }
     
     func displayReportSentSuccessful() {
-        router?.showReportSent()
+        router?.showReportSent(sender: self.view)
     }
 }
 

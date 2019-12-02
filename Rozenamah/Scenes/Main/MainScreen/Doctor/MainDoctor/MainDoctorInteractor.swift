@@ -23,7 +23,7 @@ class MainDoctorInteractor: MainScreenInteractor, MainDoctorBusinessLogic {
     private let kTimeIntervalBetweenNextRequest: Double = 3 * 60
     
     /// Last sent location of doctor
-    private var lastSentLocation: CLLocation?
+    public var lastSentLocation: CLLocation?
     
     /// Timestamp when we last sent user location, we use it in order to send user location every 3 minutes
     private var lastSavedDate: Double?

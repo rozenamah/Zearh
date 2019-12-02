@@ -111,17 +111,17 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     @IBAction func professionAction(_ sender: Any) {
         hideErrorIn(button: professionButton)
-        router?.navigateToSelectingClassification()
+        router?.navigateToSelectingClassification(sender: sender as! UIView)
     }
     
     @IBAction func specializatioAction(_ sender: Any) {
         hideErrorIn(button: specializationButton)
-        router?.navigateToSelectingSpecialization()
+        router?.navigateToSelectingSpecialization(sender: sender as! UIView)
     }
     
     @IBAction func genderAction(_ sender: Any) {
         hideErrorIn(button: genderButton)
-        router?.showGenderSelection()
+        router?.showGenderSelection(sender: sender as! UIView)
     }
     
     @IBAction func priceChanged(_ sender: UITextField) {
@@ -139,7 +139,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     @IBAction func createAccountAction(_ sender: Any) {
         if interactor?.validate(registerForm: registerForm) == true {
             if registerForm.pdf == nil {
-                router?.showAlert(message: "session.doctor.license".localized)
+                router?.showAlert(message: "session.doctor.license".localized, sender: sender as! UIView)
                 return
             }
             router?.showWaitAlert()
@@ -218,7 +218,7 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     func handle(error: Error) {
         router?.hideWaitAlert(completion: {
-            self.router?.showError(error)
+            self.router?.showError(error, sender: self.view)
         })
     }
     
@@ -239,13 +239,13 @@ class RegisterDoctorViewController: UIViewController, RegisterDoctorDisplayLogic
     
     func registerSuccess() {
         router?.hideWaitAlert(completion: {
-            self.router?.showDoctorCreatedAlert(withDismiss: false)
+            self.router?.showDoctorCreatedAlert(withDismiss: false, sender: self.view)
         })
     }
     
     func updateSuccess() {
         router?.hideWaitAlert(completion: {
-            self.router?.showDoctorCreatedAlert(withDismiss: true)
+            self.router?.showDoctorCreatedAlert(withDismiss: true, sender: self.view)
         })
     }
     

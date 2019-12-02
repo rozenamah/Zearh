@@ -4,6 +4,14 @@ class LoginForm {
     var password: String?
     var login: String?
     
+    
+    var toParams: [String: Any] {
+        var params = [String: Any]()
+        params["email"] = login!
+        params["password"] = password!
+        return params
+    }
+    
     var base64credentials: String {
         guard let password = password, let email = login else {
             return ""

@@ -14,6 +14,7 @@ class NotificationWorker {
     
     func saveDeviceToken(inData deviceToken: Data, completion: @escaping ErrorCompletion) {
         
+        print(deviceToken)
         guard let token = Keychain.shared.token else {
             completion(RMError.tokenDoesntExist)
             return
@@ -23,6 +24,7 @@ class NotificationWorker {
             return String(format: "%02.2hhx", data)
         }
         let deviceToken = tokenParts.joined()
+        print(deviceToken)
         let params = [
             "type": "ios",
             "device_token": deviceToken

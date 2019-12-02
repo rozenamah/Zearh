@@ -95,6 +95,7 @@ class DoctorOnTheWayInteractor: NSObject, DoctorOnTheWayBusinessLogic {
                 return
             }
             if let booking = booking {
+                LoginUserManager.sharedInstance.bookingStatus = booking.status
                 self.presenter?.doctorArrived(withBooking: booking)
             }
         }

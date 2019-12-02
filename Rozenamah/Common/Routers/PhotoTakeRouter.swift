@@ -10,12 +10,12 @@ import UIKit
 
 
 protocol PhotoTakeRouter {
-    func navigateToSelectingImageSource(allowEditing: Bool)
+    func navigateToSelectingImageSource(allowEditing: Bool, sender: Any)
 }
 
 extension PhotoTakeRouter where Self: Router {
     
-    func navigateToSelectingImageSource(allowEditing: Bool = true){
+    func navigateToSelectingImageSource(allowEditing: Bool = true, sender:Any){
         
         
         guard let viewController = viewController as? UIViewController else {
@@ -39,6 +39,11 @@ extension PhotoTakeRouter where Self: Router {
         alert.addAction(cameraAction)
         alert.addAction(galleryAction)
         alert.addAction(cancelAction)
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = sender as! UIView
+            popoverController.sourceRect = (sender as AnyObject).bounds
+        }
         viewController.present(alert, animated: true, completion: nil)
         
     }
